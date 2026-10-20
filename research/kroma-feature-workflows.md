@@ -1,6 +1,6 @@
 # Kroma / Krea 2 image-reference API workflow audit
 
-核对时间：2026-10-19。范围：本地 `D:/AI/comfyui-rx6650xt-lab\ComfyUI` 官方核心节点、内置蓝图，以及官方 ComfyUI/Krea/Kroma 上游材料。没有启动模型、运行 GPU、改核心、下载模型或安装节点。
+核对时间：2026-10-19。范围：本地 `D:/AI/barely-comfy\ComfyUI` 官方核心节点、内置蓝图，以及官方 ComfyUI/Krea/Kroma 上游材料。没有启动模型、运行 GPU、改核心、下载模型或安装节点。
 
 ## 结论
 

@@ -33,7 +33,7 @@ H3 家族还有 FL2VA（首帧/末帧条件）、Ref2VA（多模态参考）等�
 ## 继续的验收顺序
 
 1. 等当前模型任务完全释放 GPU/RAM。三份 `.verified.json` 已存在；若今后文件有变动，运行 `h3-sandbox/download-verified.ps1` 可续传并重新校验。启动前再做纯 CPU 导入/节点注册检查。之前 CPU quick-test 在日志确认 `Device: cpu` 后因主测试仅剩约 2GB RAM 而主动停止；静态 `compileall` 和 JSON 解析已通过，不应把它称为完整导入验证。
-2. 在 PowerShell 运行 `& 'D:/AI/comfyui-rx6650xt-lab\h3-sandbox\start-h3.ps1'`，检查 `http://127.0.0.1:8189/object_info` 是否同时列出 `UnetLoaderGGUFDynamicVRAM`、`ClipProjApply`、`MiniMaxH3ReferenceToVideo`，然后在另一终端运行 `& 'D:/AI/comfyui-rx6650xt-lab\h3-sandbox\submit-diagnostic.ps1'`。先记录 `/prompt` 接受/拒绝与节点错误，再记录峰值 RAM/VRAM、页文件、耗时、日志和是否生成 WebP 与 5 张 PNG；实际图像内容需目视确认。
+2. 在 PowerShell 运行 `& 'D:/AI/barely-comfy\h3-sandbox\start-h3.ps1'`，检查 `http://127.0.0.1:8189/object_info` 是否同时列出 `UnetLoaderGGUFDynamicVRAM`、`ClipProjApply`、`MiniMaxH3ReferenceToVideo`，然后在另一终端运行 `& 'D:/AI/barely-comfy\h3-sandbox\submit-diagnostic.ps1'`。先记录 `/prompt` 接受/拒绝与节点错误，再记录峰值 RAM/VRAM、页文件、耗时、日志和是否生成 WebP 与 5 张 PNG；实际图像内容需目视确认。
 3. 若 5 帧诊断成功，再做更有意义的 124 帧/24fps（约 5.2 秒）低分辨率参考生成；这一步资源需求会显著高于诊断，应单独观察并可中止。只有这一层产生可用视频，才进入 BFS 角色替换项目和 LoRA 兼容性验证。`Alissonerdx/Minimax-H3-ComfyUI` 的 [角色替换文档](https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/blob/main/docs/character-swap.md)使用 80MB LoRA 与 BFS；该 LoRA 在 GGUF fork 上的映射未被验证，故此组合不能先宣称实现了角色替换。
 
 文件下载的最终状态、哈希及能否启动服务，以同目录 `.verified.json` 和实际日志为准。首次切换 VAE 来源时留有约 1.5 MB 的 `minimax_h3_video_vae_int8_convrot.safetensors.kijai-abandoned.part` 隔离残片；它不被模型节点加载，后续可在确认全部试验状态后清理。

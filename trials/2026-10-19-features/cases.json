@@ -379,7 +379,7 @@
     "recipe": "video-diagnostic",
     "claim_level": "本机诊断，不是作者BFS整合包复现；4步无Turbo LoRA，不用于画质或视频功能验收",
     "inputs": [
-      "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\input\\cyan-robot-reference.png"
+      "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\input\\cyan-robot-reference.png"
     ],
     "prompt": "<Picture 1> is a small cyan toy robot with a magenta scarf and two square black eyes. One robot waves its right hand against a plain cream background. Locked camera, soft studio light. No music or speech.",
     "expected": "384×256、5帧、4步，无声WebP与逐帧PNG；只核验加载采样解码链路。",

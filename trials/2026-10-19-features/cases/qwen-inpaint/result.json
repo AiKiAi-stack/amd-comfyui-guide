@@ -42,19 +42,19 @@
   ],
   "images": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint_00001_.png",
       "filename": "qwen-inpaint_00001_.png",
       "role": "main",
       "node_id": "case01_7"
     },
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-mask_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-mask_00001_.png",
       "filename": "qwen-inpaint-mask_00001_.png",
       "role": "mask",
       "node_id": "case01_58"
     },
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-input_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-input_00001_.png",
       "filename": "qwen-inpaint-input_00001_.png",
       "role": "input",
       "node_id": "case01_59"

@@ -4,7 +4,7 @@
   "file": "Qwen-Image-2.1-Turbo-Uncensored-AD-Q4_K.gguf",
   "bytes": 5287517120,
   "sha256": "8123f36d2b3e562deef164dffdae33bdb1d152797ad10bb630827eaa7bce795d",
-  "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/text_encoders/Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+  "target": "D:/AI/barely-comfy/ComfyUI/models/text_encoders/Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
   "verified_sha256": "8123f36d2b3e562deef164dffdae33bdb1d152797ad10bb630827eaa7bce795d",
   "completed_at": "2026-10-19T09:46:05+0800"
 }

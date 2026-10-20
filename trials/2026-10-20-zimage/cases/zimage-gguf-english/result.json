@@ -28,7 +28,7 @@
   "elapsed_seconds": 85.47,
   "preflight": {
     "gpu_probe": {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T134222Z\\result.json",
+      "path": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T134222Z\\result.json",
       "timestamp": "2026-10-20T13:42:22+00:00",
       "age_seconds": 2.26,
       "healthy": true
@@ -100,7 +100,7 @@
           "--reserve-vram",
           "2.0",
           "--extra-model-paths-config",
-          "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+          "D:/AI/barely-comfy\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
         ]
       },
       "devices": [
@@ -128,7 +128,7 @@
         "--reserve-vram",
         "2.0",
         "--extra-model-paths-config",
-        "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+        "D:/AI/barely-comfy\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
       ],
       "device": {
         "name": "cuda:0 AMD Radeon RX 6650 XT : native",
@@ -206,7 +206,7 @@
         "--reserve-vram",
         "2.0",
         "--extra-model-paths-config",
-        "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+        "D:/AI/barely-comfy\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
       ]
     },
     "devices": [
@@ -222,11 +222,11 @@
     ]
   },
   "images": [
-    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png"
+    "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png"
   ],
   "image_metadata": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png",
       "dimensions": [
         512,
         512
@@ -244,7 +244,7 @@
   ],
   "output_validation_status": "passed",
   "visual_review": "pending",
-  "resource_samples": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\cases\\zimage-gguf-english\\resource-samples.json",
+  "resource_samples": "D:/AI/barely-comfy\\trials\\2026-10-20-zimage\\cases\\zimage-gguf-english\\resource-samples.json",
   "observed_peak_host_ram_used_bytes": 16405323776,
   "observed_peak_vram_used_bytes": 4740150272,
   "resource_sampling_limit": "周期采样得到的已观测最大值，非精确峰值；host RAM包含系统及其他进程。",

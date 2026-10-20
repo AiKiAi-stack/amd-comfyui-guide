@@ -7,7 +7,7 @@
     {
       "pid": 4100,
       "argv": [
-        "D:/AI/comfyui-rx6650xt-lab\\.venv\\Scripts\\python.exe",
+        "D:/AI/barely-comfy\\.venv\\Scripts\\python.exe",
         "-u",
         "ComfyUI/main.py",
         "--listen",

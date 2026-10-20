@@ -4,7 +4,7 @@
   "file": "vae/qwen_image_vae.safetensors",
   "bytes": 253806246,
   "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
-  "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/vae/qwen_image_vae.safetensors",
+  "target": "D:/AI/barely-comfy/ComfyUI/models/vae/qwen_image_vae.safetensors",
   "verified_sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f",
   "completed_at": "2026-10-19T10:01:43+0800"
 }

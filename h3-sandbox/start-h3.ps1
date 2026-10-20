@@ -23,7 +23,7 @@ if ($Cpu) { $h3Args += '--cpu' } else {
 }
 Push-Location $repo
 try {
-    & 'D:/AI/comfyui-rx6650xt-lab/.venv/Scripts/python.exe' @h3Args *>&1 |
+    & 'D:/AI/barely-comfy/.venv/Scripts/python.exe' @h3Args *>&1 |
         Tee-Object -FilePath (Join-Path $trial 'server-8189.log')
     if ($LASTEXITCODE -ne 0) { throw "H3 ComfyUI exited with code $LASTEXITCODE" }
 } finally {

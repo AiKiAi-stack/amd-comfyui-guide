@@ -14,7 +14,7 @@
       "file": "z_image_turbo-Q4_K_M.gguf",
       "bytes": 4981532736,
       "sha256": "745ec270db042409fde084d6b5cfccabf214a7fe5a494edf994a391125656afd",
-      "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\diffusion_models\\z_image_turbo-Q4_K_M.gguf"
+      "target": "D:/AI/barely-comfy\\ComfyUI\\models\\diffusion_models\\z_image_turbo-Q4_K_M.gguf"
     },
     "text_encoder": {
       "repo": "unsloth/Qwen3-4B-GGUF",
@@ -22,7 +22,7 @@
       "file": "Qwen3-4B-Q4_K_M.gguf",
       "bytes": 2497281312,
       "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
-      "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\text_encoders\\Qwen3-4B-Q4_K_M.gguf"
+      "target": "D:/AI/barely-comfy\\ComfyUI\\models\\text_encoders\\Qwen3-4B-Q4_K_M.gguf"
     },
     "vae": {
       "repo": "Comfy-Org/z_image_turbo",
@@ -30,7 +30,7 @@
       "file": "split_files/vae/ae.safetensors",
       "bytes": 335304388,
       "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
-      "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\vae\\ae.safetensors"
+      "target": "D:/AI/barely-comfy\\ComfyUI\\models\\vae\\ae.safetensors"
     },
     "note": "Q4_K_M encoder was selected for this run; the offline article screenshot shows Q4_K_S, while its prose permits choosing a suitable quantization."
   },

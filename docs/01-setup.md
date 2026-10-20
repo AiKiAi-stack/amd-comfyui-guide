@@ -8,13 +8,13 @@ Windows、RX 6650 XT 8GB（gfx1032）、16GB RAM，Python 3.12.6。当前本机�
 
 ## 1. 准备独立目录
 
-安装 Git、Python 3.12 x64 与适用于自己系统的 AMD 显卡驱动。模型、虚拟环境和缓存建议放 D: 或其他空间充足的磁盘。本文假定仓库在 `D:\AI\comfyui-rx6650xt-lab`。
+安装 Git、Python 3.12 x64 与适用于自己系统的 AMD 显卡驱动。模型、虚拟环境和缓存建议放 D: 或其他空间充足的磁盘。本文假定仓库在 `D:\AI\barely-comfy`。
 
 ```powershell
 New-Item -ItemType Directory -Force D:\AI | Out-Null
 Set-Location D:\AI
-git clone https://github.com/AiKiAi-stack/comfyui-rx6650xt-lab.git
-Set-Location comfyui-rx6650xt-lab
+git clone https://github.com/AiKiAi-stack/barely-comfy.git
+Set-Location barely-comfy
 py -3.12 -m venv .venv
 $env:PIP_CACHE_DIR = 'D:\AI\cache\pip'
 $env:HF_HOME = 'D:\AI\cache\huggingface'

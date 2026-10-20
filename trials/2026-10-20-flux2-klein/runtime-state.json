@@ -56,7 +56,7 @@
         "2.0",
         "--fp8_e4m3fn-text-enc",
         "--extra-model-paths-config",
-        "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
+        "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
       ]
     },
     "devices": [
@@ -71,7 +71,7 @@
       }
     ]
   },
-  "latest_small_gpu_probe": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T143223Z\\result.json",
+  "latest_small_gpu_probe": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T143223Z\\result.json",
   "historical_native_failure": "gpu-runtime-block.json",
   "profile": "dynamic-nvme-pinned",
   "note": "API availability and recorded small GPU probe are separate evidence; successful diffusion outputs are listed in coverage.json. No driver reset or reboot was performed."

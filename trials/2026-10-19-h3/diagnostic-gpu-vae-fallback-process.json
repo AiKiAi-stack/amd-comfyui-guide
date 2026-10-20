@@ -1,9 +1,9 @@
 {
   "pid": 9412,
   "command": [
-    "D:/AI/comfyui-rx6650xt-lab\\.venv\\Scripts\\python.exe",
+    "D:/AI/barely-comfy\\.venv\\Scripts\\python.exe",
     "-u",
-    "D:/AI/comfyui-rx6650xt-lab\\h3-sandbox\\ComfyUI\\main.py",
+    "D:/AI/barely-comfy\\h3-sandbox\\ComfyUI\\main.py",
     "--listen",
     "127.0.0.1",
     "--port",
@@ -13,12 +13,12 @@
     "--disable-async-offload",
     "--lowvram",
     "--input-directory",
-    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\input",
+    "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\input",
     "--output-directory",
-    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output",
+    "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output",
     "--temp-directory",
-    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\temp",
+    "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\temp",
     "--user-directory",
-    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\user"
+    "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\user"
   ]
 }

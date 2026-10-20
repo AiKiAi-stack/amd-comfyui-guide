@@ -3,7 +3,7 @@
   "source": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/e5eb578a89295337b8ff433a035929ce0279e0b6/vae/minimax_h3_video_vae_int8_convrot.safetensors?download=true",
   "repo": "Comfy-Org/MiniMax-H3",
   "revision": "e5eb578a89295337b8ff433a035929ce0279e0b6",
-  "path": "D:/AI/comfyui-rx6650xt-lab\\h3-sandbox\\ComfyUI\\models\\vae\\minimax_h3_video_vae_int8_convrot.safetensors",
+  "path": "D:/AI/barely-comfy\\h3-sandbox\\ComfyUI\\models\\vae\\minimax_h3_video_vae_int8_convrot.safetensors",
   "bytes": 2811065184,
   "sha256": "52a2c8c73583c86e4f41cdcce3a6ad0ea562987bc0bf3d60a0cef5f5c8e60c0e",
   "verified_at": "2026-10-19T20:22:11.1671448+08:00"

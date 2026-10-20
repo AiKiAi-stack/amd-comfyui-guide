@@ -4,7 +4,7 @@
   "file": "lora.safetensors",
   "bytes": 1189176800,
   "sha256": "4abb14e39c1a59018907581e609f43616ec6810126144ec2b1d2e6f8969628fe",
-  "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/loras/moss-image-sft-8-steps-dmd-lora.safetensors",
+  "target": "D:/AI/barely-comfy/ComfyUI/models/loras/moss-image-sft-8-steps-dmd-lora.safetensors",
   "verified_sha256": "4abb14e39c1a59018907581e609f43616ec6810126144ec2b1d2e6f8969628fe",
   "completed_at": "2026-10-19T09:39:14+0800"
 }

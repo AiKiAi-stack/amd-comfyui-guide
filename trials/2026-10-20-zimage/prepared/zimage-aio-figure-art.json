@@ -3,6 +3,6 @@
   "status": "prepared_not_submitted",
   "submitted": false,
   "prepared_at": "2026-10-20T12:20:38.690534+00:00",
-  "api_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\prepared\\zimage-aio-figure-art.api.json",
+  "api_file": "D:/AI/barely-comfy\\trials\\2026-10-20-zimage\\prepared\\zimage-aio-figure-art.api.json",
   "planned_runtime_profile": "计划配置，尚未执行：RX6650XT；CPU VAE；关闭动态VRAM、normalvram、预留2GB、同步卸载；候选GPU文本编码，实际设备须核对服务日志；512²，无额外LoRA"
 }

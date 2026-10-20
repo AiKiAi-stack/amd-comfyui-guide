@@ -1,7 +1,7 @@
 {
   "source_templates": {
-    "t2i": "D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\comfyui_workflow_templates_json\\templates\\image_flux2_klein_text_to_image.json",
-    "edit": "D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\comfyui_workflow_templates_json\\templates\\image_flux2_klein_image_edit_4b_distilled.json"
+    "t2i": "D:/AI/barely-comfy\\.venv\\Lib\\site-packages\\comfyui_workflow_templates_json\\templates\\image_flux2_klein_text_to_image.json",
+    "edit": "D:/AI/barely-comfy\\.venv\\Lib\\site-packages\\comfyui_workflow_templates_json\\templates\\image_flux2_klein_image_edit_4b_distilled.json"
   },
   "models": {
     "diffusion_model": "flux-2-klein-4b-fp8.safetensors",
@@ -66,6 +66,6 @@
       "handbag_white.png": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/handbag_white.png",
       "comfy_logo_blue.png": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/comfy_logo_blue.png"
     },
-    "planned_input_directory": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input"
+    "planned_input_directory": "D:/AI/barely-comfy\\ComfyUI\\input"
   }
 }

@@ -7,7 +7,7 @@
   "elapsed_seconds": 7.14,
   "healthy": true,
   "stdout": "STAGE torch_import_start\nSTAGE torch_import_complete 2.12.0+rocm7.14.0\nTrue\nAMD Radeon RX 6650 XT\nSTAGE memory_query_start\n(8425177088, 8573157376)\nSTAGE small_matmul_start\nMATMUL_OK 16.0\n",
-  "stderr_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T134222Z\\stderr.log",
+  "stderr_file": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T134222Z\\stderr.log",
   "status": "healthy",
   "import_and_launch_seconds": 2.62,
   "gpu_stage_seconds": 4.52

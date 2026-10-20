@@ -33,7 +33,7 @@
   ],
   "images": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-style-ref_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-style-ref_00001_.png",
       "filename": "kroma-style-ref_00001_.png",
       "subfolder": "FeatureBench",
       "filename_prefix": "FeatureBench/kroma-style-ref",
@@ -42,5 +42,5 @@
     }
   ],
   "errors": [],
-  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\kroma-style-ref.png"
+  "copied_input": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\kroma-style-ref.png"
 }

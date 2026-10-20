@@ -1,7 +1,7 @@
 {
   "case_id": "flux2-klein-dual-logo",
   "checked_at": "2026-10-20T14:33:42.596865+00:00",
-  "system_stats_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\cases\\flux2-klein-dual-logo\\actual-system-stats.json",
+  "system_stats_file": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\cases\\flux2-klein-dual-logo\\actual-system-stats.json",
   "runtime": {
     "verified": true,
     "memory_profile": "dynamic-nvme-pinned",
@@ -19,7 +19,7 @@
       "2.0",
       "--fp8_e4m3fn-text-enc",
       "--extra-model-paths-config",
-      "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
+      "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
     ],
     "required_flags": [
       "--enable-dynamic-vram",
@@ -30,8 +30,8 @@
     ],
     "reserve_vram_gib": 2.0,
     "model_paths_config": {
-      "argv_value": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
-      "resolved_path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "argv_value": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "resolved_path": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
       "sha256": "6f83d6d0a4765ca3359188e8230d1148dcc9bfdc7c49542fb42067a217ba1ba5"
     },
     "gpu_device": {
@@ -44,7 +44,7 @@
       "torch_vram_free": 1573888
     },
     "fresh_gpu_probe": {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T143223Z\\result.json",
+      "path": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T143223Z\\result.json",
       "completed_at": "2026-10-20T14:32:45.512113+00:00",
       "age_seconds": 57.02,
       "status": "healthy",
@@ -60,7 +60,7 @@
   "inputs": [
     {
       "declared_path": "flux2-klein-bench/handbag_white.png",
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
       "bytes": 5992775,
       "dimensions": [
         1536,
@@ -70,7 +70,7 @@
     },
     {
       "declared_path": "flux2-klein-bench/comfy_logo_blue.png",
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\comfy_logo_blue.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\input\\flux2-klein-bench\\comfy_logo_blue.png",
       "bytes": 13382,
       "dimensions": [
         1024,

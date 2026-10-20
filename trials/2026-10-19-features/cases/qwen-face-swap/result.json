@@ -34,7 +34,7 @@
   ],
   "images": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-face-swap_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-face-swap_00001_.png",
       "filename": "qwen-face-swap_00001_.png",
       "subfolder": "FeatureBench",
       "filename_prefix": "FeatureBench/qwen-face-swap",
@@ -43,5 +43,5 @@
     }
   ],
   "errors": [],
-  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\qwen-face-swap.png"
+  "copied_input": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\qwen-face-swap.png"
 }

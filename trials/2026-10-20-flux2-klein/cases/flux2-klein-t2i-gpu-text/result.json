@@ -16,11 +16,11 @@
   "prompt_id": "f9f3e758-e911-4dbf-8fda-b2ea80297f82",
   "status": "success",
   "images": [
-    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png"
+    "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png"
   ],
   "image_metadata": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png",
       "dimensions": [
         512,
         512

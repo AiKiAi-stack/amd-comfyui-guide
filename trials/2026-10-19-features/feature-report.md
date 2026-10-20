@@ -802,7 +802,7 @@ workflow / api.json：[turbo-un-pose-reference-test/api.json](cases/turbo-un-pos
 最新一次使用GPU FP16 VAE并预留2GB显存，实际保存5张384×256 PNG与无声WebP。首尾帧可见青色机器人、洋红围巾、方形黑眼和浅色背景，画面相似；约0.2秒不能评价动作流畅、正常时长质量或BFS角色替换。此前CPU VAE超时、INT8 VAE HIPBLAS错误及未预留显存的FP16采样OOM均保留。433.08秒包含服务启动；系统已用内存采样峰值约14.19GiB，API显存采样峰值约4.84GiB，不是所有瞬时分配的精确峰值。
 
 输入图片：
-- 输入 1 · D:/AI/comfyui-rx6650xt-lab\trials\2026-10-19-h3\input\cyan-robot-reference.png：![输入 1 · D:/AI/comfyui-rx6650xt-lab\trials\2026-10-19-h3\input\cyan-robot-reference.png](../2026-10-19-h3/input/cyan-robot-reference.png)
+- 输入 1 · D:/AI/barely-comfy\trials\2026-10-19-h3\input\cyan-robot-reference.png：![输入 1 · D:/AI/barely-comfy\trials\2026-10-19-h3\input\cyan-robot-reference.png](../2026-10-19-h3/input/cyan-robot-reference.png)
 
 输出图片：
 ![输出 1](../2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00001_.png)
@@ -1633,7 +1633,7 @@ workflow / api.json：[旧基线 api.json：qwen-image-2.1-768-api.json](../../q
 history 状态 success；目视检查为白猫，姿态与街景构图基本保留，分辨率和毛发细节有变化。
 
 输入图片：
-- 输入 1 · D:/AI/comfyui-rx6650xt-lab\ComfyUI\input\liuyue-qwen-base-source.png：![输入 1 · D:/AI/comfyui-rx6650xt-lab\ComfyUI\input\liuyue-qwen-base-source.png](../../ComfyUI/input/liuyue-qwen-base-source.png)
+- 输入 1 · D:/AI/barely-comfy\ComfyUI\input\liuyue-qwen-base-source.png：![输入 1 · D:/AI/barely-comfy\ComfyUI\input\liuyue-qwen-base-source.png](../../ComfyUI/input/liuyue-qwen-base-source.png)
 
 输出图片：
 ![输出 1](../../ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png)

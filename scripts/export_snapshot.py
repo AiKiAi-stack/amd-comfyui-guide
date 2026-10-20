@@ -127,7 +127,7 @@ def main():
     def sanitize(text):
         for prefix in (str(source), str(source).replace('\\', '/')):
             for form in (prefix, prefix.replace('\\', '\\\\')):
-                replacement = 'D:/AI/comfyui-rx6650xt-lab'
+                replacement = 'D:/AI/barely-comfy'
                 text = text.replace(form, replacement)
         # No private article snapshots, OS profile names, network shares or auth links.
         text = re.sub(r'[A-Z]:[\\/]+Users[\\/]+[^\\/\s"<>]+', 'D:/PUBLIC_USER', text, flags=re.I)

@@ -10,7 +10,7 @@
     "negative_prompt": "模糊，低质量，畸形，多余的肢体，文字，水印",
     "expected": "生成雨后上海咖啡馆窗边的橘猫图像；此条记录旧版基础 Qwen-Image-2.1 文生图。",
     "images": [
-      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\QwenImage21_RX6650XT_768_00001_.png"
+      "D:/AI/barely-comfy\\ComfyUI\\output\\QwenImage21_RX6650XT_768_00001_.png"
     ],
     "elapsed_seconds": null,
     "review": {
@@ -29,13 +29,13 @@
     "recipe": "edit",
     "claim_level": "T｜本机 history 成功并有图片复核",
     "inputs": [
-      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\liuyue-qwen-base-source.png"
+      "D:/AI/barely-comfy\\ComfyUI\\input\\liuyue-qwen-base-source.png"
     ],
     "prompt": "Edit the reference image: turn the orange cat into a fluffy white cat. Keep the cat's pose, the rainy Shanghai street, cafe window, neon reflections, camera framing and lighting the same. Photorealistic. No text.",
     "negative_prompt": "orange fur, extra animals, blur, text, watermark",
     "expected": "橘猫变为白猫，姿态、雨街、咖啡馆窗户、霓虹反射和构图大致保留。",
     "images": [
-      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png"
+      "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png"
     ],
     "elapsed_seconds": 423.46,
     "review": {
@@ -58,7 +58,7 @@
     "prompt": "A little red fox sitting on a mossy rock in a misty forest, detailed fur, soft morning light, cinematic photography, no text",
     "expected": "生成苔石、雾林与狐狸场景；不外推为多图参考、图生图或换头验证。",
     "images": [
-      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png"
+      "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png"
     ],
     "elapsed_seconds": 285.03,
     "review": {
@@ -82,7 +82,7 @@
     "negative_prompt": "blurry, low quality, distorted, watermark, text",
     "expected": "生成完整宇航员与丛林阳光场景；本条为第三方 DMD LoRA 的本机 8 步候选验证。",
     "images": [
-      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png"
+      "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png"
     ],
     "elapsed_seconds": 187.575,
     "review": {
@@ -106,7 +106,7 @@
     "negative_prompt": "blurry, low quality, distorted, watermark, text",
     "expected": "生成完整宇航员与丛林阳光场景；用于与 8 步 DMD LoRA 候选对照。",
     "images": [
-      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png"
+      "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png"
     ],
     "elapsed_seconds": 198.197,
     "review": {
@@ -130,7 +130,7 @@
     "negative_prompt": "blur, low quality, anatomy errors, text, watermark",
     "expected": "生成雨夜上海咖啡馆窗边白猫；仅作为标准 Turbo 的输出基线，不作为 UN 编码器结果。",
     "images": [
-      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_Qwen21_Turbo_RX6650XT_00001_.png"
+      "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_Qwen21_Turbo_RX6650XT_00001_.png"
     ],
     "elapsed_seconds": 652.782,
     "review": {

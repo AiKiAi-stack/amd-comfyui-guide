@@ -53,7 +53,7 @@
       "2.0",
       "--fp8_e4m3fn-text-enc",
       "--extra-model-paths-config",
-      "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
+      "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
     ]
   },
   "devices": [

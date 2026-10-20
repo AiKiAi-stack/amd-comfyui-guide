@@ -13,7 +13,7 @@
   "prompt_id": "abb50ee6-99c0-4f18-994b-2e43b6bfecdf",
   "status": "success",
   "images": [
-    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\UncensoredBench\\q21-un-satire-profanity_00001_.png"
+    "D:/AI/barely-comfy\\ComfyUI\\output\\UncensoredBench\\q21-un-satire-profanity_00001_.png"
   ],
   "image_checksums": {
     "D:\\MyProject\\amd_comfy\\ComfyUI\\output\\UncensoredBench\\q21-un-satire-profanity_00001_.png": "eeea5fb4c518c0acc47beff882e9e235a493cdbc903bb07464233cae2fbfcfb2"

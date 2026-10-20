@@ -35,7 +35,7 @@
   ],
   "images": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-head-swap_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-head-swap_00001_.png",
       "filename": "kroma-head-swap_00001_.png",
       "subfolder": "FeatureBench",
       "filename_prefix": "FeatureBench/kroma-head-swap",
@@ -44,5 +44,5 @@
     }
   ],
   "errors": [],
-  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\kroma-head-swap.png"
+  "copied_input": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\kroma-head-swap.png"
 }

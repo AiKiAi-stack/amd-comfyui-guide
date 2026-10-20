@@ -4,7 +4,7 @@
   "file": "z-image-turbo-fp8-aio.safetensors",
   "bytes": 10345190658,
   "sha256": "f569c42b6797a89e65e80c743d6dfd230ed9318237aa242c92777deb22fad660",
-  "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\checkpoints\\z-image-turbo-fp8-aio.safetensors",
+  "target": "D:/AI/barely-comfy\\ComfyUI\\models\\checkpoints\\z-image-turbo-fp8-aio.safetensors",
   "verified_sha256": "f569c42b6797a89e65e80c743d6dfd230ed9318237aa242c92777deb22fad660",
   "completed_at": "2026-10-20T19:32:57+0800"
 }

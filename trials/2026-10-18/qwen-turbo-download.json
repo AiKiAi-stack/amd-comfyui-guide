@@ -5,6 +5,6 @@
     "file": "qwen-image-2.1-turbo-Q4_K_M.gguf",
     "bytes": 4199565120,
     "sha256": "8940e8b522af886e0c0f5afddf720e82dd223cb9a43580b5f61c4d740452ac20",
-    "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/diffusion_models/qwen-image-2.1-turbo-Q4_K_M.gguf"
+    "target": "D:/AI/barely-comfy/ComfyUI/models/diffusion_models/qwen-image-2.1-turbo-Q4_K_M.gguf"
   }
 ]

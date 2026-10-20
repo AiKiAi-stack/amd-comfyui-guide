@@ -7,7 +7,7 @@
       "prompt_id": "9471ac1b-bad6-4c9c-a01a-d322d8e10378",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-img2img_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\moss-img2img_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -29,7 +29,7 @@
       "prompt_id": "089ef43b-bcb4-42b3-a3f8-7086dac19dac",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-layout_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\moss-layout_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -47,7 +47,7 @@
       "prompt_id": "d2410fc5-477f-425a-af69-3ae9f44616f6",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-text_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\moss-text_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -65,7 +65,7 @@
       "prompt_id": "2f5c550b-20fa-4cd4-b61a-5572d8ae5367",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-portrait-a_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-portrait-a_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -83,7 +83,7 @@
       "prompt_id": "4a3705b8-0fa8-4a80-afed-90ba046e3890",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-portrait-b_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-portrait-b_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -101,7 +101,7 @@
       "prompt_id": "ef947405-58b8-4568-a727-ef4366bd44a7",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-img2img_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-img2img_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -123,7 +123,7 @@
       "prompt_id": "7add111e-4f84-477a-83a4-6c9f1dda16f9",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-style-source_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-style-source_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -141,7 +141,7 @@
       "prompt_id": "9e18193e-7ba7-4982-bdef-b329cfdb09d6",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -176,7 +176,7 @@
           "sha256": "0d9de22216638c92e0c87059aa6eff869e5f7c7986b569eb9d56bdfb87105d2c"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-mask_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-mask_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -211,7 +211,7 @@
           "sha256": "268f18b9403f80f6cc54cbc09d68a5dc4b5e6ec9024e4874586d6d3c6624a157"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-input_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-input_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -262,7 +262,7 @@
       "prompt_id": "cdb0adfa-6296-4305-89bb-2e962d6445cc",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-multiref_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-multiref_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -287,7 +287,7 @@
       "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-face-swap_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-face-swap_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -321,7 +321,7 @@
       "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-style-edit_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-style-edit_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -362,7 +362,7 @@
       "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-style-ref_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-style-ref_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -396,7 +396,7 @@
       "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-multiref_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-multiref_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -430,7 +430,7 @@
       "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-head-swap_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-head-swap_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -464,7 +464,7 @@
       "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-face-only_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-face-only_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -498,7 +498,7 @@
       "prompt_id": "06b678de-ee81-4bdd-9e6b-bb23ee939890",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-t2i_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-t2i_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -516,7 +516,7 @@
       "prompt_id": "14885f48-2048-41e8-8e95-c35a45cc2939",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-input_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-input_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -530,7 +530,7 @@
           "sha256": "a542f81ce1a0cb5187ff74bf2772f6cfb3cad4775594527349160527ace37a86"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-mask_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-mask_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -544,7 +544,7 @@
           "sha256": "627ee1e36a47ce3afcca18b1063a2ba9b20fbcc2e2fdf21c90051f48375f3129"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -574,7 +574,7 @@
       "prompt_id": "e459fca3-4c22-4bce-8bf8-3c86310a73aa",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-multiref_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-multiref_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -599,7 +599,7 @@
       "prompt_id": "4791a011-c595-4385-bb4e-6826d1a0b277",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-face-swap_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-face-swap_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -624,7 +624,7 @@
       "prompt_id": "60283b91-962a-484d-b02d-cd554282e09a",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-bfs-head-swap_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-bfs-head-swap_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -649,7 +649,7 @@
       "prompt_id": "86581346-8ff4-492d-8057-9d72dc3c4a01",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-role-replacement-test_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-role-replacement-test_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -674,7 +674,7 @@
       "prompt_id": "12009882-a683-45c3-9098-d0c70d7477b4",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-pose-reference-test_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-pose-reference-test_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -699,7 +699,7 @@
       "prompt_id": "94e6c992-6339-4037-aed5-d45dfcaa21f6",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00001_.png",
+          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00001_.png",
           "exists": true,
           "width": 384,
           "height": 256,
@@ -713,7 +713,7 @@
           "sha256": "b3f35d5c68f2271a3aa36e4def15134d1bbebd10d034e43f24c5d96cb2f168aa"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00002_.png",
+          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00002_.png",
           "exists": true,
           "width": 384,
           "height": 256,
@@ -727,7 +727,7 @@
           "sha256": "42afb63f2411f29ab4e5bba6523a2bd8f3c85a4fd6c066ba238916e51b5cd475"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00003_.png",
+          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00003_.png",
           "exists": true,
           "width": 384,
           "height": 256,
@@ -741,7 +741,7 @@
           "sha256": "073706b7b0b61930c9279c91c643d846e1ae14da8e64cb5925759fef9aae520f"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00004_.png",
+          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00004_.png",
           "exists": true,
           "width": 384,
           "height": 256,
@@ -755,7 +755,7 @@
           "sha256": "39aabc8b9ec95b1a566911d61ef08b9839a44247ad217ded97411f8658ab0d86"
         },
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00005_.png",
+          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00005_.png",
           "exists": true,
           "width": 384,
           "height": 256,
@@ -777,7 +777,7 @@
       "prompt_id": "0a480427-c742-4431-b348-51559ade75cf",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -795,7 +795,7 @@
       "prompt_id": "f9f3e758-e911-4dbf-8fda-b2ea80297f82",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -820,7 +820,7 @@
       "prompt_id": "88d18fbd-b6a3-4082-9eb9-330854af9eb6",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-photo-gpu-text_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-photo-gpu-text_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -838,7 +838,7 @@
       "prompt_id": "f7d81e40-4996-4d69-9fca-075d760a6262",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-prompt-change_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-prompt-change_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -856,7 +856,7 @@
       "prompt_id": "141d8f8f-2ce2-40f6-8a5a-acfacdd7ee30",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -874,7 +874,7 @@
       "prompt_id": "7ae03ae5-01e2-4cae-8bfd-b6fe3e21b0a5",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-chinese_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-chinese_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -892,7 +892,7 @@
       "prompt_id": "78c1d89f-2c9d-4726-b00b-778b5e9b6b57",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-9step_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-9step_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -910,7 +910,7 @@
       "prompt_id": "a3875ab1-01b3-4c4a-8fd6-14625b5dcaa2",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-chinese_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-chinese_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -928,7 +928,7 @@
       "prompt_id": "2a40a1cd-e83f-425a-96b8-5dfc3ec9f8d3",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-english_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-english_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -946,7 +946,7 @@
       "prompt_id": "48ce1779-e28f-4b1c-98e5-dfb8ff52653c",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-figure-art_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-figure-art_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -964,7 +964,7 @@
       "prompt_id": "0b20f4e1-2bd1-437e-936e-cddb801834b0",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-4step_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-4step_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -982,7 +982,7 @@
       "prompt_id": "0bce94c2-cacb-4600-8f19-8d5b60e89f21",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -1000,7 +1000,7 @@
       "prompt_id": "aba91f25-cc9e-491a-aae2-29ffd3f1d3f5",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color_00001_.png",
           "exists": true,
           "width": 368,
           "height": 672,
@@ -1022,7 +1022,7 @@
       "prompt_id": "d5cae8bb-e78e-4402-b417-4d1e295cb785",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-nvme-control_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-nvme-control_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -1040,7 +1040,7 @@
       "prompt_id": "f1bb65ed-f83f-4fa5-90b4-a2dc987a1ffe",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
           "exists": true,
           "width": 368,
           "height": 672,
@@ -1065,7 +1065,7 @@
       "prompt_id": "b9d41482-f35b-4987-95b4-04afecce137d",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -1090,7 +1090,7 @@
       "prompt_id": "fdf01ff4-9038-4b19-bbd2-733e4dbd57d3",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -1112,7 +1112,7 @@
       "prompt_id": "972108a3-1a27-43f8-9955-5cbbaf390802",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
           "exists": true,
           "width": 368,
           "height": 672,
@@ -1134,7 +1134,7 @@
       "prompt_id": "5c308834-8a7d-48ad-9a9e-1e46461b5cc0",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -1156,7 +1156,7 @@
       "prompt_id": "2a903bf4-3032-43d5-a813-a24c58e18251",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png",
           "exists": true,
           "width": 368,
           "height": 688,
@@ -1178,7 +1178,7 @@
       "prompt_id": "46959703-13d5-46bb-8b88-04cdbb1ebfc1",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-pinned-control_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-pinned-control_00001_.png",
           "exists": true,
           "width": 512,
           "height": 512,
@@ -1196,7 +1196,7 @@
       "prompt_id": "4fbbcb80-26ee-4fe4-927f-9a58e6cb5c5b",
       "images": [
         {
-          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
           "exists": true,
           "width": 368,
           "height": 672,

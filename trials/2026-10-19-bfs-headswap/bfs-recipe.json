@@ -12,7 +12,7 @@
     "expected_sha256": "d1d748d5601077f3b6d05766f6823510e901970d916afa404a97e85dc92fa88e",
     "actual_sha256": "d1d748d5601077f3b6d05766f6823510e901970d916afa404a97e85dc92fa88e",
     "verified": true,
-    "local_path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\loras\\bfs_head_v1.1_qwen_2.1.safetensors",
+    "local_path": "D:/AI/barely-comfy\\ComfyUI\\models\\loras\\bfs_head_v1.1_qwen_2.1.safetensors",
     "receipt": "download-receipt.json"
   },
   "template": {

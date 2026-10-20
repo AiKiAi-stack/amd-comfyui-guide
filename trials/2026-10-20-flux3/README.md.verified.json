@@ -4,7 +4,7 @@
   "file": "README.md",
   "bytes": 3720,
   "sha256": "c68231870ccfd4c48cc8e45070402383ccf15627c9376093edc24cc483a292ca",
-  "target": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux3\\source_workflows\\README.md",
+  "target": "D:/AI/barely-comfy\\trials\\2026-10-20-flux3\\source_workflows\\README.md",
   "source": "https://www.modelscope.cn/api/v1/models/junwenlu/flux-3-image-klein-ComfyUI/repo",
   "verified_sha256": "c68231870ccfd4c48cc8e45070402383ccf15627c9376093edc24cc483a292ca",
   "completed_at": "2026-10-20T10:59:08+0800"

@@ -5,7 +5,7 @@
   "recipe": "video-diagnostic",
   "claim_level": "本机诊断，不是作者BFS整合包复现；4步无Turbo LoRA，不用于画质或视频功能验收",
   "inputs": [
-    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\input\\cyan-robot-reference.png"
+    "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\input\\cyan-robot-reference.png"
   ],
   "prompt": "<Picture 1> is a small cyan toy robot with a magenta scarf and two square black eyes. One robot waves its right hand against a plain cream background. Locked camera, soft studio light. No music or speech.",
   "expected": "384×256、5帧、4步，无声WebP与逐帧PNG；只核验加载采样解码链路。",
@@ -24,27 +24,27 @@
   "status": "success",
   "images": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00001_.png",
+      "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00001_.png",
       "bytes": 87088,
       "sha256": "b3f35d5c68f2271a3aa36e4def15134d1bbebd10d034e43f24c5d96cb2f168aa"
     },
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00002_.png",
+      "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00002_.png",
       "bytes": 89535,
       "sha256": "42afb63f2411f29ab4e5bba6523a2bd8f3c85a4fd6c066ba238916e51b5cd475"
     },
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00003_.png",
+      "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00003_.png",
       "bytes": 88265,
       "sha256": "073706b7b0b61930c9279c91c643d846e1ae14da8e64cb5925759fef9aae520f"
     },
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00004_.png",
+      "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00004_.png",
       "bytes": 88127,
       "sha256": "39aabc8b9ec95b1a566911d61ef08b9839a44247ad217ded97411f8658ab0d86"
     },
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00005_.png",
+      "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00005_.png",
       "bytes": 86115,
       "sha256": "738e86a712abb5f3b35573b25f078821f02ada51ed59589f24235531b31597a5"
     }
@@ -61,6 +61,6 @@
   "prompt_id": "94e6c992-6339-4037-aed5-d45dfcaa21f6",
   "errors": [],
   "elapsed_seconds": 433.08,
-  "animation": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic_00001_.webp",
+  "animation": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic_00001_.webp",
   "elapsed_scope": "server startup plus prompt execution"
 }

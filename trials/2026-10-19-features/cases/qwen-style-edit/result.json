@@ -32,7 +32,7 @@
   ],
   "images": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-style-edit_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-style-edit_00001_.png",
       "filename": "qwen-style-edit_00001_.png",
       "subfolder": "FeatureBench",
       "filename_prefix": "FeatureBench/qwen-style-edit",
@@ -41,5 +41,5 @@
     }
   ],
   "errors": [],
-  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\qwen-style-edit.png"
+  "copied_input": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\qwen-style-edit.png"
 }

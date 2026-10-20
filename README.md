@@ -1,4 +1,8 @@
-# ComfyUI on RX 6650 XT · 8GB 实测手册
+# Barely Comfy
+
+> 8GB. Almost comfortable.
+
+RX 6650 XT · ComfyUI 实测手册：显存刚够，坑也不少。
 
 Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图，到模型编辑、多参考输入与原生崩溃排查。**Draft · 2026-10-20**，持续整理中。
 
@@ -12,11 +16,11 @@ Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图�
 4. [遇到的坑](docs/04-troubleshooting.md)：INT8、时间尺度、GGUF 卸载、锁页内存与 OOM。
 5. [完整图文报告（GitHub 可直接阅读）](trials/2026-10-19-features/feature-report.md)。
 
-HTML 报告保留筛选与输入/输出对照。克隆后执行：
+[在线图文报告](https://aikiai-stack.github.io/barely-comfy/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
 
 ```powershell
-git clone https://github.com/AiKiAi-stack/comfyui-rx6650xt-lab.git
-cd comfyui-rx6650xt-lab
+git clone https://github.com/AiKiAi-stack/barely-comfy.git
+cd barely-comfy
 python -m http.server 8767 --bind 127.0.0.1
 ```
 

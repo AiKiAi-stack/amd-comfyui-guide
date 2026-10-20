@@ -2,14 +2,14 @@
 
 这是 2026-10-19 本机验证后的操作入口，所有路径位于 D:。来源和每次成败证据见同目录 `README.md`。此处的 Python 脚本通过本机 ComfyUI API 提交任务；`*-api.json` 是 API 图，不是带节点位置的可视化工作流。
 
-权重已经按类型放入 `D:/AI/comfyui-rx6650xt-lab\ComfyUI\models\diffusion_models`、`text_encoders`、`vae`、`loras`。本轮下载的 10 个文件均有大小及 SHA-256 校验凭据（同目录 `*.verified.json`）；固定 revision 的完整清单是 `qwen-turbo-download.json`、`qwen-turbo-uncensored-download.json`、`kroma-download.json`、`moss-download.json` 和 `moss-dmd-download.json`。无需再安装 CUDA 版 PyTorch或重复下载。
+权重已经按类型放入 `D:/AI/barely-comfy\ComfyUI\models\diffusion_models`、`text_encoders`、`vae`、`loras`。本轮下载的 10 个文件均有大小及 SHA-256 校验凭据（同目录 `*.verified.json`）；固定 revision 的完整清单是 `qwen-turbo-download.json`、`qwen-turbo-uncensored-download.json`、`kroma-download.json`、`moss-download.json` 和 `moss-dmd-download.json`。无需再安装 CUDA 版 PyTorch或重复下载。
 
 ## 1. 启动已有 AMD 环境
 
 如果 `http://127.0.0.1:8188` 已能打开，直接到下一步。否则在 PowerShell 执行：
 
 ```powershell
-Set-Location D:/AI/comfyui-rx6650xt-lab
+Set-Location D:/AI/barely-comfy
 .\.venv\Scripts\python.exe -u .\ComfyUI\main.py --listen 127.0.0.1 --port 8188 --fast-disk --cpu-vae --disable-async-offload
 ```
 
@@ -20,24 +20,24 @@ Set-Location D:/AI/comfyui-rx6650xt-lab
 另开一个 PowerShell：
 
 ```powershell
-Set-Location D:/AI/comfyui-rx6650xt-lab
+Set-Location D:/AI/barely-comfy
 .\.venv\Scripts\python.exe -u .\trials\2026-10-18\run_qwen_turbo.py
 ```
 
 脚本使用 512×512、8 步、CFG 1、Euler 和官方 Turbo sigma 列表。它输出任务 ID，等待完成后写 `qwen-turbo-history.json`。本机首次冷运行约 10 分 53 秒，不能据此预估其他分辨率或模型的速度。
 
-结果图片：`D:/AI/comfyui-rx6650xt-lab\ComfyUI\output\Liuyue_Qwen21_Turbo_RX6650XT_00001_.png`。
+结果图片：`D:/AI/barely-comfy\ComfyUI\output\Liuyue_Qwen21_Turbo_RX6650XT_00001_.png`。
 
 ## 3. 跑已验证的 Qwen 基础版参考图编辑
 
 ```powershell
-Set-Location D:/AI/comfyui-rx6650xt-lab
+Set-Location D:/AI/barely-comfy
 .\.venv\Scripts\python.exe -u .\trials\2026-10-18\run_qwen_edit.py 512
 ```
 
 脚本将已有的橘猫图复制到 `ComfyUI\input\liuyue-qwen-base-source.png`，要求把猫改成白猫，保持街景与构图。使用 512×512、15 步、CFG 1。此任务约 7 分 3 秒完成，当时部分组件已缓存。该试验是单张参考图编辑，尚未验证多图参考、人物身份替换或带遮罩的局部重绘。
 
-结果图片：`D:/AI/comfyui-rx6650xt-lab\ComfyUI\output\Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png`。
+结果图片：`D:/AI/barely-comfy\ComfyUI\output\Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png`。
 
 ## 4. 其他组的入口和限制
 

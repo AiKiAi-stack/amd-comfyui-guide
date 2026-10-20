@@ -15,11 +15,11 @@
   "prompt_id": "0a480427-c742-4431-b348-51559ade75cf",
   "status": "success",
   "images": [
-    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png"
+    "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png"
   ],
   "image_metadata": [
     {
-      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png",
+      "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png",
       "dimensions": [
         512,
         512

@@ -4,7 +4,7 @@
   "file": "Qwen3-4B-Q4_K_M.gguf",
   "bytes": 2497281312,
   "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
-  "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\text_encoders\\Qwen3-4B-Q4_K_M.gguf",
+  "target": "D:/AI/barely-comfy\\ComfyUI\\models\\text_encoders\\Qwen3-4B-Q4_K_M.gguf",
   "verified_sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
   "completed_at": "2026-10-20T19:20:41+0800"
 }
