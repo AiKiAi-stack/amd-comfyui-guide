@@ -1,0 +1,64 @@
+{
+  "torch": {
+    "index": "https://repo.amd.com/rocm/whl-multi-arch/torch/",
+    "matching_files": [
+      "../torch-2.12.0%2Brocm7.14.0-cp310-cp310-win_amd64.whl",
+      "../torch-2.12.0%2Brocm7.14.0-cp311-cp311-win_amd64.whl",
+      "../torch-2.12.0%2Brocm7.14.0-cp312-cp312-win_amd64.whl",
+      "../torch-2.12.0%2Brocm7.14.0-cp313-cp313-win_amd64.whl",
+      "../torch-2.12.0%2Brocm7.14.0-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "torchvision": {
+    "index": "https://repo.amd.com/rocm/whl-multi-arch/torchvision/",
+    "matching_files": [
+      "../torchvision-0.27.0%2Brocm7.14.0-cp310-cp310-win_amd64.whl",
+      "../torchvision-0.27.0%2Brocm7.14.0-cp311-cp311-win_amd64.whl",
+      "../torchvision-0.27.0%2Brocm7.14.0-cp312-cp312-win_amd64.whl",
+      "../torchvision-0.27.0%2Brocm7.14.0-cp313-cp313-win_amd64.whl",
+      "../torchvision-0.27.0%2Brocm7.14.0-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "torchaudio": {
+    "index": "https://repo.amd.com/rocm/whl-multi-arch/torchaudio/",
+    "matching_files": [
+      "../torchaudio-2.11.0%2Brocm7.14.0-cp310-cp310-win_amd64.whl",
+      "../torchaudio-2.11.0%2Brocm7.14.0-cp311-cp311-win_amd64.whl",
+      "../torchaudio-2.11.0%2Brocm7.14.0-cp312-cp312-win_amd64.whl",
+      "../torchaudio-2.11.0%2Brocm7.14.0-cp313-cp313-win_amd64.whl",
+      "../torchaudio-2.11.0%2Brocm7.14.0-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "amd-torch-device-gfx1032": {
+    "index": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1032/",
+    "matching_files": [
+      "../amd_torch_device_gfx1032-2.12.0%2Brocm7.14.0-cp310-cp310-win_amd64.whl",
+      "../amd_torch_device_gfx1032-2.12.0%2Brocm7.14.0-cp311-cp311-win_amd64.whl",
+      "../amd_torch_device_gfx1032-2.12.0%2Brocm7.14.0-cp312-cp312-win_amd64.whl",
+      "../amd_torch_device_gfx1032-2.12.0%2Brocm7.14.0-cp313-cp313-win_amd64.whl",
+      "../amd_torch_device_gfx1032-2.12.0%2Brocm7.14.0-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "amd-torchvision-device-gfx1032": {
+    "index": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1032/",
+    "matching_files": [
+      "../amd_torchvision_device_gfx1032-0.27.0%2Brocm7.14.0-cp310-cp310-win_amd64.whl",
+      "../amd_torchvision_device_gfx1032-0.27.0%2Brocm7.14.0-cp311-cp311-win_amd64.whl",
+      "../amd_torchvision_device_gfx1032-0.27.0%2Brocm7.14.0-cp312-cp312-win_amd64.whl",
+      "../amd_torchvision_device_gfx1032-0.27.0%2Brocm7.14.0-cp313-cp313-win_amd64.whl",
+      "../amd_torchvision_device_gfx1032-0.27.0%2Brocm7.14.0-cp314-cp314-win_amd64.whl"
+    ]
+  },
+  "rocm": {
+    "index": "https://repo.amd.com/rocm/whl-multi-arch/rocm/",
+    "matching_files": [
+      "../rocm-7.14.0.tar.gz"
+    ]
+  },
+  "rocm-sdk-core": {
+    "index": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-core/",
+    "matching_files": [
+      "../rocm_sdk_core-7.14.0-py3-none-win_amd64.whl"
+    ]
+  }
+}

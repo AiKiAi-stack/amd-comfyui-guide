@@ -1,0 +1,48 @@
+{
+  "id": "kroma-head-swap",
+  "model": "kroma",
+  "feature": "换头／人物身份参考",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；一般参考编辑探索，非专用换头模型",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Edit image 1: replace the head and facial identity with the fictional adult woman from image 2, including curly copper-red hair and freckles. Keep the navy coat, red scarf, body pose and park background of image 1. Only one person.",
+  "expected": "B服装姿态背景保留，头部外观采用A。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-head-swap\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。",
+  "batch_id": "20261019T112736Z-93c01555",
+  "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+  "status": "success",
+  "batch_status": "success",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 395.62,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 395.62 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "9",
+      "node_id": "case03_9",
+      "filename_prefix": "FeatureBench/kroma-head-swap",
+      "role": "main"
+    }
+  ],
+  "images": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-head-swap_00001_.png",
+      "filename": "kroma-head-swap_00001_.png",
+      "subfolder": "FeatureBench",
+      "filename_prefix": "FeatureBench/kroma-head-swap",
+      "node_id": "case03_9",
+      "role": "main"
+    }
+  ],
+  "errors": [],
+  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\kroma-head-swap.png"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "moss-text",
+  "model": "moss",
+  "feature": "画面文字渲染",
+  "recipe": "t2i",
+  "claim_level": "上游布局文字功能，非已确认文章声明",
+  "inputs": [],
+  "prompt": "A minimalist poster on plain cream paper. The single word HELLO is printed in huge bold clean black capital letters across the upper half. A single small orange fruit below the word. Exact text: HELLO. No other text.",
+  "expected": "图片中准确出现可读的 HELLO，且没有其他文字。",
+  "started_at": 1792394896.945232,
+  "review": "pending",
+  "prompt_id": "d2410fc5-477f-425a-af69-3ae9f44616f6",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-text_00001_.png"
+  ],
+  "errors": [],
+  "elapsed_seconds": 221.37
+}

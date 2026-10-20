@@ -1,0 +1,10 @@
+{
+  "key": "model",
+  "source": "https://huggingface.co/molbal/MiniMax-H3-GGUF/resolve/b45874371c61c49bf04096602f5527aac71b360b/minimax-h3-ref2va-Q4_0.gguf?download=true",
+  "repo": "molbal/MiniMax-H3-GGUF",
+  "revision": "b45874371c61c49bf04096602f5527aac71b360b",
+  "path": "D:/AI/comfyui-rx6650xt-lab\\h3-sandbox\\ComfyUI\\models\\diffusion_models\\minimax-h3-ref2va-Q4_0.gguf",
+  "bytes": 11377542880,
+  "sha256": "737463c522b0f78ebe157df918c272935c2b61047ba7ae303008cfc84ba81644",
+  "verified_at": "2026-10-19T20:19:19.9355095+08:00"
+}

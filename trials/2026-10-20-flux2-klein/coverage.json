@@ -1,0 +1,345 @@
+{
+  "updated_at": "2026-10-20T14:38:55.070084+00:00",
+  "status": "seven_planned_edit_features_tested_with_partial_results",
+  "features": [
+    {
+      "case_id": "flux2-klein-single-color-pinned",
+      "feature": "单图编辑／改色（恢复锁页内存重试）",
+      "visual_verdict": "通过",
+      "review": "目视对照白包输入与实际输出：包身和提手均变为蓝色，保留居中手提包、皮革纹理和灰色摄影背景，包型及细节有小幅重绘，非像素保留。提交后30.52秒；恢复默认锁页内存后使用相同编辑图、权重和种子重试成功。旧禁用锁页配置的噪声图作为独立case保留；迭代编辑仅可使用本次已通过输出，derived_input哈希已与PNG一致。",
+      "output_image": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+      "image_metadata": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+          "dimensions": [
+            368,
+            672
+          ],
+          "bytes": 323984,
+          "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8",
+          "png_prompt_graph_matches_api": true,
+          "history_graph_matches_api": true,
+          "prompt_matches_case": true,
+          "references_match_case": true
+        }
+      ],
+      "input_metadata": [
+        {
+          "declared_path": "flux2-klein-bench/handbag_white.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+          "bytes": 5992775,
+          "dimensions": [
+            1536,
+            2752
+          ],
+          "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+        }
+      ],
+      "elapsed_seconds_after_submission": 30.52,
+      "result": "cases/flux2-klein-single-color-pinned/result.json",
+      "resource_summary": "cases/flux2-klein-single-color-pinned/resource-summary.json"
+    },
+    {
+      "case_id": "flux2-klein-dual-logo",
+      "feature": "双图编辑／配色与Logo迁移",
+      "visual_verdict": "通过",
+      "review": "对照白色手提包和蓝底黄色Comfy图案两份输入，输出为蓝色皮革包，正面出现清楚黄色Comfy图案，包型、提手和灰背景保持。迁移图案有生成式细微变化，不宣称像素或矢量精确复制。 提交后30.53秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+      "output_image": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
+      "image_metadata": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
+          "dimensions": [
+            368,
+            672
+          ],
+          "bytes": 314813,
+          "sha256": "29ec7c6b954f1493c1880803773b5b3972e7566f0efa9811610d5347e6941d0f",
+          "png_prompt_graph_matches_api": true,
+          "history_graph_matches_api": true,
+          "prompt_matches_case": true,
+          "references_match_case": true
+        }
+      ],
+      "input_metadata": [
+        {
+          "declared_path": "flux2-klein-bench/handbag_white.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+          "bytes": 5992775,
+          "dimensions": [
+            1536,
+            2752
+          ],
+          "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+        },
+        {
+          "declared_path": "flux2-klein-bench/comfy_logo_blue.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\comfy_logo_blue.png",
+          "bytes": 13382,
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256": "392b4f8b16d3aa197781f91597681905c1320e377b0d81af530c87640b044bf6"
+        }
+      ],
+      "elapsed_seconds_after_submission": 30.53,
+      "result": "cases/flux2-klein-dual-logo/result.json",
+      "resource_summary": "cases/flux2-klein-dual-logo/resource-summary.json"
+    },
+    {
+      "case_id": "flux2-klein-dual-people",
+      "feature": "双人合成／人物一致性",
+      "visual_verdict": "通过本例主要特征",
+      "review": "恰好两名成年女性在阳光公园同框；左侧铜红卷发、雀斑和黄毛衣，右侧黑直发、蓝外套红围巾，人物属性未串换。与两张虚构参考图相比，脸型和表情有变化；本结论是目视特征保留，不是身份相似度量化。 提交后36.74秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+      "output_image": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
+      "image_metadata": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "bytes": 451310,
+          "sha256": "a5d4950c46cd79b419bb6ebf1108ff360cad4feebbb4340152e0f58633aed445",
+          "png_prompt_graph_matches_api": true,
+          "history_graph_matches_api": true,
+          "prompt_matches_case": true,
+          "references_match_case": true
+        }
+      ],
+      "input_metadata": [
+        {
+          "declared_path": "featurebench/kroma-portrait-a.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\kroma-portrait-a.png",
+          "bytes": 358250,
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+        },
+        {
+          "declared_path": "featurebench/kroma-portrait-b.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\kroma-portrait-b.png",
+          "bytes": 350008,
+          "dimensions": [
+            512,
+            512
+          ],
+          "sha256": "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+        }
+      ],
+      "elapsed_seconds_after_submission": 36.74,
+      "result": "cases/flux2-klein-dual-people/result.json",
+      "resource_summary": "cases/flux2-klein-dual-people/resource-summary.json"
+    },
+    {
+      "case_id": "flux2-klein-style",
+      "feature": "风格转换",
+      "visual_verdict": "部分达到／水彩清楚，光照改变",
+      "review": "出现明确水彩晕染与冷压纸纹，猫背影、窗门、植物和街道构图大致保留；但原图深色雨夜与霓虹明显变浅，近似白昼光照，不能称严格保留原图环境。 提交后30.76秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+      "output_image": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
+      "image_metadata": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "bytes": 550797,
+          "sha256": "59fc18d9300e583da52ce1ae2fe8f6861385b09186d0db4bc20546a3811a9e9c",
+          "png_prompt_graph_matches_api": true,
+          "history_graph_matches_api": true,
+          "prompt_matches_case": true,
+          "references_match_case": true
+        }
+      ],
+      "input_metadata": [
+        {
+          "declared_path": "featurebench/cat.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\cat.png",
+          "bytes": 1011101,
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+        }
+      ],
+      "elapsed_seconds_after_submission": 30.76,
+      "result": "cases/flux2-klein-style/result.json",
+      "resource_summary": "cases/flux2-klein-style/resource-summary.json"
+    },
+    {
+      "case_id": "flux2-klein-replace-zh",
+      "feature": "对象替换／中文指令",
+      "visual_verdict": "部分达到／替换生效，壶结构错误",
+      "review": "中文指令已使白包消失，并在原灰色摄影背景中生成红色陶瓷壶状主体；但左右都像壶嘴，没有正常把手，茶壶结构明显错误。不能把对象替换API成功等同完整画质验收。 提交后25.66秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+      "output_image": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
+      "image_metadata": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
+          "dimensions": [
+            368,
+            672
+          ],
+          "bytes": 272674,
+          "sha256": "e4d8e3ef011dea5c633cd8bb2a7206e00505104fa5ec5251640f9901b662d287",
+          "png_prompt_graph_matches_api": true,
+          "history_graph_matches_api": true,
+          "prompt_matches_case": true,
+          "references_match_case": true
+        }
+      ],
+      "input_metadata": [
+        {
+          "declared_path": "flux2-klein-bench/handbag_white.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+          "bytes": 5992775,
+          "dimensions": [
+            1536,
+            2752
+          ],
+          "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+        }
+      ],
+      "elapsed_seconds_after_submission": 25.66,
+      "result": "cases/flux2-klein-replace-zh/result.json",
+      "resource_summary": "cases/flux2-klein-replace-zh/resource-summary.json"
+    },
+    {
+      "case_id": "flux2-klein-remove",
+      "feature": "对象删除",
+      "visual_verdict": "通过",
+      "review": "猫被完整删除，没有可辨动物残留；原位置自然补成木质门廊/门板和植物，雨夜街道、咖啡窗和主要视角保留。细节发生重绘，没有遮罩节点或像素级背景保留保证。 提交后25.9秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+      "output_image": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
+      "image_metadata": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
+          "dimensions": [
+            512,
+            512
+          ],
+          "bytes": 444241,
+          "sha256": "2c36d14dff05ae11d056d66e5a6c9e562073bc26d2ba01c61470c32c80f7c9fa",
+          "png_prompt_graph_matches_api": true,
+          "history_graph_matches_api": true,
+          "prompt_matches_case": true,
+          "references_match_case": true
+        }
+      ],
+      "input_metadata": [
+        {
+          "declared_path": "featurebench/cat.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\cat.png",
+          "bytes": 1011101,
+          "dimensions": [
+            768,
+            768
+          ],
+          "sha256": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+        }
+      ],
+      "elapsed_seconds_after_submission": 25.9,
+      "result": "cases/flux2-klein-remove/result.json",
+      "resource_summary": "cases/flux2-klein-remove/resource-summary.json"
+    },
+    {
+      "case_id": "flux2-klein-iterative",
+      "feature": "迭代编辑／第二轮修改",
+      "visual_verdict": "部分达到／添加生效，蝴蝶结偏大",
+      "review": "已对照真正输入的上一轮蓝包输出：蓝色、包型、灰背景大致保持，左侧提手根部新增红色丝质蝴蝶结，确认第二轮图像编辑生效。蝴蝶结覆盖较大包面，不满足提示词small的小尺寸要求，因此只记部分达到。输入SHA与已目视通过的single-color-pinned输出一致，未使用首轮失败噪声图。提交后25.32秒，未含服务启动。",
+      "output_image": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png",
+      "image_metadata": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png",
+          "dimensions": [
+            368,
+            688
+          ],
+          "bytes": 314042,
+          "sha256": "61973f6d4f088b0dce332188187f8c1726f03551368441929a9601e79bea2c70",
+          "png_prompt_graph_matches_api": true,
+          "history_graph_matches_api": true,
+          "prompt_matches_case": true,
+          "references_match_case": true
+        }
+      ],
+      "input_metadata": [
+        {
+          "declared_path": "flux2-klein-bench/flux2-klein-single-color-pinned.png",
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\flux2-klein-single-color-pinned.png",
+          "bytes": 323984,
+          "dimensions": [
+            368,
+            672
+          ],
+          "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+        }
+      ],
+      "elapsed_seconds_after_submission": 25.32,
+      "result": "cases/flux2-klein-iterative/result.json",
+      "resource_summary": "cases/flux2-klein-iterative/resource-summary.json"
+    }
+  ],
+  "partial_case_ids": [
+    "flux2-klein-style",
+    "flux2-klein-replace-zh",
+    "flux2-klein-iterative"
+  ],
+  "diagnostic_cases": [
+    {
+      "case_id": "flux2-klein-single-color",
+      "result": "cases/flux2-klein-single-color/result.json",
+      "visual_review": {
+        "verdict": "失败／噪声图",
+        "notes": "API终态success、PNG/history/API绑定一致，但目视检查全幅重复噪声纹理，没有可辨手提包，白包改蓝包目标失败。提交后51.18秒；保留原图、参考输入SHA与dynamic-nvme运行证据。后续迭代不能用此图作为已通过的输入。"
+      },
+      "images": [
+        "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color_00001_.png"
+      ]
+    },
+    {
+      "case_id": "flux2-klein-t2i-nvme-control",
+      "result": "cases/flux2-klein-t2i-nvme-control/result.json",
+      "visual_review": {
+        "verdict": "失败／噪声图",
+        "notes": "目视确认全幅重复噪声纹理，没有猫、咖啡馆或HELLO；API success和全图绑定通过不代表视觉成功。同服务T2I对照也失败，说明问题不局限于参考编辑链。提交后21.44秒，不含服务启动；与旧成功服务存在多项运行参数差异，尚不能归因单项。"
+      },
+      "images": [
+        "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-nvme-control_00001_.png"
+      ]
+    },
+    {
+      "case_id": "flux2-klein-t2i-pinned-control",
+      "result": "cases/flux2-klein-t2i-pinned-control/result.json",
+      "visual_review": {
+        "verdict": "通过",
+        "notes": "目视确认清晰橘猫、咖啡馆雨夜霓虹、准确的HELLO招牌。与噪声T2I对照使用同一权重、G路径、seed、提示词及dynamic/reserve2/FP8配置，唯一有意改变的启动参数是去掉--disable-pinned-memory，使用新服务。恢复正常支持该参数在当前栈中影响正确性；并不识别底层HIP/拷贝根因，也不是严格速度倍率。提交后40.64秒，未含启动。背景仍有其他招牌文字，未严格满足no other writing。"
+      },
+      "images": [
+        "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-pinned-control_00001_.png"
+      ]
+    }
+  ],
+  "runtime_findings": "Two API-success outputs with disabled pinned memory were noise. Removing only that intended launch parameter in a new service restored T2I and all seven edits. This scopes a correctness issue to this local combination; low-level HIP/WDDM cause is not established.",
+  "scope": "Editing references use about 0.25 MP and preserve aspect ratio; output is not necessarily 512-square. No new 1024 test; historical 1024 native abort without output remains preserved. Timings exclude ComfyUI cold startup.",
+  "logs": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\service-logs\\server-flux2-klein-nvme.stderr.log",
+      "sha256": "845db500adb5fb63187211e4afe90cc8b1f5ff7048c965eea1d6eeecd9f9bfee"
+    },
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\service-logs\\server-flux2-klein-nvme.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\service-logs\\server-flux2-klein-nvme-pinned.stderr.log",
+      "sha256": "6caff299643d14996522e9a55ade7a63763f82a3a9edf95c0551ccaeaab71da6"
+    },
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\service-logs\\server-flux2-klein-nvme-pinned.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

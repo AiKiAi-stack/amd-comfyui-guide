@@ -1,0 +1,163 @@
+{
+  "prompt": [
+    5,
+    "48ce1779-e28f-4b1c-98e5-dfb8ff52653c",
+    {
+      "34": {
+        "inputs": {
+          "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple"
+      },
+      "2": {
+        "inputs": {
+          "model": [
+            "34",
+            0
+          ],
+          "shift": 3.0
+        },
+        "class_type": "ModelSamplingAuraFlow"
+      },
+      "20": {
+        "inputs": {
+          "clip": [
+            "34",
+            1
+          ],
+          "text": "A tasteful charcoal life drawing of a clearly adult woman aged 35, seated in a relaxed studio pose, nonsexual full-body nude figure study, classical art school anatomy study, no sexual activity, textured paper, no text."
+        },
+        "class_type": "CLIPTextEncode"
+      },
+      "40": {
+        "inputs": {
+          "conditioning": [
+            "20",
+            0
+          ]
+        },
+        "class_type": "ConditioningZeroOut"
+      },
+      "6": {
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage"
+      },
+      "17": {
+        "inputs": {
+          "model": [
+            "2",
+            0
+          ],
+          "positive": [
+            "20",
+            0
+          ],
+          "negative": [
+            "40",
+            0
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 665025004,
+          "steps": 8,
+          "cfg": 1.0,
+          "sampler_name": "res_multistep",
+          "scheduler": "simple",
+          "denoise": 1.0
+        },
+        "class_type": "KSampler"
+      },
+      "11": {
+        "inputs": {
+          "samples": [
+            "17",
+            0
+          ],
+          "vae": [
+            "34",
+            2
+          ]
+        },
+        "class_type": "VAEDecode"
+      },
+      "26": {
+        "inputs": {
+          "images": [
+            "11",
+            0
+          ],
+          "filename_prefix": "FeatureBench/zimage-aio-figure-art"
+        },
+        "class_type": "SaveImage"
+      }
+    },
+    {
+      "create_time": 1792505080699
+    },
+    [
+      "26"
+    ]
+  ],
+  "outputs": {
+    "26": {
+      "images": [
+        {
+          "filename": "zimage-aio-figure-art_00001_.png",
+          "subfolder": "FeatureBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "48ce1779-e28f-4b1c-98e5-dfb8ff52653c",
+          "timestamp": 1792505080699
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "34",
+            "2",
+            "6"
+          ],
+          "prompt_id": "48ce1779-e28f-4b1c-98e5-dfb8ff52653c",
+          "timestamp": 1792505080699
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "48ce1779-e28f-4b1c-98e5-dfb8ff52653c",
+          "timestamp": 1792505109536
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "26": {
+      "node_id": "26",
+      "display_node": "26",
+      "parent_node": null,
+      "real_node_id": "26"
+    }
+  }
+}

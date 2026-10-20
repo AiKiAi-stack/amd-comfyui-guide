@@ -1,0 +1,39 @@
+{
+  "id": "qwen-style-edit",
+  "model": "qwen",
+  "feature": "图生图／风格转换",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题图生图；风格转换为具体测试任务",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "Transform this photograph into a delicate watercolor painting. Keep the orange cat, its pose, the cafe entrance, the rainy street and the original framing. Use visible textured paper and soft watercolor washes. No text.",
+  "expected": "主体与构图保留，风格明显变为水彩。",
+  "batch_id": "20261019T113632Z-f2905769",
+  "prompt_id": "9e18193e-7ba7-4982-bdef-b329cfdb09d6",
+  "status": "runner_error",
+  "batch_status": "runner_error",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 322.69,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 322.69 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "7",
+      "node_id": "case04_7",
+      "filename_prefix": "FeatureBench/qwen-style-edit",
+      "role": "main"
+    }
+  ],
+  "images": [],
+  "errors": [
+    {
+      "exception_type": "ConnectionError",
+      "exception_message": "HTTPConnectionPool(host='127.0.0.1', port=8188): Max retries exceeded with url: /history/9e18193e-7ba7-4982-bdef-b329cfdb09d6 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8188): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+    }
+  ],
+  "error": "HTTPConnectionPool(host='127.0.0.1', port=8188): Max retries exceeded with url: /history/9e18193e-7ba7-4982-bdef-b329cfdb09d6 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8188): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+}

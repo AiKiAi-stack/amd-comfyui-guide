@@ -1,0 +1,374 @@
+{
+  "_id": "6ad1a3823ad2f3f5df5f0a87",
+  "id": "webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF",
+  "private": false,
+  "pipeline_tag": "text-to-image",
+  "library_name": "gguf",
+  "tags": [
+    "gguf",
+    "sakura",
+    "sakura-media",
+    "stable-diffusion.cpp",
+    "comfyui",
+    "text-encoder",
+    "flux",
+    "flux-3-image-klein",
+    "qwen3-vl",
+    "uncensored",
+    "abliterated",
+    "not-for-all-audiences",
+    "text-to-image",
+    "base_model:Qwen/Qwen3-VL-4B-Instruct",
+    "base_model:finetune:Qwen/Qwen3-VL-4B-Instruct",
+    "license:apache-2.0",
+    "endpoints_compatible",
+    "region:us",
+    "imatrix",
+    "conversational"
+  ],
+  "downloads": 2134,
+  "likes": 17,
+  "modelId": "webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF",
+  "author": "webmp3",
+  "sha": "cd9633fa27922b60ec6c876317e7482adf3baf0f",
+  "lastModified": "2026-10-17T10:44:51.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "A vast floating harbour city above the clouds at golden hour: huge wooden and brass airships docking at suspended piers, tiny people on the gangways, waterfalls spilling off the edge of a sky island, warm light, epic wide shot, detailed fantasy concept art.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/01_airship.png"
+      }
+    },
+    {
+      "text": "A hand-painted 1980s fantasy film poster: a warrior woman with long braided hair and a glowing sword stands on a cliff facing a gigantic dragon wreathed in flames, storm clouds and a burning castle behind her. The title at the top reads \"EMBER CROWN\" in ornate golden letters, the tagline below says \"One sword. One kingdom.\"",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/02_emberqueen.png"
+      }
+    },
+    {
+      "text": "A colossal rusted mecha robot standing motionless in a flooded city at sunrise, moss and flowers growing on its armour, a tiny boat with a child passing between its legs, soft golden mist, epic cinematic wide shot, concept art.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/03_mecha.png"
+      }
+    },
+    {
+      "text": "Anime movie key visual: a mountain village at night during a lantern festival, hundreds of glowing paper lanterns rising into a sky full of stars, a girl in a yukata with a fox mask on her head looking up, warm light, rich detail, painterly background.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/04_lanterns.png"
+      }
+    },
+    {
+      "text": "A narrow rainy street at night in a dense city, neon signs in many colours reflected in the puddles, a lone cyclist holding an umbrella, cinematic wide shot.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/05_street.png"
+      }
+    },
+    {
+      "text": "Portrait photo of an elderly fisherman with a weathered face and a grey beard, wearing a yellow raincoat, a harbour with boats softly out of focus behind him, overcast light.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/06_fisherman.png"
+      }
+    },
+    {
+      "text": "A snow leopard standing alert on a snowy ridge in a light snowfall, head turned toward the camera, both rounded ears upright and clearly visible with black backs and white tufts, thick spotted fur dusted with snow, pale blue eyes, shallow depth of field, wildlife photograph, telephoto lens.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/07_leopard.png"
+      }
+    },
+    {
+      "text": "A clockwork dragon sculpture made of polished brass gears, springs and tiny rivets, wings of thin copper plates, perched on an old wooden workbench, studio macro photograph with dramatic side light and a soft dark background.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/08_clockdragon.png"
+      }
+    },
+    {
+      "text": "A Japanese woodblock print in ukiyo-e style: a samurai cat in armour fishing from a wooden bridge under a huge full moon, ripples on the water, cherry blossom branches, flat colours with fine black outlines, a small red seal in the corner.",
+      "output": {
+        "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/09_woodblock.png"
+      }
+    }
+  ],
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "base_model": "Qwen/Qwen3-VL-4B-Instruct",
+    "base_model_relation": "finetune",
+    "library_name": "gguf",
+    "pipeline_tag": "text-to-image",
+    "tags": [
+      "sakura",
+      "sakura-media",
+      "gguf",
+      "stable-diffusion.cpp",
+      "comfyui",
+      "text-encoder",
+      "flux",
+      "flux-3-image-klein",
+      "qwen3-vl",
+      "uncensored",
+      "abliterated",
+      "not-for-all-audiences"
+    ],
+    "widget": [
+      {
+        "text": "A vast floating harbour city above the clouds at golden hour: huge wooden and brass airships docking at suspended piers, tiny people on the gangways, waterfalls spilling off the edge of a sky island, warm light, epic wide shot, detailed fantasy concept art.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/01_airship.png"
+        }
+      },
+      {
+        "text": "A hand-painted 1980s fantasy film poster: a warrior woman with long braided hair and a glowing sword stands on a cliff facing a gigantic dragon wreathed in flames, storm clouds and a burning castle behind her. The title at the top reads \"EMBER CROWN\" in ornate golden letters, the tagline below says \"One sword. One kingdom.\"",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/02_emberqueen.png"
+        }
+      },
+      {
+        "text": "A colossal rusted mecha robot standing motionless in a flooded city at sunrise, moss and flowers growing on its armour, a tiny boat with a child passing between its legs, soft golden mist, epic cinematic wide shot, concept art.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/03_mecha.png"
+        }
+      },
+      {
+        "text": "Anime movie key visual: a mountain village at night during a lantern festival, hundreds of glowing paper lanterns rising into a sky full of stars, a girl in a yukata with a fox mask on her head looking up, warm light, rich detail, painterly background.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/04_lanterns.png"
+        }
+      },
+      {
+        "text": "A narrow rainy street at night in a dense city, neon signs in many colours reflected in the puddles, a lone cyclist holding an umbrella, cinematic wide shot.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/05_street.png"
+        }
+      },
+      {
+        "text": "Portrait photo of an elderly fisherman with a weathered face and a grey beard, wearing a yellow raincoat, a harbour with boats softly out of focus behind him, overcast light.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/06_fisherman.png"
+        }
+      },
+      {
+        "text": "A snow leopard standing alert on a snowy ridge in a light snowfall, head turned toward the camera, both rounded ears upright and clearly visible with black backs and white tufts, thick spotted fur dusted with snow, pale blue eyes, shallow depth of field, wildlife photograph, telephoto lens.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/07_leopard.png"
+        }
+      },
+      {
+        "text": "A clockwork dragon sculpture made of polished brass gears, springs and tiny rivets, wings of thin copper plates, perched on an old wooden workbench, studio macro photograph with dramatic side light and a soft dark background.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/08_clockdragon.png"
+        }
+      },
+      {
+        "text": "A Japanese woodblock print in ukiyo-e style: a samurai cat in armour fishing from a wooden bridge under a huge full moon, ripples on the water, cherry blossom branches, flat colours with fine black outlines, a small red seal in the corner.",
+        "output": {
+          "url": "https://huggingface.co/webmp3/Sakura-FLUX.3-Image-Klein-TextEncoder-Uncensored-GGUF/resolve/main/images/09_woodblock.png"
+        }
+      }
+    ]
+  },
+  "gguf": {
+    "total": 4022468096,
+    "architecture": "qwen3vl",
+    "context_length": 262144,
+    "quantize_imatrix_file": "D:\\AI\\Quantisierung\\modelle\\qwen3vl-4b-uncensored\\imatrix-uncensored.dat",
+    "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {%- if messages[0].content is string %}\n            {{- messages[0].content }}\n        {%- else %}\n            {%- for content in messages[0].content %}\n                {%- if 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' }}\n        {%- if messages[0].content is string %}\n            {{- messages[0].content }}\n        {%- else %}\n            {%- for content in messages[0].content %}\n                {%- if 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- for message in messages %}\n    {%- if message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content in message.content %}\n                {%- if content.type == 'image' or 'image' in content or 'image_url' in content %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                    {%- if add_vision_id %}Picture {{ image_count.value }}: {% endif -%}\n                    <|vision_start|><|image_pad|><|vision_end|>\n                {%- elif content.type == 'video' or 'video' in content %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                    {%- if add_vision_id %}Video {{ video_count.value }}: {% endif -%}\n                    <|vision_start|><|video_pad|><|vision_end|>\n                {%- elif 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role + '\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content_item in message.content %}\n                {%- if 'text' in content_item %}\n                    {{- content_item.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and message.content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {%- if message.content is string %}\n            {{- message.content }}\n        {%- else %}\n            {%- for content in message.content %}\n                {%- if content.type == 'image' or 'image' in content or 'image_url' in content %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                    {%- if add_vision_id %}Picture {{ image_count.value }}: {% endif -%}\n                    <|vision_start|><|image_pad|><|vision_end|>\n                {%- elif content.type == 'video' or 'video' in content %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                    {%- if add_vision_id %}Video {{ video_count.value }}: {% endif -%}\n                    <|vision_start|><|video_pad|><|vision_end|>\n                {%- elif 'text' in content %}\n                    {{- content.text }}\n                {%- endif %}\n            {%- endfor %}\n        {%- endif %}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+    "bos_token": "<|endoftext|>",
+    "eos_token": "<|im_end|>",
+    "totalFileSize": 2497281984
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "34a3a0244cd19c20972800f9b69770cf1a06f50a",
+      "size": 2778
+    },
+    {
+      "rfilename": "LICENSE-Apache-2.0.txt",
+      "blobId": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    {
+      "rfilename": "NOTICE",
+      "blobId": "fa96a93fed608fcc569313b3c1ac347e7f11c9dd",
+      "size": 931
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "c0ab64e0d96a57a43a4ffb330141620b509a9cea",
+      "size": 17630
+    },
+    {
+      "rfilename": "README_zh.md",
+      "blobId": "f8c0dee3212195dd68ecf88d215d08d67d595116",
+      "size": 4133
+    },
+    {
+      "rfilename": "SHA256SUMS",
+      "blobId": "7ca6a1bf993852c8c3ad09171c1dca4c37a8d01e",
+      "size": 2091
+    },
+    {
+      "rfilename": "Sakura-FLUX.3-Image-Klein_ComfyUI_workflow_api.json",
+      "blobId": "643434d246d691dfc440885d5f08e3cfdaf4525c",
+      "size": 1881
+    },
+    {
+      "rfilename": "Sakura-FLUX.3-Image-Klein_ComfyUI_workflow_api_safetensors.json",
+      "blobId": "bbd4980c55d1eae1ec7d945ac680efb38ae16e42",
+      "size": 1887
+    },
+    {
+      "rfilename": "Sakura-TextEncoder-Qwen3VL-4B-Uncensored-Q4_K_M-2.33GiB.gguf",
+      "blobId": "7c6f4937be80783f1b47b5fae3f52a56eb14215c",
+      "size": 2497281984,
+      "lfs": {
+        "sha256": "cc2035bb7340ff566de148fd6dbdeaca0997830a004a1a470d8af2fa7097f13f",
+        "size": 2497281984,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "Sakura-TextEncoder-Qwen3VL-4B-Uncensored-Q5_K_M-2.69GiB.gguf",
+      "blobId": "b81e0f983ba702a4f865105fa4b26e5b46b3123a",
+      "size": 2889514944,
+      "lfs": {
+        "sha256": "f194eb8017df0debeb651d15ebf7b9c1be97318980a40de49e2ea66f177d814c",
+        "size": 2889514944,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "Sakura-TextEncoder-Qwen3VL-4B-Uncensored-Q6_K-3.08GiB.gguf",
+      "blobId": "7ac4744d7cecc8fc4f081b0c26bcbf0f7dcd3f2b",
+      "size": 3306262144,
+      "lfs": {
+        "sha256": "1455faa2466ca0e9b5b7276024a251b12065499ca3dd6d2d95a75a15090808f5",
+        "size": 3306262144,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "Sakura-TextEncoder-Qwen3VL-4B-Uncensored-Q8_0-3.99GiB.gguf",
+      "blobId": "d8a4b021b015ecf588378ea5852e42a2e2d9a3c9",
+      "size": 4280406144,
+      "lfs": {
+        "sha256": "170fecbf9e3bb2dd0b360968ae3fe9f32555f8b03f89aba1421dd2bfe4aae614",
+        "size": 4280406144,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "Sakura-TextEncoder-Qwen3VL-4B-Uncensored-bf16-8.27GiB.safetensors",
+      "blobId": "d30c6936587109743217005450a29e2583a6fe75",
+      "size": 8875719408,
+      "lfs": {
+        "sha256": "334e45aaccd7533a3bba6bffd2f3550dc9ab7b1ef8a91b4663928dcfbc046b45",
+        "size": 8875719408,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "assets/sakura-logo.svg",
+      "blobId": "5321d9434c321b95c7f09197d39efe7ee6adea23",
+      "size": 133693
+    },
+    {
+      "rfilename": "images/01_airship.png",
+      "blobId": "23af1426ac97515ee748d5bc04b0ab7c58b15324",
+      "size": 1966885,
+      "lfs": {
+        "sha256": "1f88784b9f3da2b7f01b7e0692c739fea8234808bde9ae389e947653778cfb1b",
+        "size": 1966885,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/02_emberqueen.png",
+      "blobId": "02c7095fbfa101bd1c0e6c3c2eba6675a7fd92f9",
+      "size": 2079453,
+      "lfs": {
+        "sha256": "52aca736dd01df1cd217ab47f23922ade84dff35d67ac7ccc8e5d8e941d9dbe2",
+        "size": 2079453,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/03_mecha.png",
+      "blobId": "bd0713b8ad6dea069b2238bd8db3f39591e16745",
+      "size": 1806548,
+      "lfs": {
+        "sha256": "0d73fc69a38771a23c33b7e7d9d6acb8406821d25fe20dd334a269cad1c4bf4b",
+        "size": 1806548,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/04_lanterns.png",
+      "blobId": "d8307b7c5b8f7b60e0f9800cbd2a5aca7f78217a",
+      "size": 1848997,
+      "lfs": {
+        "sha256": "2931cf26e0507d14aff808592d471b1bcc5216fc51ec7bffa8abdbdc7a0ae56e",
+        "size": 1848997,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/05_street.png",
+      "blobId": "d4964d04f24e50cd01e665740a2e8384a15d0959",
+      "size": 2012193,
+      "lfs": {
+        "sha256": "ad19fc32f30d8369a0be3355131ef55b0f5d8822a02ab7361a74894bc9e5c1d4",
+        "size": 2012193,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/06_fisherman.png",
+      "blobId": "d6c72afe871f87da0d3d97deccde2e443c5d6d9e",
+      "size": 1770299,
+      "lfs": {
+        "sha256": "8d8e9e825c615028a893c48db14372cfc284c55a1f78308e0e57bd2b5038e194",
+        "size": 1770299,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/07_leopard.png",
+      "blobId": "8aba88722a281cbc8a1ec3502947a5f10ba70841",
+      "size": 1613860,
+      "lfs": {
+        "sha256": "ddeee7a7631bbfcebe05ea4a2b36490c67d0e1f6587475cd03401b648c36f939",
+        "size": 1613860,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/08_clockdragon.png",
+      "blobId": "be30c3c9d9ef0fd62665c1106e5864c7c4e794c9",
+      "size": 1596494,
+      "lfs": {
+        "sha256": "204ceefa9a800f928eb1400b746cee14fd039a87d4777bc74ec83f80c950f4bb",
+        "size": 1596494,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "images/09_woodblock.png",
+      "blobId": "b6bfbade8380a9c13a7a109322b618af40394003",
+      "size": 2084499,
+      "lfs": {
+        "sha256": "a09f336eb9982ca10c21a93fd5577160297534a2856e63ead4bb807f3a8cfc30",
+        "size": 2084499,
+        "pointerSize": 132
+      }
+    }
+  ],
+  "spaces": [
+    "amisima/Flux-3-Image"
+  ],
+  "createdAt": "2026-10-16T04:09:38.000Z",
+  "usedStorage": 21865963852
+}

@@ -1,0 +1,16 @@
+{
+  "captured_at": "2026-10-20T14:06:01.043185+00:00",
+  "service_label": "isolated-zimage-aio-photo-9step",
+  "shared_service": true,
+  "note": "Six cases ran serially in this one service. Log snapshot includes all six cases; not an isolated per-case startup.",
+  "logs": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\service-logs\\isolated-zimage-aio-photo-9step\\server.stderr.log",
+      "sha256": "293a8b1cacb5552be57547f327e91a1761941717e80f9304638d38b92223de1d"
+    },
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\service-logs\\isolated-zimage-aio-photo-9step\\server.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

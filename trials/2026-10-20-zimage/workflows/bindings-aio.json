@@ -1,0 +1,182 @@
+{
+  "source": {
+    "repository": "SeeSee21/Z-Image-Turbo-AIO",
+    "revision": "3614ae1a6ceec70d8b1b02f41df3af72ac756241",
+    "source_workflow": "source_workflows/z-image-turbo-aio-workflow.json",
+    "source_workflow_sha256": "1ef90efdc7c84a93e7c036dcd2a346027514511b7fa88857f1df329722f68053",
+    "metadata": "source_workflows/api-model-revision-3614ae1a6ceec70d8b1b02f41df3af72ac756241.json"
+  },
+  "checkpoint": {
+    "source_filename": "z-image-turbo-fp8-aio.safetensors",
+    "expected_bytes": 10345190658,
+    "expected_sha256": "f569c42b6797a89e65e80c743d6dfd230ed9318237aa242c92777deb22fad660",
+    "ComfyUI_model_directory": "models/checkpoints"
+  },
+  "api_bindings": {
+    "checkpoint_node_id": "34",
+    "model_sampling_node_id": "2",
+    "positive_prompt_node_id": "20",
+    "negative_conditioning_node_id": "40",
+    "latent_size_node_id": "6",
+    "sampler_node_id": "17",
+    "sampler_seed_input": "seed",
+    "sampler_steps_input": "steps",
+    "sampler_cfg_input": "cfg",
+    "sampler_name_input": "sampler_name",
+    "sampler_scheduler_input": "scheduler",
+    "sampler_denoise_input": "denoise",
+    "vae_decode_node_id": "11",
+    "save_image_node_id": "26",
+    "save_image_filename_prefix_input": "filename_prefix"
+  },
+  "source_defaults": {
+    "positive_prompt": "",
+    "seed": 322571269041708,
+    "seed_behavior": "fixed",
+    "steps": 9,
+    "cfg": 1,
+    "sampler_name": "res_multistep",
+    "scheduler": "simple",
+    "denoise": 1,
+    "model_sampling_shift": 3,
+    "width": 1152,
+    "height": 1736,
+    "batch_size": 1,
+    "filename_prefix": "Z-Image-L",
+    "lora": {
+      "source_node_id": "41",
+      "source_mode": 4,
+      "source_filename": "z-image\\woman877-zimage.safetensors",
+      "included_in_api_prompt": false,
+      "reason": "The exact pinned source workflow has this optional LoRA node in bypass mode."
+    }
+  },
+  "step_case_overrides": {
+    "source_workflow_active": {
+      "steps": 9,
+      "meaning": "Exact active KSampler value in the pinned workflow."
+    },
+    "article_8_step": {
+      "steps": 8,
+      "meaning": "Article and pinned README recommendation; override only the KSampler steps field."
+    },
+    "article_4_step_comparison": {
+      "steps": 4,
+      "meaning": "Article's speed comparison; not the pinned workflow default or a separately verified optimum."
+    },
+    "all_variants_keep": {
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model_sampling_shift": 3
+    }
+  },
+  "excluded_or_inactive_nodes": {
+    "excluded_from_api": [
+      {
+        "id": 29,
+        "type": "Reroute",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 30,
+        "type": "Reroute",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 31,
+        "type": "Reroute",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 13,
+        "type": "Image Comparer (rgthree)",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 23,
+        "type": "MarkdownNote",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 35,
+        "type": "MarkdownNote",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 28,
+        "type": "Fast Groups Bypasser (rgthree)",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 32,
+        "type": "MarkdownNote",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 41,
+        "type": "LoraLoader",
+        "reason": "UI-only or resolved passthrough"
+      },
+      {
+        "id": 43,
+        "type": "Fast Groups Bypasser (rgthree)",
+        "reason": "UI-only or resolved passthrough"
+      }
+    ],
+    "inactive_source_nodes": [
+      {
+        "id": 12,
+        "type": "VAEDecode",
+        "mode": 4,
+        "widgets": []
+      },
+      {
+        "id": 16,
+        "type": "LatentUpscaleBy",
+        "mode": 4,
+        "widgets": [
+          "nearest-exact",
+          1.5
+        ]
+      },
+      {
+        "id": 14,
+        "type": "KSampler",
+        "mode": 4,
+        "widgets": [
+          147055680729376,
+          "fixed",
+          8,
+          1,
+          "res_multistep",
+          "simple",
+          0.55
+        ]
+      },
+      {
+        "id": 27,
+        "type": "SaveImage",
+        "mode": 4,
+        "widgets": [
+          "Z-Image-H"
+        ]
+      },
+      {
+        "id": 41,
+        "type": "LoraLoader",
+        "mode": 4,
+        "widgets": [
+          "z-image\\woman877-zimage.safetensors",
+          1,
+          1
+        ]
+      }
+    ],
+    "notes": [
+      "The active base branch is preserved. The optional high-resolution branch is bypassed in the source workflow.",
+      "The rgthree toggle and comparison nodes are UI helpers and are omitted from the API prompt."
+    ]
+  }
+}

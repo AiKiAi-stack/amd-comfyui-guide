@@ -1,0 +1,11 @@
+{
+  "repo": "junwenlu/flux-3-image-klein-ComfyUI",
+  "revision": "89a908e886b5c8b08001488bb65691703375968e",
+  "file": "text_encoders/qwen3vl_4b_int8_convrot.safetensors",
+  "bytes": 4858559240,
+  "sha256": "32de113cbf8282b02cbff0794b637b9d6676da09314a1db5a30bcea9bf4ee01c",
+  "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\text_encoders\\qwen3vl_4b_int8_convrot.safetensors",
+  "source": "https://www.modelscope.cn/api/v1/models/junwenlu/flux-3-image-klein-ComfyUI/repo",
+  "verified_sha256": "32de113cbf8282b02cbff0794b637b9d6676da09314a1db5a30bcea9bf4ee01c",
+  "completed_at": "2026-10-20T11:00:46+0800"
+}

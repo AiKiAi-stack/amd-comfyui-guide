@@ -1,0 +1,727 @@
+{
+  "prompt": [
+    0,
+    "07c35366-1b98-4965-becc-cd0798a93a5c",
+    {
+      "case01_1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+        }
+      },
+      "case01_2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+          "type": "krea2",
+          "device": "default"
+        }
+      },
+      "case01_3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_vae.safetensors"
+        }
+      },
+      "case01_4": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "Use the visual style of the reference image: bold geometric two-color blue and orange screenprint, rough paper texture. Create a new image of an owl perched on a branch. Preserve the reference print style, not its fox subject. No text.",
+          "clip": [
+            "case01_2",
+            0
+          ]
+        }
+      },
+      "case01_5": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "case01_41",
+            0
+          ]
+        }
+      },
+      "case01_6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "case01_7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "case01_1",
+            0
+          ],
+          "positive": [
+            "batch_barrier_01",
+            0
+          ],
+          "negative": [
+            "case01_5",
+            0
+          ],
+          "latent_image": [
+            "case01_6",
+            0
+          ],
+          "seed": 66502001,
+          "steps": 4,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "case01_8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "case01_7",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case01_9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "case01_8",
+            0
+          ],
+          "filename_prefix": "FeatureBench/kroma-style-ref"
+        }
+      },
+      "case01_30": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "featurebench/kroma-style-source.png"
+        }
+      },
+      "case01_31": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "case01_30",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "case01_40": {
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "inputs": {
+          "clip": [
+            "case01_2",
+            0
+          ],
+          "prompt": "Use the visual style of the reference image: bold geometric two-color blue and orange screenprint, rough paper texture. Create a new image of an owl perched on a branch. Preserve the reference print style, not its fox subject. No text.",
+          "image1": [
+            "case01_31",
+            0
+          ]
+        }
+      },
+      "case01_100": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "case01_31",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case01_120": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "case01_40",
+            0
+          ],
+          "latent": [
+            "case01_100",
+            0
+          ]
+        }
+      },
+      "case01_41": {
+        "class_type": "FluxKontextMultiReferenceLatentMethod",
+        "inputs": {
+          "conditioning": [
+            "case01_120",
+            0
+          ],
+          "reference_latents_method": "index_timestep_zero"
+        }
+      },
+      "case02_4": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "Use the rainy cafe street background from image 1. Replace the orange cat in image 1 with the red fox from image 2. Preserve the fox orange fur, black paws and white chest. The fox sits beside the cafe entrance. Do not use the forest background. Photorealistic.",
+          "clip": [
+            "case01_2",
+            0
+          ]
+        }
+      },
+      "case02_5": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "case02_41",
+            0
+          ]
+        }
+      },
+      "case02_6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "case02_7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "case01_1",
+            0
+          ],
+          "positive": [
+            "batch_barrier_02",
+            0
+          ],
+          "negative": [
+            "case02_5",
+            0
+          ],
+          "latent_image": [
+            "case02_6",
+            0
+          ],
+          "seed": 66502001,
+          "steps": 4,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "case02_8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "case02_7",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case02_9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "case02_8",
+            0
+          ],
+          "filename_prefix": "FeatureBench/kroma-multiref"
+        }
+      },
+      "case02_30": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "featurebench/cat.png"
+        }
+      },
+      "case02_31": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "case02_30",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "case02_33": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "featurebench/fox.png"
+        }
+      },
+      "case02_34": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "case02_33",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "case02_40": {
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "inputs": {
+          "clip": [
+            "case01_2",
+            0
+          ],
+          "prompt": "Use the rainy cafe street background from image 1. Replace the orange cat in image 1 with the red fox from image 2. Preserve the fox orange fur, black paws and white chest. The fox sits beside the cafe entrance. Do not use the forest background. Photorealistic.",
+          "image1": [
+            "case02_31",
+            0
+          ],
+          "image2": [
+            "case02_34",
+            0
+          ]
+        }
+      },
+      "case02_100": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "case02_31",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case02_120": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "case02_40",
+            0
+          ],
+          "latent": [
+            "case02_100",
+            0
+          ]
+        }
+      },
+      "case02_101": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "case02_34",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case02_121": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "case02_120",
+            0
+          ],
+          "latent": [
+            "case02_101",
+            0
+          ]
+        }
+      },
+      "case02_41": {
+        "class_type": "FluxKontextMultiReferenceLatentMethod",
+        "inputs": {
+          "conditioning": [
+            "case02_121",
+            0
+          ],
+          "reference_latents_method": "index_timestep_zero"
+        }
+      },
+      "case03_4": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "Edit image 1: replace the head and facial identity with the fictional adult woman from image 2, including curly copper-red hair and freckles. Keep the navy coat, red scarf, body pose and park background of image 1. Only one person.",
+          "clip": [
+            "case01_2",
+            0
+          ]
+        }
+      },
+      "case03_5": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "case03_41",
+            0
+          ]
+        }
+      },
+      "case03_6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "case03_7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "case01_1",
+            0
+          ],
+          "positive": [
+            "batch_barrier_03",
+            0
+          ],
+          "negative": [
+            "case03_5",
+            0
+          ],
+          "latent_image": [
+            "case03_6",
+            0
+          ],
+          "seed": 66502001,
+          "steps": 4,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "case03_8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "case03_7",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case03_9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "case03_8",
+            0
+          ],
+          "filename_prefix": "FeatureBench/kroma-head-swap"
+        }
+      },
+      "case03_30": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "featurebench/kroma-portrait-b.png"
+        }
+      },
+      "case03_31": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "case03_30",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "case03_33": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "featurebench/kroma-portrait-a.png"
+        }
+      },
+      "case03_34": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "case03_33",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "case03_40": {
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "inputs": {
+          "clip": [
+            "case01_2",
+            0
+          ],
+          "prompt": "Edit image 1: replace the head and facial identity with the fictional adult woman from image 2, including curly copper-red hair and freckles. Keep the navy coat, red scarf, body pose and park background of image 1. Only one person.",
+          "image1": [
+            "case03_31",
+            0
+          ],
+          "image2": [
+            "case03_34",
+            0
+          ]
+        }
+      },
+      "case03_100": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "case03_31",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case03_120": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "case03_40",
+            0
+          ],
+          "latent": [
+            "case03_100",
+            0
+          ]
+        }
+      },
+      "case03_101": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "case03_34",
+            0
+          ],
+          "vae": [
+            "case01_3",
+            0
+          ]
+        }
+      },
+      "case03_121": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "case03_120",
+            0
+          ],
+          "latent": [
+            "case03_101",
+            0
+          ]
+        }
+      },
+      "case03_41": {
+        "class_type": "FluxKontextMultiReferenceLatentMethod",
+        "inputs": {
+          "conditioning": [
+            "case03_121",
+            0
+          ],
+          "reference_latents_method": "index_timestep_zero"
+        }
+      },
+      "batch_barrier_01": {
+        "class_type": "BenchmarkConditioningBarrier",
+        "inputs": {
+          "conditioning": [
+            "case01_41",
+            0
+          ],
+          "ready_1": [
+            "case01_41",
+            0
+          ],
+          "ready_2": [
+            "case02_41",
+            0
+          ],
+          "ready_3": [
+            "case03_41",
+            0
+          ]
+        }
+      },
+      "batch_barrier_02": {
+        "class_type": "BenchmarkConditioningBarrier",
+        "inputs": {
+          "conditioning": [
+            "case02_41",
+            0
+          ],
+          "ready_1": [
+            "case01_41",
+            0
+          ],
+          "ready_2": [
+            "case02_41",
+            0
+          ],
+          "ready_3": [
+            "case03_41",
+            0
+          ]
+        }
+      },
+      "batch_barrier_03": {
+        "class_type": "BenchmarkConditioningBarrier",
+        "inputs": {
+          "conditioning": [
+            "case03_41",
+            0
+          ],
+          "ready_1": [
+            "case01_41",
+            0
+          ],
+          "ready_2": [
+            "case02_41",
+            0
+          ],
+          "ready_3": [
+            "case03_41",
+            0
+          ]
+        }
+      }
+    },
+    {
+      "create_time": 1792409256752
+    },
+    [
+      "case03_9",
+      "case02_9",
+      "case01_9"
+    ]
+  ],
+  "outputs": {
+    "case03_9": {
+      "images": [
+        {
+          "filename": "kroma-head-swap_00001_.png",
+          "subfolder": "FeatureBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "case02_9": {
+      "images": [
+        {
+          "filename": "kroma-multiref_00001_.png",
+          "subfolder": "FeatureBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "case01_9": {
+      "images": [
+        {
+          "filename": "kroma-style-ref_00001_.png",
+          "subfolder": "FeatureBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+          "timestamp": 1792409256762
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+          "timestamp": 1792409256913
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+          "timestamp": 1792409648956
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "case03_9": {
+      "node_id": "case03_9",
+      "display_node": "case03_9",
+      "parent_node": null,
+      "real_node_id": "case03_9"
+    },
+    "case02_9": {
+      "node_id": "case02_9",
+      "display_node": "case02_9",
+      "parent_node": null,
+      "real_node_id": "case02_9"
+    },
+    "case01_9": {
+      "node_id": "case01_9",
+      "display_node": "case01_9",
+      "parent_node": null,
+      "real_node_id": "case01_9"
+    }
+  }
+}

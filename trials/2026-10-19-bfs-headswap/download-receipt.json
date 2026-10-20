@@ -1,0 +1,17 @@
+{
+  "repo": "Alissonerdx/BFS-Best-Face-Swap",
+  "revision": "main",
+  "file": "bfs_head_v1.1_qwen_2.1.safetensors",
+  "source_url": "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/resolve/main/bfs_head_v1.1_qwen_2.1.safetensors",
+  "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\loras\\bfs_head_v1.1_qwen_2.1.safetensors",
+  "expected_bytes": 260096144,
+  "actual_bytes": 260096144,
+  "expected_sha256": "d1d748d5601077f3b6d05766f6823510e901970d916afa404a97e85dc92fa88e",
+  "actual_sha256": "d1d748d5601077f3b6d05766f6823510e901970d916afa404a97e85dc92fa88e",
+  "verified": true,
+  "placement": "moved_verified_stage_to_target",
+  "started_at": "2026-10-19T15:50:18.2041392+08:00",
+  "completed_at": "2026-10-19T15:51:19.6647923+08:00",
+  "curl_exit_code": 0,
+  "log": "download.log"
+}

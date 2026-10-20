@@ -1,0 +1,1217 @@
+{
+  "records": [
+    {
+      "id": "moss-img2img",
+      "feature": "图生图／洗图",
+      "status": "success",
+      "prompt_id": "9471ac1b-bad6-4c9c-a01a-d322d8e10378",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-img2img_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "4c225838709ebb5298aaea418e2a3f0dbc1b5748dbe0fc71651d8aca31bd0f70"
+            ]
+          },
+          "sha256": "ab0af396eb608aced82bc429d2b0204a0287b136fdbb41e6f4146f6d68bc2acf"
+        }
+      ]
+    },
+    {
+      "id": "moss-layout",
+      "feature": "布局描述（JSON 提示）",
+      "status": "success",
+      "prompt_id": "089ef43b-bcb4-42b3-a3f8-7086dac19dac",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-layout_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "0c7cbdb75259ccf6bbf6aac22222b5864569ddd1d26faeb42bab6d42a29a025b"
+        }
+      ]
+    },
+    {
+      "id": "moss-text",
+      "feature": "画面文字渲染",
+      "status": "success",
+      "prompt_id": "d2410fc5-477f-425a-af69-3ae9f44616f6",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-text_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "d5bdf20ffc351936138f52d87bee5b3af704c6dd6d3227b0e1bb1fe6fc57ca6f"
+        }
+      ]
+    },
+    {
+      "id": "kroma-portrait-a",
+      "feature": "文生图素材：虚构人像 A",
+      "status": "success",
+      "prompt_id": "2f5c550b-20fa-4cd4-b61a-5572d8ae5367",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-portrait-a_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+        }
+      ]
+    },
+    {
+      "id": "kroma-portrait-b",
+      "feature": "文生图素材：虚构人像 B",
+      "status": "success",
+      "prompt_id": "4a3705b8-0fa8-4a80-afed-90ba046e3890",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-portrait-b_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+        }
+      ]
+    },
+    {
+      "id": "kroma-img2img",
+      "feature": "图生图／洗图",
+      "status": "success",
+      "prompt_id": "ef947405-58b8-4568-a727-ef4366bd44a7",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-img2img_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "1bf2d198c19c218deec556c9211a80c4e49ba79fbd0d803fcf1b65cdc4702bba"
+        }
+      ]
+    },
+    {
+      "id": "kroma-style-source",
+      "feature": "文生图素材：风格参考",
+      "status": "success",
+      "prompt_id": "7add111e-4f84-477a-83a4-6c9f1dda16f9",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-style-source_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "841925d4809ba59de71580f64d1d99f11a3e4eb9b29da384d88bef62ca394920"
+        }
+      ]
+    },
+    {
+      "id": "qwen-inpaint",
+      "feature": "遮罩局部重绘",
+      "status": "partial_output",
+      "prompt_id": "9e18193e-7ba7-4982-bdef-b329cfdb09d6",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ],
+            "case04_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case05_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case05_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "0d9de22216638c92e0c87059aa6eff869e5f7c7986b569eb9d56bdfb87105d2c"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ],
+            "case04_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case05_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case05_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "268f18b9403f80f6cc54cbc09d68a5dc4b5e6ec9024e4874586d6d3c6624a157"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ],
+            "case04_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case05_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case05_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "ba210718de4ca8b31a60cfc0074ce4aa4a6509ddac5f92f58754efa910ff6225"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 66431,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "qwen-multiref",
+      "feature": "多图参考／主体合成",
+      "status": "success",
+      "prompt_id": "cdb0adfa-6296-4305-89bb-2e962d6445cc",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-multiref_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ]
+          },
+          "sha256": "735daa14b61aa2cc6a5a83dd90ed7f5c10b0ea37f68b9282ad28fdf47a414618"
+        }
+      ]
+    },
+    {
+      "id": "qwen-face-swap",
+      "feature": "换头／人物身份参考",
+      "status": "success",
+      "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-face-swap_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case01_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "c44be9f081bcf4f233e1cc448fbb524474eddc50a96d8f023967564405660d9e"
+        }
+      ]
+    },
+    {
+      "id": "qwen-style-edit",
+      "feature": "图生图／风格转换",
+      "status": "success",
+      "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-style-edit_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case01_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "880e7620da4b2fb29751f85f8eb14010e0e3938962e5bfacf30a12f6cde4677a"
+        }
+      ]
+    },
+    {
+      "id": "qwen-caption",
+      "feature": "自动反推提示词并再生成",
+      "status": "error",
+      "prompt_id": "0971bf97-f105-43e8-a084-23c64848c66b",
+      "images": []
+    },
+    {
+      "id": "kroma-style-ref",
+      "feature": "风格参考",
+      "status": "success",
+      "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-style-ref_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "841925d4809ba59de71580f64d1d99f11a3e4eb9b29da384d88bef62ca394920"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "5c33875a66e09a5cb44117f5a9cdae582a8a959053a9170b58fe333d8861c272"
+        }
+      ]
+    },
+    {
+      "id": "kroma-multiref",
+      "feature": "多图参考",
+      "status": "success",
+      "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-multiref_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "841925d4809ba59de71580f64d1d99f11a3e4eb9b29da384d88bef62ca394920"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "fbba704682e321ecb6ce05ef2d34ae35f11f9cac55f5d4b41a762b9c3299c67c"
+        }
+      ]
+    },
+    {
+      "id": "kroma-head-swap",
+      "feature": "换头／人物身份参考",
+      "status": "success",
+      "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-head-swap_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "841925d4809ba59de71580f64d1d99f11a3e4eb9b29da384d88bef62ca394920"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case02_33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "35c7b83a5f73a29389770a4c17dd78938db0627a0cbd57f6a6983a782fae5483"
+        }
+      ]
+    },
+    {
+      "id": "qwen-face-only",
+      "feature": "换脸／仅面部身份",
+      "status": "success",
+      "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-face-only_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case01_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ],
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "case03_33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "aaaaea409254630d0753d5f5e64cb43ba8e4c18ecfcf3bd6441214af9b3cccfd"
+        }
+      ]
+    },
+    {
+      "id": "turbo-un-t2i",
+      "feature": "原生 8 步文生图",
+      "status": "success",
+      "prompt_id": "06b678de-ee81-4bdd-9e6b-bb23ee939890",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-t2i_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "681d0315d462d60331bb0c414cc93ec873f4405adf93b5e1561af97a57f1d32f"
+        }
+      ]
+    },
+    {
+      "id": "turbo-un-inpaint",
+      "feature": "遮罩局部重绘",
+      "status": "success",
+      "prompt_id": "14885f48-2048-41e8-8e95-c35a45cc2939",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "a542f81ce1a0cb5187ff74bf2772f6cfb3cad4775594527349160527ace37a86"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "627ee1e36a47ce3afcca18b1063a2ba9b20fbcc2e2fdf21c90051f48375f3129"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "b8ddf3d436a08ddbd07d4dec7faf2ec0afba649f2b98b1106058356c1969b860"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 66848,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "turbo-un-multiref",
+      "feature": "多图参考／主体合成",
+      "status": "success",
+      "prompt_id": "e459fca3-4c22-4bce-8bf8-3c86310a73aa",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-multiref_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ],
+            "33": [
+              "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304"
+            ]
+          },
+          "sha256": "0b85fa41211f2c4f98841a900859dfd0200cfa6d230fa89b56684cf0fe05e974"
+        }
+      ]
+    },
+    {
+      "id": "turbo-un-face-swap",
+      "feature": "换头／人物身份参考",
+      "status": "success",
+      "prompt_id": "4791a011-c595-4385-bb4e-6826d1a0b277",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-face-swap_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "ed8bcd4bba71a6c8f212ecb20b540a16413332b7d969a7bc437b4607c92e9c5a"
+        }
+      ]
+    },
+    {
+      "id": "qwen-bfs-head-swap",
+      "feature": "换头／BFS 专用 LoRA 对照",
+      "status": "success",
+      "prompt_id": "60283b91-962a-484d-b02d-cd554282e09a",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-bfs-head-swap_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ],
+            "33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "148dbd7db1140bc88cd90d70fd93742bb647b628581b43d7c01387ca619b2ae9"
+        }
+      ]
+    },
+    {
+      "id": "turbo-un-role-replacement-test",
+      "feature": "角色替换（全身含服装）",
+      "status": "success",
+      "prompt_id": "86581346-8ff4-492d-8057-9d72dc3c4a01",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-role-replacement-test_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "4c225838709ebb5298aaea418e2a3f0dbc1b5748dbe0fc71651d8aca31bd0f70"
+            ],
+            "33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "fcaba8dab0a71b39d653ba416fa3325721de2744cba30ca4fcc7022367eed1fc"
+        }
+      ]
+    },
+    {
+      "id": "turbo-un-pose-reference-test",
+      "feature": "姿态参考（图像指令）",
+      "status": "success",
+      "prompt_id": "12009882-a683-45c3-9098-d0c70d7477b4",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-pose-reference-test_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "fe93bfc52340aee14319f8c113dc4c8d6a38eda8a53f17384b034f39e2309366"
+            ],
+            "33": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ]
+          },
+          "sha256": "6d0663964f7b4d703d53e29b6331dab68161823d7b0c6ae3169aa1960e5193a8"
+        }
+      ]
+    },
+    {
+      "id": "ref2va-5frame-diagnostic",
+      "feature": "5帧加载、采样、解码诊断",
+      "status": "success",
+      "prompt_id": "94e6c992-6339-4037-aed5-d45dfcaa21f6",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00001_.png",
+          "exists": true,
+          "width": 384,
+          "height": 256,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "5": [
+              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
+            ]
+          },
+          "sha256": "b3f35d5c68f2271a3aa36e4def15134d1bbebd10d034e43f24c5d96cb2f168aa"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00002_.png",
+          "exists": true,
+          "width": 384,
+          "height": 256,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "5": [
+              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
+            ]
+          },
+          "sha256": "42afb63f2411f29ab4e5bba6523a2bd8f3c85a4fd6c066ba238916e51b5cd475"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00003_.png",
+          "exists": true,
+          "width": 384,
+          "height": 256,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "5": [
+              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
+            ]
+          },
+          "sha256": "073706b7b0b61930c9279c91c643d846e1ae14da8e64cb5925759fef9aae520f"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00004_.png",
+          "exists": true,
+          "width": 384,
+          "height": 256,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "5": [
+              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
+            ]
+          },
+          "sha256": "39aabc8b9ec95b1a566911d61ef08b9839a44247ad217ded97411f8658ab0d86"
+        },
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00005_.png",
+          "exists": true,
+          "width": 384,
+          "height": 256,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "5": [
+              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
+            ]
+          },
+          "sha256": "738e86a712abb5f3b35573b25f078821f02ada51ed59589f24235531b31597a5"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-t2i",
+      "feature": "文生图／短文字",
+      "status": "success",
+      "prompt_id": "0a480427-c742-4431-b348-51559ade75cf",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "31f7fe37f30e9d11e10a0e583f77fb82f9ff57167b71bff980f891146d44106d"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-t2i-gpu-text",
+      "feature": "文生图／GPU FP8文本编码对照",
+      "status": "success",
+      "prompt_id": "f9f3e758-e911-4dbf-8fda-b2ea80297f82",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "fa0fbd7f42d7e4ced137dae89287088e0faa8dafe58073d103594005934603ef"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-t2i-1024",
+      "feature": "文生图／1024分辨率",
+      "status": "runner_error",
+      "prompt_id": "4132063e-c6f6-4265-b30a-9c90328c6a60",
+      "images": []
+    },
+    {
+      "id": "zimage-gguf-photo-gpu-text",
+      "feature": "文本编码GPU配置对照／写实文生图",
+      "status": "success",
+      "prompt_id": "88d18fbd-b6a3-4082-9eb9-330854af9eb6",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-photo-gpu-text_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "d5c8a7b94a749771151942bdade42be70599727d28a932c3586a42ed4c68ed6a"
+        }
+      ]
+    },
+    {
+      "id": "zimage-gguf-prompt-change",
+      "feature": "平铺工作流修改提示词",
+      "status": "success",
+      "prompt_id": "f7d81e40-4996-4d69-9fca-075d760a6262",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-prompt-change_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "106e839d78cb5eac5ad6d53ccd4850ae16517bcfda9054112a35264a76ba7b4b"
+        }
+      ]
+    },
+    {
+      "id": "zimage-gguf-english",
+      "feature": "量化版英文文字渲染",
+      "status": "success",
+      "prompt_id": "141d8f8f-2ce2-40f6-8a5a-acfacdd7ee30",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "c1559c859ec3a10c014dc9467c820cc4e5dc63f0f24d6bef1bc087dfb2398024"
+        }
+      ]
+    },
+    {
+      "id": "zimage-gguf-chinese",
+      "feature": "量化版中文文字渲染",
+      "status": "success",
+      "prompt_id": "7ae03ae5-01e2-4cae-8bfd-b6fe3e21b0a5",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-chinese_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "d0eb4529490d674204a2e8e743cc14cdd81b721c6403972521babdfdda91a98f"
+        }
+      ]
+    },
+    {
+      "id": "zimage-aio-photo-9step",
+      "feature": "写实文生图／源工作流9步",
+      "status": "success",
+      "prompt_id": "78c1d89f-2c9d-4726-b00b-778b5e9b6b57",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-9step_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "bb0721e956bce8c74c41e732f677c8d6d920ca4e62419f685841dd62f2b72fb1"
+        }
+      ]
+    },
+    {
+      "id": "zimage-aio-chinese",
+      "feature": "中文文字渲染",
+      "status": "success",
+      "prompt_id": "a3875ab1-01b3-4c4a-8fd6-14625b5dcaa2",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-chinese_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "035a14d62e5a51bea3b057d933a6c822a9657b09a1bdbd1162607e1b40f900bb"
+        }
+      ]
+    },
+    {
+      "id": "zimage-aio-english",
+      "feature": "英文文字渲染",
+      "status": "success",
+      "prompt_id": "2a40a1cd-e83f-425a-96b8-5dfc3ec9f8d3",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-english_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "c99807677d6bbf0dcfb1f57b5da97eab7df2b4ece258cea8a81256f095db0046"
+        }
+      ]
+    },
+    {
+      "id": "zimage-aio-figure-art",
+      "feature": "非色情成年人体艺术探索",
+      "status": "success",
+      "prompt_id": "48ce1779-e28f-4b1c-98e5-dfb8ff52653c",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-figure-art_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "77c672db9761afded6bb9b41370e17a464b4c8061a13828c1fec95f1e621398e"
+        }
+      ]
+    },
+    {
+      "id": "zimage-aio-photo-4step",
+      "feature": "文章4步效果比较",
+      "status": "success",
+      "prompt_id": "0b20f4e1-2bd1-437e-936e-cddb801834b0",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-4step_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "e160314290d5f2be50b006755f92d6068a787881d5b481affeea44a62786a23e"
+        }
+      ]
+    },
+    {
+      "id": "zimage-aio-photo-8step",
+      "feature": "文章推荐8步生成",
+      "status": "success",
+      "prompt_id": "0bce94c2-cacb-4600-8f19-8d5b60e89f21",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "c08e957e0053b797bbc6dda17313c84c7effba534c312bcc9713245c60060b12"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-single-color",
+      "feature": "单图编辑／改色",
+      "status": "success",
+      "prompt_id": "aba91f25-cc9e-491a-aae2-29ffd3f1d3f5",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+            ]
+          },
+          "sha256": "f2c247c95d58ad76309d87f32ad17bc8914eb546edaf53ca350082c2455dc5f3"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-t2i-nvme-control",
+      "feature": "NVMe动态配置诊断／文生图对照",
+      "status": "success",
+      "prompt_id": "d5cae8bb-e78e-4402-b417-4d1e295cb785",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-nvme-control_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "2bef77ca6f9baf56bbc9dcd4322d953383d881c726712feb8686b58ecc16dcc3"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-dual-logo",
+      "feature": "双图编辑／配色与Logo迁移",
+      "status": "success",
+      "prompt_id": "f1bb65ed-f83f-4fa5-90b4-a2dc987a1ffe",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+            ],
+            "2": [
+              "392b4f8b16d3aa197781f91597681905c1320e377b0d81af530c87640b044bf6"
+            ]
+          },
+          "sha256": "29ec7c6b954f1493c1880803773b5b3972e7566f0efa9811610d5347e6941d0f"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-dual-people",
+      "feature": "双人合成／人物一致性",
+      "status": "success",
+      "prompt_id": "b9d41482-f35b-4987-95b4-04afecce137d",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+            ],
+            "2": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "a5d4950c46cd79b419bb6ebf1108ff360cad4feebbb4340152e0f58633aed445"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-style",
+      "feature": "风格转换",
+      "status": "success",
+      "prompt_id": "fdf01ff4-9038-4b19-bbd2-733e4dbd57d3",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "59fc18d9300e583da52ce1ae2fe8f6861385b09186d0db4bc20546a3811a9e9c"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-replace-zh",
+      "feature": "对象替换／中文指令",
+      "status": "success",
+      "prompt_id": "972108a3-1a27-43f8-9955-5cbbaf390802",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+            ]
+          },
+          "sha256": "e4d8e3ef011dea5c633cd8bb2a7206e00505104fa5ec5251640f9901b662d287"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-remove",
+      "feature": "对象删除",
+      "status": "success",
+      "prompt_id": "5c308834-8a7d-48ad-9a9e-1e46461b5cc0",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "2c36d14dff05ae11d056d66e5a6c9e562073bc26d2ba01c61470c32c80f7c9fa"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-iterative",
+      "feature": "迭代编辑／第二轮修改",
+      "status": "success",
+      "prompt_id": "2a903bf4-3032-43d5-a813-a24c58e18251",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 688,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+            ]
+          },
+          "sha256": "61973f6d4f088b0dce332188187f8c1726f03551368441929a9601e79bea2c70"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-t2i-pinned-control",
+      "feature": "诊断对照／恢复默认锁页内存",
+      "status": "success",
+      "prompt_id": "46959703-13d5-46bb-8b88-04cdbb1ebfc1",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-pinned-control_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "9af60d04e8f6534c270fc9ff963b1ff2ad7f25d2ac45c0b1d3862ff63669948a"
+        }
+      ]
+    },
+    {
+      "id": "flux2-klein-single-color-pinned",
+      "feature": "单图编辑／改色（恢复锁页内存重试）",
+      "status": "success",
+      "prompt_id": "4fbbcb80-26ee-4fe4-927f-9a58e6cb5c5b",
+      "images": [
+        {
+          "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+            ]
+          },
+          "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+        }
+      ]
+    }
+  ],
+  "report_image_count": 98,
+  "missing_report_images": []
+}

@@ -1,0 +1,9 @@
+{
+  "status": "native_access_violation_no_output",
+  "prompt_id": "5113ee7a-e108-4a26-88b6-b5975ec6f5b6",
+  "phase": "ComfyUI-GGUF GGMLTensor.to during model_patcher.partially_unload on second prompt",
+  "captured_at": "2026-10-20T13:00:07.475100+00:00",
+  "output_images": [],
+  "server_processes_stopped": [],
+  "next_attempt": "Known failed process stopped; retry same feature in an independent fresh service. No fabricated terminal API history."
+}

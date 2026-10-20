@@ -1,0 +1,20 @@
+{
+  "id": "kroma-portrait-a",
+  "model": "kroma",
+  "feature": "文生图素材：虚构人像 A",
+  "recipe": "t2i",
+  "claim_level": "测试素材",
+  "inputs": [],
+  "prompt": "Studio head-and-shoulders portrait photograph of a fictional adult woman aged 30, pale skin, distinct freckles across nose and cheeks, green eyes, short curly copper-red hair, mustard yellow sweater, plain light grey background, looking directly at camera, sharp face, natural light.",
+  "seed": 66502001,
+  "expected": "清晰的虚构红发雀斑成年女性人像，供换脸与身份参考试验。",
+  "started_at": 1792395217.3523493,
+  "review": "pending",
+  "prompt_id": "2f5c550b-20fa-4cd4-b61a-5572d8ae5367",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-portrait-a_00001_.png"
+  ],
+  "errors": [],
+  "elapsed_seconds": 200.32
+}

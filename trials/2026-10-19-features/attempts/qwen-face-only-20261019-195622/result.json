@@ -1,0 +1,41 @@
+{
+  "id": "qwen-face-only",
+  "model": "qwen",
+  "feature": "换脸／仅面部身份",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Edit only the face of the fictional adult woman in image 1. Use the facial identity from image 2, including pale freckled skin, facial features and green eyes. Keep the original dark straight hair from image 1, navy coat, red scarf, pose, park background and framing. Do not change the hairstyle. One person.",
+  "expected": "面部特征转向A，B的黑发、服装与场景保持。",
+  "batch_id": "20261019T113632Z-f2905769",
+  "prompt_id": "9e18193e-7ba7-4982-bdef-b329cfdb09d6",
+  "status": "runner_error",
+  "batch_status": "runner_error",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 322.69,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 322.69 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "7",
+      "node_id": "case05_7",
+      "filename_prefix": "FeatureBench/qwen-face-only",
+      "role": "main"
+    }
+  ],
+  "images": [],
+  "errors": [
+    {
+      "exception_type": "ConnectionError",
+      "exception_message": "HTTPConnectionPool(host='127.0.0.1', port=8188): Max retries exceeded with url: /history/9e18193e-7ba7-4982-bdef-b329cfdb09d6 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8188): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+    }
+  ],
+  "error": "HTTPConnectionPool(host='127.0.0.1', port=8188): Max retries exceeded with url: /history/9e18193e-7ba7-4982-bdef-b329cfdb09d6 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8188): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+}

@@ -1,0 +1,290 @@
+[
+  {
+    "elapsed_seconds": 0.01,
+    "host_ram_used_bytes": 7375912960,
+    "host_ram_available_bytes": 9608318976,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 8413839360,
+        "torch_vram_total": 2097152,
+        "torch_vram_free": 2097152
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 5.16,
+    "host_ram_used_bytes": 8134729728,
+    "host_ram_available_bytes": 8849502208,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 8413839360,
+        "torch_vram_total": 2097152,
+        "torch_vram_free": 2097152
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 10.19,
+    "host_ram_used_bytes": 9443262464,
+    "host_ram_available_bytes": 7540969472,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 6201344000,
+        "torch_vram_total": 2214592512,
+        "torch_vram_free": 2097152
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 15.2,
+    "host_ram_used_bytes": 8090034176,
+    "host_ram_available_bytes": 8894197760,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 5268465152,
+        "torch_vram_total": 3416260608,
+        "torch_vram_free": 359228928
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 20.2,
+    "host_ram_used_bytes": 14038880256,
+    "host_ram_available_bytes": 2945351680,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 5181496832,
+        "torch_vram_total": 3145728000,
+        "torch_vram_free": 47865344
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 25.22,
+    "host_ram_used_bytes": 16405323776,
+    "host_ram_available_bytes": 578908160,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3921329152,
+        "torch_vram_total": 4441767936,
+        "torch_vram_free": 85834752
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 30.23,
+    "host_ram_used_bytes": 11551813632,
+    "host_ram_available_bytes": 5432418304,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3918752256,
+        "torch_vram_total": 4443865088,
+        "torch_vram_free": 89418240
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 35.26,
+    "host_ram_used_bytes": 11270361088,
+    "host_ram_available_bytes": 5713870848,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3887388160,
+        "torch_vram_total": 5043650560,
+        "torch_vram_free": 677369344
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 40.26,
+    "host_ram_used_bytes": 10809683968,
+    "host_ram_available_bytes": 6174547968,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3855298048,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 645279232
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 45.28,
+    "host_ram_used_bytes": 10889588736,
+    "host_ram_available_bytes": 6094643200,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3855297024,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 645278208
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 50.3,
+    "host_ram_used_bytes": 10815283200,
+    "host_ram_available_bytes": 6168948736,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3836455936,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 626437120
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 55.31,
+    "host_ram_used_bytes": 10811617280,
+    "host_ram_available_bytes": 6172614656,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3849891328,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 639872512
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 60.31,
+    "host_ram_used_bytes": 10811998208,
+    "host_ram_available_bytes": 6172233728,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3855297024,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 645278208
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 65.33,
+    "host_ram_used_bytes": 10812616704,
+    "host_ram_available_bytes": 6171615232,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3833007104,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 622988288
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 70.34,
+    "host_ram_used_bytes": 10814177280,
+    "host_ram_available_bytes": 6170054656,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3855297536,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 645278720
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 75.38,
+    "host_ram_used_bytes": 10976014336,
+    "host_ram_available_bytes": 6008217600,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3902107136,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 692088320
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 80.39,
+    "host_ram_used_bytes": 11741396992,
+    "host_ram_available_bytes": 5242834944,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3902107136,
+        "torch_vram_total": 5045747712,
+        "torch_vram_free": 692088320
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 85.42,
+    "host_ram_used_bytes": 10955223040,
+    "host_ram_available_bytes": 6029008896,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3891621376,
+        "torch_vram_total": 4418699264,
+        "torch_vram_free": 65039872
+      }
+    ]
+  }
+]

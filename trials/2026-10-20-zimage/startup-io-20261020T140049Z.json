@@ -1,0 +1,178 @@
+{
+  "first": {
+    "at": "2026-10-20T14:00:44.262429+00:00",
+    "disks": {
+      "PhysicalDrive0": {
+        "read_count": 414048,
+        "write_count": 217415,
+        "read_bytes": 39013977088,
+        "write_bytes": 5260316160,
+        "read_time": 22761,
+        "write_time": 5690
+      },
+      "PhysicalDrive1": {
+        "read_count": 513,
+        "write_count": 170,
+        "read_bytes": 6871552,
+        "write_bytes": 765440,
+        "read_time": 0,
+        "write_time": 0
+      },
+      "PhysicalDrive2": {
+        "read_count": 581668,
+        "write_count": 196401,
+        "read_bytes": 53286188032,
+        "write_bytes": 26080206336,
+        "read_time": 610,
+        "write_time": 80
+      }
+    },
+    "processes": {
+      "9148": {
+        "io": {
+          "read_count": 2,
+          "write_count": 0,
+          "read_bytes": 187,
+          "write_bytes": 0,
+          "other_count": 52,
+          "other_bytes": 806
+        },
+        "cpu_seconds": 0.0,
+        "rss": 3596288
+      },
+      "19316": {
+        "io": {
+          "read_count": 0,
+          "write_count": 0,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "other_count": 63,
+          "other_bytes": 2082
+        },
+        "cpu_seconds": 0.0,
+        "rss": 12001280
+      },
+      "20704": {
+        "io": {
+          "read_count": 9734,
+          "write_count": 93,
+          "read_bytes": 154706201,
+          "write_bytes": 321962,
+          "other_count": 338973,
+          "other_bytes": 14645790
+        },
+        "cpu_seconds": 10.8125,
+        "rss": 653066240
+      }
+    },
+    "host_available": 10294636544
+  },
+  "last": {
+    "at": "2026-10-20T14:00:49.274993+00:00",
+    "disks": {
+      "PhysicalDrive0": {
+        "read_count": 414619,
+        "write_count": 217455,
+        "read_bytes": 39025071104,
+        "write_bytes": 5260529152,
+        "read_time": 22770,
+        "write_time": 5690
+      },
+      "PhysicalDrive1": {
+        "read_count": 513,
+        "write_count": 170,
+        "read_bytes": 6871552,
+        "write_bytes": 765440,
+        "read_time": 0,
+        "write_time": 0
+      },
+      "PhysicalDrive2": {
+        "read_count": 581869,
+        "write_count": 196681,
+        "read_bytes": 53289186816,
+        "write_bytes": 26084630016,
+        "read_time": 610,
+        "write_time": 80
+      }
+    },
+    "processes": {
+      "9148": {
+        "io": {
+          "read_count": 2,
+          "write_count": 0,
+          "read_bytes": 187,
+          "write_bytes": 0,
+          "other_count": 52,
+          "other_bytes": 806
+        },
+        "cpu_seconds": 0.0,
+        "rss": 3596288
+      },
+      "19316": {
+        "io": {
+          "read_count": 0,
+          "write_count": 0,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "other_count": 63,
+          "other_bytes": 2082
+        },
+        "cpu_seconds": 0.0,
+        "rss": 12001280
+      },
+      "20704": {
+        "io": {
+          "read_count": 13350,
+          "write_count": 93,
+          "read_bytes": 193364339,
+          "write_bytes": 321962,
+          "other_count": 372205,
+          "other_bytes": 16225710
+        },
+        "cpu_seconds": 11.53125,
+        "rss": 666021888
+      }
+    },
+    "host_available": 10278232064
+  },
+  "disk_delta": {
+    "PhysicalDrive0": {
+      "read_count": 571,
+      "write_count": 40,
+      "read_bytes": 11094016,
+      "write_bytes": 212992,
+      "read_time": 9,
+      "write_time": 0
+    },
+    "PhysicalDrive1": {
+      "read_count": 0,
+      "write_count": 0,
+      "read_bytes": 0,
+      "write_bytes": 0,
+      "read_time": 0,
+      "write_time": 0
+    },
+    "PhysicalDrive2": {
+      "read_count": 201,
+      "write_count": 280,
+      "read_bytes": 2998784,
+      "write_bytes": 4423680,
+      "read_time": 0,
+      "write_time": 0
+    }
+  },
+  "process_delta": {
+    "9148": {
+      "read_bytes": 0,
+      "cpu_seconds": 0.0
+    },
+    "19316": {
+      "read_bytes": 0,
+      "cpu_seconds": 0.0
+    },
+    "20704": {
+      "read_bytes": 38658138,
+      "cpu_seconds": 0.71875
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "test": "H3 Ref2VA 384x256 / 5 frames / 4 steps loading diagnostic",
+  "scope": "Not a quality or BFS feature acceptance test",
+  "vae_device": "GPU",
+  "started_at": 1792429118.6334236,
+  "status": "running",
+  "images": [],
+  "peak_system_used_ram_bytes": 15118602240,
+  "peak_swap_used_bytes": 130764800,
+  "peak_server_private_bytes": 9431605248,
+  "peak_vram_used_bytes_from_system_stats": 5771457536,
+  "node_registration": {
+    "UnetLoaderGGUFDynamicVRAM": true,
+    "ClipProjApply": true,
+    "MiniMaxH3ReferenceToVideo": true
+  },
+  "prompt_id": "5f767dfa-6d92-4733-9919-a79f6f1a868d"
+}

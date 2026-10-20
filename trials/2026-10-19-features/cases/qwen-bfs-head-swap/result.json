@@ -1,0 +1,33 @@
+{
+  "id": "qwen-bfs-head-swap",
+  "model": "qwen",
+  "feature": "换头／BFS 专用 LoRA 对照",
+  "recipe": "edit",
+  "claim_level": "第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "head_swap: Edit image 1: replace the person's facial identity and hair with the fictional adult woman from image 2, including her copper-red curly hair, pale freckled skin and green eyes. Preserve the navy blue coat, red scarf, body pose, framing and outdoor park from image 1. Match lighting and proportions. Only one person.",
+  "expected": "在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。",
+  "lora": {
+    "name": "bfs_head_v1.1_qwen_2.1.safetensors",
+    "strength": 1.0
+  },
+  "qwen_cache_device": "off",
+  "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
+  "started_at": 1792427535.7230668,
+  "review": "pending",
+  "prompt_id": "60283b91-962a-484d-b02d-cd554282e09a",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-bfs-head-swap_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 375.67
+}

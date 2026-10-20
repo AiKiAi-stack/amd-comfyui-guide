@@ -1,0 +1,20 @@
+{
+  "id": "kroma-portrait-b",
+  "model": "kroma",
+  "feature": "文生图素材：虚构人像 B",
+  "recipe": "t2i",
+  "claim_level": "测试素材",
+  "inputs": [],
+  "prompt": "Waist-up portrait photograph of a different fictional adult woman aged 35 with dark straight shoulder-length hair, brown eyes, medium brown skin, wearing a navy blue coat and red scarf, standing outdoors in a park, turned slightly to the left, calm smile, soft daylight.",
+  "seed": 66502002,
+  "expected": "与 A 明显不同的虚构人物，供保留服装姿态的换脸试验。",
+  "started_at": 1792395567.0123465,
+  "review": "pending",
+  "prompt_id": "4a3705b8-0fa8-4a80-afed-90ba046e3890",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-portrait-b_00001_.png"
+  ],
+  "errors": [],
+  "elapsed_seconds": 175.33
+}

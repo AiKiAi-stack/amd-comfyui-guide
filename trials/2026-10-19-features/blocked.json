@@ -1,0 +1,147 @@
+[
+  {
+    "id": "minimax-h3-bfs-role-replacement",
+    "model": "MiniMax H3 + BFS 角色替换工作流",
+    "feature": "角色替换",
+    "recipe": "video-edit",
+    "claim_level": "I｜索引标题明示；A｜作者站外摘要展示参考角色替换样例；W｜公开 BFS/原生节点工作流；T｜本功能未运行；另有独立加载诊断",
+    "inputs": [],
+    "prompt": null,
+    "expected": "标题与作者摘要所述的角色替换视频输出；本机未运行，不对输出质量作判断。",
+    "images": [],
+    "elapsed_seconds": null,
+    "review": {
+      "verdict": "本功能未验证；加载诊断已通过",
+      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+    },
+    "evidence": [
+      "../../research/liuyue-comfyui-models-2026-10-18.md",
+      "../../research/liuyue-five-model-trial-sources.md",
+      "../../research/feature-claims-2026-10-19.md",
+      "../2026-10-18/README.md",
+      "https://bbs.monster/thread-5296-1-1.html",
+      "https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/blob/main/docs/character-swap.md"
+    ],
+    "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+  },
+  {
+    "id": "minimax-h3-bfs-long-audio-degradation",
+    "model": "MiniMax H3 + BFS 角色替换工作流",
+    "feature": "长音频驱动／长视频后段劣化改善",
+    "recipe": "audio-driven-video",
+    "claim_level": "I｜索引标题明示；A｜作者站外摘要提及长音频开关、首尾对照及该样例的后段改善；T｜本功能未运行；另有独立加载诊断",
+    "inputs": [],
+    "prompt": null,
+    "expected": "标题主张长音频驱动并改善该样例的后段劣化；摘要仅限其样例，本机无输出，未验证一般性。",
+    "images": [],
+    "elapsed_seconds": null,
+    "review": {
+      "verdict": "本功能未验证；加载诊断已通过",
+      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+    },
+    "evidence": [
+      "../../research/liuyue-comfyui-models-2026-10-18.md",
+      "../../research/liuyue-five-model-trial-sources.md",
+      "../../research/feature-claims-2026-10-19.md",
+      "../2026-10-18/README.md",
+      "https://bbs.monster/thread-5296-1-1.html"
+    ],
+    "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+  },
+  {
+    "id": "minimax-h3-bfs-one-click-head-swap",
+    "model": "MiniMax H3 + BFS 角色替换工作流",
+    "feature": "一键换头",
+    "recipe": "video-edit",
+    "claim_level": "I｜索引标题明示；当前可读站外摘要未逐项验证该功能；T｜本功能未运行；另有独立加载诊断",
+    "inputs": [],
+    "prompt": null,
+    "expected": "索引所称一键换头对应的视频输出；标题未提供具体步骤，本机无输出。",
+    "images": [],
+    "elapsed_seconds": null,
+    "review": {
+      "verdict": "本功能未验证；加载诊断已通过",
+      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+    },
+    "evidence": [
+      "../../research/liuyue-comfyui-models-2026-10-18.md",
+      "../../research/liuyue-five-model-trial-sources.md",
+      "../../research/feature-claims-2026-10-19.md",
+      "../2026-10-18/README.md"
+    ],
+    "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+  },
+  {
+    "id": "minimax-h3-video-continuation",
+    "model": "MiniMax H3 原生视频生成／续写工作流",
+    "feature": "视频续写",
+    "recipe": "video-continuation",
+    "claim_level": "I｜索引标题明示；M｜ComfyUI 官方 H3 文档有分段续写流程，但不证明标题的“一键”主张；T｜本功能未运行；另有独立加载诊断",
+    "inputs": [],
+    "prompt": null,
+    "expected": "生成接续输入视频的后续片段；本机未运行，不能评价续写质量或漂移。",
+    "images": [],
+    "elapsed_seconds": null,
+    "review": {
+      "verdict": "本功能未验证；加载诊断已通过",
+      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+    },
+    "evidence": [
+      "../../research/liuyue-comfyui-models-2026-10-18.md",
+      "../../research/liuyue-five-model-trial-sources.md",
+      "../../research/feature-claims-2026-10-19.md",
+      "../2026-10-18/README.md",
+      "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
+    ],
+    "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+  },
+  {
+    "id": "minimax-h3-one-click-target-replacement",
+    "model": "MiniMax H3 视频编辑工作流",
+    "feature": "一键目标替换",
+    "recipe": "video-edit",
+    "claim_level": "I｜索引标题明示；M｜官方文档有遮罩视频编辑/物件移除相关流程，但不等同于标题的“一键目标替换”；T｜本功能未运行；另有独立加载诊断",
+    "inputs": [],
+    "prompt": null,
+    "expected": "索引所称目标替换对应的视频输出；具体目标、提示和工作流在索引中未展开，本机无输出。",
+    "images": [],
+    "elapsed_seconds": null,
+    "review": {
+      "verdict": "本功能未验证；加载诊断已通过",
+      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+    },
+    "evidence": [
+      "../../research/liuyue-comfyui-models-2026-10-18.md",
+      "../../research/liuyue-five-model-trial-sources.md",
+      "../../research/feature-claims-2026-10-19.md",
+      "../2026-10-18/README.md",
+      "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
+    ],
+    "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。"
+  },
+  {
+    "workflow_api": "workflows/gguf.api.json",
+    "sampler_node": "10",
+    "prompt_node": "8",
+    "latent_node": "5",
+    "save_node": "18",
+    "width": 512,
+    "height": 512,
+    "steps": 9,
+    "seed": 665025001,
+    "model": "Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M",
+    "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "计划配置，尚未执行：RX6650XT扩散；CPU文本编码/CPU VAE；关闭动态VRAM、lowvram、预留2GB、同步卸载；先512²，无额外LoRA",
+    "id": "zimage-gguf-photo",
+    "feature": "双GGUF文生图／低显存运行",
+    "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "相同写实场景能实际生成；记录峰值显存/内存和耗时后才评价8GB可运行。",
+    "deviations": "扩散Q4_K_M为正文推荐；编码器选择Q4_K_M，截图为Q4_K_S；公开仓库示例展平，非作者未公开网盘JSON。",
+    "status": "operator_stopped_no_output",
+    "reason": "CPU文本配置耗时过长且整机可用内存低于0.5GB；API中止后装载仍未返回，已结束本任务服务。无输出，不判为模型功能失败。",
+    "evidence": "trials\\2026-10-20-zimage\\cases\\zimage-gguf-photo\\operator-stop.json"
+  }
+]

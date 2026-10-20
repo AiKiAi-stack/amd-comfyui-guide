@@ -1,0 +1,152 @@
+{
+  "_id": "6930aa8330dc4e50d14039b9",
+  "id": "SeeSee21/Z-Image-Turbo-AIO",
+  "private": false,
+  "pipeline_tag": "text-to-image",
+  "tags": [
+    "text-to-image",
+    "image-generation",
+    "diffusion",
+    "comfyui",
+    "photorealistic",
+    "bilingual",
+    "chinese",
+    "english",
+    "8-step",
+    "fast-generation",
+    "en",
+    "zh",
+    "base_model:Tongyi-MAI/Z-Image-Turbo",
+    "base_model:finetune:Tongyi-MAI/Z-Image-Turbo",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 165,
+  "likes": 303,
+  "modelId": "SeeSee21/Z-Image-Turbo-AIO",
+  "author": "SeeSee21",
+  "sha": "3614ae1a6ceec70d8b1b02f41df3af72ac756241",
+  "lastModified": "2025-12-07T18:06:32Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "language": [
+      "en",
+      "zh"
+    ],
+    "base_model": [
+      "Tongyi-MAI/Z-Image-Turbo"
+    ],
+    "pipeline_tag": "text-to-image",
+    "tags": [
+      "text-to-image",
+      "image-generation",
+      "diffusion",
+      "comfyui",
+      "photorealistic",
+      "bilingual",
+      "chinese",
+      "english",
+      "8-step",
+      "fast-generation"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "e70624a5650d67f211b6c1ea7f30bbf2864fb277",
+      "size": 1734
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "6aa2f16e1e095b4715273d0dbb5a62ad843a2506",
+      "size": 8917
+    },
+    {
+      "rfilename": "images/test1-coffee-shop.jpeg",
+      "blobId": "af4a500bb364b521142035ea174522a14978b80d",
+      "size": 74025
+    },
+    {
+      "rfilename": "images/test2-chinese-temple.jpeg",
+      "blobId": "3e0c7d6e62994e3c2d81824a19a8ccedac484f3e",
+      "size": 78497
+    },
+    {
+      "rfilename": "images/test3-sushi.jpeg",
+      "blobId": "9be21e08862fa6fbeee07865a45cb8fb5b0d3ccd",
+      "size": 59245
+    },
+    {
+      "rfilename": "workflow.png",
+      "blobId": "154baf3305a734cfc3cecc1d3cd3caeff4beaca0",
+      "size": 689121,
+      "lfs": {
+        "sha256": "dad7ccff70dfc2dd42269e9ab84169a5d0035a893ff0ecc9fe18f906126bfdf0",
+        "size": 689121,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "workflow/Z-Image-Turbo-AIO-workflow-controlnet.json",
+      "blobId": "11bd5159e6d6e87bd7ee37b7d6ebbd864b0b02cd",
+      "size": 42229
+    },
+    {
+      "rfilename": "workflow/Z-Image-Turbo-AIO-workflow-controlnet.png",
+      "blobId": "505c2555bbb0b3c1affb256963572eaafe07586e",
+      "size": 3595328,
+      "lfs": {
+        "sha256": "ec839bddac7ea27949a1bf241347a5826fee475a56df21e5ddd6c7978a169d6b",
+        "size": 3595328,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "workflow/Z-Image-Turbo-AIO-workflow-v2.json",
+      "blobId": "558071cb2209639dcc9dd503db557ffd7459f634",
+      "size": 31717
+    },
+    {
+      "rfilename": "workflow/Z-Image-Turbo-AIO-workflow-v2.png",
+      "blobId": "b14136a417d1dbd5762ddd870b55489396239337",
+      "size": 3355694,
+      "lfs": {
+        "sha256": "72332b05144bd9a3020409611b7d3077caa9a7101b6c5cb84fdd0ed22d3d77c1",
+        "size": 3355694,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "z-image-turbo-aio-workflow.json",
+      "blobId": "2c6f90b59f18834f50aba482879e975efac998d4",
+      "size": 27561
+    },
+    {
+      "rfilename": "z-image-turbo-bf16-aio.safetensors",
+      "blobId": "34c17d82b9a1d9f2056e1026a1d3d31d707f8379",
+      "size": 20522566986,
+      "lfs": {
+        "sha256": "9120e2c0428bfc3ba786e2d40e9c1980763f26b210b8ece796a1293c19217426",
+        "size": 20522566986,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "z-image-turbo-fp8-aio.safetensors",
+      "blobId": "3789eebbdc595e430b298f89a757f8e18c7a9d92",
+      "size": 10345190658,
+      "lfs": {
+        "sha256": "f569c42b6797a89e65e80c743d6dfd230ed9318237aa242c92777deb22fad660",
+        "size": 10345190658,
+        "pointerSize": 136
+      }
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-12-03T21:24:19Z",
+  "usedStorage": 102824945245
+}

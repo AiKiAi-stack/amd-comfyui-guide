@@ -1,0 +1,218 @@
+{
+  "prompt": [
+    3,
+    "9471ac1b-bad6-4c9c-a01a-d322d8e10378",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "moss_image_sft_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+          "type": "moss_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae_small.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "A watercolor illustration of the same astronaut walking through a lush jungle, soft watercolor washes, visible paper texture, green foliage and warm sunlight. Preserve the centered full-body composition.",
+          "clip": [
+            "2",
+            0
+          ]
+        }
+      },
+      "5": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "blurry, distorted, watermark",
+          "clip": [
+            "2",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "7": {
+        "class_type": "ModelSamplingAuraFlow",
+        "inputs": {
+          "model": [
+            "12",
+            0
+          ],
+          "shift": 5.0
+        }
+      },
+      "8": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "7",
+            0
+          ],
+          "positive": [
+            "4",
+            0
+          ],
+          "negative": [
+            "5",
+            0
+          ],
+          "latent_image": [
+            "32",
+            0
+          ],
+          "seed": 66501001,
+          "steps": 8,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "sgm_uniform",
+          "denoise": 0.6
+        }
+      },
+      "9": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "8",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "10": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "9",
+            0
+          ],
+          "filename_prefix": "FeatureBench/moss-img2img"
+        }
+      },
+      "12": {
+        "class_type": "LoraLoaderModelOnly",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
+          "strength_model": 1.0
+        }
+      },
+      "30": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "featurebench/astronaut.png"
+        }
+      },
+      "31": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "30",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "32": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "31",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      }
+    },
+    {
+      "create_time": 1792394464513
+    },
+    [
+      "10"
+    ]
+  ],
+  "outputs": {
+    "10": {
+      "images": [
+        {
+          "filename": "moss-img2img_00001_.png",
+          "subfolder": "FeatureBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "9471ac1b-bad6-4c9c-a01a-d322d8e10378",
+          "timestamp": 1792394464513
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "9471ac1b-bad6-4c9c-a01a-d322d8e10378",
+          "timestamp": 1792394464634
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "9471ac1b-bad6-4c9c-a01a-d322d8e10378",
+          "timestamp": 1792394706775
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "10": {
+      "node_id": "10",
+      "display_node": "10",
+      "parent_node": null,
+      "real_node_id": "10"
+    }
+  }
+}

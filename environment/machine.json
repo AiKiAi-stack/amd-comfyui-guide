@@ -1,0 +1,19 @@
+{
+  "scope": "Read-only machine metadata; no GPU workload executed in publication task",
+  "os": {
+    "Caption": "Microsoft Windows 10 家庭版",
+    "Version": "10.0.19045",
+    "BuildNumber": "19045"
+  },
+  "gpu": [
+    {
+      "Name": "GameViewer Virtual Display Adapter",
+      "DriverVersion": "17.13.25.697"
+    },
+    {
+      "Name": "AMD Radeon RX 6650 XT",
+      "DriverVersion": "32.0.21045.5002"
+    }
+  ],
+  "date": "2026-10-20"
+}

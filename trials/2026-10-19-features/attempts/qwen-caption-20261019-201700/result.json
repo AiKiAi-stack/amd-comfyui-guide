@@ -1,0 +1,31 @@
+{
+  "id": "qwen-caption",
+  "model": "qwen",
+  "feature": "自动反推提示词并再生成",
+  "recipe": "caption",
+  "claim_level": "同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "unused",
+  "expected": "先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
+  "started_at": 1792411999.5986195,
+  "review": "pending",
+  "prompt_id": "1b7a54dd-0154-467b-a987-9c320cd77769",
+  "status": "error",
+  "images": [],
+  "text_outputs": [],
+  "errors": [
+    {
+      "node_type": "TextGenerate",
+      "exception_type": "RuntimeError",
+      "exception_message": "CUDA error: HIPBLAS_STATUS_INVALID_VALUE when calling `hipblasLtMatmulAlgoGetHeuristic( ltHandle, computeDesc.descriptor(), Adesc.descriptor(), Bdesc.descriptor(), Cdesc.descriptor(), Cdesc.descriptor(), preference.descriptor(), 1, &heuristicResult, &returnedResult)`\n"
+    }
+  ],
+  "elapsed_seconds": 158.33
+}

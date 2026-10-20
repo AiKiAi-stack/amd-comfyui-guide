@@ -1,0 +1,41 @@
+{
+  "records": [
+    {
+      "id": "q21-un-art-study",
+      "output": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\UncensoredBench\\q21-un-art-study_00001_.png",
+      "sha256": "d205f387b765257f74b3eb7ab6c25ab4fb991f1a6d2c70c9090274adf933ff61",
+      "prompt_matches_api": true,
+      "dimensions": [
+        512,
+        512
+      ],
+      "elapsed_seconds": 471.33,
+      "review": "通过"
+    },
+    {
+      "id": "q21-un-gothic-horror",
+      "output": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\UncensoredBench\\q21-un-gothic-horror_00001_.png",
+      "sha256": "f64c16624c85e754cd27e41beb6dedc6868041b66603a4b1c4a4aa27158cad39",
+      "prompt_matches_api": true,
+      "dimensions": [
+        512,
+        512
+      ],
+      "elapsed_seconds": 470.56,
+      "review": "基本通过"
+    },
+    {
+      "id": "q21-un-satire-profanity",
+      "output": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\UncensoredBench\\q21-un-satire-profanity_00001_.png",
+      "sha256": "eeea5fb4c518c0acc47beff882e9e235a493cdbc903bb07464233cae2fbfcfb2",
+      "prompt_matches_api": true,
+      "dimensions": [
+        512,
+        512
+      ],
+      "elapsed_seconds": 475.8,
+      "review": "文字通过，构图基本通过"
+    }
+  ],
+  "verified_count": 3
+}

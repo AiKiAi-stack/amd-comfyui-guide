@@ -1,0 +1,48 @@
+{
+  "id": "kroma-multiref",
+  "model": "kroma",
+  "feature": "多图参考",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "prompt": "Use the rainy cafe street background from image 1. Replace the orange cat in image 1 with the red fox from image 2. Preserve the fox orange fur, black paws and white chest. The fox sits beside the cafe entrance. Do not use the forest background. Photorealistic.",
+  "expected": "同时采用雨街背景和参考狐狸主体。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。",
+  "batch_id": "20261019T112736Z-93c01555",
+  "prompt_id": "07c35366-1b98-4965-becc-cd0798a93a5c",
+  "status": "success",
+  "batch_status": "success",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 395.62,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 395.62 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "9",
+      "node_id": "case02_9",
+      "filename_prefix": "FeatureBench/kroma-multiref",
+      "role": "main"
+    }
+  ],
+  "images": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-multiref_00001_.png",
+      "filename": "kroma-multiref_00001_.png",
+      "subfolder": "FeatureBench",
+      "filename_prefix": "FeatureBench/kroma-multiref",
+      "node_id": "case02_9",
+      "role": "main"
+    }
+  ],
+  "errors": [],
+  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\kroma-multiref.png"
+}

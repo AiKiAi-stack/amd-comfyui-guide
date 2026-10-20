@@ -1,0 +1,315 @@
+{
+  "updated_at": "2026-10-20T14:09:23.261822+00:00",
+  "execution_status": {
+    "status": "planned_feature_cases_reviewed",
+    "summary": "Six AIO and four GGUF feature cases have real outputs with PNG/API bindings and manual visual passes. The CPU-text diagnostic baseline was operator-stopped without output. Optional branches and article resolution/speed claims remain unverified.",
+    "completed_gguf_case_ids": [
+      "zimage-gguf-photo-gpu-text",
+      "zimage-gguf-prompt-change",
+      "zimage-gguf-english",
+      "zimage-gguf-chinese"
+    ],
+    "operator_stopped_case_ids": [
+      "zimage-gguf-photo"
+    ],
+    "preserved_failed_attempts": [
+      {
+        "case_id": "zimage-gguf-prompt-change",
+        "attempt": "cases/zimage-gguf-prompt-change/attempts/001-native-access-violation/attempt-summary.json",
+        "status": "native_access_violation_no_output",
+        "exception_code": "0xC0000005",
+        "phase": "ComfyUI-GGUF GGMLTensor.to during model_patcher.partially_unload on the second prompt in the same process",
+        "retry": "The feature was rerun successfully in an independent service; both the failure and retry are retained."
+      }
+    ],
+    "aio_status": "six_outputs_visually_passed_same_service",
+    "aio_completed_output_case_ids": [
+      "zimage-aio-photo-9step",
+      "zimage-aio-photo-8step",
+      "zimage-aio-photo-4step",
+      "zimage-aio-english",
+      "zimage-aio-chinese",
+      "zimage-aio-figure-art"
+    ],
+    "aio_visual_review_pass_case_ids": [
+      "zimage-aio-photo-9step",
+      "zimage-aio-photo-8step",
+      "zimage-aio-photo-4step",
+      "zimage-aio-english",
+      "zimage-aio-chinese",
+      "zimage-aio-figure-art"
+    ],
+    "aio_visual_review_pending_case_ids": [],
+    "aio_submitted_pending_result_case_ids": [],
+    "aio_not_yet_submitted_case_ids": [],
+    "aio_case_ids": [
+      "zimage-aio-photo-9step",
+      "zimage-aio-photo-8step",
+      "zimage-aio-photo-4step",
+      "zimage-aio-english",
+      "zimage-aio-chinese",
+      "zimage-aio-figure-art"
+    ],
+    "completed_output_scope": {
+      "resolution": "512x512",
+      "gguf_quantization": "Q4_K_M diffusion GGUF and Q4_K_M Qwen3-4B GGUF",
+      "note": "No completed 1024x1024 output is recorded."
+    }
+  },
+  "sources": [
+    {
+      "claim_family": "Z-Image Turbo GGUF",
+      "article_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+      "audit": "source-gguf.md",
+      "source_boundary": "User-provided offline article and public pinned workflow/model records; the private-drive workflow JSON was not included, and the article was not fetched from WeChat."
+    },
+    {
+      "claim_family": "Z-Image-Turbo-AIO",
+      "article_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+      "audit": "source-aio.md",
+      "source_boundary": "User-provided offline article and the pinned public workflow/model revision; the article was not fetched from WeChat."
+    }
+  ],
+  "storage_integrity": {
+    "disk_types": {
+      "D": "HDD",
+      "G": "NVMe SSD"
+    },
+    "same_sha256_mirrors_verified": [
+      {
+        "artifact": "z_image_turbo-Q4_K_M.gguf",
+        "sha256": "745ec270db042409fde084d6b5cfccabf214a7fe5a494edf994a391125656afd",
+        "verification_files": [
+          "z_image_turbo-Q4_K_M.gguf.verified.json",
+          "z_image_turbo-Q4_K_M.gguf.ssd-verified.json"
+        ]
+      },
+      {
+        "artifact": "Qwen3-4B-Q4_K_M.gguf",
+        "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
+        "verification_files": [
+          "Qwen3-4B-Q4_K_M.gguf.verified.json",
+          "Qwen3-4B-Q4_K_M.gguf.ssd-verified.json"
+        ]
+      },
+      {
+        "artifact": "ae.safetensors",
+        "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+        "verification_files": [
+          "ae.safetensors.verified.json",
+          "ae.safetensors.ssd-verified.json"
+        ]
+      },
+      {
+        "artifact": "z-image-turbo-fp8-aio.safetensors",
+        "sha256": "f569c42b6797a89e65e80c743d6dfd230ed9318237aa242c92777deb22fad660",
+        "verification_files": [
+          "z-image-turbo-fp8-aio.safetensors.verified.json",
+          "z-image-turbo-fp8-aio.safetensors.ssd-verified.json"
+        ]
+      }
+    ],
+    "interpretation": "The checks confirm byte-identical D and G copies. The measured generation timings also vary text-encoder placement and other runtime/storage conditions, so they do not isolate a single speed cause."
+  },
+  "mapped_features": [
+    {
+      "claim": "AIO photorealistic T2I using the pinned 9-step source branch",
+      "case_id": "zimage-aio-photo-9step",
+      "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png",
+      "output_sha256": "bb0721e956bce8c74c41e732f677c8d6d920ca4e62419f685841dd62f2b72fb1",
+      "result": "cases/zimage-aio-photo-9step/result.json",
+      "review": "reviews.json#zimage-aio-photo-9step",
+      "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+      "observed": "目视确认红色亮釉陶瓷茶壶、恰好两个柠檬、木桌及左侧窗光，无人物和文字。512²，源活动链9步res_multistep/simple；同一服务首项，提交后50.23秒，采样约19.8秒。服务冷启动另计242.66秒，含健康探针的完整编排309.95秒。周期观测最大显存5093299712字节、整机RAM9081176064字节，非精确峰值。AIO FP8与GGUF采用不同采样器，不能把跨模型耗时差异单独归因于精度。",
+      "limit": "512-square tested in a single six-case serial service session. Optional LoRA/high-resolution branch, BF16 comparison, 1024 speed and 6GB operation remain unverified.",
+      "elapsed_seconds_after_submission": 50.23
+    },
+    {
+      "claim": "AIO 8-step article-recommended generation",
+      "case_id": "zimage-aio-photo-8step",
+      "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png",
+      "output_sha256": "c08e957e0053b797bbc6dda17313c84c7effba534c312bcc9713245c60060b12",
+      "result": "cases/zimage-aio-photo-8step/result.json",
+      "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+      "elapsed_seconds_after_submission": 30.09,
+      "limit": "512-square tested in a single six-case serial service session. Optional LoRA/high-resolution branch, BF16 comparison, 1024 speed and 6GB operation remain unverified.",
+      "review": "reviews.json#zimage-aio-photo-8step",
+      "observed": "目视确认红釉茶壶、恰好两个柠檬、木桌和左窗光；与9步同seed及提示词，构图相近，未见明显结构退化。8步输出独立保存；复用已启动服务和缓存，不是冷启动速度。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.09秒，未包含服务冷启动。"
+    },
+    {
+      "claim": "AIO 4-step comparison",
+      "case_id": "zimage-aio-photo-4step",
+      "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+      "status": "passed_visual_review",
+      "submission": "cases/zimage-aio-photo-4step/submission.json",
+      "prompt_id": "0b20f4e1-2bd1-437e-936e-cddb801834b0",
+      "output": "ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png",
+      "limit": "512-square tested in a single six-case serial service session. Optional LoRA/high-resolution branch, BF16 comparison, 1024 speed and 6GB operation remain unverified.",
+      "output_sha256": "e160314290d5f2be50b006755f92d6068a787881d5b481affeea44a62786a23e",
+      "result": "cases/zimage-aio-photo-4step/result.json",
+      "review": "reviews.json#zimage-aio-photo-4step",
+      "elapsed_seconds_after_submission": 20.08,
+      "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+      "observed": "目视确认红釉茶壶、恰好两个柠檬、木桌和左窗光；与8/9步同seed及提示词。主体与布局保留，壶身反射细节、柠檬表皮细节略有变化；本例未见明显结构缺损，不外推全部提示词质量。复用已启动服务和缓存。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后20.08秒，未包含服务冷启动。"
+    },
+    {
+      "claim": "AIO English text rendering",
+      "case_id": "zimage-aio-english",
+      "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png",
+      "limit": "512-square tested in a single six-case serial service session. Optional LoRA/high-resolution branch, BF16 comparison, 1024 speed and 6GB operation remain unverified.",
+      "output_sha256": "c99807677d6bbf0dcfb1f57b5da97eab7df2b4ece258cea8a81256f095db0046",
+      "result": "cases/zimage-aio-english/result.json",
+      "review": "reviews.json#zimage-aio-english",
+      "elapsed_seconds_after_submission": 30.97,
+      "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+      "observed": "目视确认白色招牌上只有HELLO，字母完整且拼写正确，蓝色背景墙，没有多余文字。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.97秒，未包含服务冷启动。"
+    },
+    {
+      "claim": "AIO Chinese text rendering",
+      "case_id": "zimage-aio-chinese",
+      "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png",
+      "limit": "512-square tested in a single six-case serial service session. Optional LoRA/high-resolution branch, BF16 comparison, 1024 speed and 6GB operation remain unverified.",
+      "output_sha256": "035a14d62e5a51bea3b057d933a6c822a9657b09a1bdbd1162607e1b40f900bb",
+      "result": "cases/zimage-aio-chinese/result.json",
+      "review": "reviews.json#zimage-aio-chinese",
+      "elapsed_seconds_after_submission": 30.17,
+      "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+      "observed": "目视确认白色招牌上准确显示你好世界四字，分两行排列，背景为蓝墙，没有乱码或多余文字。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.17秒，未包含服务冷启动。"
+    },
+    {
+      "claim": "AIO exploratory nonsexual adult figure art",
+      "case_id": "zimage-aio-figure-art",
+      "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png",
+      "limit": "512-square tested in a single six-case serial service session. Optional LoRA/high-resolution branch, BF16 comparison, 1024 speed and 6GB operation remain unverified. Nonsexual adult art does not establish special UN training or fewer restrictions relative to stock.",
+      "output_sha256": "77c672db9761afded6bb9b41370e17a464b4c8061a13828c1fec95f1e621398e",
+      "result": "cases/zimage-aio-figure-art/result.json",
+      "review": "reviews.json#zimage-aio-figure-art",
+      "elapsed_seconds_after_submission": 30.16,
+      "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+      "observed": "目视确认成年女性坐姿全身素描，纸张与炭笔质感、非色情艺术学习场景符合提示词。手脚细部只是生成结果，不宣称解剖精确；不构成特殊UN训练或比原版更少限制的证据。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.16秒，未包含服务冷启动。"
+    },
+    {
+      "claim": "512x512 GGUF Q4_K_M photorealistic T2I under the GPU-text profile",
+      "case_id": "zimage-gguf-photo-gpu-text",
+      "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png",
+      "output_sha256": "d5c8a7b94a749771151942bdade42be70599727d28a932c3586a42ed4c68ed6a",
+      "result": "cases/zimage-gguf-photo-gpu-text/result.json",
+      "review": "reviews.json#zimage-gguf-photo-gpu-text",
+      "observed": "目视确认一只红色亮釉陶瓷茶壶、两个完整柠檬、深色木桌与左侧窗光，材质和结构清楚，无文字水印。512²、同一份Q4_K_M权重；GPU文本编码、G盘NVMe、自动存储策略；总124.59秒，日志9步采样44.4秒。改变了计算位置与存储等多个条件，不能据此给出单变量速度倍率。周期采样的整机RAM最大值接近上限，仍需观察连跑稳定性。",
+      "limit": "The 8GB RX 6650 XT run is evidence for this 512x512 configuration only, not 6GB compatibility or repeated-run stability. GPU text encoding and storage/runtime conditions changed together, so this timing is not a single-variable speed comparison.",
+      "elapsed_seconds_after_submission": 124.59,
+      "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。"
+    },
+    {
+      "claim": "GGUF CPU-text T2I baseline",
+      "case_id": "zimage-gguf-photo",
+      "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+      "status": "operator_stopped_no_output",
+      "output": null,
+      "evidence": "cases/zimage-gguf-photo/operator-stop.json",
+      "observed": "The operator requested an interrupt after model loading did not return and available host RAM fell below 0.5GB; the owned service was stopped. No output image was saved.",
+      "limit": "This is a stopped baseline, not a generation failure verdict or an image-quality result."
+    },
+    {
+      "claim": "Flat GGUF workflow prompt change takes effect (red teapot to blue teapot)",
+      "case_id": "zimage-gguf-prompt-change",
+      "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png",
+      "output_sha256": "106e839d78cb5eac5ad6d53ccd4850ae16517bcfda9054112a35264a76ba7b4b",
+      "result": "cases/zimage-gguf-prompt-change/result.json",
+      "review": "reviews.json#zimage-gguf-prompt-change",
+      "failed_attempt": "cases/zimage-gguf-prompt-change/attempts/001-native-access-violation/attempt-summary.json",
+      "observed": "同seed、相同GPU文本编码/SSD配置，仅将提示词的red改为blue；目视确认蓝色茶壶、两只柠檬、窗光与木桌，构图与红壶基线相近。此为修改提示词的文生图对照，没有输入红壶图片，不能作为图像编辑能力证明。首轮连续第二任务在GGUF partially_unload中原生访问异常，无输出，保留于attempts/001-native-access-violation；独立服务重试成功，提交后125.77秒（不含服务冷启动）。",
+      "limit": "The initial same-process second prompt hit a native access violation during GGUF partially_unload and produced no image. This is a prompt-change text-to-image comparison, not image editing and not proof of the article's suspected Nodes 2.0 cause.",
+      "elapsed_seconds_after_submission": 125.77,
+      "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。"
+    },
+    {
+      "claim": "GGUF Q4_K_M English text rendering",
+      "case_id": "zimage-gguf-english",
+      "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png",
+      "output_sha256": "c1559c859ec3a10c014dc9467c820cc4e5dc63f0f24d6bef1bc087dfb2398024",
+      "result": "cases/zimage-gguf-english/result.json",
+      "review": "reviews.json#zimage-gguf-english",
+      "observed": "目视确认白色招牌上只有一个黑色单词HELLO，五个字母完整且拼写正确，背景为蓝墙，没有多余文字。512²，Q4_K_M双GGUF，独立服务、GPU文本编码和G盘NVMe；提交后85.47秒，不含服务启动。",
+      "limit": "This validates the separate GGUF case only; it does not validate AIO text rendering.",
+      "elapsed_seconds_after_submission": 85.47,
+      "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。"
+    },
+    {
+      "claim": "GGUF Q4_K_M Chinese text rendering",
+      "case_id": "zimage-gguf-chinese",
+      "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+      "status": "passed_visual_review",
+      "output": "ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png",
+      "output_sha256": "d0eb4529490d674204a2e8e743cc14cdd81b721c6403972521babdfdda91a98f",
+      "result": "cases/zimage-gguf-chinese/result.json",
+      "review": "reviews.json#zimage-gguf-chinese",
+      "observed": "目视确认白色招牌上恰好四个清晰黑字你好世界，分两行排列、背景蓝墙，无多余文字。512²，Q4_K_M双GGUF，独立服务；提交后75.34秒，不含服务启动。",
+      "limit": "This validates the separate GGUF case only; it does not validate AIO text rendering.",
+      "elapsed_seconds_after_submission": 75.34,
+      "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。"
+    }
+  ],
+  "unverified_claims_or_optional_branches": [
+    {
+      "claim": "1024-square article speed figures (including 15 seconds, 4-step 7 seconds, and 10-40 seconds)",
+      "status": "not_tested",
+      "reason": "All completed outputs are 512-square. AIO 4-step output completed in 20.08 seconds after submission in a warm service; it is not a test of the article resolution or 7-second claim."
+    },
+    {
+      "claim": "6GB compatibility",
+      "status": "not_tested",
+      "reason": "Only an 8GB RX 6650 XT was used. Continuous execution was tested separately: six AIO cases passed in one service; the second GGUF prompt crashed during unload and required an independent-service retry."
+    },
+    {
+      "claim": "Q3 versus Q4 visual quality",
+      "status": "not_tested",
+      "reason": "The local GGUF outputs use Q4_K_M for both diffusion and text encoder; no Q3 output comparison exists. The offline GGUF screenshot shows Q4_K_S for the encoder, while this run selected Q4_K_M."
+    },
+    {
+      "claim": "AIO BF16 versus FP8 visual quality",
+      "status": "not_tested",
+      "reason": "The local AIO checkpoint is FP8; no BF16 output comparison exists."
+    },
+    {
+      "claim": "Optional AIO woman877-zimage LoRA branch",
+      "status": "not_tested",
+      "reason": "The exact LoRA is not part of the pinned AIO repository and is bypassed in its source workflow."
+    },
+    {
+      "claim": "Optional AIO 1.5x high-resolution second-sampler branch",
+      "status": "not_tested",
+      "reason": "The branch is bypassed in the pinned source workflow and has no local output."
+    },
+    {
+      "claim": "rgthree comparison and bypass UI",
+      "status": "outside_current_api_generation_cases",
+      "reason": "The tested flattened API graph does not exercise these UI-only controls."
+    },
+    {
+      "claim": "AIO checkpoint has special NSFW training",
+      "status": "unsupported_for_selected_checkpoint",
+      "reason": "The fixed photorealistic checkpoint's source card does not establish that claim; later Anime variants are separate files."
+    }
+  ],
+  "continuous_execution": {
+    "aio": "Six consecutive cases completed successfully in one service.",
+    "gguf": "Same-service second prompt raised native access violation in GGUF partially_unload. Fresh-service retry passed. No continuous stability claim."
+  }
+}

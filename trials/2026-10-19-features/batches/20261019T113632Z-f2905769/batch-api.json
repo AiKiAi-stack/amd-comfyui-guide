@@ -1,0 +1,801 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+    }
+  },
+  "case01_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_w4a8.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "case01_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Replace only the orange cat with a small red fox sitting in the same location facing away from the camera. Keep the rainy Shanghai cafe street and all other areas unchanged. Photorealistic.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case01_31",
+        0
+      ]
+    }
+  },
+  "case01_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "batch_barrier_01",
+        0
+      ],
+      "negative": [
+        "case01_4",
+        1
+      ],
+      "latent_image": [
+        "case01_55",
+        0
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case01_6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case01_5",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_56",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-inpaint"
+    }
+  },
+  "case01_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "case01_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case01_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case01_50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0.0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "case01_51": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 230,
+      "height": 300
+    }
+  },
+  "case01_52": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "case01_51",
+        0
+      ],
+      "left": 12,
+      "top": 12,
+      "right": 12,
+      "bottom": 12
+    }
+  },
+  "case01_53": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "case01_50",
+        0
+      ],
+      "source": [
+        "case01_52",
+        0
+      ],
+      "x": 250,
+      "y": 200,
+      "operation": "add"
+    }
+  },
+  "case01_54": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "case01_31",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_55": {
+    "class_type": "SetLatentNoiseMask",
+    "inputs": {
+      "samples": [
+        "case01_54",
+        0
+      ],
+      "mask": [
+        "case01_53",
+        0
+      ]
+    }
+  },
+  "case01_56": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "case01_31",
+        0
+      ],
+      "source": [
+        "case01_6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "case01_53",
+        0
+      ]
+    }
+  },
+  "case01_57": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "case01_53",
+        0
+      ]
+    }
+  },
+  "case01_58": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_57",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-inpaint-mask"
+    }
+  },
+  "case01_59": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_31",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-inpaint-input"
+    }
+  },
+  "case02_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Use image 1 as the background and composition. Remove the existing animal in image 1 and place the animal subject from image 2 at the same location. Take its species, shape, fur colors and identifying features from image 2. Preserve the background, lighting, framing and perspective of image 1. Do not copy the background of image 2. Photorealistic.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case02_31",
+        0
+      ],
+      "images.image_2": [
+        "case02_34",
+        0
+      ]
+    }
+  },
+  "case02_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "batch_barrier_02",
+        0
+      ],
+      "negative": [
+        "case02_4",
+        1
+      ],
+      "latent_image": [
+        "case02_4",
+        2
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case02_6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case02_5",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case02_7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case02_6",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-multiref"
+    }
+  },
+  "case02_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "case02_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case02_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case02_33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/fox.png"
+    }
+  },
+  "case02_34": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case02_33",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case03_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Edit image 1: replace the person's facial identity and hair with the fictional adult woman from image 2, including her copper-red curly hair, pale freckled skin and green eyes. Preserve the navy blue coat, red scarf, body pose, framing and outdoor park from image 1. Match lighting and proportions. Only one person.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case03_31",
+        0
+      ],
+      "images.image_2": [
+        "case03_34",
+        0
+      ]
+    }
+  },
+  "case03_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "batch_barrier_03",
+        0
+      ],
+      "negative": [
+        "case03_4",
+        1
+      ],
+      "latent_image": [
+        "case03_4",
+        2
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case03_6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case03_5",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case03_7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case03_6",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-face-swap"
+    }
+  },
+  "case03_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-b.png"
+    }
+  },
+  "case03_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case03_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case03_33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-a.png"
+    }
+  },
+  "case03_34": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case03_33",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case04_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Transform this photograph into a delicate watercolor painting. Keep the orange cat, its pose, the cafe entrance, the rainy street and the original framing. Use visible textured paper and soft watercolor washes. No text.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case04_31",
+        0
+      ]
+    }
+  },
+  "case04_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "batch_barrier_04",
+        0
+      ],
+      "negative": [
+        "case04_4",
+        1
+      ],
+      "latent_image": [
+        "case04_4",
+        2
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case04_6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case04_5",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case04_7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case04_6",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-style-edit"
+    }
+  },
+  "case04_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "case04_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case04_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case05_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Edit only the face of the fictional adult woman in image 1. Use the facial identity from image 2, including pale freckled skin, facial features and green eyes. Keep the original dark straight hair from image 1, navy coat, red scarf, pose, park background and framing. Do not change the hairstyle. One person.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case05_31",
+        0
+      ],
+      "images.image_2": [
+        "case05_34",
+        0
+      ]
+    }
+  },
+  "case05_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "batch_barrier_05",
+        0
+      ],
+      "negative": [
+        "case05_4",
+        1
+      ],
+      "latent_image": [
+        "case05_4",
+        2
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case05_6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case05_5",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case05_7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case05_6",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-face-only"
+    }
+  },
+  "case05_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-b.png"
+    }
+  },
+  "case05_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case05_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case05_33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-a.png"
+    }
+  },
+  "case05_34": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case05_33",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "batch_barrier_01": {
+    "class_type": "BenchmarkConditioningBarrier",
+    "inputs": {
+      "conditioning": [
+        "case01_4",
+        0
+      ],
+      "ready_1": [
+        "case01_4",
+        0
+      ],
+      "ready_2": [
+        "case02_4",
+        0
+      ],
+      "ready_3": [
+        "case03_4",
+        0
+      ],
+      "ready_4": [
+        "case04_4",
+        0
+      ],
+      "ready_5": [
+        "case05_4",
+        0
+      ]
+    }
+  },
+  "batch_barrier_02": {
+    "class_type": "BenchmarkConditioningBarrier",
+    "inputs": {
+      "conditioning": [
+        "case02_4",
+        0
+      ],
+      "ready_1": [
+        "case01_4",
+        0
+      ],
+      "ready_2": [
+        "case02_4",
+        0
+      ],
+      "ready_3": [
+        "case03_4",
+        0
+      ],
+      "ready_4": [
+        "case04_4",
+        0
+      ],
+      "ready_5": [
+        "case05_4",
+        0
+      ]
+    }
+  },
+  "batch_barrier_03": {
+    "class_type": "BenchmarkConditioningBarrier",
+    "inputs": {
+      "conditioning": [
+        "case03_4",
+        0
+      ],
+      "ready_1": [
+        "case01_4",
+        0
+      ],
+      "ready_2": [
+        "case02_4",
+        0
+      ],
+      "ready_3": [
+        "case03_4",
+        0
+      ],
+      "ready_4": [
+        "case04_4",
+        0
+      ],
+      "ready_5": [
+        "case05_4",
+        0
+      ]
+    }
+  },
+  "batch_barrier_04": {
+    "class_type": "BenchmarkConditioningBarrier",
+    "inputs": {
+      "conditioning": [
+        "case04_4",
+        0
+      ],
+      "ready_1": [
+        "case01_4",
+        0
+      ],
+      "ready_2": [
+        "case02_4",
+        0
+      ],
+      "ready_3": [
+        "case03_4",
+        0
+      ],
+      "ready_4": [
+        "case04_4",
+        0
+      ],
+      "ready_5": [
+        "case05_4",
+        0
+      ]
+    }
+  },
+  "batch_barrier_05": {
+    "class_type": "BenchmarkConditioningBarrier",
+    "inputs": {
+      "conditioning": [
+        "case05_4",
+        0
+      ],
+      "ready_1": [
+        "case01_4",
+        0
+      ],
+      "ready_2": [
+        "case02_4",
+        0
+      ],
+      "ready_3": [
+        "case03_4",
+        0
+      ],
+      "ready_4": [
+        "case04_4",
+        0
+      ],
+      "ready_5": [
+        "case05_4",
+        0
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "source": "D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\comfyui_workflow_templates_json\\templates\\image_flux2_klein_text_to_image.json",
+    "copy": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\source_workflows\\image_flux2_klein_text_to_image.json",
+    "sha256": "cd4a29b0be6f71a7391f2f023e69dfc3b47d7da9f2aa215b4c8b8e17c2eea107"
+  },
+  {
+    "source": "D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\comfyui_workflow_templates_json\\templates\\image_flux2_klein_image_edit_4b_distilled.json",
+    "copy": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\source_workflows\\image_flux2_klein_image_edit_4b_distilled.json",
+    "sha256": "7f1ead62d1456d485e95fb432fb492d2783f5ec9cfeefefe4ef71bfb448ba1a3"
+  }
+]

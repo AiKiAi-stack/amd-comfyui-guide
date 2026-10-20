@@ -1,0 +1,10 @@
+{
+  "repo": "Comfy-Org/MOSS-Image",
+  "revision": "3284a1dbb351e3396d70f39f2a71cbf6ed2ef1bb",
+  "file": "diffusion_models/moss_image_sft_int8_convrot.safetensors",
+  "bytes": 5413698958,
+  "sha256": "b4d1475bc7eeffd7b809e82ea13a1fba1fb85c4e18365af3813722faa5c0fe4f",
+  "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/diffusion_models/moss_image_sft_int8_convrot.safetensors",
+  "verified_sha256": "b4d1475bc7eeffd7b809e82ea13a1fba1fb85c4e18365af3813722faa5c0fe4f",
+  "completed_at": "2026-10-19T10:04:39+0800"
+}

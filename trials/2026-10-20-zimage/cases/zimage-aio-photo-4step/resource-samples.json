@@ -1,0 +1,82 @@
+[
+  {
+    "elapsed_seconds": 0.0,
+    "host_ram_used_bytes": 8721383424,
+    "host_ram_available_bytes": 8262848512,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3621339136,
+        "torch_vram_total": 1558183936,
+        "torch_vram_free": 1524056064
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 5.02,
+    "host_ram_used_bytes": 8680153088,
+    "host_ram_available_bytes": 8304078848,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3524422144,
+        "torch_vram_total": 1572864000,
+        "torch_vram_free": 1427139072
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 10.03,
+    "host_ram_used_bytes": 8749510656,
+    "host_ram_available_bytes": 8234721280,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3621081600,
+        "torch_vram_total": 1558183936,
+        "torch_vram_free": 1523798528
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 15.05,
+    "host_ram_used_bytes": 9484845056,
+    "host_ram_available_bytes": 7499386880,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3621081600,
+        "torch_vram_total": 1558183936,
+        "torch_vram_free": 1523798528
+      }
+    ]
+  },
+  {
+    "elapsed_seconds": 20.06,
+    "host_ram_used_bytes": 8627515392,
+    "host_ram_available_bytes": 8356716544,
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3621081600,
+        "torch_vram_total": 1558183936,
+        "torch_vram_free": 1523798528
+      }
+    ]
+  }
+]

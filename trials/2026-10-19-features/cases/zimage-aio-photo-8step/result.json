@@ -1,0 +1,259 @@
+{
+  "workflow_api": "workflows/aio.api.json",
+  "sampler_node": "17",
+  "prompt_node": "20",
+  "latent_node": "6",
+  "save_node": "26",
+  "width": 512,
+  "height": 512,
+  "steps": 8,
+  "seed": 665025001,
+  "model": "Z-Image-Turbo-AIO FP8",
+  "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+  "refs": [],
+  "inputs": [],
+  "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+  "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+  "id": "zimage-aio-photo-8step",
+  "feature": "文章推荐8步生成",
+  "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+  "expected": "与9步同seed和提示词，独立保存8步输出；记录实际含加载耗时，勿直接称稳态速度。",
+  "deviations": "源活动采样链保持；源1152×1736降至512²作为小显存首轮诊断；仅覆盖提示词/seed/尺寸和指定步数。",
+  "memory_profile": "dynamic-nvme",
+  "planned_runtime_profile": "计划配置：RX6650XT；G盘NVMe文件映射、动态VRAM、fast-disk、禁用锁页内存；CPU VAE、同步卸载、预留2GB；512²，文本实际设备以服务日志为准。",
+  "status": "success",
+  "prompt_id": "0bce94c2-cacb-4600-8f19-8d5b60e89f21",
+  "started_at": "2026-10-20T14:02:49.315488+00:00",
+  "completed_at": "2026-10-20T14:03:19.423080+00:00",
+  "elapsed_seconds": 30.09,
+  "preflight": {
+    "gpu_probe": {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T140128Z\\result.json",
+      "timestamp": "2026-10-20T14:01:28+00:00",
+      "age_seconds": 64.5,
+      "healthy": true
+    },
+    "queue_idle": true,
+    "queue_running": 0,
+    "queue_pending": 0,
+    "checked_api_node_classes": [
+      "CLIPTextEncode",
+      "CheckpointLoaderSimple",
+      "ConditioningZeroOut",
+      "EmptyLatentImage",
+      "KSampler",
+      "ModelSamplingAuraFlow",
+      "SaveImage",
+      "VAEDecode"
+    ],
+    "memory_profile": "dynamic-nvme",
+    "system_stats": {
+      "system": {
+        "os": "win32",
+        "ram_total": 16984231936,
+        "ram_free": 8363061248,
+        "comfyui_version": "0.41.0",
+        "required_frontend_version": "1.55.17",
+        "installed_templates_version": "0.11.87",
+        "required_templates_version": "0.11.87",
+        "comfy_package_versions": [
+          {
+            "name": "comfyui-frontend-package",
+            "installed": "1.55.17",
+            "required": "1.55.17"
+          },
+          {
+            "name": "comfyui-workflow-templates",
+            "installed": "0.11.87",
+            "required": "0.11.87"
+          },
+          {
+            "name": "comfyui-embedded-docs",
+            "installed": "0.5.14",
+            "required": "0.5.14"
+          },
+          {
+            "name": "comfy-kitchen",
+            "installed": "0.2.38",
+            "required": "0.2.38"
+          },
+          {
+            "name": "comfy-aimdo",
+            "installed": "0.5.6",
+            "required": "0.5.6"
+          }
+        ],
+        "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+        "pytorch_version": "2.12.0+rocm7.14.0",
+        "embedded_python": false,
+        "deploy_environment": "local-git",
+        "argv": [
+          "ComfyUI/main.py",
+          "--listen",
+          "127.0.0.1",
+          "--port",
+          "8188",
+          "--cpu-vae",
+          "--disable-async-offload",
+          "--fast-disk",
+          "--enable-dynamic-vram",
+          "--disable-pinned-memory",
+          "--reserve-vram",
+          "2.0",
+          "--extra-model-paths-config",
+          "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+        ]
+      },
+      "devices": [
+        {
+          "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 8573157376,
+          "vram_free": 3621081600,
+          "torch_vram_total": 1558183936,
+          "torch_vram_free": 1523798528
+        }
+      ]
+    },
+    "system_profile": {
+      "argv": [
+        "ComfyUI/main.py",
+        "--listen",
+        "127.0.0.1",
+        "--port",
+        "8188",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--fast-disk",
+        "--enable-dynamic-vram",
+        "--disable-pinned-memory",
+        "--reserve-vram",
+        "2.0",
+        "--extra-model-paths-config",
+        "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+      ],
+      "device": {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3621081600,
+        "torch_vram_total": 1558183936,
+        "torch_vram_free": 1523798528
+      },
+      "memory_profile": "dynamic-nvme",
+      "verified_flags": [
+        "--enable-dynamic-vram",
+        "--fast-disk",
+        "--disable-pinned-memory",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--reserve-vram 2.0"
+      ],
+      "versions": {
+        "comfyui_version": "0.41.0",
+        "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+        "pytorch_version": "2.12.0+rocm7.14.0"
+      }
+    },
+    "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。"
+  },
+  "system_stats": {
+    "system": {
+      "os": "win32",
+      "ram_total": 16984231936,
+      "ram_free": 8363061248,
+      "comfyui_version": "0.41.0",
+      "required_frontend_version": "1.55.17",
+      "installed_templates_version": "0.11.87",
+      "required_templates_version": "0.11.87",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.17",
+          "required": "1.55.17"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.87",
+          "required": "0.11.87"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.38",
+          "required": "0.2.38"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+      "pytorch_version": "2.12.0+rocm7.14.0",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "ComfyUI/main.py",
+        "--listen",
+        "127.0.0.1",
+        "--port",
+        "8188",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--fast-disk",
+        "--enable-dynamic-vram",
+        "--disable-pinned-memory",
+        "--reserve-vram",
+        "2.0",
+        "--extra-model-paths-config",
+        "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3621081600,
+        "torch_vram_total": 1558183936,
+        "torch_vram_free": 1523798528
+      }
+    ]
+  },
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png"
+  ],
+  "image_metadata": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "c08e957e0053b797bbc6dda17313c84c7effba534c312bcc9713245c60060b12",
+      "png_prompt_binding": {
+        "status": "matched",
+        "node_id": "20",
+        "input_field": "text",
+        "actual_text": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark."
+      },
+      "output_node_id": "26",
+      "filename": "zimage-aio-photo-8step_00001_.png"
+    }
+  ],
+  "output_validation_status": "passed",
+  "visual_review": "pending",
+  "resource_samples": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\cases\\zimage-aio-photo-8step\\resource-samples.json",
+  "observed_peak_host_ram_used_bytes": 9161474048,
+  "observed_peak_vram_used_bytes": 5048735232,
+  "resource_sampling_limit": "周期采样得到的已观测最大值，非精确峰值；host RAM包含系统及其他进程。",
+  "errors": []
+}

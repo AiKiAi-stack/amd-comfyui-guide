@@ -1,0 +1,29 @@
+{
+  "id": "turbo-un-face-swap",
+  "model": "turbo-un",
+  "feature": "换头／人物身份参考",
+  "recipe": "edit",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Edit image 1: replace the person's facial identity and hair with the fictional adult woman from image 2, including her copper-red curly hair, pale freckled skin and green eyes. Preserve the navy blue coat, red scarf, body pose, framing and outdoor park from image 1. Match lighting and proportions. Only one person.",
+  "expected": "B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。",
+  "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+  "qwen_cache_device": "off",
+  "started_at": 1792432584.7337248,
+  "review": "pending",
+  "prompt_id": "4791a011-c595-4385-bb4e-6826d1a0b277",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-face-swap_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 990.75
+}

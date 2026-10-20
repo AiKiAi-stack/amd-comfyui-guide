@@ -1,0 +1,2 @@
+# Preserve exact public snapshot bytes so manifest hashes match across OSes.
+* -text

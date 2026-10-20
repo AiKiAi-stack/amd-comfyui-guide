@@ -1,0 +1,47 @@
+{
+  "id": "qwen-face-only",
+  "model": "qwen",
+  "feature": "换脸／仅面部身份",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Edit only the face of the fictional adult woman in image 1. Use the facial identity from image 2, including pale freckled skin, facial features and green eyes. Keep the original dark straight hair from image 1, navy coat, red scarf, pose, park background and framing. Do not change the hairstyle. One person.",
+  "expected": "面部特征转向A，B的黑发、服装与场景保持。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
+  "batch_id": "20261019T115722Z-09aa0f8c",
+  "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
+  "status": "success",
+  "batch_status": "success",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 745.75,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 745.75 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "7",
+      "node_id": "case03_7",
+      "filename_prefix": "FeatureBench/qwen-face-only",
+      "role": "main"
+    }
+  ],
+  "images": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-face-only_00001_.png",
+      "filename": "qwen-face-only_00001_.png",
+      "subfolder": "FeatureBench",
+      "filename_prefix": "FeatureBench/qwen-face-only",
+      "node_id": "case03_7",
+      "role": "main"
+    }
+  ],
+  "errors": [],
+  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\qwen-face-only.png"
+}

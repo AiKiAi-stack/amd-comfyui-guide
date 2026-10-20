@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    5,
+    "972108a3-1a27-43f8-9955-5cbbaf390802",
+    {
+      "1": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "flux2-klein-bench/handbag_white.png"
+        }
+      },
+      "2": {
+        "class_type": "ImageScaleToTotalPixels",
+        "inputs": {
+          "image": [
+            "1",
+            0
+          ],
+          "upscale_method": "nearest-exact",
+          "megapixels": 0.25,
+          "resolution_steps": 1
+        }
+      },
+      "3": {
+        "class_type": "GetImageSize",
+        "inputs": {
+          "image": [
+            "2",
+            0
+          ]
+        }
+      },
+      "4": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux-2-klein-4b-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "5": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen_3_4b.safetensors",
+          "type": "flux2",
+          "device": "default"
+        }
+      },
+      "6": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "7": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "5",
+            0
+          ],
+          "text": "将图片中的白色手提包替换成一只红色陶瓷茶壶，保留原来的浅灰色背景、拍摄角度、柔和灯光和居中产品摄影构图。画面中不再出现手提包。"
+        }
+      },
+      "8": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "VAEEncode",
+        "inputs": {
+          "pixels": [
+            "2",
+            0
+          ],
+          "vae": [
+            "6",
+            0
+          ]
+        }
+      },
+      "10": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ],
+          "latent": [
+            "9",
+            0
+          ]
+        }
+      },
+      "11": {
+        "class_type": "ReferenceLatent",
+        "inputs": {
+          "conditioning": [
+            "8",
+            0
+          ],
+          "latent": [
+            "9",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "10",
+            0
+          ],
+          "negative": [
+            "11",
+            0
+          ],
+          "cfg": 1.0
+        }
+      },
+      "13": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "14": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "steps": 4,
+          "width": [
+            "3",
+            0
+          ],
+          "height": [
+            "3",
+            1
+          ]
+        }
+      },
+      "15": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 665024001
+        }
+      },
+      "16": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": [
+            "3",
+            0
+          ],
+          "height": [
+            "3",
+            1
+          ],
+          "batch_size": 1
+        }
+      },
+      "17": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "15",
+            0
+          ],
+          "guider": [
+            "12",
+            0
+          ],
+          "sampler": [
+            "13",
+            0
+          ],
+          "sigmas": [
+            "14",
+            0
+          ],
+          "latent_image": [
+            "16",
+            0
+          ]
+        }
+      },
+      "18": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "17",
+            0
+          ],
+          "vae": [
+            "6",
+            0
+          ]
+        }
+      },
+      "19": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "18",
+            0
+          ],
+          "filename_prefix": "FeatureBench/flux2-klein-replace-zh"
+        }
+      }
+    },
+    {
+      "create_time": 1792506932130
+    },
+    [
+      "19"
+    ]
+  ],
+  "outputs": {
+    "19": {
+      "images": [
+        {
+          "filename": "flux2-klein-replace-zh_00001_.png",
+          "subfolder": "FeatureBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 368,
+            "height": 672
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "972108a3-1a27-43f8-9955-5cbbaf390802",
+          "timestamp": 1792506932130
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "4",
+            "5",
+            "6",
+            "13",
+            "15"
+          ],
+          "prompt_id": "972108a3-1a27-43f8-9955-5cbbaf390802",
+          "timestamp": 1792506932136
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "972108a3-1a27-43f8-9955-5cbbaf390802",
+          "timestamp": 1792506956087
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "19": {
+      "node_id": "19",
+      "display_node": "19",
+      "parent_node": null,
+      "real_node_id": "19"
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "prompt": [
+    0,
+    "cd4a133d-addb-4850-a38d-2ec6b9d2ac42",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "moss_image_sft_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+          "type": "moss_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae_small.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "Astronaut walking through a dense jungle, vibrant foliage, shafts of sunlight, detailed cinematic photograph, no text",
+          "clip": [
+            "2",
+            0
+          ]
+        }
+      },
+      "5": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "text": "blurry, low quality, distorted, watermark, text",
+          "clip": [
+            "2",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "7": {
+        "class_type": "ModelSamplingSD3",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "shift": 5.0
+        }
+      },
+      "8": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "11",
+            0
+          ],
+          "positive": [
+            "4",
+            0
+          ],
+          "negative": [
+            "5",
+            0
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 2106654,
+          "steps": 50,
+          "cfg": 3.0,
+          "sampler_name": "euler",
+          "scheduler": "sgm_uniform",
+          "denoise": 1.0
+        }
+      },
+      "9": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "8",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "10": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "9",
+            0
+          ],
+          "filename_prefix": "Liuyue_MOSS_SFT_INT8_50step_RX6650XT"
+        }
+      },
+      "11": {
+        "class_type": "SkipLayerGuidanceDiTSimple",
+        "inputs": {
+          "model": [
+            "7",
+            0
+          ],
+          "double_layers": "",
+          "single_layers": "22",
+          "start_percent": 0.0,
+          "end_percent": 1.0
+        }
+      }
+    },
+    {
+      "create_time": 1792392136143
+    },
+    [
+      "10"
+    ]
+  ],
+  "outputs": {
+    "10": {
+      "images": [
+        {
+          "filename": "Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00001_.png",
+          "subfolder": "",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "cd4a133d-addb-4850-a38d-2ec6b9d2ac42",
+          "timestamp": 1792392136143
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "cd4a133d-addb-4850-a38d-2ec6b9d2ac42",
+          "timestamp": 1792392136143
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "cd4a133d-addb-4850-a38d-2ec6b9d2ac42",
+          "timestamp": 1792392507950
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "10": {
+      "node_id": "10",
+      "display_node": "10",
+      "parent_node": null,
+      "real_node_id": "10"
+    }
+  }
+}

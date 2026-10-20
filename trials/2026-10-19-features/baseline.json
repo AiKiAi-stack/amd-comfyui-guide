@@ -1,0 +1,146 @@
+[
+  {
+    "id": "qwen-base-t2i-cat-768",
+    "model": "Qwen-Image-2.1 base",
+    "feature": "文生图：雨夜上海咖啡馆橘猫（768×768）",
+    "recipe": "t2i",
+    "claim_level": "T｜旧本机试验有 API 与实际输出文件；耗时记录未知",
+    "inputs": [],
+    "prompt": "一只橘猫坐在雨后的上海街头咖啡馆窗边，望着霓虹灯倒影。电影摄影，细腻写实，暖色室内灯光，画面中没有文字。",
+    "negative_prompt": "模糊，低质量，畸形，多余的肢体，文字，水印",
+    "expected": "生成雨后上海咖啡馆窗边的橘猫图像；此条记录旧版基础 Qwen-Image-2.1 文生图。",
+    "images": [
+      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\QwenImage21_RX6650XT_768_00001_.png"
+    ],
+    "elapsed_seconds": null,
+    "review": {
+      "verdict": "通过",
+      "detail": "API 记录为 768 分辨率，输出文件存在且已目视检查；可读记录未提供该次 history 的起止时间，故耗时为 null。"
+    },
+    "evidence": [
+      "../../qwen-image-2.1-768-api.json",
+      "../2026-10-18/README.md"
+    ]
+  },
+  {
+    "id": "qwen-base-edit-orange-to-white-cat-512",
+    "model": "Qwen-Image-2.1 base",
+    "feature": "语义图像编辑：橘猫变白猫（512×512；非遮罩局部重绘）",
+    "recipe": "edit",
+    "claim_level": "T｜本机 history 成功并有图片复核",
+    "inputs": [
+      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\liuyue-qwen-base-source.png"
+    ],
+    "prompt": "Edit the reference image: turn the orange cat into a fluffy white cat. Keep the cat's pose, the rainy Shanghai street, cafe window, neon reflections, camera framing and lighting the same. Photorealistic. No text.",
+    "negative_prompt": "orange fur, extra animals, blur, text, watermark",
+    "expected": "橘猫变为白猫，姿态、雨街、咖啡馆窗户、霓虹反射和构图大致保留。",
+    "images": [
+      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png"
+    ],
+    "elapsed_seconds": 423.46,
+    "review": {
+      "verdict": "通过",
+      "detail": "history 状态 success；目视检查为白猫，姿态与街景构图基本保留，分辨率和毛发细节有变化。"
+    },
+    "evidence": [
+      "../2026-10-18/qwen-base-edit-512-api.json",
+      "../2026-10-18/qwen-base-edit-512-history.json",
+      "../2026-10-18/README.md"
+    ]
+  },
+  {
+    "id": "kroma-opd-q2-t2i-fox-512",
+    "model": "Kroma v0.3.1 Turbo OPD Q2_K GGUF",
+    "feature": "文生图：雾林苔石上的狐狸（512×512，4 步）",
+    "recipe": "t2i",
+    "claim_level": "T｜本机 history 成功并有图片复核；结果仅对应 OPD Q2_K 文件与本工作流",
+    "inputs": [],
+    "prompt": "A little red fox sitting on a mossy rock in a misty forest, detailed fur, soft morning light, cinematic photography, no text",
+    "expected": "生成苔石、雾林与狐狸场景；不外推为多图参考、图生图或换头验证。",
+    "images": [
+      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png"
+    ],
+    "elapsed_seconds": 285.03,
+    "review": {
+      "verdict": "通过",
+      "detail": "history 状态 success；目视检查狐狸、苔石和雾林与提示相符，未见黑图或明显噪声。"
+    },
+    "evidence": [
+      "../2026-10-18/kroma-api.json",
+      "../2026-10-18/kroma-history.json",
+      "../2026-10-18/README.md"
+    ]
+  },
+  {
+    "id": "moss-sft-dmd-8step-t2i-astronaut-512",
+    "model": "MOSS-Image-SFT INT8 + MOSS-Image-SFT-8-steps-DMD LoRA",
+    "feature": "文生图：丛林宇航员（512×512，8 步 LoRA 候选）",
+    "recipe": "t2i",
+    "claim_level": "T｜本机 history 成功并有图片复核；作者未公布的完整采样配方未声称复现",
+    "inputs": [],
+    "prompt": "Astronaut walking through a dense jungle, vibrant foliage, shafts of sunlight, detailed cinematic photograph, no text",
+    "negative_prompt": "blurry, low quality, distorted, watermark, text",
+    "expected": "生成完整宇航员与丛林阳光场景；本条为第三方 DMD LoRA 的本机 8 步候选验证。",
+    "images": [
+      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png"
+    ],
+    "elapsed_seconds": 187.575,
+    "review": {
+      "verdict": "通过",
+      "detail": "history 状态 success；目视检查有完整宇航员和丛林，无黑图或纹理噪声；启用了 gfx1032 INT8 fallback。"
+    },
+    "evidence": [
+      "../2026-10-18/moss8-api.json",
+      "../2026-10-18/moss8-history.json",
+      "../2026-10-18/README.md"
+    ]
+  },
+  {
+    "id": "moss-sft-50step-t2i-astronaut-512",
+    "model": "MOSS-Image-SFT INT8",
+    "feature": "文生图对照：丛林宇航员（512×512，50 步）",
+    "recipe": "t2i",
+    "claim_level": "T｜本机 history 成功并有图片复核",
+    "inputs": [],
+    "prompt": "Astronaut walking through a dense jungle, vibrant foliage, shafts of sunlight, detailed cinematic photograph, no text",
+    "negative_prompt": "blurry, low quality, distorted, watermark, text",
+    "expected": "生成完整宇航员与丛林阳光场景；用于与 8 步 DMD LoRA 候选对照。",
+    "images": [
+      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png"
+    ],
+    "elapsed_seconds": 198.197,
+    "review": {
+      "verdict": "通过",
+      "detail": "history 状态 success；目视检查画面有完整宇航员、丛林与阳光，符合提示；启用了 gfx1032 INT8 fallback。"
+    },
+    "evidence": [
+      "../2026-10-18/moss-api.json",
+      "../2026-10-18/moss-history.json",
+      "../2026-10-18/README.md"
+    ]
+  },
+  {
+    "id": "qwen-turbo-plain-t2i-white-cat-512",
+    "model": "Qwen-Image-2.1 Turbo plain Q4_K_M + 原有 Qwen3-VL 编码器（普通 Turbo 对照，非 Turbo-UN）",
+    "feature": "文生图：雨夜咖啡馆白猫（512×512，8 步；普通 Turbo 对照，非 UN）",
+    "recipe": "t2i",
+    "claim_level": "T｜本机 history 成功并有图片复核；明确不代表 Turbo-UN",
+    "inputs": [],
+    "prompt": "A fluffy white cat in a rain-soaked Shanghai cafe, looking out at neon reflections. Cinematic photorealism, warm indoor light, no text.",
+    "negative_prompt": "blur, low quality, anatomy errors, text, watermark",
+    "expected": "生成雨夜上海咖啡馆窗边白猫；仅作为标准 Turbo 的输出基线，不作为 UN 编码器结果。",
+    "images": [
+      "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\Liuyue_Qwen21_Turbo_RX6650XT_00001_.png"
+    ],
+    "elapsed_seconds": 652.782,
+    "review": {
+      "verdict": "通过",
+      "detail": "history 状态 success；目视检查为完整白猫、雨窗与霓虹街景，未见黑图或噪声图。此记录使用普通 Turbo 和原有编码器，不是 Turbo-UN。"
+    },
+    "evidence": [
+      "../2026-10-18/qwen-turbo-api.json",
+      "../2026-10-18/qwen-turbo-history.json",
+      "../2026-10-18/README.md"
+    ]
+  }
+]

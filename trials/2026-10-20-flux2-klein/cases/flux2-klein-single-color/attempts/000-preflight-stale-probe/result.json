@@ -1,0 +1,9 @@
+{
+  "case_id": "flux2-klein-single-color",
+  "feature": "单图编辑／改色",
+  "status": "runner_error",
+  "started_at": 1792505909.6752741,
+  "elapsed_seconds": 0.07,
+  "error": "RuntimeError: No healthy GPU probe completed within the last 300 seconds",
+  "review": "pending"
+}

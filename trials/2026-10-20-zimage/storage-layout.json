@@ -1,0 +1,80 @@
+{
+  "captured_at": "2026-10-20T20:34:57.7311715+08:00",
+  "disks": [
+    {
+      "DeviceId": "0",
+      "FriendlyName": "WDC WD30PURX-64P6ZY0",
+      "MediaType": "HDD",
+      "BusType": "SATA",
+      "Size": 3000592982016
+    },
+    {
+      "DeviceId": "2",
+      "FriendlyName": "Acer SSD N3500 512GB",
+      "MediaType": "SSD",
+      "BusType": "NVMe",
+      "Size": 512110190592
+    },
+    {
+      "DeviceId": "1",
+      "FriendlyName": "KIOXIA-EXCERIA SATA SSD",
+      "MediaType": "SSD",
+      "BusType": "SATA",
+      "Size": 480103981056
+    }
+  ],
+  "partitions": [
+    {
+      "DiskNumber": 1,
+      "DriveLetter": "E",
+      "Size": 474858127360
+    },
+    {
+      "DiskNumber": 1,
+      "DriveLetter": "F",
+      "Size": 5241831424
+    },
+    {
+      "DiskNumber": 2,
+      "DriveLetter": "C",
+      "Size": 107375230976
+    },
+    {
+      "DiskNumber": 2,
+      "DriveLetter": "G",
+      "Size": 404731461632
+    },
+    {
+      "DiskNumber": 0,
+      "DriveLetter": "D",
+      "Size": 2892977610240
+    }
+  ],
+  "volumes": [
+    {
+      "DriveLetter": "F",
+      "Size": 5241827328,
+      "SizeRemaining": 5215899648
+    },
+    {
+      "DriveLetter": "D",
+      "Size": 2892977606656,
+      "SizeRemaining": 158484242432
+    },
+    {
+      "DriveLetter": "C",
+      "Size": 107375226880,
+      "SizeRemaining": 14207430656
+    },
+    {
+      "DriveLetter": "G",
+      "Size": 404731457536,
+      "SizeRemaining": 226921725952
+    },
+    {
+      "DriveLetter": "E",
+      "Size": 474858123264,
+      "SizeRemaining": 210539790336
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "case_id": "flux2-klein-replace-zh",
+  "checked_at": "2026-10-20T14:35:31.979133+00:00",
+  "system_stats_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\cases\\flux2-klein-replace-zh\\actual-system-stats.json",
+  "runtime": {
+    "verified": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "argv": [
+      "ComfyUI/main.py",
+      "--listen",
+      "127.0.0.1",
+      "--port",
+      "8188",
+      "--cpu-vae",
+      "--disable-async-offload",
+      "--fast-disk",
+      "--enable-dynamic-vram",
+      "--reserve-vram",
+      "2.0",
+      "--fp8_e4m3fn-text-enc",
+      "--extra-model-paths-config",
+      "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
+    ],
+    "required_flags": [
+      "--enable-dynamic-vram",
+      "--fast-disk",
+      "--cpu-vae",
+      "--disable-async-offload",
+      "--fp8_e4m3fn-text-enc"
+    ],
+    "reserve_vram_gib": 2.0,
+    "model_paths_config": {
+      "argv_value": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "resolved_path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "sha256": "6f83d6d0a4765ca3359188e8230d1148dcc9bfdc7c49542fb42067a217ba1ba5"
+    },
+    "gpu_device": {
+      "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 8573157376,
+      "vram_free": 3199009792,
+      "torch_vram_total": 35651584,
+      "torch_vram_free": 1573888
+    },
+    "fresh_gpu_probe": {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T143223Z\\result.json",
+      "completed_at": "2026-10-20T14:32:45.512113+00:00",
+      "age_seconds": 166.39,
+      "status": "healthy",
+      "healthy": true,
+      "returncode": 0
+    }
+  },
+  "queue": {
+    "running": [],
+    "pending": [],
+    "idle": true
+  },
+  "inputs": [
+    {
+      "declared_path": "flux2-klein-bench/handbag_white.png",
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+      "bytes": 5992775,
+      "dimensions": [
+        1536,
+        2752
+      ],
+      "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+    }
+  ],
+  "dependency": null,
+  "api_sha256": "4d6e90b4550d137d2a46463d283a800549c70b0698d58432e8b10986dfab1b3e"
+}

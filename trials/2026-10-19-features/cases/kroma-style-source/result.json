@@ -1,0 +1,20 @@
+{
+  "id": "kroma-style-source",
+  "model": "kroma",
+  "feature": "文生图素材：风格参考",
+  "recipe": "t2i",
+  "claim_level": "测试素材",
+  "inputs": [],
+  "prompt": "A red fox in a forest, flat two-color screenprint poster, bold geometric shapes, dark blue and orange ink only, rough paper print texture, minimalist illustration, no gradients, no text.",
+  "seed": 66502004,
+  "expected": "明确的蓝橙双色版画风格参考。",
+  "started_at": 1792396201.4075441,
+  "review": "pending",
+  "prompt_id": "7add111e-4f84-477a-83a4-6c9f1dda16f9",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-style-source_00001_.png"
+  ],
+  "errors": [],
+  "elapsed_seconds": 210.23
+}

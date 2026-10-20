@@ -1,0 +1,252 @@
+{
+  "workflow_api": "workflows/gguf.api.json",
+  "sampler_node": "10",
+  "prompt_node": "8",
+  "latent_node": "5",
+  "save_node": "18",
+  "width": 512,
+  "height": 512,
+  "steps": 9,
+  "seed": 665025003,
+  "model": "Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M",
+  "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+  "refs": [],
+  "inputs": [],
+  "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+  "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+  "id": "zimage-gguf-chinese",
+  "feature": "量化版中文文字渲染",
+  "prompt": "一张正面拍摄的咖啡馆招牌照片。白色长方形招牌上只写四个清晰的大黑字：“你好世界”。文字居中，背景是纯蓝色墙面，没有其他文字，没有水印。",
+  "expected": "独立检查你好世界四字，不用AIO结果代替。",
+  "deviations": "扩散Q4_K_M为正文推荐；编码器选择Q4_K_M，截图为Q4_K_S；公开仓库示例展平，非作者未公开网盘JSON。",
+  "memory_profile": "legacy-normalvram",
+  "planned_runtime_profile": "计划配置，尚未执行：RX6650XT；CPU VAE；关闭动态VRAM、normalvram、预留2GB、同步卸载；候选GPU文本编码，实际设备须核对服务日志；512²，无额外LoRA",
+  "status": "success",
+  "prompt_id": "7ae03ae5-01e2-4cae-8bfd-b6fe3e21b0a5",
+  "started_at": "2026-10-20T13:45:25.111082+00:00",
+  "completed_at": "2026-10-20T13:46:40.442495+00:00",
+  "elapsed_seconds": 75.34,
+  "preflight": {
+    "gpu_probe": {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T134222Z\\result.json",
+      "timestamp": "2026-10-20T13:42:22+00:00",
+      "age_seconds": 174.87,
+      "healthy": true
+    },
+    "queue_idle": true,
+    "queue_running": 0,
+    "queue_pending": 0,
+    "checked_api_node_classes": [
+      "CLIPLoaderGGUF",
+      "CLIPTextEncode",
+      "EmptySD3LatentImage",
+      "KSampler",
+      "ModelSamplingAuraFlow",
+      "SaveImage",
+      "UnetLoaderGGUF",
+      "VAEDecode",
+      "VAELoader"
+    ],
+    "memory_profile": "legacy-normalvram",
+    "system_stats": {
+      "system": {
+        "os": "win32",
+        "ram_total": 16984231936,
+        "ram_free": 10397609984,
+        "comfyui_version": "0.41.0",
+        "required_frontend_version": "1.55.17",
+        "installed_templates_version": "0.11.87",
+        "required_templates_version": "0.11.87",
+        "comfy_package_versions": [
+          {
+            "name": "comfyui-frontend-package",
+            "installed": "1.55.17",
+            "required": "1.55.17"
+          },
+          {
+            "name": "comfyui-workflow-templates",
+            "installed": "0.11.87",
+            "required": "0.11.87"
+          },
+          {
+            "name": "comfyui-embedded-docs",
+            "installed": "0.5.14",
+            "required": "0.5.14"
+          },
+          {
+            "name": "comfy-kitchen",
+            "installed": "0.2.38",
+            "required": "0.2.38"
+          },
+          {
+            "name": "comfy-aimdo",
+            "installed": "0.5.6",
+            "required": "0.5.6"
+          }
+        ],
+        "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+        "pytorch_version": "2.12.0+rocm7.14.0",
+        "embedded_python": false,
+        "deploy_environment": "local-git",
+        "argv": [
+          "ComfyUI/main.py",
+          "--listen",
+          "127.0.0.1",
+          "--port",
+          "8188",
+          "--cpu-vae",
+          "--disable-async-offload",
+          "--disable-dynamic-vram",
+          "--reserve-vram",
+          "2.0",
+          "--extra-model-paths-config",
+          "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+        ]
+      },
+      "devices": [
+        {
+          "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 8573157376,
+          "vram_free": 8413839360,
+          "torch_vram_total": 2097152,
+          "torch_vram_free": 2097152
+        }
+      ]
+    },
+    "system_profile": {
+      "argv": [
+        "ComfyUI/main.py",
+        "--listen",
+        "127.0.0.1",
+        "--port",
+        "8188",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--disable-dynamic-vram",
+        "--reserve-vram",
+        "2.0",
+        "--extra-model-paths-config",
+        "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+      ],
+      "device": {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 8413839360,
+        "torch_vram_total": 2097152,
+        "torch_vram_free": 2097152
+      },
+      "memory_profile": "legacy-normalvram",
+      "verified_flags": [
+        "--disable-dynamic-vram",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--reserve-vram 2.0"
+      ],
+      "versions": {
+        "comfyui_version": "0.41.0",
+        "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+        "pytorch_version": "2.12.0+rocm7.14.0"
+      }
+    },
+    "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。"
+  },
+  "system_stats": {
+    "system": {
+      "os": "win32",
+      "ram_total": 16984231936,
+      "ram_free": 10397609984,
+      "comfyui_version": "0.41.0",
+      "required_frontend_version": "1.55.17",
+      "installed_templates_version": "0.11.87",
+      "required_templates_version": "0.11.87",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.17",
+          "required": "1.55.17"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.87",
+          "required": "0.11.87"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.38",
+          "required": "0.2.38"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+      "pytorch_version": "2.12.0+rocm7.14.0",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "ComfyUI/main.py",
+        "--listen",
+        "127.0.0.1",
+        "--port",
+        "8188",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--disable-dynamic-vram",
+        "--reserve-vram",
+        "2.0",
+        "--extra-model-paths-config",
+        "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\ssd-model-paths.yaml"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 8413839360,
+        "torch_vram_total": 2097152,
+        "torch_vram_free": 2097152
+      }
+    ]
+  },
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-chinese_00001_.png"
+  ],
+  "image_metadata": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\zimage-gguf-chinese_00001_.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "d0eb4529490d674204a2e8e743cc14cdd81b721c6403972521babdfdda91a98f",
+      "png_prompt_binding": {
+        "status": "matched",
+        "node_id": "8",
+        "input_field": "text",
+        "actual_text": "一张正面拍摄的咖啡馆招牌照片。白色长方形招牌上只写四个清晰的大黑字：“你好世界”。文字居中，背景是纯蓝色墙面，没有其他文字，没有水印。"
+      },
+      "output_node_id": "18",
+      "filename": "zimage-gguf-chinese_00001_.png"
+    }
+  ],
+  "output_validation_status": "passed",
+  "visual_review": "pending",
+  "resource_samples": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-zimage\\cases\\zimage-gguf-chinese\\resource-samples.json",
+  "observed_peak_host_ram_used_bytes": 12579786752,
+  "observed_peak_vram_used_bytes": 4740129792,
+  "resource_sampling_limit": "周期采样得到的已观测最大值，非精确峰值；host RAM包含系统及其他进程。",
+  "errors": []
+}

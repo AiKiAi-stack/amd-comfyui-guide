@@ -1,0 +1,31 @@
+{
+  "id": "turbo-un-role-replacement-test",
+  "model": "turbo-un",
+  "feature": "角色替换（全身含服装）",
+  "recipe": "edit",
+  "claim_level": "作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。",
+  "exploratory": true,
+  "refs": [
+    "featurebench/astronaut.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "astronaut",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+  "expected": "A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.",
+  "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (astronaut target); refs[1] becomes images.image_2 (portrait identity).",
+  "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+  "qwen_cache_device": "off",
+  "started_at": 1792433575.5017173,
+  "review": "pending",
+  "prompt_id": "86581346-8ff4-492d-8057-9d72dc3c4a01",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-role-replacement-test_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 1055.88
+}

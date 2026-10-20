@@ -1,0 +1,276 @@
+{
+  "prompt": [
+    0,
+    "0971bf97-f105-43e8-a084-23c64848c66b",
+    {
+      "1": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_w4a8.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "TextEncodeQwenImage21",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ],
+          "prompt": [
+            "40",
+            0
+          ],
+          "negative_prompt": "blurry, distorted, watermark",
+          "resolution": 512
+        }
+      },
+      "5": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "81",
+            0
+          ],
+          "positive": [
+            "4",
+            0
+          ],
+          "negative": [
+            "4",
+            1
+          ],
+          "latent_image": [
+            "4",
+            2
+          ],
+          "seed": 66503001,
+          "steps": 15,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "FeatureBench/qwen-caption"
+        }
+      },
+      "30": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "featurebench/cat.png"
+        }
+      },
+      "31": {
+        "class_type": "ImageScale",
+        "inputs": {
+          "image": [
+            "30",
+            0
+          ],
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 512,
+          "crop": "disabled"
+        }
+      },
+      "40": {
+        "class_type": "TextGenerate",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "image": [
+            "31",
+            0
+          ],
+          "prompt": "Describe this image as one concise English image generation prompt. Include the subject, setting, lighting and composition. Output only the prompt.",
+          "max_length": 160,
+          "sampling_mode": "off",
+          "thinking": false,
+          "use_default_template": true,
+          "mtp": "off"
+        }
+      },
+      "41": {
+        "class_type": "PreviewAny",
+        "inputs": {
+          "source": [
+            "40",
+            0
+          ]
+        }
+      },
+      "81": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "off",
+          "dtype": "default"
+        }
+      }
+    },
+    {
+      "create_time": 1792417541957
+    },
+    [
+      "7",
+      "41"
+    ]
+  ],
+  "outputs": {},
+  "status": {
+    "status_str": "error",
+    "completed": false,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "0971bf97-f105-43e8-a084-23c64848c66b",
+          "timestamp": 1792417541964
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "0971bf97-f105-43e8-a084-23c64848c66b",
+          "timestamp": 1792417542029
+        }
+      ],
+      [
+        "execution_error",
+        {
+          "prompt_id": "0971bf97-f105-43e8-a084-23c64848c66b",
+          "node_id": "40",
+          "node_type": "TextGenerate",
+          "executed": [
+            "3",
+            "30",
+            "2",
+            "31"
+          ],
+          "exception_message": "CUDA error: out of memory\nSearch for `hipErrorOutOfMemory' in https://rocm.docs.amd.com/projects/HIP/en/latest/index.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing AMD_SERIALIZE_KERNEL=3\nDevice-side assertion tracking was not enabled by user.\nThis error means you ran out of memory on your GPU.\n\nTIPS: If the workflow worked before you might have accidentally set the batch_size to a large number.",
+          "exception_type": "torch.AcceleratorError",
+          "traceback": [
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\execution.py\", line 548, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\execution.py\", line 353, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\execution.py\", line 327, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\execution.py\", line 315, in process_inputs\n    result = f(**inputs)\n             ^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy_api\\internal\\__init__.py\", line 149, in wrapped_func\n    return method(locked_class, **inputs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy_api\\latest\\_io.py\", line 2219, in EXECUTE_NORMALIZED\n    to_return = cls.execute(*args, **kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy_extras\\nodes_textgen.py\", line 68, in execute\n    generated_ids = clip.generate(\n                    ^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\sd.py\", line 486, in generate\n    return self.cond_stage_model.generate(tokens, do_sample=do_sample, max_length=max_length, temperature=temperature, top_k=top_k, top_p=top_p, min_p=min_p, repetition_penalty=repetition_penalty, seed=seed, presence_penalty=presence_penalty, mtp=mtp)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\sd1_clip.py\", line 750, in generate\n    return getattr(self, self.clip).generate(tokens, do_sample=do_sample, max_length=max_length, temperature=temperature, top_k=top_k, top_p=top_p, min_p=min_p, repetition_penalty=repetition_penalty, seed=seed, presence_penalty=presence_penalty, mtp=mtp)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\text_encoders\\qwen3vl.py\", line 136, in generate\n    return self.transformer.generate(embeds, do_sample, max_length, temperature, top_k, top_p, min_p, repetition_penalty, seed,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\text_encoders\\llama.py\", line 1232, in generate\n    x, _, past_key_values = self.model.forward(None, embeds=embeds, attention_mask=None, past_key_values=past_key_values, input_ids=current_input_ids, position_ids=position_ids, **extra, embeds_info=(embeds_info if step == 0 else None))\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\text_encoders\\llama.py\", line 1057, in forward\n    comfy.model_prefetch.prefetch_queue_pop(\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\model_prefetch.py\", line 184, in prefetch_queue_pop\n    core()\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\text_encoders\\llama.py\", line 1043, in core\n    output, current_kv = layer(\n                         ^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\text_encoders\\llama.py\", line 814, in forward\n    x = self.mlp(x)\n        ^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\text_encoders\\llama.py\", line 780, in forward\n    return self.down_proj(self.activation(self.gate_proj(x)) * self.up_proj(x))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1778, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\ops.py\", line 1537, in forward\n    output = self.forward_comfy_cast_weights(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\ops.py\", line 1459, in forward_comfy_cast_weights\n    with CastBiasWeightContext(\n         ^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\ops.py\", line 489, in __init__\n    self.state = (None, None) if self.slf is None else cast_bias_weight(*args, **kwargs)\n                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\ops.py\", line 403, in cast_bias_weight\n    weight, bias = resolve_cast_module_with_vbar(s, dtype, device, bias_dtype, compute_dtype, want_requant)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\ops.py\", line 350, in resolve_cast_module_with_vbar\n    weight = post_cast(s, \"weight\", weight, dtype, prefetch[\"resident\"], update_weight)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\ops.py\", line 331, in post_cast\n    x = to_dequant(x, dtype)\n        ^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\comfy\\ops.py\", line 325, in to_dequant\n    tensor = tensor.to(dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\comfy_kitchen\\tensor\\base.py\", line 387, in __torch_dispatch__\n    return handler(qt, args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\comfy_kitchen\\tensor\\base.py\", line 464, in _handle_to\n    new_params = qt._params.clone()\n                 ^^^^^^^^^^^^^^^^^^\n",
+            "  File \"D:/AI/comfyui-rx6650xt-lab\\.venv\\Lib\\site-packages\\comfy_kitchen\\tensor\\base.py\", line 73, in clone\n    kwargs[field] = kwargs[field].clone()\n                    ^^^^^^^^^^^^^^^^^^^^^\n"
+          ],
+          "current_inputs": {
+            "clip": [
+              "<comfy.sd.CLIP object at 0x0000027D54DF3F50>"
+            ],
+            "image": [
+              "tensor([[[[0.0863, 0.0588, 0.0471],\n          [0.0863, 0.0667, 0.0510],\n          [0.0824, 0.0627, 0.0471],\n          ...,\n          [0.4902, 0.2902, 0.1490],\n          [0.3569, 0.2000, 0.1137],\n          [0.4078, 0.2588, 0.1490]],\n\n         [[0.0824, 0.0588, 0.0431],\n          [0.0902, 0.0627, 0.0510],\n          [0.0863, 0.0627, 0.0510],\n          ...,\n          [0.5098, 0.2745, 0.1333],\n          [0.4824, 0.2941, 0.1451],\n          [0.4627, 0.2941, 0.1569]],\n\n         [[0.0824, 0.0588, 0.0431],\n          [0.0863, 0.0627, 0.0471],\n          [0.0863, 0.0667, 0.0510],\n          ...,\n          [0.5922, 0.3294, 0.1608],\n          [0.5725, 0.3333, 0.1569],\n          [0.5294, 0.3216, 0.1529]],\n\n         ...,\n\n         [[0.0980, 0.0627, 0.0392],\n          [0.0706, 0.0275, 0.0196],\n          [0.0706, 0.0353, 0.0235],\n          ...,\n          [0.0353, 0.0039, 0.0039],\n          [0.0235, 0.0039, 0.0078],\n          [0.0196, 0.0078, 0.0039]],\n\n         [[0.0745, 0.0392, 0.0235],\n          [0.0941, 0.0471, 0.0314],\n          [0.0902, 0.0471, 0.0314],\n          ...,\n          [0.0353, 0.0039, 0.0078],\n          [0.0196, 0.0000, 0.0039],\n          [0.0157, 0.0039, 0.0039]],\n\n         [[0.0706, 0.0392, 0.0275],\n          [0.0902, 0.0471, 0.0314],\n          [0.0784, 0.0471, 0.0392],\n          ...,\n          [0.0275, 0.0000, 0.0039],\n          [0.0157, 0.0039, 0.0039],\n          [0.0196, 0.0000, 0.0118]]]])"
+            ],
+            "prompt": [
+              "Describe this image as one concise English image generation prompt. Include the subject, setting, lighting and composition. Output only the prompt."
+            ],
+            "max_length": [
+              160
+            ],
+            "sampling_mode": [
+              "off"
+            ],
+            "thinking": [
+              false
+            ],
+            "use_default_template": [
+              true
+            ],
+            "mtp": [
+              "off"
+            ]
+          },
+          "current_outputs": [
+            "1",
+            "5",
+            "81",
+            "4",
+            "3",
+            "2",
+            "41",
+            "30",
+            "7",
+            "40",
+            "6",
+            "31"
+          ],
+          "timestamp": 1792417685790
+        }
+      ]
+    ]
+  },
+  "meta": {}
+}

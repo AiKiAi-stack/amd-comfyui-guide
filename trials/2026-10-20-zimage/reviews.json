@@ -1,0 +1,52 @@
+{
+  "zimage-aio-photo-9step": {
+    "verdict": "通过",
+    "detail": "目视确认红色亮釉陶瓷茶壶、恰好两个柠檬、木桌及左侧窗光，无人物和文字。512²，源活动链9步res_multistep/simple；同一服务首项，提交后50.23秒，采样约19.8秒。服务冷启动另计242.66秒，含健康探针的完整编排309.95秒。周期观测最大显存5093299712字节、整机RAM9081176064字节，非精确峰值。AIO FP8与GGUF采用不同采样器，不能把跨模型耗时差异单独归因于精度。",
+    "image": "zimage-aio-photo-9step_00001_.png"
+  },
+  "zimage-gguf-photo-gpu-text": {
+    "verdict": "通过",
+    "detail": "目视确认一只红色亮釉陶瓷茶壶、两个完整柠檬、深色木桌与左侧窗光，材质和结构清楚，无文字水印。512²、同一份Q4_K_M权重；GPU文本编码、G盘NVMe、自动存储策略；总124.59秒，日志9步采样44.4秒。改变了计算位置与存储等多个条件，不能据此给出单变量速度倍率。周期采样的整机RAM最大值接近上限，仍需观察连跑稳定性。",
+    "image": "zimage-gguf-photo-gpu-text_00001_.png"
+  },
+  "zimage-gguf-prompt-change": {
+    "verdict": "通过",
+    "detail": "同seed、相同GPU文本编码/SSD配置，仅将提示词的red改为blue；目视确认蓝色茶壶、两只柠檬、窗光与木桌，构图与红壶基线相近。此为修改提示词的文生图对照，没有输入红壶图片，不能作为图像编辑能力证明。首轮连续第二任务在GGUF partially_unload中原生访问异常，无输出，保留于attempts/001-native-access-violation；独立服务重试成功，提交后125.77秒（不含服务冷启动）。",
+    "image": "zimage-gguf-prompt-change_00001_.png"
+  },
+  "zimage-gguf-english": {
+    "verdict": "通过",
+    "detail": "目视确认白色招牌上只有一个黑色单词HELLO，五个字母完整且拼写正确，背景为蓝墙，没有多余文字。512²，Q4_K_M双GGUF，独立服务、GPU文本编码和G盘NVMe；提交后85.47秒，不含服务启动。",
+    "image": "zimage-gguf-english_00001_.png"
+  },
+  "zimage-gguf-chinese": {
+    "verdict": "通过",
+    "detail": "目视确认白色招牌上恰好四个清晰黑字你好世界，分两行排列、背景蓝墙，无多余文字。512²，Q4_K_M双GGUF，独立服务；提交后75.34秒，不含服务启动。",
+    "image": "zimage-gguf-chinese_00001_.png"
+  },
+  "zimage-aio-photo-8step": {
+    "verdict": "通过",
+    "detail": "目视确认红釉茶壶、恰好两个柠檬、木桌和左窗光；与9步同seed及提示词，构图相近，未见明显结构退化。8步输出独立保存；复用已启动服务和缓存，不是冷启动速度。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.09秒，未包含服务冷启动。",
+    "image": "zimage-aio-photo-8step_00001_.png"
+  },
+  "zimage-aio-photo-4step": {
+    "verdict": "通过",
+    "detail": "目视确认红釉茶壶、恰好两个柠檬、木桌和左窗光；与8/9步同seed及提示词。主体与布局保留，壶身反射细节、柠檬表皮细节略有变化；本例未见明显结构缺损，不外推全部提示词质量。复用已启动服务和缓存。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后20.08秒，未包含服务冷启动。",
+    "image": "zimage-aio-photo-4step_00001_.png"
+  },
+  "zimage-aio-english": {
+    "verdict": "通过",
+    "detail": "目视确认白色招牌上只有HELLO，字母完整且拼写正确，蓝色背景墙，没有多余文字。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.97秒，未包含服务冷启动。",
+    "image": "zimage-aio-english_00001_.png"
+  },
+  "zimage-aio-chinese": {
+    "verdict": "通过",
+    "detail": "目视确认白色招牌上准确显示你好世界四字，分两行排列，背景为蓝墙，没有乱码或多余文字。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.17秒，未包含服务冷启动。",
+    "image": "zimage-aio-chinese_00001_.png"
+  },
+  "zimage-aio-figure-art": {
+    "verdict": "通过",
+    "detail": "目视确认成年女性坐姿全身素描，纸张与炭笔质感、非色情艺术学习场景符合提示词。手脚细部只是生成结果，不宣称解剖精确；不构成特殊UN训练或比原版更少限制的证据。 512²，AIO FP8/dynamic-nvme/GPU文本编码/CPU VAE；提交后30.16秒，未包含服务冷启动。",
+    "image": "zimage-aio-figure-art_00001_.png"
+  }
+}

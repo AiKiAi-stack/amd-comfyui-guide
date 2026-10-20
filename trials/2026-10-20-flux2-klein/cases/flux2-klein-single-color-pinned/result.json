@@ -1,0 +1,106 @@
+{
+  "case_id": "flux2-klein-single-color-pinned",
+  "id": "flux2-klein-single-color-pinned",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "单图编辑／改色（恢复锁页内存重试）",
+  "status": "success",
+  "started_at": 1792506766.7454324,
+  "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+  "runtime_verification": {
+    "verified": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "argv": [
+      "ComfyUI/main.py",
+      "--listen",
+      "127.0.0.1",
+      "--port",
+      "8188",
+      "--cpu-vae",
+      "--disable-async-offload",
+      "--fast-disk",
+      "--enable-dynamic-vram",
+      "--reserve-vram",
+      "2.0",
+      "--fp8_e4m3fn-text-enc",
+      "--extra-model-paths-config",
+      "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
+    ],
+    "required_flags": [
+      "--enable-dynamic-vram",
+      "--fast-disk",
+      "--cpu-vae",
+      "--disable-async-offload",
+      "--fp8_e4m3fn-text-enc"
+    ],
+    "reserve_vram_gib": 2.0,
+    "model_paths_config": {
+      "argv_value": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "resolved_path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "sha256": "6f83d6d0a4765ca3359188e8230d1148dcc9bfdc7c49542fb42067a217ba1ba5"
+    },
+    "gpu_device": {
+      "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 8573157376,
+      "vram_free": 2561475584,
+      "torch_vram_total": 35651584,
+      "torch_vram_free": 1573888
+    },
+    "fresh_gpu_probe": {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T143223Z\\result.json",
+      "completed_at": "2026-10-20T14:32:45.512113+00:00",
+      "age_seconds": 1.1,
+      "status": "healthy",
+      "healthy": true,
+      "returncode": 0
+    }
+  },
+  "preflight_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\cases\\flux2-klein-single-color-pinned\\preflight.json",
+  "actual_system_stats_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\cases\\flux2-klein-single-color-pinned\\actual-system-stats.json",
+  "input_metadata": [
+    {
+      "declared_path": "flux2-klein-bench/handbag_white.png",
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+      "bytes": 5992775,
+      "dimensions": [
+        1536,
+        2752
+      ],
+      "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+    }
+  ],
+  "review": "pending",
+  "prompt_id": "4fbbcb80-26ee-4fe4-927f-9a58e6cb5c5b",
+  "execution_status": "success",
+  "errors": [],
+  "image_metadata": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+      "dimensions": [
+        368,
+        672
+      ],
+      "bytes": 323984,
+      "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8",
+      "png_prompt_graph_matches_api": true,
+      "history_graph_matches_api": true,
+      "prompt_matches_case": true,
+      "references_match_case": true
+    }
+  ],
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png"
+  ],
+  "binding_validation": {
+    "passed": true,
+    "api_sha256": "afd34caf7b06640e984be1afb142ce746a8b7311fe59038fec84a584b758a44f",
+    "image_count": 1
+  },
+  "derived_input": {
+    "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\flux2-klein-bench\\flux2-klein-single-color-pinned.png",
+    "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8",
+    "matches_output": true
+  },
+  "elapsed_seconds": 30.52
+}

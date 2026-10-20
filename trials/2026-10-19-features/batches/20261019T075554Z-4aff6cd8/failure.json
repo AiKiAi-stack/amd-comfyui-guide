@@ -1,0 +1,10 @@
+{
+  "batch_id": "20261019T075554Z-4aff6cd8",
+  "stage": "history",
+  "started_at": "2026-10-19T07:55:54.482103+00:00",
+  "failed_at": "2026-10-19T08:01:56.274100+00:00",
+  "prompt_id": "91732987-941b-4fe9-9397-2e29bdc8da09",
+  "exception_type": "ReadTimeout",
+  "exception_message": "HTTPConnectionPool(host='127.0.0.1', port=8188): Read timed out. (read timeout=30)",
+  "batch_elapsed_seconds": 361.8
+}

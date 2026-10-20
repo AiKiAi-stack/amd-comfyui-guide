@@ -1,0 +1,86 @@
+{
+  "source": {
+    "repository": "jayn7/Z-Image-Turbo-GGUF",
+    "revision": "6e2dff8e3abd78051c1211fb5833a03818a2f3cc",
+    "url": "https://huggingface.co/jayn7/Z-Image-Turbo-GGUF/blob/6e2dff8e3abd78051c1211fb5833a03818a2f3cc/example_workflow.json",
+    "snapshot": "source_workflows/jayn7-example_workflow.json",
+    "snapshot_sha256": "db310e133dc39dee775a035a20d3d9246fb6c1f9a8f3da383919f4d783724a21",
+    "description": "Pinned public repository example converted to a flat API graph; not the article author's private-drive workflow"
+  },
+  "models": {
+    "diffusion_model": {
+      "repo": "jayn7/Z-Image-Turbo-GGUF",
+      "revision": "6e2dff8e3abd78051c1211fb5833a03818a2f3cc",
+      "file": "z_image_turbo-Q4_K_M.gguf",
+      "bytes": 4981532736,
+      "sha256": "745ec270db042409fde084d6b5cfccabf214a7fe5a494edf994a391125656afd",
+      "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\diffusion_models\\z_image_turbo-Q4_K_M.gguf"
+    },
+    "text_encoder": {
+      "repo": "unsloth/Qwen3-4B-GGUF",
+      "revision": "22c9fc8a8c7700b76a1789366280a6a5a1ad1120",
+      "file": "Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497281312,
+      "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
+      "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\text_encoders\\Qwen3-4B-Q4_K_M.gguf"
+    },
+    "vae": {
+      "repo": "Comfy-Org/z_image_turbo",
+      "revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+      "file": "split_files/vae/ae.safetensors",
+      "bytes": 335304388,
+      "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+      "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\vae\\ae.safetensors"
+    },
+    "note": "Q4_K_M encoder was selected for this run; the offline article screenshot shows Q4_K_S, while its prose permits choosing a suitable quantization."
+  },
+  "api_bindings": {
+    "unet_loader_node_id": "9",
+    "clip_loader_node_id": "7",
+    "model_sampling_node_id": "11",
+    "positive_prompt_node_id": "8",
+    "negative_prompt_node_id": "3",
+    "latent_size_node_id": "5",
+    "sampler_node_id": "10",
+    "vae_loader_node_id": "4",
+    "vae_decode_node_id": "6",
+    "save_image_node_id": "18",
+    "sampler_seed_input": "seed",
+    "sampler_steps_input": "steps",
+    "save_image_filename_prefix_input": "filename_prefix"
+  },
+  "source_defaults": {
+    "seed": 526213216603097,
+    "seed_behavior": "fixed",
+    "steps": 9,
+    "cfg": 1,
+    "sampler_name": "euler",
+    "scheduler": "simple",
+    "denoise": 1,
+    "model_sampling_shift": 3,
+    "positive_prompt": "cat",
+    "negative_prompt": "blurry ugly bad",
+    "source_width": 2048,
+    "source_height": 2048,
+    "trial_width": 1024,
+    "trial_height": 1024,
+    "resolution_reason": "Article image 006 flat GGUF graph shows 1024x1024; lower-resource first trial."
+  },
+  "excluded_source_nodes": [
+    {
+      "id": 13,
+      "type": "UNETLoader",
+      "mode": 4
+    },
+    {
+      "id": 16,
+      "type": "MarkdownNote",
+      "mode": 0
+    },
+    {
+      "id": 17,
+      "type": "MarkdownNote",
+      "mode": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "qwen-style-edit",
+  "model": "qwen",
+  "feature": "图生图／风格转换",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题图生图；风格转换为具体测试任务",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "Transform this photograph into a delicate watercolor painting. Keep the orange cat, its pose, the cafe entrance, the rainy street and the original framing. Use visible textured paper and soft watercolor washes. No text.",
+  "expected": "主体与构图保留，风格明显变为水彩。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
+  "batch_id": "20261019T115722Z-09aa0f8c",
+  "prompt_id": "e0b44c53-bcf3-4de5-b715-3eb09ab16b9e",
+  "status": "success",
+  "batch_status": "success",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 745.75,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 745.75 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "7",
+      "node_id": "case02_7",
+      "filename_prefix": "FeatureBench/qwen-style-edit",
+      "role": "main"
+    }
+  ],
+  "images": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-style-edit_00001_.png",
+      "filename": "qwen-style-edit_00001_.png",
+      "subfolder": "FeatureBench",
+      "filename_prefix": "FeatureBench/qwen-style-edit",
+      "node_id": "case02_7",
+      "role": "main"
+    }
+  ],
+  "errors": [],
+  "copied_input": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\input\\featurebench\\qwen-style-edit.png"
+}

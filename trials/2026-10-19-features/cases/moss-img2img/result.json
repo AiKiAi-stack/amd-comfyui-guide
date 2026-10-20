@@ -1,0 +1,21 @@
+{
+  "id": "moss-img2img",
+  "model": "moss",
+  "feature": "图生图／洗图",
+  "recipe": "img2img",
+  "claim_level": "公众号索引标题",
+  "inputs": [
+    "astronaut"
+  ],
+  "prompt": "A watercolor illustration of the same astronaut walking through a lush jungle, soft watercolor washes, visible paper texture, green foliage and warm sunlight. Preserve the centered full-body composition.",
+  "expected": "宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。",
+  "started_at": 1792394464.4928951,
+  "review": "pending",
+  "prompt_id": "9471ac1b-bad6-4c9c-a01a-d322d8e10378",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-img2img_00001_.png"
+  ],
+  "errors": [],
+  "elapsed_seconds": 245.85
+}

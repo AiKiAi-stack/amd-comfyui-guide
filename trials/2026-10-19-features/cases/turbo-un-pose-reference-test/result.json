@@ -1,0 +1,31 @@
+{
+  "id": "turbo-un-pose-reference-test",
+  "model": "turbo-un",
+  "feature": "姿态参考（图像指令）",
+  "recipe": "edit",
+  "claim_level": "作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。",
+  "exploratory": true,
+  "refs": [
+    "featurebench/pose-guide.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "pose-guide",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+  "expected": "An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.",
+  "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control.",
+  "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+  "qwen_cache_device": "off",
+  "started_at": 1792434631.4307635,
+  "review": "pending",
+  "prompt_id": "12009882-a683-45c3-9098-d0c70d7477b4",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-pose-reference-test_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 1045.9
+}

@@ -1,0 +1,867 @@
+[
+  {
+    "id": "moss-img2img",
+    "model": "moss",
+    "feature": "图生图／洗图",
+    "recipe": "img2img",
+    "claim_level": "公众号索引标题",
+    "inputs": [
+      "astronaut"
+    ],
+    "prompt": "A watercolor illustration of the same astronaut walking through a lush jungle, soft watercolor washes, visible paper texture, green foliage and warm sunlight. Preserve the centered full-body composition.",
+    "expected": "宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。"
+  },
+  {
+    "id": "moss-layout",
+    "model": "moss",
+    "feature": "布局描述（JSON 提示）",
+    "recipe": "t2i",
+    "claim_level": "上游布局提示拓展测试，非已确认文章声明",
+    "inputs": [],
+    "prompt": "{\"summary\":{\"caption\":\"A clean studio product photograph on a pale grey table. A bright red teapot on the left and a tall blue ceramic vase on the right, clearly separated.\"},\"items\":[{\"label\":\"object\",\"caption\":\"one bright red teapot with a handle and spout, on the left\",\"bbox\":[-96,-226,184,-16]},{\"label\":\"object\",\"caption\":\"one tall blue ceramic vase, on the right\",\"bbox\":[-116,44,184,214]}],\"bbox_coord_space\":\"abs_centralized\",\"bbox_format\":\"yxyx\"}",
+    "expected": "红茶壶在左、蓝花瓶在右，各自落在指定区域。"
+  },
+  {
+    "id": "moss-text",
+    "model": "moss",
+    "feature": "画面文字渲染",
+    "recipe": "t2i",
+    "claim_level": "上游布局文字功能，非已确认文章声明",
+    "inputs": [],
+    "prompt": "A minimalist poster on plain cream paper. The single word HELLO is printed in huge bold clean black capital letters across the upper half. A single small orange fruit below the word. Exact text: HELLO. No other text.",
+    "expected": "图片中准确出现可读的 HELLO，且没有其他文字。"
+  },
+  {
+    "id": "kroma-portrait-a",
+    "model": "kroma",
+    "feature": "文生图素材：虚构人像 A",
+    "recipe": "t2i",
+    "claim_level": "测试素材",
+    "inputs": [],
+    "prompt": "Studio head-and-shoulders portrait photograph of a fictional adult woman aged 30, pale skin, distinct freckles across nose and cheeks, green eyes, short curly copper-red hair, mustard yellow sweater, plain light grey background, looking directly at camera, sharp face, natural light.",
+    "seed": 66502001,
+    "expected": "清晰的虚构红发雀斑成年女性人像，供换脸与身份参考试验。"
+  },
+  {
+    "id": "kroma-portrait-b",
+    "model": "kroma",
+    "feature": "文生图素材：虚构人像 B",
+    "recipe": "t2i",
+    "claim_level": "测试素材",
+    "inputs": [],
+    "prompt": "Waist-up portrait photograph of a different fictional adult woman aged 35 with dark straight shoulder-length hair, brown eyes, medium brown skin, wearing a navy blue coat and red scarf, standing outdoors in a park, turned slightly to the left, calm smile, soft daylight.",
+    "seed": 66502002,
+    "expected": "与 A 明显不同的虚构人物，供保留服装姿态的换脸试验。"
+  },
+  {
+    "id": "kroma-img2img",
+    "model": "kroma",
+    "feature": "图生图／洗图",
+    "recipe": "img2img",
+    "claim_level": "公众号索引标题",
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "Watercolor illustration of an orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street. Preserve the composition, soft translucent watercolor, textured paper.",
+    "expected": "雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。"
+  },
+  {
+    "id": "kroma-style-source",
+    "model": "kroma",
+    "feature": "文生图素材：风格参考",
+    "recipe": "t2i",
+    "claim_level": "测试素材",
+    "inputs": [],
+    "prompt": "A red fox in a forest, flat two-color screenprint poster, bold geometric shapes, dark blue and orange ink only, rough paper print texture, minimalist illustration, no gradients, no text.",
+    "seed": 66502004,
+    "expected": "明确的蓝橙双色版画风格参考。"
+  },
+  {
+    "id": "qwen-inpaint",
+    "model": "qwen",
+    "feature": "遮罩局部重绘",
+    "recipe": "inpaint",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "Replace only the orange cat with a small red fox sitting in the same location facing away from the camera. Keep the rainy Shanghai cafe street and all other areas unchanged. Photorealistic.",
+    "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。"
+  },
+  {
+    "id": "qwen-multiref",
+    "model": "qwen",
+    "feature": "多图参考／主体合成",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "cat",
+      "fox"
+    ],
+    "prompt": "Use image 1 as the background and composition. Remove the existing animal in image 1 and place the animal subject from image 2 at the same location. Take its species, shape, fur colors and identifying features from image 2. Preserve the background, lighting, framing and perspective of image 1. Do not copy the background of image 2. Photorealistic.",
+    "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。"
+  },
+  {
+    "id": "qwen-face-swap",
+    "model": "qwen",
+    "feature": "换头／人物身份参考",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Edit image 1: replace the person's facial identity and hair with the fictional adult woman from image 2, including her copper-red curly hair, pale freckled skin and green eyes. Preserve the navy blue coat, red scarf, body pose, framing and outdoor park from image 1. Match lighting and proportions. Only one person.",
+    "expected": "B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。"
+  },
+  {
+    "id": "qwen-style-edit",
+    "model": "qwen",
+    "feature": "图生图／风格转换",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题图生图；风格转换为具体测试任务",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "Transform this photograph into a delicate watercolor painting. Keep the orange cat, its pose, the cafe entrance, the rainy street and the original framing. Use visible textured paper and soft watercolor washes. No text.",
+    "expected": "主体与构图保留，风格明显变为水彩。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。"
+  },
+  {
+    "id": "qwen-caption",
+    "model": "qwen",
+    "feature": "自动反推提示词并再生成",
+    "recipe": "caption",
+    "claim_level": "同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "unused",
+    "expected": "先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。 首轮TextGenerate触发HIPBLAS INT8错误；重试进程开启COMFY_GFX1032_INT8_FALLBACK=1，按层反量化后浮点计算。"
+  },
+  {
+    "id": "kroma-style-ref",
+    "model": "kroma",
+    "feature": "风格参考",
+    "recipe": "reference",
+    "claim_level": "上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA",
+    "refs": [
+      "featurebench/kroma-style-source.png"
+    ],
+    "inputs": [
+      "kroma-style-source"
+    ],
+    "prompt": "Use the visual style of the reference image: bold geometric two-color blue and orange screenprint, rough paper texture. Create a new image of an owl perched on a branch. Preserve the reference print style, not its fox subject. No text.",
+    "expected": "参考图的蓝橙双色版画风格迁移到新主体猫头鹰。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-style-ref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。"
+  },
+  {
+    "id": "kroma-multiref",
+    "model": "kroma",
+    "feature": "多图参考",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "cat",
+      "fox"
+    ],
+    "prompt": "Use the rainy cafe street background from image 1. Replace the orange cat in image 1 with the red fox from image 2. Preserve the fox orange fur, black paws and white chest. The fox sits beside the cafe entrance. Do not use the forest background. Photorealistic.",
+    "expected": "同时采用雨街背景和参考狐狸主体。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。"
+  },
+  {
+    "id": "kroma-head-swap",
+    "model": "kroma",
+    "feature": "换头／人物身份参考",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；一般参考编辑探索，非专用换头模型",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Edit image 1: replace the head and facial identity with the fictional adult woman from image 2, including curly copper-red hair and freckles. Keep the navy coat, red scarf, body pose and park background of image 1. Only one person.",
+    "expected": "B服装姿态背景保留，头部外观采用A。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-head-swap\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。"
+  },
+  {
+    "id": "qwen-face-only",
+    "model": "qwen",
+    "feature": "换脸／仅面部身份",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Edit only the face of the fictional adult woman in image 1. Use the facial identity from image 2, including pale freckled skin, facial features and green eyes. Keep the original dark straight hair from image 1, navy coat, red scarf, pose, park background and framing. Do not change the hairstyle. One person.",
+    "expected": "面部特征转向A，B的黑发、服装与场景保持。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。"
+  },
+  {
+    "id": "turbo-un-t2i",
+    "model": "turbo-un",
+    "feature": "原生 8 步文生图",
+    "recipe": "t2i",
+    "claim_level": "作者站外演示及上游；使用 UN 编码器组合独立重试",
+    "inputs": [],
+    "prompt": "A fluffy white cat in a rain-soaked Shanghai cafe, looking out at neon reflections. Cinematic photorealism, warm indoor light, no text.",
+    "expected": "UN GGUF 编码器配合 Turbo Q4 主模型真实完成 8 步，生成白猫与雨夜咖啡馆。前轮普通 Turbo 的出图不能充当本项输出。",
+    "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+    "qwen_cache_device": "off"
+  },
+  {
+    "id": "turbo-un-inpaint",
+    "model": "turbo-un",
+    "feature": "遮罩局部重绘",
+    "recipe": "inpaint",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "Replace only the orange cat with a small red fox sitting in the same location facing away from the camera. Keep the rainy Shanghai cafe street and all other areas unchanged. Photorealistic.",
+    "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+    "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+    "qwen_cache_device": "off"
+  },
+  {
+    "id": "turbo-un-multiref",
+    "model": "turbo-un",
+    "feature": "多图参考／主体合成",
+    "recipe": "edit",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "cat",
+      "fox"
+    ],
+    "prompt": "Use image 1 as the background and composition. Remove the existing animal in image 1 and place the animal subject from image 2 at the same location. Take its species, shape, fur colors and identifying features from image 2. Preserve the background, lighting, framing and perspective of image 1. Do not copy the background of image 2. Photorealistic.",
+    "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+    "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+    "qwen_cache_device": "off"
+  },
+  {
+    "id": "turbo-un-face-swap",
+    "model": "turbo-un",
+    "feature": "换头／人物身份参考",
+    "recipe": "edit",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Edit image 1: replace the person's facial identity and hair with the fictional adult woman from image 2, including her copper-red curly hair, pale freckled skin and green eyes. Preserve the navy blue coat, red scarf, body pose, framing and outdoor park from image 1. Match lighting and proportions. Only one person.",
+    "expected": "B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。",
+    "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+    "qwen_cache_device": "off"
+  },
+  {
+    "id": "qwen-bfs-head-swap",
+    "model": "qwen",
+    "feature": "换头／BFS 专用 LoRA 对照",
+    "recipe": "edit",
+    "claim_level": "第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "head_swap: Edit image 1: replace the person's facial identity and hair with the fictional adult woman from image 2, including her copper-red curly hair, pale freckled skin and green eyes. Preserve the navy blue coat, red scarf, body pose, framing and outdoor park from image 1. Match lighting and proportions. Only one person.",
+    "expected": "在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。",
+    "lora": {
+      "name": "bfs_head_v1.1_qwen_2.1.safetensors",
+      "strength": 1.0
+    },
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。"
+  },
+  {
+    "id": "turbo-un-role-replacement-test",
+    "model": "turbo-un",
+    "feature": "角色替换（全身含服装）",
+    "recipe": "edit",
+    "claim_level": "作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。",
+    "exploratory": true,
+    "refs": [
+      "featurebench/astronaut.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "astronaut",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+    "expected": "A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.",
+    "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (astronaut target); refs[1] becomes images.image_2 (portrait identity).",
+    "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+    "qwen_cache_device": "off"
+  },
+  {
+    "id": "turbo-un-pose-reference-test",
+    "model": "turbo-un",
+    "feature": "姿态参考（图像指令）",
+    "recipe": "edit",
+    "claim_level": "作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。",
+    "exploratory": true,
+    "refs": [
+      "featurebench/pose-guide.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "pose-guide",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+    "expected": "An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.",
+    "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control.",
+    "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+    "qwen_cache_device": "off"
+  },
+  {
+    "id": "ref2va-5frame-diagnostic",
+    "model": "MiniMax H3 Ref2VA Q4_0",
+    "feature": "5帧加载、采样、解码诊断",
+    "recipe": "video-diagnostic",
+    "claim_level": "本机诊断，不是作者BFS整合包复现；4步无Turbo LoRA，不用于画质或视频功能验收",
+    "inputs": [
+      "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\input\\cyan-robot-reference.png"
+    ],
+    "prompt": "<Picture 1> is a small cyan toy robot with a magenta scarf and two square black eyes. One robot waves its right hand against a plain cream background. Locked camera, soft studio light. No music or speech.",
+    "expected": "384×256、5帧、4步，无声WebP与逐帧PNG；只核验加载采样解码链路。",
+    "runtime_profile": "RX6650XT；隔离H3 worktree、GGUF DynamicVRAM、4B ClipProj、GPU FP16视频VAE；--reserve-vram 2.0、同步卸载，未开启INT8 fallback。384×256、5帧、4步。433.08秒包含服务启动；仅加载诊断，不用于正常视频画质结论。",
+    "evidence": [
+      "../../research/h3-minimal-executable-audit.md",
+      "../2026-10-19-h3/diagnostic-gpu-vae-native-reserve2-result.json"
+    ]
+  },
+  {
+    "id": "flux2-klein-t2i",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "文生图／短文字",
+    "recipe": "t2i",
+    "inputs": [],
+    "refs": [],
+    "prompt": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.",
+    "expected": "橘猫、雨夜咖啡馆构图，以及可读的 HELLO。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "官方 FP8 4B 蒸馏；CPU qwen_3_4b 编码器、CPU VAE，RX6650XT 扩散；4步 Euler / Flux2Scheduler / CFG1；参考约0.25MP，保持宽高比；未使用额外LoRA或自动提示词"
+  },
+  {
+    "id": "flux2-klein-t2i-gpu-text",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "文生图／GPU FP8文本编码对照",
+    "recipe": "t2i",
+    "inputs": [],
+    "refs": [],
+    "prompt": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.",
+    "expected": "橘猫、雨夜咖啡馆构图，以及可读的 HELLO。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "官方 FP8 4B 蒸馏；qwen_3_4b 编码器运行时FP8存储/GPU计算，CPU VAE，RX6650XT扩散；--fp8_e4m3fn-text-enc；4步Euler/Flux2Scheduler/CFG1；参考约0.25MP；无额外LoRA或提示词改写",
+    "gpu_text": true
+  },
+  {
+    "id": "flux2-klein-t2i-1024",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "文生图／1024分辨率",
+    "recipe": "t2i",
+    "inputs": [],
+    "refs": [],
+    "prompt": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.",
+    "expected": "橘猫、雨夜咖啡馆构图，以及可读的 HELLO。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "官方 FP8 4B 蒸馏；qwen_3_4b 编码器运行时FP8存储/GPU计算，CPU VAE，RX6650XT扩散；--fp8_e4m3fn-text-enc；4步Euler/Flux2Scheduler/CFG1；参考约0.25MP；无额外LoRA或提示词改写",
+    "gpu_text": true,
+    "resolution": 1024
+  },
+  {
+    "workflow_api": "workflows/gguf.api.json",
+    "sampler_node": "10",
+    "prompt_node": "8",
+    "latent_node": "5",
+    "save_node": "18",
+    "width": 512,
+    "height": 512,
+    "steps": 9,
+    "seed": 665025001,
+    "model": "Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M",
+    "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-gguf-photo-gpu-text",
+    "feature": "文本编码GPU配置对照／写实文生图",
+    "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "与CPU文本编码基线同seed和提示词，独立出红壶与两个柠檬；核对实际CLIP设备，耗时含加载，不把差异视为严格速度倍率。",
+    "deviations": "扩散Q4_K_M为正文推荐；编码器选择Q4_K_M，截图为Q4_K_S；公开仓库示例展平，非作者未公开网盘JSON。",
+    "memory_profile": "legacy-normalvram",
+    "comparison_case": "zimage-gguf-photo",
+    "planned_runtime_profile": "计划配置，尚未执行：RX6650XT；CPU VAE；关闭动态VRAM、normalvram、预留2GB、同步卸载；候选GPU文本编码，实际设备须核对服务日志；512²，无额外LoRA"
+  },
+  {
+    "workflow_api": "workflows/gguf.api.json",
+    "sampler_node": "10",
+    "prompt_node": "8",
+    "latent_node": "5",
+    "save_node": "18",
+    "width": 512,
+    "height": 512,
+    "steps": 9,
+    "seed": 665025001,
+    "model": "Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M",
+    "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-gguf-prompt-change",
+    "feature": "平铺工作流修改提示词",
+    "prompt": "A photorealistic studio photograph of a glossy blue ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "保持seed、采样和尺寸；提示词由红壶变蓝壶，PNG嵌入prompt一致且视觉颜色变化。",
+    "comparison_case": "zimage-gguf-photo-gpu-text",
+    "deviations": "扩散Q4_K_M为正文推荐；编码器选择Q4_K_M，截图为Q4_K_S；公开仓库示例展平，非作者未公开网盘JSON。",
+    "memory_profile": "legacy-normalvram",
+    "planned_runtime_profile": "计划配置，尚未执行：RX6650XT；CPU VAE；关闭动态VRAM、normalvram、预留2GB、同步卸载；候选GPU文本编码，实际设备须核对服务日志；512²，无额外LoRA"
+  },
+  {
+    "workflow_api": "workflows/gguf.api.json",
+    "sampler_node": "10",
+    "prompt_node": "8",
+    "latent_node": "5",
+    "save_node": "18",
+    "width": 512,
+    "height": 512,
+    "steps": 9,
+    "seed": 665025002,
+    "model": "Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M",
+    "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-gguf-english",
+    "feature": "量化版英文文字渲染",
+    "prompt": "A straight-on product photograph of a single cafe sign. The sign has exactly one large word: \"HELLO\". Bold black sans-serif letters on a clean white rectangular sign, centered, plain blue wall behind it, no other text.",
+    "expected": "独立检查HELLO拼写，不用AIO结果代替。",
+    "deviations": "扩散Q4_K_M为正文推荐；编码器选择Q4_K_M，截图为Q4_K_S；公开仓库示例展平，非作者未公开网盘JSON。",
+    "memory_profile": "legacy-normalvram",
+    "planned_runtime_profile": "计划配置，尚未执行：RX6650XT；CPU VAE；关闭动态VRAM、normalvram、预留2GB、同步卸载；候选GPU文本编码，实际设备须核对服务日志；512²，无额外LoRA"
+  },
+  {
+    "workflow_api": "workflows/gguf.api.json",
+    "sampler_node": "10",
+    "prompt_node": "8",
+    "latent_node": "5",
+    "save_node": "18",
+    "width": 512,
+    "height": 512,
+    "steps": 9,
+    "seed": 665025003,
+    "model": "Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M",
+    "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-gguf-chinese",
+    "feature": "量化版中文文字渲染",
+    "prompt": "一张正面拍摄的咖啡馆招牌照片。白色长方形招牌上只写四个清晰的大黑字：“你好世界”。文字居中，背景是纯蓝色墙面，没有其他文字，没有水印。",
+    "expected": "独立检查你好世界四字，不用AIO结果代替。",
+    "deviations": "扩散Q4_K_M为正文推荐；编码器选择Q4_K_M，截图为Q4_K_S；公开仓库示例展平，非作者未公开网盘JSON。",
+    "memory_profile": "legacy-normalvram",
+    "planned_runtime_profile": "计划配置，尚未执行：RX6650XT；CPU VAE；关闭动态VRAM、normalvram、预留2GB、同步卸载；候选GPU文本编码，实际设备须核对服务日志；512²，无额外LoRA"
+  },
+  {
+    "workflow_api": "workflows/aio.api.json",
+    "sampler_node": "17",
+    "prompt_node": "20",
+    "latent_node": "6",
+    "save_node": "26",
+    "width": 512,
+    "height": 512,
+    "steps": 9,
+    "seed": 665025001,
+    "model": "Z-Image-Turbo-AIO FP8",
+    "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-aio-photo-9step",
+    "feature": "写实文生图／源工作流9步",
+    "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "红色陶瓷茶壶、两个柠檬、木桌与左侧窗光；审查材质和结构。",
+    "deviations": "源活动采样链保持；源1152×1736降至512²作为小显存首轮诊断；仅覆盖提示词/seed/尺寸和指定步数。",
+    "memory_profile": "dynamic-nvme",
+    "planned_runtime_profile": "计划配置：RX6650XT；G盘NVMe文件映射、动态VRAM、fast-disk、禁用锁页内存；CPU VAE、同步卸载、预留2GB；512²，文本实际设备以服务日志为准。"
+  },
+  {
+    "workflow_api": "workflows/aio.api.json",
+    "sampler_node": "17",
+    "prompt_node": "20",
+    "latent_node": "6",
+    "save_node": "26",
+    "width": 512,
+    "height": 512,
+    "steps": 8,
+    "seed": 665025003,
+    "model": "Z-Image-Turbo-AIO FP8",
+    "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-aio-chinese",
+    "feature": "中文文字渲染",
+    "prompt": "一张正面拍摄的咖啡馆招牌照片。白色长方形招牌上只写四个清晰的大黑字：“你好世界”。文字居中，背景是纯蓝色墙面，没有其他文字，没有水印。",
+    "expected": "招牌准确显示你好世界四字，没有乱码或多余字。",
+    "deviations": "源活动采样链保持；源1152×1736降至512²作为小显存首轮诊断；仅覆盖提示词/seed/尺寸和指定步数。",
+    "memory_profile": "dynamic-nvme",
+    "planned_runtime_profile": "计划配置：RX6650XT；G盘NVMe文件映射、动态VRAM、fast-disk、禁用锁页内存；CPU VAE、同步卸载、预留2GB；512²，文本实际设备以服务日志为准。"
+  },
+  {
+    "workflow_api": "workflows/aio.api.json",
+    "sampler_node": "17",
+    "prompt_node": "20",
+    "latent_node": "6",
+    "save_node": "26",
+    "width": 512,
+    "height": 512,
+    "steps": 8,
+    "seed": 665025002,
+    "model": "Z-Image-Turbo-AIO FP8",
+    "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-aio-english",
+    "feature": "英文文字渲染",
+    "prompt": "A straight-on product photograph of a single cafe sign. The sign has exactly one large word: \"HELLO\". Bold black sans-serif letters on a clean white rectangular sign, centered, plain blue wall behind it, no other text.",
+    "expected": "画面只出现清楚且拼写正确的HELLO，没有多余字。",
+    "deviations": "源活动采样链保持；源1152×1736降至512²作为小显存首轮诊断；仅覆盖提示词/seed/尺寸和指定步数。",
+    "memory_profile": "dynamic-nvme",
+    "planned_runtime_profile": "计划配置：RX6650XT；G盘NVMe文件映射、动态VRAM、fast-disk、禁用锁页内存；CPU VAE、同步卸载、预留2GB；512²，文本实际设备以服务日志为准。"
+  },
+  {
+    "workflow_api": "workflows/aio.api.json",
+    "sampler_node": "17",
+    "prompt_node": "20",
+    "latent_node": "6",
+    "save_node": "26",
+    "width": 512,
+    "height": 512,
+    "steps": 8,
+    "seed": 665025004,
+    "model": "Z-Image-Turbo-AIO FP8",
+    "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "文章泛提NSFW；本checkpoint无特殊UN训练证据；自编非色情艺术测试",
+    "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-aio-figure-art",
+    "feature": "非色情成年人体艺术探索",
+    "prompt": "A tasteful charcoal life drawing of a clearly adult woman aged 35, seated in a relaxed studio pose, nonsexual full-body nude figure study, classical art school anatomy study, no sexual activity, textured paper, no text.",
+    "expected": "非色情成年人物炭笔习作；仅是功能探索，不能证明UN训练或相对原版更少限制。",
+    "deviations": "源活动采样链保持；源1152×1736降至512²作为小显存首轮诊断；仅覆盖提示词/seed/尺寸和指定步数。",
+    "memory_profile": "dynamic-nvme",
+    "planned_runtime_profile": "计划配置：RX6650XT；G盘NVMe文件映射、动态VRAM、fast-disk、禁用锁页内存；CPU VAE、同步卸载、预留2GB；512²，文本实际设备以服务日志为准。"
+  },
+  {
+    "workflow_api": "workflows/aio.api.json",
+    "sampler_node": "17",
+    "prompt_node": "20",
+    "latent_node": "6",
+    "save_node": "26",
+    "width": 512,
+    "height": 512,
+    "steps": 4,
+    "seed": 665025001,
+    "model": "Z-Image-Turbo-AIO FP8",
+    "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-aio-photo-4step",
+    "feature": "文章4步效果比较",
+    "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "与8/9步同seed和提示词，比较4步结构与画质；文章7秒宣称尚未本机验证。",
+    "deviations": "源活动采样链保持；源1152×1736降至512²作为小显存首轮诊断；仅覆盖提示词/seed/尺寸和指定步数。",
+    "memory_profile": "dynamic-nvme",
+    "planned_runtime_profile": "计划配置：RX6650XT；G盘NVMe文件映射、动态VRAM、fast-disk、禁用锁页内存；CPU VAE、同步卸载、预留2GB；512²，文本实际设备以服务日志为准。"
+  },
+  {
+    "workflow_api": "workflows/aio.api.json",
+    "sampler_node": "17",
+    "prompt_node": "20",
+    "latent_node": "6",
+    "save_node": "26",
+    "width": 512,
+    "height": 512,
+    "steps": 8,
+    "seed": 665025001,
+    "model": "Z-Image-Turbo-AIO FP8",
+    "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
+    "id": "zimage-aio-photo-8step",
+    "feature": "文章推荐8步生成",
+    "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "与9步同seed和提示词，独立保存8步输出；记录实际含加载耗时，勿直接称稳态速度。",
+    "deviations": "源活动采样链保持；源1152×1736降至512²作为小显存首轮诊断；仅覆盖提示词/seed/尺寸和指定步数。",
+    "memory_profile": "dynamic-nvme",
+    "planned_runtime_profile": "计划配置：RX6650XT；G盘NVMe文件映射、动态VRAM、fast-disk、禁用锁页内存；CPU VAE、同步卸载、预留2GB；512²，文本实际设备以服务日志为准。"
+  },
+  {
+    "id": "flux2-klein-single-color",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "单图编辑／改色",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "prompt": "Change the bag color to blue. Keep the same handbag shape, handles, material, camera angle and light grey studio background.",
+    "expected": "白包改为蓝包，保留包型、提手和背景。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme，G盘配置、动态VRAM/fast-disk、禁用锁页内存、CPU VAE/同步卸载、预留2GiB、FP8文本编码；设备AMD RX6650XT。实际文本编码计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme"
+  },
+  {
+    "id": "flux2-klein-t2i-nvme-control",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "NVMe动态配置诊断／文生图对照",
+    "recipe": "t2i",
+    "inputs": [],
+    "refs": [],
+    "prompt": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.",
+    "expected": "橘猫、雨夜咖啡馆构图，以及可读的 HELLO。",
+    "claim_level": "失败后的本地运行配置诊断，不是文章新增功能",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme，G盘配置、动态VRAM/fast-disk、禁用锁页内存、CPU VAE/同步卸载、预留2GiB、FP8文本编码；设备AMD RX6650XT。实际文本编码计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme",
+    "comparison_case": "flux2-klein-t2i-gpu-text"
+  },
+  {
+    "id": "flux2-klein-dual-logo",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "双图编辑／配色与Logo迁移",
+    "recipe": "dual",
+    "inputs": [
+      "flux2-klein-bench/handbag_white.png",
+      "flux2-klein-bench/comfy_logo_blue.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/handbag_white.png",
+      "flux2-klein-bench/comfy_logo_blue.png"
+    ],
+    "prompt": "Stylize the handbag in image 1 with the colors and logo from image 2.",
+    "expected": "保留第一张手提包结构，迁移第二张蓝色配色与Comfy图案。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned"
+  },
+  {
+    "id": "flux2-klein-dual-people",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "双人合成／人物一致性",
+    "recipe": "dual",
+    "inputs": [
+      "featurebench/kroma-portrait-a.png",
+      "featurebench/kroma-portrait-b.png"
+    ],
+    "refs": [
+      "featurebench/kroma-portrait-a.png",
+      "featurebench/kroma-portrait-b.png"
+    ],
+    "prompt": "The two adult women from image 1 and image 2 stand side by side in a sunny park. Keep them as two distinct people: on the left, the woman from image 1 with short curly copper-red hair, freckles and a mustard sweater; on the right, the woman from image 2 with dark straight hair, navy coat and red scarf. Waist-up photograph, natural relaxed poses, exactly two people.",
+    "expected": "两名虚构成年人物同框，红发雀斑黄毛衣与黑发蓝外套红围巾分属正确人物。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned"
+  },
+  {
+    "id": "flux2-klein-style",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "风格转换",
+    "recipe": "single",
+    "inputs": [
+      "featurebench/cat.png"
+    ],
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "prompt": "Turn this image into a traditional watercolor illustration with visible cold-pressed paper texture and translucent washes. Preserve the same cat, cafe doorway, rainy street and camera composition.",
+    "expected": "咖啡馆猫的主体与构图保留，出现明确水彩笔触和纸张质感。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned"
+  },
+  {
+    "id": "flux2-klein-replace-zh",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "对象替换／中文指令",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "prompt": "将图片中的白色手提包替换成一只红色陶瓷茶壶，保留原来的浅灰色背景、拍摄角度、柔和灯光和居中产品摄影构图。画面中不再出现手提包。",
+    "expected": "包被红色茶壶取代，背景和产品摄影构图保留。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned"
+  },
+  {
+    "id": "flux2-klein-remove",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "对象删除",
+    "recipe": "single",
+    "inputs": [
+      "featurebench/cat.png"
+    ],
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "prompt": "Remove the cat completely. Fill the place where the cat was with the natural cafe doorway and wet pavement. Keep the same empty rainy street, cafe window, lighting and camera view. No animals remain.",
+    "expected": "猫完整移除，原位置自然补全，咖啡馆雨夜环境仍在。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned"
+  },
+  {
+    "id": "flux2-klein-iterative",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "迭代编辑／第二轮修改",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+    ],
+    "depends_on": "flux2-klein-single-color-pinned",
+    "prompt": "Keep this blue handbag exactly as it is, and add a small red silk bow tied around the left handle. Preserve the blue color, bag shape and light grey studio background.",
+    "expected": "在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned"
+  },
+  {
+    "id": "flux2-klein-t2i-pinned-control",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "诊断对照／恢复默认锁页内存",
+    "recipe": "t2i",
+    "inputs": [],
+    "refs": [],
+    "prompt": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.",
+    "expected": "橘猫、雨夜咖啡馆构图，以及可读的 HELLO。",
+    "claim_level": "失败后的本地运行配置诊断，不是文章新增功能",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "comparison_case": "flux2-klein-t2i-nvme-control"
+  },
+  {
+    "id": "flux2-klein-single-color-pinned",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "单图编辑／改色（恢复锁页内存重试）",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "prompt": "Change the bag color to blue. Keep the same handbag shape, handles, material, camera angle and light grey studio background.",
+    "expected": "白包改为蓝包，保留包型、提手和背景。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "retry_of": "flux2-klein-single-color",
+    "creates_iterative_input": true
+  }
+]

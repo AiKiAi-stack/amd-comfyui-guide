@@ -1,0 +1,74 @@
+{
+  "snapshot_date": "2026-10-19",
+  "status": "exploratory_only_not_run",
+  "workflow_binding": {
+    "builder": "trials/2026-10-19-features/feature_bench.py::turbo_un_graph",
+    "base_graph": "trials/2026-10-18/qwen-base-edit-512-api.json",
+    "text_encoder_node": "TextEncodeQwenImage21",
+    "reference_mapping": "qwen_graph enumerates case.refs in list order, adds LoadImage + ImageScale nodes at 512x512 with crop=disabled, then connects them to TextEncodeQwenImage21 inputs images.image_1, images.image_2, and so on. The first refs entry is therefore image 1 in the prompt; the second is image 2.",
+    "turbo_un_mapping": "turbo_un_graph starts from qwen_graph, replaces the UNET and GGUF CLIP loaders with the Turbo-UN files, and replaces KSampler with the custom 8-step ManualSigmas sampler. Keep recipe=edit to exercise the existing two-image TextEncodeQwenImage21 path.",
+    "scope_limit": "These are ordinary two-image edit prompts assembled by the local graph builder. The pose image is an image instruction only; there is no dedicated ControlNet, pose estimator, or reproduction of the author's integrated UI. No output has been generated or reviewed."
+  },
+  "pose_guide": {
+    "svg": "../ComfyUI/input/featurebench/pose-guide.svg",
+    "png": "../ComfyUI/input/featurebench/pose-guide.png",
+    "dimensions": [
+      512,
+      512
+    ],
+    "description": "White background with a simple dark geometric stick figure: both arms straight and horizontal, legs apart, and the figure's anatomical left knee bent (viewer-right side). This is a hand-authored input diagram, not a model result.",
+    "visual_constraints": "No labels, clothing, face, background scene, or control-map encoding."
+  },
+  "evidence": [
+    "../trials/2026-10-19-features/feature_bench.py",
+    "../trials/2026-10-18/qwen-base-edit-512-api.json",
+    "../trials/2026-10-19-features/blocked.json",
+    "https://bbs.monster/thread-5262-1-1.html",
+    "../ComfyUI/input/featurebench/astronaut.png",
+    "../ComfyUI/input/featurebench/kroma-portrait-a.png",
+    "../ComfyUI/input/featurebench/pose-guide.svg",
+    "../ComfyUI/input/featurebench/pose-guide.png"
+  ],
+  "cases": [
+    {
+      "id": "turbo-un-role-replacement-test",
+      "model": "turbo-un",
+      "feature": "角色替换（全身含服装）",
+      "recipe": "edit",
+      "claim_level": "作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。",
+      "exploratory": true,
+      "refs": [
+        "featurebench/astronaut.png",
+        "featurebench/kroma-portrait-a.png"
+      ],
+      "inputs": [
+        "astronaut",
+        "kroma-portrait-a"
+      ],
+      "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+      "expected": "A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.",
+      "status": "proposal_not_run",
+      "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (astronaut target); refs[1] becomes images.image_2 (portrait identity)."
+    },
+    {
+      "id": "turbo-un-pose-reference-test",
+      "model": "turbo-un",
+      "feature": "姿态参考（图像指令）",
+      "recipe": "edit",
+      "claim_level": "作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。",
+      "exploratory": true,
+      "refs": [
+        "featurebench/pose-guide.png",
+        "featurebench/kroma-portrait-a.png"
+      ],
+      "inputs": [
+        "pose-guide",
+        "kroma-portrait-a"
+      ],
+      "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+      "expected": "An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.",
+      "status": "proposal_not_run",
+      "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control."
+    }
+  ]
+}

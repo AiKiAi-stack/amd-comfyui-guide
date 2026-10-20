@@ -1,0 +1,10 @@
+{
+  "repo": "unsloth/Qwen-Image-2.1-Turbo-GGUF",
+  "revision": "5d1f9f759ea877ae556cda88dbec958b62ad3809",
+  "file": "qwen-image-2.1-turbo-Q4_K_M.gguf",
+  "bytes": 4199565120,
+  "sha256": "8940e8b522af886e0c0f5afddf720e82dd223cb9a43580b5f61c4d740452ac20",
+  "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/diffusion_models/qwen-image-2.1-turbo-Q4_K_M.gguf",
+  "verified_sha256": "8940e8b522af886e0c0f5afddf720e82dd223cb9a43580b5f61c4d740452ac20",
+  "completed_at": "2026-10-19T09:42:21+0800"
+}

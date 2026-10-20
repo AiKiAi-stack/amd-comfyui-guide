@@ -1,0 +1,44 @@
+[
+  {
+    "id": "kroma-style-ref",
+    "model": "kroma",
+    "sampler_node_id": "case01_7",
+    "barrier_node_id": "batch_barrier_01",
+    "output_nodes": [
+      {
+        "original_node_id": "9",
+        "node_id": "case01_9",
+        "filename_prefix": "FeatureBench/kroma-style-ref",
+        "role": "main"
+      }
+    ]
+  },
+  {
+    "id": "kroma-multiref",
+    "model": "kroma",
+    "sampler_node_id": "case02_7",
+    "barrier_node_id": "batch_barrier_02",
+    "output_nodes": [
+      {
+        "original_node_id": "9",
+        "node_id": "case02_9",
+        "filename_prefix": "FeatureBench/kroma-multiref",
+        "role": "main"
+      }
+    ]
+  },
+  {
+    "id": "kroma-head-swap",
+    "model": "kroma",
+    "sampler_node_id": "case03_7",
+    "barrier_node_id": "batch_barrier_03",
+    "output_nodes": [
+      {
+        "original_node_id": "9",
+        "node_id": "case03_9",
+        "filename_prefix": "FeatureBench/kroma-head-swap",
+        "role": "main"
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "repo": "Comfy-Org/flux2-klein-4B",
+  "revision": "5f526678002e43af5551dadb73ce2e8c91b43afe",
+  "file": "split_files/vae/flux2-vae.safetensors",
+  "bytes": 336211292,
+  "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+  "target": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\vae\\flux2-vae.safetensors",
+  "ssd_target": "G:\\AIModels\\amd_comfy\\flux2-klein-20261020\\vae\\flux2-vae.safetensors",
+  "verified_ssd_sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+  "verified_at": "2026-10-20T14:09:31.550781+00:00",
+  "elapsed_seconds": 5.22
+}

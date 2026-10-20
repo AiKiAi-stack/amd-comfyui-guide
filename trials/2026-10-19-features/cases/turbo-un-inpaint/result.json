@@ -1,0 +1,29 @@
+{
+  "id": "turbo-un-inpaint",
+  "model": "turbo-un",
+  "feature": "遮罩局部重绘",
+  "recipe": "inpaint",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "Replace only the orange cat with a small red fox sitting in the same location facing away from the camera. Keep the rainy Shanghai cafe street and all other areas unchanged. Photorealistic.",
+  "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+  "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+  "qwen_cache_device": "off",
+  "started_at": 1792430832.4098852,
+  "review": "pending",
+  "prompt_id": "14885f48-2048-41e8-8e95-c35a45cc2939",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-input_00001_.png",
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-mask_00001_.png",
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 710.95
+}

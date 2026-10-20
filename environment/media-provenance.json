@@ -1,0 +1,512 @@
+[
+  {
+    "file": "ComfyUI/input/featurebench/astronaut.png",
+    "original_sha256": "4c225838709ebb5298aaea418e2a3f0dbc1b5748dbe0fc71651d8aca31bd0f70",
+    "public_sha256": "06f3c1a0c5705b2be38d6cc44ca07319f547d31098c7b190c94c6b19c9a2dd7b",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/cat.png",
+    "original_sha256": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457",
+    "public_sha256": "42d5d9635f9c6ef44327f89f9f58d5cd71798ccc805263ec31d7f7a145bbc4a6",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/fox.png",
+    "original_sha256": "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304",
+    "public_sha256": "0404624e132d8b0273472070ed1a14213fb5264d19347a125df75fb83b409063",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/kroma-head-swap.png",
+    "original_sha256": "35c7b83a5f73a29389770a4c17dd78938db0627a0cbd57f6a6983a782fae5483",
+    "public_sha256": "36795b0dacf86cc9bc6ee6fab20451a5214fda32f690797a75d6bba981d53000",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/kroma-multiref.png",
+    "original_sha256": "fbba704682e321ecb6ce05ef2d34ae35f11f9cac55f5d4b41a762b9c3299c67c",
+    "public_sha256": "a0eca648edc85a53ba1ff4dd14ea8c221541fce4b3e2ed89369892c25e0afd34",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/kroma-portrait-a.png",
+    "original_sha256": "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10",
+    "public_sha256": "02b141b1b04e8f27d48d2999659b14249188a8d9be3bb566ddc99176f0828222",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/kroma-portrait-b.png",
+    "original_sha256": "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed",
+    "public_sha256": "e5aabefc21cbd1e823507e958aed61d4279b44babdd39f0067d34c6a17871de1",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/kroma-style-ref.png",
+    "original_sha256": "5c33875a66e09a5cb44117f5a9cdae582a8a959053a9170b58fe333d8861c272",
+    "public_sha256": "acc9ebf77c640f6d6a2c1985c15ce81580b68f32d222f9888a09857b9331ed15",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/kroma-style-source.png",
+    "original_sha256": "841925d4809ba59de71580f64d1d99f11a3e4eb9b29da384d88bef62ca394920",
+    "public_sha256": "07b736da6af48774a49863c9ceed5bd8abfb128cba07601a8a87b41d299a9ddb",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/pose-guide.png",
+    "original_sha256": "fe93bfc52340aee14319f8c113dc4c8d6a38eda8a53f17384b034f39e2309366",
+    "public_sha256": "fe93bfc52340aee14319f8c113dc4c8d6a38eda8a53f17384b034f39e2309366",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/qwen-face-only.png",
+    "original_sha256": "aaaaea409254630d0753d5f5e64cb43ba8e4c18ecfcf3bd6441214af9b3cccfd",
+    "public_sha256": "ef9c0ae98caebe1737caecdbdcdaae302b55b07e7e9e61df77526910dcd2f3bb",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/qwen-face-swap.png",
+    "original_sha256": "c44be9f081bcf4f233e1cc448fbb524474eddc50a96d8f023967564405660d9e",
+    "public_sha256": "4e7366fd2c52bb3a31dff8d405aa1276fd1625680ec6c48673399faa22333005",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/featurebench/qwen-style-edit.png",
+    "original_sha256": "880e7620da4b2fb29751f85f8eb14010e0e3938962e5bfacf30a12f6cde4677a",
+    "public_sha256": "06cf364ec48cb188026debd51cf57a2db4dd245444799acb2414df9cf1fd910b",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/flux2-klein-bench/comfy_logo_blue.png",
+    "original_sha256": "392b4f8b16d3aa197781f91597681905c1320e377b0d81af530c87640b044bf6",
+    "public_sha256": "392b4f8b16d3aa197781f91597681905c1320e377b0d81af530c87640b044bf6",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png",
+    "original_sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8",
+    "public_sha256": "5a4b68288ffc1717c781a032c8646fe4d58c5ec8712b50fed2db7a7526233380",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/flux2-klein-bench/flux2-klein-single-color.png",
+    "original_sha256": "f2c247c95d58ad76309d87f32ad17bc8914eb546edaf53ca350082c2455dc5f3",
+    "public_sha256": "501868b4bbb5aaff0c23cec3fe29aa68c3c38006d1509f259e7e5646d5641bbc",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/flux2-klein-bench/handbag_white.png",
+    "original_sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4",
+    "public_sha256": "051449bbec050e713290700c6bb473880bef8db06571f78144c428ba793c45ab",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/input/liuyue-qwen-base-source.png",
+    "original_sha256": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457",
+    "public_sha256": "42d5d9635f9c6ef44327f89f9f58d5cd71798ccc805263ec31d7f7a145bbc4a6",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-dual-logo_00001_.png",
+    "original_sha256": "29ec7c6b954f1493c1880803773b5b3972e7566f0efa9811610d5347e6941d0f",
+    "public_sha256": "c358278f3d741027b1dcd7d38a6057ba1b3b1bd825dbb6846584bc78667696ab",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-dual-people_00001_.png",
+    "original_sha256": "a5d4950c46cd79b419bb6ebf1108ff360cad4feebbb4340152e0f58633aed445",
+    "public_sha256": "4333de1e057f171fb7b0284ccb4bfbfa642e6848a8c08b8a4aedc9abd5e01e3d",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-iterative_00001_.png",
+    "original_sha256": "61973f6d4f088b0dce332188187f8c1726f03551368441929a9601e79bea2c70",
+    "public_sha256": "efd15de4d172ff441e5f7dcf4c4a95ff31b67ab334f10d15b348ea700194141e",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-remove_00001_.png",
+    "original_sha256": "2c36d14dff05ae11d056d66e5a6c9e562073bc26d2ba01c61470c32c80f7c9fa",
+    "public_sha256": "09e23cb5592fd186df5492029f6526f4ad0f48929d57a0ee17cd9bf5ae6fca27",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-replace-zh_00001_.png",
+    "original_sha256": "e4d8e3ef011dea5c633cd8bb2a7206e00505104fa5ec5251640f9901b662d287",
+    "public_sha256": "44e4a4d17db68aeefe209bf0ae8ba29a132daf7d42e8512d8b76cc5501c6919d",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png",
+    "original_sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8",
+    "public_sha256": "5a4b68288ffc1717c781a032c8646fe4d58c5ec8712b50fed2db7a7526233380",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-single-color_00001_.png",
+    "original_sha256": "f2c247c95d58ad76309d87f32ad17bc8914eb546edaf53ca350082c2455dc5f3",
+    "public_sha256": "501868b4bbb5aaff0c23cec3fe29aa68c3c38006d1509f259e7e5646d5641bbc",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png",
+    "original_sha256": "59fc18d9300e583da52ce1ae2fe8f6861385b09186d0db4bc20546a3811a9e9c",
+    "public_sha256": "b93ece41053d40961d590a5c0ac946a6a72b4dd382912b48b00db4be595b6181",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png",
+    "original_sha256": "fa0fbd7f42d7e4ced137dae89287088e0faa8dafe58073d103594005934603ef",
+    "public_sha256": "773a732421ff8f1cf7aaff0a507190f7eb3dc41544ef777fd60d11eed55ec018",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png",
+    "original_sha256": "2bef77ca6f9baf56bbc9dcd4322d953383d881c726712feb8686b58ecc16dcc3",
+    "public_sha256": "77c93e87724d0db17e66e5c65f26732677a31b2b8fb2a99305c4a6a3b09f0326",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png",
+    "original_sha256": "9af60d04e8f6534c270fc9ff963b1ff2ad7f25d2ac45c0b1d3862ff63669948a",
+    "public_sha256": "773a732421ff8f1cf7aaff0a507190f7eb3dc41544ef777fd60d11eed55ec018",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i_00001_.png",
+    "original_sha256": "31f7fe37f30e9d11e10a0e583f77fb82f9ff57167b71bff980f891146d44106d",
+    "public_sha256": "ff87713a0122fff1a5de1299544d38973e3523ab1a981e7953cf63fbd8d6c705",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/kroma-head-swap_00001_.png",
+    "original_sha256": "35c7b83a5f73a29389770a4c17dd78938db0627a0cbd57f6a6983a782fae5483",
+    "public_sha256": "36795b0dacf86cc9bc6ee6fab20451a5214fda32f690797a75d6bba981d53000",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/kroma-img2img_00001_.png",
+    "original_sha256": "1bf2d198c19c218deec556c9211a80c4e49ba79fbd0d803fcf1b65cdc4702bba",
+    "public_sha256": "3a43bedd4fc393a7176e41f83c84f5b68116587e3325e8359fe77004f1d45553",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/kroma-multiref_00001_.png",
+    "original_sha256": "fbba704682e321ecb6ce05ef2d34ae35f11f9cac55f5d4b41a762b9c3299c67c",
+    "public_sha256": "a0eca648edc85a53ba1ff4dd14ea8c221541fce4b3e2ed89369892c25e0afd34",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/kroma-portrait-a_00001_.png",
+    "original_sha256": "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10",
+    "public_sha256": "02b141b1b04e8f27d48d2999659b14249188a8d9be3bb566ddc99176f0828222",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/kroma-portrait-b_00001_.png",
+    "original_sha256": "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed",
+    "public_sha256": "e5aabefc21cbd1e823507e958aed61d4279b44babdd39f0067d34c6a17871de1",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/kroma-style-ref_00001_.png",
+    "original_sha256": "5c33875a66e09a5cb44117f5a9cdae582a8a959053a9170b58fe333d8861c272",
+    "public_sha256": "acc9ebf77c640f6d6a2c1985c15ce81580b68f32d222f9888a09857b9331ed15",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/kroma-style-source_00001_.png",
+    "original_sha256": "841925d4809ba59de71580f64d1d99f11a3e4eb9b29da384d88bef62ca394920",
+    "public_sha256": "07b736da6af48774a49863c9ceed5bd8abfb128cba07601a8a87b41d299a9ddb",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/moss-img2img_00001_.png",
+    "original_sha256": "ab0af396eb608aced82bc429d2b0204a0287b136fdbb41e6f4146f6d68bc2acf",
+    "public_sha256": "0443011a20f230627ceb53020d44b6a54dbb52d2359728bb80970d1db568e29c",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/moss-layout_00001_.png",
+    "original_sha256": "0c7cbdb75259ccf6bbf6aac22222b5864569ddd1d26faeb42bab6d42a29a025b",
+    "public_sha256": "7fd9af2badd7a665d1251eca27f5b3a7f7e4f29935fa70c08c65a7073bd76701",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/moss-text_00001_.png",
+    "original_sha256": "d5bdf20ffc351936138f52d87bee5b3af704c6dd6d3227b0e1bb1fe6fc57ca6f",
+    "public_sha256": "4ea3e2642d82c0eb7174a6e271417860a2735cd3e92a645d7d0fe8e8a21ec5f3",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-bfs-head-swap_00001_.png",
+    "original_sha256": "148dbd7db1140bc88cd90d70fd93742bb647b628581b43d7c01387ca619b2ae9",
+    "public_sha256": "9ecb312213bb9a36ea512815d73742436583a251079d57c2498eeb2266c0dc69",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-face-only_00001_.png",
+    "original_sha256": "aaaaea409254630d0753d5f5e64cb43ba8e4c18ecfcf3bd6441214af9b3cccfd",
+    "public_sha256": "ef9c0ae98caebe1737caecdbdcdaae302b55b07e7e9e61df77526910dcd2f3bb",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-face-swap_00001_.png",
+    "original_sha256": "c44be9f081bcf4f233e1cc448fbb524474eddc50a96d8f023967564405660d9e",
+    "public_sha256": "4e7366fd2c52bb3a31dff8d405aa1276fd1625680ec6c48673399faa22333005",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-inpaint-input_00001_.png",
+    "original_sha256": "ba210718de4ca8b31a60cfc0074ce4aa4a6509ddac5f92f58754efa910ff6225",
+    "public_sha256": "ad676414eef94396657dbe7d34740ac397335da3d56373cd55dc42488587e41e",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-inpaint-mask_00001_.png",
+    "original_sha256": "268f18b9403f80f6cc54cbc09d68a5dc4b5e6ec9024e4874586d6d3c6624a157",
+    "public_sha256": "94f2c5724deafdd03f03d39caf54d1dccaa64ea1aa0700708c23fbe87e74b212",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-inpaint_00001_.png",
+    "original_sha256": "0d9de22216638c92e0c87059aa6eff869e5f7c7986b569eb9d56bdfb87105d2c",
+    "public_sha256": "ac68dca65084b5645270834216b65ddef0cf23970f014fb9690da7c14f207a9b",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-multiref_00001_.png",
+    "original_sha256": "735daa14b61aa2cc6a5a83dd90ed7f5c10b0ea37f68b9282ad28fdf47a414618",
+    "public_sha256": "7a001f14a0a225af2030a143ebc7ed5735503b3718aefd3a6acaa61e34be8144",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/qwen-style-edit_00001_.png",
+    "original_sha256": "880e7620da4b2fb29751f85f8eb14010e0e3938962e5bfacf30a12f6cde4677a",
+    "public_sha256": "06cf364ec48cb188026debd51cf57a2db4dd245444799acb2414df9cf1fd910b",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-face-swap_00001_.png",
+    "original_sha256": "ed8bcd4bba71a6c8f212ecb20b540a16413332b7d969a7bc437b4607c92e9c5a",
+    "public_sha256": "635767fbd645e47a8e45748ed2777e2293f5c19bcc6dd2bef047556e37ff60e9",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-inpaint-input_00001_.png",
+    "original_sha256": "a542f81ce1a0cb5187ff74bf2772f6cfb3cad4775594527349160527ace37a86",
+    "public_sha256": "ad676414eef94396657dbe7d34740ac397335da3d56373cd55dc42488587e41e",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-inpaint-mask_00001_.png",
+    "original_sha256": "627ee1e36a47ce3afcca18b1063a2ba9b20fbcc2e2fdf21c90051f48375f3129",
+    "public_sha256": "94f2c5724deafdd03f03d39caf54d1dccaa64ea1aa0700708c23fbe87e74b212",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-inpaint_00001_.png",
+    "original_sha256": "b8ddf3d436a08ddbd07d4dec7faf2ec0afba649f2b98b1106058356c1969b860",
+    "public_sha256": "0708ddd527831e93894b89fbf895a47e35bcb1d7f4afc48373a5e39dd4b29e1d",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-multiref_00001_.png",
+    "original_sha256": "0b85fa41211f2c4f98841a900859dfd0200cfa6d230fa89b56684cf0fe05e974",
+    "public_sha256": "58913e8dcb3e46cbee6eb85785ad9902924d1cfd4b14f5fcca22c33313073ed6",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-pose-reference-test_00001_.png",
+    "original_sha256": "6d0663964f7b4d703d53e29b6331dab68161823d7b0c6ae3169aa1960e5193a8",
+    "public_sha256": "25ac901b39b436a2e15f7d68a7ff4ca1ac15faa677b1fba8815b79be3e404688",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-role-replacement-test_00001_.png",
+    "original_sha256": "fcaba8dab0a71b39d653ba416fa3325721de2744cba30ca4fcc7022367eed1fc",
+    "public_sha256": "f0c32984ad989a8f27f63692cea4fb951d4c36e173a8d318a6ff9ec5eba64b02",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/turbo-un-t2i_00001_.png",
+    "original_sha256": "681d0315d462d60331bb0c414cc93ec873f4405adf93b5e1561af97a57f1d32f",
+    "public_sha256": "81ce23ee14a45bbf507e55062cfddff3856e44f3fb834633a64d388d6579822d",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png",
+    "original_sha256": "035a14d62e5a51bea3b057d933a6c822a9657b09a1bdbd1162607e1b40f900bb",
+    "public_sha256": "9febf1dc18d8ca2a012b491c4d433e7334ea3fd3bbfced6b15261740c9e6c76c",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png",
+    "original_sha256": "c99807677d6bbf0dcfb1f57b5da97eab7df2b4ece258cea8a81256f095db0046",
+    "public_sha256": "42ac4403bb16559b8b653744ccac1fb27d9a40e8a71d94a7b1928af3345015f0",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png",
+    "original_sha256": "77c672db9761afded6bb9b41370e17a464b4c8061a13828c1fec95f1e621398e",
+    "public_sha256": "0e52fcf1d20f22292efafed9c3738f3cc85ce257b9aff40d373be07389145c37",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png",
+    "original_sha256": "e160314290d5f2be50b006755f92d6068a787881d5b481affeea44a62786a23e",
+    "public_sha256": "944aee85a7c53bd0c009df1b9e6eb50fcb0840943f60f532478cc7a75a0493f6",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png",
+    "original_sha256": "c08e957e0053b797bbc6dda17313c84c7effba534c312bcc9713245c60060b12",
+    "public_sha256": "5342e29f521db4a9b77ab83a959096486345766f0a8b56b87bd13182c1a6209a",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png",
+    "original_sha256": "bb0721e956bce8c74c41e732f677c8d6d920ca4e62419f685841dd62f2b72fb1",
+    "public_sha256": "9bc1ab8d5b6141b047111707abc205aba7da821b663151fe821eca04c5b3a216",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png",
+    "original_sha256": "d0eb4529490d674204a2e8e743cc14cdd81b721c6403972521babdfdda91a98f",
+    "public_sha256": "43d4d656a9352a50c83c699872366a4dd1ec3c41374c78f1620bd4520e4c9e3b",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png",
+    "original_sha256": "c1559c859ec3a10c014dc9467c820cc4e5dc63f0f24d6bef1bc087dfb2398024",
+    "public_sha256": "c7b35818a2c4538472be78d921b613279b2f741e1f4e7b908b5e1f9b3c50f2d8",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png",
+    "original_sha256": "d5c8a7b94a749771151942bdade42be70599727d28a932c3586a42ed4c68ed6a",
+    "public_sha256": "08b8e647bf5eefb64f80fb487f9943685a17654fbc18e442d88e72e2ff7c48f4",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png",
+    "original_sha256": "106e839d78cb5eac5ad6d53ccd4850ae16517bcfda9054112a35264a76ba7b4b",
+    "public_sha256": "e9647a8a8fe4cf5e48b7eaf0e443d671bef79197a2ef2d85105cc17f04086d42",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png",
+    "original_sha256": "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304",
+    "public_sha256": "0404624e132d8b0273472070ed1a14213fb5264d19347a125df75fb83b409063",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png",
+    "original_sha256": "4c225838709ebb5298aaea418e2a3f0dbc1b5748dbe0fc71651d8aca31bd0f70",
+    "public_sha256": "06f3c1a0c5705b2be38d6cc44ca07319f547d31098c7b190c94c6b19c9a2dd7b",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png",
+    "original_sha256": "b66c868245054c6356fd22318cef24cf48d19c63fd2af1008e5fdee6a8747a3c",
+    "public_sha256": "a65b5c45e6586b1c8a8ccd086d963475038c352f277bd96d37fbb16d3c9acb51",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png",
+    "original_sha256": "905a34e3f3a751dc76b33d93b4d14f220baca8cb2787fa370c01ed164e633934",
+    "public_sha256": "cfc20fe4926813e8b981db601812c321b96dfcf8f7e82ebb08a02805d7fd5884",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png",
+    "original_sha256": "802a0284b90d3dfb2577fff299444270efa9f80ef173d07a7e02a3c9de71564f",
+    "public_sha256": "c26c21e6b13dceb88022fe20394b8ac7992384f72ef5512231b54d979797eeaa",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png",
+    "original_sha256": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457",
+    "public_sha256": "42d5d9635f9c6ef44327f89f9f58d5cd71798ccc805263ec31d7f7a145bbc4a6",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/UncensoredBench/q21-un-art-study_00001_.png",
+    "original_sha256": "d205f387b765257f74b3eb7ab6c25ab4fb991f1a6d2c70c9090274adf933ff61",
+    "public_sha256": "15fee6ceb8bf4632d2f5837d1986262e6e8709d61deb47bf2ce9eeba68b8c628",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/UncensoredBench/q21-un-gothic-horror_00001_.png",
+    "original_sha256": "f64c16624c85e754cd27e41beb6dedc6868041b66603a4b1c4a4aa27158cad39",
+    "public_sha256": "23dd3b2bd1e3102262f89d8d7f695eb0c3eb73899a73a28c7f54bbe1212e732c",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "ComfyUI/output/UncensoredBench/q21-un-satire-profanity_00001_.png",
+    "original_sha256": "eeea5fb4c518c0acc47beff882e9e235a493cdbc903bb07464233cae2fbfcfb2",
+    "public_sha256": "4fb903f0660603cb80688f3ca3e07616f5063f10465101ed21bad3e45f114eef",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-19-h3/input/cyan-robot-reference.png",
+    "original_sha256": "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9",
+    "public_sha256": "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00001_.png",
+    "original_sha256": "b3f35d5c68f2271a3aa36e4def15134d1bbebd10d034e43f24c5d96cb2f168aa",
+    "public_sha256": "c465f087d5bcca47e6e51052fca967fa952a2cdf64084fa827319060d0b9fc20",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00002_.png",
+    "original_sha256": "42afb63f2411f29ab4e5bba6523a2bd8f3c85a4fd6c066ba238916e51b5cd475",
+    "public_sha256": "0d48d6fa6412c2baea918c86d0b36328490ef4f4ade8a5bab1095b1a7bc5eaef",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00003_.png",
+    "original_sha256": "073706b7b0b61930c9279c91c643d846e1ae14da8e64cb5925759fef9aae520f",
+    "public_sha256": "256c85d33d03d668f45faa7e08581ac591dc75352c97bda374495d308910df41",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00004_.png",
+    "original_sha256": "39aabc8b9ec95b1a566911d61ef08b9839a44247ad217ded97411f8658ab0d86",
+    "public_sha256": "5cf6d44cf33765a96d746c26c3dcf9f49aa49c5ed961695d84fe44e1e3cfca0b",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00005_.png",
+    "original_sha256": "738e86a712abb5f3b35573b25f078821f02ada51ed59589f24235531b31597a5",
+    "public_sha256": "58ecfacfe31817f8641fa78066a046963e41c5558ce27ff3b29f65a8174717a2",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-19-h3/output/h3/ref2va-5frame-diagnostic_00001_.webp",
+    "original_sha256": "e9c161384f2c08b6104c3587290e80ffa579e8908764aa1587922f654ba9b80e",
+    "public_sha256": "1315d5af04ac429fd5b9c50a2b93f2ce2f0efe6a5c044203fadcb37d0f8ce00e",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-20-flux3/author-assets/screenshot-image-edit.png",
+    "original_sha256": "e86eb25b41bda92434c6498b80567767bbb517a7181381718c3d367c03eb1e6c",
+    "public_sha256": "e86eb25b41bda92434c6498b80567767bbb517a7181381718c3d367c03eb1e6c",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-20-flux3/author-assets/screenshot-image-to-image.png",
+    "original_sha256": "df98d9f8eb7ce35280f14c347c658e19f5f668ebc34e06441588ea7b6ce18348",
+    "public_sha256": "df98d9f8eb7ce35280f14c347c658e19f5f668ebc34e06441588ea7b6ce18348",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-20-flux3/author-assets/screenshot-text-to-image.png",
+    "original_sha256": "89322e077a678f5811eadc35d3219b10a54c63588cf896ec742d067cc2b3df71",
+    "public_sha256": "89322e077a678f5811eadc35d3219b10a54c63588cf896ec742d067cc2b3df71",
+    "change": "metadata removed, visual bitstream unchanged"
+  }
+]

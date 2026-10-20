@@ -1,0 +1,12 @@
+{
+  "submitted_at": "2026-10-20T14:04:10.477235+00:00",
+  "state": "accepted",
+  "prompt_graph_sha256": "31c2bda7f20f1fdc12657afc34d632cf0d153a988acdf00aa0c5832d33b073d2",
+  "http_status": 200,
+  "response": {
+    "prompt_id": "a3875ab1-01b3-4c4a-8fd6-14625b5dcaa2",
+    "number": 4,
+    "node_errors": {}
+  },
+  "prompt_id": "a3875ab1-01b3-4c4a-8fd6-14625b5dcaa2"
+}

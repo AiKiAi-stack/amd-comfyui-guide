@@ -1,0 +1,10 @@
+[
+  {
+    "repo": "Comfy-Org/MiniMax-H3",
+    "revision": "e5eb578a89295337b8ff433a035929ce0279e0b6",
+    "file": "vae/minimax_h3_video_vae_fp16.safetensors",
+    "bytes": 5207808496,
+    "sha256": "7c1f131492e7eddacaac9069a61b81bdd39de5cc96561e677c5eab1cdce5e522",
+    "target": "D:/AI/comfyui-rx6650xt-lab/h3-sandbox/ComfyUI/models/vae/minimax_h3_video_vae_fp16.safetensors"
+  }
+]

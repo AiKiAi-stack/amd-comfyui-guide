@@ -1,0 +1,19 @@
+{
+  "id": "moss-layout",
+  "model": "moss",
+  "feature": "指定物体布局",
+  "recipe": "t2i",
+  "claim_level": "上游核心支持，非已确认文章声明",
+  "inputs": [],
+  "prompt": "{\"summary\":{\"caption\":\"A clean studio product photograph on a pale grey table. A bright red teapot on the left and a tall blue ceramic vase on the right, clearly separated.\"},\"items\":[{\"label\":\"object\",\"caption\":\"one bright red teapot with a handle and spout, on the left\",\"bbox\":[-96,-226,184,-16]},{\"label\":\"object\",\"caption\":\"one tall blue ceramic vase, on the right\",\"bbox\":[-116,44,184,214]}],\"bbox_coord_space\":\"abs_centralized\",\"bbox_format\":\"yxyx\"}",
+  "expected": "红茶壶在左、蓝花瓶在右，各自落在指定区域。",
+  "started_at": 1792394710.6319568,
+  "review": "pending",
+  "prompt_id": "089ef43b-bcb4-42b3-a3f8-7086dac19dac",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\moss-layout_00001_.png"
+  ],
+  "errors": [],
+  "elapsed_seconds": 185.56
+}

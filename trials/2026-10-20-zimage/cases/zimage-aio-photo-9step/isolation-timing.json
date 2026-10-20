@@ -1,0 +1,7 @@
+{
+  "started_at": "2026-10-20T13:57:25.496610+00:00",
+  "server_start_seconds": 242.66,
+  "runner_seconds": 50.78,
+  "whole_case_seconds": 309.95,
+  "note": "Measured orchestration wall time includes startup, health/preflight, model loading, generation and runner. Downloads and SSD mirror preparation excluded."
+}

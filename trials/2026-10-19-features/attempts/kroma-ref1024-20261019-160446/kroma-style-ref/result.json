@@ -1,0 +1,39 @@
+{
+  "id": "kroma-style-ref",
+  "model": "kroma",
+  "feature": "风格参考",
+  "recipe": "reference",
+  "claim_level": "上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA",
+  "refs": [
+    "featurebench/kroma-style-source.png"
+  ],
+  "inputs": [
+    "kroma-style-source"
+  ],
+  "prompt": "Use the visual style of the reference image: bold geometric two-color blue and orange screenprint, rough paper texture. Create a new image of an owl perched on a branch. Preserve the reference print style, not its fox subject. No text.",
+  "expected": "参考图的蓝橙双色版画风格迁移到新主体猫头鹰。",
+  "batch_id": "20261019T075554Z-4aff6cd8",
+  "prompt_id": "91732987-941b-4fe9-9397-2e29bdc8da09",
+  "status": "runner_error",
+  "batch_status": "runner_error",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 361.8,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 361.80 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "9",
+      "node_id": "case01_9",
+      "filename_prefix": "FeatureBench/kroma-style-ref",
+      "role": "main"
+    }
+  ],
+  "images": [],
+  "errors": [
+    {
+      "exception_type": "ReadTimeout",
+      "exception_message": "HTTPConnectionPool(host='127.0.0.1', port=8188): Read timed out. (read timeout=30)"
+    }
+  ],
+  "error": "HTTPConnectionPool(host='127.0.0.1', port=8188): Read timed out. (read timeout=30)"
+}

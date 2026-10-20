@@ -1,0 +1,163 @@
+{
+  "prompt": [
+    3,
+    "2a40a1cd-e83f-425a-96b8-5dfc3ec9f8d3",
+    {
+      "34": {
+        "inputs": {
+          "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple"
+      },
+      "2": {
+        "inputs": {
+          "model": [
+            "34",
+            0
+          ],
+          "shift": 3.0
+        },
+        "class_type": "ModelSamplingAuraFlow"
+      },
+      "20": {
+        "inputs": {
+          "clip": [
+            "34",
+            1
+          ],
+          "text": "A straight-on product photograph of a single cafe sign. The sign has exactly one large word: \"HELLO\". Bold black sans-serif letters on a clean white rectangular sign, centered, plain blue wall behind it, no other text."
+        },
+        "class_type": "CLIPTextEncode"
+      },
+      "40": {
+        "inputs": {
+          "conditioning": [
+            "20",
+            0
+          ]
+        },
+        "class_type": "ConditioningZeroOut"
+      },
+      "6": {
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage"
+      },
+      "17": {
+        "inputs": {
+          "model": [
+            "2",
+            0
+          ],
+          "positive": [
+            "20",
+            0
+          ],
+          "negative": [
+            "40",
+            0
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 665025002,
+          "steps": 8,
+          "cfg": 1.0,
+          "sampler_name": "res_multistep",
+          "scheduler": "simple",
+          "denoise": 1.0
+        },
+        "class_type": "KSampler"
+      },
+      "11": {
+        "inputs": {
+          "samples": [
+            "17",
+            0
+          ],
+          "vae": [
+            "34",
+            2
+          ]
+        },
+        "class_type": "VAEDecode"
+      },
+      "26": {
+        "inputs": {
+          "images": [
+            "11",
+            0
+          ],
+          "filename_prefix": "FeatureBench/zimage-aio-english"
+        },
+        "class_type": "SaveImage"
+      }
+    },
+    {
+      "create_time": 1792505019541
+    },
+    [
+      "26"
+    ]
+  ],
+  "outputs": {
+    "26": {
+      "images": [
+        {
+          "filename": "zimage-aio-english_00001_.png",
+          "subfolder": "FeatureBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "2a40a1cd-e83f-425a-96b8-5dfc3ec9f8d3",
+          "timestamp": 1792505019543
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "34",
+            "2",
+            "6"
+          ],
+          "prompt_id": "2a40a1cd-e83f-425a-96b8-5dfc3ec9f8d3",
+          "timestamp": 1792505019543
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "2a40a1cd-e83f-425a-96b8-5dfc3ec9f8d3",
+          "timestamp": 1792505049506
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "26": {
+      "node_id": "26",
+      "display_node": "26",
+      "parent_node": null,
+      "real_node_id": "26"
+    }
+  }
+}

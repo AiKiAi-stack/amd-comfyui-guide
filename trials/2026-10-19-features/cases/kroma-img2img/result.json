@@ -1,0 +1,21 @@
+{
+  "id": "kroma-img2img",
+  "model": "kroma",
+  "feature": "图生图／洗图",
+  "recipe": "img2img",
+  "claim_level": "公众号索引标题",
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "Watercolor illustration of an orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street. Preserve the composition, soft translucent watercolor, textured paper.",
+  "expected": "雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。",
+  "started_at": 1792395821.4709501,
+  "review": "pending",
+  "prompt_id": "ef947405-58b8-4568-a727-ef4366bd44a7",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\kroma-img2img_00001_.png"
+  ],
+  "errors": [],
+  "elapsed_seconds": 250.94
+}

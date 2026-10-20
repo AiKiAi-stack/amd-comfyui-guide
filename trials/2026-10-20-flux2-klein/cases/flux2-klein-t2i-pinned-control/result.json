@@ -1,0 +1,90 @@
+{
+  "case_id": "flux2-klein-t2i-pinned-control",
+  "id": "flux2-klein-t2i-pinned-control",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "诊断对照／恢复默认锁页内存",
+  "status": "success",
+  "started_at": 1792506497.9245584,
+  "runtime_profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
+  "runtime_verification": {
+    "verified": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "argv": [
+      "ComfyUI/main.py",
+      "--listen",
+      "127.0.0.1",
+      "--port",
+      "8188",
+      "--cpu-vae",
+      "--disable-async-offload",
+      "--fast-disk",
+      "--enable-dynamic-vram",
+      "--reserve-vram",
+      "2.0",
+      "--fp8_e4m3fn-text-enc",
+      "--extra-model-paths-config",
+      "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml"
+    ],
+    "required_flags": [
+      "--enable-dynamic-vram",
+      "--fast-disk",
+      "--cpu-vae",
+      "--disable-async-offload",
+      "--fp8_e4m3fn-text-enc"
+    ],
+    "reserve_vram_gib": 2.0,
+    "model_paths_config": {
+      "argv_value": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "resolved_path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\ssd-model-paths.yaml",
+      "sha256": "6f83d6d0a4765ca3359188e8230d1148dcc9bfdc7c49542fb42067a217ba1ba5"
+    },
+    "gpu_device": {
+      "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 8573157376,
+      "vram_free": 8413839360,
+      "torch_vram_total": 2097152,
+      "torch_vram_free": 2097152
+    },
+    "fresh_gpu_probe": {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T142644Z\\result.json",
+      "completed_at": "2026-10-20T14:27:05.898959+00:00",
+      "age_seconds": 71.91,
+      "status": "healthy",
+      "healthy": true,
+      "returncode": 0
+    }
+  },
+  "preflight_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\cases\\flux2-klein-t2i-pinned-control\\preflight.json",
+  "actual_system_stats_file": "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-20-flux2-klein\\cases\\flux2-klein-t2i-pinned-control\\actual-system-stats.json",
+  "input_metadata": [],
+  "review": "pending",
+  "prompt_id": "46959703-13d5-46bb-8b88-04cdbb1ebfc1",
+  "execution_status": "success",
+  "errors": [],
+  "image_metadata": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-pinned-control_00001_.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 470149,
+      "sha256": "9af60d04e8f6534c270fc9ff963b1ff2ad7f25d2ac45c0b1d3862ff63669948a",
+      "png_prompt_graph_matches_api": true,
+      "history_graph_matches_api": true,
+      "prompt_matches_case": true,
+      "references_match_case": true
+    }
+  ],
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-pinned-control_00001_.png"
+  ],
+  "binding_validation": {
+    "passed": true,
+    "api_sha256": "00f6247227ca2398885d5307981104f9f689d217d53124b07aaa31e23d5e8e21",
+    "image_count": 1
+  },
+  "elapsed_seconds": 40.64
+}

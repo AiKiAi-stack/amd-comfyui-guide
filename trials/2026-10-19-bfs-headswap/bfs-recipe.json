@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-19T15:52:10.4558986+08:00",
+  "scope": "Qwen Image 2.1 BFS head-swap recipe metadata; no generation was run",
+  "lora": {
+    "filename": "bfs_head_v1.1_qwen_2.1.safetensors",
+    "repo": "Alissonerdx/BFS-Best-Face-Swap",
+    "revision": "main",
+    "source_url": "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/resolve/main/bfs_head_v1.1_qwen_2.1.safetensors",
+    "expected_bytes": 260096144,
+    "actual_bytes": 260096144,
+    "expected_sha256": "d1d748d5601077f3b6d05766f6823510e901970d916afa404a97e85dc92fa88e",
+    "actual_sha256": "d1d748d5601077f3b6d05766f6823510e901970d916afa404a97e85dc92fa88e",
+    "verified": true,
+    "local_path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\models\\loras\\bfs_head_v1.1_qwen_2.1.safetensors",
+    "receipt": "download-receipt.json"
+  },
+  "template": {
+    "repo": "Alissonerdx/BFS-Best-Face-Swap",
+    "revision": "main",
+    "workflow_url": "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/workflows/Head%20Swap%20V1%20Qwen%202.1%20Workflow.json",
+    "guide_url": "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/docs/qwen-image-2.1.md",
+    "prompt_node": {
+      "id": 496,
+      "class_type": "TextEncodeQwenImage21",
+      "exact_field": "widgets_values_named.prompt",
+      "negative_prompt_field": "widgets_values_named.negative_prompt"
+    },
+    "prompt_exact": null,
+    "prompt_verbatim_excerpt": "head_swap: start with <image1> as the base image, keeping its lighting, environment, and background.",
+    "prompt_semantic_summary": "Use image_1 as the base; replace its head with image_2, preserve identity traits from image_2, retain image_1 gaze/head rotation/expression and scene lighting/background, and request high detail.",
+    "prompt_exact_text_note": "The linked official workflow is the authoritative source for the full exact prompt; this JSON records the source node and a short excerpt instead of reproducing the full source text.",
+    "image_order": {
+      "image_1": "target/body/base image",
+      "image_2": "reference head/identity image",
+      "confirmed": true
+    },
+    "bfs_lora_loader": {
+      "node_id": 493,
+      "class_type": "LoraLoaderModelOnly",
+      "strength_model": 1.0,
+      "active_in_source_workflow": true
+    },
+    "optional_pruna_acceleration_lora": {
+      "node_id": 492,
+      "filename": "p_qwen_image_2.1_8step_v0.1.safetensors",
+      "strength_model": 1.0,
+      "active_in_source_workflow": true,
+      "enabled_for_followup_recipe": false
+    }
+  },
+  "sampling": {
+    "source_workflow_sampler_node_id": 490,
+    "source_workflow_values": {
+      "seed": 42,
+      "control_after_generate": "fixed",
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler_name": "deis_2m",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "source_context": "These are the exact sampler values in the published template, whose separate Pruna 8-step acceleration LoRA node is active at strength 1.0.",
+    "planned_pruna_state": "disabled",
+    "base_model_steps_without_pruna": null,
+    "base_model_steps_status": "unknown; do not infer from the template 8-step value or from the Pruna LoRA name",
+    "confirmed_fields": [
+      "cfg",
+      "sampler_name",
+      "scheduler",
+      "denoise",
+      "seed",
+      "control_after_generate"
+    ]
+  },
+  "verification": {
+    "downloaded": true,
+    "downloaded_to_trial_first": true,
+    "placed_in_models_loras_after_hash_verification": true,
+    "target_was_absent_before_download": true,
+    "gpu_or_comfyui_load_test": false,
+    "elapsed_download_seconds": null
+  }
+}

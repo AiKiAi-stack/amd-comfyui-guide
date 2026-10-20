@@ -1,0 +1,28 @@
+[
+  {
+    "workflow_api": "workflows/gguf.api.json",
+    "sampler_node": "10",
+    "prompt_node": "8",
+    "latent_node": "5",
+    "save_node": "18",
+    "width": 512,
+    "height": 512,
+    "steps": 9,
+    "seed": 665025001,
+    "model": "Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M",
+    "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+    "refs": [],
+    "inputs": [],
+    "claim_level": "用户提供离线正文；自编验收提示词；公共可追溯工作流",
+    "runtime_profile": "计划配置，尚未执行：RX6650XT扩散；CPU文本编码/CPU VAE；关闭动态VRAM、lowvram、预留2GB、同步卸载；先512²，无额外LoRA",
+    "id": "zimage-gguf-photo",
+    "feature": "双GGUF文生图／低显存运行",
+    "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "相同写实场景能实际生成；记录峰值显存/内存和耗时后才评价8GB可运行。",
+    "deviations": "扩散Q4_K_M为正文推荐；编码器选择Q4_K_M，截图为Q4_K_S；公开仓库示例展平，非作者未公开网盘JSON。",
+    "memory_profile": "legacy-lowvram",
+    "status": "operator_stopped_no_output",
+    "reason": "CPU文本配置耗时过长且整机可用内存低于0.5GB；API中止后装载仍未返回，已结束本任务服务。无输出，不判为模型功能失败。",
+    "evidence": "trials\\2026-10-20-zimage\\cases\\zimage-gguf-photo\\operator-stop.json"
+  }
+]

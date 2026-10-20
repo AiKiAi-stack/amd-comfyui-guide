@@ -1,0 +1,31 @@
+{
+  "id": "qwen-caption",
+  "model": "qwen",
+  "feature": "自动反推提示词并再生成",
+  "recipe": "caption",
+  "claim_level": "同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "unused",
+  "expected": "先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。 首轮TextGenerate触发HIPBLAS INT8错误；重试进程开启COMFY_GFX1032_INT8_FALLBACK=1，按层反量化后浮点计算。",
+  "started_at": 1792417541.8876567,
+  "review": "pending",
+  "prompt_id": "0971bf97-f105-43e8-a084-23c64848c66b",
+  "status": "error",
+  "images": [],
+  "text_outputs": [],
+  "errors": [
+    {
+      "node_type": "TextGenerate",
+      "exception_type": "torch.AcceleratorError",
+      "exception_message": "CUDA error: out of memory\nSearch for `hipErrorOutOfMemory' in https://rocm.docs.amd.com/projects/HIP/en/latest/index.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing AMD_SERIALIZE_KERNEL=3\nDevice-side assertion tracking was not enabled by user.\nThis error means you ran out of memory on your GPU.\n\nTIPS: If the workflow worked before you might have accidentally set the batch_size to a large number."
+    }
+  ],
+  "elapsed_seconds": 146.02
+}

@@ -1,0 +1,25 @@
+{
+  "pid": 5148,
+  "command": [
+    "D:/AI/comfyui-rx6650xt-lab\\.venv\\Scripts\\python.exe",
+    "-u",
+    "D:/AI/comfyui-rx6650xt-lab\\h3-sandbox\\ComfyUI\\main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8189",
+    "--disable-auto-launch",
+    "--disable-assets",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--lowvram",
+    "--input-directory",
+    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\input",
+    "--output-directory",
+    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\output",
+    "--temp-directory",
+    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\temp",
+    "--user-directory",
+    "D:/AI/comfyui-rx6650xt-lab\\trials\\2026-10-19-h3\\user"
+  ]
+}

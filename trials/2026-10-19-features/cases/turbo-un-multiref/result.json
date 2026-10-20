@@ -1,0 +1,29 @@
+{
+  "id": "turbo-un-multiref",
+  "model": "turbo-un",
+  "feature": "多图参考／主体合成",
+  "recipe": "edit",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "prompt": "Use image 1 as the background and composition. Remove the existing animal in image 1 and place the animal subject from image 2 at the same location. Take its species, shape, fur colors and identifying features from image 2. Preserve the background, lighting, framing and perspective of image 1. Do not copy the background of image 2. Photorealistic.",
+  "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+  "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+  "qwen_cache_device": "off",
+  "started_at": 1792431543.4077168,
+  "review": "pending",
+  "prompt_id": "e459fca3-4c22-4bce-8bf8-3c86310a73aa",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-multiref_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 1041.3
+}

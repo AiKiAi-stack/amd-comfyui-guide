@@ -1,0 +1,33 @@
+{
+  "id": "flux2-klein-t2i-gpu-text",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "文生图／GPU FP8文本编码对照",
+  "recipe": "t2i",
+  "inputs": [],
+  "refs": [],
+  "prompt": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.",
+  "expected": "橘猫、雨夜咖啡馆构图，以及可读的 HELLO。",
+  "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+  "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+  "runtime_profile": "官方 FP8 4B 蒸馏；qwen_3_4b 编码器运行时FP8存储/GPU计算，CPU VAE，RX6650XT扩散；--fp8_e4m3fn-text-enc；4步Euler/Flux2Scheduler/CFG1；参考约0.25MP；无额外LoRA或提示词改写",
+  "gpu_text": true,
+  "started_at": 1792486747.1837027,
+  "review": "pending",
+  "prompt_id": "f9f3e758-e911-4dbf-8fda-b2ea80297f82",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png"
+  ],
+  "image_metadata": [
+    {
+      "path": "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "fa0fbd7f42d7e4ced137dae89287088e0faa8dafe58073d103594005934603ef"
+    }
+  ],
+  "errors": [],
+  "elapsed_seconds": 210.85
+}

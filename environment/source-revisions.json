@@ -1,0 +1,12 @@
+{
+  "ComfyUI": {
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "commit": "ce1e922d8623bb507180e32a0c01a7d0e29edef7",
+    "dirty": false
+  },
+  "ComfyUI-GGUF": {
+    "url": "https://github.com/city96/ComfyUI-GGUF",
+    "commit": "373048b8403a7820620065210a691263d4da0a61",
+    "dirty": false
+  }
+}

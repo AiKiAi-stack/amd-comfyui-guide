@@ -1,0 +1,22 @@
+{
+  "test": "H3 Ref2VA 384x256 / 5 frames / 4 steps loading diagnostic",
+  "scope": "Not a quality or BFS feature acceptance test",
+  "started_at": 1792427933.4069593,
+  "status": "deliberately_stopped_after_sampling",
+  "images": [],
+  "peak_system_used_ram_bytes": 15570878464,
+  "peak_swap_used_bytes": 144470016,
+  "peak_server_private_bytes": 9491206144,
+  "peak_vram_used_bytes_from_system_stats": 5742263808,
+  "node_registration": {
+    "UnetLoaderGGUFDynamicVRAM": true,
+    "ClipProjApply": true,
+    "MiniMaxH3ReferenceToVideo": true
+  },
+  "prompt_id": "bda6af71-32c8-4b4d-b2d7-766f87b5b296",
+  "exit_code": 15,
+  "elapsed_seconds": 1170.96,
+  "observed_status": "server_exit",
+  "stop_reason": "Deliberate stop after completed 4-step sampling and prolonged wait without output; next compare GPU VAE. This is not a model crash or automatic timeout.",
+  "completed_sampling_steps": 4
+}

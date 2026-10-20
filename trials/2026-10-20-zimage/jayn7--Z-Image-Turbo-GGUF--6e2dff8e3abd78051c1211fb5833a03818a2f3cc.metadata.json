@@ -1,0 +1,143 @@
+{
+  "_id": "6927f1a720b43a41980fc9ff",
+  "id": "jayn7/Z-Image-Turbo-GGUF",
+  "private": false,
+  "pipeline_tag": "text-to-image",
+  "tags": [
+    "gguf",
+    "text-to-image",
+    "image-generation",
+    "base_model:Tongyi-MAI/Z-Image-Turbo",
+    "base_model:quantized:Tongyi-MAI/Z-Image-Turbo",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 51091,
+  "likes": 395,
+  "modelId": "jayn7/Z-Image-Turbo-GGUF",
+  "author": "jayn7",
+  "sha": "6e2dff8e3abd78051c1211fb5833a03818a2f3cc",
+  "lastModified": "2025-12-05T13:03:35.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "base_model": [
+      "Tongyi-MAI/Z-Image-Turbo"
+    ],
+    "tags": [
+      "text-to-image",
+      "image-generation",
+      "gguf"
+    ],
+    "license": "apache-2.0"
+  },
+  "gguf": {
+    "total": 6154908736,
+    "architecture": "lumina2",
+    "totalFileSize": 4123753536
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "866d9909cd1071968aeca5fede072f8cd3ad51ba",
+      "size": 2011
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "c2c7172789c91670c81d96c9d57a096205c0e463",
+      "size": 3844
+    },
+    {
+      "rfilename": "example_workflow.json",
+      "blobId": "f22dac101d0d93c75e48d886872dbc430bf08990",
+      "size": 12191
+    },
+    {
+      "rfilename": "z_image_turbo-Q3_K_M.gguf",
+      "blobId": "682d752f477285eddb31b0a6bfce612b885037e9",
+      "size": 4123753536,
+      "lfs": {
+        "sha256": "0d01263fcc74b9813d03e62d122461ad759f2837ffeecefc0ef00451244b89e6",
+        "size": 4123753536,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "z_image_turbo-Q3_K_S.gguf",
+      "blobId": "df807533c5152590fb4230eb06c859685ae0accf",
+      "size": 3790825536,
+      "lfs": {
+        "sha256": "82839e2cbb0116c8a60a7e4421ce1d5fe95827906ab32858d95622801b65624e",
+        "size": 3790825536,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "z_image_turbo-Q4_K_M.gguf",
+      "blobId": "ede6779c05218db4a88fd6bd74a83aecd14be2cf",
+      "size": 4981532736,
+      "lfs": {
+        "sha256": "745ec270db042409fde084d6b5cfccabf214a7fe5a494edf994a391125656afd",
+        "size": 4981532736,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "z_image_turbo-Q4_K_S.gguf",
+      "blobId": "d99f5e9527ab7355f2c4be531b751da17b38b0ed",
+      "size": 4658972736,
+      "lfs": {
+        "sha256": "c193f86867daf4e57007ec2fdb7bee8e7273b0f6ea20153ef2cb4037c4930257",
+        "size": 4658972736,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "z_image_turbo-Q5_K_M.gguf",
+      "blobId": "798501e20a30beb6e228df04dff59590fc45eec1",
+      "size": 5522742336,
+      "lfs": {
+        "sha256": "cd2abb4bc76dbecc8c1d14658342c37db12d5b09874f96fa9adc8a28e62b2056",
+        "size": 5522742336,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "z_image_turbo-Q5_K_S.gguf",
+      "blobId": "9c96043cb70eb4b3638fa03f37402a4e73894667",
+      "size": 5189814336,
+      "lfs": {
+        "sha256": "62d1e85679d1a207d43823aa5755480a9279b38c8715b2e1cb9e7166fba279c1",
+        "size": 5189814336,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "z_image_turbo-Q6_K.gguf",
+      "blobId": "4efb60f5129bcfb6c5fa2b2c9be22c22b45dfd4c",
+      "size": 5910505536,
+      "lfs": {
+        "sha256": "fc137d87b49e06fdd5230d67d6c8cfa42a9e1fd38b65ccd355882450c3eb1c82",
+        "size": 5910505536,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "z_image_turbo-Q8_0.gguf",
+      "blobId": "eec3f013a03c0819d35c1f837242cdd9db870ed3",
+      "size": 7224707136,
+      "lfs": {
+        "sha256": "f163d60b0eb427469510b8226243d196574a18139a2e40c017409cfbda95ecfe",
+        "size": 7224707136,
+        "pointerSize": 135
+      }
+    }
+  ],
+  "spaces": [
+    "elismasilva/z-image-panorama"
+  ],
+  "createdAt": "2025-11-27T06:37:27.000Z",
+  "usedStorage": 41402853888
+}

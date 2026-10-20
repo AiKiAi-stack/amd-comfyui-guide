@@ -1,0 +1,41 @@
+{
+  "id": "kroma-head-swap",
+  "model": "kroma",
+  "feature": "换头／人物身份参考",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；一般参考编辑探索，非专用换头模型",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Edit image 1: replace the head and facial identity with the fictional adult woman from image 2, including curly copper-red hair and freckles. Keep the navy coat, red scarf, body pose and park background of image 1. Only one person.",
+  "expected": "B服装姿态背景保留，头部外观采用A。",
+  "batch_id": "20261019T075554Z-4aff6cd8",
+  "prompt_id": "91732987-941b-4fe9-9397-2e29bdc8da09",
+  "status": "runner_error",
+  "batch_status": "runner_error",
+  "elapsed_seconds": null,
+  "batch_elapsed_seconds": 361.8,
+  "elapsed_scope": "whole batch; no per-case duration",
+  "elapsed": "批次总耗时 361.80 秒",
+  "output_nodes": [
+    {
+      "original_node_id": "9",
+      "node_id": "case03_9",
+      "filename_prefix": "FeatureBench/kroma-head-swap",
+      "role": "main"
+    }
+  ],
+  "images": [],
+  "errors": [
+    {
+      "exception_type": "ReadTimeout",
+      "exception_message": "HTTPConnectionPool(host='127.0.0.1', port=8188): Read timed out. (read timeout=30)"
+    }
+  ],
+  "error": "HTTPConnectionPool(host='127.0.0.1', port=8188): Read timed out. (read timeout=30)"
+}

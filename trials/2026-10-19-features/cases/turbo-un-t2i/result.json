@@ -1,0 +1,22 @@
+{
+  "id": "turbo-un-t2i",
+  "model": "turbo-un",
+  "feature": "原生 8 步文生图",
+  "recipe": "t2i",
+  "claim_level": "作者站外演示及上游；使用 UN 编码器组合独立重试",
+  "inputs": [],
+  "prompt": "A fluffy white cat in a rain-soaked Shanghai cafe, looking out at neon reflections. Cinematic photorealism, warm indoor light, no text.",
+  "expected": "UN GGUF 编码器配合 Turbo Q4 主模型真实完成 8 步，生成白猫与雨夜咖啡馆。前轮普通 Turbo 的出图不能充当本项输出。",
+  "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
+  "qwen_cache_device": "off",
+  "started_at": 1792430306.0948877,
+  "review": "pending",
+  "prompt_id": "06b678de-ee81-4bdd-9e6b-bb23ee939890",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\turbo-un-t2i_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 526.25
+}

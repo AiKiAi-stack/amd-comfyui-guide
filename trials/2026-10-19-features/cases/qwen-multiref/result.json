@@ -1,0 +1,29 @@
+{
+  "id": "qwen-multiref",
+  "model": "qwen",
+  "feature": "多图参考／主体合成",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "prompt": "Use image 1 as the background and composition. Remove the existing animal in image 1 and place the animal subject from image 2 at the same location. Take its species, shape, fur colors and identifying features from image 2. Preserve the background, lighting, framing and perspective of image 1. Do not copy the background of image 2. Photorealistic.",
+  "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
+  "started_at": 1792410640.0585296,
+  "review": "pending",
+  "prompt_id": "cdb0adfa-6296-4305-89bb-2e962d6445cc",
+  "status": "success",
+  "images": [
+    "D:/AI/comfyui-rx6650xt-lab\\ComfyUI\\output\\FeatureBench\\qwen-multiref_00001_.png"
+  ],
+  "text_outputs": [],
+  "errors": [],
+  "elapsed_seconds": 325.4
+}

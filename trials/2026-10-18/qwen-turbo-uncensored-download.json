@@ -1,0 +1,18 @@
+[
+  {
+    "repo": "AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF",
+    "revision": "df96693dbdfb8738c0bf1bbd0337d149808db948",
+    "file": "Qwen-Image-2.1-Turbo-Uncensored-AD-Q4_K.gguf",
+    "bytes": 5287517120,
+    "sha256": "8123f36d2b3e562deef164dffdae33bdb1d152797ad10bb630827eaa7bce795d",
+    "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/text_encoders/Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf"
+  },
+  {
+    "repo": "AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF",
+    "revision": "df96693dbdfb8738c0bf1bbd0337d149808db948",
+    "file": "mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf",
+    "bytes": 1159029984,
+    "sha256": "d9870a1f168db3d814596216aaf35702154147b443572c7939acca1802621ac6",
+    "target": "D:/AI/comfyui-rx6650xt-lab/ComfyUI/models/text_encoders/mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf"
+  }
+]
