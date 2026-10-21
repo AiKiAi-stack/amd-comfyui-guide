@@ -2,6 +2,8 @@
 
 以本机原始实验和上游问题交叉整理。旧案例保留原始状态；独立进程成功不计为连续出图修复。代码在 `fix/gguf-repeat-stability` 分支管理，模型和原始日志留在本地。
 
+这份清单主要记录运行故障，不能代表全部功能完成度。完整的非 H3 未闭环功能、视觉不足和报告漏项见 [19 条未闭环记录](07-unfinished-features.md)。
+
 ## BC-001 · Z-Image 双 GGUF 连续出图原生退出 · 本轮未复现，根因未解决
 
 首张成功；第二张改变提示词，重新请求 ZImageTEModel 时，在 `GGMLTensor.to → Module._apply → partially_unload` 原生退出，`0xC0000005`，无第二张图片。

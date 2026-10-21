@@ -6,7 +6,7 @@
 
 精确节点参数见各卡片的 workflow / api.json。API 执行成功只说明工作流成功返回；功能视觉成功以视觉结论为准。
 
-生成于：2026-10-20 22:39 中国标准时间
+生成于：2026-10-21 10:04 中国标准时间
 
 ## 图生图／洗图（`moss-img2img`）
 
@@ -1586,6 +1586,40 @@ Change the bag color to blue. Keep the same handbag shape, handles, material, ca
 预期结果：白包改为蓝包，保留包型、提手和背景。
 
 workflow / api.json：[flux2-klein-single-color-pinned/api.json](cases/flux2-klein-single-color-pinned/api.json)
+
+</details>
+
+---
+
+## 自动反推提示词并再生成（CPU编码重试）（`qwen-caption-cpu`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试
+- 执行：失败（error）；耗时：540.84 秒
+- 视觉结论：失败：CPU反推内存不足，无提示词或图片
+- 运行配置：512像素；8B W4A8文本/视觉编码在CPU、GPU扩散、CPU VAE；15步，prefix缓存off。启动参数--disable-dynamic-vram --lowvram --disable-async-offload --fast-disk；未开启gfx1032 INT8 fallback。耗时从提交计，服务启动另计。旧GPU INT8错误与fallback OOM保留在qwen-caption案例。
+
+CPU文本/视觉编码重试在 TextGenerate 失败，DefaultCPUAllocator 申请 2,489,319,424 字节失败。提交后 540.84 秒，无 text_outputs、无 images。此前 GPU INT8 错误与浮点回退后的 OOM 仍保留；本次 CPU 重试也未完成自动反推后再生成。依据 result.json 的错误终态补记，不冒充视觉验收。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+- 无输出
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+自动反推的实际提示词：
+
+```
+
+预期结果：先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。
+
+workflow / api.json：[qwen-caption-cpu/api.json](cases/qwen-caption-cpu/api.json)
 
 </details>
 

@@ -1210,8 +1210,15 @@
           "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
         }
       ]
+    },
+    {
+      "id": "qwen-caption-cpu",
+      "feature": "自动反推提示词并再生成（CPU编码重试）",
+      "status": "error",
+      "prompt_id": "373f15c5-9dc9-486e-b466-67cf712dbd96",
+      "images": []
     }
   ],
-  "report_image_count": 98,
+  "report_image_count": 99,
   "missing_report_images": []
 }

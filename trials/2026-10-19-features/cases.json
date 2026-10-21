@@ -863,5 +863,23 @@
     "memory_profile": "dynamic-nvme-pinned",
     "retry_of": "flux2-klein-single-color",
     "creates_iterative_input": true
+  },
+  {
+    "id": "qwen-caption-cpu",
+    "model": "qwen",
+    "feature": "自动反推提示词并再生成（CPU编码重试）",
+    "recipe": "caption",
+    "claim_level": "同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "unused",
+    "expected": "先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素；8B W4A8文本/视觉编码在CPU、GPU扩散、CPU VAE；15步，prefix缓存off。启动参数--disable-dynamic-vram --lowvram --disable-async-offload --fast-disk；未开启gfx1032 INT8 fallback。耗时从提交计，服务启动另计。旧GPU INT8错误与fallback OOM保留在qwen-caption案例。",
+    "retry_of": "qwen-caption"
   }
 ]

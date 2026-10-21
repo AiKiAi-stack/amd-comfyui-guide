@@ -16,6 +16,7 @@ Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图�
 4. [遇到的坑](docs/04-troubleshooting.md)：INT8、时间尺度、GGUF 卸载、锁页内存与 OOM。
 5. [完整图文报告（GitHub 可直接阅读）](trials/2026-10-19-features/feature-report.md)。
 6. [出图失败追踪与修复验证](docs/06-failure-tracker.md)：本地失败证据、上游问题及连续出图回归。
+7. [未闭环功能清单](docs/07-unfinished-features.md)：排除 H3 后的 19 条待处理记录、报告漏项和配方验证欠项。
 
 [在线图文报告](https://aikiai-stack.github.io/barely-comfy/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
 
