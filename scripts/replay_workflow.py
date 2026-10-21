@@ -8,6 +8,8 @@ from urllib.error import URLError
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
+from workflow_checks import known_workflow_errors
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -23,6 +25,9 @@ def main():
         graph = graph['prompt']
     if not graph or not all(isinstance(v, dict) and 'class_type' in v for v in graph.values()):
         parser.error('Expected an API prompt, not a UI workflow.')
+    errors = known_workflow_errors(graph)
+    if errors:
+        raise SystemExit('\n'.join(errors))
 
     def request(path, payload=None):
         data = None if payload is None else json.dumps(payload).encode()

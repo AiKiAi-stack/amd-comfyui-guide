@@ -15,6 +15,7 @@ Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图�
 3. [模型实测导航](docs/03-models.md)：Qwen、MOSS、Kroma、FLUX、Z-Image 与 H3 的边界。
 4. [遇到的坑](docs/04-troubleshooting.md)：INT8、时间尺度、GGUF 卸载、锁页内存与 OOM。
 5. [完整图文报告（GitHub 可直接阅读）](trials/2026-10-19-features/feature-report.md)。
+6. [出图失败追踪与修复验证](docs/06-failure-tracker.md)：本地失败证据、上游问题及连续出图回归。
 
 [在线图文报告](https://aikiai-stack.github.io/barely-comfy/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
 

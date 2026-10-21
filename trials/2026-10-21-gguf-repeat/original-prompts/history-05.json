@@ -1,0 +1,20 @@
+{
+  "prompt_id": "8f8205ee-179d-49f6-8e15-42374bfadc18",
+  "status": "success",
+  "outputs": {
+    "18": {
+      "images": [
+        {
+          "filename": "repeat-05-purple_00001_.png",
+          "subfolder": "",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

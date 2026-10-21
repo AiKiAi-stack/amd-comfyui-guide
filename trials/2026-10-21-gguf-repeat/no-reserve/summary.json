@@ -1,0 +1,199 @@
+{
+  "status": "execution_pass_visual_review_pending",
+  "command": [
+    "RUNTIME_ROOT\\.venv\\Scripts\\python.exe",
+    "-X",
+    "faulthandler",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--extra-model-paths-config",
+    "MODEL_PATHS.yaml",
+    "--output-directory",
+    "RUN_OUTPUT\\images"
+  ],
+  "cases": [
+    {
+      "index": 1,
+      "color": "red",
+      "prompt_id": "ea70c629-c329-4d85-8e68-13d00eb1c8c1",
+      "seconds": 114.72,
+      "images": [
+        {
+          "file": "repeat-01-red_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            61.710933183702664,
+            89.16227117882941,
+            94.01417031488796
+          ],
+          "original_sha256": "3211bd69046e621873c7d479f021b23c8f7f5ba40a3a19a279785734275520a1",
+          "public_sha256": "c66f3e070d38b4ff7d2689f466da21f146aa91a45ef4d997f602a05c3ed99315",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "428c92fc2a372ff861262b35dc1abf45ae4990516e1a5e48f93c1d99fe58e2a8",
+      "cached_nodes": [],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    },
+    {
+      "index": 2,
+      "color": "blue",
+      "prompt_id": "c895fa48-8b9c-4bde-a099-5e34bd09df0a",
+      "seconds": 50.2,
+      "images": [
+        {
+          "file": "repeat-02-blue_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            84.98114651681175,
+            84.626743754911,
+            85.16347009935032
+          ],
+          "original_sha256": "a98e0f99f75ccb4b5270dec05105268647b2d6b7e305faec180a99d5ff8806da",
+          "public_sha256": "9927f02e45de3c8919a43abe80ee2b65e50f412ba711b37ade250c277d80473b",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "096b9fb5f7c93cd38b34bd054d05aec637f9fd5921f94f8f50f6170e31d40b26",
+      "cached_nodes": [
+        "9",
+        "7",
+        "11",
+        "3",
+        "5",
+        "4"
+      ],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    },
+    {
+      "index": 3,
+      "color": "green",
+      "prompt_id": "f940fa94-c06f-4c64-a2d1-91eb8efba3f4",
+      "seconds": 48.11,
+      "images": [
+        {
+          "file": "repeat-03-green_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            68.0610942052925,
+            70.68195192379883,
+            86.62431630849731
+          ],
+          "original_sha256": "a9df086ddc7741b42871175796ec235c1e5c8a8a013a42f81fe5983af2d937ac",
+          "public_sha256": "68a511dfbb6e72daaaff22a88cf2261cf064ad9e5e872f520ece500499bfcde6",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "da627567865a5abc838abc178efb8856d180d12b9920641388638ddf5de90b0c",
+      "cached_nodes": [
+        "9",
+        "7",
+        "11",
+        "3",
+        "5",
+        "4"
+      ],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    }
+  ],
+  "same_process": true,
+  "pid": 17480,
+  "system_stats": {
+    "system": {
+      "os": "win32",
+      "ram_total": 16984231936,
+      "ram_free": 8012333056,
+      "comfyui_version": "0.41.0",
+      "required_frontend_version": "1.55.17",
+      "installed_templates_version": "0.11.87",
+      "required_templates_version": "0.11.87",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.17",
+          "required": "1.55.17"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.87",
+          "required": "0.11.87"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.38",
+          "required": "0.2.38"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+      "pytorch_version": "2.12.0+rocm7.14.0",
+      "embedded_python": false,
+      "deploy_environment": "local-git"
+    },
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 8413839360,
+        "torch_vram_total": 2097152,
+        "torch_vram_free": 2097152
+      }
+    ]
+  },
+  "server_stopped": true,
+  "raw_summary_sha256": "8f049b04196ba59de426fb8357ef8e6b4d0e2dc9b6486b104eeeb89f87c51734",
+  "log_signal": [
+    "[INFO] Enabled pinned memory 6478.0",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] loaded completely; 6604.86 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] Requested to load Lumina2",
+    "[INFO] loaded completely; 5593.49 MB usable, 4834.06 MB loaded, full load: True",
+    "[INFO] Requested to load AutoencodingEngine",
+    "[INFO] loaded completely;  319.75 MB loaded, full load: True",
+    "[INFO] Prompt executed in 113.29 seconds",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] Unloaded partially: 1564.53 MB freed, 3269.55 MB remains loaded, 21.09 MB buffer reserved, lowvram patches: 0",
+    "[INFO] loaded completely; 3183.24 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] loaded completely; 5551.67 MB usable, 4834.06 MB loaded, full load: True",
+    "[INFO] Prompt executed in 48.85 seconds",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] Unloaded partially: 1585.62 MB freed, 3248.46 MB remains loaded, 21.09 MB buffer reserved, lowvram patches: 0",
+    "[INFO] loaded completely; 3205.24 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] loaded completely; 5552.58 MB usable, 4834.06 MB loaded, full load: True",
+    "[INFO] Prompt executed in 46.20 seconds"
+  ],
+  "published_evidence": "Selected status, workflows, pixel-identical PNGs, hashes and log signal. Raw logs/history retained locally."
+}
