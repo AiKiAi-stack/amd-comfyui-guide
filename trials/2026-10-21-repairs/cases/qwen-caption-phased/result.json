@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "elapsed_seconds": 154.172,
+  "images": [
+    {
+      "file": "7-0-qwen-caption-gpu-chunked_00001_.png",
+      "original_sha256": "5b925033c7c1fd0b93fc746ec6b3dfa2d18d350eb94722bec110fc930bdfe157",
+      "public_sha256": "83a98c6af63bd0acc2ef56e4141ff9a4b2c4eacbb490a5a8aa81e8cbff98c200",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "qwen-caption",
+  "verdict": "pass",
+  "review": "自动从输入生成完整英文提示词，再自动编码并生成独立 512x512 PNG。实际查看：橘猫坐在雨夜湿路边凝望暖色橱窗，红色霓虹与湿地反光清楚；与反推文字一致，无明显噪声。构图与原图不同，任务是语义再生成，不是原图精确复刻。",
+  "input": [
+    "featurebench/cat.png"
+  ],
+  "acceptance": "caption and independent image both produced automatically; visual semantic agreement",
+  "fix_scope": "Bounded INT8 logits and process-separated encoding/sampling; native offload root cause unresolved; CPU-only caption configuration remains unaccepted.",
+  "prompt_id": "e2b7519e-4a58-416d-be73-c2e5a141783b",
+  "raw_history_sha256": "ff352e80c895c4c82313944e87e4e92a9e56f14851f7872cba4e11db0bbab585",
+  "workflow_sha256": "f25f594de618aa0890e6f95d5700ea55102f1ff27e36a277b045564d4d8815a6",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 102.453,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "cc194d2d3c0d62900d731fa047c11cb45bf4ee40b2c7a7555622af940516505a",
+  "caption_sha256": "304f5ba421c5a2669ea36f62e93cc56549a72e0d74a90c4c7fcafdba9adb8792"
+}

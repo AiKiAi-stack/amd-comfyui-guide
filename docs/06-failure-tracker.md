@@ -48,3 +48,11 @@ gfx1032 INT8 路径报 `HIPBLAS_STATUS_INVALID_VALUE`。已有 [显式启用的�
 ## BC-009 · 已移除的启动参数 · 历史启动错误
 
 Z-Image 失败日志还保留一次 `unrecognized arguments: --normalvram`；这发生在启动阶段，与第二张图崩溃不同。当前复现脚本以默认 NORMAL_VRAM 加 `--disable-dynamic-vram`，不传该失效参数。上游 [启动参数说明](https://github.com/Comfy-Org/docs/blob/main/development/comfyui-server/startup-flags.mdx) 可用于核对，实际安装版本的 `--help` 才是本地依据。
+
+## BC-010 · Qwen 反推词表临时内存与量化文本卸载 · 有端到端规避，根因未全修
+
+CPU 原失败的 2,489,319,424 字节来自 `151936×4096` 输出层的全词表 float32 反量化。[可选分块插件](../code_source/cpu_chunked_logits/bounded.py) 限制为每次 2048 行；[真实调用路径回归](../scripts/test_chunked_logits.py) 未启用时触发 4099 行预算异常，启用后数值匹配完整 Linear。它不减少整个模型的基础内存，也不修复其他层的内存问题。
+
+大模型 GPU 反推已产生准确 caption，但直接接出图仍在 `QuantizedTensor._handle_to → partially_unload` 原生退出。之后使用 [条件归档](../code_source/repair_conditioning/__init__.py) 和 [分阶段运行器](../scripts/run_conditioned_repair.py)，编码进程退出再开始采样，实际自动 caption→编码→15 步→CPU VAE→PNG 全部完成并目视通过。见 [完整尝试与图片](../trials/2026-10-21-repairs/README.md)。
+
+这是流程规避，不是修复 native unload；原 CPU 配置仍慢且未完整验收。另一次静态 caption 的 CPU 编码续跑先在采样中 OOM，清理时再原生退出，不能把所有栈都归成同一个 GGUF 问题。原始失败与人工保护性停止分别保留。

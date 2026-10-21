@@ -1,0 +1,27 @@
+{
+  "encoding": {
+    "execution": "execution_pass_visual_review_pending",
+    "server_stopped": true,
+    "submitted_case_seconds": 104.5,
+    "peak_tree_rss_bytes": 8202838016,
+    "minimum_available_ram_bytes": 728211456,
+    "minimum_commit_headroom_bytes": null,
+    "samples": 52
+  },
+  "sampling": {
+    "execution": "execution_pass_visual_review_pending",
+    "server_stopped": true,
+    "submitted_case_seconds": 156.89,
+    "peak_tree_rss_bytes": 5635776512,
+    "minimum_available_ram_bytes": 3656454144,
+    "minimum_commit_headroom_bytes": 2579546112,
+    "samples": 78
+  },
+  "caption_same_bytes_as_previous_gpu_attempt": true,
+  "changes": [
+    "Same model weights mirrored with SHA-256 verification on G NVMe",
+    "Pinned memory disabled only for encoding",
+    "Separate processes for encoding and sampling",
+    "Bounded INT8 output projection enabled only for text generation"
+  ]
+}

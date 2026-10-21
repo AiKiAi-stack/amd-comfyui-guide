@@ -1,0 +1,9 @@
+{
+  "source_case": "fix-caption-chunked-gpu",
+  "source_prompt_id": "b774ca0d-e214-4cf1-bdfd-a27ee75b9bda",
+  "source_status": "Caption saved; later model-offload native crash. Full source workflow not accepted.",
+  "caption_file_sha256": "304f5ba421c5a2669ea36f62e93cc56549a72e0d74a90c4c7fcafdba9adb8792",
+  "caption": "A lone ginger cat sits on a wet sidewalk at night, gazing into a warmly lit storefront with rain-slicked glass, as neon red signs cast glowing reflections on the damp pavement, creating a moody, cinematic urban scene with shallow depth of field.",
+  "consumer_workflow": "workflows/qwen-caption-staged-image.api.json",
+  "same_generated_text_used_verbatim": true
+}

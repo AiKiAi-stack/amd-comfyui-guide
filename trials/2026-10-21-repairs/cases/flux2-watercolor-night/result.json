@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "elapsed_seconds": 27.031,
+  "images": [
+    {
+      "file": "19-0-flux2-watercolor-night_00001_.png",
+      "original_sha256": "e342b0dd245c1168d1b0f9007bb55dee9dad017205bfeeaaafa625796a85edc7",
+      "public_sha256": "8848a225d1576bd41094902ce437e63e5336de47ccdd10ca0673e50f6317c7c3",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "flux2-klein-style",
+  "verdict": "pass",
+  "review": "实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。",
+  "prompt_id": "975a0bc4-8569-4046-bcf5-06d41d9b8b2a",
+  "raw_history_sha256": "02497bb5187b5f6c03cbd2553c31c9ee2f94ce6690736f240a081bd0d0643431",
+  "workflow_sha256": "4fc7f6484cee401b2f03748062ee2e0d465ff32e7b5c48015c47f1f3e6245775"
+}

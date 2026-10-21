@@ -1,0 +1,34 @@
+{
+  "id": "flux2-watercolor-night",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "风格转换 · 修复重试",
+  "recipe": "single",
+  "inputs": [
+    "featurebench/cat.png"
+  ],
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "prompt": "Paint this exact rainy NIGHT scene in delicate watercolor on textured cold-pressed paper. Keep it dark: deep midnight navy shadows and bright warm neon reflections on wet pavement. Preserve the cat facing AWAY from the camera, its pose and exact location, cafe window, plants, camera framing and all object positions. No daylight, no white daytime sky, no bright overexposure.",
+  "expected": "咖啡馆猫的主体与构图保留，出现明确水彩笔触和纸张质感。",
+  "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+  "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+  "runtime_profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
+  "gpu_text": true,
+  "memory_profile": "dynamic-nvme-pinned",
+  "repairs": [
+    "flux2-klein-style"
+  ],
+  "retry_reason": "实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。",
+  "status": "success",
+  "prompt_id": "975a0bc4-8569-4046-bcf5-06d41d9b8b2a",
+  "elapsed_seconds": 27.031,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/flux2-watercolor-night_00001_.png",
+      "sha256": "e342b0dd245c1168d1b0f9007bb55dee9dad017205bfeeaaafa625796a85edc7",
+      "public_sha256": "8848a225d1576bd41094902ce437e63e5336de47ccdd10ca0673e50f6317c7c3"
+    }
+  ],
+  "review": "pass"
+}

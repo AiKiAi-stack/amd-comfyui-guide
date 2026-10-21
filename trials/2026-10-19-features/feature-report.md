@@ -6,13 +6,13 @@
 
 精确节点参数见各卡片的 workflow / api.json。API 执行成功只说明工作流成功返回；功能视觉成功以视觉结论为准。
 
-生成于：2026-10-21 10:04 中国标准时间
+生成于：2026-10-21 21:32 中国标准时间
 
 ## 图生图／洗图（`moss-img2img`）
 
 - 模型：MOSS-Image-5B
 - 来源级别：公众号索引标题
-- 执行：API 执行成功；耗时：245.85 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：245.85 秒
 - 视觉结论：部分达到
 
 API 完成并保持了宇航员与丛林构图，细节有变化；但去噪 0.6 下未出现明显水彩纸张和笔触，不能记为风格转换成功。
@@ -21,7 +21,7 @@ API 完成并保持了宇航员与丛林构图，细节有变化；但去噪 0.6
 - 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/moss-img2img_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -44,7 +44,7 @@ workflow / api.json：[moss-img2img/api.json](cases/moss-img2img/api.json)
 
 - 模型：MOSS-Image-5B
 - 来源级别：上游布局提示拓展测试，非已确认文章声明
-- 执行：API 执行成功；耗时：185.56 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：185.56 秒
 - 视觉结论：达到本例目标
 
 肉眼检查可见独立红茶壶在左、蓝花瓶在右，位置与指定区域大致相符；未量化像素坐标误差，也未做去掉 bbox 的对照，不能据此单独归因于 bbox 控制。
@@ -53,7 +53,7 @@ workflow / api.json：[moss-img2img/api.json](cases/moss-img2img/api.json)
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/moss-layout_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -76,7 +76,7 @@ workflow / api.json：[moss-layout/api.json](cases/moss-layout/api.json)
 
 - 模型：MOSS-Image-5B
 - 来源级别：上游布局文字功能，非已确认文章声明
-- 执行：API 执行成功；耗时：221.37 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：221.37 秒
 - 视觉结论：达到本例目标
 
 肉眼可读的 HELLO 拼写准确，下方是一个橙子，未见多余文字；此结论限这张简单英文海报，不代表复杂中文排版也通过。
@@ -85,7 +85,7 @@ workflow / api.json：[moss-layout/api.json](cases/moss-layout/api.json)
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/moss-text_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -108,7 +108,7 @@ workflow / api.json：[moss-text/api.json](cases/moss-text/api.json)
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：测试素材
-- 执行：API 执行成功；耗时：200.32 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：200.32 秒
 - 视觉结论：素材可用
 
 虚构成年女性人像清晰，短卷铜红发、浅肤色、雀斑、绿眼和黄毛衣均可辨，足以作为后续身份参考。
@@ -117,7 +117,7 @@ workflow / api.json：[moss-text/api.json](cases/moss-text/api.json)
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/kroma-portrait-a_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -140,7 +140,7 @@ workflow / api.json：[kroma-portrait-a/api.json](cases/kroma-portrait-a/api.jso
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：测试素材
-- 执行：API 执行成功；耗时：175.33 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：175.33 秒
 - 视觉结论：素材可用
 
 独立进程重试后出图。黑直发、深蓝大衣、红围巾、公园背景与侧转头姿势清楚，与 A 外观明显不同。首轮连续任务的 native crash 保留在 attempts 目录。
@@ -149,7 +149,7 @@ workflow / api.json：[kroma-portrait-a/api.json](cases/kroma-portrait-a/api.jso
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/kroma-portrait-b_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -172,7 +172,7 @@ workflow / api.json：[kroma-portrait-b/api.json](cases/kroma-portrait-b/api.jso
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：公众号索引标题
-- 执行：API 执行成功；耗时：250.94 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：250.94 秒
 - 视觉结论：达到风格目标，姿态有变化
 
 输出出现明确水彩晕染与纸张笔触，雨街、左侧霓虹和右侧橘猫关系保留；猫由背对转成朝向镜头，街景细节也被重绘，不算严格保持原图。
@@ -181,7 +181,7 @@ workflow / api.json：[kroma-portrait-b/api.json](cases/kroma-portrait-b/api.jso
 - 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/kroma-img2img_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -204,7 +204,7 @@ workflow / api.json：[kroma-img2img/api.json](cases/kroma-img2img/api.json)
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：测试素材
-- 执行：API 执行成功；耗时：210.23 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：210.23 秒
 - 视觉结论：素材可用
 
 有清晰狐狸主体、蓝橙主色、平面几何森林与纸张版画纹理，可作风格参考；实际还有浅蓝和米白，未严格限制为两种墨色。
@@ -213,7 +213,7 @@ workflow / api.json：[kroma-img2img/api.json](cases/kroma-img2img/api.json)
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/kroma-style-source_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -250,11 +250,7 @@ workflow / api.json：[kroma-style-source/api.json](cases/kroma-style-source/api
 - 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/qwen-inpaint_00001_.png)
-
-附件：
-- qwen-inpaint-mask_00001_.png：![qwen-inpaint-mask_00001_.png](../../ComfyUI/output/FeatureBench/qwen-inpaint-mask_00001_.png)
-- qwen-inpaint-input_00001_.png：![qwen-inpaint-input_00001_.png](../../ComfyUI/output/FeatureBench/qwen-inpaint-input_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -277,7 +273,7 @@ workflow / api.json：[qwen-inpaint/api.json](cases/qwen-inpaint/api.json)
 
 - 模型：Qwen-Image-2.1
 - 来源级别：公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能
-- 执行：API 执行成功；耗时：325.4 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：325.4 秒
 - 视觉结论：部分达到，狐狸主体明确
 - 运行配置：512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。
 
@@ -288,7 +284,7 @@ workflow / api.json：[qwen-inpaint/api.json](cases/qwen-inpaint/api.json)
 - 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/qwen-multiref_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -311,7 +307,7 @@ workflow / api.json：[qwen-multiref/api.json](cases/qwen-multiref/api.json)
 
 - 模型：Qwen-Image-2.1
 - 来源级别：公众号索引标题
-- 执行：API 执行成功；耗时：整个批次 745.75 秒（非单项耗时）
+- 执行：API 执行成功 · 无可用输出图片；耗时：整个批次 745.75 秒（非单项耗时）
 - 视觉结论：部分达到，身份特征转移清楚
 - 运行配置：512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。
 
@@ -322,7 +318,7 @@ workflow / api.json：[qwen-multiref/api.json](cases/qwen-multiref/api.json)
 - 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/qwen-face-swap_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -345,7 +341,7 @@ workflow / api.json：[qwen-face-swap/api.json](cases/qwen-face-swap/api.json)
 
 - 模型：Qwen-Image-2.1
 - 来源级别：公众号索引标题图生图；风格转换为具体测试任务
-- 执行：API 执行成功；耗时：整个批次 745.75 秒（非单项耗时）
+- 执行：API 执行成功 · 无可用输出图片；耗时：整个批次 745.75 秒（非单项耗时）
 - 视觉结论：达到水彩风格目标
 - 运行配置：512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。
 
@@ -355,7 +351,7 @@ workflow / api.json：[qwen-face-swap/api.json](cases/qwen-face-swap/api.json)
 - 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/qwen-style-edit_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -412,7 +408,7 @@ workflow / api.json：[qwen-caption/api.json](cases/qwen-caption/api.json)
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA
-- 执行：API 执行成功；耗时：整个批次 395.62 秒（非单项耗时）
+- 执行：API 执行成功 · 无可用输出图片；耗时：整个批次 395.62 秒（非单项耗时）
 - 视觉结论：未达到目标
 
 蓝橙版画风格保留，但要求的新主体是猫头鹰，实际仍复制了参考狐狸与森林构图。当前无专用风格 LoRA 的 Q2 参考方案没有完成‘只取风格、换新主体’。原 1024 参考批次无图，此图来自 512 参考重试。
@@ -423,7 +419,7 @@ workflow / api.json：[qwen-caption/api.json](cases/qwen-caption/api.json)
 - 输入 1 · kroma-style-source：![输入 1 · kroma-style-source](../../ComfyUI/input/featurebench/kroma-style-source.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/kroma-style-ref_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -446,7 +442,7 @@ workflow / api.json：[kroma-style-ref/api.json](cases/kroma-style-ref/api.json)
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：公众号索引标题；沿用上游Krea2接法探索
-- 执行：API 执行成功；耗时：整个批次 395.62 秒（非单项耗时）
+- 执行：API 执行成功 · 无可用输出图片；耗时：整个批次 395.62 秒（非单项耗时）
 - 视觉结论：部分达到
 
 可见雨街／霓虹背景与狐狸主体的结合，原猫被替换；但背景重画明显，狐狸面部发黑、写实感下降，脚下还混入参考图的苔石。不能算精确保留背景与主体身份的合成。未做去掉第二参考图的消融，本例不能单独证明两张输入均必要。原 1024 参考批次无图，此图来自 512 参考重试。
@@ -458,7 +454,7 @@ workflow / api.json：[kroma-style-ref/api.json](cases/kroma-style-ref/api.json)
 - 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/kroma-multiref_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -481,7 +477,7 @@ workflow / api.json：[kroma-multiref/api.json](cases/kroma-multiref/api.json)
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：公众号索引标题；一般参考编辑探索，非专用换头模型
-- 执行：API 执行成功；耗时：整个批次 395.62 秒（非单项耗时）
+- 执行：API 执行成功 · 无可用输出图片；耗时：整个批次 395.62 秒（非单项耗时）
 - 视觉结论：部分达到
 
 A 的红卷发、浅肤色、雀斑和浅绿眼特征转移，B 的蓝外套、红围巾、公园大体保留；但三分之四侧脸变成正面，颈侧有原黑发残留，衣领混入 A 的黄毛衣，不是干净且保持姿态的精准换头。原 1024 参考尝试无图，降低到 512 参考后才得到本图。
@@ -493,7 +489,7 @@ A 的红卷发、浅肤色、雀斑和浅绿眼特征转移，B 的蓝外套、�
 - 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/kroma-head-swap_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -516,7 +512,7 @@ workflow / api.json：[kroma-head-swap/api.json](cases/kroma-head-swap/api.json)
 
 - 模型：Qwen-Image-2.1
 - 来源级别：公众号索引标题
-- 执行：API 执行成功；耗时：整个批次 745.75 秒（非单项耗时）
+- 执行：API 执行成功 · 无可用输出图片；耗时：整个批次 745.75 秒（非单项耗时）
 - 视觉结论：部分达到，黑发保留
 - 运行配置：512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。
 
@@ -527,7 +523,7 @@ workflow / api.json：[kroma-head-swap/api.json](cases/kroma-head-swap/api.json)
 - 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/qwen-face-only_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -550,7 +546,7 @@ workflow / api.json：[qwen-face-only/api.json](cases/qwen-face-only/api.json)
 
 - 模型：Qwen 2.1 Turbo-UN
 - 来源级别：作者站外演示及上游；使用 UN 编码器组合独立重试
-- 执行：API 执行成功；耗时：526.25 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：526.25 秒
 - 视觉结论：达到本例文生图目标
 - 运行配置：本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。
 
@@ -560,7 +556,7 @@ workflow / api.json：[qwen-face-only/api.json](cases/qwen-face-only/api.json)
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/turbo-un-t2i_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -583,7 +579,7 @@ workflow / api.json：[turbo-un-t2i/api.json](cases/turbo-un-t2i/api.json)
 
 - 模型：Qwen 2.1 Turbo-UN
 - 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合
-- 执行：API 执行成功；耗时：710.95 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：710.95 秒
 - 视觉结论：部分达到，物种替换不确定
 - 运行配置：本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。
 
@@ -598,11 +594,7 @@ workflow / api.json：[turbo-un-t2i/api.json](cases/turbo-un-t2i/api.json)
 - 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/turbo-un-inpaint_00001_.png)
-
-附件：
-- turbo-un-inpaint-input_00001_.png：![turbo-un-inpaint-input_00001_.png](../../ComfyUI/output/FeatureBench/turbo-un-inpaint-input_00001_.png)
-- turbo-un-inpaint-mask_00001_.png：![turbo-un-inpaint-mask_00001_.png](../../ComfyUI/output/FeatureBench/turbo-un-inpaint-mask_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -625,7 +617,7 @@ workflow / api.json：[turbo-un-inpaint/api.json](cases/turbo-un-inpaint/api.jso
 
 - 模型：Qwen 2.1 Turbo-UN
 - 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能
-- 执行：API 执行成功；耗时：1041.3 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：1041.3 秒
 - 视觉结论：达到本例主体合成目标，狐狸明确
 - 运行配置：本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。
 
@@ -636,7 +628,7 @@ workflow / api.json：[turbo-un-inpaint/api.json](cases/turbo-un-inpaint/api.jso
 - 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/turbo-un-multiref_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -659,7 +651,7 @@ workflow / api.json：[turbo-un-multiref/api.json](cases/turbo-un-multiref/api.j
 
 - 模型：Qwen 2.1 Turbo-UN
 - 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合
-- 执行：API 执行成功；耗时：990.75 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：990.75 秒
 - 视觉结论：部分达到，头部角度改变
 - 运行配置：本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。
 
@@ -670,7 +662,7 @@ workflow / api.json：[turbo-un-multiref/api.json](cases/turbo-un-multiref/api.j
 - 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/turbo-un-face-swap_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -693,7 +685,7 @@ workflow / api.json：[turbo-un-face-swap/api.json](cases/turbo-un-face-swap/api
 
 - 模型：Qwen-Image-2.1
 - 来源级别：第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现
-- 执行：API 执行成功；耗时：375.67 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：375.67 秒
 - 视觉结论：部分达到，侧转角度比普通换头保留更好
 - 运行配置：512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。
 
@@ -704,7 +696,7 @@ workflow / api.json：[turbo-un-face-swap/api.json](cases/turbo-un-face-swap/api
 - 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/qwen-bfs-head-swap_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -727,7 +719,7 @@ workflow / api.json：[qwen-bfs-head-swap/api.json](cases/qwen-bfs-head-swap/api
 
 - 模型：Qwen 2.1 Turbo-UN
 - 来源级别：作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。
-- 执行：API 执行成功；耗时：1055.88 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：1055.88 秒
 - 视觉结论：基本达到全身替换目标
 - 运行配置：本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。
 
@@ -738,7 +730,7 @@ workflow / api.json：[qwen-bfs-head-swap/api.json](cases/qwen-bfs-head-swap/api
 - 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/turbo-un-role-replacement-test_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -761,7 +753,7 @@ workflow / api.json：[turbo-un-role-replacement-test/api.json](cases/turbo-un-r
 
 - 模型：Qwen 2.1 Turbo-UN
 - 来源级别：作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。
-- 执行：API 执行成功；耗时：1045.9 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：1045.9 秒
 - 视觉结论：达到本例主要姿态目标（语义参考）
 - 运行配置：本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。
 
@@ -772,7 +764,7 @@ workflow / api.json：[turbo-un-role-replacement-test/api.json](cases/turbo-un-r
 - 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/turbo-un-pose-reference-test_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -795,23 +787,17 @@ workflow / api.json：[turbo-un-pose-reference-test/api.json](cases/turbo-un-pos
 
 - 模型：MiniMax H3 Ref2VA Q4_0（诊断）
 - 来源级别：本机诊断，不是作者BFS整合包复现；4步无Turbo LoRA，不用于画质或视频功能验收
-- 执行：API 执行成功；耗时：433.08 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：433.08 秒
 - 视觉结论：加载、采样、解码链路通过；不是视频功能验收
 - 运行配置：RX6650XT；隔离H3 worktree、GGUF DynamicVRAM、4B ClipProj、GPU FP16视频VAE；--reserve-vram 2.0、同步卸载，未开启INT8 fallback。384×256、5帧、4步。433.08秒包含服务启动；仅加载诊断，不用于正常视频画质结论。
 
 最新一次使用GPU FP16 VAE并预留2GB显存，实际保存5张384×256 PNG与无声WebP。首尾帧可见青色机器人、洋红围巾、方形黑眼和浅色背景，画面相似；约0.2秒不能评价动作流畅、正常时长质量或BFS角色替换。此前CPU VAE超时、INT8 VAE HIPBLAS错误及未预留显存的FP16采样OOM均保留。433.08秒包含服务启动；系统已用内存采样峰值约14.19GiB，API显存采样峰值约4.84GiB，不是所有瞬时分配的精确峰值。
 
 输入图片：
-- 输入 1 · D:/AI/barely-comfy\trials\2026-10-19-h3\input\cyan-robot-reference.png：![输入 1 · D:/AI/barely-comfy\trials\2026-10-19-h3\input\cyan-robot-reference.png](../2026-10-19-h3/input/cyan-robot-reference.png)
+- 输入 1 · D:/AI/barely-comfy\trials\2026-10-19-h3\input\cyan-robot-reference.png：输入图片未找到
 
 输出图片：
-![输出 1](../2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00001_.png)
-![输出 2](../2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00002_.png)
-![输出 3](../2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00003_.png)
-![输出 4](../2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00004_.png)
-![输出 5](../2026-10-19-h3/output/h3/ref2va-5frame-diagnostic-frames_00005_.png)
-
-[查看原始 WebP 动画（5帧诊断，约0.2秒）](../2026-10-19-h3/output/h3/ref2va-5frame-diagnostic_00001_.webp)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -834,7 +820,7 @@ workflow / api.json：[ref2va-5frame-diagnostic/api.json](cases/ref2va-5frame-di
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：434.24 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：434.24 秒
 - 视觉结论：通过
 - 运行配置：官方 FP8 4B 蒸馏；CPU qwen_3_4b 编码器、CPU VAE，RX6650XT 扩散；4步 Euler / Flux2Scheduler / CFG1；参考约0.25MP，保持宽高比；未使用额外LoRA或自动提示词
 
@@ -844,7 +830,7 @@ workflow / api.json：[ref2va-5frame-diagnostic/api.json](cases/ref2va-5frame-di
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-t2i_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -867,7 +853,7 @@ workflow / api.json：[flux2-klein-t2i/api.json](cases/flux2-klein-t2i/api.json)
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：210.85 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：210.85 秒
 - 视觉结论：通过
 - 运行配置：官方 FP8 4B 蒸馏；qwen_3_4b 编码器运行时FP8存储/GPU计算，CPU VAE，RX6650XT扩散；--fp8_e4m3fn-text-enc；4步Euler/Flux2Scheduler/CFG1；参考约0.25MP；无额外LoRA或提示词改写
 
@@ -877,7 +863,7 @@ workflow / api.json：[flux2-klein-t2i/api.json](cases/flux2-klein-t2i/api.json)
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -933,7 +919,7 @@ workflow / api.json：[flux2-klein-t2i-1024/api.json](cases/flux2-klein-t2i-1024
 
 - 模型：Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：124.59 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：124.59 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -943,7 +929,7 @@ workflow / api.json：[flux2-klein-t2i-1024/api.json](cases/flux2-klein-t2i-1024
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -966,7 +952,7 @@ workflow / api.json：[zimage-gguf-photo-gpu-text/api.json](cases/zimage-gguf-ph
 
 - 模型：Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：125.77 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：125.77 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -976,7 +962,7 @@ workflow / api.json：[zimage-gguf-photo-gpu-text/api.json](cases/zimage-gguf-ph
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -999,7 +985,7 @@ workflow / api.json：[zimage-gguf-prompt-change/api.json](cases/zimage-gguf-pro
 
 - 模型：Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：85.47 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：85.47 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1009,7 +995,7 @@ workflow / api.json：[zimage-gguf-prompt-change/api.json](cases/zimage-gguf-pro
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1032,7 +1018,7 @@ workflow / api.json：[zimage-gguf-english/api.json](cases/zimage-gguf-english/a
 
 - 模型：Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：75.34 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：75.34 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1042,7 +1028,7 @@ workflow / api.json：[zimage-gguf-english/api.json](cases/zimage-gguf-english/a
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1065,7 +1051,7 @@ workflow / api.json：[zimage-gguf-chinese/api.json](cases/zimage-gguf-chinese/a
 
 - 模型：Z-Image-Turbo-AIO FP8
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：50.23 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：50.23 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1075,7 +1061,7 @@ workflow / api.json：[zimage-gguf-chinese/api.json](cases/zimage-gguf-chinese/a
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1098,7 +1084,7 @@ workflow / api.json：[zimage-aio-photo-9step/api.json](cases/zimage-aio-photo-9
 
 - 模型：Z-Image-Turbo-AIO FP8
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：30.17 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：30.17 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1108,7 +1094,7 @@ workflow / api.json：[zimage-aio-photo-9step/api.json](cases/zimage-aio-photo-9
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1131,7 +1117,7 @@ workflow / api.json：[zimage-aio-chinese/api.json](cases/zimage-aio-chinese/api
 
 - 模型：Z-Image-Turbo-AIO FP8
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：30.97 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：30.97 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1141,7 +1127,7 @@ workflow / api.json：[zimage-aio-chinese/api.json](cases/zimage-aio-chinese/api
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1164,7 +1150,7 @@ workflow / api.json：[zimage-aio-english/api.json](cases/zimage-aio-english/api
 
 - 模型：Z-Image-Turbo-AIO FP8
 - 来源级别：文章泛提NSFW；本checkpoint无特殊UN训练证据；自编非色情艺术测试
-- 执行：API 执行成功；耗时：30.16 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：30.16 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1174,7 +1160,7 @@ workflow / api.json：[zimage-aio-english/api.json](cases/zimage-aio-english/api
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1197,7 +1183,7 @@ workflow / api.json：[zimage-aio-figure-art/api.json](cases/zimage-aio-figure-a
 
 - 模型：Z-Image-Turbo-AIO FP8
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：20.08 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：20.08 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1207,7 +1193,7 @@ workflow / api.json：[zimage-aio-figure-art/api.json](cases/zimage-aio-figure-a
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1230,7 +1216,7 @@ workflow / api.json：[zimage-aio-photo-4step/api.json](cases/zimage-aio-photo-4
 
 - 模型：Z-Image-Turbo-AIO FP8
 - 来源级别：用户提供离线正文；自编验收提示词；公共可追溯工作流
-- 执行：API 执行成功；耗时：30.09 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：30.09 秒
 - 视觉结论：通过
 - 运行配置：memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。
 
@@ -1240,7 +1226,7 @@ workflow / api.json：[zimage-aio-photo-4step/api.json](cases/zimage-aio-photo-4
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1263,7 +1249,7 @@ workflow / api.json：[zimage-aio-photo-8step/api.json](cases/zimage-aio-photo-8
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：51.18 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：51.18 秒
 - 视觉结论：失败／噪声图
 - 运行配置：实际API参数已核验：dynamic-nvme，G盘配置、动态VRAM/fast-disk、禁用锁页内存、CPU VAE/同步卸载、预留2GiB、FP8文本编码；设备AMD RX6650XT。实际文本编码计算设备还需日志确认。
 
@@ -1273,7 +1259,7 @@ API终态success、PNG/history/API绑定一致，但目视检查全幅重复噪�
 - 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-single-color_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1296,7 +1282,7 @@ workflow / api.json：[flux2-klein-single-color/api.json](cases/flux2-klein-sing
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：失败后的本地运行配置诊断，不是文章新增功能
-- 执行：API 执行成功；耗时：21.44 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：21.44 秒
 - 视觉结论：失败／噪声图
 - 运行配置：实际API参数已核验：dynamic-nvme，G盘配置、动态VRAM/fast-disk、禁用锁页内存、CPU VAE/同步卸载、预留2GiB、FP8文本编码；设备AMD RX6650XT。实际文本编码计算设备还需日志确认。
 
@@ -1306,7 +1292,7 @@ workflow / api.json：[flux2-klein-single-color/api.json](cases/flux2-klein-sing
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1329,7 +1315,7 @@ workflow / api.json：[flux2-klein-t2i-nvme-control/api.json](cases/flux2-klein-
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：30.53 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：30.53 秒
 - 视觉结论：通过
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1340,7 +1326,7 @@ workflow / api.json：[flux2-klein-t2i-nvme-control/api.json](cases/flux2-klein-
 - 输入 2 · flux2-klein-bench/comfy_logo_blue.png：![输入 2 · flux2-klein-bench/comfy_logo_blue.png](../../ComfyUI/input/flux2-klein-bench/comfy_logo_blue.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-dual-logo_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1363,7 +1349,7 @@ workflow / api.json：[flux2-klein-dual-logo/api.json](cases/flux2-klein-dual-lo
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：36.74 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：36.74 秒
 - 视觉结论：通过本例主要特征
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1374,7 +1360,7 @@ workflow / api.json：[flux2-klein-dual-logo/api.json](cases/flux2-klein-dual-lo
 - 输入 2 · featurebench/kroma-portrait-b.png：![输入 2 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-dual-people_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1397,7 +1383,7 @@ workflow / api.json：[flux2-klein-dual-people/api.json](cases/flux2-klein-dual-
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：30.76 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：30.76 秒
 - 视觉结论：部分达到／水彩清楚，光照改变
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1407,7 +1393,7 @@ workflow / api.json：[flux2-klein-dual-people/api.json](cases/flux2-klein-dual-
 - 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1430,7 +1416,7 @@ workflow / api.json：[flux2-klein-style/api.json](cases/flux2-klein-style/api.j
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：25.66 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：25.66 秒
 - 视觉结论：部分达到／替换生效，壶结构错误
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1440,7 +1426,7 @@ workflow / api.json：[flux2-klein-style/api.json](cases/flux2-klein-style/api.j
 - 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-replace-zh_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1463,7 +1449,7 @@ workflow / api.json：[flux2-klein-replace-zh/api.json](cases/flux2-klein-replac
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：25.9 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：25.9 秒
 - 视觉结论：通过
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1473,7 +1459,7 @@ workflow / api.json：[flux2-klein-replace-zh/api.json](cases/flux2-klein-replac
 - 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-remove_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1496,7 +1482,7 @@ workflow / api.json：[flux2-klein-remove/api.json](cases/flux2-klein-remove/api
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：25.32 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：25.32 秒
 - 视觉结论：部分达到／添加生效，蝴蝶结偏大
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1506,7 +1492,7 @@ workflow / api.json：[flux2-klein-remove/api.json](cases/flux2-klein-remove/api
 - 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-iterative_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1529,7 +1515,7 @@ workflow / api.json：[flux2-klein-iterative/api.json](cases/flux2-klein-iterati
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：失败后的本地运行配置诊断，不是文章新增功能
-- 执行：API 执行成功；耗时：40.64 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：40.64 秒
 - 视觉结论：通过
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1539,7 +1525,7 @@ workflow / api.json：[flux2-klein-iterative/api.json](cases/flux2-klein-iterati
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1562,7 +1548,7 @@ workflow / api.json：[flux2-klein-t2i-pinned-control/api.json](cases/flux2-klei
 
 - 模型：FLUX.2 Klein 4B distilled FP8
 - 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
-- 执行：API 执行成功；耗时：30.52 秒
+- 执行：API 执行成功 · 无可用输出图片；耗时：30.52 秒
 - 视觉结论：通过
 - 运行配置：实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。
 
@@ -1572,7 +1558,7 @@ workflow / api.json：[flux2-klein-t2i-pinned-control/api.json](cases/flux2-klei
 - 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1625,11 +1611,187 @@ workflow / api.json：[qwen-caption-cpu/api.json](cases/qwen-caption-cpu/api.jso
 
 ---
 
+## 自动反推并再生成 · 分阶段修复重试（`qwen-caption-gpu-chunked`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试
+- 执行：API 执行成功；耗时：256.625 秒
+- 视觉结论：通过
+- 运行配置：512×512，15步，GPU 文本/扩散、CPU VAE。编码阶段禁用 pinned memory；采样保持默认 pinned。进程分离规避卸载崩溃，非底层修复。两个阶段提交后耗时之和，不含服务冷启动。
+
+自动从输入生成完整英文提示词，再自动编码并生成独立 512x512 PNG。实际查看：橘猫坐在雨夜湿路边凝望暖色橱窗，红色霓虹与湿地反光清楚；与反推文字一致，无明显噪声。构图与原图不同，任务是语义再生成，不是原图精确复刻。 这是分阶段规避方案；旧 CPU 配置和底层卸载问题仍未解决。
+
+修复原 qwen-caption 失败：限制 INT8 输出层临时矩阵，并隔离编码与采样进程。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/qwen-caption-gpu-chunked_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+自动反推的实际提示词：
+A lone ginger cat sits on a wet sidewalk at night, gazing into a warmly lit storefront with rain-slicked glass, as neon red signs cast glowing reflections on the damp pavement, creating a moody, cinematic urban scene with shallow depth of field.
+```
+
+预期结果：先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。
+
+workflow / api.json：[qwen-caption-gpu-chunked/api.json](cases/qwen-caption-gpu-chunked/api.json)
+
+</details>
+
+---
+
+## 对象替换／中文指令 · 修复重试（`flux2-teapot-structure`）
+
+- 模型：FLUX.2 Klein 4B distilled FP8
+- 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
+- 执行：API 执行成功；耗时：51.703 秒
+- 视觉结论：通过
+- 运行配置：G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。
+
+实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。
+
+实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。
+
+输入图片：
+- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/flux2-teapot-structure_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+将白色手提包完整替换成一只正常结构的红色陶瓷茶壶：单个圆形壶身和壶盖，画面左侧恰好一个弯曲壶嘴，画面右侧恰好一个完整的C形把手，把手有清楚的镂空。不要两个壶嘴，不要两个把手，不要手提包。保留浅灰色背景、柔和灯光、居中拍摄角度和原图的画面布局。
+```
+
+预期结果：包被红色茶壶取代，背景和产品摄影构图保留。
+
+workflow / api.json：[flux2-teapot-structure/api.json](cases/flux2-teapot-structure/api.json)
+
+</details>
+
+---
+
+## 迭代编辑／第二轮修改 · 修复重试（`flux2-tiny-bow`）
+
+- 模型：FLUX.2 Klein 4B distilled FP8
+- 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
+- 执行：API 执行成功；耗时：27.062 秒
+- 视觉结论：部分达到
+- 运行配置：G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。
+
+蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。
+
+蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。
+
+输入图片：
+- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/flux2-tiny-bow_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Add one tiny red silk bow at the lower attachment of the left handle of this blue handbag. The entire bow including ribbon tails is only about eight percent of the handbag width, smaller than the handle attachment. Keep the whole bag visible, its blue leather, shape, handles, framing, light grey studio background and lighting unchanged.
+```
+
+预期结果：在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。
+
+workflow / api.json：[flux2-tiny-bow/api.json](cases/flux2-tiny-bow/api.json)
+
+</details>
+
+---
+
+## 风格转换 · 修复重试（`flux2-watercolor-night`）
+
+- 模型：FLUX.2 Klein 4B distilled FP8
+- 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
+- 执行：API 执行成功；耗时：27.031 秒
+- 视觉结论：通过
+- 运行配置：G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。
+
+实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。
+
+实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/flux2-watercolor-night_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Paint this exact rainy NIGHT scene in delicate watercolor on textured cold-pressed paper. Keep it dark: deep midnight navy shadows and bright warm neon reflections on wet pavement. Preserve the cat facing AWAY from the camera, its pose and exact location, cafe window, plants, camera framing and all object positions. No daylight, no white daytime sky, no bright overexposure.
+```
+
+预期结果：咖啡馆猫的主体与构图保留，出现明确水彩笔触和纸张质感。
+
+workflow / api.json：[flux2-watercolor-night/api.json](cases/flux2-watercolor-night/api.json)
+
+</details>
+
+---
+
+## 文生图／1024分辨率 · 修复重试（`flux2-1024-attention`）
+
+- 模型：FLUX.2 Klein 4B distilled FP8
+- 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
+- 执行：API 执行成功；耗时：81.093 秒
+- 视觉结论：部分达到
+- 运行配置：G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。
+
+完整 1024×1024，四步采样、CPU VAE 解码与保存均成功，目视为正常雨夜橘猫，HELLO 清楚。仍有额外招牌文字，未满足 no other writing。一次成功不能证明历史原生崩溃根因已修复。
+
+完整 1024×1024，四步采样、CPU VAE 解码与保存均成功，目视为正常雨夜橘猫，HELLO 清楚。仍有额外招牌文字，未满足 no other writing。一次成功不能证明历史原生崩溃根因已修复。
+
+输入图片：
+- 此功能没有输入图片。
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/flux2-1024-attention_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.
+```
+
+预期结果：橘猫、雨夜咖啡馆构图，以及可读的 HELLO。
+
+workflow / api.json：[flux2-1024-attention/api.json](cases/flux2-1024-attention/api.json)
+
+</details>
+
+---
+
 ## 文生图：雨夜上海咖啡馆橘猫（768×768）（`qwen-base-t2i-cat-768`）
 
 - 模型：Qwen-Image-2.1
 - 来源级别：T｜旧本机试验有 API 与实际输出文件；耗时记录未知
-- 执行：API 执行成功
+- 执行：历史记录 · 无可用输出图片
 - 视觉结论：通过
 
 API 记录为 768 分辨率，输出文件存在且已目视检查；可读记录未提供该次 history 的起止时间，故耗时为 null。
@@ -1638,7 +1800,7 @@ API 记录为 768 分辨率，输出文件存在且已目视检查；可读记�
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1661,16 +1823,16 @@ workflow / api.json：[旧基线 api.json：qwen-image-2.1-768-api.json](../../q
 
 - 模型：Qwen-Image-2.1
 - 来源级别：T｜本机 history 成功并有图片复核
-- 执行：API 执行成功；耗时：423.46 秒
+- 执行：历史记录 · 无可用输出图片；耗时：423.46 秒
 - 视觉结论：通过
 
 history 状态 success；目视检查为白猫，姿态与街景构图基本保留，分辨率和毛发细节有变化。
 
 输入图片：
-- 输入 1 · D:/AI/barely-comfy\ComfyUI\input\liuyue-qwen-base-source.png：![输入 1 · D:/AI/barely-comfy\ComfyUI\input\liuyue-qwen-base-source.png](../../ComfyUI/input/liuyue-qwen-base-source.png)
+- 输入 1 · D:/AI/barely-comfy\ComfyUI\input\liuyue-qwen-base-source.png：输入图片未找到
 
 输出图片：
-![输出 1](../../ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1693,7 +1855,7 @@ workflow / api.json：[旧基线 api.json：qwen-base-edit-512-api.json](../2026
 
 - 模型：Kroma v0.3.1 OPD Q2
 - 来源级别：T｜本机 history 成功并有图片复核；结果仅对应 OPD Q2_K 文件与本工作流
-- 执行：API 执行成功；耗时：285.03 秒
+- 执行：历史记录 · 无可用输出图片；耗时：285.03 秒
 - 视觉结论：通过
 
 history 状态 success；目视检查狐狸、苔石和雾林与提示相符，未见黑图或明显噪声。
@@ -1702,7 +1864,7 @@ history 状态 success；目视检查狐狸、苔石和雾林与提示相符，�
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1725,7 +1887,7 @@ workflow / api.json：[旧基线 api.json：kroma-api.json](../2026-10-18/kroma-
 
 - 模型：MOSS-Image-5B
 - 来源级别：T｜本机 history 成功并有图片复核；作者未公布的完整采样配方未声称复现
-- 执行：API 执行成功；耗时：187.575 秒
+- 执行：历史记录 · 无可用输出图片；耗时：187.575 秒
 - 视觉结论：通过
 
 history 状态 success；目视检查有完整宇航员和丛林，无黑图或纹理噪声；启用了 gfx1032 INT8 fallback。
@@ -1734,7 +1896,7 @@ history 状态 success；目视检查有完整宇航员和丛林，无黑图或�
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1757,7 +1919,7 @@ workflow / api.json：[旧基线 api.json：moss8-api.json](../2026-10-18/moss8-
 
 - 模型：MOSS-Image-5B
 - 来源级别：T｜本机 history 成功并有图片复核
-- 执行：API 执行成功；耗时：198.197 秒
+- 执行：历史记录 · 无可用输出图片；耗时：198.197 秒
 - 视觉结论：通过
 
 history 状态 success；目视检查画面有完整宇航员、丛林与阳光，符合提示；启用了 gfx1032 INT8 fallback。
@@ -1766,7 +1928,7 @@ history 状态 success；目视检查画面有完整宇航员、丛林与阳光�
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1789,7 +1951,7 @@ workflow / api.json：[旧基线 api.json：moss-api.json](../2026-10-18/moss-ap
 
 - 模型：Qwen 2.1 Turbo（普通对照）
 - 来源级别：T｜本机 history 成功并有图片复核；明确不代表 Turbo-UN
-- 执行：API 执行成功；耗时：652.782 秒
+- 执行：历史记录 · 无可用输出图片；耗时：652.782 秒
 - 视觉结论：通过
 
 history 状态 success；目视检查为完整白猫、雨窗与霓虹街景，未见黑图或噪声图。此记录使用普通 Turbo 和原有编码器，不是 Turbo-UN。
@@ -1798,7 +1960,7 @@ history 状态 success；目视检查为完整白猫、雨窗与霓虹街景，�
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png)
+- 无输出
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>

@@ -5,6 +5,7 @@ import json
 import re
 import struct
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from html import unescape
@@ -73,7 +74,7 @@ def main():
                 index += size + 8 + size % 2
     manifest_path = ROOT / 'publication-manifest.json'
     if '--write-manifest' in sys.argv:
-        manifest = {'date': '2026-10-20', 'scope': 'Public sanitized tutorial snapshot; historical image hashes refer to local originals.',
+        manifest = {'date': date.today().isoformat(), 'scope': 'Public sanitized tutorial snapshot; historical image hashes refer to local originals.',
                     'files': {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                               for p in all_files if p != manifest_path}}
         manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf-8')

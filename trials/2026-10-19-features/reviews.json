@@ -225,5 +225,30 @@
     "verdict": "失败：CPU反推内存不足，无提示词或图片",
     "detail": "CPU文本/视觉编码重试在 TextGenerate 失败，DefaultCPUAllocator 申请 2,489,319,424 字节失败。提交后 540.84 秒，无 text_outputs、无 images。此前 GPU INT8 错误与浮点回退后的 OOM 仍保留；本次 CPU 重试也未完成自动反推后再生成。依据 result.json 的错误终态补记，不冒充视觉验收。",
     "image": null
+  },
+  "qwen-caption-gpu-chunked": {
+    "verdict": "通过",
+    "detail": "自动从输入生成完整英文提示词，再自动编码并生成独立 512x512 PNG。实际查看：橘猫坐在雨夜湿路边凝望暖色橱窗，红色霓虹与湿地反光清楚；与反推文字一致，无明显噪声。构图与原图不同，任务是语义再生成，不是原图精确复刻。 这是分阶段规避方案；旧 CPU 配置和底层卸载问题仍未解决。",
+    "image": "qwen-caption-gpu-chunked_00001_.png"
+  },
+  "flux2-teapot-structure": {
+    "verdict": "通过",
+    "detail": "实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。",
+    "image": "flux2-teapot-structure_00001_.png"
+  },
+  "flux2-tiny-bow": {
+    "verdict": "部分达到",
+    "detail": "蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。",
+    "image": "flux2-tiny-bow_00001_.png"
+  },
+  "flux2-watercolor-night": {
+    "verdict": "通过",
+    "detail": "实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。",
+    "image": "flux2-watercolor-night_00001_.png"
+  },
+  "flux2-1024-attention": {
+    "verdict": "部分达到",
+    "detail": "完整 1024×1024，四步采样、CPU VAE 解码与保存均成功，目视为正常雨夜橘猫，HELLO 清楚。仍有额外招牌文字，未满足 no other writing。一次成功不能证明历史原生崩溃根因已修复。",
+    "image": "flux2-1024-attention_00001_.png"
   }
 }

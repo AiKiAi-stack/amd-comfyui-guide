@@ -4,7 +4,7 @@
 
 RX 6650 XT · ComfyUI 实测手册：显存刚够，坑也不少。
 
-Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图，到模型编辑、多参考输入与原生崩溃排查。**Draft · 2026-10-20**，持续整理中。
+Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图，到模型编辑、多参考输入与原生崩溃排查。**Draft · 2026-10-21**，持续整理中。
 
 这是一台 RX 6650 XT（gfx1032，8GB VRAM）+ 16GB RAM 的单机实验，不是所有 AMD 显卡的兼容性承诺。记录成功，也保留噪声图、失败工作流、部分达到和未验证项。API 返回 success 后仍要查看图片。
 
@@ -17,6 +17,7 @@ Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图�
 5. [完整图文报告（GitHub 可直接阅读）](trials/2026-10-19-features/feature-report.md)。
 6. [出图失败追踪与修复验证](docs/06-failure-tracker.md)：本地失败证据、上游问题及连续出图回归。
 7. [未闭环功能清单](docs/07-unfinished-features.md)：排除 H3 后的 19 条待处理记录、报告漏项和配方验证欠项。
+8. [实际修复重试与图片](trials/2026-10-21-repairs/README.md)：自动反推分阶段出图、FLUX 茶壶/夜景/1024 重试及仍未达标的小蝴蝶结。
 
 [在线图文报告](https://aikiai-stack.github.io/barely-comfy/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
 
@@ -35,7 +36,7 @@ python -m http.server 8767 --bind 127.0.0.1
 - FLUX.2 Klein 七项编辑，以及禁用锁页内存产生噪声的对照。
 - Z-Image AIO 与 GGUF，9/8/4 步、中文与英文文字、连续运行的差异。
 - Flux.3 的失败/来源记录，以及 H3 五帧诊断；H3 视频功能仍未验收。
-- `code_source/` 的两个本地辅助节点，以及 `trials/` 的原始实验脚本和工作流。
+- `code_source/` 的本地辅助节点，以及 `trials/` 的原始实验脚本和工作流。
 
 ![FLUX.2 Klein 实测输出](ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
 
