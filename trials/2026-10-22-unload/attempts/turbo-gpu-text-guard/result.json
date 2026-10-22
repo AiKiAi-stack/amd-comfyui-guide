@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "profile": "gpu-text-dynamic",
+  "guard_threshold_mib": 1024,
+  "operator_stop": "automatic_commit_guard",
+  "operator_stop_note": null,
+  "error": "Commit guard stopped the owned trial; inspect retained logs for earlier errors",
+  "final_server_exit_code": 15,
+  "server_stopped": true,
+  "native_exception_observed": false,
+  "oom_observed": false,
+  "source_summary_sha256": "df9db6ece2036d62bdecb46395df214aeb581168eded73c864c6b40889bb8681",
+  "stderr_sha256": "51a5d2888c4dea772498820ed1a8b9605b2d6248f297b3d4a4a2d5c9aeaa06e7",
+  "images": [],
+  "scope": "Failure or protective/operator stop; no PNG produced; logs retained locally"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "kroma-multiref-natural-crop",
+  "model": "kroma",
+  "feature": "多图参考 · 修复重试",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "prompt": "In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.",
+  "expected": "同时采用雨街背景和参考狐狸主体。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。",
+  "repairs": [
+    "kroma-multiref"
+  ],
+  "runtime_profile": "Dynamic GPU text encoding; Kroma FP16 weights with split/upcast attention; isolated CPU decode; natural reference crops",
+  "status": "success",
+  "prompt_id": "b57458e2-548c-4e52-9dc3-fc81787bb9bb",
+  "elapsed_seconds": 96.203,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-natural-crop-input_00001_.png",
+      "sha256": "801ef2b9e50d30acb371b209c549765ca51f985c8da5ae53bdc60bb47b01a64e",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-natural-crop-mask_00001_.png",
+      "sha256": "082801753438f62929cf04cb5d9ee20a9fd4d64d74e5ba13b6d86aed7cc1c9f3",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-natural-crop_00001_.png",
+      "sha256": "02825e192c87155860d0244ac12c92eba1c6e696a6b7779cafa7a8c79a13c1f3",
+      "public_sha256": "4f3b57434d9ad52bf07af7ffab3a3fdfc20c3c1aa944d9b8eac4c070dadb8af8"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 6.109,
+  "encoding_elapsed_seconds": 21.032,
+  "sampling_elapsed_seconds": 69.062,
+  "timing_scope": "Sum of encoding, sampling, decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true,
+  "acceptance_scope": "融合与完整主体均需达到；本次尾部未完整"
+}

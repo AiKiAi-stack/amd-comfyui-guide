@@ -350,5 +350,40 @@
     "verdict": "通过",
     "detail": "尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。",
     "image": "flux2-tiny-bow-sized-composite_00001_.png"
+  },
+  "kroma-multiref-natural-crop": {
+    "verdict": "部分达到",
+    "detail": "去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。",
+    "image": "kroma-multiref-natural-crop_00001_.png"
+  },
+  "kroma-multiref-full-tail": {
+    "verdict": "通过",
+    "detail": "复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。",
+    "image": "kroma-multiref-full-tail_00001_.png"
+  },
+  "turbo-fox-clean-latent": {
+    "verdict": "部分达到",
+    "detail": "只将采样初始VAE输入从原猫图改为抹猫图。复用经图依赖与SHA验证的旧正/负条件，刷新4.48秒、8步采样及解码完整完成；主体仍偏圆头猫形背影，并出现灰边框，物种替换未通过。新旧归档已验证正负条件逐张量完全一致、noise_mask一致，初始samples确实改变。",
+    "image": "turbo-fox-clean-latent_00001_.png"
+  },
+  "qwen-face-only-cfg1-fp16": {
+    "verdict": "部分达到",
+    "detail": "相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。",
+    "image": "qwen-face-only-cfg1-fp16_00001_.png"
+  },
+  "qwen-face-only-cfg3": {
+    "verdict": "部分达到",
+    "detail": "与相同FP16的CFG1控制只改变CFG为3。侧转黑发服装保留，绿眼与雀斑较清楚，但仍是相近生成脸，鼻/眼/脸部比例未能确认与A相同；不能据更高CFG认定精确身份修复。",
+    "image": "qwen-face-only-cfg3_00001_.png"
+  },
+  "turbo-fox-profile-precomputed": {
+    "verdict": "部分达到",
+    "detail": "四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。",
+    "image": "turbo-fox-profile-precomputed_00001_.png"
+  },
+  "turbo-fox-profile-wide-mask": {
+    "verdict": "通过",
+    "detail": "保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。",
+    "image": "turbo-fox-profile-wide-mask_00001_.png"
   }
 }

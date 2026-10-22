@@ -1,0 +1,48 @@
+{
+  "prompt_id": "d1469a0d-5965-424a-9f7a-61bf6d38d1c9",
+  "status": "success",
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-fox-profile-wide-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_input": {
+      "images": [
+        {
+          "filename": "turbo-fox-profile-wide-mask-input_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_mask": {
+      "images": [
+        {
+          "filename": "turbo-fox-profile-wide-mask-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

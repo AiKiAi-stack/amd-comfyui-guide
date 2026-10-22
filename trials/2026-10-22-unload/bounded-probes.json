@@ -1,0 +1,107 @@
+{
+  "scope": "Bounded quantized offload diagnosis; no full-model native crash fix claimed",
+  "attempts": [
+    {
+      "id": "gguf",
+      "result": {
+        "kind": "gguf",
+        "torch_version": "2.12.0+rocm7.14.0",
+        "device": "AMD Radeon RX 6650 XT",
+        "requested_cycles": 200,
+        "completed_cycles": 200,
+        "status": "pass_bounded_probe_only",
+        "scope": "One bounded weight; ordinary and synthetic-exception unpatch, not real OOM recovery",
+        "tensor_name": "model.diffusion_model.transformer_blocks.27.attn.to_v.weight",
+        "quantization": "Q6_K",
+        "storage_bytes": 13762560,
+        "logical_shape": [
+          4096,
+          4096
+        ],
+        "initial_storage": "GGUF reader memory-mapped array retained for probe lifetime",
+        "elapsed_seconds": 3.36,
+        "storage_sha256": "9ed2ec676bdf4643d1e8211d59118f1f1188dd20ac49e9fb0161cfebae76d237"
+      },
+      "process_exit_code": 0,
+      "native_exception_observed": false,
+      "python_shutdown_exception_observed": true,
+      "stderr_sha256": "2a3c7779e8def50e1bb5ef07bed2664f86af691a49591a55b95a9c9a0ee0c48f"
+    },
+    {
+      "id": "int8",
+      "result": {
+        "kind": "int8",
+        "torch_version": "2.12.0+rocm7.14.0",
+        "device": "AMD Radeon RX 6650 XT",
+        "requested_cycles": 200,
+        "completed_cycles": 200,
+        "status": "pass_bounded_probe_only",
+        "scope": "One bounded weight; ordinary and synthetic-exception unpatch, not real OOM recovery",
+        "storage_bytes": 8388608,
+        "logical_shape": [
+          2048,
+          4096
+        ],
+        "quantization": "TensorWiseINT8Layout",
+        "elapsed_seconds": 1.828,
+        "storage_sha256": "bfa3aebce0fada4b01070c302289f4de954058784b421605c6ddf850ca7cf429"
+      },
+      "process_exit_code": 0,
+      "native_exception_observed": false,
+      "python_shutdown_exception_observed": true,
+      "stderr_sha256": "847323437623b0509dd0e1433063f8cda2ea886f093248f9d0ba84c11048931f"
+    },
+    {
+      "id": "gguf-cleanup",
+      "result": {
+        "kind": "gguf",
+        "torch_version": "2.12.0+rocm7.14.0",
+        "device": "AMD Radeon RX 6650 XT",
+        "requested_cycles": 200,
+        "completed_cycles": 200,
+        "status": "pass_bounded_probe_only",
+        "scope": "One bounded weight; ordinary and synthetic-exception unpatch, not real OOM recovery",
+        "tensor_name": "model.diffusion_model.transformer_blocks.27.attn.to_v.weight",
+        "quantization": "Q6_K",
+        "storage_bytes": 13762560,
+        "logical_shape": [
+          4096,
+          4096
+        ],
+        "initial_storage": "GGUF reader memory-mapped array retained for probe lifetime",
+        "explicit_cleanup_completed": true,
+        "elapsed_seconds": 3.422,
+        "storage_sha256": "9ed2ec676bdf4643d1e8211d59118f1f1188dd20ac49e9fb0161cfebae76d237"
+      },
+      "process_exit_code": 0,
+      "native_exception_observed": false,
+      "python_shutdown_exception_observed": false,
+      "stderr_sha256": "d6826ab3daef9c655c351b279dfdf119cfbde585074d29e64f546a46f01756c3"
+    },
+    {
+      "id": "int8-cleanup",
+      "result": {
+        "kind": "int8",
+        "torch_version": "2.12.0+rocm7.14.0",
+        "device": "AMD Radeon RX 6650 XT",
+        "requested_cycles": 200,
+        "completed_cycles": 200,
+        "status": "pass_bounded_probe_only",
+        "scope": "One bounded weight; ordinary and synthetic-exception unpatch, not real OOM recovery",
+        "storage_bytes": 8388608,
+        "logical_shape": [
+          2048,
+          4096
+        ],
+        "quantization": "TensorWiseINT8Layout",
+        "explicit_cleanup_completed": true,
+        "elapsed_seconds": 1.891,
+        "storage_sha256": "bfa3aebce0fada4b01070c302289f4de954058784b421605c6ddf850ca7cf429"
+      },
+      "process_exit_code": 0,
+      "native_exception_observed": false,
+      "python_shutdown_exception_observed": false,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

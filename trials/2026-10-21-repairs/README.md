@@ -101,3 +101,18 @@ python scripts/run_conditioned_repair.py --runtime D:\MyProject\amd_comfy `
 - [固定尺寸小蝴蝶结合成](cases/flux2-tiny-bow-sized-composite/result.json)：22×20 局部贴片、原蓝包背带底部。目视尺寸通过，遮罩外像素变化为0。上游模型图及哈希见 [上游绑定](cases/flux2-tiny-bow-sized-composite/upstream.json)。这是后处理规避，直接 FLUX 尺寸遵循仍未通过；首轮遮罩附件高度误写688的记录保留，最终使用实际672。
 
 本轮最终报告核对：75条结果记录，图片绑定/元数据错误0、报告缺图0。该数字包含历史失败、素材、诊断及独立重试，不是75项功能全部通过。原8188服务在串行测试结束后恢复。
+
+## 2026-10-22 持续修复与过程记录
+
+完整记录见 [解决过程日记](../../docs/08-repair-journal-2026-10-22.md)，包含实际假设、失败、改动和独立结果；[卸载探针](../2026-10-22-unload/bounded-probes.json)只证明小参数循环未复现，不能称作底层崩溃已修复。
+
+- [Kroma 自然裁切](cases/kroma-multiref-natural-crop/result.json)：灰板、苔石和猫重影消失，但尾部被旧遮罩截断，部分达到。
+- [Kroma 完整尾部](cases/kroma-multiref-full-tail/result.json)：不重采样，只扩大最终遮罩，完成原案例的雨街+狐狸主体目标；精确动物身份和参考消融未测试。
+- [Turbo 清理初始latent](cases/turbo-fox-clean-latent/result.json)：新增条件复用让刷新阶段从约869秒减为4.48秒，[实际条件逐张量相等](cases/turbo-fox-clean-latent/exact-conditions.json)；但视觉仍偏猫，不能认定物种替换通过。
+
+- Qwen 仅换脸的 [FP16 CFG1控制](cases/qwen-face-only-cfg1-fp16/result.json)与 [CFG3](cases/qwen-face-only-cfg3/result.json)均完成，但精确身份仍部分达到。实际图对比确认除provenance摘要外仅CFG变化，见 [控制变量](../2026-10-22-unload/cfg-control.json)。首个默认F32 CFG3保护停止的失败未覆盖。
+
+- [Turbo 参考VAE隔离](cases/turbo-fox-profile-precomputed/result.json)：参考预计算/退出后再GPU文本，随后采样解码完成；参考latent及初始latent[逐值相等](cases/turbo-fox-profile-precomputed/exact-reference-latents.json)。原遮罩边缘仍残影，部分达到。
+- [Turbo 扩大采样/合成遮罩](cases/turbo-fox-profile-wide-mask/result.json)：只改变noise_mask和最终合成范围，原例猫变狐目标通过；遮罩外181024像素无变化。尾部贴近画框、精确动物身份未量化。GPU编码过程物理RAM曾很紧张，长期稳定和native根因仍待处理。
+
+新参考隔离配方：python scripts/run_qwen_reference_repair.py --runtime <运行根目录> --workflow trials/2026-10-21-repairs/workflows/turbo-fox-profile-precomputed.api.json --out runs/新的尝试目录；本机已有解释器/模型路径参数同前。新辅助节点需复制到运行时custom_nodes/repair_conditioning。

@@ -2138,8 +2138,414 @@
         "inside_changed_pixels": 218,
         "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
       }
+    },
+    {
+      "id": "kroma-multiref-natural-crop",
+      "feature": "多图参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "b57458e2-548c-4e52-9dc3-fc81787bb9bb",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-natural-crop-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "801ef2b9e50d30acb371b209c549765ca51f985c8da5ae53bdc60bb47b01a64e"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-natural-crop-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "082801753438f62929cf04cb5d9ee20a9fd4d64d74e5ba13b6d86aed7cc1c9f3"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-natural-crop_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "02825e192c87155860d0244ac12c92eba1c6e696a6b7779cafa7a8c79a13c1f3"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 68832,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "kroma-multiref-full-tail",
+      "feature": "多图参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "1ce73d2a-6cc6-4e71-b610-036b8a88e6cb",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-full-tail-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "c9b96f153b8868260ff200e952df791591cc296472befc1b6744d4f7153bb15d"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-full-tail-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "81e8eeb03839973c8b4ba37f9382a04f8d46502ca6507b736601944095cfeaf4"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-full-tail_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "9e287d6bb3a411d64d1eeb5332898a62ea41b0d019a13673a1552e31240b530f"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 181024,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 81120,
+        "inside_changed_pixels": 80918,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "turbo-fox-clean-latent",
+      "feature": "遮罩局部重绘 · 修复重试",
+      "status": "success",
+      "prompt_id": "4d7c52a2-b128-4de5-a3f6-5e2d9beb5777",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-clean-latent-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "897885937d50fa6b8ae25a78c87159b46ff7adfa0c260daeafc42dd8faab8274"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-clean-latent-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "2b3276c55a6e3555b56dd6e24408ff7eb84ebdf7f775aff90eabadfd2355175c"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-clean-latent_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "fa17e3172a8d182af48e97da35f68b9330ee7aef575e6daf58b4f34fd127daac"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 68674,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "qwen-face-only-cfg1-fp16",
+      "feature": "换脸／仅面部身份 · 修复重试",
+      "status": "success",
+      "prompt_id": "82b9034e-48ee-4981-8e95-31625eb4f9f1",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-cfg1-fp16-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "28eca476226b87cf8c9589476c8effdabff8582e8baf6194bc34a5f377d0644c"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-cfg1-fp16-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "01aa0b371463dc2781cd31fed9e79df4ee3c8c2467d4101cdb23fd75a98286cd"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-cfg1-fp16_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "662bde2435e66d400e3388f1db9f2791254cb71b1c636154edcc4efef9bfca50"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 214148,
+        "outside_changed_pixels": 3,
+        "outside_max_channel_difference_0_to_255": 1,
+        "inside_pixels": 47996,
+        "inside_changed_pixels": 47315,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "qwen-face-only-cfg3",
+      "feature": "换脸／仅面部身份 · 修复重试",
+      "status": "success",
+      "prompt_id": "803753df-6a35-4522-a0ab-ddefc1b1a4be",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-cfg3-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "b9c4ae21ea01d85b6cb79065115639288995ef38986db97eb12ee08f92ea34a6"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-cfg3-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "4a944a78af1b08ebd87936c53acd06d9155e01cc53ddf7ad26ad2f8328f4223b"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-cfg3_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "ba843d54e274c943f54a21f813bb6b82e60a525eb615795a6572fb265a92419d"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 214148,
+        "outside_changed_pixels": 3,
+        "outside_max_channel_difference_0_to_255": 1,
+        "inside_pixels": 47996,
+        "inside_changed_pixels": 47607,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "turbo-fox-profile-precomputed",
+      "feature": "遮罩局部重绘 · 修复重试",
+      "status": "success",
+      "prompt_id": "6fe9626a-7282-487f-8d3c-2099a1dc5575",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-profile-precomputed-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "30f18fd0f8a8323f0ac8a30df53a52eebc5633cc527d7ffcbca65f0f360837ff"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-profile-precomputed-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "69cd29fb3efa9da75bd7b3acca8bd9b9de6b22f456e34d9baefd7de0b9299e67"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-profile-precomputed_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "4391a5fc0de78f4350ef5a5fca976f69fcda438c44778c9064588e85ac6db466"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 68484,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "turbo-fox-profile-wide-mask",
+      "feature": "遮罩局部重绘 · 修复重试",
+      "status": "success",
+      "prompt_id": "d1469a0d-5965-424a-9f7a-61bf6d38d1c9",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-profile-wide-mask-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "c596865a109decd2a672bc546624fa0845c33fdc826d8b1fba74785d02b7d101"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-profile-wide-mask-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "58ffacfa51f26b568fd18f793033ec87f87bb3bb436a4d6b963cd3e3cd7bb27b"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-fox-profile-wide-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "2244606b618338faf8ea9e6b1aa12ebb38b77395bf7a56bff0f7b76471638729"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 181024,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 81120,
+        "inside_changed_pixels": 80328,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
     }
   ],
-  "report_image_count": 182,
+  "report_image_count": 217,
   "missing_report_images": []
 }

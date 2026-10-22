@@ -1,0 +1,41 @@
+{
+  "2": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+      "type": "qwen_image"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeRepairQwenReferences",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "file": "repair_conditioning/turbo-fox-profile-precomputed-refs-e07434c3035e.safetensors",
+      "expected_sha256": "e5cb88709778720b11f01a02bab0b9dd75f2d40f5d2abded69f55a0735861d72"
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent": [
+        "4",
+        2
+      ],
+      "prefix": "turbo-fox-profile-precomputed",
+      "workflow_sha256": "8b2d1418045ac6fef105c4fcb198798a74a33eaf5f2319d60f4d397173f15f3c"
+    }
+  }
+}

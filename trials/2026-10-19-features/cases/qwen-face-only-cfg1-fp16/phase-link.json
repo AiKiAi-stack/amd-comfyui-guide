@@ -1,0 +1,31 @@
+{
+  "workflow_sha256": "002b4429c472baaa87f3362d956b2cd5d81bfdc275e81aede0729f137a980456",
+  "archive_sha256": "f5fa520ce36110f783d7d3ca122f33153fd1e5d2416060a5b58e424726664380",
+  "archive_file": "repair_conditioning/qwen-face-only-mask-0a91fd3715c9.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": true,
+  "qwen_cache_device_override": "auto",
+  "reused_text_conditions": null,
+  "encoding_api_sha256": "6cd157a3bc3f88a878017e34b8632de682203d0c65c8d5bc9467bf53cedc1c2a",
+  "encoding_history_sha256": "e59c2a2e3d724ff4f5be1d4c118d87b14050d532ad1145be4903974499a7f291",
+  "inputs_checked_at_reuse": [
+    {
+      "file": "featurebench/kroma-portrait-b.png",
+      "sha256_at_reuse": "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed",
+      "mtime_ns": 1792395739584342300
+    },
+    {
+      "file": "featurebench/kroma-portrait-a.png",
+      "sha256_at_reuse": "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10",
+      "mtime_ns": 1792395416412274000
+    }
+  ],
+  "input_check_method": "filesystem mtime predates execution; hashes recorded at reuse",
+  "sampled_latent_file": "repair_conditioning/qwen-face-only-mask-83a65bbb6522.safetensors",
+  "sampled_latent_sha256": "cf0519edcd7a4d228e78e5b658bfb05bafcc3160f563fde9b190fabb2796fd50",
+  "sampling_reused": false,
+  "sampling_source_workflow_sha256": "002b4429c472baaa87f3362d956b2cd5d81bfdc275e81aede0729f137a980456",
+  "sampling_process_exited_before_decoding": true,
+  "sampling_api_sha256": "66001f2115f66aad6334f7eb0767d3f79a51a5038eab0398d4b436c028dc4be6",
+  "sampling_history_sha256": "4c2ddba1a843598de96e1175cb9bdbdefef19f9413fe3deaa153e5d922e15579"
+}

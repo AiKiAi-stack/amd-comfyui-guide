@@ -1,0 +1,183 @@
+{
+  "2": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+      "type": "qwen_image"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "repair_clean",
+        0
+      ],
+      "images.image_2": [
+        "repair_fox",
+        0
+      ]
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "51": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 230,
+      "height": 300
+    }
+  },
+  "52": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "51",
+        0
+      ],
+      "left": 12,
+      "top": 12,
+      "right": 12,
+      "bottom": 12
+    }
+  },
+  "53": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "50",
+        0
+      ],
+      "source": [
+        "52",
+        0
+      ],
+      "x": 250,
+      "y": 200,
+      "operation": "add"
+    }
+  },
+  "54": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "repair_clean",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "55": {
+    "class_type": "SetLatentNoiseMask",
+    "inputs": {
+      "samples": [
+        "54",
+        0
+      ],
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "repair_blank": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1,
+      "color": 8355711
+    }
+  },
+  "repair_clean": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "repair_blank",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "repair_fox": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/fox.png"
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent": [
+        "55",
+        0
+      ],
+      "prefix": "turbo-fox-clean-latent",
+      "workflow_sha256": "cbc5b6a07eec3b893abbbf00206f6b3305a4ed2d688f6c93a266ee3c0c3dd166"
+    }
+  }
+}

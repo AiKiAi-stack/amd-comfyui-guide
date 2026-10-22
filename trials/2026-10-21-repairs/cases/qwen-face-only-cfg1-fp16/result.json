@@ -1,0 +1,69 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 21.093,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-face-only-cfg1-fp16-input_00001_.png",
+      "original_sha256": "28eca476226b87cf8c9589476c8effdabff8582e8baf6194bc34a5f377d0644c",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-face-only-cfg1-fp16-mask_00001_.png",
+      "original_sha256": "01aa0b371463dc2781cd31fed9e79df4ee3c8c2467d4101cdb23fd75a98286cd",
+      "public_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case03_7-0-qwen-face-only-cfg1-fp16_00001_.png",
+      "original_sha256": "662bde2435e66d400e3388f1db9f2791254cb71b1c636154edcc4efef9bfca50",
+      "public_sha256": "3758e3913c711470f44766dba7fdbdccf1e8d1e2820e952d8b1cc58a77ed0881",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "qwen-face-only-cfg1-fp16",
+  "feature": "qwen-face-only",
+  "verdict": "partial",
+  "review": "相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。",
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "acceptance_scope": "仅面部身份，黑发/服装/背景与朝向保持；精确身份未通过",
+  "mask_measurement": {
+    "outside_pixels": 214148,
+    "outside_changed_pixels": 3,
+    "outside_max_channel_difference": 1,
+    "inside_pixels": 47996,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 214144,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "82b9034e-48ee-4981-8e95-31625eb4f9f1",
+  "raw_history_sha256": "3729fba2cb212c20360744fcfd95036d0ea1911c8789c49f1dbc8e1fdf62072c",
+  "decoding_elapsed_seconds": 21.093,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 60.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "4c2ddba1a843598de96e1175cb9bdbdefef19f9413fe3deaa153e5d922e15579",
+  "workflow_sha256": "f99b66883b157cac029641cf22750851ef187612ec8721d8ad7450a342d4c5f3",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.015,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "e59c2a2e3d724ff4f5be1d4c118d87b14050d532ad1145be4903974499a7f291"
+}

@@ -1,0 +1,209 @@
+{
+  "case01_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "case02_5": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "case02_41",
+        0
+      ]
+    }
+  },
+  "case02_6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "case02_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "case02_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case02_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case02_33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/fox.png"
+    }
+  },
+  "case02_40": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "prompt": "In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.",
+      "image1": [
+        "case02_31",
+        0
+      ],
+      "image2": [
+        "repair_fox_scale",
+        0
+      ]
+    }
+  },
+  "case02_100": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "repair_ref384_0",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case02_120": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "case02_40",
+        0
+      ],
+      "latent": [
+        "case02_100",
+        0
+      ]
+    }
+  },
+  "case02_101": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "repair_ref384_1",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case02_121": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "case02_120",
+        0
+      ],
+      "latent": [
+        "case02_101",
+        0
+      ]
+    }
+  },
+  "case02_41": {
+    "class_type": "FluxKontextMultiReferenceLatentMethod",
+    "inputs": {
+      "conditioning": [
+        "case02_121",
+        0
+      ],
+      "reference_latents_method": "index_timestep_zero"
+    }
+  },
+  "repair_ref384_0": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case02_31",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 384,
+      "height": 384,
+      "crop": "disabled"
+    }
+  },
+  "repair_ref384_1": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "repair_fox_scale",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 256,
+      "height": 384,
+      "crop": "disabled"
+    }
+  },
+  "repair_fox_crop": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "case02_33",
+        0
+      ],
+      "width": 150,
+      "height": 220,
+      "x": 215,
+      "y": 160
+    }
+  },
+  "repair_fox_scale": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "repair_fox_crop",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 256,
+      "height": 384,
+      "crop": "disabled"
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "case02_41",
+        0
+      ],
+      "negative": [
+        "case02_5",
+        0
+      ],
+      "latent": [
+        "case02_6",
+        0
+      ],
+      "prefix": "kroma-multiref-natural-crop",
+      "workflow_sha256": "6c1c3db142279e5826f638e79efa0af8ded8a294e7da36e78a6501e0a01d4a6b"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "actual_sampling_graph_differences": [
+    {
+      "path": "case03_5.inputs.cfg",
+      "cfg1": 1,
+      "cfg3": 3
+    }
+  ],
+  "ignored_provenance_only": "SaveRepairLatent.workflow_sha256",
+  "shared_condition_archive": {
+    "file": "repair_conditioning/qwen-face-only-mask-0a91fd3715c9.safetensors",
+    "expected_sha256": "f5fa520ce36110f783d7d3ca122f33153fd1e5d2416060a5b58e424726664380"
+  },
+  "scope": "Same seed, sampler, weights, condition archive and FP16/upcast configuration; only CFG differs",
+  "visual_verdict": "partial for both; no verified exact identity improvement"
+}

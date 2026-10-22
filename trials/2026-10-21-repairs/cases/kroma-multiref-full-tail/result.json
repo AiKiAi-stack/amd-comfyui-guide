@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 9.078,
+  "images": [
+    {
+      "file": "repair_save_input-0-kroma-multiref-full-tail-input_00001_.png",
+      "original_sha256": "c9b96f153b8868260ff200e952df791591cc296472befc1b6744d4f7153bb15d",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-kroma-multiref-full-tail-mask_00001_.png",
+      "original_sha256": "81e8eeb03839973c8b4ba37f9382a04f8d46502ca6507b736601944095cfeaf4",
+      "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case02_9-0-kroma-multiref-full-tail_00001_.png",
+      "original_sha256": "9e287d6bb3a411d64d1eeb5332898a62ea41b0d019a13673a1552e31240b530f",
+      "public_sha256": "20739e7a29fa9632b8f08c118dae67a08e6678ea8669cb2131cb37ac7205089d",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-multiref-full-tail",
+  "feature": "kroma-multiref",
+  "verdict": "pass",
+  "review": "复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。",
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "acceptance_scope": "原案例目标：采用雨街背景与参考狐狸的橙毛、黑腿、白胸和尾部；精确动物身份未量化",
+  "mask_measurement": {
+    "outside_pixels": 181024,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 81120,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 181024,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "1ce73d2a-6cc6-4e71-b610-036b8a88e6cb",
+  "raw_history_sha256": "a008fc3d973f030bd6c9305703d3311e2433bebf9f582b67125b8e3deaed1c0c",
+  "decoding_elapsed_seconds": 9.078,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 69.062,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "eb8fa013ff7e944de3c859755b7baabf7a1535c75827907556437fa92582769f",
+  "workflow_sha256": "44de82afe18870e94bf2b3cfb4424e76e2e8383f63fe6ff8cf6b47c53ac3ef22",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 21.032,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "616a006195c8c6db9a285afb7a409adc17753f9eaa722d91df202143659a1702"
+}

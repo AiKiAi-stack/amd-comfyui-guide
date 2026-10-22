@@ -6,7 +6,7 @@
 
 精确节点参数见各卡片的 workflow / api.json。API 执行成功只说明工作流成功返回；功能视觉成功以视觉结论为准。
 
-生成于：2026-10-22 09:50 中国标准时间
+生成于：2026-10-22 11:49 中国标准时间
 
 ## 图生图／洗图（`moss-img2img`）
 
@@ -2612,6 +2612,329 @@ Prompt:
 预期结果：在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。
 
 workflow / api.json：[flux2-tiny-bow-sized-composite/api.json](cases/flux2-tiny-bow-sized-composite/api.json)
+
+</details>
+
+---
+
+## 多图参考 · 修复重试（`kroma-multiref-natural-crop`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题；沿用上游Krea2接法探索
+- 执行：API 执行成功；耗时：96.203 秒
+- 视觉结论：部分达到
+- 运行配置：Dynamic GPU text encoding; Kroma FP16 weights with split/upcast attention; isolated CPU decode; natural reference crops
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：68,832 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-natural-crop_00001_.png)
+
+附件：
+- kroma-multiref-natural-crop-input_00001_.png：![kroma-multiref-natural-crop-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-natural-crop-input_00001_.png)
+- kroma-multiref-natural-crop-mask_00001_.png：![kroma-multiref-natural-crop-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-natural-crop-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.
+```
+
+预期结果：同时采用雨街背景和参考狐狸主体。
+
+workflow / api.json：[kroma-multiref-natural-crop/api.json](cases/kroma-multiref-natural-crop/api.json)
+
+</details>
+
+---
+
+## 多图参考 · 修复重试（`kroma-multiref-full-tail`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题；沿用上游Krea2接法探索
+- 执行：API 执行成功；耗时：99.172 秒
+- 视觉结论：通过
+- 运行配置：Same archived Kroma sample as natural-crop; final mask width260 height312, bottom feather0; CPU decode only
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 181,024
+- 遮罩内改变像素 / 总像素：80,918 / 81,120
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-full-tail_00001_.png)
+
+附件：
+- kroma-multiref-full-tail-input_00001_.png：![kroma-multiref-full-tail-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-full-tail-input_00001_.png)
+- kroma-multiref-full-tail-mask_00001_.png：![kroma-multiref-full-tail-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-full-tail-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.
+```
+
+预期结果：同时采用雨街背景和参考狐狸主体。
+
+workflow / api.json：[kroma-multiref-full-tail/api.json](cases/kroma-multiref-full-tail/api.json)
+
+</details>
+
+---
+
+## 遮罩局部重绘 · 修复重试（`turbo-fox-clean-latent`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合
+- 执行：API 执行成功；耗时：96.202 秒
+- 视觉结论：部分达到
+- 运行配置：Exact archived text/reference conditions; CPU recomputed initial latent; FP16 UNet/upcast sampling; isolated CPU decode
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：68,674 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+只将采样初始VAE输入从原猫图改为抹猫图。复用经图依赖与SHA验证的旧正/负条件，刷新4.48秒、8步采样及解码完整完成；主体仍偏圆头猫形背影，并出现灰边框，物种替换未通过。新旧归档已验证正负条件逐张量完全一致、noise_mask一致，初始samples确实改变。
+
+只将采样初始VAE输入从原猫图改为抹猫图。复用经图依赖与SHA验证的旧正/负条件，刷新4.48秒、8步采样及解码完整完成；主体仍偏圆头猫形背影，并出现灰边框，物种替换未通过。新旧归档已验证正负条件逐张量完全一致、noise_mask一致，初始samples确实改变。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-fox-clean-latent_00001_.png)
+
+附件：
+- turbo-fox-clean-latent-input_00001_.png：![turbo-fox-clean-latent-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-clean-latent-input_00001_.png)
+- turbo-fox-clean-latent-mask_00001_.png：![turbo-fox-clean-latent-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-clean-latent-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.
+```
+
+预期结果：遮罩区域内猫变狐；遮罩外像素由工作流合成保留。
+
+workflow / api.json：[turbo-fox-clean-latent/api.json](cases/turbo-fox-clean-latent/api.json)
+
+</details>
+
+---
+
+## 换脸／仅面部身份 · 修复重试（`qwen-face-only-cfg1-fp16`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：公众号索引标题
+- 执行：API 执行成功；耗时：96.155 秒
+- 视觉结论：部分达到
+- 运行配置：Exact reused encoding; FP16 UNet, split/upcast attention, CFG1,15steps, CPU decode
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：3 / 214,148
+- 遮罩内改变像素 / 总像素：47,315 / 47,996
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。
+
+相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。
+
+输入图片：
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16_00001_.png)
+
+附件：
+- qwen-face-only-cfg1-fp16-input_00001_.png：![qwen-face-only-cfg1-fp16-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-input_00001_.png)
+- qwen-face-only-cfg1-fp16-mask_00001_.png：![qwen-face-only-cfg1-fp16-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：面部特征转向A，B的黑发、服装与场景保持。
+
+workflow / api.json：[qwen-face-only-cfg1-fp16/api.json](cases/qwen-face-only-cfg1-fp16/api.json)
+
+</details>
+
+---
+
+## 换脸／仅面部身份 · 修复重试（`qwen-face-only-cfg3`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：公众号索引标题
+- 执行：API 执行成功；耗时：147.297 秒
+- 视觉结论：部分达到
+- 运行配置：Exact reused encoding; FP16 UNet, split/upcast attention, CFG3,15steps, CPU decode
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：3 / 214,148
+- 遮罩内改变像素 / 总像素：47,607 / 47,996
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+与相同FP16的CFG1控制只改变CFG为3。侧转黑发服装保留，绿眼与雀斑较清楚，但仍是相近生成脸，鼻/眼/脸部比例未能确认与A相同；不能据更高CFG认定精确身份修复。
+
+与相同FP16的CFG1控制只改变CFG为3。侧转黑发服装保留，绿眼与雀斑较清楚，但仍是相近生成脸，鼻/眼/脸部比例未能确认与A相同；不能据更高CFG认定精确身份修复。
+
+输入图片：
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/qwen-face-only-cfg3_00001_.png)
+
+附件：
+- qwen-face-only-cfg3-input_00001_.png：![qwen-face-only-cfg3-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg3-input_00001_.png)
+- qwen-face-only-cfg3-mask_00001_.png：![qwen-face-only-cfg3-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg3-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：面部特征转向A，B的黑发、服装与场景保持。
+
+workflow / api.json：[qwen-face-only-cfg3/api.json](cases/qwen-face-only-cfg3/api.json)
+
+</details>
+
+---
+
+## 遮罩局部重绘 · 修复重试（`turbo-fox-profile-precomputed`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合
+- 执行：API 执行成功；耗时：142.468 秒
+- 视觉结论：部分达到
+- 运行配置：CPU reference VAE precompute → GPU text without VAE → FP16 isolated sampling → CPU decode; core reference preprocessing preserved exactly
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：68,484 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。
+
+四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-fox-profile-precomputed_00001_.png)
+
+附件：
+- turbo-fox-profile-precomputed-input_00001_.png：![turbo-fox-profile-precomputed-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-input_00001_.png)
+- turbo-fox-profile-precomputed-mask_00001_.png：![turbo-fox-profile-precomputed-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.
+```
+
+预期结果：遮罩区域内猫变狐；遮罩外像素由工作流合成保留。
+
+workflow / api.json：[turbo-fox-profile-precomputed/api.json](cases/turbo-fox-profile-precomputed/api.json)
+
+</details>
+
+---
+
+## 遮罩局部重绘 · 修复重试（`turbo-fox-profile-wide-mask`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合
+- 执行：API 执行成功 · 无可用输出图片；耗时：87.328 秒
+- 视觉结论：通过
+- 运行配置：Exact prior text/reference conditions and initial samples; wider noise/composite mask only; FP16 sampling and isolated CPU decode
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 181,024
+- 遮罩内改变像素 / 总像素：80,328 / 81,120
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。
+
+保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+- 无输出
+
+附件：
+- turbo-fox-profile-wide-mask-input_00001_.png：![turbo-fox-profile-wide-mask-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-input_00001_.png)
+- turbo-fox-profile-wide-mask-mask_00001_.png：![turbo-fox-profile-wide-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-mask_00001_.png)
+- turbo-fox-profile-wide-mask_00001_.png：![turbo-fox-profile-wide-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.
+```
+
+预期结果：遮罩区域内猫变狐；遮罩外像素由工作流合成保留。
+
+workflow / api.json：[turbo-fox-profile-wide-mask/api.json](cases/turbo-fox-profile-wide-mask/api.json)
 
 </details>
 

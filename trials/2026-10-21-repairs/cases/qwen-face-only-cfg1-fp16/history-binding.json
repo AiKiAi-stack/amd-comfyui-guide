@@ -1,0 +1,48 @@
+{
+  "prompt_id": "82b9034e-48ee-4981-8e95-31625eb4f9f1",
+  "status": "success",
+  "outputs": {
+    "repair_save_input": {
+      "images": [
+        {
+          "filename": "qwen-face-only-cfg1-fp16-input_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_mask": {
+      "images": [
+        {
+          "filename": "qwen-face-only-cfg1-fp16-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "case03_7": {
+      "images": [
+        {
+          "filename": "qwen-face-only-cfg1-fp16_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

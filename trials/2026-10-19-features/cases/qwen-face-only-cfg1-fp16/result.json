@@ -1,0 +1,50 @@
+{
+  "id": "qwen-face-only-cfg1-fp16",
+  "model": "qwen",
+  "feature": "换脸／仅面部身份 · 修复重试",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+  "expected": "面部特征转向A，B的黑发、服装与场景保持。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "Exact reused encoding; FP16 UNet, split/upcast attention, CFG1,15steps, CPU decode",
+  "repairs": [
+    "qwen-face-only"
+  ],
+  "retry_reason": "相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。",
+  "status": "success",
+  "prompt_id": "82b9034e-48ee-4981-8e95-31625eb4f9f1",
+  "elapsed_seconds": 96.155,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-input_00001_.png",
+      "sha256": "28eca476226b87cf8c9589476c8effdabff8582e8baf6194bc34a5f377d0644c",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-mask_00001_.png",
+      "sha256": "01aa0b371463dc2781cd31fed9e79df4ee3c8c2467d4101cdb23fd75a98286cd",
+      "public_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16_00001_.png",
+      "sha256": "662bde2435e66d400e3388f1db9f2791254cb71b1c636154edcc4efef9bfca50",
+      "public_sha256": "3758e3913c711470f44766dba7fdbdccf1e8d1e2820e952d8b1cc58a77ed0881"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 21.093,
+  "encoding_elapsed_seconds": 15.015,
+  "sampling_elapsed_seconds": 60.047,
+  "timing_scope": "Sum of encoding, sampling, decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true,
+  "acceptance_scope": "仅面部身份，黑发/服装/背景与朝向保持；精确身份未通过"
+}

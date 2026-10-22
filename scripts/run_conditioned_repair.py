@@ -42,6 +42,25 @@ def conditioning_signature(graph):
     return hashlib.sha256(json.dumps(graph, sort_keys=True).encode()).hexdigest()
 
 
+def reuse_text_graph(graph, source, relative, digest):
+    """Reuse only unchanged positive/negative trees; compute the new latent normally."""
+    def text_tree(value):
+        saved = value['repair_save_conditions']['inputs']
+        outputs = {key: saved[key] for key in ('positive', 'negative')}
+        return {'outputs': outputs, 'graph': prune(value, [link[0] for link in outputs.values()])}
+
+    if text_tree(graph) != text_tree(source):
+        raise ValueError('Text/reference conditioning changed; refusing text-only reuse')
+    result = copy.deepcopy(graph)
+    if 'repair_reuse_text' in result:
+        raise ValueError('Reserved reuse node already exists')
+    result['repair_reuse_text'] = {'class_type': 'LoadRepairConditioning', 'inputs': {
+        'file': relative, 'expected_sha256': digest}}
+    for name, slot in (('positive', 0), ('negative', 1)):
+        result['repair_save_conditions']['inputs'][name] = ['repair_reuse_text', slot]
+    return prune(result, ['repair_save_conditions'])
+
+
 def sampling_signature(graph):
     graph = copy.deepcopy(graph)
     graph.get("repair_save_latent", {}).get("inputs", {}).pop("workflow_sha256", None)
@@ -88,6 +107,8 @@ def main():
     parser.add_argument("--sampling-profile", choices=["gpu-text", "gpu-text-dynamic", "kroma"], default="gpu-text")
     parser.add_argument("--resume-encoding", type=Path,
                         help="Reuse successful conditions only when the complete encoding graph matches")
+    parser.add_argument("--reuse-text-from", type=Path,
+                        help="One prior encoding case: reuse identical text/reference conditions, recompute initial latent")
     parser.add_argument("--resume-sampling", type=Path,
                         help="With --isolate-decode, reuse successful identical sampling graphs; retry failed cases")
     parser.add_argument("--qwen-cache-device", choices=["auto", "gpu", "cpu", "off"])
@@ -96,6 +117,8 @@ def main():
     parser.add_argument("--isolate-decode", action="store_true",
                         help="Save sampled latents, exit the GPU process, then decode/composite on CPU")
     args = parser.parse_args()
+    if args.reuse_text_from and (args.resume_encoding or len(args.workflow) != 1):
+        parser.error('--reuse-text-from requires one workflow and cannot combine with --resume-encoding')
     if args.resume_sampling and not args.isolate_decode:
         parser.error("--resume-sampling requires --isolate-decode")
     out = args.out.resolve()
@@ -135,6 +158,47 @@ def main():
         (case_dir / "effective-workflow.api.json").write_bytes(effective_bytes)
         specs.append({"label": label, "graph": graph, "sampler": sampler_id, "conditioning": conditioning_id, "outputs": output_ids,
                       "digest": digest, "dir": case_dir, "encode_path": encode_path})
+    if args.reuse_text_from:
+        source_case = args.reuse_text_from.resolve()
+        source_summary = json.loads((source_case.parent.parent / 'summary.json').read_text(encoding='utf-8'))
+        if not source_summary.get('server_stopped'):
+            raise ValueError('Source encoding process must exit before text conditions are reused')
+        history = json.loads((source_case / 'history.json').read_text(encoding='utf-8'))
+        entry = next(iter(history.values()))
+        if entry['status']['status_str'] != 'success':
+            raise ValueError('Source encoding must have succeeded')
+        source_graph = json.loads((source_case / 'api.json').read_text(encoding='utf-8'))
+        spec = specs[0]
+        new_graph = json.loads(spec['encode_path'].read_text(encoding='utf-8'))
+        saved = entry['outputs']['repair_save_conditions']
+        relative, digest = saved['text'][0], saved['archive_sha256'][0]
+        input_root = (args.runtime.resolve() / 'ComfyUI/input').resolve()
+        archive = (input_root / relative).resolve()
+        if not archive.is_relative_to(input_root / 'repair_conditioning') or archive.suffix != '.safetensors':
+            raise ValueError('Archive must stay inside input/repair_conditioning')
+        if hashlib.sha256(archive.read_bytes()).hexdigest() != digest:
+            raise ValueError('Source text archive checksum changed')
+        reused = reuse_text_graph(new_graph, source_graph, relative, digest)
+        timestamps = [payload['timestamp'] for event, payload in entry['status'].get('messages', [])
+                      if event == 'execution_start' and 'timestamp' in payload]
+        if not timestamps:
+            raise ValueError('Source execution timestamp missing; re-encode')
+        verified_inputs = []
+        for node in source_graph.values():
+            if node['class_type'] == 'LoadImage':
+                name = node['inputs']['image']
+                path = (input_root / name).resolve()
+                if not path.is_relative_to(input_root) or path.stat().st_mtime * 1000 > min(timestamps):
+                    raise ValueError('Source input modified since encoding; refusing text reuse')
+                verified_inputs.append({'file': name, 'sha256_at_reuse': hashlib.sha256(path.read_bytes()).hexdigest(),
+                                        'mtime_ns': path.stat().st_mtime_ns})
+        spec['reused_text_conditions'] = {'source_case': source_case.name, 'archive_file': relative,
+            'archive_sha256': digest, 'source_api_sha256': hashlib.sha256((source_case / 'api.json').read_bytes()).hexdigest(),
+            'source_history_sha256': hashlib.sha256((source_case / 'history.json').read_bytes()).hexdigest(),
+            'inputs_checked_at_reuse': verified_inputs,
+            'input_check_method': 'filesystem mtime predates source execution; hashes recorded at reuse',
+            'meaning': 'Positive/negative graph and output slots identical; initial latent recomputed'}
+        spec['encode_path'].write_text(json.dumps(reused, indent=2, ensure_ascii=False), encoding='utf-8')
     controller = Path(__file__).with_name("run_repair_batch.py")
 
     def run(phase, paths, subdirectory=None):
@@ -211,6 +275,7 @@ def main():
         (spec["dir"] / "phase-link.json").write_text(json.dumps({"workflow_sha256": spec["digest"],
             "archive_sha256": archive_hash, "archive_file": relative, "encoding_process_exited_before_sampling": True,
             "encoding_reused": bool(args.resume_encoding), "qwen_cache_device_override": args.qwen_cache_device,
+            "reused_text_conditions": spec.get('reused_text_conditions'),
             "encoding_api_sha256": hashlib.sha256((source_case / "api.json").read_bytes()).hexdigest(),
             "encoding_history_sha256": hashlib.sha256((source_case / "history.json").read_bytes()).hexdigest(),
             "inputs_checked_at_reuse": verified_inputs,

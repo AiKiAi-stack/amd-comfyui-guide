@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 18.093,
+  "images": [
+    {
+      "file": "repair_save_input-0-turbo-fox-clean-latent-input_00001_.png",
+      "original_sha256": "897885937d50fa6b8ae25a78c87159b46ff7adfa0c260daeafc42dd8faab8274",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-turbo-fox-clean-latent-mask_00001_.png",
+      "original_sha256": "2b3276c55a6e3555b56dd6e24408ff7eb84ebdf7f775aff90eabadfd2355175c",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-turbo-fox-clean-latent_00001_.png",
+      "original_sha256": "fa17e3172a8d182af48e97da35f68b9330ee7aef575e6daf58b4f34fd127daac",
+      "public_sha256": "c54f4b7476675dd1d1fe2ae10f83a308473026ff2d96dc50036018e28b8c5fda",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-fox-clean-latent",
+  "feature": "turbo-un-inpaint",
+  "verdict": "partial",
+  "review": "只将采样初始VAE输入从原猫图改为抹猫图。复用经图依赖与SHA验证的旧正/负条件，刷新4.48秒、8步采样及解码完整完成；主体仍偏圆头猫形背影，并出现灰边框，物种替换未通过。新旧归档已验证正负条件逐张量完全一致、noise_mask一致，初始samples确实改变。",
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "acceptance_scope": "保留背向身体并明确变狐；本次未通过",
+  "mask_measurement": {
+    "outside_pixels": 193144,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 69000,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 193144,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "4d7c52a2-b128-4de5-a3f6-5e2d9beb5777",
+  "raw_history_sha256": "0d7dd80b048ea7f845c2154c3683da6513643675e28849346e98065ead2aa84e",
+  "decoding_elapsed_seconds": 18.093,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 72.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "7568bf549fa66ace243ef330a5ac5ccc053ac3f5c4fb99db06b8f1276cf2a130",
+  "workflow_sha256": "cbc5b6a07eec3b893abbbf00206f6b3305a4ed2d688f6c93a266ee3c0c3dd166",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 6.062,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "5026a2558aab578f7858b918028c450d3c5e490a4ea72655df17a03e222f591d"
+}

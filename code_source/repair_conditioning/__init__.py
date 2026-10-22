@@ -151,5 +151,104 @@ class LoadRepairLatent:
         return (load_payload(file, expected_sha256)["latent"],)
 
 
+def qwen_reference_payload(vae, images, resolution, initial_latent=None):
+    """Use the installed node's exact resize/alpha/latent preparation, without a TE."""
+    from comfy_extras.nodes_qwen import TextEncodeQwenImage21
+
+    resized, latents = [], []
+
+    class CaptureVae:
+        def encode(self, pixels):
+            resized.append(pixels.detach().cpu().clone())
+            latent = vae.encode(pixels)
+            latents.append(latent)
+            return latent
+
+    class NoTextModel:
+        def tokenize(self, *args, **kwargs):
+            return None
+
+        def encode_from_tokens_scheduled(self, tokens):
+            return []
+
+    output = TextEncodeQwenImage21.execute(NoTextModel(), '', '', vae=CaptureVae(),
+                                         resolution=resolution, images=images)
+    if not resized:
+        raise ValueError('At least one Qwen image reference is required')
+    return {'kind': 'repair_qwen21_references_v1', 'resized_images': resized,
+            'reference_latents': latents,
+            'initial_latent': initial_latent if initial_latent is not None else output.result[2]}
+
+
+def encode_qwen_reference_payload(clip, prompt, negative_prompt, payload):
+    """Call the real text node with cached VAE results and no resident VAE model."""
+    from comfy_extras.nodes_qwen import TextEncodeQwenImage21
+    if payload.get('kind') != 'repair_qwen21_references_v1':
+        raise ValueError('Not a Qwen 2.1 reference archive')
+    images, latents = payload['resized_images'], payload['reference_latents']
+    if not images or len(images) != len(latents):
+        raise ValueError('Reference image/latent count mismatch')
+
+    class CachedVae:
+        index = 0
+
+        def encode(self, pixels):
+            index = self.index
+            if index >= len(images) or not torch.equal(pixels, images[index]):
+                raise ValueError('Core reference preprocessing changed; recompute references')
+            self.index += 1
+            return latents[index]
+
+    cache = CachedVae()
+    output = TextEncodeQwenImage21.execute(clip, prompt, negative_prompt, vae=cache, resolution=0,
+        images={f'image_{i + 1}': image for i, image in enumerate(images)})
+    if cache.index != len(images):
+        raise ValueError('Core did not consume every cached reference')
+    return output.result[0], output.result[1], payload['initial_latent']
+
+
+class SaveRepairQwenReferences:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {'required': {'vae': ('VAE',), 'image1': ('IMAGE',),
+            'resolution': ('INT', {'default': 512, 'min': 0, 'max': 4096, 'step': 32}),
+            'prefix': ('STRING', {'default': 'qwen-references'}),
+            'workflow_sha256': ('STRING', {'default': ''})},
+            'optional': {'image2': ('IMAGE',), 'initial_latent': ('LATENT',)}}
+
+    RETURN_TYPES = ('STRING',)
+    FUNCTION = 'save'
+    OUTPUT_NODE = True
+    CATEGORY = 'Barely Comfy/repair'
+
+    def save(self, vae, image1, resolution, prefix, workflow_sha256, image2=None, initial_latent=None):
+        images = {'image_1': image1}
+        if image2 is not None:
+            images['image_2'] = image2
+        payload = qwen_reference_payload(vae, images, resolution, initial_latent)
+        return save_payload(payload, prefix, workflow_sha256)
+
+
+class TextEncodeRepairQwenReferences:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {'required': {'clip': ('CLIP',), 'prompt': ('STRING', {'multiline': True}),
+            'negative_prompt': ('STRING', {'multiline': True}),
+            'file': ('STRING', {'default': 'repair_conditioning/'}),
+            'expected_sha256': ('STRING', {'default': ''})}}
+
+    RETURN_TYPES = ('CONDITIONING', 'CONDITIONING', 'LATENT')
+    FUNCTION = 'encode'
+    CATEGORY = 'Barely Comfy/repair'
+
+    def encode(self, clip, prompt, negative_prompt, file, expected_sha256):
+        if not expected_sha256:
+            raise ValueError('A verified reference archive SHA is required')
+        return encode_qwen_reference_payload(clip, prompt, negative_prompt,
+                                              load_payload(file, expected_sha256))
+
+
 NODE_CLASS_MAPPINGS = {"SaveRepairConditioning": SaveRepairConditioning, "LoadRepairConditioning": LoadRepairConditioning,
-                       "SaveRepairLatent": SaveRepairLatent, "LoadRepairLatent": LoadRepairLatent}
+                       "SaveRepairLatent": SaveRepairLatent, "LoadRepairLatent": LoadRepairLatent,
+                       'SaveRepairQwenReferences': SaveRepairQwenReferences,
+                       'TextEncodeRepairQwenReferences': TextEncodeRepairQwenReferences}

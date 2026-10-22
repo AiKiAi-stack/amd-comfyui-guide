@@ -1,0 +1,51 @@
+{
+  "id": "kroma-multiref-full-tail",
+  "model": "kroma",
+  "feature": "多图参考 · 修复重试",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "prompt": "In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.",
+  "expected": "同时采用雨街背景和参考狐狸主体。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。",
+  "repairs": [
+    "kroma-multiref"
+  ],
+  "runtime_profile": "Same archived Kroma sample as natural-crop; final mask width260 height312, bottom feather0; CPU decode only",
+  "status": "success",
+  "prompt_id": "1ce73d2a-6cc6-4e71-b610-036b8a88e6cb",
+  "elapsed_seconds": 99.172,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-full-tail-input_00001_.png",
+      "sha256": "c9b96f153b8868260ff200e952df791591cc296472befc1b6744d4f7153bb15d",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-full-tail-mask_00001_.png",
+      "sha256": "81e8eeb03839973c8b4ba37f9382a04f8d46502ca6507b736601944095cfeaf4",
+      "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-full-tail_00001_.png",
+      "sha256": "9e287d6bb3a411d64d1eeb5332898a62ea41b0d019a13673a1552e31240b530f",
+      "public_sha256": "20739e7a29fa9632b8f08c118dae67a08e6678ea8669cb2131cb37ac7205089d"
+    }
+  ],
+  "review": "pass",
+  "decoding_elapsed_seconds": 9.078,
+  "encoding_elapsed_seconds": 21.032,
+  "sampling_elapsed_seconds": 69.062,
+  "timing_scope": "Source encoding and sampling plus current decode; reused phases not rerun; excludes cold starts",
+  "mask_attachments": true,
+  "acceptance_scope": "原案例目标：采用雨街背景与参考狐狸的橙毛、黑腿、白胸和尾部；精确动物身份未量化"
+}

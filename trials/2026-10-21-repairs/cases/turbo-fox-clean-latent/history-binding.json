@@ -1,0 +1,48 @@
+{
+  "prompt_id": "4d7c52a2-b128-4de5-a3f6-5e2d9beb5777",
+  "status": "success",
+  "outputs": {
+    "repair_save_input": {
+      "images": [
+        {
+          "filename": "turbo-fox-clean-latent-input_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_mask": {
+      "images": [
+        {
+          "filename": "turbo-fox-clean-latent-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-fox-clean-latent_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

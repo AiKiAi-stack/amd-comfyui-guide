@@ -78,3 +78,11 @@ Kroma 五项 split attention 试验的 latent 全部为 NaN/Inf，虽然原 API 
 ## BC-013 · 部分节点校验错误导致有效输出丢失 · 运行器已修复
 
 ComfyUI 可能在返回有效 prompt_id 的同时报告部分输出节点 node_errors；旧重放器立即退出，批次随后停止服务，使已接受的输出丢失。新入口等待 history、保存有效图片与校验错误，返回 partial_output 和非零退出码。[真实 HTTP 行为契约回归](../scripts/test_replay_partial.py)修复前失败、修复后通过。另在启动前拒绝悬空引用，避免本轮 Turbo 附件两处错误链接再次浪费编码；原错误工作流与失败记录保留。
+
+## BC-014 · Turbo 参考VAE与文本编码同阶段的资源压力 · 四阶段规避实际通过
+
+直接GPU编码在加载阶段触发commit保护；CPU FP16 VAE虽将权重从1288.38MB减为644.19MB，却在进入文本编码前耗时数分钟，被主动停止。两次原失败分别保留，没有当作native crash。
+
+[参考预计算运行器](../scripts/run_qwen_reference_repair.py)先在独立CPU进程按原TextEncodeQwenImage21处理参考与VAE latent，归档并退出，再在不驻留VAE的GPU文本进程使用相同参考latent。实际参考/GPU文本日志约10.56/35.89秒，完成8步与解码；扩大采样和合成遮罩后，Turbo原例猫变狐目视通过。[过程及真实归档比较](08-repair-journal-2026-10-22.md)留有原节点差分测试和全部输入/输出链接。
+
+GPU文本过程中可用物理内存最低观测约94MB，commit最低约2.20GB，因此仍有较高整机压力；本次完整通过不证明长期稳定或native unload根因已修复。新条件复用工具仅在完整依赖与输出槽位一致时复用旧正负条件，初始samples和mask的变化另行逐张量验证。

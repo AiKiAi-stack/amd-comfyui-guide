@@ -3,10 +3,80 @@ import copy
 from pathlib import Path
 import unittest
 
-from run_conditioned_repair import conditioning_node, conditioning_signature, latent_decode_graph, latent_sampling_graph, prune, sampling_signature
+from run_conditioned_repair import conditioning_node, conditioning_signature, latent_decode_graph, latent_sampling_graph, prune, reuse_text_graph, sampling_signature
+from run_qwen_reference_repair import cached_reference_graph, reference_phase_graph
 
 
 class GraphTests(unittest.TestCase):
+    def test_actual_turbo_reference_and_text_phases_do_not_share_models(self):
+        import json
+        path = Path(__file__).resolve().parents[1] / 'trials/2026-10-21-repairs/workflows/turbo-fox-profile-natural.api.json'
+        graph = json.loads(path.read_text(encoding='utf-8'))
+        references = reference_phase_graph(graph, '4', '64', 'probe', 'source-sha')
+        self.assertIn('3', references)  # VAE
+        self.assertNotIn('2', references)  # text model
+        self.assertNotIn('1', references)  # diffusion model
+        self.assertNotIn('4', references)
+        self.assertEqual(references['repair_save_references']['inputs']['initial_latent'], ['55', 0])
+        cached = cached_reference_graph(graph, '4', '64', 'repair_conditioning/cache.safetensors', 'sha')
+        cached['save'] = {'class_type': 'SaveRepairConditioning', 'inputs': {
+            'positive': ['4', 0], 'negative': ['4', 1], 'latent': ['4', 2]}}
+        encoding = prune(cached, ['save'])
+        self.assertIn('2', encoding)
+        self.assertNotIn('3', encoding)
+        self.assertEqual(encoding['4']['inputs']['expected_sha256'], 'sha')
+
+    def test_reference_isolation_handles_core_empty_latent_and_rejects_text_dependency(self):
+        graph = {'clip': {'class_type': 'CLIPLoader', 'inputs': {}},
+                 'image': {'class_type': 'LoadImage', 'inputs': {}},
+                 'vae': {'class_type': 'VAELoader', 'inputs': {}},
+                 'text': {'class_type': 'TextEncodeQwenImage21', 'inputs': {
+                     'clip': ['clip', 0], 'vae': ['vae', 0], 'images.image_1': ['image', 0]}},
+                 'sampler': {'class_type': 'KSampler', 'inputs': {'latent_image': ['text', 2]}}}
+        refs = reference_phase_graph(graph, 'text', 'sampler', 'case', 'sha')
+        self.assertNotIn('initial_latent', refs['repair_save_references']['inputs'])
+        graph['mask'] = {'class_type': 'SetLatentNoiseMask', 'inputs': {'samples': ['text', 2]}}
+        graph['sampler']['inputs']['latent_image'] = ['mask', 0]
+        with self.assertRaises(ValueError):
+            reference_phase_graph(graph, 'text', 'sampler', 'case', 'sha')
+
+    def test_reuse_text_keeps_new_initial_latent_and_prunes_encoder(self):
+        graph = {'clip': {'class_type': 'CLIPLoader', 'inputs': {'clip_name': 'original'}},
+                 'text': {'class_type': 'Encode', 'inputs': {'clip': ['clip', 0], 'prompt': 'fox'}},
+                 'image': {'class_type': 'LoadImage', 'inputs': {'image': 'old.png'}},
+                 'latent': {'class_type': 'VAEEncode', 'inputs': {'pixels': ['image', 0]}},
+                 'repair_save_conditions': {'class_type': 'SaveRepairConditioning', 'inputs': {
+                     'positive': ['text', 0], 'negative': ['text', 1], 'latent': ['latent', 0]}}}
+        changed = copy.deepcopy(graph)
+        changed['image']['inputs']['image'] = 'cat-removed.png'
+        result = reuse_text_graph(changed, graph, 'repair_conditioning/exact.safetensors', 'sha')
+        self.assertNotIn('clip', result)
+        self.assertNotIn('text', result)
+        self.assertEqual(result['image'], changed['image'])
+        self.assertEqual(result['repair_save_conditions']['inputs']['latent'], ['latent', 0])
+        self.assertEqual(result['repair_reuse_text']['inputs']['expected_sha256'], 'sha')
+        for key, value in [('prompt', 'cat'), ('clip', ['different', 0])]:
+            invalid = copy.deepcopy(changed)
+            invalid['text']['inputs'][key] = value
+            if key == 'clip':
+                invalid['different'] = copy.deepcopy(invalid['clip'])
+            with self.assertRaises(ValueError):
+                reuse_text_graph(invalid, graph, 'repair_conditioning/exact.safetensors', 'sha')
+
+    def test_reuse_text_rejects_reference_or_output_slot_change(self):
+        graph = {'reference': {'class_type': 'LoadImage', 'inputs': {'image': 'identity-a.png'}},
+                 'text': {'class_type': 'Encode', 'inputs': {'image': ['reference', 0]}},
+                 'repair_save_conditions': {'class_type': 'SaveRepairConditioning', 'inputs': {
+                     'positive': ['text', 0], 'negative': ['text', 1], 'latent': ['text', 2]}}}
+        for change in ('reference', 'slot'):
+            invalid = copy.deepcopy(graph)
+            if change == 'reference':
+                invalid['reference']['inputs']['image'] = 'identity-b.png'
+            else:
+                invalid['repair_save_conditions']['inputs']['negative'] = ['text', 0]
+            with self.assertRaises(ValueError):
+                reuse_text_graph(invalid, graph, 'repair_conditioning/exact.safetensors', 'sha')
+
     def test_sample_reuse_ignores_provenance_only_and_rejects_seed_change(self):
         graph = {"sampler": {"class_type": "KSampler", "inputs": {"seed": 1}},
                  "repair_save_latent": {"class_type": "SaveRepairLatent", "inputs": {

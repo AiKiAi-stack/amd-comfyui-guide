@@ -1,0 +1,81 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 21.094,
+  "images": [
+    {
+      "file": "repair_save_input-0-turbo-fox-profile-precomputed-input_00001_.png",
+      "original_sha256": "30f18fd0f8a8323f0ac8a30df53a52eebc5633cc527d7ffcbca65f0f360837ff",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-turbo-fox-profile-precomputed-mask_00001_.png",
+      "original_sha256": "69cd29fb3efa9da75bd7b3acca8bd9b9de6b22f456e34d9baefd7de0b9299e67",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-turbo-fox-profile-precomputed_00001_.png",
+      "original_sha256": "4391a5fc0de78f4350ef5a5fca976f69fcda438c44778c9064588e85ac6db466",
+      "public_sha256": "3a0e07b45cb5726cdabd11aebd4c4c2757ffae063ccc1569cc9fe9ae74c3fa16",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-fox-profile-precomputed",
+  "feature": "turbo-un-inpaint",
+  "verdict": "partial",
+  "review": "四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。",
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "acceptance_scope": "执行与明确狐狸形态通过；遮罩边缘残影未通过；物理RAM峰值压力仍高，非长期稳定验收",
+  "mask_measurement": {
+    "outside_pixels": 193144,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 69000,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 193144,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "6fe9626a-7282-487f-8d3c-2099a1dc5575",
+  "raw_history_sha256": "b5287f7d813abcd7e1862bf69a2e0edb257a5dfc7abde3733fed646c7562132e",
+  "decoding_elapsed_seconds": 21.094,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 72.156,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "140b8141df574e7e56a9a4aca73a8dfb017dd184730a1dae8a63852f974c2687",
+  "workflow_sha256": "9ec73034a43142eb5809b333db7ac6ef16a4b553318272b9dc166a0a23df85e5",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 37.172,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "7e435a10687a3996ad7ad067250c0e1912b6d18a8b97772856a46317adc99e3f",
+  "reference_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 12.046,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "total_execution_stage_seconds": 142.468,
+  "timing_scope": "elapsed_seconds is actual decoding; nested phase results plus total_execution_stage_seconds cover all four phases, excluding cold starts"
+}

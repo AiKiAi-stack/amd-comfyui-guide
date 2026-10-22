@@ -1,0 +1,71 @@
+{
+  "checked_utc": "2026-10-22T03:44:10.131Z",
+  "rows": [
+    {
+      "name": "workflow",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true,
+      "tests": 6,
+      "log_sha256": "ccf7dff0f65e474d6d73756eb5c0c0aef0ed82e8b4f32f83e074ba9cbcbd4a6d"
+    },
+    {
+      "name": "graphs",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true,
+      "tests": 10,
+      "log_sha256": "8b6adf8683c046b43a8b9422de36601d5a33b93cae29db416af466453929a2d0"
+    },
+    {
+      "name": "partial-output",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true,
+      "tests": 1,
+      "log_sha256": "21327a28ea2d34c2cb1177afc6ccaee4755ad62226e8632c2fbde56d43b44bf9"
+    },
+    {
+      "name": "reference-phases",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true,
+      "tests": 3,
+      "log_sha256": "1bacb4148cea501633c3610c819ee97aecfb2093dfb1d09b098d048932fabc93"
+    },
+    {
+      "name": "archives",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true,
+      "tests": 6,
+      "log_sha256": "27cf7777c161be0a18f54c9ff9c44ebf28511968b8a1213078aea50bee70842f"
+    },
+    {
+      "name": "logits-before",
+      "exit_code": 1,
+      "expected": 1,
+      "pass": true,
+      "tests": 1,
+      "log_sha256": "65e436e0496e515dd81cb9d47937185022bcb74cf191d471ce56975e97523a58"
+    },
+    {
+      "name": "logits-after",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true,
+      "tests": 1,
+      "log_sha256": "5a947c7d98e2d6b23b0944eb91b7b30ea9a55c0e208532034d6b046e4c97568d"
+    },
+    {
+      "name": "attention",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true,
+      "tests": 2,
+      "log_sha256": "8cc5185efa8b31fe1124dc266ee6a14913e3dfa595790ceefe5ef540d215a4a3"
+    }
+  ],
+  "passed_tests": 29,
+  "expected_failure_controls": 1
+}
