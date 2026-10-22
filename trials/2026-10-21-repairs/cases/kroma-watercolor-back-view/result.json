@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "elapsed_seconds": 6.141,
+  "images": [
+    {
+      "file": "9-0-kroma-watercolor-back-view_00001_.png",
+      "original_sha256": "7e1c094f6f25c88a0c8696a533c63d64ac84b69d506334b2df2d87b764ad6e46",
+      "public_sha256": "fad0708b7f3088e454af10deb55c3e96ff131b111b605189530479e27dc0f49e",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-watercolor-back-view",
+  "feature": "kroma-img2img",
+  "verdict": "pass",
+  "review": "明确背面提示后，水彩纸面、松散笔触、深色雨夜与暖红反射清楚；猫严格背向，没有眼鼻侧脸，原窗边构图保留。本固定输入配方目视通过。",
+  "prompt_id": "47a59396-7f21-4a5f-b536-baea9923b6f1",
+  "raw_history_sha256": "0af6c7ae283c9a7dc0378f782450fc98caafc24942c922fb50a2563a9d21893d",
+  "decoding_elapsed_seconds": 6.141,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 33.203,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "1052006c403091f6904715649356ffab070bcd5634f1cef37714dfd3e16bb7a1",
+  "workflow_sha256": "7039ac891cce1e422baef4bc45e02ed4ac34757ec9b838cca6732829767b427d",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 12.046,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "ff6288d3b54b57e2d8dcd2526eee6190200e697b758682f88732fa7ebc4b4d96"
+}

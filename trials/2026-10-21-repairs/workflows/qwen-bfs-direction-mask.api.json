@@ -64,10 +64,10 @@
       ],
       "seed": 66503001,
       "steps": 15,
-      "cfg": 1.0,
+      "cfg": 1,
       "sampler_name": "euler",
       "scheduler": "simple",
-      "denoise": 1.0
+      "denoise": 1
     }
   },
   "6": {
@@ -91,17 +91,6 @@
         0
       ],
       "filename_prefix": "RepairBench/qwen-bfs-direction-mask"
-    }
-  },
-  "80": {
-    "class_type": "LoraLoaderModelOnly",
-    "inputs": {
-      "model": [
-        "1",
-        0
-      ],
-      "lora_name": "bfs_head_v1.1_qwen_2.1.safetensors",
-      "strength_model": 1.0
     }
   },
   "30": {
@@ -142,6 +131,17 @@
       "crop": "disabled"
     }
   },
+  "80": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "bfs_head_v1.1_qwen_2.1.safetensors",
+      "strength_model": 1
+    }
+  },
   "81": {
     "class_type": "QwenImage21Cache",
     "inputs": {
@@ -156,7 +156,7 @@
   "repair_black": {
     "class_type": "SolidMask",
     "inputs": {
-      "value": 0.0,
+      "value": 0,
       "width": 512,
       "height": 512
     }
@@ -164,7 +164,7 @@
   "repair_white": {
     "class_type": "SolidMask",
     "inputs": {
-      "value": 1.0,
+      "value": 1,
       "width": 390,
       "height": 385
     }
@@ -216,6 +216,35 @@
         "repair_mask",
         0
       ]
+    }
+  },
+  "repair_mask_image": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "repair_mask",
+        0
+      ]
+    }
+  },
+  "repair_save_mask": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_mask_image",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask-mask"
+    }
+  },
+  "repair_save_input": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask-input"
     }
   }
 }

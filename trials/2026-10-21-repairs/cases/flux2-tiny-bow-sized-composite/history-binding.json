@@ -1,0 +1,48 @@
+{
+  "prompt_id": "7f1d02c2-6b1f-487b-bb6d-cd85043b7f70",
+  "status": "success",
+  "outputs": {
+    "saveinput": {
+      "images": [
+        {
+          "filename": "flux2-tiny-bow-sized-composite-input_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 368,
+            "height": 672
+          }
+        }
+      ]
+    },
+    "save": {
+      "images": [
+        {
+          "filename": "flux2-tiny-bow-sized-composite_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 368,
+            "height": 672
+          }
+        }
+      ]
+    },
+    "savemask": {
+      "images": [
+        {
+          "filename": "flux2-tiny-bow-sized-composite-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 368,
+            "height": 672
+          }
+        }
+      ]
+    }
+  }
+}

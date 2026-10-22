@@ -1,0 +1,36 @@
+{
+  "id": "kroma-watercolor-denoise040",
+  "model": "kroma",
+  "feature": "图生图／洗图 · 修复重试",
+  "recipe": "img2img",
+  "claim_level": "公众号索引标题",
+  "inputs": [
+    "featurebench/cat.png"
+  ],
+  "prompt": "Watercolor illustration of an orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street. Preserve the composition, soft translucent watercolor, textured paper.",
+  "expected": "雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。",
+  "repairs": [
+    "kroma-img2img"
+  ],
+  "runtime_profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码",
+  "retry_reason": "正常水彩笔触与纸面感、雨夜红色倒影及窗边猫保留；denoise 从 0.6 降为 0.4 仍把原严格背向猫改为可见眼鼻的侧脸，姿态目标未通过。",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "status": "success",
+  "prompt_id": "b8de865f-8c2f-4631-81dc-d46354719a6b",
+  "elapsed_seconds": 42.312,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-watercolor-denoise040_00001_.png",
+      "sha256": "185332e973041dbcbca06abd220f582581937e64633ec750b785d57f5feede74",
+      "public_sha256": "29fe1d637daa2080c9b1d6e3b279a5fa4cce77031a6df56276d35512271a64f7"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 6.218,
+  "encoding_elapsed_seconds": 6.031,
+  "sampling_elapsed_seconds": 30.063,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": false
+}

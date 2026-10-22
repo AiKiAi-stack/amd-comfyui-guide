@@ -1,5 +1,6 @@
 """Round-trip real tensors, shared storage, metadata and archive integrity."""
 import importlib.util
+import json
 from pathlib import Path
 import sys
 import tempfile
@@ -18,6 +19,33 @@ spec.loader.exec_module(archive)
 
 
 class ArchiveTests(unittest.TestCase):
+    def test_nonfinite_latent_fails_before_writing_black_image_source(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / "runs") as directory:
+            folder_paths.get_input_directory = lambda: directory
+            for invalid in (float("nan"), float("inf")):
+                with self.assertRaisesRegex(ValueError, "Non-finite"):
+                    archive.SaveRepairLatent().save({"samples": torch.tensor([invalid])}, "bad", "workflow")
+            self.assertEqual(list(Path(directory).rglob("*.safetensors")), [])
+
+    def test_old_nonfinite_archive_is_rejected_on_read(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / "runs") as directory:
+            path = Path(directory) / "invalid.safetensors"
+            archive.save_file({"sample": torch.tensor([float("nan")])}, str(path), metadata={
+                "repair_conditioning_version": "1", "tree": json.dumps(["tensor", "sample"])})
+            with self.assertRaisesRegex(ValueError, "Non-finite"):
+                archive.read_archive(path)
+
+    def test_sampled_latent_nodes_preserve_dtype_and_mask(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / "runs") as directory:
+            folder_paths.get_input_directory = lambda: directory
+            latent = {"samples": torch.randn(1, 16, 8, 8, dtype=torch.float16),
+                      "noise_mask": torch.rand(8, 8)}
+            saved = archive.SaveRepairLatent().save(latent, "sampled", "workflow")
+            actual, = archive.LoadRepairLatent().load(saved["result"][0], saved["ui"]["archive_sha256"][0])
+            for key in latent:
+                self.assertEqual(actual[key].dtype, latent[key].dtype)
+                self.assertTrue(torch.equal(actual[key], latent[key]))
+
     def test_exact_round_trip_and_shared_storage(self):
         shared = torch.arange(24, dtype=torch.float16).reshape(2, 3, 4)
         value = {"positive": [[shared, {"reference_latents": [shared], "strength": 1.0}]],

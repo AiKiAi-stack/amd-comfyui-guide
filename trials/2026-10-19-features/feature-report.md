@@ -6,7 +6,7 @@
 
 精确节点参数见各卡片的 workflow / api.json。API 执行成功只说明工作流成功返回；功能视觉成功以视觉结论为准。
 
-生成于：2026-10-21 21:32 中国标准时间
+生成于：2026-10-22 09:50 中国标准时间
 
 ## 图生图／洗图（`moss-img2img`）
 
@@ -240,9 +240,10 @@ workflow / api.json：[kroma-style-source/api.json](cases/kroma-style-source/api
 - 视觉结论：部分达到，物种替换不确定
 
 遮罩像素核验：
-- 遮罩外改变像素 / 总像素：0 / 193,144
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
 - 遮罩内改变像素 / 总像素：66,431 / 69,000
 - 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
 
 遮罩内主体变成偏红橙色，耳尖较尖，尾部出现明显浅色尾尖，带有狐狸特征；但主体仍是背影，体形和坐姿也仍像猫，无法仅凭此图确认已稳定完成猫到狐的替换。雨夜街景在最终合成图中保持一致。output-audit 显示遮罩外 193,144 像素中 0 像素变化、最大通道差为 0；这是最终合成节点的像素保留结果，不归因于模型。遮罩内 69,000 像素中 66,431 像素发生变化。该图从崩溃批次恢复，API 状态为 partial_output，不能记为整批 success。
 
@@ -584,9 +585,10 @@ workflow / api.json：[turbo-un-t2i/api.json](cases/turbo-un-t2i/api.json)
 - 运行配置：本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。
 
 遮罩像素核验：
-- 遮罩外改变像素 / 总像素：0 / 193,144
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
 - 遮罩内改变像素 / 总像素：66,848 / 69,000
 - 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
 
 工作流成功；遮罩内毛发色调、纹理和浅色尾尖有改变，但主体的背影轮廓、体形与坐姿仍贴近原猫，不能确认已稳定变成狐狸。遮罩内69,000像素中66,848像素改变；遮罩外193,144像素中0改变，最大通道差0。遮罩外像素保留由最终ImageCompositeMasked节点实现，不归因于模型本身。用时710.95秒。
 
@@ -1782,6 +1784,834 @@ A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai stree
 预期结果：橘猫、雨夜咖啡馆构图，以及可读的 HELLO。
 
 workflow / api.json：[flux2-1024-attention/api.json](cases/flux2-1024-attention/api.json)
+
+</details>
+
+---
+
+## 遮罩局部重绘 · 修复重试（`qwen-mask-fox-reference`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：公众号索引标题
+- 执行：API 执行成功 · 无可用输出图片；耗时：139.39 秒
+- 视觉结论：通过
+- 运行配置：512×512、15步、GPU扩散/CPU VAE；原生量化文本编码阶段动态VRAM且禁用 pinned，采样另进程/默认 pinned。编码约28秒、采样112秒，均不含冷启动。灰化猫区域+狐狸参考，最终遮罩合成。
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：67,616 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+完整执行成功。实际查看：主体有长尖嘴、黑耳背、黑腿与大面积白尾尖，明确为狐狸；身体仍背向，头略向右转露出吻部。最终合成保证遮罩外像素保持，不能归功于模型本身的局部精度。灰化原猫参考区域并增加狐狸参考，属于条件和提示词调整，不证明精确身份复刻。
+
+完整执行成功。实际查看：主体有长尖嘴、黑耳背、黑腿与大面积白尾尖，明确为狐狸；身体仍背向，头略向右转露出吻部。最终合成保证遮罩外像素保持，不能归功于模型本身的局部精度。灰化原猫参考区域并增加狐狸参考，属于条件和提示词调整，不证明精确身份复刻。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+- 无输出
+
+附件：
+- qwen-mask-fox-reference-input_00001_.png：![qwen-mask-fox-reference-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-mask-fox-reference-input_00001_.png)
+- qwen-mask-fox-reference-mask_00001_.png：![qwen-mask-fox-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-mask-fox-reference-mask_00001_.png)
+- qwen-mask-fox-reference_00001_.png：![qwen-mask-fox-reference_00001_.png](../../ComfyUI/output/RepairBench/qwen-mask-fox-reference_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.
+```
+
+预期结果：遮罩区域内猫变狐；遮罩外像素由工作流合成保留。
+
+workflow / api.json：[qwen-mask-fox-reference/api.json](cases/qwen-mask-fox-reference/api.json)
+
+</details>
+
+---
+
+## 多图参考／主体合成 · 修复重试（`qwen-multiref-local-composite`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能
+- 执行：API 执行成功；耗时：117.312 秒
+- 视觉结论：部分达到
+- 运行配置：512×512、15步。复用已核对编码图与文件时间的归档条件；单独 GPU 采样进程，Qwen cache=auto、默认 pinned、CPU VAE。采样约101秒，不含服务冷启动；背景由遮罩合成。
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：68,725 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+狐狸物种、黑腿和白胸清楚，正面姿态与参考接近，背景通过局部合成保留。仍不能确认精确身份：眼色有差异，右侧尾巴被边缘裁切，白尾尖没有完整出现。主体融合改善但未完全验收；遮罩外保持由合成提供。自动缓存配置将每步约38秒的重算降至后续约4秒，本轮完成约104秒，不代表长期稳定。
+
+狐狸物种、黑腿和白胸清楚，正面姿态与参考接近，背景通过局部合成保留。仍不能确认精确身份：眼色有差异，右侧尾巴被边缘裁切，白尾尖没有完整出现。主体融合改善但未完全验收；遮罩外保持由合成提供。自动缓存配置将每步约38秒的重算降至后续约4秒，本轮完成约104秒，不代表长期稳定。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/qwen-multiref-local-composite_00001_.png)
+
+附件：
+- qwen-multiref-local-composite-input_00001_.png：![qwen-multiref-local-composite-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-local-composite-input_00001_.png)
+- qwen-multiref-local-composite-mask_00001_.png：![qwen-multiref-local-composite-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-local-composite-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace only the orange cat in image 1 with the EXACT red fox from image 2, seated at the SAME location on the right side beside the glass cafe door. The fox faces the viewer as in image 2: narrow long muzzle, large pointed ears, bright detailed eyes, white cheeks and chest, orange fur, black forelegs, long bushy white-tipped tail. Keep the fox head clearly lit by warm cafe light, not black. Its paws rest directly on the ordinary concrete step. No forest, no moss, no rock. Keep all rainy night background, glass, red neon reflections and framing of image 1.
+```
+
+预期结果：同时采用第一图雨街背景和第二图狐狸主体。
+
+workflow / api.json：[qwen-multiref-local-composite/api.json](cases/qwen-multiref-local-composite/api.json)
+
+</details>
+
+---
+
+## 换头／人物身份参考 · 修复重试（`qwen-head-direction-mask`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：公众号索引标题
+- 执行：API 执行成功 · 无可用输出图片；耗时：108.344 秒
+- 视觉结论：部分达到
+- 运行配置：512×512、15步，编码与采样进程分离，cache=auto；采样cache-none仍不能保证跨案例资源稳定。保留左向头向，增加头部遮罩合成；精确身份和全部黑发替换尚未验收。
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：4 / 111,998
+- 遮罩内改变像素 / 总像素：149,578 / 150,146
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+左向三分之四侧脸保持，铜红卷发、绿色眼睛和雀斑已转移，海军蓝大衣、红围巾及背景保留。右侧仍有一缕原黑长发残留，精确五官身份也未证明；因此仅部分达到。遮罩外像素保留来自最终合成。
+
+左向三分之四侧脸保持，铜红卷发、绿色眼睛和雀斑已转移，海军蓝大衣、红围巾及背景保留。右侧仍有一缕原黑长发残留，精确五官身份也未证明；因此仅部分达到。遮罩外像素保留来自最终合成。
+
+输入图片：
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+- 无输出
+
+附件：
+- qwen-head-direction-mask-input_00001_.png：![qwen-head-direction-mask-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-head-direction-mask-input_00001_.png)
+- qwen-head-direction-mask-mask_00001_.png：![qwen-head-direction-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-head-direction-mask-mask_00001_.png)
+- qwen-head-direction-mask_00001_.png：![qwen-head-direction-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-head-direction-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。
+
+workflow / api.json：[qwen-head-direction-mask/api.json](cases/qwen-head-direction-mask/api.json)
+
+</details>
+
+---
+
+## 换脸／仅面部身份 · 修复重试（`qwen-face-only-mask`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：公众号索引标题
+- 执行：API 执行成功 · 无可用输出图片；耗时：111.265 秒
+- 视觉结论：部分达到
+- 运行配置：独立采样进程、复用校验后的动态显存编码条件、Qwen cache auto；身份精确迁移仍未通过
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：3 / 214,148
+- 遮罩内改变像素 / 总像素：47,315 / 47,996
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+单独进程完成。黑发、左向三分之四侧脸、蓝大衣和红围巾保留；面部有浅雀斑与绿眼。与参考 A 对照，眼形、鼻形和雀斑分布仍有差异，不能认定精确身份迁移，仍部分达到。
+
+单独进程完成。黑发、左向三分之四侧脸、蓝大衣和红围巾保留；面部有浅雀斑与绿眼。与参考 A 对照，眼形、鼻形和雀斑分布仍有差异，不能认定精确身份迁移，仍部分达到。
+
+输入图片：
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+- 无输出
+
+附件：
+- qwen-face-only-mask-input_00001_.png：![qwen-face-only-mask-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-mask-input_00001_.png)
+- qwen-face-only-mask-mask_00001_.png：![qwen-face-only-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-mask-mask_00001_.png)
+- qwen-face-only-mask_00001_.png：![qwen-face-only-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：面部特征转向A，B的黑发、服装与场景保持。
+
+workflow / api.json：[qwen-face-only-mask/api.json](cases/qwen-face-only-mask/api.json)
+
+</details>
+
+---
+
+## 换头／BFS 专用 LoRA 对照 · 修复重试（`qwen-bfs-direction-mask`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现
+- 执行：API 执行成功 · 无可用输出图片；耗时：108.484 秒
+- 视觉结论：部分达到
+- 运行配置：编码、FP16 15 步采样、CPU 解码三个独立进程；Qwen cache auto；保留 BFS LoRA 原强度
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：4 / 111,998
+- 遮罩内改变像素 / 总像素：149,631 / 150,146
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+15 步采样保存 latent 后退出，再由独立 CPU 进程完成 VAE 解码和 PNG。左向三分之四头向、铜红卷发、雀斑、绿眼和蓝大衣红围巾保留；右侧仍有细束黑发残留，五官与参考 A 仍有差异，精确身份未通过。遮罩外保持由最终合成实现。
+
+15 步采样保存 latent 后退出，再由独立 CPU 进程完成 VAE 解码和 PNG。左向三分之四头向、铜红卷发、雀斑、绿眼和蓝大衣红围巾保留；右侧仍有细束黑发残留，五官与参考 A 仍有差异，精确身份未通过。遮罩外保持由最终合成实现。
+
+输入图片：
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+- 无输出
+
+附件：
+- qwen-bfs-direction-mask-input_00001_.png：![qwen-bfs-direction-mask-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-direction-mask-input_00001_.png)
+- qwen-bfs-direction-mask-mask_00001_.png：![qwen-bfs-direction-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-direction-mask-mask_00001_.png)
+- qwen-bfs-direction-mask_00001_.png：![qwen-bfs-direction-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-direction-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+head_swap: Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。
+
+workflow / api.json：[qwen-bfs-direction-mask/api.json](cases/qwen-bfs-direction-mask/api.json)
+
+</details>
+
+---
+
+## 风格参考 · 修复重试（`kroma-style-owl-explicit`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA
+- 执行：API 执行成功；耗时：81.406 秒
+- 视觉结论：部分达到
+- 运行配置：动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码
+
+黑图问题已避开，蓝橙森林纸纹正常，出现猫头鹰；但原狐狸仍完整留在画面中，未满足仅新主体、不要狐狸。保留此未达完整目标的对照。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 黑图问题已避开，蓝橙森林纸纹正常，出现猫头鹰；但原狐狸仍完整留在画面中，未满足仅新主体、不要狐狸。保留此未达完整目标的对照。
+
+输入图片：
+- 输入 1 · featurebench/kroma-style-source.png：![输入 1 · featurebench/kroma-style-source.png](../../ComfyUI/input/featurebench/kroma-style-source.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-style-owl-explicit_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+A single OWL bird with large round forward-facing eyes, a short hooked beak, feathered wings and two talons, perched on one branch. Only a bird, no fox, no mammal, no rock. Use only the reference image's blue and orange geometric screen-print palette and rough paper grain. Replace the entire fox subject with the owl. New bird composition. No text.
+```
+
+预期结果：参考图的蓝橙双色版画风格迁移到新主体猫头鹰。
+
+workflow / api.json：[kroma-style-owl-explicit/api.json](cases/kroma-style-owl-explicit/api.json)
+
+</details>
+
+---
+
+## 风格参考 · 修复重试（`kroma-style-no-subject-reference`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA
+- 执行：API 执行成功；耗时：75.124 秒
+- 视觉结论：通过
+- 运行配置：动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码
+
+将同一参考图裁取左上森林/配色区域（x40、y25、400×125）再编码，排除原狐狸主体。输出为枝上的清楚猫头鹰，蓝橙双色与纸纹/版画风格保留，画面未复制狐狸。属于本案例的参考内容控制改进，不宣称通用风格分离。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 将同一参考图裁取左上森林/配色区域（x40、y25、400×125）再编码，排除原狐狸主体。输出为枝上的清楚猫头鹰，蓝橙双色与纸纹/版画风格保留，画面未复制狐狸。属于本案例的参考内容控制改进，不宣称通用风格分离。
+
+输入图片：
+- 输入 1 · featurebench/kroma-style-source.png：![输入 1 · featurebench/kroma-style-source.png](../../ComfyUI/input/featurebench/kroma-style-source.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-style-no-subject-reference_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+A single OWL bird with large round forward-facing eyes, a short hooked beak, feathered wings and two talons, perched on one branch. Only a bird, no fox, no mammal, no rock. Use only the reference image's blue and orange geometric screen-print palette and rough paper grain. Replace the entire fox subject with the owl. New bird composition. No text.
+```
+
+预期结果：参考图的蓝橙双色版画风格迁移到新主体猫头鹰。
+
+workflow / api.json：[kroma-style-no-subject-reference/api.json](cases/kroma-style-no-subject-reference/api.json)
+
+</details>
+
+---
+
+## 图生图／洗图 · 修复重试（`kroma-watercolor-denoise040`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题
+- 执行：API 执行成功；耗时：42.312 秒
+- 视觉结论：部分达到
+- 运行配置：动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码
+
+正常水彩笔触与纸面感、雨夜红色倒影及窗边猫保留；denoise 从 0.6 降为 0.4 仍把原严格背向猫改为可见眼鼻的侧脸，姿态目标未通过。
+
+正常水彩笔触与纸面感、雨夜红色倒影及窗边猫保留；denoise 从 0.6 降为 0.4 仍把原严格背向猫改为可见眼鼻的侧脸，姿态目标未通过。
+
+输入图片：
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-watercolor-denoise040_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Watercolor illustration of an orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street. Preserve the composition, soft translucent watercolor, textured paper.
+```
+
+预期结果：雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。
+
+workflow / api.json：[kroma-watercolor-denoise040/api.json](cases/kroma-watercolor-denoise040/api.json)
+
+</details>
+
+---
+
+## 换头／人物身份参考 · 修复重试（`kroma-head-direction-mask`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题；一般参考编辑探索，非专用换头模型
+- 执行：API 执行成功；耗时：219.687 秒
+- 视觉结论：部分达到
+- 运行配置：动态显存编码；FP16 split attention + 分数升精度 + 奇数切片补丁；独立 CPU 解码
+
+修正奇数查询切片并升精度后完成四步与解码。侧脸方向、红卷发、雀斑和绿眼转移；但头部偏大、黑发明显残留，颈部/围巾有叠影与接缝，身份不精确，不能作为可用换头成品验收。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 修正奇数查询切片并升精度后完成四步与解码。侧脸方向、红卷发、雀斑和绿眼转移；但头部偏大、黑发明显残留，颈部/围巾有叠影与接缝，身份不精确，不能作为可用换头成品验收。
+
+输入图片：
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-head-direction-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：B服装姿态背景保留，头部外观采用A。
+
+workflow / api.json：[kroma-head-direction-mask/api.json](cases/kroma-head-direction-mask/api.json)
+
+</details>
+
+---
+
+## 双GGUF文生图／低显存运行 · 修复重试（`zimage-cpu-text-fp16`）
+
+- 模型：Z-Image GGUF
+- 来源级别：本机明确 CPU 文本编码 FP16 配置，完成出图；精确显存峰值未采样
+- 执行：API 执行成功；耗时：192.531 秒
+- 视觉结论：通过
+- 运行配置：低显存模式 + CPU FP16 文本编码 + reserve 2GB + CPU VAE；相同权重的 SSD 缓存；RAM/commit 仍接近上限
+
+在 RX 6650 XT 上完整完成 CPU 文本编码、9 步 512×512 采样、CPU VAE 与 PNG。目视为正常红色单壶嘴/单把手茶壶、两颗柠檬、深木桌和左侧窗光，无文字或噪声。显式 FP16 CPU 文本编码并读取同 SHA 的 G 盘模型缓存；没有用 GPU 文本编码成功替代本项。记录 RAM/commit 观测，未采集精确峰值显存，单次成功不证明历史连续崩溃根因已解决。
+
+在 RX 6650 XT 上完整完成 CPU 文本编码、9 步 512×512 采样、CPU VAE 与 PNG。目视为正常红色单壶嘴/单把手茶壶、两颗柠檬、深木桌和左侧窗光，无文字或噪声。显式 FP16 CPU 文本编码并读取同 SHA 的 G 盘模型缓存；没有用 GPU 文本编码成功替代本项。记录 RAM/commit 观测，未采集精确峰值显存，单次成功不证明历史连续崩溃根因已解决。
+
+输入图片：
+- 此功能没有输入图片。
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/zimage-cpu-text-fp16_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.
+```
+
+预期结果：相同写实场景能实际生成；记录峰值显存/内存和耗时后才评价8GB可运行。
+
+workflow / api.json：[zimage-cpu-text-fp16/api.json](cases/zimage-cpu-text-fp16/api.json)
+
+</details>
+
+---
+
+## 换头／人物身份参考 · 修复重试（`turbo-head-direction-mask`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合
+- 执行：API 执行成功 · 无可用输出图片；耗时：936.891 秒
+- 视觉结论：部分达到
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：3 / 71,048
+- 遮罩内改变像素 / 总像素：190,871 / 191,096
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+左三分之四侧转、短红卷发及原深蓝外套红围巾保留，扩大遮罩后没有旧黑发长条；雀斑偏弱、五官身份仍与 A 有差异，身份复现部分达到。
+
+左三分之四侧转、短红卷发及原深蓝外套红围巾保留，扩大遮罩后没有旧黑发长条；雀斑偏弱、五官身份仍与 A 有差异，身份复现部分达到。
+
+输入图片：
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+- 无输出
+
+附件：
+- turbo-head-direction-mask-input_00001_.png：![turbo-head-direction-mask-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-head-direction-mask-input_00001_.png)
+- turbo-head-direction-mask-mask_00001_.png：![turbo-head-direction-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-head-direction-mask-mask_00001_.png)
+- turbo-head-direction-mask_00001_.png：![turbo-head-direction-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-head-direction-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。
+
+workflow / api.json：[turbo-head-direction-mask/api.json](cases/turbo-head-direction-mask/api.json)
+
+</details>
+
+---
+
+## 迭代编辑／第二轮修改 · 修复重试（`flux2-tiny-bow-fingertip`）
+
+- 模型：FLUX.2 Klein 4B distilled FP8
+- 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
+- 执行：API 执行成功；耗时：33.172 秒
+- 视觉结论：部分达到
+- 运行配置：FLUX.2 pinned memory; stronger small-size prompt
+
+蓝包与灰色摄影背景保留，蝴蝶结比首轮小，但红色包围框宽 48px，占包体宽 259px 的 18.5%，仍明显超过指甲/背带宽度要求；直接提示词尺寸控制未通过。
+
+蓝包与灰色摄影背景保留，蝴蝶结比首轮小，但红色包围框宽 48px，占包体宽 259px 的 18.5%，仍明显超过指甲/背带宽度要求；直接提示词尺寸控制未通过。
+
+输入图片：
+- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/flux2-tiny-bow-fingertip_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Add one MINUSCULE red ribbon bow at the lower stitching of the LEFT handle. It is smaller than the width of the handle: two tiny loops with very SHORT ends, like a fingernail-sized decorative accent. Keep the blue handbag, leather texture, both handles, grey backdrop, camera and lighting exactly unchanged. No long ribbon tails. The red detail should be barely noticeable on the bag.
+```
+
+预期结果：在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。
+
+workflow / api.json：[flux2-tiny-bow-fingertip/api.json](cases/flux2-tiny-bow-fingertip/api.json)
+
+</details>
+
+---
+
+## 图生图／洗图 · 修复重试（`kroma-watercolor-back-view`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题
+- 执行：API 执行成功；耗时：51.39 秒
+- 视觉结论：通过
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+明确背面提示后，水彩纸面、松散笔触、深色雨夜与暖红反射清楚；猫严格背向，没有眼鼻侧脸，原窗边构图保留。本固定输入配方目视通过。
+
+明确背面提示后，水彩纸面、松散笔触、深色雨夜与暖红反射清楚；猫严格背向，没有眼鼻侧脸，原窗边构图保留。本固定输入配方目视通过。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-watercolor-back-view_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Watercolor painting on visibly textured paper of the SAME ginger cat seen strictly FROM BEHIND, facing away from the viewer toward the warm shop window. Show the back of its head and both ear backs only, NO visible face, NO visible eyes, NO visible nose. Preserve its seated back-facing pose and original composition, the rainy NIGHT, deep shadows, red neon reflections on wet street, and warm window on the right. Transparent watercolor washes, pigment blooms and visible brush strokes. No new objects, no daylight.
+```
+
+预期结果：雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。
+
+workflow / api.json：[kroma-watercolor-back-view/api.json](cases/kroma-watercolor-back-view/api.json)
+
+</details>
+
+---
+
+## 多图参考 · 修复重试（`kroma-multiref-ref384`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题；沿用上游Krea2接法探索
+- 执行：API 执行成功；耗时：87.532 秒
+- 视觉结论：部分达到
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：68,814 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+只将两路 VAE 参考降至 384 后完成 512 输出。正面狐狸清楚，但苔石仍污染咖啡馆前景、右边残留原主体重影，身份也有差异；执行成功，合成质量部分达到。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 只将两路 VAE 参考降至 384 后完成 512 输出。正面狐狸清楚，但苔石仍污染咖啡馆前景、右边残留原主体重影，身份也有差异；执行成功，合成质量部分达到。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-ref384_00001_.png)
+
+附件：
+- kroma-multiref-ref384-input_00001_.png：![kroma-multiref-ref384-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-ref384-input_00001_.png)
+- kroma-multiref-ref384-mask_00001_.png：![kroma-multiref-ref384-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-ref384-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace only the orange cat in image 1 with the EXACT red fox from image 2, seated at the SAME location on the right side beside the glass cafe door. The fox faces the viewer as in image 2: narrow long muzzle, large pointed ears, bright detailed eyes, white cheeks and chest, orange fur, black forelegs, long bushy white-tipped tail. Keep the fox head clearly lit by warm cafe light, not black. Its paws rest directly on the ordinary concrete step. No forest, no moss, no rock. Keep all rainy night background, glass, red neon reflections and framing of image 1.
+```
+
+预期结果：同时采用雨街背景和参考狐狸主体。
+
+workflow / api.json：[kroma-multiref-ref384/api.json](cases/kroma-multiref-ref384/api.json)
+
+</details>
+
+---
+
+## 图生图／洗图 · 修复重试（`moss-watercolor-denoise085`）
+
+- 模型：MOSS-Image-5B
+- 来源级别：公众号索引标题
+- 执行：API 执行成功；耗时：48.126 秒
+- 视觉结论：部分达到
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+显式 FP16 UNet 后八步采样完整完成，保留丛林中的全身宇航员；画面仍接近摄影，粗纸与水彩笔触没有明确达到，风格转换部分达到。
+
+显式 FP16 UNet 后八步采样完整完成，保留丛林中的全身宇航员；画面仍接近摄影，粗纸与水彩笔触没有明确达到，风格转换部分达到。
+
+输入图片：
+- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/moss-watercolor-denoise085_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+A watercolor illustration of the same astronaut walking through a lush jungle, soft watercolor washes, visible paper texture, green foliage and warm sunlight. Preserve the centered full-body composition.
+```
+
+预期结果：宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。
+
+workflow / api.json：[moss-watercolor-denoise085/api.json](cases/moss-watercolor-denoise085/api.json)
+
+</details>
+
+---
+
+## 换头／BFS 专用 LoRA 对照 · 修复重试（`qwen-bfs-full-hair-tiled`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现
+- 执行：API 执行成功；耗时：366.657 秒
+- 视觉结论：部分达到
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：3 / 71,048
+- 遮罩内改变像素 / 总像素：190,525 / 191,096
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+复用已校验的原 15 步 BFS latent，仅将最终合成遮罩扩大至覆盖长黑发并改用 CPU tiled VAE。红卷发、侧转、衣服保留且旧黑发条消除；五官仍与参考不同，身份目标部分达到；不冒充重新采样。
+
+复用已校验的原 15 步 BFS latent，仅将最终合成遮罩扩大至覆盖长黑发并改用 CPU tiled VAE。红卷发、侧转、衣服保留且旧黑发条消除；五官仍与参考不同，身份目标部分达到；不冒充重新采样。
+
+输入图片：
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled_00001_.png)
+
+附件：
+- qwen-bfs-full-hair-tiled-input_00001_.png：![qwen-bfs-full-hair-tiled-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-input_00001_.png)
+- qwen-bfs-full-hair-tiled-mask_00001_.png：![qwen-bfs-full-hair-tiled-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+head_swap: Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.
+```
+
+预期结果：在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。
+
+workflow / api.json：[qwen-bfs-full-hair-tiled/api.json](cases/qwen-bfs-full-hair-tiled/api.json)
+
+</details>
+
+---
+
+## 遮罩局部重绘 · 修复重试（`turbo-mask-fox-reference`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合
+- 执行：API 执行成功 · 无可用输出图片；耗时：940.688 秒
+- 视觉结论：部分达到
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：67,700 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+修正本次新增附件的两个悬空节点引用，复用原成功编码/采样归档后完整解码。主体有黑耳、蓬松白尖尾，但背向圆头和身体仍偏猫、长吻不可见，不能确认完整狐狸替换，部分达到。
+
+修正本次新增附件的两个悬空节点引用，复用原成功编码/采样归档后完整解码。主体有黑耳、蓬松白尖尾，但背向圆头和身体仍偏猫、长吻不可见，不能确认完整狐狸替换，部分达到。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+- 无输出
+
+附件：
+- turbo-mask-fox-reference-input_00001_.png：![turbo-mask-fox-reference-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-mask-fox-reference-input_00001_.png)
+- turbo-mask-fox-reference-mask_00001_.png：![turbo-mask-fox-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-mask-fox-reference-mask_00001_.png)
+- turbo-mask-fox-reference_00001_.png：![turbo-mask-fox-reference_00001_.png](../../ComfyUI/output/RepairBench/turbo-mask-fox-reference_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.
+```
+
+预期结果：遮罩区域内猫变狐；遮罩外像素由工作流合成保留。
+
+workflow / api.json：[turbo-mask-fox-reference/api.json](cases/turbo-mask-fox-reference/api.json)
+
+</details>
+
+---
+
+## 多图参考 · 修复重试（`kroma-multiref-clean-reference`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题；沿用上游Krea2接法探索
+- 执行：API 执行成功；耗时：117.25 秒
+- 视觉结论：部分达到
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 193,144
+- 遮罩内改变像素 / 总像素：68,881 / 69,000
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+裁掉苔石并清除原猫后，输出不再有苔石和猫重影，狐狸外形清楚；但中性参考的灰色矩形被迁入背景，前景融合仍失败。记录为部分达到，不作为干净合成验收。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 裁掉苔石并清除原猫后，输出不再有苔石和猫重影，狐狸外形清楚；但中性参考的灰色矩形被迁入背景，前景融合仍失败。记录为部分达到，不作为干净合成验收。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-clean-reference_00001_.png)
+
+附件：
+- kroma-multiref-clean-reference-input_00001_.png：![kroma-multiref-clean-reference-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-clean-reference-input_00001_.png)
+- kroma-multiref-clean-reference-mask_00001_.png：![kroma-multiref-clean-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-clean-reference-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace the blank region in image 1 with one complete red fox, using only the facial fur identity from image 2. Seated fox, slender canine body, long pointed muzzle, black ears and black lower legs, white chest and one large bushy WHITE-TIPPED tail. The fox sits directly on the cafe doorstep, no rock, no moss, no forest, no cat. Keep the rainy cafe background and lighting from image 1.
+```
+
+预期结果：同时采用雨街背景和参考狐狸主体。
+
+workflow / api.json：[kroma-multiref-clean-reference/api.json](cases/kroma-multiref-clean-reference/api.json)
+
+</details>
+
+---
+
+## 图生图／洗图 · 修复重试（`moss-watercolor-base-sft`）
+
+- 模型：MOSS-Image-5B
+- 来源级别：公众号索引标题
+- 执行：API 执行成功；耗时：141.312 秒
+- 视觉结论：通过
+- 运行配置：Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters
+
+使用同一已存在 SFT 基础权重，移除八步 DMD LoRA，28 步/CFG3/denoise0.85、FP16 UNet。输出有明确水彩大笔触、绿叶晕染与粗纸纹，保留丛林、白色全身宇航员和行走构图；本固定输入配方目视通过，八步风格不足对照保留。
+
+使用同一已存在 SFT 基础权重，移除八步 DMD LoRA，28 步/CFG3/denoise0.85、FP16 UNet。输出有明确水彩大笔触、绿叶晕染与粗纸纹，保留丛林、白色全身宇航员和行走构图；本固定输入配方目视通过，八步风格不足对照保留。
+
+输入图片：
+- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/moss-watercolor-base-sft_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+A loose hand-painted WATERCOLOR on rough off-white cotton paper. The same full-body astronaut walking through the jungle, centered. Clearly visible paper fibers in light areas, transparent pigment pooling and wet-on-wet blooms, broad green washes, dry-brush edges and unpainted paper gaps. Simplify the spacesuit and foliage into large brush strokes. Preserve the walking pose and centered full-body composition. No photograph, no photographic surface detail, no 3D render.
+photograph, photorealistic, glossy 3D render, tiny photographic details, blurry, distorted, watermark
+```
+
+预期结果：宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。
+
+workflow / api.json：[moss-watercolor-base-sft/api.json](cases/moss-watercolor-base-sft/api.json)
+
+</details>
+
+---
+
+## 迭代编辑／固定尺寸合成规避（`flux2-tiny-bow-sized-composite`）
+
+- 模型：FLUX.2 Klein 4B distilled FP8
+- 来源级别：微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词
+- 执行：API 执行成功；耗时：3.047 秒
+- 视觉结论：通过
+- 运行配置：CPU deterministic postprocess of retained FLUX sample
+
+遮罩像素核验：
+- 按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素：0 / 247,078
+- 遮罩内改变像素 / 总像素：218 / 218
+- 遮罩外像素保留由最终合成节点实现，不归因于模型本身。
+- 极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。
+
+尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。
+
+尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。
+
+输入图片：
+- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
+- 输入 2 · repair_inputs/flux2-bow-large.png：![输入 2 · repair_inputs/flux2-bow-large.png](../../ComfyUI/input/repair_inputs/flux2-bow-large.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite_00001_.png)
+
+附件：
+- flux2-tiny-bow-sized-composite-input_00001_.png：![flux2-tiny-bow-sized-composite-input_00001_.png](../../ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-input_00001_.png)
+- flux2-tiny-bow-sized-composite-mask_00001_.png：![flux2-tiny-bow-sized-composite-mask_00001_.png](../../ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+无新增模型提示词；从上轮 FLUX 输出裁取红结，缩至22×20并遮罩合成。直接模型尺寸控制仍部分达到。
+```
+
+预期结果：在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。
+
+workflow / api.json：[flux2-tiny-bow-sized-composite/api.json](cases/flux2-tiny-bow-sized-composite/api.json)
 
 </details>
 

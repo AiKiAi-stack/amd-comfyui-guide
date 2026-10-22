@@ -1,0 +1,42 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 3.047,
+  "images": [
+    {
+      "file": "saveinput-0-flux2-tiny-bow-sized-composite-input_00001_.png",
+      "original_sha256": "88297989838ddeedd8fec1de5737aeafc9c79294562a931e289ff9cbd82e4b6d",
+      "public_sha256": "3a246e34caaa96881ba87b03496a76a45f8d848b22002ec72c11c08630b75e6b",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "save-0-flux2-tiny-bow-sized-composite_00001_.png",
+      "original_sha256": "4b08411013d9572bfbf0b8543df305f3acf8e0e77bc25d7cca2a27d56e77d294",
+      "public_sha256": "7ae166ac971c1e0de80ae1d604e64a0a66776f09d2e8534a065f735e86d17c55",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "savemask-0-flux2-tiny-bow-sized-composite-mask_00001_.png",
+      "original_sha256": "b9c038a05755edbfd9a47a084d8d0bf91ba0313e83ddad1bedba431dd8c03664",
+      "public_sha256": "ec3fbeef0a9ab40c3b933d0503af4536e14aaadcc0e1e2cdbc142ff6b361ff2d",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "flux2-tiny-bow-sized-composite",
+  "feature": "flux2-klein-iterative",
+  "verdict": "pass",
+  "review": "尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。",
+  "mask_measurement": {
+    "outside_pixels": 247078,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 218,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support_unavailable": "Exact mask support unavailable for GrowMask"
+  },
+  "prompt_id": "7f1d02c2-6b1f-487b-bb6d-cd85043b7f70",
+  "raw_history_sha256": "d858f6fce774cc0b4712b1aeb7386eddc50a4e0c2daa899ca8ce6e1fba64542f",
+  "workflow_sha256": "f3cebdff907c0889d56fc02d3f4be9f73ee3d5de725d3719ea9e920802d45452"
+}

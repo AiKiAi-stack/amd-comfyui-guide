@@ -12,6 +12,19 @@ WRONG = ROOT / "trials/2026-10-18/moss-wrong-timestep-api.json"
 
 
 class ReplayPreflightTests(unittest.TestCase):
+    def test_missing_attachment_reference_rejected_before_network(self):
+        graph = {"mask": {"class_type": "MaskToImage", "inputs": {"mask": ["wrong_case_53", 0]}},
+                 "save": {"class_type": "SaveImage", "inputs": {"images": ["mask", 0]}}}
+        with tempfile.TemporaryDirectory(dir=ROOT) as directory:
+            workflow = Path(directory) / "bad.api.json"
+            workflow.write_text(json.dumps(graph), encoding="utf-8")
+            result = subprocess.run([sys.executable, str(ROOT / "scripts/replay_workflow.py"), str(workflow),
+                "--url", "http://127.0.0.1:1", "--out", str(Path(directory) / "out")],
+                capture_output=True, text=True, timeout=20)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("Missing workflow node wrong_case_53", result.stderr)
+            self.assertNotIn("urlopen error", result.stderr)
+
     def test_actual_noise_workflow_is_rejected_before_network(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as directory:
             result = subprocess.run(

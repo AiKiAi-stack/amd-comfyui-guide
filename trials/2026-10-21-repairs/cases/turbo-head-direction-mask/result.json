@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "elapsed_seconds": 18.125,
+  "images": [
+    {
+      "file": "repair_save_input-0-turbo-head-direction-mask-input_00001_.png",
+      "original_sha256": "f046c13aa72cd84990df1aba6e91fd423947b9d8a3766ec912b1e3b89670522c",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-turbo-head-direction-mask-mask_00001_.png",
+      "original_sha256": "b865979f509aecb8d03d32be83c5d079b3f1524fdacaadc99112d452d7eb83dc",
+      "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-turbo-head-direction-mask_00001_.png",
+      "original_sha256": "bfc37c7be5667f2580fd9838b20ba692f005512f112aa5da1c77f60d8ee41523",
+      "public_sha256": "b3baa1d6d71a33f84e5f00a00495e543c11652bdb5b69b27b1b2f648fbb8f9a6",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-head-direction-mask",
+  "feature": "turbo-un-face-swap",
+  "verdict": "partial",
+  "review": "左三分之四侧转、短红卷发及原深蓝外套红围巾保留，扩大遮罩后没有旧黑发长条；雀斑偏弱、五官身份仍与 A 有差异，身份复现部分达到。",
+  "mask_measurement": {
+    "outside_pixels": 71048,
+    "outside_changed_pixels": 3,
+    "outside_max_channel_difference": 1,
+    "inside_pixels": 191096,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 71044,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "7c9ffc23-3b95-4ea5-9125-16da9c8d3bc5",
+  "raw_history_sha256": "ec1917a87958ce3cdb8c3305c6b37994d773664a740fc2b80e80b766b32c533b",
+  "decoding_elapsed_seconds": 18.125,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 48.125,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "146676f14fbfcb968d8c8fce2e7186f2b88d7b32b1b4e9709f5e1827b2240cce",
+  "workflow_sha256": "a62101d4c4c2473bfa144517065535840d61ff17868ea7e21418584acbf14b8a",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 870.641,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "dca59d5a8b58c97a10bd4e1fb7df4c23d72e37f67d20e021a74e4ffc9987d441"
+}

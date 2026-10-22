@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "elapsed_seconds": 33.172,
+  "images": [
+    {
+      "file": "19-0-flux2-tiny-bow-fingertip_00001_.png",
+      "original_sha256": "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8",
+      "public_sha256": "5a0a332e0000be41484097a8bb47062397f3a97ebfd3e4d81e76c0fab44faf03",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "flux2-tiny-bow-fingertip",
+  "feature": "flux2-klein-iterative",
+  "verdict": "partial",
+  "review": "蓝包与灰色摄影背景保留，蝴蝶结比首轮小，但红色包围框宽 48px，占包体宽 259px 的 18.5%，仍明显超过指甲/背带宽度要求；直接提示词尺寸控制未通过。",
+  "prompt_id": "f8f1e32d-013d-48f8-85f9-92b89bb717f5",
+  "raw_history_sha256": "c6da82abfc9872eeaca3e1333691cd3135906d84dcfa6f929f5b61c5ad18d5d2",
+  "workflow_sha256": "2671a35cd2a78a646a28c05f1f0ccab357668e28ee32f4f1a4165415f2eca724"
+}

@@ -1,0 +1,18 @@
+{
+  "workflow_sha256": "71b120e12641e6be72b6eb4706e33ddbcde15b408ae71d072866e833711da456",
+  "archive_sha256": "92a7812842f7ffe0bc47119f22d91b66ec025e8f525311ba6963ff67d5720998",
+  "archive_file": "repair_conditioning/turbo-head-direction-mask-744ed0a87001.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": false,
+  "qwen_cache_device_override": "auto",
+  "encoding_api_sha256": "b066f00a6d1ac7c36258468919f68bac1ea871cf1152a24fa7e036b53aacf2fb",
+  "encoding_history_sha256": "dca59d5a8b58c97a10bd4e1fb7df4c23d72e37f67d20e021a74e4ffc9987d441",
+  "inputs_checked_at_reuse": [],
+  "input_check_method": null,
+  "sampled_latent_file": "repair_conditioning/turbo-head-direction-mask-0c53e304b10a.safetensors",
+  "sampled_latent_sha256": "23d179924cacd5f938f328d9a7bfe76eaac894ac8dacecef8baa0da919f0fc8a",
+  "sampling_reused": false,
+  "sampling_process_exited_before_decoding": true,
+  "sampling_api_sha256": "d1111d6d05fa9942f6fd877c542221339fcf3c24dfdcccf575b6be608b9cdbcc",
+  "sampling_history_sha256": "146676f14fbfcb968d8c8fce2e7186f2b88d7b32b1b4e9709f5e1827b2240cce"
+}

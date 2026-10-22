@@ -1,0 +1,53 @@
+{
+  "id": "qwen-bfs-direction-mask",
+  "model": "qwen",
+  "feature": "换头／BFS 专用 LoRA 对照 · 修复重试",
+  "recipe": "edit",
+  "claim_level": "第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "prompt": "head_swap: Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+  "expected": "在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。",
+  "lora": {
+    "name": "bfs_head_v1.1_qwen_2.1.safetensors",
+    "strength": 1
+  },
+  "qwen_cache_device": "off",
+  "runtime_profile": "编码、FP16 15 步采样、CPU 解码三个独立进程；Qwen cache auto；保留 BFS LoRA 原强度",
+  "repairs": [
+    "qwen-bfs-head-swap"
+  ],
+  "retry_reason": "15 步采样保存 latent 后退出，再由独立 CPU 进程完成 VAE 解码和 PNG。左向三分之四头向、铜红卷发、雀斑、绿眼和蓝大衣红围巾保留；右侧仍有细束黑发残留，五官与参考 A 仍有差异，精确身份未通过。遮罩外保持由最终合成实现。",
+  "status": "success",
+  "prompt_id": "6d7da485-de01-433a-bc11-f464a9f8613d",
+  "elapsed_seconds": 108.484,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-bfs-direction-mask-input_00001_.png",
+      "sha256": "793fe3a27a327867615a3f82dabe70dff3ec8ca87619cf8bce89aa03d80666d5",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-bfs-direction-mask-mask_00001_.png",
+      "sha256": "0a8b1028010a61a319c3b113a2b1d205e12fe181c57b091d24705ca172958bcc",
+      "public_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-bfs-direction-mask_00001_.png",
+      "sha256": "94115f83a9cb6b0c3ddd9132b6f7e4c42db19698341a91a055620c9c7230f9c8",
+      "public_sha256": "5aebbd6f0e527c56a33f641b1adaa4e1160081988c60699866e5d449201aa452"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 21.062,
+  "encoding_elapsed_seconds": 15.203,
+  "sampling_elapsed_seconds": 72.219,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true
+}

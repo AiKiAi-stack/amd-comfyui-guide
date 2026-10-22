@@ -1,0 +1,48 @@
+{
+  "prompt_id": "47ddb82e-a795-44a9-bd68-9199b00fcce8",
+  "status": "success",
+  "outputs": {
+    "repair_save_input": {
+      "images": [
+        {
+          "filename": "qwen-mask-fox-reference-input_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_mask": {
+      "images": [
+        {
+          "filename": "qwen-mask-fox-reference-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "case01_7": {
+      "images": [
+        {
+          "filename": "qwen-mask-fox-reference_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

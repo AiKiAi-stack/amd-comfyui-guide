@@ -29,8 +29,9 @@ def main():
             errors.append(rel + ': excluded file type')
         if p.suffix in {'.md', '.html', '.json', '.py', '.ps1', '.txt', '.yml'}:
             s = p.read_text(encoding='utf-8-sig')
-            patterns = [r'gh[pousr]_[A-Za-z0-9]{20,}', r'github_pat_[A-Za-z0-9_]{20,}',
-                        r'hf_[A-Za-z0-9]{20,}', r'sk-[A-Za-z0-9_-]{24,}',
+            boundary = r'(?<![A-Za-z0-9_-])'
+            patterns = [boundary + r'gh[pousr]_[A-Za-z0-9]{20,}', boundary + r'github_pat_[A-Za-z0-9_]{20,}',
+                        boundary + r'hf_[A-Za-z0-9]{20,}', boundary + r'sk-[A-Za-z0-9_-]{24,}',
                         r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----',
                         r'[A-Z]:[\\/]+Users[\\/]+[^\\/\s"<>]+',
                         r'https?://[^\s"<>]*[?&](?:token|access_token|signature|x-amz-signature)=']

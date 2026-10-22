@@ -1,0 +1,20 @@
+{
+  "prompt_id": "626b898e-39a4-4282-a5db-a8e82d9b4d4d",
+  "status": "success",
+  "outputs": {
+    "10": {
+      "images": [
+        {
+          "filename": "moss-watercolor-denoise085_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

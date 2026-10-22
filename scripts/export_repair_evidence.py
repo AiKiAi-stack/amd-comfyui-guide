@@ -18,6 +18,8 @@ def main():
     parser.add_argument("--review", type=Path, required=True)
     parser.add_argument("--original-workflow", type=Path)
     parser.add_argument("--encoding-case", type=Path)
+    parser.add_argument("--sampling-case", type=Path,
+                        help="Actual sampling case when --case is a separate CPU decode")
     parser.add_argument("--phase-link", type=Path)
     parser.add_argument("--caption", type=Path)
     args = parser.parse_args()
@@ -49,6 +51,12 @@ def main():
         result["images"].append({"file": published.name, "original_sha256": sha(original),
                                  "public_sha256": sha(published), "pixels_unchanged": True})
     (target / "sampling.api.json").write_bytes((args.case / "api.json").read_bytes())
+    if args.sampling_case:
+        (target / "decoding.api.json").write_bytes((args.case / "api.json").read_bytes())
+        (target / "sampling.api.json").write_bytes((args.sampling_case / "api.json").read_bytes())
+        result["decoding_elapsed_seconds"] = result["elapsed_seconds"]
+        result["sampling_result"] = json.loads((args.sampling_case / "result.json").read_text())
+        result["sampling_history_sha256"] = sha(args.sampling_case / "history.json")
     (target / "history-binding.json").write_text(json.dumps({"prompt_id": prompt_id,
         "status": entry["status"]["status_str"], "outputs": entry.get("outputs", {})}, indent=2), encoding="utf-8")
     if args.original_workflow:

@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-10-22T01:47:16.482Z",
+  "rows": [
+    {
+      "name": "workflow",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "graphs",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "partial-output",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "archives",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "logits-before",
+      "exit_code": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "name": "logits-after",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "attention",
+      "exit_code": 0,
+      "expected": 0,
+      "pass": true
+    }
+  ]
+}

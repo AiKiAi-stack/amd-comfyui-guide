@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "elapsed_seconds": 279.235,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-bfs-full-hair-tiled-input_00001_.png",
+      "original_sha256": "ae843230f31bfe4246e261aa941a7c3001dfe26408093e1867ac4d9ae37131c9",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-bfs-full-hair-tiled-mask_00001_.png",
+      "original_sha256": "1010d25c02349754857d44b364a444166881900f110c889cd8a0cce8286573a5",
+      "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-qwen-bfs-full-hair-tiled_00001_.png",
+      "original_sha256": "f4e9fbc565332df2cbbb93c55ba37cbcccb7891e1d5c428ff6e44e8f0c7007bb",
+      "public_sha256": "277336dd44ca382d89a8ae787da67632555feec4dadb3e86639a56dc2e948e7e",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "qwen-bfs-full-hair-tiled",
+  "feature": "qwen-bfs-head-swap",
+  "verdict": "partial",
+  "review": "复用已校验的原 15 步 BFS latent，仅将最终合成遮罩扩大至覆盖长黑发并改用 CPU tiled VAE。红卷发、侧转、衣服保留且旧黑发条消除；五官仍与参考不同，身份目标部分达到；不冒充重新采样。",
+  "mask_measurement": {
+    "outside_pixels": 71048,
+    "outside_changed_pixels": 3,
+    "outside_max_channel_difference": 1,
+    "inside_pixels": 191096,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 71044,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "b486be21-14de-4662-ad27-0b2513278181",
+  "raw_history_sha256": "f8916e59196766653a396f0849b77e3526c4d39f2381aca77c2cc8e8ab4165ad",
+  "decoding_elapsed_seconds": 279.235,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 72.219,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "e099b66405281e3f97fa4d0f3e54cf938d9d6a319d8f0b570f94ce3e7d47adea",
+  "workflow_sha256": "5cf3852c2c64e7bfa01c5af5984f6f6cc9df36c96505e14df34c0ceba1b54f75",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.203,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "87c96fda5138b7a91e562b06e65e1e8324660c634c5b927a733e9442c192c9ac"
+}

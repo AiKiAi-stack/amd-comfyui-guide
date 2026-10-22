@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "elapsed_seconds": 6.218,
+  "images": [
+    {
+      "file": "9-0-kroma-watercolor-denoise040_00001_.png",
+      "original_sha256": "185332e973041dbcbca06abd220f582581937e64633ec750b785d57f5feede74",
+      "public_sha256": "29fe1d637daa2080c9b1d6e3b279a5fa4cce77031a6df56276d35512271a64f7",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-watercolor-denoise040",
+  "feature": "kroma-img2img",
+  "verdict": "partial",
+  "inputs": [
+    "featurebench/cat.png"
+  ],
+  "review": "正常水彩笔触与纸面感、雨夜红色倒影及窗边猫保留；denoise 从 0.6 降为 0.4 仍把原严格背向猫改为可见眼鼻的侧脸，姿态目标未通过。",
+  "prompt_id": "b8de865f-8c2f-4631-81dc-d46354719a6b",
+  "raw_history_sha256": "74efaaaf8f7fbea8ed1b8ce633d3c2d3827b5c200c634aa8fbb5ebcd0e353bba",
+  "decoding_elapsed_seconds": 6.218,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 30.063,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "ce7bdc270c04c605d4213f7372dc5702780e827adfffae9de60a4c80bc34d97f",
+  "workflow_sha256": "d7728b558c5d5f4e21e9fcea239bb746d27125cb8685c59a2afa0733dcd7b805",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 6.031,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "615aecc5bad1db7b699ab7f35849ba93c08bea1263e0afc829590cd983e6e1a4"
+}

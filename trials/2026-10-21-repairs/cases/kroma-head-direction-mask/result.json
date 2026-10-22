@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "elapsed_seconds": 9.062,
+  "images": [
+    {
+      "file": "case03_9-0-kroma-head-direction-mask_00001_.png",
+      "original_sha256": "c47d1973fe3276c8065a9043bb4018ca125d44e2301b304b0d5e3e8b77968877",
+      "public_sha256": "9d40a460f02780ad10e16c0519a814d6145ffa6b92da8e775c67bc6aeb450753",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-head-direction-mask",
+  "feature": "kroma-head-swap",
+  "verdict": "partial",
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "review": "修正奇数查询切片并升精度后完成四步与解码。侧脸方向、红卷发、雀斑和绿眼转移；但头部偏大、黑发明显残留，颈部/围巾有叠影与接缝，身份不精确，不能作为可用换头成品验收。",
+  "prompt_id": "5d39ea67-0faf-4b38-9437-ea2e2eaa8226",
+  "raw_history_sha256": "77c8a1ff724a1e237dbd4a56effe96805f6d9c0258883e81891dc984095791fd",
+  "decoding_elapsed_seconds": 9.062,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 198.578,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "34712bff21cc7eb3108b69d263835e397eeb97dd7eff07f53fbb61a2f4714d5b",
+  "workflow_sha256": "c1f95fdad630afecc456c8574962344e9b978b64b6dd2648669c1dfb439e6e03",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 12.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "49fa913e9fa5e250d785d91d7de8e5afedd0c67fdf2c66822405bffb27e27727"
+}

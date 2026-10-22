@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "elapsed_seconds": 102.25,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-multiref-local-composite-input_00001_.png",
+      "original_sha256": "ef5a7d139ffce51bdfbe607372a8002b73e7b22c19d549feb59bb08f27235d12",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-multiref-local-composite-mask_00001_.png",
+      "original_sha256": "49d8c6ba18a34eff0e9a744a3722d2c9756d51c05cf6d43aa9e1f2652cda9aff",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-qwen-multiref-local-composite_00001_.png",
+      "original_sha256": "fc9e87a04c3ee6aec246ccfab76e7fd4d21134d4ec347eac119c3b5d46499b62",
+      "public_sha256": "f317024e3961901dd287ee100a62f30222b8b6a3100fad9aadd71bf359312ea6",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "qwen-multiref",
+  "verdict": "partial",
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "review": "狐狸物种、黑腿和白胸清楚，正面姿态与参考接近，背景通过局部合成保留。仍不能确认精确身份：眼色有差异，右侧尾巴被边缘裁切，白尾尖没有完整出现。主体融合改善但未完全验收；遮罩外保持由合成提供。自动缓存配置将每步约38秒的重算降至后续约4秒，本轮完成约104秒，不代表长期稳定。",
+  "prompt_id": "3351e528-c144-4170-b44a-bde4c12fad03",
+  "raw_history_sha256": "08ad6121ce7b4859870e275312d1e39992e6bc744e8d8de270da1007fc4ae071",
+  "workflow_sha256": "007b4518438040193731bc63674e9d9384d0669f15ab01bcbf4c073cb8fdbcdc",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.062,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "310edebf35654a5ffc00ec36c2270886573e972b51ea5114afd19d06d414fd25"
+}

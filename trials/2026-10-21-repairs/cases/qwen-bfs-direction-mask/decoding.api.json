@@ -1,0 +1,151 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/qwen-bfs-direction-mask-9aa19148a9cf.safetensors",
+      "expected_sha256": "6e4c48f0092bcab81424d5a47cd0b221c33c5520fe8a8bb47f98b72585084c98"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_composite",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask"
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-b.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "repair_black": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "repair_white": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 390,
+      "height": 385
+    }
+  },
+  "repair_feather": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "repair_white",
+        0
+      ],
+      "left": 16,
+      "top": 16,
+      "right": 16,
+      "bottom": 16
+    }
+  },
+  "repair_mask": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "repair_black",
+        0
+      ],
+      "source": [
+        "repair_feather",
+        0
+      ],
+      "x": 65,
+      "y": 20,
+      "operation": "add"
+    }
+  },
+  "repair_composite": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "repair_mask",
+        0
+      ]
+    }
+  },
+  "repair_mask_image": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "repair_mask",
+        0
+      ]
+    }
+  },
+  "repair_save_mask": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_mask_image",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask-mask"
+    }
+  },
+  "repair_save_input": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask-input"
+    }
+  }
+}

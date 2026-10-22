@@ -1,0 +1,40 @@
+{
+  "id": "kroma-head-direction-mask",
+  "model": "kroma",
+  "feature": "换头／人物身份参考 · 修复重试",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；一般参考编辑探索，非专用换头模型",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+  "expected": "B服装姿态背景保留，头部外观采用A。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-head-swap\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "修正奇数查询切片并升精度后完成四步与解码。侧脸方向、红卷发、雀斑和绿眼转移；但头部偏大、黑发明显残留，颈部/围巾有叠影与接缝，身份不精确，不能作为可用换头成品验收。",
+  "repairs": [
+    "kroma-head-swap"
+  ],
+  "runtime_profile": "动态显存编码；FP16 split attention + 分数升精度 + 奇数切片补丁；独立 CPU 解码",
+  "status": "success",
+  "prompt_id": "5d39ea67-0faf-4b38-9437-ea2e2eaa8226",
+  "elapsed_seconds": 219.687,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-head-direction-mask_00001_.png",
+      "sha256": "c47d1973fe3276c8065a9043bb4018ca125d44e2301b304b0d5e3e8b77968877",
+      "public_sha256": "9d40a460f02780ad10e16c0519a814d6145ffa6b92da8e775c67bc6aeb450753"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 9.062,
+  "encoding_elapsed_seconds": 12.047,
+  "sampling_elapsed_seconds": 198.578,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": false
+}

@@ -1,0 +1,40 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 6.078,
+  "images": [
+    {
+      "file": "10-0-moss-watercolor-base-sft_00001_.png",
+      "original_sha256": "4b998350f53c2bdfb3f9bc163a9a25765bdb1f0806607e91cdd3bc0e1428a369",
+      "public_sha256": "7defe318d3ef543d93c095e78f2b60eacdfeb677026c17e900fd5d10b812e7c1",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "moss-watercolor-base-sft",
+  "feature": "moss-img2img",
+  "verdict": "pass",
+  "review": "使用同一已存在 SFT 基础权重，移除八步 DMD LoRA，28 步/CFG3/denoise0.85、FP16 UNet。输出有明确水彩大笔触、绿叶晕染与粗纸纹，保留丛林、白色全身宇航员和行走构图；本固定输入配方目视通过，八步风格不足对照保留。",
+  "prompt_id": "751db807-26d6-496e-9483-bc806c3d2b63",
+  "raw_history_sha256": "c14d907cef84d3711f47626d6351ac2e21ff654b87f80eb6e123055d722a1987",
+  "decoding_elapsed_seconds": 6.078,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 120.188,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "65a0991eaa33e3a6d1d38b5b5af9728554ecd5f9a8fab8c424d7db450140b6c3",
+  "workflow_sha256": "e17781c6a76e6f5d84521d70f9657b5a034b848117055c782c4eb5da5124b090",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 15.046,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "d942d0f0d0ca66eac4bb01c23df0bd26d23cda0f7668d646db7605da746b1b33"
+}

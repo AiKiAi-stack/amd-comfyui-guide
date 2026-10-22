@@ -1,0 +1,12 @@
+diff --git a/comfy/ldm/modules/attention.py b/comfy/ldm/modules/attention.py
+--- a/comfy/ldm/modules/attention.py
++++ b/comfy/ldm/modules/attention.py
+@@ -458,7 +458,7 @@
+     cleared_cache = False
+     while True:
+         try:
+-            slice_size = q.shape[1] // steps if (q.shape[1] % steps) == 0 else q.shape[1]
++            slice_size = max(1, (q.shape[1] + steps - 1) // steps)
+             for i in range(0, q.shape[1], slice_size):
+                 end = i + slice_size
+                 if upcast:

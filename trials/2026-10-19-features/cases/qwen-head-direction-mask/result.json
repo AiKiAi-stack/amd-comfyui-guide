@@ -1,0 +1,48 @@
+{
+  "id": "qwen-head-direction-mask",
+  "model": "qwen",
+  "feature": "换头／人物身份参考 · 修复重试",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+  "expected": "B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "512×512、15步，编码与采样进程分离，cache=auto；采样cache-none仍不能保证跨案例资源稳定。保留左向头向，增加头部遮罩合成；精确身份和全部黑发替换尚未验收。",
+  "repairs": [
+    "qwen-face-swap"
+  ],
+  "retry_reason": "左向三分之四侧脸保持，铜红卷发、绿色眼睛和雀斑已转移，海军蓝大衣、红围巾及背景保留。右侧仍有一缕原黑长发残留，精确五官身份也未证明；因此仅部分达到。遮罩外像素保留来自最终合成。",
+  "status": "success",
+  "prompt_id": "eb29a645-955e-4740-bbd9-f884c81052d4",
+  "elapsed_seconds": 108.344,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-head-direction-mask-input_00001_.png",
+      "sha256": "fa0b866800bbde32db766dd05cf723286960d92e6c86f8b405f756a79300194a",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-head-direction-mask-mask_00001_.png",
+      "sha256": "ec668cfb7584843c47c9b061fc7f58994ef4f17a894b676c30e77d3efc8d75d3",
+      "public_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-head-direction-mask_00001_.png",
+      "sha256": "26ff394aadb1e07bb934f748967d35a33de6de69a25ce1671b1e7f06b39ce289",
+      "public_sha256": "2e34dc28707415a80ffd5fa76758e8b9ec9e865873478c1b1fa92b635a9b40bd"
+    }
+  ],
+  "review": "partial",
+  "sampling_elapsed_seconds": 93.312,
+  "encoding_elapsed_seconds": 15.032,
+  "timing_scope": "Sum of encoding and sampling submission-to-history times; excludes service cold starts",
+  "mask_attachments": true
+}

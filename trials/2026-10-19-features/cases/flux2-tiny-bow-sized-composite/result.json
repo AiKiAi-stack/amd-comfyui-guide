@@ -1,0 +1,72 @@
+{
+  "id": "flux2-tiny-bow-sized-composite",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "迭代编辑／固定尺寸合成规避",
+  "recipe": "single",
+  "inputs": [
+    "flux2-klein-bench/flux2-klein-single-color-pinned.png",
+    "repair_inputs/flux2-bow-large.png"
+  ],
+  "refs": [
+    "flux2-klein-bench/flux2-klein-single-color-pinned.png",
+    "repair_inputs/flux2-bow-large.png"
+  ],
+  "depends_on": "flux2-klein-single-color-pinned",
+  "prompt": "无新增模型提示词；从上轮 FLUX 输出裁取红结，缩至22×20并遮罩合成。直接模型尺寸控制仍部分达到。",
+  "expected": "在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。",
+  "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+  "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+  "runtime_profile": "CPU deterministic postprocess of retained FLUX sample",
+  "gpu_text": true,
+  "memory_profile": "dynamic-nvme-pinned",
+  "repairs": [
+    "flux2-klein-iterative"
+  ],
+  "retry_reason": "尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。",
+  "status": "success",
+  "prompt_id": "7f1d02c2-6b1f-487b-bb6d-cd85043b7f70",
+  "elapsed_seconds": 3.047,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-input_00001_.png",
+      "sha256": "88297989838ddeedd8fec1de5737aeafc9c79294562a931e289ff9cbd82e4b6d",
+      "public_sha256": "3a246e34caaa96881ba87b03496a76a45f8d848b22002ec72c11c08630b75e6b"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite_00001_.png",
+      "sha256": "4b08411013d9572bfbf0b8543df305f3acf8e0e77bc25d7cca2a27d56e77d294",
+      "public_sha256": "7ae166ac971c1e0de80ae1d604e64a0a66776f09d2e8534a065f735e86d17c55"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-mask_00001_.png",
+      "sha256": "b9c038a05755edbfd9a47a084d8d0bf91ba0313e83ddad1bedba431dd8c03664",
+      "public_sha256": "ec3fbeef0a9ab40c3b933d0503af4536e14aaadcc0e1e2cdbc142ff6b361ff2d"
+    }
+  ],
+  "review": "pass",
+  "mask_attachments": true,
+  "upstream": {
+    "method": "Deterministic CPU crop, resize and masked composite; no new model sample",
+    "source_case": "flux2-tiny-bow-fingertip",
+    "source_original_sha256": "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8",
+    "source_public_sha256": "5a0a332e0000be41484097a8bb47062397f3a97ebfd3e4d81e76c0fab44faf03",
+    "patch_size": [
+      22,
+      20
+    ],
+    "position": [
+      122,
+      328
+    ],
+    "mask_threshold_red": 0.3,
+    "outside_measurement": {
+      "outside_pixels": 247078,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "inside_pixels": 218,
+      "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+      "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+      "float_mask_support_unavailable": "Exact mask support unavailable for GrowMask"
+    }
+  }
+}

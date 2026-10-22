@@ -1,0 +1,24 @@
+{
+  "workflow_sha256": "d7728b558c5d5f4e21e9fcea239bb746d27125cb8685c59a2afa0733dcd7b805",
+  "archive_sha256": "1de15cd82035ef8d53594152f04d8a97a438760a740edf0f5cd601e0e3691ca4",
+  "archive_file": "repair_conditioning/kroma-watercolor-denoise040-53a334e5ea15.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": true,
+  "qwen_cache_device_override": null,
+  "encoding_api_sha256": "485223c2720093b2bf251955f26bdbad371d2db94f1f941df8fea00bcc94fd4e",
+  "encoding_history_sha256": "615aecc5bad1db7b699ab7f35849ba93c08bea1263e0afc829590cd983e6e1a4",
+  "inputs_checked_at_reuse": [
+    {
+      "file": "featurebench/cat.png",
+      "sha256_at_reuse": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457",
+      "mtime_ns": 1792292328891044700
+    }
+  ],
+  "input_check_method": "filesystem mtime predates execution; hashes recorded at reuse",
+  "sampled_latent_file": "repair_conditioning/kroma-watercolor-denoise040-e848a31502e8.safetensors",
+  "sampled_latent_sha256": "8200134682f4cedf57556aa5a5e733a3a4d50f1c604ed0eb37b3885075e5bfde",
+  "sampling_reused": true,
+  "sampling_process_exited_before_decoding": true,
+  "sampling_api_sha256": "27d21a845992d5800e5ed583991d69a09b2bf9998160e2618edcc2a72a4756d5",
+  "sampling_history_sha256": "ce7bdc270c04c605d4213f7372dc5702780e827adfffae9de60a4c80bc34d97f"
+}

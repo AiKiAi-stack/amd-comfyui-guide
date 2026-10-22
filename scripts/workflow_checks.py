@@ -4,6 +4,19 @@ from pathlib import PurePosixPath
 
 def known_workflow_errors(graph):
     errors = []
+    def check_links(value, owner):
+        if isinstance(value, list) and len(value) == 2 and isinstance(value[0], str) and isinstance(value[1], int):
+            if value[0] not in graph:
+                errors.append(f"Missing workflow node {value[0]} referenced by {owner}")
+        elif isinstance(value, dict):
+            for child in value.values():
+                check_links(child, owner)
+        elif isinstance(value, list):
+            for child in value:
+                check_links(child, owner)
+
+    for node_id, node in graph.items():
+        check_links(node.get("inputs", {}), node_id)
     for sampler_id, sampler in graph.items():
         if sampler.get("class_type") not in {"KSampler", "KSamplerAdvanced"}:
             continue

@@ -12,4 +12,5 @@ jobs:
           python-version: '3.12'
       - run: python scripts/test_workflow_checks.py
       - run: python scripts/test_conditioned_graph.py
+      - run: python scripts/test_replay_partial.py
       - run: python scripts/verify_publication.py

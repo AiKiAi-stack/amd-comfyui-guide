@@ -1,0 +1,38 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "flux2-vae_small.safetensors"
+    }
+  },
+  "8": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/moss-watercolor-base-sft-c0598c278d91.safetensors",
+      "expected_sha256": "ce27674589996ccf192663e1cc66ad6716e52c155e998eb2204215bae47b9957"
+    }
+  },
+  "9": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ],
+      "filename_prefix": "RepairBench/moss-watercolor-base-sft"
+    }
+  }
+}

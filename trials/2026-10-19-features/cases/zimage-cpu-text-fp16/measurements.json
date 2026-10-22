@@ -1,0 +1,11 @@
+{
+  "peak_tree_rss_observed_bytes": 8260890624,
+  "minimum_available_ram_observed_bytes": 491393024,
+  "minimum_commit_available_observed_bytes": 1395736576,
+  "sample_interval_seconds": 2,
+  "device": "RX 6650 XT",
+  "reported_vram_capacity_bytes": 8573157376,
+  "exact_peak_vram_sampled": false,
+  "cpu_text_dtype": "torch.float16",
+  "pinned_memory_enabled": true
+}

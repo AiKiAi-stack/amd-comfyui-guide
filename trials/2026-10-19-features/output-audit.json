@@ -1217,8 +1217,929 @@
       "status": "error",
       "prompt_id": "373f15c5-9dc9-486e-b466-67cf712dbd96",
       "images": []
+    },
+    {
+      "id": "qwen-caption-gpu-chunked",
+      "feature": "自动反推并再生成 · 分阶段修复重试",
+      "status": "success",
+      "prompt_id": "e2b7519e-4a58-416d-be73-c2e5a141783b",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-caption-gpu-chunked_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "5b925033c7c1fd0b93fc746ec6b3dfa2d18d350eb94722bec110fc930bdfe157"
+        }
+      ]
+    },
+    {
+      "id": "flux2-teapot-structure",
+      "feature": "对象替换／中文指令 · 修复重试",
+      "status": "success",
+      "prompt_id": "b8004c69-17e1-4c97-b703-a9fe02a91243",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-teapot-structure_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+            ]
+          },
+          "sha256": "5d15ca47aecdd9da4674042a14adbfa9b465dca50b535db01e395ae8f1f799b7"
+        }
+      ]
+    },
+    {
+      "id": "flux2-tiny-bow",
+      "feature": "迭代编辑／第二轮修改 · 修复重试",
+      "status": "success",
+      "prompt_id": "93d2959d-39e1-4ac1-a897-288a9bd039bb",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-tiny-bow_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 688,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+            ]
+          },
+          "sha256": "3053e9dd672d4110aa4fd466e86e780699468a8aefa1d1469003606ec4af5efe"
+        }
+      ]
+    },
+    {
+      "id": "flux2-watercolor-night",
+      "feature": "风格转换 · 修复重试",
+      "status": "success",
+      "prompt_id": "975a0bc4-8569-4046-bcf5-06d41d9b8b2a",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-watercolor-night_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "e342b0dd245c1168d1b0f9007bb55dee9dad017205bfeeaaafa625796a85edc7"
+        }
+      ]
+    },
+    {
+      "id": "flux2-1024-attention",
+      "feature": "文生图／1024分辨率 · 修复重试",
+      "status": "success",
+      "prompt_id": "37a9b193-fbe0-43b2-b3f8-d73326958a73",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-1024-attention_00001_.png",
+          "exists": true,
+          "width": 1024,
+          "height": 1024,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "3bdf10bb158ab83023a1825d4b4d149debb5a00fa5f37a364dc7afc3e6362064"
+        }
+      ]
+    },
+    {
+      "id": "qwen-mask-fox-reference",
+      "feature": "遮罩局部重绘 · 修复重试",
+      "status": "success",
+      "prompt_id": "47ddb82e-a795-44a9-bd68-9199b00fcce8",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-mask-fox-reference-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "e5bcf10c3e85abe5b464cc423ab88da44488c31f2affe94c99ecebe5d1645b54"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-mask-fox-reference-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "80d618b29b01c1075668d41cb5b57d870a53d8820b07c08eac606f481a9cb7a1"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-mask-fox-reference_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case01_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "9c114fcf567f17d008ddeb1c95b6df3bd52bd46506a37cb5b3124f3bc9e2717b"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 67616,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "qwen-multiref-local-composite",
+      "feature": "多图参考／主体合成 · 修复重试",
+      "status": "success",
+      "prompt_id": "3351e528-c144-4170-b44a-bde4c12fad03",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-multiref-local-composite-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "ef5a7d139ffce51bdfbe607372a8002b73e7b22c19d549feb59bb08f27235d12"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-multiref-local-composite-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "49d8c6ba18a34eff0e9a744a3722d2c9756d51c05cf6d43aa9e1f2652cda9aff"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-multiref-local-composite_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "fc9e87a04c3ee6aec246ccfab76e7fd4d21134d4ec347eac119c3b5d46499b62"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 68725,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "qwen-head-direction-mask",
+      "feature": "换头／人物身份参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "eb29a645-955e-4740-bbd9-f884c81052d4",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-head-direction-mask-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "fa0b866800bbde32db766dd05cf723286960d92e6c86f8b405f756a79300194a"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-head-direction-mask-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "ec668cfb7584843c47c9b061fc7f58994ef4f17a894b676c30e77d3efc8d75d3"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-head-direction-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "26ff394aadb1e07bb934f748967d35a33de6de69a25ce1671b1e7f06b39ce289"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 111998,
+        "outside_changed_pixels": 4,
+        "outside_max_channel_difference_0_to_255": 1,
+        "inside_pixels": 150146,
+        "inside_changed_pixels": 149578,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "qwen-face-only-mask",
+      "feature": "换脸／仅面部身份 · 修复重试",
+      "status": "success",
+      "prompt_id": "4a90f542-0e55-4d9d-9e3d-b8eebf73ee25",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-mask-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "2ff14ee878f18ec36b87bc23e944533971d9d4ef592ff358d54c29ef0f9f9150"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-mask-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "86d81ccbef6a3c48be8393f4715365108ddeb2b3ec996b86cc003bb68a82d055"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-face-only-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "f60ae7b01b4e61b47f45477185cb44ae17ac88f4878af1a00228c4fcc6b618af"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 214148,
+        "outside_changed_pixels": 3,
+        "outside_max_channel_difference_0_to_255": 1,
+        "inside_pixels": 47996,
+        "inside_changed_pixels": 47315,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "qwen-bfs-direction-mask",
+      "feature": "换头／BFS 专用 LoRA 对照 · 修复重试",
+      "status": "success",
+      "prompt_id": "6d7da485-de01-433a-bc11-f464a9f8613d",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-bfs-direction-mask-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "793fe3a27a327867615a3f82dabe70dff3ec8ca87619cf8bce89aa03d80666d5"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-bfs-direction-mask-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "0a8b1028010a61a319c3b113a2b1d205e12fe181c57b091d24705ca172958bcc"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-bfs-direction-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "94115f83a9cb6b0c3ddd9132b6f7e4c42db19698341a91a055620c9c7230f9c8"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 111998,
+        "outside_changed_pixels": 4,
+        "outside_max_channel_difference_0_to_255": 1,
+        "inside_pixels": 150146,
+        "inside_changed_pixels": 149631,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "ref2va-124frame-20step",
+      "feature": "参考图生成约5秒视频（20步）",
+      "status": "server_exit",
+      "prompt_id": "fc1236fa-c3d5-42d5-ba13-a7f800560594",
+      "images": []
+    },
+    {
+      "id": "kroma-style-owl-explicit",
+      "feature": "风格参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "6179490c-63cf-4955-be5b-37144cac2bb7",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-style-owl-explicit_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "7aeff69cc8e88457200788b784ef80797b12d2cb45f836cfe1909d9c79e89108"
+        }
+      ]
+    },
+    {
+      "id": "kroma-style-no-subject-reference",
+      "feature": "风格参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "a023ac38-7599-4a23-9b2f-7bd48cf61702",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-style-no-subject-reference_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "046f782fb8f074fd0f5cfb123c5db2d8f99441926c7fed7e526c23304f30893c"
+        }
+      ]
+    },
+    {
+      "id": "kroma-watercolor-denoise040",
+      "feature": "图生图／洗图 · 修复重试",
+      "status": "success",
+      "prompt_id": "b8de865f-8c2f-4631-81dc-d46354719a6b",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-watercolor-denoise040_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "185332e973041dbcbca06abd220f582581937e64633ec750b785d57f5feede74"
+        }
+      ]
+    },
+    {
+      "id": "kroma-head-direction-mask",
+      "feature": "换头／人物身份参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "5d39ea67-0faf-4b38-9437-ea2e2eaa8226",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-head-direction-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case03_30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "c47d1973fe3276c8065a9043bb4018ca125d44e2301b304b0d5e3e8b77968877"
+        }
+      ]
+    },
+    {
+      "id": "ref2va-124frame-20step-blas1",
+      "feature": "参考图生成约5秒视频（20步）（CPU数学库1线程重试）",
+      "status": "server_exit",
+      "prompt_id": "86b5f8b9-bd2b-4975-b525-3e0454443884",
+      "images": []
+    },
+    {
+      "id": "zimage-cpu-text-fp16",
+      "feature": "双GGUF文生图／低显存运行 · 修复重试",
+      "status": "success",
+      "prompt_id": "f8bac973-e0fe-4420-9ef1-3dd7c6499a35",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\zimage-cpu-text-fp16_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "d0f236407c64ddbb4fc7b538f4d495f41ef621b8ead6f5f3fab4a7f7d3c70749"
+        }
+      ]
+    },
+    {
+      "id": "turbo-head-direction-mask",
+      "feature": "换头／人物身份参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "7c9ffc23-3b95-4ea5-9125-16da9c8d3bc5",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-head-direction-mask-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "f046c13aa72cd84990df1aba6e91fd423947b9d8a3766ec912b1e3b89670522c"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-head-direction-mask-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "b865979f509aecb8d03d32be83c5d079b3f1524fdacaadc99112d452d7eb83dc"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-head-direction-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "bfc37c7be5667f2580fd9838b20ba692f005512f112aa5da1c77f60d8ee41523"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 71048,
+        "outside_changed_pixels": 3,
+        "outside_max_channel_difference_0_to_255": 1,
+        "inside_pixels": 191096,
+        "inside_changed_pixels": 190871,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "flux2-tiny-bow-fingertip",
+      "feature": "迭代编辑／第二轮修改 · 修复重试",
+      "status": "success",
+      "prompt_id": "f8f1e32d-013d-48f8-85f9-92b89bb717f5",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-tiny-bow-fingertip_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 688,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "1": [
+              "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+            ]
+          },
+          "sha256": "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8"
+        }
+      ]
+    },
+    {
+      "id": "kroma-watercolor-back-view",
+      "feature": "图生图／洗图 · 修复重试",
+      "status": "success",
+      "prompt_id": "47a59396-7f21-4a5f-b536-baea9923b6f1",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-watercolor-back-view_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "7e1c094f6f25c88a0c8696a533c63d64ac84b69d506334b2df2d87b764ad6e46"
+        }
+      ]
+    },
+    {
+      "id": "kroma-multiref-ref384",
+      "feature": "多图参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "766c6f01-16b9-42f7-a9d7-5709acd7839f",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-ref384-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "3fd20c10daeae7078394705fd1a13bd45ebdf67fa919553ac9275dcad4a47b25"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-ref384-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "2136663af30f49ca1c38d532b56875a6c129155c1906a6479fb17bd9c288b532"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-ref384_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "322c9742d090e5016328dafed38eab62fd2305f0318ff945e2c54655d1a15ee4"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 68814,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "moss-watercolor-denoise085",
+      "feature": "图生图／洗图 · 修复重试",
+      "status": "success",
+      "prompt_id": "626b898e-39a4-4282-a5db-a8e82d9b4d4d",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\moss-watercolor-denoise085_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "362cf3a3176aa2c551a0335aac184ca796990e3968cf09870842e23a38d6f303"
+        }
+      ]
+    },
+    {
+      "id": "qwen-bfs-full-hair-tiled",
+      "feature": "换头／BFS 专用 LoRA 对照 · 修复重试",
+      "status": "success",
+      "prompt_id": "b486be21-14de-4662-ad27-0b2513278181",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-bfs-full-hair-tiled-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "ae843230f31bfe4246e261aa941a7c3001dfe26408093e1867ac4d9ae37131c9"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-bfs-full-hair-tiled-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "1010d25c02349754857d44b364a444166881900f110c889cd8a0cce8286573a5"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\qwen-bfs-full-hair-tiled_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+            ]
+          },
+          "sha256": "f4e9fbc565332df2cbbb93c55ba37cbcccb7891e1d5c428ff6e44e8f0c7007bb"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 71048,
+        "outside_changed_pixels": 3,
+        "outside_max_channel_difference_0_to_255": 1,
+        "inside_pixels": 191096,
+        "inside_changed_pixels": 190525,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "turbo-mask-fox-reference",
+      "feature": "遮罩局部重绘 · 修复重试",
+      "status": "success",
+      "prompt_id": "115f8eb5-20cb-4d0a-bf3d-f6c6891cf669",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-mask-fox-reference-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "88b40d2206a365065cb91b1315f4227c24c19d26a1964240835da5bb9e727664"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-mask-fox-reference-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "776ce2678a229df460fc83c9eab5e27a90767c55a1e6914840e43313ae16b471"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\turbo-mask-fox-reference_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "0f49eabff0e12e717a466a2d3c44ad5fa9017775b8c7e71b0a66b9c9ee36dbc0"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 67700,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "kroma-multiref-clean-reference",
+      "feature": "多图参考 · 修复重试",
+      "status": "success",
+      "prompt_id": "13a176c9-a5f1-4a73-bd4e-2439f0b4bcb4",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-clean-reference-input_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "3b2b05ae7cc923682efb6c1e103dd9103ffb78fc020bd52cf60efbca6ea4f410"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-clean-reference-mask_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "734ea8b35c5eeee5e7681c054620ac49dcf7a2059a85882fcdfed3f67a368a0c"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\kroma-multiref-clean-reference_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "case02_30": [
+              "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+            ]
+          },
+          "sha256": "e2423b979b20ae764e3452c758ed5b60fddda95f742f5ee5ea054b0075064cad"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 193144,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 69000,
+        "inside_changed_pixels": 68881,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
+    },
+    {
+      "id": "moss-watercolor-base-sft",
+      "feature": "图生图／洗图 · 修复重试",
+      "status": "success",
+      "prompt_id": "751db807-26d6-496e-9483-bc806c3d2b63",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\moss-watercolor-base-sft_00001_.png",
+          "exists": true,
+          "width": 512,
+          "height": 512,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {},
+          "sha256": "4b998350f53c2bdfb3f9bc163a9a25765bdb1f0806607e91cdd3bc0e1428a369"
+        }
+      ]
+    },
+    {
+      "id": "flux2-tiny-bow-sized-composite",
+      "feature": "迭代编辑／固定尺寸合成规避",
+      "status": "success",
+      "prompt_id": "7f1d02c2-6b1f-487b-bb6d-cd85043b7f70",
+      "images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-tiny-bow-sized-composite-input_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "base": [
+              "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+            ],
+            "rendered": [
+              "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8"
+            ]
+          },
+          "sha256": "88297989838ddeedd8fec1de5737aeafc9c79294562a931e289ff9cbd82e4b6d"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-tiny-bow-sized-composite_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "base": [
+              "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+            ],
+            "rendered": [
+              "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8"
+            ]
+          },
+          "sha256": "4b08411013d9572bfbf0b8543df305f3acf8e0e77bc25d7cca2a27d56e77d294"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\RepairBench\\flux2-tiny-bow-sized-composite-mask_00001_.png",
+          "exists": true,
+          "width": 368,
+          "height": 672,
+          "png_prompt_matches_api": true,
+          "belongs_to_case": true,
+          "input_cache_hashes": {
+            "base": [
+              "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+            ],
+            "rendered": [
+              "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8"
+            ]
+          },
+          "sha256": "b9c038a05755edbfd9a47a084d8d0bf91ba0313e83ddad1bedba431dd8c03664"
+        }
+      ],
+      "mask_measurement": {
+        "outside_pixels": 247078,
+        "outside_changed_pixels": 0,
+        "outside_max_channel_difference_0_to_255": 0,
+        "inside_pixels": 218,
+        "inside_changed_pixels": 218,
+        "meaning": "Mask-outside preservation is provided by the final compositing node, not attributed solely to the model."
+      }
     }
   ],
-  "report_image_count": 99,
+  "report_image_count": 182,
   "missing_report_images": []
 }

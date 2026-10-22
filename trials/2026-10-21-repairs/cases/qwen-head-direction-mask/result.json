@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "elapsed_seconds": 93.312,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-head-direction-mask-input_00001_.png",
+      "original_sha256": "fa0b866800bbde32db766dd05cf723286960d92e6c86f8b405f756a79300194a",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-head-direction-mask-mask_00001_.png",
+      "original_sha256": "ec668cfb7584843c47c9b061fc7f58994ef4f17a894b676c30e77d3efc8d75d3",
+      "public_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case01_7-0-qwen-head-direction-mask_00001_.png",
+      "original_sha256": "26ff394aadb1e07bb934f748967d35a33de6de69a25ce1671b1e7f06b39ce289",
+      "public_sha256": "2e34dc28707415a80ffd5fa76758e8b9ec9e865873478c1b1fa92b635a9b40bd",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "qwen-face-swap",
+  "verdict": "partial",
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "review": "左向三分之四侧脸保持，铜红卷发、绿色眼睛和雀斑已转移，海军蓝大衣、红围巾及背景保留。右侧仍有一缕原黑长发残留，精确五官身份也未证明；因此仅部分达到。遮罩外像素保留来自最终合成。",
+  "prompt_id": "eb29a645-955e-4740-bbd9-f884c81052d4",
+  "raw_history_sha256": "bf0636084bb139c4fe3b94870d8819a7bc0c3ed6aa2fb8a886db1efcc42eef09",
+  "workflow_sha256": "af253f6551a065e22548f4536cfce125892a5979afc3282640c819c05593d222",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.032,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "160ee878fa7a28db83ffe97b902f4c76e22751e598f9a6ba246814263e3cff57"
+}

@@ -224,13 +224,14 @@ def mask_measurement_lines(audit_record: dict | None) -> list[str]:
             return text(value)
 
     return [
-        "遮罩外改变像素 / 总像素："
+        "按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素："
         f"{count(measurement.get('outside_changed_pixels'))} / "
         f"{count(measurement.get('outside_pixels'))}",
         "遮罩内改变像素 / 总像素："
         f"{count(measurement.get('inside_changed_pixels'))} / "
         f"{count(measurement.get('inside_pixels'))}",
         "遮罩外像素保留由最终合成节点实现，不归因于模型本身。",
+        "极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。",
     ]
 
 
@@ -424,7 +425,7 @@ def render_case_html(case: dict, reviews, record: dict | None, result_exists: bo
     case_id = text(case.get("id"), "未命名")
     anchor_id = anchor_id or case_id
     review, review_detail = review_for(case_id, reviews, record)
-    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint"
+    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint" or bool(case.get("mask_attachments"))
     output_images = image_items(record.get("images")) if isinstance(record, dict) else []
     outputs, attachments = split_outputs(output_images, inpaint)
     if blocked:
@@ -535,7 +536,7 @@ def markdown_case(case: dict, reviews, record: dict | None, result_exists: bool,
                   *, blocked=False, baseline=False) -> str:
     case_id = text(case.get("id"), "未命名")
     review, review_detail = review_for(case_id, reviews, record)
-    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint"
+    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint" or bool(case.get("mask_attachments"))
     raw_images = image_items(record.get("images")) if isinstance(record, dict) else []
     outputs, attachments = split_outputs(raw_images, inpaint)
     if blocked:

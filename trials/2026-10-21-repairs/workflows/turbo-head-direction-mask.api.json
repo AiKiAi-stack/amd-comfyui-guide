@@ -103,17 +103,6 @@
       "crop": "disabled"
     }
   },
-  "81": {
-    "class_type": "QwenImage21Cache",
-    "inputs": {
-      "model": [
-        "1",
-        0
-      ],
-      "device": "off",
-      "dtype": "default"
-    }
-  },
   "60": {
     "class_type": "CFGGuider",
     "inputs": {
@@ -129,7 +118,7 @@
         "4",
         1
       ],
-      "cfg": 1.0
+      "cfg": 1
     }
   },
   "61": {
@@ -175,10 +164,21 @@
       ]
     }
   },
+  "81": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "off",
+      "dtype": "default"
+    }
+  },
   "repair_black": {
     "class_type": "SolidMask",
     "inputs": {
-      "value": 0.0,
+      "value": 0,
       "width": 512,
       "height": 512
     }
@@ -186,9 +186,9 @@
   "repair_white": {
     "class_type": "SolidMask",
     "inputs": {
-      "value": 1.0,
-      "width": 390,
-      "height": 385
+      "value": 1,
+      "width": 420,
+      "height": 455
     }
   },
   "repair_feather": {
@@ -238,6 +238,35 @@
         "repair_mask",
         0
       ]
+    }
+  },
+  "repair_mask_image": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "repair_mask",
+        0
+      ]
+    }
+  },
+  "repair_save_mask": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_mask_image",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-head-direction-mask-mask"
+    }
+  },
+  "repair_save_input": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-head-direction-mask-input"
     }
   }
 }

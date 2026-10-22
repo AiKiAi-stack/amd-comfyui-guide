@@ -14,6 +14,8 @@ args = parser.parse_args()
 sys.argv = [sys.argv[0], "--cpu"]
 sys.path.insert(0, str(args.runtime / "ComfyUI"))
 
+import comfy.options
+comfy.options.enable_args_parsing()
 import torch
 import comfy.ops
 from comfy.text_encoders.llama import BaseQwen3

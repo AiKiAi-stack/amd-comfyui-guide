@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "elapsed_seconds": 192.531,
+  "images": [
+    {
+      "file": "18-0-zimage-cpu-text-fp16_00001_.png",
+      "original_sha256": "d0f236407c64ddbb4fc7b538f4d495f41ef621b8ead6f5f3fab4a7f7d3c70749",
+      "public_sha256": "a4d8cda09dcb159e5e4044005dfa8d5e1d12fd2818f5854f7a0ae43c53ce69e5",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "zimage-gguf-photo",
+  "verdict": "pass",
+  "inputs": [],
+  "review": "在 RX 6650 XT 上完整完成 CPU 文本编码、9 步 512×512 采样、CPU VAE 与 PNG。目视为正常红色单壶嘴/单把手茶壶、两颗柠檬、深木桌和左侧窗光，无文字或噪声。显式 FP16 CPU 文本编码并读取同 SHA 的 G 盘模型缓存；没有用 GPU 文本编码成功替代本项。记录 RAM/commit 观测，未采集精确峰值显存，单次成功不证明历史连续崩溃根因已解决。",
+  "prompt_id": "f8bac973-e0fe-4420-9ef1-3dd7c6499a35",
+  "raw_history_sha256": "d1c8dabbaef350e3577cda84f901a63482dce4e9f74030891be93b32717fd7d7",
+  "workflow_sha256": "3dbf1700d4535c02dc7f2309ee5feb263b1a2daa91d17bfeb238126d8c49e4b7"
+}

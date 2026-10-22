@@ -286,7 +286,7 @@
     "class_type": "MaskToImage",
     "inputs": {
       "mask": [
-        "case01_53",
+        "53",
         0
       ]
     }
@@ -305,7 +305,7 @@
     "class_type": "SaveImage",
     "inputs": {
       "images": [
-        "case01_31",
+        "31",
         0
       ],
       "filename_prefix": "RepairBench/turbo-mask-fox-reference-input"

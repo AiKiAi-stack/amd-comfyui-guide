@@ -1,0 +1,1544 @@
+{
+  "scope": "Retained local runtime attempts; execution and visual verdicts are separate. A protective stop can coexist with an earlier observed native exception; final forced-stop exit codes are not attributed as natural native exits.",
+  "captured_utc": "2026-10-22T01:49:22.250Z",
+  "attempts": [
+    {
+      "local_evidence": "runs/flux2-bow-sized-v3",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "flux2-tiny-bow-sized-composite",
+          "exit_code": 0,
+          "seconds": 4.06
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 9430573056,
+      "summary_sha256": "4e54f533966d2ad8183b8b80bfead1e58e2ef12c80cb5900e1e5c399b5da14c0",
+      "stderr_sha256": "0c90e9005b8e2dcb76877d8e0eebcdf4b51adca5520616d2c198a0a14020eea0"
+    },
+    {
+      "local_evidence": "runs/flux2-bow-sized-v4",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "flux2-tiny-bow-sized-composite",
+          "exit_code": 0,
+          "seconds": 4.03
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 9409748992,
+      "summary_sha256": "1cc904b55bd78047557eb0350cdf7d24be41ca4191ef305cd9d48bb6e3994bfc",
+      "stderr_sha256": "5237a679c22e1a1577e4a5b47a7385c22b125dfa4a4171823cb91abeb142ffc6"
+    },
+    {
+      "local_evidence": "runs/flux2-bow-v2",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "flux2",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "flux2-tiny-bow-fingertip",
+          "exit_code": 0,
+          "seconds": 34.24
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1472569344,
+      "summary_sha256": "1c8d966aa5faef6556a43906fa6cfd6c87e4e537bf833b5ff1054bc599e1c7f9",
+      "stderr_sha256": "385a450b9db5e4eb8a12b2cebdf70a99b0526523058d8fcd419df7645a32bb13"
+    },
+    {
+      "local_evidence": "runs/flux2-repairs-v1",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "flux2",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "flux2-teapot-structure",
+          "exit_code": 0,
+          "seconds": 52.33
+        },
+        {
+          "id": "flux2-tiny-bow",
+          "exit_code": 0,
+          "seconds": 30.19
+        },
+        {
+          "id": "flux2-watercolor-night",
+          "exit_code": 0,
+          "seconds": 30.19
+        },
+        {
+          "id": "flux2-1024-attention",
+          "exit_code": 0,
+          "seconds": 84.48
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 910159872,
+      "summary_sha256": "109487cc9e0345198f97f777cc3fc6fa985cd8a2297301534b93ac167b5331fa",
+      "stderr_sha256": "b739917d3dda618545a2e4ed555d32924024d1a31cd8879c4986e7633b84f0a4"
+    },
+    {
+      "local_evidence": "runs/kroma-back-view-v1/decoding/kroma-watercolor-back-view",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-watercolor-back-view-decode",
+          "exit_code": 0,
+          "seconds": 8.06
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 6802292736,
+      "summary_sha256": "4683ef7d79d074ef5a3322ac4d33ed09b95d4531f0b37588797939448c73dcaa",
+      "stderr_sha256": "8b7b404fa692ddc6b59956ac6051aa8784ab635618b1a7d171f8c9c3f2df7623"
+    },
+    {
+      "local_evidence": "runs/kroma-back-view-v1/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-watercolor-back-view",
+          "exit_code": 0,
+          "seconds": 14.09
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 3419254784,
+      "summary_sha256": "58ee898de85ac71c197c3d5d3e2a083d7bf264aa424ef7754558ac884e7d6312",
+      "stderr_sha256": "3116ac0ed4189dab4a4d55311d7510d9308e0e2f2ea2c92ef7bb8f3c54e81864"
+    },
+    {
+      "local_evidence": "runs/kroma-back-view-v1/sampling/kroma-watercolor-back-view-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "kroma",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-watercolor-back-view-sample",
+          "exit_code": 0,
+          "seconds": 34.17
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2699628544,
+      "summary_sha256": "e0556646d9899edcef615993289ff6c031cf5b3b86bedb0ed97e26dca63173bd",
+      "stderr_sha256": "cdc57dd72f94f537157105d37bad1a3350c94a10402255969431260fa0184ab4"
+    },
+    {
+      "local_evidence": "runs/kroma-clean-ref-v9/decoding/kroma-multiref-clean-reference",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-clean-reference-decode",
+          "exit_code": 0,
+          "seconds": 10.09
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 6408286208,
+      "summary_sha256": "4fb42d204dbe5d96a3410914fa122b574f49fdd9decb3f45c78bd6ac3e93db35",
+      "stderr_sha256": "00d50d304293b14d7f85c5f135978440db1b663add1e970f01ff75fda5f9e66e"
+    },
+    {
+      "local_evidence": "runs/kroma-clean-ref-v9/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-clean-reference",
+          "exit_code": 0,
+          "seconds": 22.16
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2856980480,
+      "summary_sha256": "4b055d7ca3d99d72dfbc4b4ea0c500b223f50471571fe5151bfd2f4112bc94f8",
+      "stderr_sha256": "ab5b69f2d4a1c3962801c168a160ec9a18a1ca6ab8b5306667918465e254659b"
+    },
+    {
+      "local_evidence": "runs/kroma-clean-ref-v9/sampling/kroma-multiref-clean-reference-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "kroma",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-clean-reference-sample",
+          "exit_code": 0,
+          "seconds": 88.42
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1401036800,
+      "summary_sha256": "c6446674e28489be6d30d0fc0945da92ac99cdd63cd9340e134d41c39a964500",
+      "stderr_sha256": "59aa3161ba9de1b04675b01a92c3dcd16cc2f7593cc2a95ea8b4418350a39a61"
+    },
+    {
+      "local_evidence": "runs/kroma-decode-recovery-v5/decoding/kroma-head-direction-mask",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-head-direction-mask-decode",
+          "exit_code": 0,
+          "seconds": 10.08
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 3929481216,
+      "summary_sha256": "d2bd122e36ac3ae4b928fe62b948e1657052e3f75cf62ca1cc4ddc3b5ad11874",
+      "stderr_sha256": "3dc35fe526045205b985edd38995476cbdce6344a390cc2b7896db7956139d42"
+    },
+    {
+      "local_evidence": "runs/kroma-decode-recovery-v5/decoding/kroma-style-no-subject-reference",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-no-subject-reference-decode",
+          "exit_code": 0,
+          "seconds": 8.05
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 4322504704,
+      "summary_sha256": "3226759c01ed28ee6e2c71e905bf8be8446a6633104a04ac7a045b51af882831",
+      "stderr_sha256": "0ef8891a8651a9efd03b862d9c65e58924eaf47b0715bed47ddd363b0397aa44"
+    },
+    {
+      "local_evidence": "runs/kroma-decode-recovery-v5/decoding/kroma-style-owl-explicit",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-owl-explicit-decode",
+          "exit_code": 0,
+          "seconds": 10.14
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5222817792,
+      "summary_sha256": "c527a70016f0c41e1ae7e0fcda962902a6f16120dc21cd5c6b52a44c21d015d0",
+      "stderr_sha256": "4cfd74c513478d6dd29ef4f3e7a4896cdf0f15b728a5a854e7538021a2a7e942"
+    },
+    {
+      "local_evidence": "runs/kroma-decode-recovery-v5/decoding/kroma-watercolor-denoise040",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-watercolor-denoise040-decode",
+          "exit_code": 0,
+          "seconds": 8.05
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 4369408000,
+      "summary_sha256": "8f06cfdcb42bc86f7c3cb2025bebbd0024fde4748013875cec1a95bc2c9403e7",
+      "stderr_sha256": "f2d848beb14192c5d3e8d74c8a4307a66e57b836f945280c3a9210ea510be24f"
+    },
+    {
+      "local_evidence": "runs/kroma-multiref-unpinned-v6/sampling/kroma-multiref-local-composite-sample",
+      "status": "failed",
+      "profile": "kroma",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Commit guard stopped the owned trial; inspect retained logs for earlier errors",
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": "kroma-multiref-local-composite-sample",
+      "minimum_commit_available_bytes": 465408000,
+      "summary_sha256": "12c7a582a8b5c9eb4890535fb0506221f5e25a6990e777b1369c45fd855ddb43",
+      "stderr_sha256": "694308039d2bc30089f9a75e13cd1c76e96eea254efcd8d00dcb873b5aebf301"
+    },
+    {
+      "local_evidence": "runs/kroma-ref384-v7/decoding/kroma-multiref-ref384",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-ref384-decode",
+          "exit_code": 0,
+          "seconds": 10.28
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 6729445376,
+      "summary_sha256": "b6c68e9c7f5edc9922d75a044b8c6c6d7a832ab9c4d80e57c2aea7673ab360fa",
+      "stderr_sha256": "89e03f35baa5869fae1437c5d2c96814a59339168103b169e03850c3659addbd"
+    },
+    {
+      "local_evidence": "runs/kroma-ref384-v7/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-ref384",
+          "exit_code": 0,
+          "seconds": 26.23
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2795175936,
+      "summary_sha256": "97dcbc0161640ac54c38b177d94515c8b40b0908fa4b82be3ec857f3ef242c82",
+      "stderr_sha256": "31dda2f51db392a74831bdd9c4fafa47f896e8fa28d49b2e01204ab41e18aa99"
+    },
+    {
+      "local_evidence": "runs/kroma-ref384-v7/sampling/kroma-multiref-ref384-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "kroma",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-ref384-sample",
+          "exit_code": 0,
+          "seconds": 54.56
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2503340032,
+      "summary_sha256": "fa464351def05fff7ecfd8c9a0ea588d1fe0de1d384748115af4e686185a902d",
+      "stderr_sha256": "93438cbf2fe99d332aa1f674e8745cc0f08290439c59bd5f18d55a68dddb8b12"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-f32-v2/sampling/kroma-style-owl-explicit-sample",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": "Replay failed for kroma-style-owl-explicit-sample; see retained logs/history",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-owl-explicit-sample",
+          "exit_code": 1,
+          "seconds": 44.22
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2532163584,
+      "summary_sha256": "70e715fa6905f8fc00fe7e44293eee88be5c957c44a9b67c266c21cd9ea6e93e",
+      "stderr_sha256": "9116ffcc7d42592bb9d4e12385377491a30b14382e36d21e77a865b055100830"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/decoding/kroma-head-direction-mask",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-head-direction-mask-decode",
+          "exit_code": 0,
+          "seconds": 8.06
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5501378560,
+      "summary_sha256": "35499db7ba383c7f21313e875992a8469662a04180a341fc9b04d9fc5bc16cdb",
+      "stderr_sha256": "1dc253e8bd7814e5b4f2e1521a14505632705beb95efe55d7709168e628a6a7b"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/decoding/kroma-multiref-local-composite",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-local-composite-decode",
+          "exit_code": 0,
+          "seconds": 8.06
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5666902016,
+      "summary_sha256": "3f435ce0756c10bbc6a25589839677e7dd253acbc67d1615e19a7e3f45e5bf91",
+      "stderr_sha256": "9729039705e1e9ab0509461b6842451366cd461f2d5ad6938821c45693aae815"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/decoding/kroma-style-no-subject-reference",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-no-subject-reference-decode",
+          "exit_code": 0,
+          "seconds": 8.08
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5832994816,
+      "summary_sha256": "a616660e97d45fc560c91bc80b779b897337b3221be6d08d62900063709d8aa9",
+      "stderr_sha256": "91bebb5f5f54ca1563da196d709c495848c90c660e18f82b173e9a1234377825"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/decoding/kroma-style-owl-explicit",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-owl-explicit-decode",
+          "exit_code": 0,
+          "seconds": 8.06
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5845438464,
+      "summary_sha256": "fac58bfb1310c7a58bf8c4b39de8d3f8d31963c7226df7ae003bb76ddf1f3ab6",
+      "stderr_sha256": "14b60a34cd4f563aa97b093e675b4aa1cb12845defcb48d0957fde15d1036060"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/decoding/kroma-watercolor-denoise040",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-watercolor-denoise040-decode",
+          "exit_code": 0,
+          "seconds": 8.06
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5645246464,
+      "summary_sha256": "61bdb08b15d1fc199ba9e75eb3813802f96234fc6c320a45263ec02d3f089375",
+      "stderr_sha256": "1c3596e0eeb0a5762dd982ec73960090d57b838e5bd530d6a797835cde43ce78"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-owl-explicit",
+          "exit_code": 0,
+          "seconds": 14.09
+        },
+        {
+          "id": "kroma-style-no-subject-reference",
+          "exit_code": 0,
+          "seconds": 8.06
+        },
+        {
+          "id": "kroma-watercolor-denoise040",
+          "exit_code": 0,
+          "seconds": 8.09
+        },
+        {
+          "id": "kroma-head-direction-mask",
+          "exit_code": 0,
+          "seconds": 14.12
+        },
+        {
+          "id": "kroma-multiref-local-composite",
+          "exit_code": 0,
+          "seconds": 14.11
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1687293952,
+      "summary_sha256": "c32e5baaafd48ba1b54d02fb8bdef6ee165efcdf17a5a0cb00f76ca0410b53ad",
+      "stderr_sha256": "5b871a313197ca9b18112ad0e1e5015134601697aa2ff9d525317ad21b91f823"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/sampling/kroma-head-direction-mask-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-head-direction-mask-sample",
+          "exit_code": 0,
+          "seconds": 64.33
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 806363136,
+      "summary_sha256": "1b1af74e2a1f1aa7d66571bf1f8148aff30c586b965e339a37ba466889ef26f9",
+      "stderr_sha256": "f4363ffd259cb3605ff4907c69a5457947fa91978737199ca88160c639f69a0b"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/sampling/kroma-multiref-local-composite-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-multiref-local-composite-sample",
+          "exit_code": 0,
+          "seconds": 74.38
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 997601280,
+      "summary_sha256": "c17fd6c1e3bffe5d1af3ddf443f327c3ff70d20b572592f615dbb3170072b90c",
+      "stderr_sha256": "6cb008eb8610a1eac2133b7c3cfd9e561beccfd76b62a2d6be4d1aab65a45407"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/sampling/kroma-style-no-subject-reference-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-no-subject-reference-sample",
+          "exit_code": 0,
+          "seconds": 46.23
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2099351552,
+      "summary_sha256": "77a1c146160eec0b284b7fdbb3510724e11a3db2741117668152f2a777f55c84",
+      "stderr_sha256": "8c64aa84f85d3f99991a2051600b4488ceac83e93b28fc39d5a8b5584fe766e9"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/sampling/kroma-style-owl-explicit-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-owl-explicit-sample",
+          "exit_code": 0,
+          "seconds": 50.25
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2450128896,
+      "summary_sha256": "5dbe6fa8dcf9d7786e0a7baf9b8c974a7d751a867f79ea6eaee9c3167a3518b6",
+      "stderr_sha256": "af0440040bfe0b57eb399e136283e1f5c31183eacbf72e81ad71e4804a67e240"
+    },
+    {
+      "local_evidence": "runs/kroma-repairs-v1/sampling/kroma-watercolor-denoise040-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-watercolor-denoise040-sample",
+          "exit_code": 0,
+          "seconds": 28.16
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2679398400,
+      "summary_sha256": "ac10b8a1791dfd4f47a6478f04450f192ee189191e6af17c3f71360750489894",
+      "stderr_sha256": "20185b9189fd6b5b78fa574913763e3ed3a71663c8de457a1f68b1caf9d31112"
+    },
+    {
+      "local_evidence": "runs/kroma-uneven-split-v4/sampling/kroma-head-direction-mask-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "kroma",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-head-direction-mask-sample",
+          "exit_code": 0,
+          "seconds": 200.92
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 803418112,
+      "summary_sha256": "45a4878bd981a789681725b2ab0df6404af12cb862fcf7eea71580ae93ad774a",
+      "stderr_sha256": "5f2213ae4bef826d2d2bd2582cdae9b403ad3844d11ea068ebf5649739cb5f90"
+    },
+    {
+      "local_evidence": "runs/kroma-uneven-split-v4/sampling/kroma-multiref-local-composite-sample",
+      "status": "failed",
+      "profile": "kroma",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Commit guard stopped the owned trial; inspect retained logs for earlier errors",
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": "kroma-multiref-local-composite-sample",
+      "minimum_commit_available_bytes": 523120640,
+      "summary_sha256": "1a79bc2845902f4cf737c89ac11c06f7948c757b90d2bfdabc0aa2a3e67a7345",
+      "stderr_sha256": "5cda5116c7b135117d0ebfb554d635b65d775fc3bfb0710bd7217052d1950b2e"
+    },
+    {
+      "local_evidence": "runs/kroma-upcast-attention-v3/sampling/kroma-head-direction-mask-sample",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Owned trial stopped before Windows commit exhaustion; this is not a native crash",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": true,
+      "oom_observed": true,
+      "cases": [],
+      "active_case_at_failure": "kroma-head-direction-mask-sample",
+      "minimum_commit_available_bytes": 185278464,
+      "summary_sha256": "e3ba8a241a7b2d96aecf8b2acf2fe90514dea7cf1e441f0b91244931942d6d91",
+      "stderr_sha256": "6d9a5b67301adb8ed2b324fe998a7106a4f510849c9be95c57e767bc2ac59865"
+    },
+    {
+      "local_evidence": "runs/kroma-upcast-attention-v3/sampling/kroma-style-no-subject-reference-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-no-subject-reference-sample",
+          "exit_code": 0,
+          "seconds": 66.49
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1568575488,
+      "summary_sha256": "ce1c3296d62b70004d8c226eade8a4f1b19e5a1e49952767b3380a6de2450a0d",
+      "stderr_sha256": "fd5e0f03460d88763790712473b7956f8428ae2176f2b66aa389078d283f6d27"
+    },
+    {
+      "local_evidence": "runs/kroma-upcast-attention-v3/sampling/kroma-style-owl-explicit-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-style-owl-explicit-sample",
+          "exit_code": 0,
+          "seconds": 62.36
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1619349504,
+      "summary_sha256": "cf6fce948ff5619d26ee7dd51b8597a877c16253579b5a85ccdcd2c55bab03f9",
+      "stderr_sha256": "3f78bc71dfa53515c603665ecefe58cd13060fdca83413ea0421ffee79fcc8cb"
+    },
+    {
+      "local_evidence": "runs/kroma-upcast-attention-v3/sampling/kroma-watercolor-denoise040-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "kroma-watercolor-denoise040-sample",
+          "exit_code": 0,
+          "seconds": 32.22
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2614165504,
+      "summary_sha256": "40d21a1a3a2f0e44406667fbbd7beb81dbe0612cb22205fe2a1a1ef44167a62a",
+      "stderr_sha256": "b2b51b9591b2bd6f8a7ab4485bc39b52895bc50c693249d0454671810f97f4ea"
+    },
+    {
+      "local_evidence": "runs/moss-base-sft-v4/decoding/moss-watercolor-base-sft",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "moss-watercolor-base-sft-decode",
+          "exit_code": 0,
+          "seconds": 8.05
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 7297126400,
+      "summary_sha256": "f50cdb9f28278f59bb3c4553628fbc5cb2c15ad10e72a9e58c1384a535ad79a7",
+      "stderr_sha256": "f482d5749b468bcd8cde2e31b0968b10eb88e1dbeb11697115079e7528ba159d"
+    },
+    {
+      "local_evidence": "runs/moss-base-sft-v4/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "moss-watercolor-base-sft",
+          "exit_code": 0,
+          "seconds": 16.11
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2686386176,
+      "summary_sha256": "8fe2e87e89a031a2c6011c4c2c3aa39d96e2cde466c9e0ccc797b46b5e9c0717",
+      "stderr_sha256": "88714fa2fd1627c7a6bb20502909eb7440f099631a680cc53d493e3fbddd8789"
+    },
+    {
+      "local_evidence": "runs/moss-base-sft-v4/sampling/moss-watercolor-base-sft-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "moss-watercolor-base-sft-sample",
+          "exit_code": 0,
+          "seconds": 120.59
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2554068992,
+      "summary_sha256": "067faef4da78f6490168f7eaf0f0252b629b6c1857e080c3c65691c0a044ac8a",
+      "stderr_sha256": "6c3acd9ea56d8dd8f96e11c6d3089fa8328c0892700a4f02b49a3ba0726c4a94"
+    },
+    {
+      "local_evidence": "runs/moss-fp16-v2/decoding/moss-watercolor-denoise085",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "moss-watercolor-denoise085-decode",
+          "exit_code": 0,
+          "seconds": 8.06
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 7213395968,
+      "summary_sha256": "8c228330180ea803f15d4ca2e6896996086f31a756ddea5c9e11ed4627113e03",
+      "stderr_sha256": "2f46e55245e8d58df5bef49b6ecf68a713e5ca585cc1a1e2deeee7626337b857"
+    },
+    {
+      "local_evidence": "runs/moss-fp16-v2/sampling/moss-watercolor-denoise085-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "moss-watercolor-denoise085-sample",
+          "exit_code": 0,
+          "seconds": 28.16
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2559471616,
+      "summary_sha256": "ab7e6295e6b457b384266f08a9ee1ba446c47c22430b06c98e8aa8b1298884f3",
+      "stderr_sha256": "af536ba2396383f50c44e9100677683cce4414a4a47049d3826640a8238e5de9"
+    },
+    {
+      "local_evidence": "runs/moss-watercolor-v1/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "moss-watercolor-denoise085",
+          "exit_code": 0,
+          "seconds": 16.16
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2184093696,
+      "summary_sha256": "6edc0e82ab6f2a06718f0a4268485bd26bcee7e80e67b8244e2f8157d8915b19",
+      "stderr_sha256": "57fb836ecef2717a33df66337749f6e7679a65cc8c32ca8fae697d5dcb60d744"
+    },
+    {
+      "local_evidence": "runs/moss-watercolor-v1/sampling/moss-watercolor-denoise085-sample",
+      "status": "failed",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Commit guard stopped the owned trial; inspect retained logs for earlier errors",
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": "moss-watercolor-denoise085-sample",
+      "minimum_commit_available_bytes": 407425024,
+      "summary_sha256": "6d10e6dac3fc8019d2c2115724c5ac52055cd81ad1c26d0662c7bd45fd511ede",
+      "stderr_sha256": "e45c6184e0bcb4131ba2bdf202eb81232eb6536cdcd1e5cc9cf08677bce30fd4"
+    },
+    {
+      "local_evidence": "runs/qwen-bfs-fp16-v1/sampling/qwen-bfs-direction-mask-sample",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Owned trial stopped before Windows commit exhaustion; this is not a native crash",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": "qwen-bfs-direction-mask-sample",
+      "minimum_commit_available_bytes": 471207936,
+      "summary_sha256": "b83edeb2b1bf0e7ac2d41d3bb87567067bb24e29981700e6282efc6a1c7434aa",
+      "stderr_sha256": "7fdf30ad67a6c52605564157450628a69f754828c2f9b9851960ccdf1fb054d6"
+    },
+    {
+      "local_evidence": "runs/qwen-bfs-full-hair-mask-v1",
+      "status": "failed",
+      "profile": "cpu-only",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Commit guard stopped the owned trial; inspect retained logs for earlier errors",
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": "qwen-bfs-full-hair-mask-decode",
+      "minimum_commit_available_bytes": 407597056,
+      "summary_sha256": "9a8f8493b544a2927558682081f3d99717a7e3fce3efbe3b7d17775401ce7b50",
+      "stderr_sha256": "7906680eba630a04a6d8d4fe6e4d4777db08ce95479f12b938d1fd41e13202ef"
+    },
+    {
+      "local_evidence": "runs/qwen-bfs-three-stage-v1/decoding/qwen-bfs-direction-mask",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-bfs-direction-mask-decode",
+          "exit_code": 0,
+          "seconds": 22.19
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 3423780864,
+      "summary_sha256": "da1015218a00feeeaebdb124a7f01b4e0536e3ca1eb8c5b39b9891aa469b9663",
+      "stderr_sha256": "3966822dde14502ed0d2f19b324f1d32404995ac7e282fb1bf15aad294a244fc"
+    },
+    {
+      "local_evidence": "runs/qwen-bfs-three-stage-v1/sampling/qwen-bfs-direction-mask-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-bfs-direction-mask-sample",
+          "exit_code": 0,
+          "seconds": 74.44
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1849708544,
+      "summary_sha256": "29874aacff36fa8ce6aceab4147f226b9be1e815b9d7a21bb515cbf6d4ed804e",
+      "stderr_sha256": "0e88803cd0d56294b1c485bc446476d6e3f99ac8dc6153e4763522c468688e72"
+    },
+    {
+      "local_evidence": "runs/qwen-bfs-tiled-v2",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-bfs-full-hair-tiled-decode",
+          "exit_code": 0,
+          "seconds": 280.56
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5381804032,
+      "summary_sha256": "91c6d9ab25c81bfc9008e0b5d2a64cf0c123fb93f0ade8d7b1a70aee0059f239",
+      "stderr_sha256": "b76a2905478b650e2d5bb52da2f51bc27d86cf1423fe917ff0941a2c4af4d3dd"
+    },
+    {
+      "local_evidence": "runs/qwen-caption-phased-v1/encoding",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": "Service native exit during encode: 4294967295",
+      "server_exit_code": 4294967295,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": null,
+      "summary_sha256": "865baf294f7facc1ab329791f2bd57b7d4658310bca5c9d4411598db58cd9119",
+      "stderr_sha256": "855150e6b85d7c978663fdc23502d8dd41986dbf746123bebcae13a6150503fd"
+    },
+    {
+      "local_evidence": "runs/qwen-caption-phased-v2/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "encode",
+          "exit_code": 0,
+          "seconds": 104.5
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": null,
+      "summary_sha256": "9635a535f63a2c35a8dafa28f1c13b8b350b30a03bdfa82bf66062fdea1fc7b5",
+      "stderr_sha256": "532029f8da8ce1396f01c72c017d34a68ccf91f8af8604fded8e9a53f8a4c040"
+    },
+    {
+      "local_evidence": "runs/qwen-caption-phased-v2/sampling",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "sample",
+          "exit_code": 0,
+          "seconds": 156.89
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2579546112,
+      "summary_sha256": "3ff718fb3802d017c0f9424f9edd85be19f06d504e8e4824a002ccdbc82f21c6",
+      "stderr_sha256": "93ecd58ce58f163595f5a1d5b3469e6a0d9309af33c9080415a984b21c11ca77"
+    },
+    {
+      "local_evidence": "runs/qwen-caption-staged-image",
+      "status": "failed",
+      "profile": "cpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": null,
+      "native_exception_observed": true,
+      "oom_observed": true,
+      "cases": [],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": null,
+      "summary_sha256": "75a1b02e0cb31322ae52e539c6563da53f88d601da42f122e77ee344f3991363",
+      "stderr_sha256": "3843fc025c5323b54a54a10a67215774207a1eac633dd2d256b019feab8efd48",
+      "recorded_summary_status": "running",
+      "note": "Original summary was left running; retained stderr records OOM then native access violation. No PNG."
+    },
+    {
+      "local_evidence": "runs/qwen-edits-cache-auto-v1/sampling",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Owned trial stopped before Windows commit exhaustion; this is not a native crash",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-multiref-local-composite-sample",
+          "exit_code": 0,
+          "seconds": 104.55
+        }
+      ],
+      "active_case_at_failure": "qwen-head-direction-mask-sample",
+      "minimum_commit_available_bytes": 490741760,
+      "summary_sha256": "439971a61e1f77a5129557164ed1629fbe4506a5e958a526d8586b7ee247d57f",
+      "stderr_sha256": "91c606fd2ad4ce6b58ab8a60da86f6e20b20885ce444c94930d743f8a973884b"
+    },
+    {
+      "local_evidence": "runs/qwen-edits-phased-v1/encoding",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Owned trial stopped before Windows commit exhaustion; this is not a native crash",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": "qwen-mask-fox-reference",
+      "minimum_commit_available_bytes": 397418496,
+      "summary_sha256": "fd4c3b01401e87f3b6bcb242654c604a18129a82e40f375a69b49e29ab1aeb0f",
+      "stderr_sha256": "3183835e584ed76c32695488748339edcd0831e969ab0963498979658297d32d"
+    },
+    {
+      "local_evidence": "runs/qwen-edits-phased-v2-dynamic/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text-dynamic",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-mask-fox-reference",
+          "exit_code": 0,
+          "seconds": 28.16
+        },
+        {
+          "id": "qwen-multiref-local-composite",
+          "exit_code": 0,
+          "seconds": 16.11
+        },
+        {
+          "id": "qwen-head-direction-mask",
+          "exit_code": 0,
+          "seconds": 16.11
+        },
+        {
+          "id": "qwen-face-only-mask",
+          "exit_code": 0,
+          "seconds": 16.11
+        },
+        {
+          "id": "qwen-bfs-direction-mask",
+          "exit_code": 0,
+          "seconds": 16.11
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1878679552,
+      "summary_sha256": "23b67c82e5299fc35b2f40d47ffb9060fc32b8782141dae8ca9ca32c6af85e3f",
+      "stderr_sha256": "ba578ccf658fe444d9b82ee1b6a76d86b2b68378f7f23375fe8ef7dd15441737"
+    },
+    {
+      "local_evidence": "runs/qwen-edits-phased-v2-dynamic/sampling",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Owned trial stopped before Windows commit exhaustion; this is not a native crash",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-mask-fox-reference-sample",
+          "exit_code": 0,
+          "seconds": 114.64
+        }
+      ],
+      "active_case_at_failure": "qwen-multiref-local-composite-sample",
+      "minimum_commit_available_bytes": 475410432,
+      "summary_sha256": "42cde9360d9f74f6651c3916166719f75f31d17ab407e8db9829a83e7937f7d9",
+      "stderr_sha256": "8985a1b4d5537cba9e68028b9ae4133527cac23c3eaccf21ae75b8ae5cb99213"
+    },
+    {
+      "local_evidence": "runs/qwen-face-bfs-isolated-v1/sampling/qwen-bfs-direction-mask-sample",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Owned trial stopped before Windows commit exhaustion; this is not a native crash",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [],
+      "active_case_at_failure": "qwen-bfs-direction-mask-sample",
+      "minimum_commit_available_bytes": 408776704,
+      "summary_sha256": "9e8c0eecd8d65ecb64dcea550d1779d3e400055b03cfb8b56302688e005ea54e",
+      "stderr_sha256": "55f08575df33d9d4435a47b7d87f591ba8cc1f7314ca6a7545306ab7c21415bb"
+    },
+    {
+      "local_evidence": "runs/qwen-face-bfs-isolated-v1/sampling/qwen-face-only-mask-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-face-only-mask-sample",
+          "exit_code": 0,
+          "seconds": 98.58
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 648900608,
+      "summary_sha256": "606ca79b94881a421b66187e399087d67fd044a5fc145c644e18b70a8f0d7b04",
+      "stderr_sha256": "3615ecffa70a2fe7b63f063a560c52f97c5b3fe00f4a2087691062851540562e"
+    },
+    {
+      "local_evidence": "runs/qwen-head-cache-none-v1/sampling",
+      "status": "failed",
+      "profile": "gpu-text",
+      "operator_stop": "automatic_commit_guard",
+      "error": "Owned trial stopped before Windows commit exhaustion; this is not a native crash",
+      "server_exit_code": null,
+      "final_server_exit_code": null,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "qwen-head-direction-mask-sample",
+          "exit_code": 0,
+          "seconds": 94.5
+        }
+      ],
+      "active_case_at_failure": "qwen-face-only-mask-sample",
+      "minimum_commit_available_bytes": 469557248,
+      "summary_sha256": "44f25952e443ac0526e073251b18f17ae1879a8c7af5db5b0bcdbdce67dee21e",
+      "stderr_sha256": "12a4549d7b738b9c6af6776350c74d3e51b18b7ce8d8bccc00fd2f1cab13b861"
+    },
+    {
+      "local_evidence": "runs/turbo-fox-recovered-v2/decoding/turbo-mask-fox-reference",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "turbo-mask-fox-reference-decode",
+          "exit_code": 0,
+          "seconds": 22.16
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5162844160,
+      "summary_sha256": "21cfddc54870d2874fd8eae7d93f8258c509bc96b5088830c3565c5a8eaccf7a",
+      "stderr_sha256": "557c97472b10c0662a38e3c51b609962e196c63ee39dcf87a277d53d02748942"
+    },
+    {
+      "local_evidence": "runs/turbo-fox-v1/decoding/turbo-mask-fox-reference",
+      "status": "failed",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": "Replay failed for turbo-mask-fox-reference-decode; see retained logs/history",
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "turbo-mask-fox-reference-decode",
+          "exit_code": 1,
+          "seconds": 2.01
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 9546186752,
+      "summary_sha256": "3c1131037d03e4c8b7bc93980c594039cd7a441d86f923d15b43348c088f3348",
+      "stderr_sha256": "f14e11e11f335c82038028e35cba6898ba1c8d1d1602280902b33a312e784d6c"
+    },
+    {
+      "local_evidence": "runs/turbo-fox-v1/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "turbo-mask-fox-reference",
+          "exit_code": 0,
+          "seconds": 873.73
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 2867752960,
+      "summary_sha256": "764cebfeb3d6cb40586ddb591fb84ff9a3ca22bc45284b23446e71fd2edfc3f4",
+      "stderr_sha256": "d4db77470232711a75457009585cef79d99687362fb04889462aa3c784bfb3a0"
+    },
+    {
+      "local_evidence": "runs/turbo-fox-v1/sampling/turbo-mask-fox-reference-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "turbo-mask-fox-reference-sample",
+          "exit_code": 0,
+          "seconds": 50.25
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1951043584,
+      "summary_sha256": "0b0f9964450307363acdacda9fb9745b615932ba6a7e6e88136d8c969183e433",
+      "stderr_sha256": "379f622934f2ed11037d5a6d3e2d57bd9ffb1e41640d60f390dad05e88f1b459"
+    },
+    {
+      "local_evidence": "runs/turbo-head-v1/decoding/turbo-head-direction-mask",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-only",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "turbo-head-direction-mask-decode",
+          "exit_code": 0,
+          "seconds": 20.17
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 5346271232,
+      "summary_sha256": "9267792f3df6c6cb66b19dd2d446cf0896150b3c5f4449860c5457a15df18fcf",
+      "stderr_sha256": "06edd7e48e807fa378277d2b4a7124072f7c7598e1f9788dc4b2436019e521f5"
+    },
+    {
+      "local_evidence": "runs/turbo-head-v1/encoding",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "turbo-head-direction-mask",
+          "exit_code": 0,
+          "seconds": 871.97
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 3607920640,
+      "summary_sha256": "c0385e4481eb5bfbc337e3ae5045e7b82f9cc169377ff4c3545cd1022530c52d",
+      "stderr_sha256": "c2555e403a503599e5c934d8a45ddd56d92cff885080fbc09c576ca79cabf605"
+    },
+    {
+      "local_evidence": "runs/turbo-head-v1/sampling/turbo-head-direction-mask-sample",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "gpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "turbo-head-direction-mask-sample",
+          "exit_code": 0,
+          "seconds": 50.27
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1993539584,
+      "summary_sha256": "1cb7706fc8a90d1af2a9ac83a2feb5f56ded01b1f4d36e5bc65064b49eb3ff79",
+      "stderr_sha256": "4590ae284f6f3e01988b026c67045c24861fa0295957aca261cc790bb571a8c8"
+    },
+    {
+      "local_evidence": "runs/zimage-cpu-fp16-v1",
+      "status": "execution_pass_visual_review_pending",
+      "profile": "cpu-text",
+      "operator_stop": null,
+      "error": null,
+      "server_exit_code": null,
+      "final_server_exit_code": 15,
+      "server_stopped": true,
+      "native_exception_observed": false,
+      "oom_observed": false,
+      "cases": [
+        {
+          "id": "zimage-cpu-text-fp16",
+          "exit_code": 0,
+          "seconds": 193.61
+        }
+      ],
+      "active_case_at_failure": null,
+      "minimum_commit_available_bytes": 1395736576,
+      "summary_sha256": "f916944f453f53e4a793ba7e481657f853b691c41de57822f633535a0c0ee8a0",
+      "stderr_sha256": "da30e39807cd6250a8161bc76670895c039f99715b7e37e7241edc301404ab41"
+    }
+  ]
+}

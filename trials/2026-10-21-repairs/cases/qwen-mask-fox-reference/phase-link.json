@@ -1,0 +1,6 @@
+{
+  "workflow_sha256": "2a3bc78178b9506b56e0a0ad4bc46d78591acb5581ecbecbeae0e699cc483143",
+  "archive_sha256": "160de50071ad239184234d8567b6850e31b1e175348e9e1ea68c9aa44fc1961b",
+  "archive_file": "repair_conditioning/qwen-mask-fox-reference-f864513fee59.safetensors",
+  "encoding_process_exited_before_sampling": true
+}

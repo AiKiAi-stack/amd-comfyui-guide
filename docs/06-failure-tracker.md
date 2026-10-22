@@ -27,7 +27,7 @@ gfx1032 INT8 路径报 `HIPBLAS_STATUS_INVALID_VALUE`。已有 [显式启用的�
 
 错误的 `ModelSamplingSD3` timestep multiplier 与模型不符；历史实验改为 `ModelSamplingAuraFlow`、multiplier 1、shift 5 后出图。见 [故障说明](04-troubleshooting.md)。本轮已在 [重跑入口](../scripts/replay_workflow.py) 增加针对已测 MOSS SFT 文件的检查：沿实际采样模型链寻找生效的时间尺度覆盖，在联网/提交之前拒绝已知错误配置，提示正确节点与 shift。不会自动重写用户工作流，也不会拦截普通 SD3 模型。
 
-[回归测试](../scripts/test_workflow_checks.py) 使用历史噪声工作流、修正后的 SFT/8步工作流，以及无关模型、断开分支和环路。入口测试先观察到失败（旧入口尝试联网，没有识别错误），应用检查后 5/5 通过。这证明提交前防护生效；本轮未重新生成 MOSS 图片，历史成功图不冒充新结果。
+[回归测试](../scripts/test_workflow_checks.py) 使用历史噪声工作流、修正后的 SFT/8步工作流，以及无关模型、断开分支和环路。入口测试先观察到失败（旧入口尝试联网，没有识别错误），应用检查后 5/5 通过。这证明提交前防护生效；此处描述的是入口检查提交；后续已有独立 MOSS FP16 重试图片，风格验收仍见功能清单。
 
 ## BC-005 · Kroma 参考图节点内部升至 1024 导致 OOM · 降规格规避
 
@@ -56,3 +56,25 @@ CPU 原失败的 2,489,319,424 字节来自 `151936×4096` 输出层的全词表
 大模型 GPU 反推已产生准确 caption，但直接接出图仍在 `QuantizedTensor._handle_to → partially_unload` 原生退出。之后使用 [条件归档](../code_source/repair_conditioning/__init__.py) 和 [分阶段运行器](../scripts/run_conditioned_repair.py)，编码进程退出再开始采样，实际自动 caption→编码→15 步→CPU VAE→PNG 全部完成并目视通过。见 [完整尝试与图片](../trials/2026-10-21-repairs/README.md)。
 
 这是流程规避，不是修复 native unload；原 CPU 配置仍慢且未完整验收。另一次静态 caption 的 CPU 编码续跑先在采样中 OOM，清理时再原生退出，不能把所有栈都归成同一个 GGUF 问题。原始失败与人工保护性停止分别保留。
+
+## BC-011 · 多参考批次与 BFS 解码时 commit 耗尽 · 分阶段规避已出图
+
+Qwen 双参考使用 legacy 编码时先触发 Windows commit 保护；原生动态显存编码完成五项。采样服务的第二项仍可能触发保护，即使使用 `--cache-none`，不能把缓存开关称作跨案例内存修复。当前采用每项独立采样进程，并记录实际 cache 设置。
+
+BFS FP16 重试完成 15/15 步，却在 CPU VAE 加载时触发保护，没有 PNG。新增 `SaveRepairLatent/LoadRepairLatent` 后，采样归档并退出，再用独立 CPU 进程解码，得到完整图片。[结果与三阶段绑定](../trials/2026-10-21-repairs/cases/qwen-bfs-direction-mask/result.json) 留有采样/编码/解码 API 和归档 SHA；视觉仍部分达到，运行完成不等于精确身份复现。
+
+归档测试检查 dtype、noise mask 与原值精确往返；图测试检查解码阶段不再依赖采样模型而保留最终合成。保护性停止与 native access violation 分开记录，见 [尝试索引](../trials/2026-10-21-repairs/attempts.json)。
+
+## BC-012 · split attention 黑图及奇数长度切片无效 · 数值回归通过，已有大模型独立输出
+
+Kroma 五项 split attention 试验的 latent 全部为 NaN/Inf，虽然原 API success，解码为黑图。相同有限编码条件下，保持模型 FP16，仅增加 `--force-upcast-attention` 后前三项采样归档均有限；删除 FP16 强制参数的另一对照仍由默认选择 FP16，不能误称为 FP32 对照。
+
+双参考换头随后在 attention score 申请 2.19GiB 时 OOM。原切片宽度要求查询长度整除分片数，否则退回整段宽度；奇数序列在反复加倍分片数后仍不缩小分配。[受限预算回归](../scripts/test_split_attention_precision.py) 直接调用安装的 ComfyUI 实现，修复前失败，改为向上取整后通过且与完整 attention 数值相同。独立 FP16 溢出测试启用升精度通过、禁用失败。
+
+运行时应用的[一行补丁](../patches/comfyui-uneven-query-split.patch) 与[带备份和 SHA 的应用脚本](../scripts/apply_split_attention_patch.py) 均在此仓库管理。它修正分片宽度，不代表修好 GGUF native unload，也不代表参考图视觉目标已通过。该 OOM 的清理日志已出现 GGUF `unpatch_model → model.to → GGMLTensor.to` 访问冲突，然后 commit 保护介入；异常栈与最终进程停止方式同时记录。
+
+修正分片及升精度后，Kroma 风格裁切猫头鹰、水彩背向、换头及双参考均得到非黑图输出；风格裁切和背向水彩有独立视觉通过案例，换头和双参考仍部分达到。仅将参考 VAE 降到384是整机 commit 的规避，输出保持512。
+
+## BC-013 · 部分节点校验错误导致有效输出丢失 · 运行器已修复
+
+ComfyUI 可能在返回有效 prompt_id 的同时报告部分输出节点 node_errors；旧重放器立即退出，批次随后停止服务，使已接受的输出丢失。新入口等待 history、保存有效图片与校验错误，返回 partial_output 和非零退出码。[真实 HTTP 行为契约回归](../scripts/test_replay_partial.py)修复前失败、修复后通过。另在启动前拒绝悬空引用，避免本轮 Turbo 附件两处错误链接再次浪费编码；原错误工作流与失败记录保留。

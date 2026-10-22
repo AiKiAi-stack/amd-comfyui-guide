@@ -1,0 +1,50 @@
+{
+  "id": "kroma-multiref-clean-reference",
+  "model": "kroma",
+  "feature": "多图参考 · 修复重试",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "prompt": "Replace the blank region in image 1 with one complete red fox, using only the facial fur identity from image 2. Seated fox, slender canine body, long pointed muzzle, black ears and black lower legs, white chest and one large bushy WHITE-TIPPED tail. The fox sits directly on the cafe doorstep, no rock, no moss, no forest, no cat. Keep the rainy cafe background and lighting from image 1.",
+  "expected": "同时采用雨街背景和参考狐狸主体。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "裁掉苔石并清除原猫后，输出不再有苔石和猫重影，狐狸外形清楚；但中性参考的灰色矩形被迁入背景，前景融合仍失败。记录为部分达到，不作为干净合成验收。",
+  "repairs": [
+    "kroma-multiref"
+  ],
+  "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+  "status": "success",
+  "prompt_id": "13a176c9-a5f1-4a73-bd4e-2439f0b4bcb4",
+  "elapsed_seconds": 117.25,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-clean-reference-input_00001_.png",
+      "sha256": "3b2b05ae7cc923682efb6c1e103dd9103ffb78fc020bd52cf60efbca6ea4f410",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-clean-reference-mask_00001_.png",
+      "sha256": "734ea8b35c5eeee5e7681c054620ac49dcf7a2059a85882fcdfed3f67a368a0c",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-clean-reference_00001_.png",
+      "sha256": "e2423b979b20ae764e3452c758ed5b60fddda95f742f5ee5ea054b0075064cad",
+      "public_sha256": "f1efebef704f25bdf372cb8f326d9eb641f625e57964ec770c9671c2dfae5fb7"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 9.125,
+  "encoding_elapsed_seconds": 21.031,
+  "sampling_elapsed_seconds": 87.094,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true
+}

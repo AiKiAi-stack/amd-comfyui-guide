@@ -1,0 +1,46 @@
+{
+  "id": "qwen-mask-fox-reference",
+  "model": "qwen",
+  "feature": "遮罩局部重绘 · 修复重试",
+  "recipe": "inpaint",
+  "claim_level": "公众号索引标题",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "prompt": "Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.",
+  "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+  "repairs": [
+    "qwen-inpaint"
+  ],
+  "runtime_profile": "512×512、15步、GPU扩散/CPU VAE；原生量化文本编码阶段动态VRAM且禁用 pinned，采样另进程/默认 pinned。编码约28秒、采样112秒，均不含冷启动。灰化猫区域+狐狸参考，最终遮罩合成。",
+  "retry_reason": "完整执行成功。实际查看：主体有长尖嘴、黑耳背、黑腿与大面积白尾尖，明确为狐狸；身体仍背向，头略向右转露出吻部。最终合成保证遮罩外像素保持，不能归功于模型本身的局部精度。灰化原猫参考区域并增加狐狸参考，属于条件和提示词调整，不证明精确身份复刻。",
+  "status": "success",
+  "prompt_id": "47ddb82e-a795-44a9-bd68-9199b00fcce8",
+  "elapsed_seconds": 139.39,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-mask-fox-reference-input_00001_.png",
+      "sha256": "e5bcf10c3e85abe5b464cc423ab88da44488c31f2affe94c99ecebe5d1645b54",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-mask-fox-reference-mask_00001_.png",
+      "sha256": "80d618b29b01c1075668d41cb5b57d870a53d8820b07c08eac606f481a9cb7a1",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-mask-fox-reference_00001_.png",
+      "sha256": "9c114fcf567f17d008ddeb1c95b6df3bd52bd46506a37cb5b3124f3bc9e2717b",
+      "public_sha256": "3b351c8db480c215d748737588e598350da966e9473f84fe09d651e4384c265f"
+    }
+  ],
+  "review": "pass",
+  "sampling_elapsed_seconds": 112.312,
+  "encoding_elapsed_seconds": 27.078,
+  "timing_scope": "Sum of encoding and sampling submission-to-history times; excludes service cold starts"
+}

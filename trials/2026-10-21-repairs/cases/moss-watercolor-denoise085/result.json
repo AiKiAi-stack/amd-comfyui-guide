@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "elapsed_seconds": 6.063,
+  "images": [
+    {
+      "file": "10-0-moss-watercolor-denoise085_00001_.png",
+      "original_sha256": "362cf3a3176aa2c551a0335aac184ca796990e3968cf09870842e23a38d6f303",
+      "public_sha256": "dfa2cc46a4e6b50450d2715081bdcfcff6d4a1f1656f2bdb47dd6f934b56a65c",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "moss-watercolor-denoise085",
+  "feature": "moss-img2img",
+  "verdict": "partial",
+  "review": "显式 FP16 UNet 后八步采样完整完成，保留丛林中的全身宇航员；画面仍接近摄影，粗纸与水彩笔触没有明确达到，风格转换部分达到。",
+  "prompt_id": "626b898e-39a4-4282-a5db-a8e82d9b4d4d",
+  "raw_history_sha256": "beb5fd41350779e3c52b4c68823555650a4f687189154c70f1aa430acbb357c7",
+  "decoding_elapsed_seconds": 6.063,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 27.016,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "5bc12d5ae03e86ebf02433208817646cfad71e64ee6148113ea817a20b9de997",
+  "workflow_sha256": "e5a1f2dd49f89f5ffd10fb26842b7785c4a25f73169a465dc3b2bc5bc30a9e0f",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "52983525f04bcc94cceabc5afb7da510d8378dd56098c8b77389b9e536f3dbfd"
+}

@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "elapsed_seconds": 6.047,
+  "images": [
+    {
+      "file": "case01_9-0-kroma-style-owl-explicit_00001_.png",
+      "original_sha256": "37b135a175a4823ec6f58d2d28add65fa3edd4ab3386e0406fda022e6e37b523",
+      "public_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "kroma-style-ref",
+  "verdict": "fail",
+  "review": "FP16 强制采样后，归档 samples 共 65536 个 F32 元素全部为非有限值；解码日志提示 invalid value encountered in cast，输出不能作为正常图验收。保留失败证据，后续移除 --fp16-unet 单变量对照。",
+  "prompt_id": "3366178f-438c-4f2f-ac36-37412eb4c1e3",
+  "raw_history_sha256": "09be417ee218d94e4e73eef2b4b8e4fa38c2faefdc031a4eaad71d4481840622",
+  "decoding_elapsed_seconds": 6.047,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 48.172,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "a01f4d742f67e282ed9400623915fc12462e7ed351f9c57b1c05d220f3bc6e06",
+  "workflow_sha256": "15f1e94513e3a39d1c6adfce17efc3143ab1c64101fce14340474389efd81eb9",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 12.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "fccef1869762031ae234ba8cc379b1533774e9680aadfbc3c19428db1fbd4be4"
+}
