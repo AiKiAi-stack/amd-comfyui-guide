@@ -1,0 +1,43 @@
+{
+  "id": "turbo-ordinary-pose-control",
+  "model": "turbo-un",
+  "feature": "姿态参考（图像指令） · 修复重试",
+  "recipe": "edit",
+  "claim_level": "作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。",
+  "exploratory": true,
+  "refs": [
+    "pose-guide",
+    "kroma-portrait-a"
+  ],
+  "inputs": [
+    "pose-guide",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+  "expected": "An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.",
+  "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control.",
+  "runtime_profile": "Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-pose-reference-test"
+  ],
+  "retry_reason": "同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。",
+  "status": "success",
+  "prompt_id": "2ec3fea7-24fe-4342-b3f5-764c27c5314e",
+  "elapsed_seconds": 102.249,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-ordinary-pose-control_00001_.png",
+      "sha256": "3abe7b76f0d61cb4fb046cddf2b228444a53a9278282a1790b9157d3358038ff",
+      "public_sha256": "4060e988847cd0cce85cd8d48989908013f8f3461b63ec793a1b78deafec41e3"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 18.11,
+  "encoding_elapsed_seconds": 9.015,
+  "sampling_elapsed_seconds": 66.109,
+  "timing_scope": "Sum of reference preparation, encoding, sampling and decode submission-to-history times; excludes service cold starts",
+  "mask_attachments": false,
+  "acceptance_scope": "普通与UN编码器的同条件配对；单例不作优劣统计",
+  "reference_elapsed_seconds": 9.015
+}

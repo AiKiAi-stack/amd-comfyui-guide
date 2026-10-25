@@ -1,0 +1,156 @@
+{
+  "934a64e7-f259-4b3b-a484-b60b8a5c1731": {
+    "prompt": [
+      0,
+      "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+      {
+        "2": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "head_swap: Edit image 1: replace the person's facial identity and hair with the fictional adult woman from image 2, including her copper-red curly hair, pale freckled skin and green eyes. Preserve the navy blue coat, red scarf, body pose, framing and outdoor park from image 1. Match lighting and proportions. Only one person.",
+            "negative_prompt": "blurry, distorted, watermark",
+            "resolution": 512,
+            "images.image_1": [
+              "31",
+              0
+            ],
+            "images.image_2": [
+              "34",
+              0
+            ]
+          }
+        },
+        "30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_e5aabefc21cb_kroma-portrait-b.png"
+          }
+        },
+        "31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "33": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_02b141b1b04e_kroma-portrait-a.png"
+          }
+        },
+        "34": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "33",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "latent": [
+              "4",
+              2
+            ],
+            "prefix": "linux-coverage-qwen-bfs-head-swap-stage-nobacking-cpu-encode",
+            "workflow_sha256": "2922e36907d6038675bd00ef4d4a041c0be6eb745574af41f54f94da7e091669"
+          }
+        }
+      },
+      {
+        "create_time": 1792912964103
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-qwen-bfs-head-swap-stage-nobacking-cpu-encode-d28ace6b9507.safetensors"
+        ],
+        "archive_sha256": [
+          "b51778aac844428275f63995cbfbe97687cfd25232aa5249b22d20fe2e3977b5"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+            "timestamp": 1792912964103
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+            "timestamp": 1792912964105
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+            "timestamp": 1792913118884
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

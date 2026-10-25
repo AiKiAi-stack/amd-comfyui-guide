@@ -1,0 +1,48 @@
+{
+  "prompt_id": "062ae1ba-994b-41e8-93d1-b4d3f5f6439b",
+  "status": "success",
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "qwen-multiref-full-tail_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_input": {
+      "images": [
+        {
+          "filename": "qwen-multiref-full-tail-input_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_mask": {
+      "images": [
+        {
+          "filename": "qwen-multiref-full-tail-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

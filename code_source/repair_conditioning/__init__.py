@@ -11,12 +11,14 @@ from safetensors import safe_open
 from safetensors.torch import load_file, save_file
 
 
-def check_finite(tensor):
+def check_finite(tensor, path="tensor"):
     if (tensor.is_floating_point() or tensor.is_complex()) and not torch.isfinite(tensor).all().item():
-        raise ValueError("Non-finite tensor; refusing invalid conditioning or sampled latent")
+        raise ValueError("Non-finite tensor; refusing invalid conditioning or sampled latent: "
+                         f"path={path}, shape={tuple(tensor.shape)}, dtype={tensor.dtype}, "
+                         f"nan={torch.isnan(tensor).sum().item()}, inf={torch.isinf(tensor).sum().item()}")
 
 
-def pack(value, tensors):
+def pack(value, tensors, path="root"):
     if isinstance(value, torch.Tensor):
         if hasattr(value, "_qdata"):
             raise TypeError("Expected dense conditioning, received quantized model storage")
@@ -24,15 +26,15 @@ def pack(value, tensors):
         # Positive/negative conditions can share storage; safetensors requires
         # independent buffers for separate names.
         tensor = value.detach().to("cpu").contiguous().clone()
-        check_finite(tensor)
+        check_finite(tensor, path)
         tensors[key] = tensor
         return ["tensor", key]
     if isinstance(value, dict):
-        return ["dict", [[pack(k, tensors), pack(v, tensors)] for k, v in value.items()]]
+        return ["dict", [[pack(k, tensors, path + ".key"), pack(v, tensors, path + "." + str(k))] for k, v in value.items()]]
     if isinstance(value, tuple):
-        return ["tuple", [pack(v, tensors) for v in value]]
+        return ["tuple", [pack(v, tensors, f"{path}[{i}]") for i, v in enumerate(value)]]
     if isinstance(value, list):
-        return ["list", [pack(v, tensors) for v in value]]
+        return ["list", [pack(v, tensors, f"{path}[{i}]") for i, v in enumerate(value)]]
     if value is None or isinstance(value, (str, int, float, bool)):
         return ["literal", value]
     raise TypeError(f"Unsupported conditioning metadata type: {type(value).__name__}")
@@ -81,7 +83,8 @@ def save_payload(value, prefix, workflow_sha256):
     path = root / name
     write_archive(path, value, workflow_sha256)
     relative = "repair_conditioning/" + name
-    return {"ui": {"text": [relative], "archive_sha256": [hashlib.sha256(path.read_bytes()).hexdigest()]},
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    return {"ui": {"text": [relative, "SHA256: " + digest], "archive_sha256": [digest]},
             "result": (relative,)}
 
 
@@ -124,6 +127,40 @@ class LoadRepairConditioning:
     def load(self, file, expected_sha256=""):
         data = load_payload(file, expected_sha256)
         return data["positive"], data["negative"], data["latent"]
+
+
+class SaveRepairText:
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {"text": ("STRING", {"multiline": True}),
+            "prefix": ("STRING", {"default": "caption"}),
+            "workflow_sha256": ("STRING", {"default": ""})}}
+
+    RETURN_TYPES = ("STRING",)
+    FUNCTION = "save"
+    OUTPUT_NODE = True
+    CATEGORY = "Barely Comfy/repair"
+
+    def save(self, text, prefix, workflow_sha256):
+        result = save_payload({"kind": "repair_text_v1", "text": text}, prefix, workflow_sha256)
+        result["ui"]["caption"] = [text]
+        result["ui"]["text"].append(text)
+        return result
+
+
+class LoadRepairText:
+    INPUT_TYPES = LoadRepairConditioning.INPUT_TYPES
+    RETURN_TYPES = ("STRING",)
+    FUNCTION = "load"
+    CATEGORY = "Barely Comfy/repair"
+
+    def load(self, file, expected_sha256=""):
+        if not expected_sha256:
+            raise ValueError("A verified text archive SHA is required")
+        data = load_payload(file, expected_sha256)
+        if data.get("kind") != "repair_text_v1" or not isinstance(data.get("text"), str):
+            raise ValueError("Not a text archive")
+        return (data["text"],)
 
 
 class SaveRepairLatent:
@@ -249,6 +286,7 @@ class TextEncodeRepairQwenReferences:
 
 
 NODE_CLASS_MAPPINGS = {"SaveRepairConditioning": SaveRepairConditioning, "LoadRepairConditioning": LoadRepairConditioning,
+                       "SaveRepairText": SaveRepairText, "LoadRepairText": LoadRepairText,
                        "SaveRepairLatent": SaveRepairLatent, "LoadRepairLatent": LoadRepairLatent,
                        'SaveRepairQwenReferences': SaveRepairQwenReferences,
                        'TextEncodeRepairQwenReferences': TextEncodeRepairQwenReferences}

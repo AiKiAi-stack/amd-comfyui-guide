@@ -1,0 +1,11 @@
+{
+  "scope": "Saved final composite vs source, using zero pixels in saved 8-bit mask",
+  "zero_mask_pixels": 181024,
+  "changed_zero_mask_pixels": 0,
+  "maximum_zero_mask_difference": 0,
+  "file_sha256": {
+    "repair_save_input-0.png": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
+    "repair_save_mask-0.png": "396c95a6398a4c6434bb0fd9466a39f26cd98df9493b96cf7b4e800b48a64330",
+    "7-0.png": "1cdc4ab5dd9d59cd6b0f8287b9cd34d74e7c440af749889785158578eaff90b9"
+  }
+}

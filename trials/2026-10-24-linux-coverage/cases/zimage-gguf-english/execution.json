@@ -1,0 +1,96 @@
+{
+  "case_id": "zimage-gguf-english",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../zimage-gguf-english--sample/18-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "29090ad90bcc9586ba2e308885b3c69ab1038906de593a3a9894f94550420304",
+      "original_sha256": "18ead8508fc2214f54ad7fbc73017eebb53807ccbe49a40c7ecd21485cf21c50",
+      "rgb_sha256": "286abd70521547355cd2b5c7d6c933eaeb8e01a83ed4439ac28f3f2dc72f62a6"
+    }
+  ],
+  "workflow_sha256": "93961e9a50c36ad72c30f9dedb4d96c37ac50a5e59759b204dfc614b118d4fa7",
+  "pid": 40111,
+  "prompt_id": "575b605e-c3cf-4f67-8389-ebc5c6fabb57",
+  "validation_errors": {},
+  "outputs": {
+    "18": {
+      "images": [
+        {
+          "filename": "zimage-gguf-english_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "575b605e-c3cf-4f67-8389-ebc5c6fabb57",
+        "timestamp": 1792861213937
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "575b605e-c3cf-4f67-8389-ebc5c6fabb57",
+        "timestamp": 1792861213938
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "575b605e-c3cf-4f67-8389-ebc5c6fabb57",
+        "timestamp": 1792861266643
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6901.16015625,
+  "elapsed_seconds": 70.295,
+  "total_seconds": 59.196,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 16.105,
+  "sampling_seconds": 54.19,
+  "conditioning_archive": "repair_conditioning/linux-coverage-zimage-gguf-english-78e74d18340d.safetensors",
+  "conditioning_sha256": "cb71bddd252c26ce776916844a69ce1f865dc6e90a68ba166168131d2b9e9bd4",
+  "encoding_pid": 40031,
+  "sampling_pid": 40111,
+  "encoding_exited_before_sampling": true
+}

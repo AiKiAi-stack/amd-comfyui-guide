@@ -1,0 +1,50 @@
+{
+  "id": "qwen-multiref-full-tail",
+  "model": "qwen",
+  "feature": "多图参考／主体合成 · 修复重试",
+  "recipe": "edit",
+  "claim_level": "公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+  "refs": [
+    "cat",
+    "fox"
+  ],
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "prompt": "Replace only the orange cat in image 1 with the EXACT red fox from image 2, seated at the SAME location on the right side beside the glass cafe door. The fox faces the viewer as in image 2: narrow long muzzle, large pointed ears, bright detailed eyes, white cheeks and chest, orange fur, black forelegs, long bushy white-tipped tail. Keep the fox head clearly lit by warm cafe light, not black. Its paws rest directly on the ordinary concrete step. No forest, no moss, no rock. Keep all rainy night background, glass, red neon reflections and framing of image 1.",
+  "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "Exact prior archived text/ref conditioning; fresh FP16/upcast15step; CPU decode/full-tail composite",
+  "repairs": [
+    "qwen-multiref"
+  ],
+  "retry_reason": "复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。",
+  "status": "success",
+  "prompt_id": "062ae1ba-994b-41e8-93d1-b4d3f5f6439b",
+  "elapsed_seconds": 156.468,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-multiref-full-tail-input_00001_.png",
+      "sha256": "64285057da3d6499bed00d765aafa0cc5e70464f1b0954425187adafb54f9a25",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-multiref-full-tail-mask_00001_.png",
+      "sha256": "c73814df2a031335d9bb1be5d44e83fa4017c051d7f67a6a73c9768d332fbd4c",
+      "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-multiref-full-tail_00001_.png",
+      "sha256": "7fa5b957665299fae44c9e524efe70bc492f0c693d82788e9a0aa974b5a3d3e8",
+      "public_sha256": "2c24b8f08d12ec9c307915f8d0d9c93d7d1a95c53638554e1e3ba2bd8c5369d7"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 21.156,
+  "encoding_elapsed_seconds": 15.062,
+  "sampling_elapsed_seconds": 120.25,
+  "timing_scope": "Sum of encoding, sampling, decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true,
+  "acceptance_scope": "补齐遮罩边界实际重试；精确参考身份未通过"
+}

@@ -1,0 +1,70 @@
+{
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_42d5d9635f9c_cat.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 256,
+      "height": 256,
+      "crop": "disabled"
+    }
+  },
+  "40": {
+    "class_type": "TextGenerate",
+    "inputs": {
+      "clip": [
+        "caption_clip4b",
+        0
+      ],
+      "image": [
+        "31",
+        0
+      ],
+      "prompt": "Describe the image in one short English sentence naming the subject, place and lighting. Output only the sentence.",
+      "max_length": 40,
+      "sampling_mode": "off",
+      "thinking": false,
+      "use_default_template": true,
+      "mtp": "off"
+    }
+  },
+  "42": {
+    "class_type": "SaveText",
+    "inputs": {
+      "text": [
+        "40",
+        0
+      ],
+      "filename_prefix": "linux-coverage/qwen-caption-4b-aux-8b-cpu-staged-prompt",
+      "format": "txt"
+    }
+  },
+  "caption_clip4b": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "repair_save_caption": {
+    "class_type": "SaveRepairText",
+    "inputs": {
+      "text": [
+        "42",
+        0
+      ],
+      "prefix": "qwen-caption-4b-aux-8b-cpu-staged-caption",
+      "workflow_sha256": "05e7c4dc9ca10a2ed766eeed6b41e272e32f23275b2cb88813d371727bc0b70c"
+    }
+  }
+}

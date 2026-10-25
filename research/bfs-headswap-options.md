@@ -60,12 +60,7 @@ Krea2EditGroundedEncode -> KSampler conditioning -> VAE decode
 
 本机旧试验的 [`kroma-api.json`](../trials/2026-10-18/kroma-api.json)实际载入 `kroma-v0.3.1-turbo-opd-Q2_K.gguf`，配 `qwen3vl_4b_fp8_scaled.safetensors`（CLIP 类型 `krea2`）和 `qwen_image_vae.safetensors`。CLIP 类型相同只是编码器配置相同，不能由此推导 LoRA 与 OPD Q2_K 扩散权重兼容。当前可把 Krea 2 BFS 文件视作**未验证的实验候选**，不能写成官方支持；也可先试普通双图编辑路径，但需要独立记为非 BFS 验证。
 
-## 相关 MiniMax H3 量化资源备注
-
-Unsloth 的[MiniMax H3 GGUF 模型卡](https://huggingface.co/unsloth/MiniMax-H3-GGUF)公开了 `minimax_h3_ref2va_pruned-Q2_K.gguf`（6.22 GiB）及配对 `qwen3vl_32b_minimax_h3-Q2_K_M.gguf`（12.20 GiB）。仅这两项权重约 18.42 GiB（十进制约 19.8 GB），尚未计入视频/音频 VAE、BFS LoRA 和运行缓冲。该卡给出的 `--backend te=cpu` 是 stable-diffusion.cpp CLI 示例，不是 ComfyUI BFS 端到端验证；[BFS H3 文档](https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/blob/main/docs/character-swap.md)使用原生权重，而[ComfyUI GGUF fork](https://github.com/kyuz0/ComfyUI-GGUF-H3)将 LoRA 加载标为实验性。因此这些低量化模型只是值得单独核实的候选，不能据此断言它们适配该 BFS 图或能在 16 GB RAM 上运行。
-
 ## 来源
 
 - BFS Qwen Image 2.1 [指南](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/docs/qwen-image-2.1.md)；[Qwen 工作流](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/workflows/Head%20Swap%20V1%20Qwen%202.1%20Workflow.json)；[推荐版 LFS 指针](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/raw/main/bfs_head_v1.1_qwen_2.1.safetensors)；[alternative LFS 指针](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/raw/main/bfs_head_v1.1_alternative_qwen_2.1.safetensors)。
 - BFS Krea 2 [指南](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/docs/krea-2.md)；[Krea 工作流](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/workflows/Head%20Swap%20Krea%202%20-%20V1%20Simple%20Workflow.json)；[Krea LoRA LFS 指针](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/raw/main/bfs_head_swap_v1.1_krea2.safetensors)；[Krea 节点仓库](https://github.com/lbouaraba/comfyui-krea2edit)。
-- H3 量化候选来自 [Unsloth 模型卡](https://huggingface.co/unsloth/MiniMax-H3-GGUF)、[BFS H3 角色替换指南](https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/blob/main/docs/character-swap.md)及 [ComfyUI GGUF fork](https://github.com/kyuz0/ComfyUI-GGUF-H3)。

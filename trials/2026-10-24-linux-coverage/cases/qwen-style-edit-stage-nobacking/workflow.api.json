@@ -1,0 +1,121 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+    }
+  },
+  "case01_2": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+      "type": "qwen_image"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "case02_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Transform this photograph into a delicate watercolor painting. Keep the orange cat, its pose, the cafe entrance, the rainy street and the original framing. Use visible textured paper and soft watercolor washes. No text.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case02_31",
+        0
+      ]
+    }
+  },
+  "case02_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case02_81",
+        0
+      ],
+      "positive": [
+        "case02_4",
+        0
+      ],
+      "negative": [
+        "case02_4",
+        1
+      ],
+      "latent_image": [
+        "case02_4",
+        2
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case02_6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case02_5",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case02_7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case02_6",
+        0
+      ],
+      "filename_prefix": "linux-coverage/qwen-style-edit-stage-nobacking"
+    }
+  },
+  "case02_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_42d5d9635f9c_cat.png"
+    }
+  },
+  "case02_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case02_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case02_81": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "device": "off",
+      "dtype": "default"
+    }
+  }
+}

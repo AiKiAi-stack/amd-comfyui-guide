@@ -1,0 +1,14 @@
+[
+  "turbo-un-pose-reference-test-stage-nobacking-cpu-encode",
+  "qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode",
+  "qwen-inpaint-stage-nobacking-cpu-encode",
+  "qwen-multiref-stage-nobacking-cpu-encode",
+  "qwen-face-swap-stage-nobacking-cpu-encode",
+  "qwen-style-edit-stage-nobacking-cpu-encode",
+  "qwen-face-only-stage-nobacking-cpu-encode",
+  "qwen-caption-gpu-chunked-stage-nobacking-cpu-encode",
+  "qwen-bfs-head-swap-stage-nobacking-cpu-encode",
+  "turbo-fox-profile-wide-mask-linux-repair-cpu-encode",
+  "turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode",
+  "turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode"
+]

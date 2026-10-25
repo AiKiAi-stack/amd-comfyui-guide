@@ -1,0 +1,91 @@
+{
+  "case_id": "moss-img2img-cpu-text--sample",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "10-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "6b4872835761c48a01cd5f4dfdc0728b5470220cf02db457565d9dfa65aac41c",
+      "original_sha256": "4abdf4cdedc6d2cd3b8c75cec1427a8486141ff6340d55012a93e1aab2bfa8ac",
+      "rgb_sha256": "fb41c9961a91ecd1452a64744ba1644de67477ab75f9bbea9689a44abf68dcd7"
+    }
+  ],
+  "workflow_sha256": "9505f28d84f311a31cae88a68d5a6ee18ef97ba90ca3025740c0703974047a39",
+  "pid": 136231,
+  "prompt_id": "3d576282-d842-4720-b973-1d0c9679d13d",
+  "validation_errors": {},
+  "outputs": {
+    "10": {
+      "images": [
+        {
+          "filename": "moss-img2img-cpu-text_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "3d576282-d842-4720-b973-1d0c9679d13d",
+        "timestamp": 1792891611057
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "3d576282-d842-4720-b973-1d0c9679d13d",
+        "timestamp": 1792891611059
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "3d576282-d842-4720-b973-1d0c9679d13d",
+        "timestamp": 1792891663087
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 1949.2890625,
+  "elapsed_seconds": 52.916,
+  "total_seconds": 59.019,
+  "server_exit": -15
+}

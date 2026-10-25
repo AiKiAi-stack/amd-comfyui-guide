@@ -1,0 +1,14 @@
+test_batch_wait_barrier_is_bypassed_without_other_case (test_platform_report.PlatformReportTests) ... ok
+test_every_original_windows_case_and_review_remains (test_platform_report.PlatformReportTests) ... ok
+test_generated_reference_material_is_not_an_edit_result (test_platform_report.PlatformReportTests) ... ok
+test_linux_execution_is_never_inherited_from_windows (test_platform_report.PlatformReportTests) ... ok
+test_model_family_uses_diffusion_weight_not_un_encoder (test_platform_report.PlatformReportTests) ... ok
+test_only_checked_graphs_are_installed (test_platform_report.PlatformReportTests) ... ok
+test_portable_graph_preserves_every_non_image_input (test_platform_report.PlatformReportTests) ... ok
+test_report_escapes_prompt_markup (test_platform_report.PlatformReportTests) ... ok
+test_windows_sources_and_complete_archive_are_preserved (test_platform_report.PlatformReportTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.235s
+
+OK

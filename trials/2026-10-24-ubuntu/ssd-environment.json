@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-24",
+  "package_count": 95,
+  "all_versions_match_20261023": true,
+  "ssd_environment": "/home/user/.local/share/barely-comfy/ubuntu-20261024/.venv",
+  "project_venv_link": "/path/to/barely-comfy/runtime/ubuntu/.venv",
+  "original_linux_environment_preserved": "/path/to/barely-comfy/runtime/ubuntu/.venv.ntfs-20261023",
+  "windows_environment_untouched": true,
+  "models_reused_on_readonly_nvme": true
+}

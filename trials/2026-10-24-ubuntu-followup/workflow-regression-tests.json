@@ -1,0 +1,35 @@
+[
+  {
+    "name": "test_workflow_checks",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "scripts/test_workflow_checks.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5895322320000105,
+    "stdout": "",
+    "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.388s\n\nOK\n"
+  },
+  {
+    "name": "test_replay_partial",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "scripts/test_replay_partial.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.7020015989999138,
+    "stdout": "",
+    "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.623s\n\nOK\n"
+  },
+  {
+    "name": "test_conditioned_graph",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "scripts/test_conditioned_graph.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5214464749999479,
+    "stdout": "",
+    "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.371s\n\nOK\n"
+  }
+]

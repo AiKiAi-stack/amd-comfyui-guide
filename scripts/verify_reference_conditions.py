@@ -16,6 +16,8 @@ def main():
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
     reference = json.loads((args.run / 'reference-link.json').read_text(encoding='utf-8'))
+    if 'archive_file' not in reference:
+        reference = reference[args.label]
     phase = json.loads((args.run / 'phases/graphs' / args.label / 'phase-link.json').read_text(encoding='utf-8'))
     root = (args.runtime / 'ComfyUI/input/repair_conditioning').resolve()
 

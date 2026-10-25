@@ -1,0 +1,77 @@
+{
+  "case_id": "turbo-un-multiref-bf16-cpu-encode--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc",
+    "--cpu"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "d206a46fa2a0b00f294c0b00904768ce2e246b1c54cec636ca760fc2e8cc676b",
+  "pid": 11552,
+  "prompt_id": "1651e06d-16b2-43ba-a33d-5a8e399b61c8",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-turbo-un-multiref-bf16-cpu-encode-a91464f5e7d3.safetensors"
+      ],
+      "archive_sha256": [
+        "7d457256e93b7743c94be251aed46a2881a6eeda1d6bf57ca2becfdb8cb855a5"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "1651e06d-16b2-43ba-a33d-5a8e399b61c8",
+        "timestamp": 1792910203884
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "1651e06d-16b2-43ba-a33d-5a8e399b61c8",
+        "timestamp": 1792910203886
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "1651e06d-16b2-43ba-a33d-5a8e399b61c8",
+        "timestamp": 1792910360847
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6986.703125,
+  "elapsed_seconds": 158.596,
+  "total_seconds": 165.718,
+  "server_exit": -15
+}

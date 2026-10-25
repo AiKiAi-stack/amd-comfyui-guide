@@ -1,0 +1,144 @@
+{
+  "fe7673c1-09c8-45a6-9ffc-547bb03e3712": {
+    "prompt": [
+      0,
+      "fe7673c1-09c8-45a6-9ffc-547bb03e3712",
+      {
+        "2": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+            "type": "qwen_image"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "prompt": [
+              "42",
+              0
+            ],
+            "negative_prompt": "blurry, distorted, watermark",
+            "resolution": 512
+          }
+        },
+        "30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_42d5d9635f9c_cat.png"
+          }
+        },
+        "31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "40": {
+          "class_type": "TextGenerate",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "image": [
+              "31",
+              0
+            ],
+            "prompt": "Describe this image as one concise English image generation prompt. Include the subject, setting, lighting and composition. Output only the prompt.",
+            "max_length": 160,
+            "sampling_mode": "off",
+            "thinking": false,
+            "use_default_template": true,
+            "mtp": "off"
+          }
+        },
+        "42": {
+          "class_type": "SaveText",
+          "inputs": {
+            "text": [
+              "40",
+              0
+            ],
+            "filename_prefix": "RepairBench/qwen-caption-gpu-chunked-prompt",
+            "format": "txt"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "latent": [
+              "4",
+              2
+            ],
+            "prefix": "linux-coverage-qwen-caption-gpu-chunked-stage-nobacking-cpu-encode",
+            "workflow_sha256": "4364cd3c26983fe6ed9da28b17a96b0abb9e71b32091c6eb701d7c3bef1eb456"
+          }
+        }
+      },
+      {
+        "create_time": 1792912620284
+      },
+      [
+        "42",
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {},
+    "status": {
+      "status_str": "error",
+      "completed": false,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fe7673c1-09c8-45a6-9ffc-547bb03e3712",
+            "timestamp": 1792912620284
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "fe7673c1-09c8-45a6-9ffc-547bb03e3712",
+            "timestamp": 1792912620321
+          }
+        ],
+        [
+          "execution_interrupted",
+          {
+            "prompt_id": "fe7673c1-09c8-45a6-9ffc-547bb03e3712",
+            "node_id": "40",
+            "node_type": "TextGenerate",
+            "executed": [
+              "30",
+              "31",
+              "2"
+            ],
+            "timestamp": 1792912931678
+          }
+        ]
+      ]
+    },
+    "meta": {}
+  }
+}

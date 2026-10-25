@@ -1,0 +1,20 @@
+{
+  "prompt_id": "9a9801f3-07b4-4d2d-aeba-967b10946de8",
+  "status": "success",
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-un-multiref-natural_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

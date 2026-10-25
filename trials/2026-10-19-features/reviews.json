@@ -84,11 +84,6 @@
     "detail": "实际输出为单人侧转人像，铜红卷发、浅肤色、雀斑和绿眼特征清晰；蓝大衣、红围巾、公园背景保留。普通双图换头输出偏正面，本次 BFS LoRA 图保留了更明显的三分之四侧转角度。五官外观仍有差异，不能据单例认定精确身份复现。该对照同时增加 head_swap 前缀和 LoRA，未单独消融两者；15步、未加载 Pruna LoRA，不是官方8步配方复现。",
     "image": "qwen-bfs-head-swap_00001_.png"
   },
-  "ref2va-5frame-diagnostic": {
-    "verdict": "加载、采样、解码链路通过；不是视频功能验收",
-    "detail": "最新一次使用GPU FP16 VAE并预留2GB显存，实际保存5张384×256 PNG与无声WebP。首尾帧可见青色机器人、洋红围巾、方形黑眼和浅色背景，画面相似；约0.2秒不能评价动作流畅、正常时长质量或BFS角色替换。此前CPU VAE超时、INT8 VAE HIPBLAS错误及未预留显存的FP16采样OOM均保留。433.08秒包含服务启动；系统已用内存采样峰值约14.19GiB，API显存采样峰值约4.84GiB，不是所有瞬时分配的精确峰值。",
-    "image": "ref2va-5frame-diagnostic-frames_00001_.png"
-  },
   "turbo-un-t2i": {
     "verdict": "达到本例文生图目标",
     "detail": "本次 UN GGUF 编码器组合实际完成8步，得到独立白猫、雨窗和霓虹街景图片，未见黑图或纹理噪声。CPU文字编码、GPU扩散、CPU VAE混合配置，总用时526.25秒；不是纯GPU，也未测试去限制效果。",
@@ -385,5 +380,50 @@
     "verdict": "通过",
     "detail": "保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。",
     "image": "turbo-fox-profile-wide-mask_00001_.png"
+  },
+  "turbo-un-role-isolated": {
+    "verdict": "部分达到",
+    "detail": "四阶段完整执行8步并CPU解码。宇航服和头盔已完全去除，单名红卷发女性以黄褐色户外服在丛林前行；场景、站位和主要构图保留。脸部尺寸较小，雀斑、绿眼和精确身份未获证明，仍记部分达到；不是专用角色控制。",
+    "image": "turbo-un-role-isolated_00001_.png"
+  },
+  "turbo-un-pose-isolated": {
+    "verdict": "部分达到",
+    "detail": "参考隔离后完整8步和CPU解码。红卷发成年女性、青色运动服、白背景、水平展开双臂及画面右侧屈膝可见，未复制骨架线；与示意的大体姿态相符。人物面部细节及精确身份不足，不能作为专用姿态约束或精确身份验收。",
+    "image": "turbo-un-pose-isolated_00001_.png"
+  },
+  "turbo-un-multiref-natural": {
+    "verdict": "部分达到",
+    "detail": "两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。",
+    "image": "turbo-un-multiref-natural_00001_.png"
+  },
+  "turbo-un-multiref-no-fox": {
+    "verdict": "部分达到",
+    "detail": "删除image2及其VAE参考，保持同一提示、seed、扩散权重后，依然生成清晰红狐和相似雨街。说明本提示本身足以生成狐狸，不能把两图结果外观相似作为参考身份保留证明。",
+    "image": "turbo-un-multiref-no-fox_00001_.png"
+  },
+  "turbo-ordinary-role-control": {
+    "verdict": "部分达到",
+    "detail": "同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。",
+    "image": "turbo-ordinary-role-control_00001_.png"
+  },
+  "turbo-ordinary-pose-control": {
+    "verdict": "部分达到",
+    "detail": "同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。",
+    "image": "turbo-ordinary-pose-control_00001_.png"
+  },
+  "kroma-head-cropped-reference": {
+    "verdict": "部分达到",
+    "detail": "裁切参考排除黄毛衣，并扩大头发合成范围后完整4步及CPU解码。红卷发、雀斑、绿眼与左转头向出现，但黑色长发仍保留，颈部有重影且黄色仍混入领口。问题没有解决，保留独立失败视觉证据。",
+    "image": "kroma-head-cropped-reference_00001_.png"
+  },
+  "kroma-multiref-no-fox": {
+    "verdict": "部分达到",
+    "detail": "去掉第二狐狸参考（文本视觉输入及第二ReferenceLatent）后依然生成红狐。此轮采样为FP16，而历史双参考是默认精度，尚不能作为严格单变量对照；已另排匹配FP16的双参考控制，不能以此宣称参考无效。",
+    "image": "kroma-multiref-no-fox_00001_.png"
+  },
+  "qwen-multiref-full-tail": {
+    "verdict": "部分达到",
+    "detail": "复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。",
+    "image": "qwen-multiref-full-tail_00001_.png"
   }
 }

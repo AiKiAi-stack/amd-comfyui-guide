@@ -2,7 +2,7 @@
 
 以本机原始实验和上游问题交叉整理。旧案例保留原始状态；独立进程成功不计为连续出图修复。代码在 `fix/gguf-repeat-stability` 分支管理，模型和原始日志留在本地。
 
-这份清单主要记录运行故障，不能代表全部功能完成度。完整的非 H3 未闭环功能、视觉不足和报告漏项见 [19 条未闭环记录](07-unfinished-features.md)。
+这份清单主要记录运行故障，不能代表全部功能完成度。
 
 ## BC-001 · Z-Image 双 GGUF 连续出图原生退出 · 本轮未复现，根因未解决
 
@@ -36,10 +36,6 @@ gfx1032 INT8 路径报 `HIPBLAS_STATUS_INVALID_VALUE`。已有 [显式启用的�
 ## BC-006 · FLUX.2 关闭锁页内存后出噪声 · 历史对照有效
 
 本机移除 `--disable-pinned-memory` 后文生图及编辑恢复；[原失败图和成功对照](../trials/2026-10-20-flux2-klein/README.md) 均保留。底层 HIP/WDDM 原因未确认。上游 [#16337](https://github.com/Comfy-Org/ComfyUI/issues/16337) 也报告 AMD 动态显存噪声，但显卡不同，且其锁页开关对照结论不同，不能合并为一个通用故障。
-
-## BC-007 · H3 采样阶段反量化 OOM · 小诊断通过，大任务未修复
-
-历史 OOM 位于采样器权重反量化/clone，不能归类为 VAE 解码失败。后来的 [五帧诊断](../trials/2026-10-19-features/cases/ref2va-5frame-diagnostic/result.json) 成功仅证明极小链路可执行。正常视频任务仍需独立验收。
 
 ## BC-008 · ROCm 7.2 在 GPU 初始化时原生崩溃 · 未修复
 

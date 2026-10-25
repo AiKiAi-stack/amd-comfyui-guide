@@ -1,0 +1,297 @@
+{
+  "time": "2026-10-24T15:31:18.526465+08:00",
+  "gpu_access": true,
+  "disks": {
+    "blockdevices": [
+      {
+        "name": "loop0",
+        "size": "4K",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/bare/5"
+        ]
+      },
+      {
+        "name": "loop1",
+        "size": "74.3M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/core22/1612"
+        ]
+      },
+      {
+        "name": "loop2",
+        "size": "66.8M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/core24/2124"
+        ]
+      },
+      {
+        "name": "loop3",
+        "size": "271.2M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/firefox/4848"
+        ]
+      },
+      {
+        "name": "loop4",
+        "size": "505.1M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/gnome-42-2204/176"
+        ]
+      },
+      {
+        "name": "loop5",
+        "size": "531.5M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/gnome-42-2204/263"
+        ]
+      },
+      {
+        "name": "loop6",
+        "size": "616M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/gnome-46-2404/177"
+        ]
+      },
+      {
+        "name": "loop7",
+        "size": "91.7M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/gtk-common-themes/1535"
+        ]
+      },
+      {
+        "name": "loop8",
+        "size": "402M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/mesa-2404/1839"
+        ]
+      },
+      {
+        "name": "loop9",
+        "size": "12.9M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/snap-store/1113"
+        ]
+      },
+      {
+        "name": "loop10",
+        "size": "38.8M",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/snapd/21759"
+        ]
+      },
+      {
+        "name": "loop11",
+        "size": "500K",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/snapd-desktop-integration/178"
+        ]
+      },
+      {
+        "name": "loop12",
+        "size": "828K",
+        "fstype": "squashfs",
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          "/snap/snapd-desktop-integration/391"
+        ]
+      },
+      {
+        "name": "sda",
+        "size": "2.7T",
+        "fstype": null,
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          null
+        ],
+        "children": [
+          {
+            "name": "sda1",
+            "size": "100M",
+            "fstype": "vfat",
+            "label": null,
+            "uuid": "2C7A-2AD8",
+            "mountpoints": [
+              "/boot/efi"
+            ]
+          },
+          {
+            "name": "sda2",
+            "size": "128M",
+            "fstype": null,
+            "label": null,
+            "uuid": null,
+            "mountpoints": [
+              null
+            ]
+          },
+          {
+            "name": "sda3",
+            "size": "2.7T",
+            "fstype": "ntfs",
+            "label": "系统",
+            "uuid": "ED9647E7ADB82948",
+            "mountpoints": [
+              "/media/user/系统"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "sdb",
+        "size": "447.1G",
+        "fstype": null,
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          null
+        ],
+        "children": [
+          {
+            "name": "sdb1",
+            "size": "347.1G",
+            "fstype": "ntfs",
+            "label": "KEKE",
+            "uuid": "58BC08A6BC08812C",
+            "mountpoints": [
+              null
+            ]
+          },
+          {
+            "name": "sdb2",
+            "size": "487M",
+            "fstype": "vfat",
+            "label": null,
+            "uuid": "05BB-AEF6",
+            "mountpoints": [
+              null
+            ]
+          },
+          {
+            "name": "sdb3",
+            "size": "99.5G",
+            "fstype": "ext4",
+            "label": null,
+            "uuid": "3d99d081-1f30-4ad9-ba41-ca3b9559550f",
+            "mountpoints": [
+              "/"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "sdc",
+        "size": "58.6G",
+        "fstype": null,
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          null
+        ],
+        "children": [
+          {
+            "name": "sdc1",
+            "size": "58.6G",
+            "fstype": "vfat",
+            "label": "WIN10",
+            "uuid": "E080-20BD",
+            "mountpoints": [
+              "/media/user/WIN10"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "nvme0n1",
+        "size": "476.9G",
+        "fstype": null,
+        "label": null,
+        "uuid": null,
+        "mountpoints": [
+          null
+        ],
+        "children": [
+          {
+            "name": "nvme0n1p1",
+            "size": "100M",
+            "fstype": "vfat",
+            "label": null,
+            "uuid": "84F1-62EA",
+            "mountpoints": [
+              null
+            ]
+          },
+          {
+            "name": "nvme0n1p2",
+            "size": "16M",
+            "fstype": null,
+            "label": null,
+            "uuid": null,
+            "mountpoints": [
+              null
+            ]
+          },
+          {
+            "name": "nvme0n1p3",
+            "size": "476.8G",
+            "fstype": null,
+            "label": null,
+            "uuid": null,
+            "mountpoints": [
+              null
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "swap": "",
+  "memory_kib": "MemTotal:       16182936 kB\nMemFree:         1710452 kB\nMemAvailable:    8183904 kB\nBuffers:           76524 kB\nCached:          6597452 kB\nSwapCached:            0 kB\nActive:          9435264 kB\nInactive:        4092656 kB\nActive(anon):    4903148 kB\nInactive(anon):  1993284 kB\nActive(file):    4532116 kB\nInactive(file):  2099372 kB\nUnevictable:          48 kB\nMlocked:              48 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2248 kB\nWriteback:             0 kB\nAnonPages:       6876056 kB\nMapped:          3737088 kB\nShmem:             42332 kB\nKReclaimable:     183792 kB\nSlab:             425880 kB\nSReclaimable:     183792 kB\nSUnreclaim:       242088 kB\nKernelStack:       20464 kB\nPageTables:        71840 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     8091468 kB\nCommitted_AS:   22782140 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       66556 kB\nVmallocChunk:          0 kB\nPercpu:            12288 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      421692 kB\nDirectMap2M:    10921984 kB\nDirectMap1G:     7340032 kB\n",
+  "source_manifest": {
+    "handoff.md": "05144d7ae50d6cddec827649e8af17ef6b6f86a8843c83818a194f25b1eebc6f",
+    "README.md": "52f846a4c99450c908d8613b20967620a714c0a87a6efeb3b48cbc7e79c2ab19",
+    "docs/10-ubuntu-continuation-2026-10-24.md": "852f81675768ce90a11b4873d850646c14a3eb9409ab41db8c43ecae76c88bf0",
+    "trials/2026-10-19-features/reviews.json": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f",
+    "trials/2026-10-19-features/cases.json": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a",
+    "code_source/gguf_mmap_offload/__init__.py": "08aa5abfaf704a4b8e65cd594732c7a2ccf9a593e6c68ce85f75a399c3af74a7",
+    "trials/2026-10-19-features/feature-report.html": "e585eb25d1b19253071cb81c943bacfff85fb666cd86de1e5dfca44f3b83af0d"
+  }
+}

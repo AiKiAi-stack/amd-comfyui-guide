@@ -1,0 +1,141 @@
+{
+  "case_id": "turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "repair_save_input-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
+      "original_sha256": "98a3cbb31d0fc42f01843ac954c596f1e86f912c619768b6367d43e1b7881844",
+      "rgb_sha256": "3d86960a868ab2eee482b07ad9c72a87bdcb4d58f735d2cc3ebff20cb2172319"
+    },
+    {
+      "file": "repair_save_mask-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "396c95a6398a4c6434bb0fd9466a39f26cd98df9493b96cf7b4e800b48a64330",
+      "original_sha256": "6de0d882c165a6e66f824453b7e6f71531f984a80e55e527075df49b6e10224b",
+      "rgb_sha256": "a34ce172919e1efcbb486e3b951cc441dad2028185e5a6471efca97d5b8185fb"
+    },
+    {
+      "file": "7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "1cdc4ab5dd9d59cd6b0f8287b9cd34d74e7c440af749889785158578eaff90b9",
+      "original_sha256": "41ad1e2417e1c6ed2cda9453671ed7107a45af84d6d8bcc19a983b2767912c12",
+      "rgb_sha256": "88bb281fd71050190d03c52a3c694c983ed1115dd4dc48209c41dc2f834dd11c"
+    }
+  ],
+  "workflow_sha256": "72429db330a72903b009da26f0c577e8ebfdad0b210ab0b51f1ed909180572a5",
+  "pid": 17865,
+  "prompt_id": "a7490436-24fc-423d-93ea-9e416fd5db3e",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_input": {
+      "images": [
+        {
+          "filename": "turbo-fox-profile-wide-mask-linux-repair_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_mask": {
+      "images": [
+        {
+          "filename": "turbo-fox-profile-wide-mask-linux-repair_00002_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-fox-profile-wide-mask-linux-repair_00003_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "a7490436-24fc-423d-93ea-9e416fd5db3e",
+        "timestamp": 1792914375174
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "a7490436-24fc-423d-93ea-9e416fd5db3e",
+        "timestamp": 1792914375294
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "a7490436-24fc-423d-93ea-9e416fd5db3e",
+        "timestamp": 1792914476294
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7369.21875,
+  "elapsed_seconds": 102.473,
+  "total_seconds": 115.661,
+  "server_exit": -15
+}

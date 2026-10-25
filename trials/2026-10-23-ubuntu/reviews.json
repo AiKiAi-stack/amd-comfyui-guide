@@ -1,0 +1,20 @@
+[
+  {
+    "index": 1,
+    "file": "zimage-repeat/repeat-01-red_00001_.png",
+    "verdict": "pass",
+    "review": "red ceramic teapot with one spout, one handle and two lemons; 512x512, coherent photorealistic structure, no noise/black output or visible writing."
+  },
+  {
+    "index": 2,
+    "file": "zimage-repeat/repeat-02-blue_00001_.png",
+    "verdict": "pass",
+    "review": "blue ceramic teapot with one spout, one handle and two lemons; 512x512, coherent photorealistic structure, no noise/black output or visible writing."
+  },
+  {
+    "index": 3,
+    "file": "zimage-repeat/repeat-03-green_00001_.png",
+    "verdict": "pass",
+    "review": "green ceramic teapot with one spout, one handle and two lemons; 512x512, coherent photorealistic structure, no noise/black output or visible writing."
+  }
+]

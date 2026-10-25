@@ -1,0 +1,18 @@
+{
+  "execution": "success",
+  "visual": "图像健康；提示细节部分达到",
+  "review": "512×512 完整图，持剑骷髅、黑袍、教堂门口、红月和雾气可辨；没有整屏噪声、异常块或明显破图。蓝眼发光不够明确，破碎彩窗细节有限，保留提示细节部分达到。",
+  "elapsed_seconds": 114.325,
+  "minimum_observed_available_ram_mib": 3365.3203125,
+  "source_runtime_png": "runtime/ubuntu/ComfyUI/output/platform-library-webui-blue_00001_.png",
+  "source_sha256": "2fb77e22cae4a6f34e064c1552bb65cd64eaa8f66d712f6501530b1647dd3f89",
+  "public_png": "trials/2026-10-24-platform-report/platform-library-webui-blue_00001_.png",
+  "public_sha256": "9d7f6f138408d2082db28dd83ad084b56dc5993241ae783bceacf839807844c9",
+  "rgb_pixels_sha256": "7930bf3e5a238c77a5d40898b8577af60ce1cc54cd318de8aed82abd8460f429",
+  "metadata_removed": [
+    "prompt",
+    "workflow"
+  ],
+  "pixels_unchanged": true,
+  "scope": "由安装后的 UI JSON 载入，并通过实际 app.queuePrompt 提交；只修改 SaveImage 前缀分离本轮证据，其他节点输入与库中 API 相同。不是所有 99 份图的执行验证。"
+}

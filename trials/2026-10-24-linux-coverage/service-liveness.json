@@ -1,0 +1,138 @@
+{
+  "time": 1792916658.4456275,
+  "system_stats": {
+    "system": {
+      "os": "linux",
+      "ram_total": 16568340480,
+      "ram_free": 8211853312,
+      "comfyui_version": "0.41.0",
+      "required_frontend_version": "1.55.17",
+      "installed_templates_version": "0.11.87",
+      "required_templates_version": "0.11.87",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.17",
+          "required": "1.55.17"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.87",
+          "required": "0.11.87"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.38",
+          "required": "0.2.38"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "pytorch_version": "2.12.0+rocm7.14.0",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "ComfyUI/main.py",
+        "--listen",
+        "127.0.0.1",
+        "--port",
+        "8188",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--disable-dynamic-vram",
+        "--extra-model-paths-config",
+        "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+        "--fast-disk",
+        "--reserve-vram",
+        "1.0",
+        "--use-split-cross-attention",
+        "--force-fp16",
+        "--force-upcast-attention",
+        "--disable-pinned-memory"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 3876749824,
+        "torch_vram_total": 4435476480,
+        "torch_vram_free": 137527808
+      }
+    ]
+  },
+  "queue": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "default_service_processes": [
+    {
+      "cwd": "/path/to/barely-comfy/runtime/ubuntu",
+      "cmdline": [
+        ".venv/bin/python",
+        "-X",
+        "faulthandler",
+        "-u",
+        "ComfyUI/main.py",
+        "--listen",
+        "127.0.0.1",
+        "--port",
+        "8188",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--disable-dynamic-vram",
+        "--extra-model-paths-config",
+        "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+        "--fast-disk",
+        "--reserve-vram",
+        "1.0",
+        "--use-split-cross-attention",
+        "--force-fp16",
+        "--force-upcast-attention",
+        "--disable-pinned-memory"
+      ],
+      "pid": 19546
+    }
+  ],
+  "installed_ui_count": 184,
+  "backend_visible_installed_count": 184,
+  "missing_installed": [],
+  "report_http_matches_disk": true,
+  "temporary_gpu_acl": true,
+  "model_mount_readonly": true,
+  "mount_record": [
+    "/dev/sdb1",
+    "/media/user/MODELS",
+    "ntfs3",
+    "ro,nosuid,nodev,relatime,uid=1000,gid=1000,windows_names,iocharset=utf8",
+    "0",
+    "0"
+  ],
+  "private_validation_services": [],
+  "report_service": [
+    {
+      "pid": 10149,
+      "cwd": "/path/to/barely-comfy",
+      "cmdline": [
+        "python3",
+        "-m",
+        "http.server",
+        "8767",
+        "--bind",
+        "127.0.0.1"
+      ]
+    }
+  ],
+  "report_sha256": "0ec634536ce1008e650e111525901abd3db6422bf346afdc7c758d966f433a1a"
+}

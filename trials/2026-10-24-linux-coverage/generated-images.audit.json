@@ -1,0 +1,931 @@
+{
+  "scope": "PNG integrity, nonuniform pixels, exact RGB binding, source/phase/archive SHA256 and human review present; not independent semantic or identity acceptance.",
+  "successful_case_count": 42,
+  "generated_images": 42,
+  "cases": [
+    {
+      "case": "kroma-opd-q2-t2i-fox-512",
+      "model": "kroma",
+      "feature": "t2i",
+      "verdict": "达到本例文生图目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/kroma-opd-q2-t2i-fox-512--sample/9-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "c64e5edeaaa9cd569c81c394f5acfb05a841bab319045c5ef9c17b03803157e9",
+          "channel_stddev": [
+            46.60078493643531,
+            44.74378000143191,
+            42.509115154290505
+          ]
+        }
+      ]
+    },
+    {
+      "case": "kroma-img2img",
+      "model": "kroma",
+      "feature": "style",
+      "verdict": "部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/kroma-img2img--sample/9-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "cad9ff39d3e5a0218bb60beac7aea5b23aa367161d7196299632e8e0bf7c832f",
+          "channel_stddev": [
+            53.3805577655856,
+            33.11602423695345,
+            26.195550748457695
+          ]
+        }
+      ]
+    },
+    {
+      "case": "kroma-style-ref",
+      "model": "kroma",
+      "feature": "style-reference",
+      "verdict": "未达到目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/kroma-style-ref--sample/case01_9-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "2dd156c428ae0f1f14d901c9fea03cb957373c8b5129e30ee36fa2c538644918",
+          "channel_stddev": [
+            90.81790060000264,
+            70.85628142401559,
+            57.876486495994065
+          ]
+        }
+      ]
+    },
+    {
+      "case": "kroma-multiref",
+      "model": "kroma",
+      "feature": "multiref",
+      "verdict": "部分达到，狐狸主体明确",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/kroma-multiref--sample/case02_9-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "41dcbcf9b8613b69ab79d6ad26a9700511d81940ec12049dfc25b066024cbe97",
+          "channel_stddev": [
+            46.19403105674624,
+            27.686208537358354,
+            28.30709321077975
+          ]
+        }
+      ]
+    },
+    {
+      "case": "kroma-head-swap",
+      "model": "kroma",
+      "feature": "head",
+      "verdict": "部分达到，身份特征转移清楚",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/kroma-head-swap--sample/case03_9-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "9b5b5a90e7e6d5e67963df6b3ebacbe43ba33783592dc9d09c3634d948276ecd",
+          "channel_stddev": [
+            62.02379249205086,
+            62.65384153575192,
+            59.158607256361684
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-t2i-gpu-text-gguf-te",
+      "model": "flux2",
+      "feature": "t2i",
+      "verdict": "部分达到，HELLO 清楚",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-t2i-gpu-text-gguf-te--sample/13-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "80fce2500ade46b8c66ac7e02e524c82241c4170932720e7c0e705e31b7388ce",
+          "channel_stddev": [
+            69.90721239479632,
+            62.02693583370369,
+            68.37807264111983
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-single-color-gguf-te",
+      "model": "flux2",
+      "feature": "color",
+      "verdict": "达到本例改色目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-single-color-gguf-te--sample/19-0.png",
+          "size": [
+            368,
+            672
+          ],
+          "sha256": "8d4859058f6f8984c0e69b7dae1eb8a753e7a1f9210db35274677aa8e3eab471",
+          "channel_stddev": [
+            64.48603623960798,
+            43.2082183858357,
+            30.891665413225304
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-dual-logo-gguf-te",
+      "model": "flux2",
+      "feature": "logo",
+      "verdict": "达到本例主要配色与 Logo 迁移目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-dual-logo-gguf-te--sample/24-0.png",
+          "size": [
+            368,
+            672
+          ],
+          "sha256": "ffa3a5cd2a480d6a373202522ba655af1e5d26a77b0227efcf2b47366d216981",
+          "channel_stddev": [
+            59.98215281577412,
+            53.82185461261182,
+            34.80843108660051
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-dual-people-gguf-te",
+      "model": "flux2",
+      "feature": "people",
+      "verdict": "达到本例双人合成目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-dual-people-gguf-te--sample/24-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "8af441c81e2d85d88a3ef90cf525e61a41187b09ab3de275c5173e5638e1f8d6",
+          "channel_stddev": [
+            74.54866868840196,
+            70.38544187963831,
+            68.39365168566745
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-style-gguf-te",
+      "model": "flux2",
+      "feature": "style",
+      "verdict": "部分达到，水彩清楚",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-style-gguf-te--sample/19-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "5f32d24f48ca3a9180937f1f7ad38cf8e0764325e637187494d1cda94d875456",
+          "channel_stddev": [
+            46.588886921289564,
+            42.0017612381631,
+            40.109028009467416
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-replace-zh-gguf-te",
+      "model": "flux2",
+      "feature": "replace",
+      "verdict": "部分达到，替换生效但茶壶结构错误",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-replace-zh-gguf-te--sample/19-0.png",
+          "size": [
+            368,
+            672
+          ],
+          "sha256": "4ad66fcd3774ac1aa2e013b97d910129ae6f0388a3380893693c09ddf3ab68c2",
+          "channel_stddev": [
+            27.230009602620537,
+            51.54555507400478,
+            50.13107777213284
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-remove-gguf-te",
+      "model": "flux2",
+      "feature": "remove",
+      "verdict": "达到本例删除目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-remove-gguf-te--sample/19-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "2b7c205905a4858ecc06454f613e405ad958c536d27b82d4bd26aac41fd07680",
+          "channel_stddev": [
+            48.24855023391008,
+            32.4435233655198,
+            31.71411410946428
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-iterative-gguf-te",
+      "model": "flux2",
+      "feature": "iterative",
+      "verdict": "部分达到，蝴蝶结偏大",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-iterative-gguf-te--sample/19-0.png",
+          "size": [
+            368,
+            688
+          ],
+          "sha256": "1bfb4a5696ce6327f2cbdc96418fe6ced685a6c3977b4405dca9d6879b11696b",
+          "channel_stddev": [
+            67.64755928760398,
+            51.55889603488721,
+            36.53713130575289
+          ]
+        }
+      ]
+    },
+    {
+      "case": "zimage-gguf-english",
+      "model": "zimage-gguf",
+      "feature": "english-text",
+      "verdict": "达到本例文字渲染目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/zimage-gguf-english--sample/18-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "29090ad90bcc9586ba2e308885b3c69ab1038906de593a3a9894f94550420304",
+          "channel_stddev": [
+            97.40616858601065,
+            85.55522717759472,
+            79.35443167238788
+          ]
+        }
+      ]
+    },
+    {
+      "case": "zimage-gguf-chinese",
+      "model": "zimage-gguf",
+      "feature": "chinese-text",
+      "verdict": "达到本例文字渲染目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/zimage-gguf-chinese--sample/18-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "7993c5dc01e2c0764fb7a2e4406f43f208eadb3c4a25b22b08a9a7aaec2ebc39",
+          "channel_stddev": [
+            114.01585230843692,
+            103.03536017162789,
+            94.41000569454218
+          ]
+        }
+      ]
+    },
+    {
+      "case": "turbo-un-t2i-stage-nobacking",
+      "model": "qwen-turbo",
+      "feature": "t2i",
+      "verdict": "达到本例文生图目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-t2i-stage-nobacking--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "85730cf9bf184d3074387fb88eeed31981cd5a07414715886cf3422efcfdcfe8",
+          "channel_stddev": [
+            58.026733562598636,
+            45.89626936240543,
+            46.759822417229444
+          ]
+        }
+      ]
+    },
+    {
+      "case": "zimage-aio-photo-9step-components",
+      "model": "zimage-aio",
+      "feature": "t2i",
+      "verdict": "达到本例文生图目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-photo-9step-components--sample/26-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "31eee2d6012b6b0c8f395e36062d594ffe5278ba6e34e7a27d827368a95fc4e9",
+          "channel_stddev": [
+            56.15076796480699,
+            72.66507017775643,
+            78.54692858402937
+          ]
+        }
+      ]
+    },
+    {
+      "case": "zimage-aio-chinese-components",
+      "model": "zimage-aio",
+      "feature": "chinese-text",
+      "verdict": "达到本例文字渲染目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-chinese-components--sample/26-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "24aeb04258fdf2cc3cf6b074f9b7c473a628e90bc076a4780bc1722bf7162355",
+          "channel_stddev": [
+            106.20891427959394,
+            96.56167060470082,
+            89.0934984514023
+          ]
+        }
+      ]
+    },
+    {
+      "case": "zimage-aio-english-components",
+      "model": "zimage-aio",
+      "feature": "english-text",
+      "verdict": "达到本例文字渲染目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-english-components--sample/26-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "be2e47408588f2896badab33485e702be1ace5c525b16a14f9753fe94fdfdcdb",
+          "channel_stddev": [
+            89.37059453686577,
+            82.96837870571783,
+            79.14150163208394
+          ]
+        }
+      ]
+    },
+    {
+      "case": "zimage-aio-figure-art-components",
+      "model": "zimage-aio",
+      "feature": "figure",
+      "verdict": "达到本例成人艺术写生目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-figure-art-components--sample/26-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "cff0f26e36f5c6bb9ec8508d229918dca65e972c71ceaa5135341c4905bbdb61",
+          "channel_stddev": [
+            24.48375051481468,
+            23.269951334461105,
+            21.69222183154363
+          ]
+        }
+      ]
+    },
+    {
+      "case": "moss-sft-dmd-8step-t2i-astronaut-512-cpu-text",
+      "model": "moss",
+      "feature": "t2i",
+      "verdict": "达到本例文生图目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/moss-sft-dmd-8step-t2i-astronaut-512-cpu-text--sample/10-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "73ca8dba1f17422c036fb5e0b5b5357b3e52b6b045524cd955ac49e8bbc187e7",
+          "channel_stddev": [
+            66.45928445327682,
+            60.09699479490624,
+            62.75461730521898
+          ]
+        }
+      ]
+    },
+    {
+      "case": "moss-img2img-cpu-text",
+      "model": "moss",
+      "feature": "style",
+      "verdict": "未达到水彩风格目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/moss-img2img-cpu-text--sample/10-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "6b4872835761c48a01cd5f4dfdc0728b5470220cf02db457565d9dfa65aac41c",
+          "channel_stddev": [
+            68.89813460134798,
+            57.95608631653374,
+            62.68987137133961
+          ]
+        }
+      ]
+    },
+    {
+      "case": "moss-layout-cpu-text",
+      "model": "moss",
+      "feature": "layout",
+      "verdict": "达到本例主要布局目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/moss-layout-cpu-text--sample/10-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "f54fd620a43a8dbee9a1787c030eeffc6e27820b78addd6b633aafe59f6576bc",
+          "channel_stddev": [
+            70.34445736453472,
+            74.4643601048798,
+            63.615385889779006
+          ]
+        }
+      ]
+    },
+    {
+      "case": "moss-text-cpu-text",
+      "model": "moss",
+      "feature": "english-text",
+      "verdict": "达到本例文字渲染目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/moss-text-cpu-text--sample/10-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "6de4b86fd486419d9498d43a2efe0b6dcf0cc6072889e87ba5dd1abc21551943",
+          "channel_stddev": [
+            68.32779434198835,
+            69.27260176764541,
+            73.97608290518293
+          ]
+        }
+      ]
+    },
+    {
+      "case": "turbo-un-inpaint-stage-nobacking",
+      "model": "qwen-turbo",
+      "feature": "inpaint",
+      "verdict": "部分达到，物种替换不确定",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-inpaint-stage-nobacking--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "823e59a23de619caa5001fc2d1212fb08e7be793dd965992c80ea604e1c6a400",
+          "channel_stddev": [
+            50.079355031200336,
+            31.878621836925713,
+            29.87822914068323
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-klein-t2i-1024-gguf-te-tiled",
+      "model": "flux2",
+      "feature": "t2i-1024",
+      "verdict": "执行出图 · 提示细节部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-t2i-1024-gguf-te-tiled--sample/13-0.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "sha256": "f14f9d5cc9603ea95569cb8f2dae00e6022eb6755dc7b107daa5469b652aea97",
+          "channel_stddev": [
+            74.39050012064824,
+            64.56484543737882,
+            68.447138327013
+          ]
+        }
+      ]
+    },
+    {
+      "case": "moss-img2img-cpu-text-denoise085",
+      "model": "moss",
+      "feature": "style",
+      "verdict": "未达到水彩风格目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/moss-img2img-cpu-text-denoise085--sample/10-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "1171606d475cb5dd1ba63b447d4acaeca7ec9e7579fe18d8715c1ba62c0efecb",
+          "channel_stddev": [
+            66.8575013123191,
+            54.048741573099896,
+            59.062479738923
+          ]
+        }
+      ]
+    },
+    {
+      "case": "kroma-style-no-subject-reference-linux-repair",
+      "model": "kroma",
+      "feature": "style-reference",
+      "verdict": "达到本例主体替换与风格参考目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/kroma-style-no-subject-reference-linux-repair--sample/case01_9-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "730b06288a2947b9154b33bb164ffa212c4112fa0a161a8e9794960d3f95df05",
+          "channel_stddev": [
+            85.39254098280958,
+            42.514711853475994,
+            43.76449141091282
+          ]
+        }
+      ]
+    },
+    {
+      "case": "flux2-teapot-structure-linux-repair",
+      "model": "flux2",
+      "feature": "replace",
+      "verdict": "达到本例正常茶壶结构目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/flux2-teapot-structure-linux-repair--sample/19-0.png",
+          "size": [
+            368,
+            672
+          ],
+          "sha256": "2d047a15dd6fac59cd4944a45bae988846ce97da3d47e239b4a7ef31c0a03972",
+          "channel_stddev": [
+            27.723537075841897,
+            56.081949517335765,
+            53.33731370649941
+          ]
+        }
+      ]
+    },
+    {
+      "case": "turbo-un-multiref-bf16-cpu-encode",
+      "model": "qwen-turbo",
+      "feature": "multiref",
+      "verdict": "执行出图 · 主体合成部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-multiref-bf16-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "0e83df5c3ef215d8302278902798d259b33e29acfd1faa23883b736cf8dbbc3a",
+          "channel_stddev": [
+            50.46685589266389,
+            32.50879012360711,
+            29.75434374455443
+          ]
+        }
+      ]
+    },
+    {
+      "case": "turbo-un-pose-reference-test-stage-nobacking-cpu-encode",
+      "model": "qwen-turbo",
+      "feature": "pose",
+      "verdict": "姿态达到 · 身份细节部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-pose-reference-test-stage-nobacking-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "0ba2df3629d9502bf73f40c6b149557d72fb0407378672f7fbf9764b794bb4c7",
+          "channel_stddev": [
+            64.53779348499503,
+            54.60733112996211,
+            53.24830587792133
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode",
+      "model": "qwen-base",
+      "feature": "color",
+      "verdict": "达到本例白猫改色目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "c11aa2f4879960e88e802f841b0e2ac16a41de9dfa773f837f69a3898c689a35",
+          "channel_stddev": [
+            58.91742620657264,
+            50.217968259600234,
+            50.87671579531677
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-inpaint-stage-nobacking-cpu-encode",
+      "model": "qwen-base",
+      "feature": "inpaint",
+      "verdict": "遮罩保护达到 · 狐狸替换部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "832b486bffa2268eafe5a27d547500932746e158807b2c1009df4df6e9052bc8",
+          "channel_stddev": [
+            49.80505803831899,
+            31.764677345502946,
+            29.829872958097056
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-multiref-stage-nobacking-cpu-encode",
+      "model": "qwen-base",
+      "feature": "multiref",
+      "verdict": "达到本例主体合成目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-multiref-stage-nobacking-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "75775725e82ee82fa0ba93f6f2711690587df9787c8ed8012d8b4253ab6249e3",
+          "channel_stddev": [
+            50.02286108991057,
+            31.88653568692373,
+            29.42752578598067
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-face-swap-stage-nobacking-cpu-encode",
+      "model": "qwen-base",
+      "feature": "head",
+      "verdict": "换头与外观部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-face-swap-stage-nobacking-cpu-encode--sample/case01_7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "d8b9c2e3a0c0c35046f4016794fb87ea8c2094981569b24f30d0cb10850f0058",
+          "channel_stddev": [
+            61.589299010975765,
+            62.018870478361244,
+            54.892780416652876
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-style-edit-stage-nobacking-cpu-encode",
+      "model": "qwen-base",
+      "feature": "style",
+      "verdict": "达到本例水彩风格转换目标",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-style-edit-stage-nobacking-cpu-encode--sample/case02_7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "e5abca66e0fffb6a412c59fda7040c0825710ce21cf18f612c73fe03d91b7c7c",
+          "channel_stddev": [
+            51.08249578811537,
+            43.53650735144869,
+            44.561982315709535
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-face-only-stage-nobacking-cpu-encode",
+      "model": "qwen-base",
+      "feature": "face",
+      "verdict": "仅换脸主要目标达到 · 身份细节部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-face-only-stage-nobacking-cpu-encode--sample/case03_7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "fac5084e2d10dc318a861413eeacf3b798b458a43ad3770d25173edb54efe66a",
+          "channel_stddev": [
+            68.2030341570466,
+            66.56339948037918,
+            60.166278624875844
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-bfs-head-swap-stage-nobacking-cpu-encode",
+      "model": "qwen-base",
+      "feature": "head-lora",
+      "verdict": "BFS LoRA换头部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-bfs-head-swap-stage-nobacking-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "f300ab5cc24b7572d1c1967ef8eb688a8ffc3a542e540e493fd79c2786c82796",
+          "channel_stddev": [
+            63.09516663007634,
+            62.43272020811424,
+            56.130009121793435
+          ]
+        }
+      ]
+    },
+    {
+      "case": "turbo-fox-profile-wide-mask-linux-repair-cpu-encode",
+      "model": "qwen-turbo",
+      "feature": "inpaint",
+      "verdict": "狐狸与遮罩保护达到 · 接缝细节部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "1cdc4ab5dd9d59cd6b0f8287b9cd34d74e7c440af749889785158578eaff90b9",
+          "channel_stddev": [
+            51.82008859130835,
+            33.43728371927543,
+            30.904385672868695
+          ]
+        }
+      ]
+    },
+    {
+      "case": "turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode",
+      "model": "qwen-turbo",
+      "feature": "head",
+      "verdict": "换头与外观部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "5f7b7909392634ff643c8887faa7d8f86b8475f64639560037097e7f5a2e9209",
+          "channel_stddev": [
+            60.43117315583235,
+            61.5915435542028,
+            54.067570875946615
+          ]
+        }
+      ]
+    },
+    {
+      "case": "turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode",
+      "model": "qwen-turbo",
+      "feature": "role",
+      "verdict": "全身替换达到 · 细小身份特征部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "2cc7e2798c5c0240491ce553420fac9cf7a2beddc39579f18b904901895b8171",
+          "channel_stddev": [
+            65.17697044780994,
+            58.0790268388027,
+            59.13858954276083
+          ]
+        }
+      ]
+    },
+    {
+      "case": "qwen-caption-4b-aux-8b-cpu-staged",
+      "model": "qwen-base",
+      "feature": "caption",
+      "verdict": "自动反推与再生成达到 · 视线细节部分达到",
+      "staged": true,
+      "images": [
+        {
+          "file": "trials/2026-10-24-linux-coverage/cases/qwen-caption-4b-aux-8b-cpu-staged--sample/7-0.png",
+          "size": [
+            512,
+            512
+          ],
+          "sha256": "2a7dc4ff62fd66547a5c191186380a832d50a4c482b13493a30794f5f0611ab5",
+          "channel_stddev": [
+            33.685536587897516,
+            30.80428526566633,
+            24.931241785850638
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "time": 1792916658.4465294,
+  "html_sha256": "0ec634536ce1008e650e111525901abd3db6422bf346afdc7c758d966f433a1a",
+  "catalog_sha256": "556561f8642149d2e95bbb602be8d37ba510d5483260591a0afc6c19a86dbfd8",
+  "bundle_status_sha256": "1ab34b1528b3f1df7a2119d243edc5a15c2684f1d328d59f18171e281df7ddcd",
+  "report_browser_checks_sha256": "bf27a9057c16f0f5bc67e31545436af5b25f3598872149f8e2b322a090d3c00a",
+  "windows_preservation_sha256": "47eb4feb82058f0000b801cca191d800e661ecbaf07a10c0189e456ebaaccf8f",
+  "queue_empty": true,
+  "http_report_matches_disk": true
+}

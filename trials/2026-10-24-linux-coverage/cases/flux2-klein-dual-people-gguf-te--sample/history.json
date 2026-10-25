@@ -1,0 +1,207 @@
+{
+  "c3ae2f7d-9dad-45df-901f-0afb913d2099": {
+    "prompt": [
+      0,
+      "c3ae2f7d-9dad-45df-901f-0afb913d2099",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_02b141b1b04e_kroma-portrait-a.png"
+          }
+        },
+        "3": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "5": {
+          "class_type": "GetImageSize",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ]
+          }
+        },
+        "6": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux-2-klein-4b-fp8.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "8": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "17": {
+          "class_type": "CFGGuider",
+          "inputs": {
+            "model": [
+              "6",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "cfg": 1.0
+          }
+        },
+        "18": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "19": {
+          "class_type": "Flux2Scheduler",
+          "inputs": {
+            "steps": 4,
+            "width": [
+              "5",
+              0
+            ],
+            "height": [
+              "5",
+              1
+            ]
+          }
+        },
+        "20": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 665024001
+          }
+        },
+        "22": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "20",
+              0
+            ],
+            "guider": [
+              "17",
+              0
+            ],
+            "sampler": [
+              "18",
+              0
+            ],
+            "sigmas": [
+              "19",
+              0
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ]
+          }
+        },
+        "23": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "22",
+              0
+            ],
+            "vae": [
+              "8",
+              0
+            ]
+          }
+        },
+        "24": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "23",
+              0
+            ],
+            "filename_prefix": "linux-coverage/flux2-klein-dual-people-gguf-te"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/linux-coverage-flux2-klein-dual-people-gguf-te-7d2a2c093885.safetensors",
+            "expected_sha256": "57a3852c3781c7d6b5ede8fc60f1a408de91eafae9ce42073ccde07a572d8801"
+          }
+        }
+      },
+      {
+        "create_time": 1792860182230
+      },
+      [
+        "24"
+      ]
+    ],
+    "outputs": {
+      "24": {
+        "images": [
+          {
+            "filename": "flux2-klein-dual-people-gguf-te_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 512,
+              "height": 512
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "c3ae2f7d-9dad-45df-901f-0afb913d2099",
+            "timestamp": 1792860182231
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "c3ae2f7d-9dad-45df-901f-0afb913d2099",
+            "timestamp": 1792860182233
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "c3ae2f7d-9dad-45df-901f-0afb913d2099",
+            "timestamp": 1792860218363
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "24": {
+        "node_id": "24",
+        "display_node": "24",
+        "parent_node": null,
+        "real_node_id": "24"
+      }
+    }
+  }
+}

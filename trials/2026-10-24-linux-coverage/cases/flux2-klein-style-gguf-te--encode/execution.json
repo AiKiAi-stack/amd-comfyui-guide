@@ -1,0 +1,71 @@
+{
+  "case_id": "flux2-klein-style-gguf-te--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "be8ef7766dddf31f040dc63edeff2a191039eacb17a5d72899fde1831840f6ae",
+  "pid": 37647,
+  "prompt_id": "692daf1a-e282-4548-8485-55f4f73b25ce",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-flux2-klein-style-gguf-te-50429632652b.safetensors"
+      ],
+      "archive_sha256": [
+        "0e7f5b907aff1454ef46bdbf95f3fd51680345c9f5781fa27ebe0065d214c7f1"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "692daf1a-e282-4548-8485-55f4f73b25ce",
+        "timestamp": 1792860298302
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "692daf1a-e282-4548-8485-55f4f73b25ce",
+        "timestamp": 1792860298378
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "692daf1a-e282-4548-8485-55f4f73b25ce",
+        "timestamp": 1792860319081
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6004.62890625,
+  "elapsed_seconds": 22.15,
+  "total_seconds": 37.161,
+  "server_exit": -15
+}

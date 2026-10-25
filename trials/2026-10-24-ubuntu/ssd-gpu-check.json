@@ -1,0 +1,7 @@
+{
+  "import_torch_seconds": 2.123,
+  "torch": "2.12.0+rocm7.14.0",
+  "hip": "7.14.60850",
+  "device": "AMD Radeon RX 6650 XT",
+  "gpu_check": "passed"
+}

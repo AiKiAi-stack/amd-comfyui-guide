@@ -1,0 +1,6 @@
+{
+  "qwen-image-2.1-Q4_K_M.gguf": true,
+  "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf": true,
+  "qwen_image_2.1_vae_bf16.safetensors": true,
+  "mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf": true
+}

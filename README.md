@@ -12,11 +12,9 @@ Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图�
 
 1. [环境与从零搭建](docs/01-setup.md)：固定版本、AMD Python 环境、GPU 最小检查。
 2. [第一张图与单项重跑](docs/02-first-image.md)：下载所需模型、提交 API 图、保存新证据。
-3. [模型实测导航](docs/03-models.md)：Qwen、MOSS、Kroma、FLUX、Z-Image 与 H3 的边界。
 4. [遇到的坑](docs/04-troubleshooting.md)：INT8、时间尺度、GGUF 卸载、锁页内存与 OOM。
 5. [完整图文报告（GitHub 可直接阅读）](trials/2026-10-19-features/feature-report.md)。
 6. [出图失败追踪与修复验证](docs/06-failure-tracker.md)：本地失败证据、上游问题及连续出图回归。
-7. [未闭环功能清单](docs/07-unfinished-features.md)：排除 H3 后的 19 条待处理记录、报告漏项和配方验证欠项。
 8. [实际修复重试与图片](trials/2026-10-21-repairs/README.md)：自动反推分阶段出图、FLUX 茶壶/夜景/1024 重试及仍未达标的小蝴蝶结。
 
 [在线图文报告](https://aikiai-stack.github.io/barely-comfy/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
@@ -35,7 +33,6 @@ python -m http.server 8767 --bind 127.0.0.1
 - Qwen Image / Turbo / UN、MOSS SFT 与 8步 LoRA、Kroma Q2 的实测。
 - FLUX.2 Klein 七项编辑，以及禁用锁页内存产生噪声的对照。
 - Z-Image AIO 与 GGUF，9/8/4 步、中文与英文文字、连续运行的差异。
-- Flux.3 的失败/来源记录，以及 H3 五帧诊断；H3 视频功能仍未验收。
 - `code_source/` 的本地辅助节点，以及 `trials/` 的原始实验脚本和工作流。
 
 ![FLUX.2 Klein 实测输出](ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
@@ -55,3 +52,41 @@ python -m http.server 8767 --bind 127.0.0.1
 参见 [证据结构及公开副本处理](docs/05-evidence-and-privacy.md)、[上游来源与授权范围](THIRD_PARTY_NOTICES.md) 和 [贡献说明](CONTRIBUTING.md)。仓库没有模型权重、虚拟环境、账号配置或原始文章全文。公开图片移除了文本/EXIF 元数据，视觉像素保持不变；原件校验和与公开副本校验和分开记录。
 
 下一步：在全新 Windows 环境验证安装闭环、补充 UI 导入版工作流、补充其他显卡的独立案例。欢迎提交有图、有参数、有失败证据的复现记录。
+
+## 2026-10-23 追加：Ubuntu 本机部署
+
+新增 [Ubuntu 安装、启动和验证记录](docs/09-ubuntu-setup-2026-10-23.md)，使用独立 Linux 运行目录并复用现有模型。Windows 的历史结论及未闭环事项保留；新的 Linux 结果见 [独立试验](trials/2026-10-23-ubuntu/README.md)。
+
+
+## Ubuntu 续接（2026-10-24 追加）
+
+SSD 独立环境、只读 NVMe 模型复用、Qwen CPU detach 前后对照、内存保护及报告补卡见 [续接记录](docs/10-ubuntu-continuation-2026-10-24.md)。Windows 原结论保留；完整出图和释放验收以该日新增实验记录为准。
+
+
+### Ubuntu 2026-10-24 重启后续接追加
+
+Linux Python 已迁到独立 SSD 基础运行库，95 个依赖版本不变；Qwen 四份模型校验复制到 SSD 并完整读回核对。指定无 LoRA 的纯文本普通整图已在同一进程连续两张 512×512、15 步出图与真实卸载检查通过。原 Windows 结论不改。
+
+Qwen 入口为 `bash scripts/start_ubuntu_qwen.sh`，普通启动脚本保留原默认参数。使用 [蓝色工作流](trials/2026-10-24-ubuntu-followup/qwen-ubuntu-blue.api.json) 或 [绿色工作流](trials/2026-10-24-ubuntu-followup/qwen-ubuntu-green.api.json)。参数、失败边界、图片、当前服务与剩余项见 [续接记录](docs/11-ubuntu-reboot-continuation-2026-10-24.md)。
+
+
+## 模型 / 功能 / Windows 与 Linux 对照（2026-10-24 追加）
+
+[新版 HTML 汇报](trials/2026-10-19-features/feature-report.html) 现在按模型、功能分组，并列展示 Windows / Linux 的结果、原评价和复现步骤。9 个模型/权重系列、46 个功能分组；未验证平台明确保留。原 Windows 报告和评价不改写。
+
+[工作流库](workflows/README.md) 已整理 99 份经过前端回环核对的 WebUI JSON，按模型 / 功能安装到本机左侧“工作流 → 模型功能库”；报告可下载单份或完整输入包。Linux 已执行预设与 Windows 历史配方分开标明，导入通过不等于 Linux 执行通过。Qwen 蓝眼预设额外经过本轮实际 WebUI 出图复核。
+
+[本轮说明与校验证据](docs/12-platform-report-workflow-library-2026-10-24.md)。本地汇报地址不变；本次未发布线上站点。
+
+
+## Linux功能补图与工作流更新（2026-10-25追加）
+
+[模型/功能/平台汇报](trials/2026-10-19-features/feature-report.html) 已补42张Linux实测图，40/47功能组有Linux输出；9系列、169条证据。Windows原101条评价和完整归档保留，Linux不足仍按实际标注。H3六组、Flux.3一组保留依赖/配方阻塞。
+
+[模型功能库](workflows/README.md) 共268份真实前端回环通过的UI，184份已安装。新Linux优先使用编码/采样阶段图；4B辅助反推方案为反推/编码/采样三阶段，归档随完整包提供，修改输入后按说明重跑。完整包约360.1MiB，轻量包约11.7MiB。
+
+44项回归、图片/归档绑定、下载包CRC、桌面/手机与安装文件可见性通过；真实WebUI排队一张采样图成功。8188与8767已恢复，重启后仍需核对挂载/GPU访问。完整边界与复现见[本轮说明](docs/13-linux-coverage-2026-10-25.md)和[证据](trials/2026-10-24-linux-coverage/README.md)。未关闭旧Windows卸载/身份/LoRA消融、原8B CPU反推、视频或OOM待办。
+
+### 2026-10-25 平台证据修订
+
+当前为 **8 个模型系列、41 个功能组、163 条证据，Linux 40 组有图**；按本卡适用范围缩减模型后，95 条 Windows 历史评价和案例卡片保持原样。新版每组增加条件对照、计时范围及 Linux 问题的已确认原因、未确认根因、已验证方案和未完成工作。此前秒数未完整控制变量，不能解读成操作系统加速倍数。详见 [审计说明](docs/14-report-evidence-audit-2026-10-25.md)。

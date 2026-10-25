@@ -21,6 +21,8 @@ def main():
     parser.add_argument('--gguf', type=Path)
     parser.add_argument('--cycles', type=int, default=200)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--retain-cpu-backing', action='store_true',
+                        help='Exercise the opt-in GGUF CPU backing restore candidate')
     args = parser.parse_args()
     if args.cycles < 1 or args.cycles > 2000:
         parser.error('Use 1..2000 bounded cycles')
@@ -77,6 +79,15 @@ def main():
     model = torch.nn.Module()
     model.register_parameter('weight', torch.nn.Parameter(weight, requires_grad=False))
     patcher = patcher_class(model, gpu, cpu)
+    if args.retain_cpu_backing:
+        if args.kind != 'gguf':
+            parser.error('CPU backing repair supports GGUF only')
+        path = Path(__file__).resolve().parents[1] / 'code_source/gguf_mmap_offload/__init__.py'
+        spec = importlib.util.spec_from_file_location('probe_mmap_offload', path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        module.RepairGgufMmapOffload().enable(patcher)
+    record['cpu_backing_repair_enabled'] = args.retain_cpu_backing
     expected = hashlib.sha256(storage(model.weight).numpy().tobytes()).hexdigest()
     initial_type = type(model.weight)
     started = time.monotonic()

@@ -1,0 +1,54 @@
+{
+  "34": {
+    "inputs": {
+      "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "20": {
+    "inputs": {
+      "clip": [
+        "34",
+        1
+      ],
+      "text": "一张正面拍摄的咖啡馆招牌照片。白色长方形招牌上只写四个清晰的大黑字：“你好世界”。文字居中，背景是纯蓝色墙面，没有其他文字，没有水印。"
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "40": {
+    "inputs": {
+      "conditioning": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut"
+  },
+  "6": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage"
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "20",
+        0
+      ],
+      "negative": [
+        "40",
+        0
+      ],
+      "latent": [
+        "6",
+        0
+      ],
+      "prefix": "linux-coverage-zimage-aio-chinese",
+      "workflow_sha256": "9b6f1974e9e0423a173112c929e28a03c2131a7683cd80f9f65303df868ee6af"
+    }
+  }
+}

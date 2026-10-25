@@ -1,0 +1,38 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "UbuntuQwen/reload-02-green"
+    }
+  },
+  "5": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/round-02-abcfcd54b0f7.safetensors",
+      "expected_sha256": "fe86edaa4f043690b5ba9d8d0976efb169c0d139579e3fec8b8f4f277acb39cb"
+    }
+  }
+}

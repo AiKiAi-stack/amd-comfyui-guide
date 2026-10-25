@@ -1,0 +1,6 @@
+{
+  "pixels_outside_zero_mask": 193144,
+  "exactly_equal": 193144,
+  "maximum_channel_difference": 0,
+  "scope": "Final ImageCompositeMasked output only; does not prove the raw model decode left the background unchanged."
+}

@@ -1,0 +1,19 @@
+{
+  "new_docs_links_exist": true,
+  "shell_syntax_check_pass": true,
+  "new_python_sources_compile": true,
+  "report_image_sources_exist": 239,
+  "scope": "Selected checks; existing report CRLF/trailing whitespace and stale publication manifest are preserved, no full publication claim",
+  "regression_count": 34,
+  "all_regressions_pass": true,
+  "existing_101_article_bytes_preserved_final": true,
+  "original_9_source_review_files_sha_unchanged": true,
+  "both_local_services_respond_final": true,
+  "comfyui_queue_empty_final": true,
+  "gpu_name_final": "cuda:0 AMD Radeon RX 6650 XT : native",
+  "frontend_browser_canvas_verified": true,
+  "screenshots": [
+    "comfyui-ready.png",
+    "report-gallery.png"
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "time": 1792806191.800291,
+    "pid": 136683,
+    "before_rss": 2228158464,
+    "after_rss": 1138741248,
+    "rss_reduction": 1089417216,
+    "malloc_trim_result": 1,
+    "available_bytes": 9568292864,
+    "registered_pinned_bytes": 0
+  }
+]

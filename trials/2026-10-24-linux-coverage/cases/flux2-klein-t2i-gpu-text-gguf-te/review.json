@@ -1,0 +1,6 @@
+{
+  "verdict": "部分达到，HELLO 清楚",
+  "review": "橘猫、咖啡馆门口、雨夜湿地反光和奶油色 HELLO 小牌都清楚，图像健康，文生图主要目标达到；背景仍有多余招牌文字/字形，不满足 no other writing 的精确限制。此图使用 Linux GGUF 文本编码器及分阶段流程，不能作为原 Windows 编码器配方已在 Linux 通过。",
+  "visual_inspected": true,
+  "platform": "Linux"
+}

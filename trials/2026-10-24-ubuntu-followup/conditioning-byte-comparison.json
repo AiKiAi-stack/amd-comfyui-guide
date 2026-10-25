@@ -1,0 +1,188 @@
+[
+  {
+    "round": 1,
+    "candidate_prompt_id": "37484549-4e03-45b4-acdf-ddbe6a8f2453",
+    "stock_prompt_id": "a4bc70f7-0ecd-4fe8-8d18-e2adf80dbb0a",
+    "candidate_archive_sha256": "4dcd023c8609134482009d242af4db266af9d01f60e111a04bad3c1d84dcb3bf",
+    "stock_archive_sha256": "4630c4baeff3f1508a6cad2c1d975702cc8bce7829d949b1eb982c1c3e59019c",
+    "header_equal": true,
+    "tensor_payload_equal": false,
+    "tensors": {
+      "tensor_0": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          91,
+          4096
+        ],
+        "data_offsets": [
+          0,
+          1490944
+        ]
+      },
+      "tensor_1": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          9,
+          4096
+        ],
+        "data_offsets": [
+          1490944,
+          1638400
+        ]
+      },
+      "tensor_2": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          64,
+          32,
+          32
+        ],
+        "data_offsets": [
+          1638400,
+          1900544
+        ]
+      }
+    },
+    "tensor_differences": {
+      "tensor_0": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          91,
+          4096
+        ],
+        "different_values": 368875,
+        "total_values": 372736,
+        "max_abs": 0.004150390625,
+        "mean_abs": 2.5870099402159763e-05,
+        "rmse": 3.924078938122529e-05,
+        "both_finite": true
+      },
+      "tensor_1": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          9,
+          4096
+        ],
+        "different_values": 36683,
+        "total_values": 36864,
+        "max_abs": 0.008026123046875,
+        "mean_abs": 6.0930130631378335e-05,
+        "rmse": 0.00011212414822061154,
+        "both_finite": true
+      },
+      "tensor_2": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          64,
+          32,
+          32
+        ],
+        "different_values": 0,
+        "total_values": 65536,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rmse": 0.0,
+        "both_finite": true
+      }
+    }
+  },
+  {
+    "round": 2,
+    "candidate_prompt_id": "75a1b3a3-ecd6-4c86-b710-bee41d614e10",
+    "stock_prompt_id": "f437b476-b68c-428d-98be-8631bdf175c0",
+    "candidate_archive_sha256": "cd92823169556eb502159fe8e230d7a07225ab16dcd4e543b0e59721e76cdf11",
+    "stock_archive_sha256": "498b0674b4f931ed0ffbd233e8c20d90546d29c72243e704fd77a207a21797dc",
+    "header_equal": true,
+    "tensor_payload_equal": false,
+    "tensors": {
+      "tensor_0": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          91,
+          4096
+        ],
+        "data_offsets": [
+          0,
+          1490944
+        ]
+      },
+      "tensor_1": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          9,
+          4096
+        ],
+        "data_offsets": [
+          1490944,
+          1638400
+        ]
+      },
+      "tensor_2": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          64,
+          32,
+          32
+        ],
+        "data_offsets": [
+          1638400,
+          1900544
+        ]
+      }
+    },
+    "tensor_differences": {
+      "tensor_0": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          91,
+          4096
+        ],
+        "different_values": 369219,
+        "total_values": 372736,
+        "max_abs": 0.0089111328125,
+        "mean_abs": 2.6935226082719303e-05,
+        "rmse": 4.415520818249322e-05,
+        "both_finite": true
+      },
+      "tensor_1": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          9,
+          4096
+        ],
+        "different_values": 36651,
+        "total_values": 36864,
+        "max_abs": 0.00372314453125,
+        "mean_abs": 5.575441941295544e-05,
+        "rmse": 8.504014303052052e-05,
+        "both_finite": true
+      },
+      "tensor_2": {
+        "dtype": "F32",
+        "shape": [
+          1,
+          64,
+          32,
+          32
+        ],
+        "different_values": 0,
+        "total_values": 65536,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "rmse": 0.0,
+        "both_finite": true
+      }
+    }
+  }
+]

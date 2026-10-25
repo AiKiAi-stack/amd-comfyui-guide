@@ -1,0 +1,207 @@
+{
+  "5197f173-8ec7-475b-a3ec-f7296f7a5e1c": {
+    "prompt": [
+      0,
+      "5197f173-8ec7-475b-a3ec-f7296f7a5e1c",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_051449bbec05_handbag_white.png"
+          }
+        },
+        "3": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "5": {
+          "class_type": "GetImageSize",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ]
+          }
+        },
+        "6": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux-2-klein-4b-fp8.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "8": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "17": {
+          "class_type": "CFGGuider",
+          "inputs": {
+            "model": [
+              "6",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "cfg": 1.0
+          }
+        },
+        "18": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "19": {
+          "class_type": "Flux2Scheduler",
+          "inputs": {
+            "steps": 4,
+            "width": [
+              "5",
+              0
+            ],
+            "height": [
+              "5",
+              1
+            ]
+          }
+        },
+        "20": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 665024001
+          }
+        },
+        "22": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "20",
+              0
+            ],
+            "guider": [
+              "17",
+              0
+            ],
+            "sampler": [
+              "18",
+              0
+            ],
+            "sigmas": [
+              "19",
+              0
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ]
+          }
+        },
+        "23": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "22",
+              0
+            ],
+            "vae": [
+              "8",
+              0
+            ]
+          }
+        },
+        "24": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "23",
+              0
+            ],
+            "filename_prefix": "linux-coverage/flux2-klein-dual-logo-gguf-te"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/linux-coverage-flux2-klein-dual-logo-gguf-te-145b54561073.safetensors",
+            "expected_sha256": "8b0d70be549044a63a234b2716a6520d6d901e7efc2c5b66f0768270ab49bfae"
+          }
+        }
+      },
+      {
+        "create_time": 1792859932612
+      },
+      [
+        "24"
+      ]
+    ],
+    "outputs": {
+      "24": {
+        "images": [
+          {
+            "filename": "flux2-klein-dual-logo-gguf-te_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 368,
+              "height": 672
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "5197f173-8ec7-475b-a3ec-f7296f7a5e1c",
+            "timestamp": 1792859932613
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "5197f173-8ec7-475b-a3ec-f7296f7a5e1c",
+            "timestamp": 1792859932620
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "5197f173-8ec7-475b-a3ec-f7296f7a5e1c",
+            "timestamp": 1792860016536
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "24": {
+        "node_id": "24",
+        "display_node": "24",
+        "parent_node": null,
+        "real_node_id": "24"
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "7820c3b4-9ade-404b-b2bc-b8e6ddf34853": {
+    "prompt": [
+      0,
+      "7820c3b4-9ade-404b-b2bc-b8e6ddf34853",
+      {
+        "2": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "Edit the reference image: turn the orange cat into a fluffy white cat. Keep the cat's pose, the rainy Shanghai street, cafe window, neon reflections, camera framing and lighting the same. Photorealistic. No text.",
+            "negative_prompt": "orange fur, extra animals, blur, text, watermark",
+            "resolution": 512,
+            "images.image_1": [
+              "8",
+              0
+            ]
+          }
+        },
+        "8": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_42d5d9635f9c_liuyue-qwen-base-source.png"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "latent": [
+              "4",
+              2
+            ],
+            "prefix": "linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode",
+            "workflow_sha256": "e6dbcb49868006e0752f88b0b95ff4b375f33ad30a0561020f11529c5a4bb73b"
+          }
+        }
+      },
+      {
+        "create_time": 1792910832628
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode-1d4a11354083.safetensors"
+        ],
+        "archive_sha256": [
+          "36214499d02557834274ca2cb922068a59da9b5479743358a9519e0ba712f85e"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "7820c3b4-9ade-404b-b2bc-b8e6ddf34853",
+            "timestamp": 1792910832629
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "7820c3b4-9ade-404b-b2bc-b8e6ddf34853",
+            "timestamp": 1792910832631
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "7820c3b4-9ade-404b-b2bc-b8e6ddf34853",
+            "timestamp": 1792910938805
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

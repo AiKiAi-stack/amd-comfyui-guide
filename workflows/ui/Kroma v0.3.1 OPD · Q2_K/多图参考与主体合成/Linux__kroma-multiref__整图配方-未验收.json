@@ -1,0 +1,1299 @@
+{
+  "id": "82acd0a1-4c1d-4c3e-b83a-28324119165a",
+  "revision": 0,
+  "last_node_id": 1,
+  "last_link_id": 22,
+  "nodes": [
+    {
+      "id": "case01_1",
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        110,
+        140
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+      ],
+      "widgets_values_named": {
+        "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+      }
+    },
+    {
+      "id": "case01_2",
+      "type": "CLIPLoader",
+      "pos": [
+        110,
+        338
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "CLIP名称",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "类型",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "设备",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_4b_fp8_scaled.safetensors",
+        "krea2",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+        "type": "krea2",
+        "device": "default"
+      }
+    },
+    {
+      "id": "case01_3",
+      "type": "VAELoader",
+      "pos": [
+        110,
+        584
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae名称",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7,
+            15,
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "qwen_image_vae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    {
+      "id": "case02_5",
+      "type": "ConditioningZeroOut",
+      "pos": [
+        2285.7814086914063,
+        140
+      ],
+      "size": [
+        140,
+        26
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "条件",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut"
+      }
+    },
+    {
+      "id": "case02_6",
+      "type": "EmptyLatentImage",
+      "pos": [
+        110,
+        782
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "宽度",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "高度",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "批量大小",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": "case02_7",
+      "type": "KSampler",
+      "pos": [
+        2535.7814086914063,
+        140
+      ],
+      "size": [
+        270,
+        262
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 2
+        },
+        {
+          "localized_name": "正面条件",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 3
+        },
+        {
+          "localized_name": "负面条件",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "localized_name": "Latent图像",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 5
+        },
+        {
+          "localized_name": "种子",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "步数",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "采样器名称",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "调度器",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "降噪",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        66502001,
+        "fixed",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 66502001,
+        "control_after_generate": "fixed",
+        "steps": 4,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    {
+      "id": "case02_8",
+      "type": "VAEDecode",
+      "pos": [
+        2915.7814086914063,
+        140
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "Latent",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 6
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": "case02_9",
+      "type": "SaveImage",
+      "pos": [
+        3165.7814086914063,
+        140
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图片",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        },
+        {
+          "localized_name": "文件名前缀",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "linux-coverage/kroma-multiref"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "linux-coverage/kroma-multiref"
+      }
+    },
+    {
+      "id": "case02_30",
+      "type": "LoadImage",
+      "pos": [
+        110,
+        1028
+      ],
+      "size": [
+        270,
+        102
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "选择文件上传",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ]
+        },
+        {
+          "localized_name": "遮罩",
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ModelLibrary_42d5d9635f9c_cat.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "ModelLibrary_42d5d9635f9c_cat.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": "case02_31",
+      "type": "ImageScale",
+      "pos": [
+        490,
+        140
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9
+        },
+        {
+          "localized_name": "缩放算法",
+          "name": "upscale_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscale_method"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "宽度",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "高度",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "裁剪",
+          "name": "crop",
+          "type": "COMBO",
+          "widget": {
+            "name": "crop"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12,
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "lanczos",
+        512,
+        512,
+        "disabled"
+      ],
+      "widgets_values_named": {
+        "upscale_method": "lanczos",
+        "width": 512,
+        "height": 512,
+        "crop": "disabled"
+      }
+    },
+    {
+      "id": "case02_33",
+      "type": "LoadImage",
+      "pos": [
+        110,
+        1270
+      ],
+      "size": [
+        270,
+        102
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "选择文件上传",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            10
+          ]
+        },
+        {
+          "localized_name": "遮罩",
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ModelLibrary_0404624e132d_fox.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "ModelLibrary_0404624e132d_fox.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": "case02_34",
+      "type": "ImageScale",
+      "pos": [
+        490,
+        410
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "localized_name": "缩放算法",
+          "name": "upscale_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscale_method"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "宽度",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "高度",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "裁剪",
+          "name": "crop",
+          "type": "COMBO",
+          "widget": {
+            "name": "crop"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13,
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "lanczos",
+        512,
+        512,
+        "disabled"
+      ],
+      "widgets_values_named": {
+        "upscale_method": "lanczos",
+        "width": 512,
+        "height": 512,
+        "crop": "disabled"
+      }
+    },
+    {
+      "id": "case02_40",
+      "type": "TextEncodeQwenImageEditPlus",
+      "pos": [
+        870,
+        326
+      ],
+      "size": [
+        420,
+        310
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 11
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "localized_name": "图像1",
+          "name": "image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 12
+        },
+        {
+          "localized_name": "图像2",
+          "name": "image2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 13
+        },
+        {
+          "localized_name": "图像3",
+          "name": "image3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "提示词",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextEncodeQwenImageEditPlus"
+      },
+      "widgets_values": [
+        "Use the rainy cafe street background from image 1. Replace the orange cat in image 1 with the red fox from image 2. Preserve the fox orange fur, black paws and white chest. The fox sits beside the cafe entrance. Do not use the forest background. Photorealistic."
+      ],
+      "widgets_values_named": {
+        "prompt": "Use the rainy cafe street background from image 1. Replace the orange cat in image 1 with the red fox from image 2. Preserve the fox orange fur, black paws and white chest. The fox sits beside the cafe entrance. Do not use the forest background. Photorealistic."
+      }
+    },
+    {
+      "id": "case02_100",
+      "type": "VAEEncode",
+      "pos": [
+        870,
+        140
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "像素",
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 14
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      }
+    },
+    {
+      "id": "case02_120",
+      "type": "ReferenceLatent",
+      "pos": [
+        1400,
+        140
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "条件",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 16
+        },
+        {
+          "localized_name": "Latent",
+          "name": "latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent"
+      }
+    },
+    {
+      "id": "case02_101",
+      "type": "VAEEncode",
+      "pos": [
+        870,
+        776
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "像素",
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      }
+    },
+    {
+      "id": "case02_121",
+      "type": "ReferenceLatent",
+      "pos": [
+        1650,
+        140
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "条件",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 20
+        },
+        {
+          "localized_name": "Latent",
+          "name": "latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReferenceLatent"
+      }
+    },
+    {
+      "id": "case02_41",
+      "type": "FluxKontextMultiReferenceLatentMethod",
+      "pos": [
+        1900,
+        140
+      ],
+      "size": [
+        275.7814086914062,
+        58
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "条件化",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 22
+        },
+        {
+          "localized_name": "参考潜在方法",
+          "name": "reference_latents_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "reference_latents_method"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            1,
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxKontextMultiReferenceLatentMethod"
+      },
+      "widgets_values": [
+        "index_timestep_zero"
+      ],
+      "widgets_values_named": {
+        "reference_latents_method": "index_timestep_zero"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Note",
+      "pos": [
+        100,
+        -360
+      ],
+      "size": [
+        1600,
+        360
+      ],
+      "flags": {},
+      "order": -1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Kroma v0.3.1 OPD · Q2_K / 多图参考与主体合成\n来源：Linux 实际尝试配方，执行/视觉状态见本例结论\n本例结论：部分达到，狐狸主体明确\n注意：该条图片来自分阶段执行，本整图只作配方展示，直接整图尚未验收。\n配置：Linux 分阶段/分进程，编码归档后结束进程，再采样；整图未验收；KEKE 只读权重；1536MiB 物理 RAM 保护；--reserve-vram 1.0 --use-split-cross-attention --force-fp16 --force-upcast-attention --disable-pinned-memory --disable-mmap；保存前缀改到本轮独立目录；原 Windows 图与评价不改；Linux 独立配置关闭 pinned memory；同图默认 pinned 在模型切换段有限观察未出图，原对照保留；Linux 配置关闭 safetensors mmap，以验证模型切换时的映射内存问题；只针对本独立 Linux 组\n完整启动命令：BARELY_COMFY_CHUNKED_CPU_LOGITS=1 COMFY_GFX1032_INT8_FALLBACK=1 BARELY_COMFY_CHUNKED_GPU_LOGITS=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=4 bash scripts/start_ubuntu.sh --fast-disk --reserve-vram 1.0 --use-split-cross-attention --force-fp16 --force-upcast-attention --disable-pinned-memory --disable-mmap\n输入：ModelLibrary_42d5d9635f9c_cat.png；ModelLibrary_0404624e132d_fox.png\n操作：先核对模型与输入，修改提示词，单次运行；seed 控制已设为 fixed。\n注意：历史结果来自分阶段/分进程执行；本整图只是配方整理，未验证直接连续运行。"
+      ],
+      "color": "#25394d",
+      "bgcolor": "#344b60",
+      "title": "使用说明 · 平台 / 配方 / 输入"
+    }
+  ],
+  "links": [
+    [
+      1,
+      "case02_41",
+      0,
+      "case02_5",
+      0,
+      "CONDITIONING"
+    ],
+    [
+      2,
+      "case01_1",
+      0,
+      "case02_7",
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      "case02_41",
+      0,
+      "case02_7",
+      1,
+      "CONDITIONING"
+    ],
+    [
+      4,
+      "case02_5",
+      0,
+      "case02_7",
+      2,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      "case02_6",
+      0,
+      "case02_7",
+      3,
+      "LATENT"
+    ],
+    [
+      6,
+      "case02_7",
+      0,
+      "case02_8",
+      0,
+      "LATENT"
+    ],
+    [
+      7,
+      "case01_3",
+      0,
+      "case02_8",
+      1,
+      "VAE"
+    ],
+    [
+      8,
+      "case02_8",
+      0,
+      "case02_9",
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      "case02_30",
+      0,
+      "case02_31",
+      0,
+      "IMAGE"
+    ],
+    [
+      10,
+      "case02_33",
+      0,
+      "case02_34",
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      "case01_2",
+      0,
+      "case02_40",
+      0,
+      "CLIP"
+    ],
+    [
+      12,
+      "case02_31",
+      0,
+      "case02_40",
+      2,
+      "IMAGE"
+    ],
+    [
+      13,
+      "case02_34",
+      0,
+      "case02_40",
+      3,
+      "IMAGE"
+    ],
+    [
+      14,
+      "case02_31",
+      0,
+      "case02_100",
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      "case01_3",
+      0,
+      "case02_100",
+      1,
+      "VAE"
+    ],
+    [
+      16,
+      "case02_40",
+      0,
+      "case02_120",
+      0,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      "case02_100",
+      0,
+      "case02_120",
+      1,
+      "LATENT"
+    ],
+    [
+      18,
+      "case02_34",
+      0,
+      "case02_101",
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      "case01_3",
+      0,
+      "case02_101",
+      1,
+      "VAE"
+    ],
+    [
+      20,
+      "case02_120",
+      0,
+      "case02_121",
+      0,
+      "CONDITIONING"
+    ],
+    [
+      21,
+      "case02_101",
+      0,
+      "case02_121",
+      1,
+      "LATENT"
+    ],
+    [
+      22,
+      "case02_121",
+      0,
+      "case02_41",
+      0,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.37759798044527115,
+      "offset": [
+        111.86553992069128,
+        571.8655399206913
+      ]
+    },
+    "model_feature_library": {
+      "title": "Kroma v0.3.1 OPD · Q2_K / 多图参考与主体合成",
+      "note": "UI format generated by ComfyUI itself; round-trip checked without model execution"
+    }
+  },
+  "version": 0.4
+}

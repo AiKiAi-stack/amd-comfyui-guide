@@ -32,6 +32,8 @@ def main():
     p.add_argument("--port", type=int, default=8190)
     p.add_argument("--count", type=int, default=3)
     p.add_argument("--timeout", type=int, default=600)
+    p.add_argument("--min-available-ram-mib", type=int, default=0,
+                   help="Stop the owned service below this physical RAM headroom; 0 disables")
     p.add_argument("--extra-arg", action="append", default=[])
     args = p.parse_args()
     if args.count < 2:
@@ -52,16 +54,25 @@ def main():
         pass
     else:
         raise RuntimeError("Port already serves ComfyUI; refusing to use another process")
-    command = [str(args.runtime / ".venv/Scripts/python.exe"), "-X", "faulthandler", "-u",
+    python = args.runtime / (".venv/Scripts/python.exe" if os.name == "nt" else ".venv/bin/python")
+    command = [str(python), "-X", "faulthandler", "-u",
                "ComfyUI/main.py", "--listen", "127.0.0.1", "--port", str(args.port),
                "--cpu-vae", "--disable-async-offload", "--disable-dynamic-vram",
                "--extra-model-paths-config", str(args.model_paths.resolve()),
                "--output-directory", str(args.out / "images"), *args.extra_arg]
-    summary = {"status": "running", "command": command, "cases": [], "same_process": True}
+    summary = {"status": "running", "command": command, "cases": [], "same_process": True,
+               "min_available_ram_mib": args.min_available_ram_mib}
+    revisions_file = args.runtime / "source-revisions.json"
+    revisions = json.loads(revisions_file.read_text()) if revisions_file.exists() else {}
     for label, directory in (("comfyui", args.runtime / "ComfyUI"),
                              ("gguf", args.runtime / "ComfyUI/custom_nodes/ComfyUI-GGUF")):
-        summary[label + "_revision"] = subprocess.check_output(
-            ["git", "-C", str(directory), "rev-parse", "HEAD"], text=True).strip()
+        if (directory / ".git").exists():
+            revision = subprocess.check_output(
+                ["git", "-C", str(directory), "rev-parse", "HEAD"], text=True).strip()
+        else:
+            key = "ComfyUI" if label == "comfyui" else "ComfyUI-GGUF"
+            revision = revisions[key]["commit"]
+        summary[label + "_revision"] = revision
     save(args.out / "summary.json", summary)
     env = os.environ.copy()
     env["PYTHONFAULTHANDLER"] = "1"
@@ -79,6 +90,9 @@ def main():
                           "host_available_ram": psutil.virtual_memory().available}
                 with (args.out / "memory.jsonl").open("a", encoding="utf-8") as stream:
                     stream.write(json.dumps(record) + "\n")
+                if args.min_available_ram_mib > 0 and record["host_available_ram"] < args.min_available_ram_mib * 1024**2:
+                    summary["operator_stop"] = "automatic_physical_ram_guard"
+                    raise MemoryError("Physical RAM guard stopped the owned trial; not a native crash")
             except psutil.NoSuchProcess:
                 pass
         try:

@@ -116,3 +116,35 @@ E06b 结果：[扩大采样/合成遮罩的狐狸](../trials/2026-10-21-repairs/
 精确人物身份、参考消融、原CPU完整自动反推以及量化卸载native根因仍未结案。四阶段成功是实际配方规避，不能回填为历史崩溃已修复。
 
 最终总报告核对82条结果记录：图片绑定/元数据错误0、报告缺图0。这个数字包括历史失败、素材、诊断和独立重试，不代表82项功能全部通过。代码和运行时辅助节点文件SHA一致；系统pagefile、驱动与原权重未更改。
+
+## E07 · 用户要求扩大排查覆盖面
+
+重新把原19条欠项逐条映射到独立重试，额外补入Turbo角色、姿态、多参考和对照。可机读清单见[覆盖记录](../trials/2026-10-22-coverage/coverage.json)。queued表示仅准备，不能算已执行。当前完整修复目标仍未全部达到。
+
+修改参考隔离运行器支持多个独立workflow：先在一个CPU服务顺序预计算参考，再在一个服务顺序编码，随后每个案例独立采样和解码。运行前校验所有图和唯一标签；每个案例独立保留原图SHA、缓存图SHA、参考archive SHA和phase-link，不将多项证据混为一次。11项图测试通过，包含真实姿态/融合图的参考独立性和重复标签拒绝。
+
+首次实际批次的5个参考预处理与5个编码均成功：UN姿态、UN融合、有/无狐狸参考，以及相同扩散权重/seed/提示下普通编码器角色与姿态。UN到普通INT8编码器的正常切换没有复现旧native退出；此结果不覆盖OOM清理。采样/解码及目视结论另记。
+
+E07a角色图完整输出：宇航服去除、红卷发女性户外服、丛林与主要构图保留；精确身份和细节不充分，部分达到。
+
+再次核对BFS作者[Qwen指南](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/docs/qwen-image-2.1.md)：Pruna可禁用，属于可选加速器。缺少它不是继续BFS测试的阻塞。15步GGUF实验仍不是作者列出的int8整包与8步参数复现；本轮补前缀/LoRA消融。
+
+E07b 实际参考消融：UN融合保留同一prompt、seed和扩散权重，去掉第二张狐狸参考后仍生成清晰狐狸。两图结果并不能证明精确参考身份，提示文本本身足以给出狐狸语义。带参考图的尾部仍出框，继续记部分达到。配对结果见[two-ref](../trials/2026-10-21-repairs/cases/turbo-un-multiref-natural/result.json)与[no-fox](../trials/2026-10-21-repairs/cases/turbo-un-multiref-no-fox/result.json)。
+
+E07c 同条件普通编码器对照：角色和姿态都可完成主要语义，单个配对看不出足以验收的UN优势；两者精确人物身份都未通过。没有将两组看起来相似改写为编码条件数值等价，也没有从单例外推所有人物。
+
+E07d 所有6个四阶段新案例（独立角色+5项批处理）的真实archive已核对：预计算参考latent在正/负条件内逐dtype、逐值相等，初始latent保持。每项公开目录有exact-reference-latents.json、reference-link.json、原始完整工作流、实际cached-execution-workflow与四阶段耗时。计时不含冷启动。
+
+## E08 · CPU反推重试与Kroma参考路径核查
+
+同一8B W4A8权重改为CPU FP32，并设置6个计算线程、保留分块词表投影。日志确认实际dtype=float32；首token372.31秒，第二个约582秒。约664秒观察仍只有2/40，实际发出停止前继续保留日志，没有完整描述或新图。FP32没有实质解决自回归延迟；操作员停止原因独立保存在raw run，不能称native崩溃或CPU任务通过。排入已有4B FP8模型的CPU描述替代路径，模型变化单独标记。
+
+Kroma裁切头部重试仍残留黑发和黄色领口。继续尝试：只清除扩散参考latent中的旧头部，保留原视觉姿态参考。另检查当前核心Krea2：已经实现ref_latents，因此没有按插件README的旧描述误判“核心完全不支持参考”，没有安装该插件；只在D盘vendor目录克隆源码审阅，版本13ef60f。
+
+发现本机index_timestep_zero会给参考token独立t0，而Krea编辑源码对参考/目标共享时间条件。准备index的8步对照，以及相同条件加Krea BFS LoRA的兼容性实验。不能先认定这是Kroma错误配方的根因。新增LoRA存G盘，914159816字节、SHA256 abc6c468c578b36e6bd960106ad5886afd3f5321e4fe2de26c05bb5c6585b836完全匹配作者LFS指针；来源与兼容性限定见[审计记录](../research/kroma-bfs-compatibility-2026-10-22.json)。这是Krea权重在Kroma OPD Q2_K上的实验，不是官方Kroma BFS支持声明。
+
+## E09 · 首次真实正常卸载复现
+
+新增运行器--unload-between：每次成功采样后调用真实/free，等待进程内GPU allocator保留内存低于256MiB再提交下一次。三次Qwen完整模型循环通过：第一次卸载前4435476480字节，后67108864；其后两次前4276092928、后67108864。不是仅杀进程或小张量探针。
+
+Kroma在第一张4步采样/有限latent保存成功后，正常/free即0xC0000005退出，栈GGMLTensor.to→Module._apply→GGUFModelPatcher.unpatch_model。无OOM标记。完全相同工作流加--disable-pinned-memory仍复现，因此拒绝“关闭锁页即可修复”假设。原始两次日志、实际工作流和退出码保留。新增显式诊断节点TraceRepairGgufUnloads，只在显式接入时记录unpatch时每个参数to前后；不修改Torch/GGUF原代码，不把诊断当修复。下一步定位最后一个参数设备和搬运方式。

@@ -1,0 +1,38 @@
+{
+  "case_id": "zimage-gguf-chinese",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "operator_timeout",
+  "images": [],
+  "workflow_sha256": "f5ff530db43cb8c9abdd1d434c33dfdc8a20ec51c2ba35b839e0b8a900591af1",
+  "pid": 40154,
+  "prompt_id": "34bd453a-21b0-4c09-a730-fef6bac857b8",
+  "validation_errors": {},
+  "error": "Observation timeout; owned server stopped",
+  "minimum_available_ram_mib": 4447.69921875,
+  "elapsed_seconds": 300.725,
+  "total_seconds": 310.733,
+  "server_exit": -15
+}

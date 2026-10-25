@@ -1,0 +1,6 @@
+{
+  "file": "ComfyUI/comfy/ldm/modules/attention.py",
+  "changed": true,
+  "before_sha256": "2e688c4c96ba10915c7ca847ea692faea3be4b9c2605d74d785b7abb23ee2502",
+  "after_sha256": "e81f3c9dc9a0bc0b344529384e158e96a17c8b89d5abb5ac486f3a397f6d0b71"
+}

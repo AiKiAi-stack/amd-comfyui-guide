@@ -1,0 +1,40 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 15.01,
+  "images": [
+    {
+      "file": "7-0-reload-02-green_00001_.png",
+      "original_sha256": "fd09eedc611625263ae5d5c53637fa694fe394553b5591f0fcdaf943e4e560c3",
+      "public_sha256": "bc0c2229d2a74db2c76a220c56bcf09ad91fa52d4ba2e6ffa697f42686214b59",
+      "pixels_unchanged": true
+    }
+  ],
+  "verdict": "partial",
+  "visual_health": "pass",
+  "execution_verdict": "pass",
+  "review": "512×512 完整 PNG，黑斗篷骷髅、教堂门口、朝地面的锈剑、石地浓雾及窗外红月可辨认，无黑图或明显坏块。绿色眼部效果不等同于明确发光，破碎彩窗等精确细节不足，提示符合度仍为部分达到。同一 PID 完成两轮编码/采样/CPU 解码与六次真实 /free；active 显存指标通过，reserved 缓存仍可能保留。仅 Linux 无 LoRA 实验，非 Windows/OOM 清理结案。",
+  "prompt_id": "cf1dc9f8-51ff-4aa7-8117-487832a898a1",
+  "raw_history_sha256": "bd5fc66f717d6fb757b51545469b72f1d8920afe691f1503e4eb451894f7b8c5",
+  "decoding_elapsed_seconds": 15.01,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 54.031,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "62e8569fa5074646860470b216875ca2fe5691cad929decfb9e3ab7b1a4c2ca7",
+  "workflow_sha256": "686aade52c8190244ae215e37ef94ec422958dadd9bddf77db38fffd1273bc9e",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 41.326,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "65d233dc11a71fa8a083443980f346aca2a175a34f6c0c55be6f53da722f0375"
+}

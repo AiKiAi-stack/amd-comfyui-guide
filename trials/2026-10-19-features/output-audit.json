@@ -693,84 +693,6 @@
       ]
     },
     {
-      "id": "ref2va-5frame-diagnostic",
-      "feature": "5帧加载、采样、解码诊断",
-      "status": "success",
-      "prompt_id": "94e6c992-6339-4037-aed5-d45dfcaa21f6",
-      "images": [
-        {
-          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00001_.png",
-          "exists": true,
-          "width": 384,
-          "height": 256,
-          "png_prompt_matches_api": true,
-          "belongs_to_case": true,
-          "input_cache_hashes": {
-            "5": [
-              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
-            ]
-          },
-          "sha256": "b3f35d5c68f2271a3aa36e4def15134d1bbebd10d034e43f24c5d96cb2f168aa"
-        },
-        {
-          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00002_.png",
-          "exists": true,
-          "width": 384,
-          "height": 256,
-          "png_prompt_matches_api": true,
-          "belongs_to_case": true,
-          "input_cache_hashes": {
-            "5": [
-              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
-            ]
-          },
-          "sha256": "42afb63f2411f29ab4e5bba6523a2bd8f3c85a4fd6c066ba238916e51b5cd475"
-        },
-        {
-          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00003_.png",
-          "exists": true,
-          "width": 384,
-          "height": 256,
-          "png_prompt_matches_api": true,
-          "belongs_to_case": true,
-          "input_cache_hashes": {
-            "5": [
-              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
-            ]
-          },
-          "sha256": "073706b7b0b61930c9279c91c643d846e1ae14da8e64cb5925759fef9aae520f"
-        },
-        {
-          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00004_.png",
-          "exists": true,
-          "width": 384,
-          "height": 256,
-          "png_prompt_matches_api": true,
-          "belongs_to_case": true,
-          "input_cache_hashes": {
-            "5": [
-              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
-            ]
-          },
-          "sha256": "39aabc8b9ec95b1a566911d61ef08b9839a44247ad217ded97411f8658ab0d86"
-        },
-        {
-          "path": "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\output\\h3\\ref2va-5frame-diagnostic-frames_00005_.png",
-          "exists": true,
-          "width": 384,
-          "height": 256,
-          "png_prompt_matches_api": true,
-          "belongs_to_case": true,
-          "input_cache_hashes": {
-            "5": [
-              "d1b7aaf87c3977f88f10e05d8eaa1e9a6df2f23791e0109332687941d32c9cc9"
-            ]
-          },
-          "sha256": "738e86a712abb5f3b35573b25f078821f02ada51ed59589f24235531b31597a5"
-        }
-      ]
-    },
-    {
       "id": "flux2-klein-t2i",
       "feature": "文生图／短文字",
       "status": "success",
@@ -1599,13 +1521,6 @@
       }
     },
     {
-      "id": "ref2va-124frame-20step",
-      "feature": "参考图生成约5秒视频（20步）",
-      "status": "server_exit",
-      "prompt_id": "fc1236fa-c3d5-42d5-ba13-a7f800560594",
-      "images": []
-    },
-    {
       "id": "kroma-style-owl-explicit",
       "feature": "风格参考 · 修复重试",
       "status": "success",
@@ -1680,13 +1595,6 @@
           "sha256": "c47d1973fe3276c8065a9043bb4018ca125d44e2301b304b0d5e3e8b77968877"
         }
       ]
-    },
-    {
-      "id": "ref2va-124frame-20step-blas1",
-      "feature": "参考图生成约5秒视频（20步）（CPU数学库1线程重试）",
-      "status": "server_exit",
-      "prompt_id": "86b5f8b9-bd2b-4975-b525-3e0454443884",
-      "images": []
     },
     {
       "id": "zimage-cpu-text-fp16",

@@ -1,0 +1,725 @@
+{
+  "date": "2026-10-24",
+  "supplement_gallery_case_count": 50,
+  "all_101_existing_article_bytes_preserved": true,
+  "markdown_append_only": true,
+  "images_are_historical_not_new_ubuntu_generations": true,
+  "cases": [
+    {
+      "case_id": "moss-img2img",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\moss-img2img_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/moss-img2img_00001_.png",
+          "sha256": "0443011a20f230627ceb53020d44b6a54dbb52d2359728bb80970d1db568e29c"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "moss-layout",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\moss-layout_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/moss-layout_00001_.png",
+          "sha256": "7fd9af2badd7a665d1251eca27f5b3a7f7e4f29935fa70c08c65a7073bd76701"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "moss-text",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\moss-text_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/moss-text_00001_.png",
+          "sha256": "4ea3e2642d82c0eb7174a6e271417860a2735cd3e92a645d7d0fe8e8a21ec5f3"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "kroma-portrait-a",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-portrait-a_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/kroma-portrait-a_00001_.png",
+          "sha256": "02b141b1b04e8f27d48d2999659b14249188a8d9be3bb566ddc99176f0828222"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "kroma-portrait-b",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-portrait-b_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/kroma-portrait-b_00001_.png",
+          "sha256": "e5aabefc21cbd1e823507e958aed61d4279b44babdd39f0067d34c6a17871de1"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "kroma-img2img",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-img2img_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/kroma-img2img_00001_.png",
+          "sha256": "3a43bedd4fc393a7176e41f83c84f5b68116587e3325e8359fe77004f1d45553"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "kroma-style-source",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-style-source_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/kroma-style-source_00001_.png",
+          "sha256": "07b736da6af48774a49863c9ceed5bd8abfb128cba07601a8a87b41d299a9ddb"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "qwen-inpaint",
+      "record_images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint_00001_.png",
+          "filename": "qwen-inpaint_00001_.png",
+          "role": "main",
+          "node_id": "case01_7"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-mask_00001_.png",
+          "filename": "qwen-inpaint-mask_00001_.png",
+          "role": "mask",
+          "node_id": "case01_58"
+        },
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-inpaint-input_00001_.png",
+          "filename": "qwen-inpaint-input_00001_.png",
+          "role": "input",
+          "node_id": "case01_59"
+        }
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/qwen-inpaint_00001_.png",
+          "sha256": "ac68dca65084b5645270834216b65ddef0cf23970f014fb9690da7c14f207a9b"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "qwen-multiref",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-multiref_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/qwen-multiref_00001_.png",
+          "sha256": "7a001f14a0a225af2030a143ebc7ed5735503b3718aefd3a6acaa61e34be8144"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "qwen-face-swap",
+      "record_images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-face-swap_00001_.png",
+          "filename": "qwen-face-swap_00001_.png",
+          "subfolder": "FeatureBench",
+          "filename_prefix": "FeatureBench/qwen-face-swap",
+          "node_id": "case01_7",
+          "role": "main"
+        }
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/qwen-face-swap_00001_.png",
+          "sha256": "4e7366fd2c52bb3a31dff8d405aa1276fd1625680ec6c48673399faa22333005"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "qwen-style-edit",
+      "record_images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-style-edit_00001_.png",
+          "filename": "qwen-style-edit_00001_.png",
+          "subfolder": "FeatureBench",
+          "filename_prefix": "FeatureBench/qwen-style-edit",
+          "node_id": "case02_7",
+          "role": "main"
+        }
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/qwen-style-edit_00001_.png",
+          "sha256": "06cf364ec48cb188026debd51cf57a2db4dd245444799acb2414df9cf1fd910b"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "kroma-style-ref",
+      "record_images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-style-ref_00001_.png",
+          "filename": "kroma-style-ref_00001_.png",
+          "subfolder": "FeatureBench",
+          "filename_prefix": "FeatureBench/kroma-style-ref",
+          "node_id": "case01_9",
+          "role": "main"
+        }
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/kroma-style-ref_00001_.png",
+          "sha256": "acc9ebf77c640f6d6a2c1985c15ce81580b68f32d222f9888a09857b9331ed15"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "kroma-multiref",
+      "record_images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-multiref_00001_.png",
+          "filename": "kroma-multiref_00001_.png",
+          "subfolder": "FeatureBench",
+          "filename_prefix": "FeatureBench/kroma-multiref",
+          "node_id": "case02_9",
+          "role": "main"
+        }
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/kroma-multiref_00001_.png",
+          "sha256": "a0eca648edc85a53ba1ff4dd14ea8c221541fce4b3e2ed89369892c25e0afd34"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "kroma-head-swap",
+      "record_images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\kroma-head-swap_00001_.png",
+          "filename": "kroma-head-swap_00001_.png",
+          "subfolder": "FeatureBench",
+          "filename_prefix": "FeatureBench/kroma-head-swap",
+          "node_id": "case03_9",
+          "role": "main"
+        }
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/kroma-head-swap_00001_.png",
+          "sha256": "36795b0dacf86cc9bc6ee6fab20451a5214fda32f690797a75d6bba981d53000"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "qwen-face-only",
+      "record_images": [
+        {
+          "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-face-only_00001_.png",
+          "filename": "qwen-face-only_00001_.png",
+          "subfolder": "FeatureBench",
+          "filename_prefix": "FeatureBench/qwen-face-only",
+          "node_id": "case03_7",
+          "role": "main"
+        }
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/qwen-face-only_00001_.png",
+          "sha256": "ef9c0ae98caebe1737caecdbdcdaae302b55b07e7e9e61df77526910dcd2f3bb"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "turbo-un-t2i",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-t2i_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/turbo-un-t2i_00001_.png",
+          "sha256": "81ce23ee14a45bbf507e55062cfddff3856e44f3fb834633a64d388d6579822d"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "turbo-un-inpaint",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-input_00001_.png",
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint-mask_00001_.png",
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-inpaint_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/turbo-un-inpaint_00001_.png",
+          "sha256": "0708ddd527831e93894b89fbf895a47e35bcb1d7f4afc48373a5e39dd4b29e1d"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "turbo-un-multiref",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-multiref_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/turbo-un-multiref_00001_.png",
+          "sha256": "58913e8dcb3e46cbee6eb85785ad9902924d1cfd4b14f5fcca22c33313073ed6"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "turbo-un-face-swap",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-face-swap_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/turbo-un-face-swap_00001_.png",
+          "sha256": "635767fbd645e47a8e45748ed2777e2293f5c19bcc6dd2bef047556e37ff60e9"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "qwen-bfs-head-swap",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\qwen-bfs-head-swap_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/qwen-bfs-head-swap_00001_.png",
+          "sha256": "9ecb312213bb9a36ea512815d73742436583a251079d57c2498eeb2266c0dc69"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "turbo-un-role-replacement-test",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-role-replacement-test_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/turbo-un-role-replacement-test_00001_.png",
+          "sha256": "f0c32984ad989a8f27f63692cea4fb951d4c36e173a8d318a6ff9ec5eba64b02"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "turbo-un-pose-reference-test",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\turbo-un-pose-reference-test_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/turbo-un-pose-reference-test_00001_.png",
+          "sha256": "25ac901b39b436a2e15f7d68a7ff4ca1ac15faa677b1fba8815b79be3e404688"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-t2i",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i_00001_.png",
+          "sha256": "ff87713a0122fff1a5de1299544d38973e3523ab1a981e7953cf63fbd8d6c705"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-t2i-gpu-text",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-gpu-text_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png",
+          "sha256": "773a732421ff8f1cf7aaff0a507190f7eb3dc41544ef777fd60d11eed55ec018"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-gguf-photo-gpu-text",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-photo-gpu-text_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png",
+          "sha256": "08b8e647bf5eefb64f80fb487f9943685a17654fbc18e442d88e72e2ff7c48f4"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-gguf-prompt-change",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-prompt-change_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png",
+          "sha256": "e9647a8a8fe4cf5e48b7eaf0e443d671bef79197a2ef2d85105cc17f04086d42"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-gguf-english",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png",
+          "sha256": "c7b35818a2c4538472be78d921b613279b2f741e1f4e7b908b5e1f9b3c50f2d8"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-gguf-chinese",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-chinese_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png",
+          "sha256": "43d4d656a9352a50c83c699872366a4dd1ec3c41374c78f1620bd4520e4c9e3b"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-aio-photo-9step",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-9step_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png",
+          "sha256": "9bc1ab8d5b6141b047111707abc205aba7da821b663151fe821eca04c5b3a216"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-aio-chinese",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-chinese_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png",
+          "sha256": "9febf1dc18d8ca2a012b491c4d433e7334ea3fd3bbfced6b15261740c9e6c76c"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-aio-english",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-english_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png",
+          "sha256": "42ac4403bb16559b8b653744ccac1fb27d9a40e8a71d94a7b1928af3345015f0"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-aio-figure-art",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-figure-art_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png",
+          "sha256": "0e52fcf1d20f22292efafed9c3738f3cc85ce257b9aff40d373be07389145c37"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-aio-photo-4step",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-4step_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png",
+          "sha256": "944aee85a7c53bd0c009df1b9e6eb50fcb0840943f60f532478cc7a75a0493f6"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "zimage-aio-photo-8step",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png",
+          "sha256": "5342e29f521db4a9b77ab83a959096486345766f0a8b56b87bd13182c1a6209a"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-single-color",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-single-color_00001_.png",
+          "sha256": "501868b4bbb5aaff0c23cec3fe29aa68c3c38006d1509f259e7e5646d5641bbc"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-t2i-nvme-control",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-nvme-control_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png",
+          "sha256": "77c93e87724d0db17e66e5c65f26732677a31b2b8fb2a99305c4a6a3b09f0326"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-dual-logo",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-dual-logo_00001_.png",
+          "sha256": "c358278f3d741027b1dcd7d38a6057ba1b3b1bd825dbb6846584bc78667696ab"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-dual-people",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-dual-people_00001_.png",
+          "sha256": "4333de1e057f171fb7b0284ccb4bfbfa642e6848a8c08b8a4aedc9abd5e01e3d"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-style",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png",
+          "sha256": "b93ece41053d40961d590a5c0ac946a6a72b4dd382912b48b00db4be595b6181"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-replace-zh",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-replace-zh_00001_.png",
+          "sha256": "44e4a4d17db68aeefe209bf0ae8ba29a132daf7d42e8512d8b76cc5501c6919d"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-remove",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-remove_00001_.png",
+          "sha256": "09e23cb5592fd186df5492029f6526f4ad0f48929d57a0ee17cd9bf5ae6fca27"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-iterative",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-iterative_00001_.png",
+          "sha256": "efd15de4d172ff441e5f7dcf4c4a95ff31b67ab334f10d15b348ea700194141e"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-t2i-pinned-control",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-t2i-pinned-control_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png",
+          "sha256": "773a732421ff8f1cf7aaff0a507190f7eb3dc41544ef777fd60d11eed55ec018"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "flux2-klein-single-color-pinned",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png",
+          "sha256": "5a4b68288ffc1717c781a032c8646fe4d58c5ec8712b50fed2db7a7526233380"
+        }
+      ],
+      "baseline": false
+    },
+    {
+      "case_id": "qwen-base-t2i-cat-768",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\QwenImage21_RX6650XT_768_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png",
+          "sha256": "42d5d9635f9c6ef44327f89f9f58d5cd71798ccc805263ec31d7f7a145bbc4a6"
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "case_id": "qwen-base-edit-orange-to-white-cat-512",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png",
+          "sha256": "cfc20fe4926813e8b981db601812c321b96dfcf8f7e82ebb08a02805d7fd5884"
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "case_id": "kroma-opd-q2-t2i-fox-512",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png",
+          "sha256": "0404624e132d8b0273472070ed1a14213fb5264d19347a125df75fb83b409063"
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "case_id": "moss-sft-dmd-8step-t2i-astronaut-512",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png",
+          "sha256": "06f3c1a0c5705b2be38d6cc44ca07319f547d31098c7b190c94c6b19c9a2dd7b"
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "case_id": "moss-sft-50step-t2i-astronaut-512",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png",
+          "sha256": "a65b5c45e6586b1c8a8ccd086d963475038c352f277bd96d37fbb16d3c9acb51"
+        }
+      ],
+      "baseline": true
+    },
+    {
+      "case_id": "qwen-turbo-plain-t2i-white-cat-512",
+      "record_images": [
+        "D:/AI/barely-comfy\\ComfyUI\\output\\Liuyue_Qwen21_Turbo_RX6650XT_00001_.png"
+      ],
+      "bound_outputs": [
+        {
+          "file": "ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png",
+          "sha256": "c26c21e6b13dceb88022fe20394b8ac7992384f72ef5512231b54d979797eeaa"
+        }
+      ],
+      "baseline": true
+    }
+  ],
+  "html_before_sha256": "c73e408a5068457a00a38c86475ed13f02d1209d6e317b102c6addfa85daed28",
+  "html_after_sha256": "e585eb25d1b19253071cb81c943bacfff85fb666cd86de1e5dfca44f3b83af0d",
+  "notice_added_outside_articles": true,
+  "all_html_image_sources_exist": true,
+  "all_html_image_count": 239
+}

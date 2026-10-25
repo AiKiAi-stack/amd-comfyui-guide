@@ -1,0 +1,35 @@
+const fs = require('fs');
+const {chromium} = require('playwright');
+(async () => {
+  const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
+  const findings = {};
+  try {
+    const page = await browser.newPage({viewport:{width:1600,height:1100}});
+    const errors = []; page.on('pageerror',e=>errors.push(e.message));
+    await page.goto('http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html',{waitUntil:'networkidle'});
+    findings.models = await page.locator('.model-section').count();
+    findings.features = await page.locator('.feature').count();
+    findings.records = await page.locator('.attempt').count();
+    findings.panels = await page.locator('.platform').count();
+    await page.screenshot({path:'trials/2026-10-24-platform-report/report-desktop.png'});
+    await page.locator('#qwen-base--t2i').scrollIntoViewIfNeeded();
+    await page.locator('#qwen-base--t2i').screenshot({path:'trials/2026-10-24-platform-report/report-qwen-comparison.png'});
+    await page.locator('#linux-qwen-blue > summary').click();
+    await page.locator('#linux-qwen-blue .reproduce > summary').click();
+    findings.reproductionVisible = await page.locator('#linux-qwen-blue .reproduce ol').isVisible();
+    await page.locator('#coverage').selectOption('linux');
+    findings.bothPlatformsVisible = await page.locator('.feature:visible').count();
+    await page.locator('#search').fill('no-such-case-xyz');
+    findings.noResults = await page.locator('#empty-result').isVisible();
+    await page.locator('#clear').click();
+    findings.clearRestores = await page.locator('.feature:visible').count();
+    await page.setViewportSize({width:390,height:844});
+    await page.evaluate(()=>window.scrollTo(0,0));
+    findings.mobileOverflow = await page.evaluate(()=>document.documentElement.scrollWidth > innerWidth);
+    await page.screenshot({path:'trials/2026-10-24-platform-report/report-mobile.png'});
+    findings.errors = errors;
+    if(findings.models!==8 || findings.features!==46 || findings.records!==106 || findings.panels!==92 || !findings.reproductionVisible || findings.bothPlatformsVisible!==2 || !findings.noResults || findings.clearRestores!==46 || findings.mobileOverflow || errors.length) throw Error(JSON.stringify(findings));
+    fs.writeFileSync('trials/2026-10-24-platform-report/report-browser-checks.json',JSON.stringify(findings,null,2));
+    console.log(JSON.stringify(findings));
+  } finally {await browser.close()}
+})().catch(e=>{console.error(e);process.exitCode=1});

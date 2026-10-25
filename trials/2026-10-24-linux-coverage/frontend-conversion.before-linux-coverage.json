@@ -1,0 +1,794 @@
+[
+  {
+    "id": "windows-qwen-base-t2i-cat-768",
+    "pass": true,
+    "node_count": 8,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-base-edit-orange-to-white-cat-512",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-opd-q2-t2i-fox-512",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-sft-dmd-8step-t2i-astronaut-512",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-sft-50step-t2i-astronaut-512",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-turbo-plain-t2i-white-cat-512",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-img2img",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-layout",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-text",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-portrait-a",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-portrait-b",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-img2img",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-style-source",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-inpaint",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-multiref",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-face-swap",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-style-edit",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-caption",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-style-ref",
+    "pass": true,
+    "node_count": 15,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-multiref",
+    "pass": true,
+    "node_count": 19,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-head-swap",
+    "pass": true,
+    "node_count": 19,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-face-only",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-t2i",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-inpaint",
+    "pass": true,
+    "node_count": 25,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-multiref",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-face-swap",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-bfs-head-swap",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-role-replacement-test",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-pose-reference-test",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-t2i",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-t2i-gpu-text",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-t2i-1024",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-photo-gpu-text",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-prompt-change",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-english",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-chinese",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-photo-9step",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-chinese",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-english",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-figure-art",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-photo-4step",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-photo-8step",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-single-color",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-t2i-nvme-control",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-dual-logo",
+    "pass": true,
+    "node_count": 25,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-dual-people",
+    "pass": true,
+    "node_count": 25,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-style",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-replace-zh",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-remove",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-iterative",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-t2i-pinned-control",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-single-color-pinned",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-caption-cpu",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-caption-gpu-chunked",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-teapot-structure",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-tiny-bow",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-watercolor-night",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-1024-attention",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-mask-fox-reference",
+    "pass": true,
+    "node_count": 23,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-multiref-local-composite",
+    "pass": true,
+    "node_count": 21,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-head-direction-mask",
+    "pass": true,
+    "node_count": 21,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-face-only-mask",
+    "pass": true,
+    "node_count": 21,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-bfs-direction-mask",
+    "pass": true,
+    "node_count": 22,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-style-owl-explicit",
+    "pass": true,
+    "node_count": 15,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-style-no-subject-reference",
+    "pass": true,
+    "node_count": 16,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-watercolor-denoise040",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-head-direction-mask",
+    "pass": true,
+    "node_count": 24,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-cpu-text-fp16",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-head-direction-mask",
+    "pass": true,
+    "node_count": 25,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-tiny-bow-fingertip",
+    "pass": true,
+    "node_count": 20,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-watercolor-back-view",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-multiref-ref384",
+    "pass": true,
+    "node_count": 29,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-watercolor-denoise085",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-bfs-full-hair-tiled",
+    "pass": true,
+    "node_count": 22,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-mask-fox-reference",
+    "pass": true,
+    "node_count": 28,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-multiref-clean-reference",
+    "pass": true,
+    "node_count": 33,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-watercolor-base-sft",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-tiny-bow-sized-composite",
+    "pass": true,
+    "node_count": 15,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-multiref-natural-crop",
+    "pass": true,
+    "node_count": 30,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-multiref-full-tail",
+    "pass": true,
+    "node_count": 30,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-fox-clean-latent",
+    "pass": true,
+    "node_count": 28,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-face-only-cfg1-fp16",
+    "pass": true,
+    "node_count": 21,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-face-only-cfg3",
+    "pass": true,
+    "node_count": 21,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-fox-profile-precomputed",
+    "pass": true,
+    "node_count": 29,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-fox-profile-wide-mask",
+    "pass": true,
+    "node_count": 32,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-role-isolated",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-pose-isolated",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-multiref-natural",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-multiref-no-fox",
+    "pass": true,
+    "node_count": 15,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-ordinary-role-control",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-ordinary-pose-control",
+    "pass": true,
+    "node_count": 17,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-head-cropped-reference",
+    "pass": true,
+    "node_count": 28,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-multiref-no-fox",
+    "pass": true,
+    "node_count": 24,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-multiref-full-tail",
+    "pass": true,
+    "node_count": 21,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-photo",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-zimage-1",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-zimage-2",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-qwen-blue",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-qwen-green",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  }
+]

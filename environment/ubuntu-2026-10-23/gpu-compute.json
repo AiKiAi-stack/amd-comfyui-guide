@@ -1,0 +1,25 @@
+{
+  "python": "3.12.14",
+  "torch": "2.12.0+rocm7.14.0",
+  "hip": "7.14.60850",
+  "device": "AMD Radeon RX 6650 XT",
+  "arch": "gfx1032",
+  "vram_bytes": 8573157376,
+  "checks": [
+    {
+      "dtype": "torch.float32",
+      "gemm": "passed",
+      "sdpa_finite": "passed"
+    },
+    {
+      "dtype": "torch.float16",
+      "gemm": "passed",
+      "sdpa_finite": "passed"
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "gemm": "passed",
+      "sdpa_finite": "passed"
+    }
+  ]
+}

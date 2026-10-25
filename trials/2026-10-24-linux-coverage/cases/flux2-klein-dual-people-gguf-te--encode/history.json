@@ -1,0 +1,250 @@
+{
+  "fa87fa91-5da7-4b7a-a405-916eee496d65": {
+    "prompt": [
+      0,
+      "fa87fa91-5da7-4b7a-a405-916eee496d65",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_02b141b1b04e_kroma-portrait-a.png"
+          }
+        },
+        "2": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_e5aabefc21cb_kroma-portrait-b.png"
+          }
+        },
+        "3": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "4": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "5": {
+          "class_type": "GetImageSize",
+          "inputs": {
+            "image": [
+              "3",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+            "type": "flux2"
+          }
+        },
+        "8": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "9": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "7",
+              0
+            ],
+            "text": "The two adult women from image 1 and image 2 stand side by side in a sunny park. Keep them as two distinct people: on the left, the woman from image 1 with short curly copper-red hair, freckles and a mustard sweater; on the right, the woman from image 2 with dark straight hair, navy coat and red scarf. Waist-up photograph, natural relaxed poses, exactly two people."
+          }
+        },
+        "10": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "9",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "3",
+              0
+            ],
+            "vae": [
+              "8",
+              0
+            ]
+          }
+        },
+        "12": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "4",
+              0
+            ],
+            "vae": [
+              "8",
+              0
+            ]
+          }
+        },
+        "13": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "9",
+              0
+            ],
+            "latent": [
+              "11",
+              0
+            ]
+          }
+        },
+        "14": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "10",
+              0
+            ],
+            "latent": [
+              "11",
+              0
+            ]
+          }
+        },
+        "15": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "13",
+              0
+            ],
+            "latent": [
+              "12",
+              0
+            ]
+          }
+        },
+        "16": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "14",
+              0
+            ],
+            "latent": [
+              "12",
+              0
+            ]
+          }
+        },
+        "21": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": [
+              "5",
+              0
+            ],
+            "height": [
+              "5",
+              1
+            ],
+            "batch_size": 1
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "15",
+              0
+            ],
+            "negative": [
+              "16",
+              0
+            ],
+            "latent": [
+              "21",
+              0
+            ],
+            "prefix": "linux-coverage-flux2-klein-dual-people-gguf-te",
+            "workflow_sha256": "ca4391c189b051880e9ed3b14735890f5b76e8fa89dd99dd2c952c98b0bd0b67"
+          }
+        }
+      },
+      {
+        "create_time": 1792860148934
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-flux2-klein-dual-people-gguf-te-7d2a2c093885.safetensors"
+        ],
+        "archive_sha256": [
+          "57a3852c3781c7d6b5ede8fc60f1a408de91eafae9ce42073ccde07a572d8801"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fa87fa91-5da7-4b7a-a405-916eee496d65",
+            "timestamp": 1792860148935
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "fa87fa91-5da7-4b7a-a405-916eee496d65",
+            "timestamp": 1792860148985
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "fa87fa91-5da7-4b7a-a405-916eee496d65",
+            "timestamp": 1792860175644
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

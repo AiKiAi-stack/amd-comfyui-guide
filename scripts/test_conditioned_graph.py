@@ -4,10 +4,23 @@ from pathlib import Path
 import unittest
 
 from run_conditioned_repair import conditioning_node, conditioning_signature, latent_decode_graph, latent_sampling_graph, prune, reuse_text_graph, sampling_signature
-from run_qwen_reference_repair import cached_reference_graph, reference_phase_graph
+from run_qwen_reference_repair import cached_reference_graph, reference_phase_graph, prepare_workflows
 
 
 class GraphTests(unittest.TestCase):
+    def test_reference_batch_keeps_real_workflow_archives_independent(self):
+        root = Path(__file__).resolve().parents[1] / 'trials/2026-10-21-repairs/workflows'
+        paths = [root / (label + '.api.json') for label in ('turbo-un-pose-isolated', 'turbo-un-multiref-natural')]
+        specs = prepare_workflows(paths)
+        prefixes = [spec['reference']['repair_save_references']['inputs']['prefix'] for spec in specs]
+        self.assertEqual(len(set(prefixes)), 2)
+        self.assertNotEqual(specs[0]['digest'], specs[1]['digest'])
+        for spec in specs:
+            self.assertFalse(any(node['class_type'] in {'CLIPLoader', 'CLIPLoaderGGUF', 'UnetLoaderGGUF'}
+                                 for node in spec['reference'].values()))
+        with self.assertRaisesRegex(ValueError, 'unique'):
+            prepare_workflows([paths[0], paths[0]])
+
     def test_actual_turbo_reference_and_text_phases_do_not_share_models(self):
         import json
         path = Path(__file__).resolve().parents[1] / 'trials/2026-10-21-repairs/workflows/turbo-fox-profile-natural.api.json'

@@ -1,0 +1,6 @@
+torch==2.12.0+rocm7.14.0
+torchvision==0.27.0+rocm7.14.0
+rocm==7.14.0
+rocm-sdk-core==7.14.0
+rocm-sdk-libraries==7.14.0
+rocm-sdk-device-gfx1032==7.14.0

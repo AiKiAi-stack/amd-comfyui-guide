@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-10-24T16:20:36.520394+08:00",
+  "scope": "Bounded Ubuntu native gfx1032 Qwen pure-text inference, no LoRA/reference images; two normal whole-graph rounds and /free in one process",
+  "execution": "pass",
+  "visual_health": "pass",
+  "prompt_adherence": "partial",
+  "normal_entry_has_diagnostic_hook": false,
+  "same_pid": 24347,
+  "normal_profile": "scripts/start_ubuntu_qwen.sh",
+  "startup_source_sha256": {
+    "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+    "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+    "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+    "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+    "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+    "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "dd662f3e4982de91bce02f2fd99832332cf2091d7b70316845ee493e2b2ad1a2",
+    "ComfyUI/custom_nodes/deferred_vae/__init__.py": "80d7f873295c706511b9c73cc20fa23061f933683681c3eb0594010af89dcaad"
+  },
+  "precision": "Explicit FP16 with upcast attention; not equivalent to default FP32 casting",
+  "minimum_observed_available_ram_mib": 2320.51953125,
+  "physical_ram_guard_mib": 1536,
+  "active_gpu_release_checks": "2/2",
+  "reserved_gpu_release_checks": "0/2; allocator cache remains",
+  "phase_seconds": {
+    "round-01-direct": 118.07090228700008,
+    "round-02-direct": 132.08582428
+  },
+  "tests_passed_this_turn": 24,
+  "packages_unchanged": 95,
+  "owned_python": "/home/user/.local/share/barely-comfy/python-3.12.14-20261024",
+  "public_images": [
+    {
+      "round": 1,
+      "file": "direct-blue/7-0-reload-01-blue_00001_.png",
+      "image": {
+        "file": "7-0-reload-01-blue_00001_.png",
+        "original_sha256": "bc280fe5c1c1f1b0c13ef8cf199638050fce2da19c44ec4e8c078d2feed4db83",
+        "public_sha256": "1e2952ddb731941d66eb431b770980c4a1bd8f369234ab225600016b5cf88f42",
+        "pixels_unchanged": true
+      },
+      "prompt_id": "dac6462f-be24-424b-9deb-04c8006e31a0",
+      "raw_history_sha256": "e62739837cf201474fdcf83353cc68e3ba1eb03dd5fef0dcae4591ffdd835653",
+      "visual_health": "pass",
+      "prompt_adherence": "partial"
+    },
+    {
+      "round": 2,
+      "file": "direct-green/7-0-reload-02-green_00001_.png",
+      "image": {
+        "file": "7-0-reload-02-green_00001_.png",
+        "original_sha256": "a333d89243543444f808351a6a8cc42dc4c9702114d2b07a3c8d7865a74c3439",
+        "public_sha256": "1f002cf0c458acb128c72958b56368f611982b0153777fcc6fdb40fb74ce0d1f",
+        "pixels_unchanged": true
+      },
+      "prompt_id": "702af4aa-4db7-4cb2-8ec2-39347737ee67",
+      "raw_history_sha256": "e3cf5045db26f2f53316c1a92bff48a23d91f807a71cf402424af65fe8e14f61",
+      "visual_health": "pass",
+      "prompt_adherence": "partial"
+    }
+  ],
+  "preservation": {
+    "README.md": {
+      "method": "append_only",
+      "original_bytes": 4682,
+      "original_sha256": "52f846a4c99450c908d8613b20967620a714c0a87a6efeb3b48cbc7e79c2ab19",
+      "prefix_preserved": true,
+      "after_sha256": "ea8b931648027c6aa049a50bf1b78a9a79deac01b5c7b89987345606f8d4349b"
+    },
+    "handoff.md": {
+      "method": "append_only",
+      "original_bytes": 39694,
+      "original_sha256": "05144d7ae50d6cddec827649e8af17ef6b6f86a8843c83818a194f25b1eebc6f",
+      "prefix_preserved": true,
+      "after_sha256": "f2d5b89dfa44a5960de3438c53d295320967308ed3ab45976134478ae5f7860e"
+    },
+    "docs/10-ubuntu-continuation-2026-10-24.md": {
+      "unchanged": true,
+      "sha256": "852f81675768ce90a11b4873d850646c14a3eb9409ab41db8c43ecae76c88bf0"
+    },
+    "trials/2026-10-19-features/reviews.json": {
+      "unchanged": true,
+      "sha256": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f"
+    },
+    "trials/2026-10-19-features/cases.json": {
+      "unchanged": true,
+      "sha256": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a"
+    },
+    "code_source/gguf_mmap_offload/__init__.py": {
+      "unchanged": true,
+      "sha256": "08aa5abfaf704a4b8e65cd594732c7a2ccf9a593e6c68ce85f75a399c3af74a7"
+    },
+    "trials/2026-10-19-features/feature-report.html": {
+      "unchanged": true,
+      "sha256": "e585eb25d1b19253071cb81c943bacfff85fb666cd86de1e5dfca44f3b83af0d"
+    }
+  },
+  "limits": [
+    "No promise of OOM/exception recovery or all reserved-memory release",
+    "LoRA, reference/identity, other model families and Windows native issues retain previous conclusions",
+    "Earlier bounded operator stops do not prove permanent deadlock; source/latency records retained"
+  ]
+}

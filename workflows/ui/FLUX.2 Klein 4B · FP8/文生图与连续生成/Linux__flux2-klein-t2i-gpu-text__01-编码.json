@@ -1,0 +1,385 @@
+{
+  "id": "47de3163-aee7-4eb3-a751-d0fe06ae1cbd",
+  "revision": 0,
+  "last_node_id": 11,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        110,
+        140
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "CLIP名称",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "类型",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "设备",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen_3_4b.safetensors",
+        "flux2",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen_3_4b.safetensors",
+        "type": "flux2",
+        "device": "default"
+      }
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        490,
+        140
+      ],
+      "size": [
+        420,
+        310
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1
+        },
+        {
+          "localized_name": "文本",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2,
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing."
+      ],
+      "widgets_values_named": {
+        "text": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing."
+      }
+    },
+    {
+      "id": 5,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        1020,
+        140
+      ],
+      "size": [
+        140,
+        26
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "条件",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut"
+      }
+    },
+    {
+      "id": 10,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+        110,
+        386
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": "repair_save_conditions",
+      "type": "SaveRepairConditioning",
+      "pos": [
+        1270,
+        140
+      ],
+      "size": [
+        270,
+        122
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 3
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "link": 5
+        },
+        {
+          "localized_name": "prefix",
+          "name": "prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "workflow_sha256",
+          "name": "workflow_sha256",
+          "type": "STRING",
+          "widget": {
+            "name": "workflow_sha256"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "字符串",
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveRepairConditioning"
+      },
+      "widgets_values": [
+        "linux-coverage-flux2-klein-t2i-gpu-text",
+        "a4cc34163955db83a76da47af1776aac84ac6defea1f5313998259576222b5de"
+      ],
+      "widgets_values_named": {
+        "prefix": "linux-coverage-flux2-klein-t2i-gpu-text",
+        "workflow_sha256": "a4cc34163955db83a76da47af1776aac84ac6defea1f5313998259576222b5de"
+      }
+    },
+    {
+      "id": 11,
+      "type": "Note",
+      "pos": [
+        100,
+        -360
+      ],
+      "size": [
+        1600,
+        360
+      ],
+      "flags": {},
+      "order": -1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "FLUX.2 Klein 4B · FP8 / 文生图与连续生成\n来源：Linux 实际尝试配方，执行/视觉状态见本例结论\n本例结论：中止 · 无输出\n当前文件：阶段 1 编码。运行后记录条件归档路径与 SHA256，停止并重新启动服务，再打开下一阶段采样。修改提示词或输入后必须重新编码。\n配置：阶段 1 编码实际配置：--reserve-vram 1.0 --use-split-cross-attention --fp8_e4m3fn-text-enc；阶段完成后结束进程，再按下一阶段配置启动。\n本阶段启动参数：--reserve-vram 1.0 --use-split-cross-attention --fp8_e4m3fn-text-enc\n完整启动命令：COMFY_GFX1032_INT8_FALLBACK=1 BARELY_COMFY_CHUNKED_GPU_LOGITS=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=4 bash scripts/start_ubuntu.sh --fast-disk --reserve-vram 1.0 --use-split-cross-attention --fp8_e4m3fn-text-enc\n输入：纯文本，无输入图片\n操作：先核对模型与输入，修改提示词，单次运行；seed 控制已设为 fixed。\n注意：历史结果来自分阶段/分进程执行；本整图只是配方整理，未验证直接连续运行。"
+      ],
+      "color": "#25394d",
+      "bgcolor": "#344b60",
+      "title": "使用说明 · 平台 / 配方 / 输入"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      2,
+      4,
+      0,
+      5,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      3,
+      4,
+      0,
+      "repair_save_conditions",
+      0,
+      "CONDITIONING"
+    ],
+    [
+      4,
+      5,
+      0,
+      "repair_save_conditions",
+      1,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      10,
+      0,
+      "repair_save_conditions",
+      2,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.75,
+      "offset": [
+        6.666666666666671,
+        466.6666666666667
+      ]
+    },
+    "model_feature_library": {
+      "title": "FLUX.2 Klein 4B · FP8 / 文生图与连续生成",
+      "note": "UI format generated by ComfyUI itself; round-trip checked without model execution"
+    }
+  },
+  "version": 0.4
+}

@@ -1,0 +1,158 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+    }
+  },
+  "case01_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "case01_5": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "case01_41",
+        0
+      ]
+    }
+  },
+  "case01_6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "case01_7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "case01_41",
+        0
+      ],
+      "negative": [
+        "case01_5",
+        0
+      ],
+      "latent_image": [
+        "case01_6",
+        0
+      ],
+      "seed": 66502001,
+      "steps": 4,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case01_8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case01_7",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_8",
+        0
+      ],
+      "filename_prefix": "FeatureBench/kroma-style-ref"
+    }
+  },
+  "case01_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_07b736da6af4_kroma-style-source.png"
+    }
+  },
+  "case01_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case01_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case01_40": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "prompt": "Use the visual style of the reference image: bold geometric two-color blue and orange screenprint, rough paper texture. Create a new image of an owl perched on a branch. Preserve the reference print style, not its fox subject. No text.",
+      "image1": [
+        "case01_31",
+        0
+      ]
+    }
+  },
+  "case01_100": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "case01_31",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_120": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "case01_40",
+        0
+      ],
+      "latent": [
+        "case01_100",
+        0
+      ]
+    }
+  },
+  "case01_41": {
+    "class_type": "FluxKontextMultiReferenceLatentMethod",
+    "inputs": {
+      "conditioning": [
+        "case01_120",
+        0
+      ],
+      "reference_latents_method": "index_timestep_zero"
+    }
+  }
+}

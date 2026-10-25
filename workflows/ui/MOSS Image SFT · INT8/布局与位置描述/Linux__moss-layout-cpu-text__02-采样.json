@@ -1,0 +1,635 @@
+{
+  "id": "0a27af5e-ac1e-4c03-831a-48730a3f9950",
+  "revision": 0,
+  "last_node_id": 13,
+  "last_link_id": 9,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        110,
+        140
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "UNet名称",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "数据类型",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "moss_image_sft_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "moss_image_sft_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        110,
+        362
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae名称",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux2-vae_small.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "flux2-vae_small.safetensors"
+      }
+    },
+    {
+      "id": 7,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        870,
+        140
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "localized_name": "移位",
+          "name": "shift",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shift"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampling",
+          "name": "sampling",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "sampling"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingAuraFlow"
+      },
+      "widgets_values": [
+        5,
+        "flow"
+      ],
+      "widgets_values_named": {
+        "shift": 5,
+        "sampling": "flow"
+      }
+    },
+    {
+      "id": 8,
+      "type": "KSampler",
+      "pos": [
+        1250,
+        140
+      ],
+      "size": [
+        270,
+        262
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 2
+        },
+        {
+          "localized_name": "正面条件",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 3
+        },
+        {
+          "localized_name": "负面条件",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "localized_name": "Latent图像",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 5
+        },
+        {
+          "localized_name": "种子",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "步数",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "采样器名称",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "调度器",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "降噪",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        66501001,
+        "fixed",
+        8,
+        1,
+        "euler",
+        "sgm_uniform",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 66501001,
+        "control_after_generate": "fixed",
+        "steps": 8,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "sgm_uniform",
+        "denoise": 1
+      }
+    },
+    {
+      "id": 9,
+      "type": "VAEDecode",
+      "pos": [
+        1630,
+        140
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "Latent",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 6
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 10,
+      "type": "SaveImage",
+      "pos": [
+        1880,
+        140
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图片",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        },
+        {
+          "localized_name": "文件名前缀",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "linux-coverage/moss-layout-cpu-text"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "linux-coverage/moss-layout-cpu-text"
+      }
+    },
+    {
+      "id": 12,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        490,
+        140
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 9
+        },
+        {
+          "localized_name": "LoRA名称",
+          "name": "lora_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "模型强度",
+          "name": "strength_model",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "moss-image-sft-8-steps-dmd-lora.safetensors",
+        1
+      ],
+      "widgets_values_named": {
+        "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
+        "strength_model": 1
+      }
+    },
+    {
+      "id": "repair_load_conditions",
+      "type": "LoadRepairConditioning",
+      "pos": [
+        110,
+        560
+      ],
+      "size": [
+        270,
+        122
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "file",
+          "name": "file",
+          "type": "STRING",
+          "widget": {
+            "name": "file"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "expected_sha256",
+          "name": "expected_sha256",
+          "type": "STRING",
+          "widget": {
+            "name": "expected_sha256"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            3
+          ]
+        },
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ]
+        },
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadRepairConditioning"
+      },
+      "widgets_values": [
+        "repair_conditioning/linux-coverage-moss-layout-cpu-text-0782216358dc.safetensors",
+        "e692fb70fdabc98b5c997556bb98505f003d273ea0fc5d5f3e51f8f55f3f4987"
+      ],
+      "widgets_values_named": {
+        "file": "repair_conditioning/linux-coverage-moss-layout-cpu-text-0782216358dc.safetensors",
+        "expected_sha256": "e692fb70fdabc98b5c997556bb98505f003d273ea0fc5d5f3e51f8f55f3f4987"
+      }
+    },
+    {
+      "id": 13,
+      "type": "Note",
+      "pos": [
+        100,
+        -360
+      ],
+      "size": [
+        1600,
+        360
+      ],
+      "flags": {},
+      "order": -1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "MOSS Image SFT · INT8 / 布局与位置描述\n来源：Linux 实际尝试配方，执行/视觉状态见本例结论\n本例结论：达到本例主要布局目标\n当前文件：阶段 2 采样。默认使用随包提供、经过 SHA256 校验的本例编码归档，可直接复现。若重新编码，请更新 LoadRepairConditioning 的 file 与 expected_sha256。\n配置：阶段 2 采样实际配置：--reserve-vram 1.0 --use-split-cross-attention --force-fp16 --force-upcast-attention；阶段完成后结束进程，再按下一阶段配置启动。\n本阶段启动参数：--reserve-vram 1.0 --use-split-cross-attention --force-fp16 --force-upcast-attention\n完整启动命令：COMFY_GFX1032_INT8_FALLBACK=1 BARELY_COMFY_CHUNKED_CPU_LOGITS=1 BARELY_COMFY_CHUNKED_GPU_LOGITS=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=4 bash scripts/start_ubuntu.sh --fast-disk --reserve-vram 1.0 --use-split-cross-attention --force-fp16 --force-upcast-attention\n输入：纯文本，无输入图片\n操作：先核对模型与输入，修改提示词，单次运行；seed 控制已设为 fixed。\n注意：历史结果来自分阶段/分进程执行；本整图只是配方整理，未验证直接连续运行。"
+      ],
+      "color": "#25394d",
+      "bgcolor": "#344b60",
+      "title": "使用说明 · 平台 / 配方 / 输入"
+    }
+  ],
+  "links": [
+    [
+      1,
+      12,
+      0,
+      7,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      7,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      "repair_load_conditions",
+      0,
+      8,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      4,
+      "repair_load_conditions",
+      1,
+      8,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      "repair_load_conditions",
+      2,
+      8,
+      3,
+      "LATENT"
+    ],
+    [
+      6,
+      8,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      7,
+      3,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      8,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      1,
+      0,
+      12,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5972850678733032,
+      "offset": [
+        33.93939393939394,
+        493.93939393939394
+      ]
+    },
+    "model_feature_library": {
+      "title": "MOSS Image SFT · INT8 / 布局与位置描述",
+      "note": "UI format generated by ComfyUI itself; round-trip checked without model execution"
+    }
+  },
+  "version": 0.4
+}

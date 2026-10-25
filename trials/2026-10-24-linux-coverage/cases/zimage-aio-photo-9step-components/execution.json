@@ -1,0 +1,97 @@
+{
+  "case_id": "zimage-aio-photo-9step-components",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../zimage-aio-photo-9step-components--sample/26-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "31eee2d6012b6b0c8f395e36062d594ffe5278ba6e34e7a27d827368a95fc4e9",
+      "original_sha256": "2f73a7f24c985e13a792b95f6898c12239b9091ad6a396c47fb34c349e77726c",
+      "rgb_sha256": "006ae4e50cdd21bf9f429cca39cfe7dc1f06b5206ee5b89c8a394bc6149dfb37"
+    }
+  ],
+  "workflow_sha256": "c04e34aa825c2d033d86ae0bfb3581998c08d2c6b2dd25de65039940107f4ee7",
+  "pid": 128762,
+  "prompt_id": "ff5a9ec1-ef56-45a6-959d-85f68c703cdc",
+  "validation_errors": {},
+  "outputs": {
+    "26": {
+      "images": [
+        {
+          "filename": "zimage-aio-photo-9step-components_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "ff5a9ec1-ef56-45a6-959d-85f68c703cdc",
+        "timestamp": 1792890804107
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "ff5a9ec1-ef56-45a6-959d-85f68c703cdc",
+        "timestamp": 1792890804108
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "ff5a9ec1-ef56-45a6-959d-85f68c703cdc",
+        "timestamp": 1792890859037
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 3324.99609375,
+  "elapsed_seconds": 72.564,
+  "total_seconds": 66.582,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 16.128,
+  "sampling_seconds": 56.436,
+  "conditioning_archive": "repair_conditioning/linux-coverage-zimage-aio-photo-9step-components-1a0d22aeb35e.safetensors",
+  "conditioning_sha256": "879a65d0b26f7cab6e2404c3c05f97d6dcdd802ce94c0eb2974a877a717e7c45",
+  "encoding_pid": 128463,
+  "sampling_pid": 128762,
+  "encoding_exited_before_sampling": true
+}

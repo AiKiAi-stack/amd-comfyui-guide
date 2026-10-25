@@ -1,0 +1,69 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 21.156,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-multiref-full-tail-input_00001_.png",
+      "original_sha256": "64285057da3d6499bed00d765aafa0cc5e70464f1b0954425187adafb54f9a25",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-multiref-full-tail-mask_00001_.png",
+      "original_sha256": "c73814df2a031335d9bb1be5d44e83fa4017c051d7f67a6a73c9768d332fbd4c",
+      "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-qwen-multiref-full-tail_00001_.png",
+      "original_sha256": "7fa5b957665299fae44c9e524efe70bc492f0c693d82788e9a0aa974b5a3d3e8",
+      "public_sha256": "2c24b8f08d12ec9c307915f8d0d9c93d7d1a95c53638554e1e3ba2bd8c5369d7",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "qwen-multiref-full-tail",
+  "feature": "qwen-multiref",
+  "verdict": "partial",
+  "review": "复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。",
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "acceptance_scope": "补齐遮罩边界实际重试；精确参考身份未通过",
+  "mask_measurement": {
+    "outside_pixels": 181024,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 81120,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 181024,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "062ae1ba-994b-41e8-93d1-b4d3f5f6439b",
+  "raw_history_sha256": "9eb32b213cba1cde994ed0c41a250d0c3dd23f8adf0cf82bf1a8aa991bed8c49",
+  "decoding_elapsed_seconds": 21.156,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 120.25,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "9a6823cdb188f21abb40a97fcb885b823e7e1fa49db1d3651d80634905497b47",
+  "workflow_sha256": "bf2b910290f187a74880d1c024dee823febfcd0df250407ea237d4f5d61da6e2",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.062,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "310edebf35654a5ffc00ec36c2270886573e972b51ea5114afd19d06d414fd25"
+}

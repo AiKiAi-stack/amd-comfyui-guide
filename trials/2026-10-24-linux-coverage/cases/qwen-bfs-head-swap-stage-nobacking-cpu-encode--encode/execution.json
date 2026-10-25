@@ -1,0 +1,77 @@
+{
+  "case_id": "qwen-bfs-head-swap-stage-nobacking-cpu-encode--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc",
+    "--cpu"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "03ddb617903c494dfa9c6903967d33f6110ad0640e19cd37d7b54167de6c6037",
+  "pid": 15999,
+  "prompt_id": "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-qwen-bfs-head-swap-stage-nobacking-cpu-encode-d28ace6b9507.safetensors"
+      ],
+      "archive_sha256": [
+        "b51778aac844428275f63995cbfbe97687cfd25232aa5249b22d20fe2e3977b5"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+        "timestamp": 1792912964103
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+        "timestamp": 1792912964105
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "934a64e7-f259-4b3b-a484-b60b8a5c1731",
+        "timestamp": 1792913118884
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6671.14453125,
+  "elapsed_seconds": 156.703,
+  "total_seconds": 188.013,
+  "server_exit": -15
+}

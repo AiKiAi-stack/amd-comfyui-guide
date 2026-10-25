@@ -1,0 +1,31 @@
+{
+  "status": "failed",
+  "profile": "kroma",
+  "explicit_unload_after_each_case": true,
+  "native_exception_observed": true,
+  "oom_observed": false,
+  "final_server_exit_code": 3221225477,
+  "active_unload": "kroma-full-reload-1",
+  "server_stopped": true,
+  "raw_summary_sha256": "5bcf1dc33b0ba22570ae9c883f04926b5c9a0408ea4eb2879c9159682d8f3075",
+  "raw_log_sha256": "f5d29330f5e13f051ea277f94695ef2f03b62a25edda1362394e33bda69b2d2a",
+  "cases": [
+    {
+      "id": "kroma-full-reload-1",
+      "exit_code": 0,
+      "seconds": 70.31,
+      "prompt_id": "81b10958-df43-4b2b-8035-52e25fb5cd97",
+      "sampler_node": "case02_7",
+      "sampler_reran": true,
+      "finite_latent_archive": {
+        "text": [
+          "repair_conditioning/kroma-full-reload-1-11f147c8c2c7.safetensors"
+        ],
+        "archive_sha256": [
+          "a91ca3c0a758a08d4c70f4f052cba801207777723b5dbb2850c4be6a2b6f0dda"
+        ]
+      },
+      "raw_history_sha256": "d401075e79146411c6a03c6ac89dc29d0c1507c43a30b5ea403b352cd0db6f0f"
+    }
+  ]
+}

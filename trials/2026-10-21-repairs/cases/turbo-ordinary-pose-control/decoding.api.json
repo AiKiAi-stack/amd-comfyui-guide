@@ -1,0 +1,38 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "64",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-ordinary-pose-control"
+    }
+  },
+  "64": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/turbo-ordinary-pose-control-216e5d5111e1.safetensors",
+      "expected_sha256": "25dd2e7e15e5b645623421ebb93d2c26a4d0a72b0534ce5adccf9590ba746c5f"
+    }
+  }
+}

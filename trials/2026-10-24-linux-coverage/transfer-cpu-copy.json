@@ -1,0 +1,10 @@
+{
+  "mode": "cpu-copy",
+  "source": "/media/user/MODELS/AIModels/amd_comfy/comfyui-models-20261024/diffusion_models/kroma-v0.3.1-turbo-opd-Q2_K.gguf",
+  "tensor": "txtfusion.layerwise_blocks.0.attn.gate.weight",
+  "bytes": 13107200,
+  "expected_sha256": "1aeefe6bfd0a05a390bf52e006244d65e178f6f14dbe8f9a5e077a845ad0da7c",
+  "status": "pass",
+  "seconds": 0.2132180989999597,
+  "actual_sha256": "1aeefe6bfd0a05a390bf52e006244d65e178f6f14dbe8f9a5e077a845ad0da7c"
+}

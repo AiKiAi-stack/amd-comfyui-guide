@@ -1,0 +1,66 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/pose-guide.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-a.png"
+    }
+  },
+  "34": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "33",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "repair_save_references": {
+    "class_type": "SaveRepairQwenReferences",
+    "inputs": {
+      "vae": [
+        "3",
+        0
+      ],
+      "image1": [
+        "31",
+        0
+      ],
+      "resolution": 512,
+      "prefix": "turbo-un-pose-isolated-refs",
+      "workflow_sha256": "f98cc6c2399cf1514be0a8e650d73e884657cb60d368d2dab4e055563dcda68f",
+      "image2": [
+        "34",
+        0
+      ]
+    }
+  }
+}

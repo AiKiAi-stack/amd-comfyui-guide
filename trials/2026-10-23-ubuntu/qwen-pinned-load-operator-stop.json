@@ -1,0 +1,8 @@
+{
+  "operator_stop": true,
+  "reason": "Text model load remained in GGUF pin_weight_to_device GPU/CPU transfer for over ten minutes; profile captured; no OOM/native exception observed before stop",
+  "time": 1792757856.1941571,
+  "server_pid": 51886,
+  "controller_pid": 51885,
+  "stack_file": "qwen-pinned-load-stack.txt"
+}

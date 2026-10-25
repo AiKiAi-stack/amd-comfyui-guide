@@ -1,0 +1,57 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+      "type": "moss_image",
+      "device": "cpu"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "A minimalist poster on plain cream paper. The single word HELLO is printed in huge bold clean black capital letters across the upper half. A single small orange fruit below the word. Exact text: HELLO. No other text.",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "blurry, distorted, watermark",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent": [
+        "6",
+        0
+      ],
+      "prefix": "linux-coverage-moss-text-cpu-text",
+      "workflow_sha256": "9bf670dfc307a0a3be937d94f9cc5f998815761ecc01a4f1a42536a71a27ff61"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-24",
+  "added_case": "qwen-multiref-full-tail",
+  "verdict": "部分达到",
+  "prompt_id": "062ae1ba-994b-41e8-93d1-b4d3f5f6439b",
+  "cards_before": 100,
+  "cards_after": 101,
+  "preexisting_article_bytes_unchanged": true,
+  "markdown_append_only": true,
+  "image_public_hashes_verified": 3,
+  "generated_image_elements": 5,
+  "files": {
+    "trials/2026-10-19-features/feature-report.html": {
+      "before_sha256": "2e75cc70ae739a9772a4c2c2a9cf7f1fb7179759ac1347c47ed3840d400088ba",
+      "after_sha256": "c73e408a5068457a00a38c86475ed13f02d1209d6e317b102c6addfa85daed28"
+    },
+    "trials/2026-10-19-features/feature-report.md": {
+      "before_sha256": "5168394f9cd40eaaa90ba8b4fcc79ec1edc5afb3d3b926c6bb86df8e51ff2452",
+      "after_sha256": "061a5304a366e58984224de701d740f869ded8fc9915ae27ca8d789d2dcf6a3a"
+    }
+  }
+}

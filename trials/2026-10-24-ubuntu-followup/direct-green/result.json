@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 131.704,
+  "images": [
+    {
+      "file": "7-0-reload-02-green_00001_.png",
+      "original_sha256": "a333d89243543444f808351a6a8cc42dc4c9702114d2b07a3c8d7865a74c3439",
+      "public_sha256": "1f002cf0c458acb128c72958b56368f611982b0153777fcc6fdb40fb74ce0d1f",
+      "pixels_unchanged": true
+    }
+  ],
+  "verdict": "partial",
+  "visual_health": "pass",
+  "execution_verdict": "pass",
+  "review": "512×512 完整 PNG，黑斗篷骷髅、教堂门口、朝地面的锈剑、石地浓雾及窗外红月可辨认，无黑图或明显坏块。绿色眼部效果不等同于明确发光，破碎彩窗等精确细节不足，提示符合度仍为部分达到。独立 Python、默认 pinned、无诊断钩子，同一 PID 完成两轮普通整图与两次真实 /free；active 显存指标通过，reserved 缓存仍可能保留。仅 Linux 无 LoRA 实验，非 Windows/OOM 清理结案。",
+  "prompt_id": "702af4aa-4db7-4cb2-8ec2-39347737ee67",
+  "raw_history_sha256": "e3cf5045db26f2f53316c1a92bff48a23d91f807a71cf402424af65fe8e14f61",
+  "workflow_sha256": "686aade52c8190244ae215e37ef94ec422958dadd9bddf77db38fffd1273bc9e"
+}

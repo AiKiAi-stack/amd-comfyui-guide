@@ -102,8 +102,13 @@ def result_asset(image) -> Path | None:
             candidates.append(base / str(subfolder) / str(filename))
             candidates.append(base / str(filename))
     elif image is not None:
-        raw = str(image).strip().replace("\\", os.sep)
+        raw = re.sub(r"/+", "/", str(image).strip().replace("\\", "/"))
         if raw:
+            # Historical Windows records bind to the same public subtree on Linux.
+            match = re.search(r"(?:^|/)ComfyUI/(input|output)/(.+)$", raw, re.IGNORECASE)
+            if match and ".." not in Path(match.group(2)).parts:
+                base = COMFY_INPUT if match.group(1).lower() == "input" else COMFY_OUTPUT
+                candidates.append(base / match.group(2))
             raw_path = Path(raw)
             if raw_path.is_absolute():
                 candidates.append(raw_path)
@@ -267,10 +272,6 @@ def display_model(case: dict) -> str:
         return "MOSS-Image-5B"
     if "kroma" in lower:
         return "Kroma v0.3.1 OPD Q2"
-    if "minimax" in lower:
-        if case.get("recipe") == "video-diagnostic":
-            return model + "（诊断）"
-        return "MiniMax H3 / BFS"
     if "turbo-plain" in str(case.get("id", "")) or "普通 Turbo 对照" in model:
         return "Qwen 2.1 Turbo（普通对照）"
     if "turbo-un" in lower or "uncensored" in lower or "turbo-un" in str(case.get("id", "")):
@@ -851,6 +852,7 @@ def build_report() -> tuple[Path, Path]:
 
 
 if __name__ == "__main__":
-    html_report, markdown_report = build_report()
-    print(f"HTML: {html_report}")
-    print(f"Markdown: {markdown_report}")
+    import sys
+    sys.path.insert(0, str(HERE.parents[1] / "scripts"))
+    from build_platform_report import build_report as build_platform_report
+    print(f"HTML: {build_platform_report()}")

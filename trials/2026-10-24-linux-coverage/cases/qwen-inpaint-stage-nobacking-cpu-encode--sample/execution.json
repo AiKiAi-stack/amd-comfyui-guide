@@ -1,0 +1,141 @@
+{
+  "case_id": "qwen-inpaint-stage-nobacking-cpu-encode--sample",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "case01_59-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
+      "original_sha256": "7c3ef83b9ac03cf042ca019cc077b640180533ec1ce5a91754640229c76de779",
+      "rgb_sha256": "3d86960a868ab2eee482b07ad9c72a87bdcb4d58f735d2cc3ebff20cb2172319"
+    },
+    {
+      "file": "case01_58-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "02a8fc871f214020338f17f0739590406419e609ae63be509480c016f2a4b1ef",
+      "original_sha256": "663d337a49f8072719547ed5d8d5db7ae319b543f2b1ba496315cf863407e6df",
+      "rgb_sha256": "cf7facf9d18cb97ca60da1afaac74c604bafcc3d489385201d60d2633f57b83e"
+    },
+    {
+      "file": "case01_7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "832b486bffa2268eafe5a27d547500932746e158807b2c1009df4df6e9052bc8",
+      "original_sha256": "b65cddbbde176690ce517c535e481b91af8d247f70b0b515397e8c8910178357",
+      "rgb_sha256": "b9ab1777fd0f671287212a312a2d9f77a497f5c5849b9f8c0f37163a1354bdf6"
+    }
+  ],
+  "workflow_sha256": "5febb2e7f2b93ceb53c3e3d079a5919264d771c14d1031e99781ddb957037043",
+  "pid": 14247,
+  "prompt_id": "946097d7-0337-4433-8e0b-2d7d87d45ca1",
+  "validation_errors": {},
+  "outputs": {
+    "case01_59": {
+      "images": [
+        {
+          "filename": "qwen-inpaint-stage-nobacking_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "case01_58": {
+      "images": [
+        {
+          "filename": "qwen-inpaint-stage-nobacking_00002_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "case01_7": {
+      "images": [
+        {
+          "filename": "qwen-inpaint-stage-nobacking_00003_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "946097d7-0337-4433-8e0b-2d7d87d45ca1",
+        "timestamp": 1792911197310
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "946097d7-0337-4433-8e0b-2d7d87d45ca1",
+        "timestamp": 1792911197313
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "946097d7-0337-4433-8e0b-2d7d87d45ca1",
+        "timestamp": 1792911283557
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7306.46484375,
+  "elapsed_seconds": 88.428,
+  "total_seconds": 97.554,
+  "server_exit": -15
+}

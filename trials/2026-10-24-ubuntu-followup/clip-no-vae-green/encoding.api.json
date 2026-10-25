@@ -1,0 +1,49 @@
+{
+  "2": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+      "type": "qwen_image"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "repair_clip_cpu_backing",
+        0
+      ],
+      "prompt": "A gothic horror oil painting. A skeletal ghost in a torn black cloak stands in the doorway of an abandoned cathedral at midnight, holding a rusty ceremonial sword pointed toward the floor. Empty eye sockets glow faint green, thick fog rolls over broken stone tiles, a red moon is visible through a shattered stained-glass window. Ominous atmosphere, dramatic chiaroscuro, no blood, no injuries, no text.",
+      "negative_prompt": "",
+      "resolution": 512
+    }
+  },
+  "repair_clip_cpu_backing": {
+    "class_type": "RetainGgufClipCpuBacking",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent": [
+        "4",
+        2
+      ],
+      "prefix": "round-02",
+      "workflow_sha256": "686aade52c8190244ae215e37ef94ec422958dadd9bddf77db38fffd1273bc9e"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "prompt_id": "2d5f6a39-e824-46a4-8d70-1cd4dc4d0559",
+  "status": "success",
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "reload-01-blue_00001_.png",
+          "subfolder": "UbuntuQwen",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

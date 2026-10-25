@@ -1,0 +1,472 @@
+[
+  {
+    "run": "ubuntu-20261024b-qwen-clip-encode-01",
+    "raw_summary_sha256": "7edb441b74523f8393b6cc803a9610dc5dec51e76c3ef4cb22d4e2a06367e9e6",
+    "status": "failed",
+    "error": "round-01-encode failed; see retained history/logs",
+    "pid": 11670,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": true,
+    "whole_graph": false,
+    "defer_vae": false,
+    "omit_unused_vae": false,
+    "host_trim": false,
+    "minimum_available_ram_mib": 5911.9453125,
+    "maximum_rss_mib": 6418.28125,
+    "phase_seconds": {
+      "round-01-encode": 10.004457279999997
+    },
+    "gpu_active_release_checks_passed": 0,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "1e1ab364cec9a9ec579c6e9b819726cc3a0237de19e8923009c59248048c64e5"
+    },
+    "runner_sha256_at_startup": "6cacd399bcb1fe144299c43c0b0e2fe7d3926c2abb1b2f2a635b93489eb89a75"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-clip-encode-02",
+    "raw_summary_sha256": "61806a54180f5af2b735f2772b84b7653a3dc82d02233706bc36f1d804b5bc30",
+    "status": "failed",
+    "error": "round-01-encode failed; see retained history/logs",
+    "pid": 12501,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": true,
+    "whole_graph": false,
+    "defer_vae": false,
+    "omit_unused_vae": false,
+    "host_trim": false,
+    "minimum_available_ram_mib": 8059.84765625,
+    "maximum_rss_mib": 4153.59765625,
+    "phase_seconds": {
+      "round-01-encode": 10.00391112400007
+    },
+    "gpu_active_release_checks_passed": 0,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "22417e294c4ca125e03501079f8f524a1f4e2691be284fb85e2b1812b1d71294"
+    },
+    "runner_sha256_at_startup": "6cacd399bcb1fe144299c43c0b0e2fe7d3926c2abb1b2f2a635b93489eb89a75"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-clip-encode-03",
+    "raw_summary_sha256": "2bcb3a7cc9dad92faeb6a4dfd31984af796a42e2d39146500506ac9d5af7cb3a",
+    "status": "encoder_free_pass_no_image",
+    "error": null,
+    "pid": 13477,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": true,
+    "whole_graph": false,
+    "defer_vae": false,
+    "omit_unused_vae": false,
+    "host_trim": false,
+    "minimum_available_ram_mib": 2032.375,
+    "maximum_rss_mib": 11179.2421875,
+    "phase_seconds": {
+      "round-01-encode": 43.069869896,
+      "round-02-encode": 41.01703040699999
+    },
+    "gpu_active_release_checks_passed": 2,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "0e44a74aa836649ad7e4631826cb98e30626434f7d861aa2f4b8f0e5d03e1d14"
+    },
+    "runner_sha256_at_startup": "6cacd399bcb1fe144299c43c0b0e2fe7d3926c2abb1b2f2a635b93489eb89a75"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-stock-encode-01",
+    "raw_summary_sha256": "94ec63db7c43f351f772fbc18fe7fd20b15cf687e8a1f0b21299ccc79d5a2710",
+    "status": "encoder_free_pass_no_image",
+    "error": null,
+    "pid": 13942,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": false,
+    "encode_only": true,
+    "whole_graph": false,
+    "defer_vae": false,
+    "omit_unused_vae": false,
+    "host_trim": false,
+    "minimum_available_ram_mib": 1937.43359375,
+    "maximum_rss_mib": 11048.76953125,
+    "phase_seconds": {
+      "round-01-encode": 34.035909462999825,
+      "round-02-encode": 37.015308645000005
+    },
+    "gpu_active_release_checks_passed": 2,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011"
+    },
+    "runner_sha256_at_startup": "6cacd399bcb1fe144299c43c0b0e2fe7d3926c2abb1b2f2a635b93489eb89a75"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-stock-full-01",
+    "raw_summary_sha256": "ebaf8707b32e0f426cddd04f91acc3a2144528d65dd8d3bdc5c3618b0c1027ce",
+    "status": "failed",
+    "error": "Physical RAM below 1536MiB; stopping owned service",
+    "pid": 14855,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": false,
+    "encode_only": false,
+    "whole_graph": false,
+    "defer_vae": false,
+    "omit_unused_vae": false,
+    "host_trim": false,
+    "minimum_available_ram_mib": 1425.4140625,
+    "maximum_rss_mib": 10702.90625,
+    "phase_seconds": {
+      "round-01-encode": 40.02458962100013,
+      "round-01-sample": 55.02158601600013,
+      "round-01-decode": 16.008406798000124,
+      "round-02-encode": 38.05083697200007
+    },
+    "gpu_active_release_checks_passed": 3,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [
+      {
+        "round": 1,
+        "file": "images/UbuntuQwen/reload-01-blue_00001_.png",
+        "sha256": "2799f8e04bab533048fca5f740c9639bc919db3dfbfc7ecec15b554abec0e43b",
+        "visual_verdict": "pending"
+      }
+    ],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011"
+    },
+    "runner_sha256_at_startup": "6cacd399bcb1fe144299c43c0b0e2fe7d3926c2abb1b2f2a635b93489eb89a75"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-clip-full-01",
+    "raw_summary_sha256": "e5bdf28ffc9238f346f434db54a828e700c90f555f9d9b80c88830ccbfed91e6",
+    "status": "execution_pass_visual_review_pending",
+    "error": null,
+    "pid": 17918,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": false,
+    "whole_graph": false,
+    "defer_vae": false,
+    "omit_unused_vae": false,
+    "host_trim": false,
+    "minimum_available_ram_mib": 1635.2578125,
+    "maximum_rss_mib": 11189.05859375,
+    "phase_seconds": {
+      "round-01-encode": 46.045811391999905,
+      "round-01-sample": 55.01925466600005,
+      "round-01-decode": 16.010590958999956,
+      "round-02-encode": 42.036770254999965,
+      "round-02-sample": 55.019393842,
+      "round-02-decode": 16.0095857660001
+    },
+    "gpu_active_release_checks_passed": 6,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [
+      {
+        "round": 1,
+        "file": "images/UbuntuQwen/reload-01-blue_00001_.png",
+        "sha256": "a33cd76ab6a10b08a2ea84ede8aade1309a251e7ffd2ca65b3ddaf7221145010",
+        "visual_verdict": "pending"
+      },
+      {
+        "round": 2,
+        "file": "images/UbuntuQwen/reload-02-green_00001_.png",
+        "sha256": "fd09eedc611625263ae5d5c53637fa694fe394553b5591f0fcdaf943e4e560c3",
+        "visual_verdict": "pending"
+      }
+    ],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "0e44a74aa836649ad7e4631826cb98e30626434f7d861aa2f4b8f0e5d03e1d14"
+    },
+    "runner_sha256_at_startup": "6cacd399bcb1fe144299c43c0b0e2fe7d3926c2abb1b2f2a635b93489eb89a75"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-clip-no-vae-full-01",
+    "raw_summary_sha256": "dcbd7476403bc1319911fddd11718e732236692cdd88e7f07babf356a63dbae9",
+    "status": "execution_pass_visual_review_pending",
+    "error": null,
+    "pid": 18796,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": false,
+    "whole_graph": false,
+    "defer_vae": false,
+    "omit_unused_vae": true,
+    "host_trim": false,
+    "minimum_available_ram_mib": 2789.8828125,
+    "maximum_rss_mib": 10949.484375,
+    "phase_seconds": {
+      "round-01-encode": 43.11080745000004,
+      "round-01-sample": 55.01931616000002,
+      "round-01-decode": 16.006732759999977,
+      "round-02-encode": 37.013011271000096,
+      "round-02-sample": 55.01949736100005,
+      "round-02-decode": 16.013238925999985
+    },
+    "gpu_active_release_checks_passed": 6,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [
+      {
+        "round": 1,
+        "file": "images/UbuntuQwen/reload-01-blue_00001_.png",
+        "sha256": "2cae2794c45085fa74c3059785288cfc71e3c3c2b19ab0bb86221d710a943f61",
+        "visual_verdict": "pending"
+      },
+      {
+        "round": 2,
+        "file": "images/UbuntuQwen/reload-02-green_00001_.png",
+        "sha256": "31ea1a623ba2376919bd7b95a44e54931153c07ed8f9c749743ded53a516d94c",
+        "visual_verdict": "pending"
+      }
+    ],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "0e44a74aa836649ad7e4631826cb98e30626434f7d861aa2f4b8f0e5d03e1d14"
+    },
+    "runner_sha256_at_startup": "6cacd399bcb1fe144299c43c0b0e2fe7d3926c2abb1b2f2a635b93489eb89a75"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-clip-direct-01",
+    "raw_summary_sha256": "6651faeeb57bbdc988ea700aceaab9c3b0e697c023a916fbbb99ad86b390178c",
+    "status": "failed",
+    "error": "Physical RAM below 1536MiB; stopping owned service",
+    "pid": 20716,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": false,
+    "whole_graph": true,
+    "defer_vae": false,
+    "omit_unused_vae": true,
+    "host_trim": false,
+    "minimum_available_ram_mib": 1501.5703125,
+    "maximum_rss_mib": 10987.9765625,
+    "phase_seconds": {
+      "round-01-direct": null
+    },
+    "gpu_active_release_checks_passed": 0,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "0e44a74aa836649ad7e4631826cb98e30626434f7d861aa2f4b8f0e5d03e1d14"
+    },
+    "runner_sha256_at_startup": "052445f7de61d7ce8c8cd9f3f1b5d08b0da0f149eb9de4d2a6a00e5303a342a7"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-deferred-direct-01",
+    "raw_summary_sha256": "eebfccbc868eea70751e46c33121b4527f73d9c786152a3c73dce70b8c5303a4",
+    "status": "failed",
+    "error": "",
+    "pid": 20965,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": false,
+    "whole_graph": true,
+    "defer_vae": true,
+    "omit_unused_vae": true,
+    "host_trim": false,
+    "minimum_available_ram_mib": 1854.1171875,
+    "maximum_rss_mib": 11042.16015625,
+    "phase_seconds": {
+      "round-01-direct": null
+    },
+    "gpu_active_release_checks_passed": 0,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "0e44a74aa836649ad7e4631826cb98e30626434f7d861aa2f4b8f0e5d03e1d14",
+      "ComfyUI/custom_nodes/deferred_vae/__init__.py": "80d7f873295c706511b9c73cc20fa23061f933683681c3eb0594010af89dcaad"
+    },
+    "runner_sha256_at_startup": "06215d720c1b5acdda93aa2e552f64ca491131bc628c14f353a6b6ea72eddd38"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-deferred-direct-02",
+    "raw_summary_sha256": "fe613e021c6040a0300711e37d30dee948881886c20fcb5fb7a5c3b88189d20d",
+    "status": "failed",
+    "error": "",
+    "pid": 21516,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": false,
+    "whole_graph": true,
+    "defer_vae": true,
+    "omit_unused_vae": true,
+    "host_trim": false,
+    "minimum_available_ram_mib": 2853.44140625,
+    "maximum_rss_mib": 11005.69921875,
+    "phase_seconds": {
+      "round-01-direct": 112.07487157000014,
+      "round-02-direct": null
+    },
+    "gpu_active_release_checks_passed": 1,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [
+      {
+        "round": 1,
+        "file": "images/UbuntuQwen/reload-01-blue_00001_.png",
+        "sha256": "2174ad1419659112c091f7f63a091e56a81a35ab9ec91fec81b39c410a574c9b",
+        "visual_verdict": "pending"
+      }
+    ],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "dd662f3e4982de91bce02f2fd99832332cf2091d7b70316845ee493e2b2ad1a2",
+      "ComfyUI/custom_nodes/deferred_vae/__init__.py": "80d7f873295c706511b9c73cc20fa23061f933683681c3eb0594010af89dcaad"
+    },
+    "runner_sha256_at_startup": "06215d720c1b5acdda93aa2e552f64ca491131bc628c14f353a6b6ea72eddd38"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-deferred-trace-01",
+    "raw_summary_sha256": "d7c5726734ae3a1d3656e8cf8464db8c6b807cd09327edca5674d835f698325f",
+    "status": "execution_pass_visual_review_pending",
+    "error": null,
+    "pid": 22753,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": false,
+    "whole_graph": true,
+    "defer_vae": true,
+    "omit_unused_vae": true,
+    "host_trim": false,
+    "minimum_available_ram_mib": 2822.484375,
+    "maximum_rss_mib": 10996.87109375,
+    "phase_seconds": {
+      "round-01-direct": 115.07900985600008,
+      "round-02-direct": 111.04549106500008
+    },
+    "gpu_active_release_checks_passed": 2,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [
+      {
+        "round": 1,
+        "file": "images/UbuntuQwen/reload-01-blue_00001_.png",
+        "sha256": "8ff0e6265c6802e881f599134719f2774a0f8383836c956b90e5f875ae5b36dd",
+        "visual_verdict": "pending"
+      },
+      {
+        "round": 2,
+        "file": "images/UbuntuQwen/reload-02-green_00001_.png",
+        "sha256": "257028e9aa0e0fea5b15724908274da968053e5c33101896c7334d0deb902e27",
+        "visual_verdict": "pending"
+      }
+    ],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "dd662f3e4982de91bce02f2fd99832332cf2091d7b70316845ee493e2b2ad1a2",
+      "ComfyUI/custom_nodes/deferred_vae/__init__.py": "80d7f873295c706511b9c73cc20fa23061f933683681c3eb0594010af89dcaad"
+    },
+    "runner_sha256_at_startup": "06215d720c1b5acdda93aa2e552f64ca491131bc628c14f353a6b6ea72eddd38"
+  },
+  {
+    "run": "ubuntu-20261024b-qwen-independent-direct-01",
+    "raw_summary_sha256": "f411b47d78920b43b040b4fe3325e675a6cdf25eacb2c7f411d1aff013826428",
+    "status": "execution_pass_visual_review_pending",
+    "error": null,
+    "pid": 24347,
+    "server_exit_code": 0,
+    "server_stopped": true,
+    "clip_cpu_backing": true,
+    "encode_only": false,
+    "whole_graph": true,
+    "defer_vae": true,
+    "omit_unused_vae": true,
+    "host_trim": false,
+    "minimum_available_ram_mib": 2320.51953125,
+    "maximum_rss_mib": 10986.83984375,
+    "phase_seconds": {
+      "round-01-direct": 118.07090228700008,
+      "round-02-direct": 132.08582428
+    },
+    "gpu_active_release_checks_passed": 2,
+    "gpu_reserved_release_checks_passed": 0,
+    "images": [
+      {
+        "round": 1,
+        "file": "images/UbuntuQwen/reload-01-blue_00001_.png",
+        "sha256": "bc280fe5c1c1f1b0c13ef8cf199638050fce2da19c44ec4e8c078d2feed4db83",
+        "visual_verdict": "pending"
+      },
+      {
+        "round": 2,
+        "file": "images/UbuntuQwen/reload-02-green_00001_.png",
+        "sha256": "a333d89243543444f808351a6a8cc42dc4c9702114d2b07a3c8d7865a74c3439",
+        "visual_verdict": "pending"
+      }
+    ],
+    "source_hashes_at_startup": {
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+      "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+      "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+      "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+      "model-paths.yaml": "810f169ac3156b8907d89495fe991ea1de07537d950fc2f36d3be8056ecb7011",
+      "ComfyUI/custom_nodes/gguf_clip_cpu_backing/__init__.py": "dd662f3e4982de91bce02f2fd99832332cf2091d7b70316845ee493e2b2ad1a2",
+      "ComfyUI/custom_nodes/deferred_vae/__init__.py": "80d7f873295c706511b9c73cc20fa23061f933683681c3eb0594010af89dcaad"
+    },
+    "runner_sha256_at_startup": "06215d720c1b5acdda93aa2e552f64ca491131bc628c14f353a6b6ea72eddd38"
+  }
+]

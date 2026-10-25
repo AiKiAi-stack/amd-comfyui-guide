@@ -1,0 +1,6 @@
+{
+  "verdict": "达到本例文生图目标",
+  "review": "白色长毛猫望向雨窗和霓虹反光，室内暖光清楚，图片健康、未见明确多余文字。分阶段编码未保留同进程卸载用的 CPU backing，并关闭 pinned；该结果不证明旧普通整图或同进程重载通过。",
+  "visual_inspected": true,
+  "platform": "Linux"
+}

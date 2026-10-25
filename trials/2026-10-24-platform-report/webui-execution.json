@@ -1,0 +1,37 @@
+{
+  "prompt_id": "56e1cde1-023a-44fd-aa3f-f6a5155afd30",
+  "minimum_available_ram_mib": 3365.3203125,
+  "stopped": null,
+  "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/文生图与连续生成/Linux__qwen-linux-blue.json",
+  "execution_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "56e1cde1-023a-44fd-aa3f-f6a5155afd30",
+          "timestamp": 1792849099025
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "56e1cde1-023a-44fd-aa3f-f6a5155afd30",
+          "timestamp": 1792849099027
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "56e1cde1-023a-44fd-aa3f-f6a5155afd30",
+          "timestamp": 1792849213350
+        }
+      ]
+    ]
+  },
+  "images": [
+    "trials/2026-10-24-platform-report/platform-library-webui-blue_00001_.png"
+  ]
+}

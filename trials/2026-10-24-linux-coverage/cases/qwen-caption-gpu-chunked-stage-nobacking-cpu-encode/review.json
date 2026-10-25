@@ -1,0 +1,6 @@
+{
+  "verdict": "中止 · CPU反推延迟未验收",
+  "review": "同配套 UN GGUF 8B、CPU/BF16 自回归在请求停止时只生成12个token，后续约20秒/token，约312秒时由本轮主动中止。没有完整描述或后续图片，不记为CPU反推通过；原history的中断异常和分类前JSON保留，区别于模型数值失败和native OOM。",
+  "visual_inspected": false,
+  "platform": "Linux"
+}

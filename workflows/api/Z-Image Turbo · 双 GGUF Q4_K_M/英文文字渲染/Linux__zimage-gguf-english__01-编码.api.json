@@ -1,0 +1,56 @@
+{
+  "7": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+      "type": "lumina2"
+    }
+  },
+  "8": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "7",
+        0
+      ],
+      "text": "A straight-on product photograph of a single cafe sign. The sign has exactly one large word: \"HELLO\". Bold black sans-serif letters on a clean white rectangular sign, centered, plain blue wall behind it, no other text."
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "7",
+        0
+      ],
+      "text": "blurry ugly bad"
+    }
+  },
+  "5": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "8",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent": [
+        "5",
+        0
+      ],
+      "prefix": "linux-coverage-zimage-gguf-english",
+      "workflow_sha256": "93961e9a50c36ad72c30f9dedb4d96c37ac50a5e59759b204dfc614b118d4fa7"
+    }
+  }
+}

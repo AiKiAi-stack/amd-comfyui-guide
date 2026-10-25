@@ -1,0 +1,122 @@
+[
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "phase-results.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "clip-full-blue/7-0-reload-01-blue_00001_.png",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "clip-no-vae-blue/7-0-reload-01-blue_00001_.png",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "clip-full-green/7-0-reload-02-green_00001_.png",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "clip-no-vae-green/7-0-reload-02-green_00001_.png",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "conditioning-byte-comparison.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "environment-after-reboot.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "ssd-qwen-models.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "model-paths.before-ssd.yaml",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "model-paths.after-ssd.yaml",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "outcomes.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "service-liveness.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "qwen-ubuntu-blue.api.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "qwen-ubuntu-green.api.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "direct-blue/7-0-reload-01-blue_00001_.png",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "direct-green/7-0-reload-02-green_00001_.png",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "independent-python.json",
+    "exists": true
+  },
+  {
+    "document": "trials/2026-10-24-ubuntu-followup/README.md",
+    "target": "ssd-qwen-readback.json",
+    "exists": true
+  },
+  {
+    "document": "docs/11-ubuntu-reboot-continuation-2026-10-24.md",
+    "target": "10-ubuntu-continuation-2026-10-24.md",
+    "exists": true
+  },
+  {
+    "document": "docs/11-ubuntu-reboot-continuation-2026-10-24.md",
+    "target": "../trials/2026-10-24-ubuntu-followup/qwen-ubuntu-blue.api.json",
+    "exists": true
+  },
+  {
+    "document": "docs/11-ubuntu-reboot-continuation-2026-10-24.md",
+    "target": "../trials/2026-10-24-ubuntu-followup/qwen-ubuntu-green.api.json",
+    "exists": true
+  },
+  {
+    "document": "docs/11-ubuntu-reboot-continuation-2026-10-24.md",
+    "target": "../trials/2026-10-24-ubuntu-followup/service-liveness.json",
+    "exists": true
+  },
+  {
+    "document": "docs/11-ubuntu-reboot-continuation-2026-10-24.md",
+    "target": "../trials/2026-10-24-ubuntu-followup/outcomes.json",
+    "exists": true
+  },
+  {
+    "document": "docs/11-ubuntu-reboot-continuation-2026-10-24.md",
+    "target": "../trials/2026-10-24-ubuntu-followup/README.md",
+    "exists": true
+  }
+]

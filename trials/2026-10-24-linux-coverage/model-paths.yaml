@@ -1,0 +1,31 @@
+{
+  "keke_current": {
+    "base_path": "/media/user/MODELS/AIModels/amd_comfy/comfyui-models-20261024",
+    "is_default": true,
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae",
+    "checkpoints": "checkpoints",
+    "loras": "loras"
+  },
+  "keke_repair": {
+    "base_path": "/media/user/MODELS/AIModels/amd_comfy/repair-20261021",
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae",
+    "loras": "loras"
+  },
+  "keke_zimage": {
+    "base_path": "/media/user/MODELS/AIModels/amd_comfy/zimage-20261020",
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae",
+    "checkpoints": "checkpoints"
+  },
+  "keke_flux2": {
+    "base_path": "/media/user/MODELS/AIModels/amd_comfy/flux2-klein-20261020",
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae"
+  }
+}

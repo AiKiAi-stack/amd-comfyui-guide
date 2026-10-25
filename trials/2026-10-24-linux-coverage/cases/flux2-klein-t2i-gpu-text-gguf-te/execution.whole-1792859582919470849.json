@@ -1,0 +1,38 @@
+{
+  "case_id": "flux2-klein-t2i-gpu-text-gguf-te",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "operator_ram_guard",
+  "images": [],
+  "workflow_sha256": "71823f32849875cba498a752ff795c40b09eeefab376cf20fe2dc4cdf70b1565",
+  "pid": 20275,
+  "prompt_id": "cc2ba141-3612-4e5b-a5f3-db330d67e9be",
+  "validation_errors": {},
+  "error": "Available physical RAM below 1536MiB; operator stop, not native OOM",
+  "minimum_available_ram_mib": 1181.43359375,
+  "elapsed_seconds": 26.333,
+  "total_seconds": 31.34,
+  "server_exit": -15
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "达到本例文字渲染目标",
+  "review": "白底招牌的 HELLO 五个字母完整、顺序正确，黑色无衬线字体清楚，蓝墙背景可辨，未见多余可读文字。此图来自本例 Linux 分阶段配方。",
+  "visual_inspected": true,
+  "platform": "Linux"
+}

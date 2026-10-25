@@ -1,0 +1,32 @@
+[
+  {
+    "time": 1792806297.5595353,
+    "pid": 137136,
+    "before_rss": 3441274880,
+    "after_rss": 2456121344,
+    "rss_reduction": 985153536,
+    "malloc_trim_result": 1,
+    "available_bytes": 7830880256,
+    "registered_pinned_bytes": 0
+  },
+  {
+    "time": 1792806624.970954,
+    "pid": 137136,
+    "before_rss": 3394150400,
+    "after_rss": 3300052992,
+    "rss_reduction": 94097408,
+    "malloc_trim_result": 1,
+    "available_bytes": 7192473600,
+    "registered_pinned_bytes": 0
+  },
+  {
+    "time": 1792806641.242633,
+    "pid": 137136,
+    "before_rss": 3505946624,
+    "after_rss": 3272581120,
+    "rss_reduction": 233365504,
+    "malloc_trim_result": 1,
+    "available_bytes": 7164850176,
+    "registered_pinned_bytes": 0
+  }
+]

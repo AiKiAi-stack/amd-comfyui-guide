@@ -1,0 +1,45 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 21.047,
+  "images": [
+    {
+      "file": "7-0-turbo-un-multiref-natural_00001_.png",
+      "original_sha256": "30df74babd6a9a337e492131ef601328ed9a7b32e7f218d2a73f28cb02927c4f",
+      "public_sha256": "67690bfc77f06d4494519874f39f494e311462e94417491347579c21afb76a47",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-un-multiref-natural",
+  "feature": "turbo-un-multiref",
+  "verdict": "partial",
+  "review": "两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。",
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "acceptance_scope": "实测普通多图编辑与参考移除对照；物种生成达到，完整尾部和精确参考身份未通过",
+  "prompt_id": "9a9801f3-07b4-4d2d-aeba-967b10946de8",
+  "raw_history_sha256": "99a37b03d7ea1e986a9f8b56692177d06ff35bfc0f3d9be064d9151bd773db5a",
+  "decoding_elapsed_seconds": 21.047,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 66.062,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "3c9b32b85f119427a0c2fc1917f58f3051cc82a9583091b7771c2b5bf6c7c962",
+  "workflow_sha256": "64c2acba9f812cc7222cc8b55320717343b1da90912968687850ac5ec75735bb",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 30.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "cecb1a909b7e7540ae82bf685ae6f9a85b7616674d587dff165328f7268a5557"
+}

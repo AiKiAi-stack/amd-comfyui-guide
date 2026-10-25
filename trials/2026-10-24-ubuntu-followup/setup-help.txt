@@ -1,0 +1,19 @@
+usage: setup_ubuntu.py [-h] [--runtime RUNTIME] [--source SOURCE]
+                       [--models MODELS] [--venv VENV] [--gguf-cpu-detach]
+                       [--gguf-clip-cpu-backing] [--skip-install]
+
+Build a separate Linux runtime from the recorded source revisions and local
+models.
+
+options:
+  -h, --help            show this help message and exit
+  --runtime RUNTIME
+  --source SOURCE
+  --models MODELS
+  --venv VENV           Optional SSD location; runtime/.venv links to it
+  --gguf-cpu-detach     Apply the recorded CUDA-to-CPU mmap detach patch to
+                        this Linux copy
+  --gguf-clip-cpu-backing
+                        Install the experimental CLIP storage-reuse node;
+                        workflows must opt in
+  --skip-install

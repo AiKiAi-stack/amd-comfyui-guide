@@ -1,0 +1,93 @@
+{
+  "case_id": "qwen-style-edit-stage-nobacking-cpu-encode--sample",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "case02_7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "e5abca66e0fffb6a412c59fda7040c0825710ce21cf18f612c73fe03d91b7c7c",
+      "original_sha256": "1ac5ca1729754881d4fe62e840b241ed1010b26135adbb1058962d4b00ebbccb",
+      "rgb_sha256": "5f3c12194a778eccca2b3253cabbd366c3235454ff2a620a89b84635adcafe49"
+    }
+  ],
+  "workflow_sha256": "57635d5270f1a18ec2017973f8c928e9d59baf70f3a3896acd3ecc3288edad01",
+  "pid": 15314,
+  "prompt_id": "926a0766-671e-49af-adbc-38c3a1c79f60",
+  "validation_errors": {},
+  "outputs": {
+    "case02_7": {
+      "images": [
+        {
+          "filename": "qwen-style-edit-stage-nobacking_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "926a0766-671e-49af-adbc-38c3a1c79f60",
+        "timestamp": 1792912134900
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "926a0766-671e-49af-adbc-38c3a1c79f60",
+        "timestamp": 1792912134901
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "926a0766-671e-49af-adbc-38c3a1c79f60",
+        "timestamp": 1792912258101
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7409.4140625,
+  "elapsed_seconds": 124.308,
+  "total_seconds": 134.445,
+  "server_exit": -15
+}

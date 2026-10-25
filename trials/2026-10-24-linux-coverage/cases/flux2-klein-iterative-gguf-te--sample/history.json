@@ -1,0 +1,207 @@
+{
+  "4469f256-6032-46b2-abe9-4dd58616d8f0": {
+    "prompt": [
+      0,
+      "4469f256-6032-46b2-abe9-4dd58616d8f0",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_5a4b68288ffc_flux2-klein-single-color-pinned.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "3": {
+          "class_type": "GetImageSize",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ]
+          }
+        },
+        "4": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux-2-klein-4b-fp8.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "6": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "12": {
+          "class_type": "CFGGuider",
+          "inputs": {
+            "model": [
+              "4",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "cfg": 1.0
+          }
+        },
+        "13": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "14": {
+          "class_type": "Flux2Scheduler",
+          "inputs": {
+            "steps": 4,
+            "width": [
+              "3",
+              0
+            ],
+            "height": [
+              "3",
+              1
+            ]
+          }
+        },
+        "15": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 665024001
+          }
+        },
+        "17": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "15",
+              0
+            ],
+            "guider": [
+              "12",
+              0
+            ],
+            "sampler": [
+              "13",
+              0
+            ],
+            "sigmas": [
+              "14",
+              0
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ]
+          }
+        },
+        "18": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "17",
+              0
+            ],
+            "vae": [
+              "6",
+              0
+            ]
+          }
+        },
+        "19": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "18",
+              0
+            ],
+            "filename_prefix": "linux-coverage/flux2-klein-iterative-gguf-te"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/linux-coverage-flux2-klein-iterative-gguf-te-4ffd71440061.safetensors",
+            "expected_sha256": "1e0aed6006233354b2d329637b9dab70f118931bb28a9c755ea569b8693497e5"
+          }
+        }
+      },
+      {
+        "create_time": 1792860689281
+      },
+      [
+        "19"
+      ]
+    ],
+    "outputs": {
+      "19": {
+        "images": [
+          {
+            "filename": "flux2-klein-iterative-gguf-te_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 368,
+              "height": 688
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "4469f256-6032-46b2-abe9-4dd58616d8f0",
+            "timestamp": 1792860689281
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "4469f256-6032-46b2-abe9-4dd58616d8f0",
+            "timestamp": 1792860689283
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "4469f256-6032-46b2-abe9-4dd58616d8f0",
+            "timestamp": 1792860717267
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "19": {
+        "node_id": "19",
+        "display_node": "19",
+        "parent_node": null,
+        "real_node_id": "19"
+      }
+    }
+  }
+}

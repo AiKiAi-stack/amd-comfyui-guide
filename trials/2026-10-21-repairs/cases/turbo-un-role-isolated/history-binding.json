@@ -1,0 +1,20 @@
+{
+  "prompt_id": "df61ea08-28fd-4647-a934-bec93157ec43",
+  "status": "success",
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-un-role-isolated_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

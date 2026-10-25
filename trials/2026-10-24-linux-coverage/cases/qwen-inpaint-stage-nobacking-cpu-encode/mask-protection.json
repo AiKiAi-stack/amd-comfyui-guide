@@ -1,0 +1,20 @@
+{
+  "scope": "Saved final ImageCompositeMasked output only; not raw diffusion decode. Mask zero is measured on the saved 8-bit mask preview.",
+  "zero_mask_pixels": 193144,
+  "changed_zero_mask_pixels": 0,
+  "maximum_zero_mask_difference": 0,
+  "files": {
+    "source": {
+      "path": "/path/to/barely-comfy/trials/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_59-0.png",
+      "sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456"
+    },
+    "mask": {
+      "path": "/path/to/barely-comfy/trials/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_58-0.png",
+      "sha256": "02a8fc871f214020338f17f0739590406419e609ae63be509480c016f2a4b1ef"
+    },
+    "output": {
+      "path": "/path/to/barely-comfy/trials/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_7-0.png",
+      "sha256": "832b486bffa2268eafe5a27d547500932746e158807b2c1009df4df6e9052bc8"
+    }
+  }
+}

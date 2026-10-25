@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-24",
+  "raw_run": "runs/ubuntu-20261024-qwen-cpu-detach-01",
+  "status": "stopped_by_physical_ram_guard",
+  "raw_summary_running_is_stale": true,
+  "text_encoder_load_completed": true,
+  "diffusion_load_started": true,
+  "images": 0,
+  "guard_mib": 1536,
+  "guard_triggered": true,
+  "minimum_sampled_available_bytes": 1165049856,
+  "no_native_exception_or_oom_marker_in_retained_log": true,
+  "precision": "default BF16 weights / FP32 manual cast",
+  "owned_processes_stopped": true,
+  "interpretation": "CPU detach moved loading past the previous stall; this is not full generation or reload acceptance."
+}

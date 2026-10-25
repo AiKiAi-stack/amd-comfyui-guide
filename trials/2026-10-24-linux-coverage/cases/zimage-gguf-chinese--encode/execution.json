@@ -1,0 +1,71 @@
+{
+  "case_id": "zimage-gguf-chinese--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "336c123663f552c751def9f84590ee6158a4812018665604b6b3283b459ee0ad",
+  "pid": 40695,
+  "prompt_id": "3ff3c85d-9da3-4060-87b9-a4595eebc2b3",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-zimage-gguf-chinese-0509712bc3b5.safetensors"
+      ],
+      "archive_sha256": [
+        "1f0953657543fbec4f47c9172187f9279dbca14034e4602e030569a3885323e8"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "3ff3c85d-9da3-4060-87b9-a4595eebc2b3",
+        "timestamp": 1792861593166
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "3ff3c85d-9da3-4060-87b9-a4595eebc2b3",
+        "timestamp": 1792861593167
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "3ff3c85d-9da3-4060-87b9-a4595eebc2b3",
+        "timestamp": 1792861608887
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7378.41796875,
+  "elapsed_seconds": 16.226,
+  "total_seconds": 30.261,
+  "server_exit": -15
+}

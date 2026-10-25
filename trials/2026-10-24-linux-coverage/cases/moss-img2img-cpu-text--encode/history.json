@@ -1,0 +1,147 @@
+{
+  "a90607a1-2835-47d4-b941-32cd55cec967": {
+    "prompt": [
+      0,
+      "a90607a1-2835-47d4-b941-32cd55cec967",
+      {
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+            "type": "moss_image",
+            "device": "cpu"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae_small.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "A watercolor illustration of the same astronaut walking through a lush jungle, soft watercolor washes, visible paper texture, green foliage and warm sunlight. Preserve the centered full-body composition.",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "blurry, distorted, watermark",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_06f3c1a0c570_astronaut.png"
+          }
+        },
+        "31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "32": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "31",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "latent": [
+              "32",
+              0
+            ],
+            "prefix": "linux-coverage-moss-img2img-cpu-text",
+            "workflow_sha256": "d0568f250a0e887c2ee0031ce1f03fc789d8a8ebaaba3568754dccb66228b3b9"
+          }
+        }
+      },
+      {
+        "create_time": 1792891454345
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-moss-img2img-cpu-text-e77b3234dbb9.safetensors"
+        ],
+        "archive_sha256": [
+          "b81a8e0d438f364629978cd0517659484d9222cf05d461fdcd9ba9fc7d1cca34"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "a90607a1-2835-47d4-b941-32cd55cec967",
+            "timestamp": 1792891454345
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "a90607a1-2835-47d4-b941-32cd55cec967",
+            "timestamp": 1792891454473
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "a90607a1-2835-47d4-b941-32cd55cec967",
+            "timestamp": 1792891602824
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

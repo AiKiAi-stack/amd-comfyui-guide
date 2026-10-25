@@ -1,0 +1,97 @@
+{
+  "case_id": "flux2-klein-t2i-1024-gguf-te-tiled",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../flux2-klein-t2i-1024-gguf-te-tiled--sample/13-0.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "f14f9d5cc9603ea95569cb8f2dae00e6022eb6755dc7b107daa5469b652aea97",
+      "original_sha256": "d608fe8b960b094611a8136381a9e9aecaf8995fa337aca75cd8d140111342bd",
+      "rgb_sha256": "9f240de9e5cd3b80327aaf840bdb194086c296f1d05799b4003352de8c7d3893"
+    }
+  ],
+  "workflow_sha256": "e3b122fc0cfe903ebaf659cd5827759ad658788fac54bc5e112ca6ffa0a17b9d",
+  "pid": 146180,
+  "prompt_id": "b4fafa33-45d9-4b23-b3be-3a4027561798",
+  "validation_errors": {},
+  "outputs": {
+    "13": {
+      "images": [
+        {
+          "filename": "flux2-klein-t2i-1024-gguf-te-tiled_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 1024,
+            "height": 1024
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "b4fafa33-45d9-4b23-b3be-3a4027561798",
+        "timestamp": 1792893349528
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "b4fafa33-45d9-4b23-b3be-3a4027561798",
+        "timestamp": 1792893349530
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "b4fafa33-45d9-4b23-b3be-3a4027561798",
+        "timestamp": 1792893554575
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 4021.703125,
+  "elapsed_seconds": 224.72400000000002,
+  "total_seconds": 242.93699999999998,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 18.074,
+  "sampling_seconds": 206.65,
+  "conditioning_archive": "repair_conditioning/linux-coverage-flux2-klein-t2i-1024-gguf-te-tiled-89344bf5ffbb.safetensors",
+  "conditioning_sha256": "b8270acf4a0f997ecdae239522ed0aaed2bdad045dcead4b01764d1eed3d5379",
+  "encoding_pid": 145668,
+  "sampling_pid": 146180,
+  "encoding_exited_before_sampling": true
+}

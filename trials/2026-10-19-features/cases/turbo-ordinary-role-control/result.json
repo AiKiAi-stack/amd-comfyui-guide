@@ -1,0 +1,43 @@
+{
+  "id": "turbo-ordinary-role-control",
+  "model": "turbo-un",
+  "feature": "角色替换（全身含服装） · 修复重试",
+  "recipe": "edit",
+  "claim_level": "作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。",
+  "exploratory": true,
+  "refs": [
+    "astronaut",
+    "kroma-portrait-a"
+  ],
+  "inputs": [
+    "astronaut",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+  "expected": "A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.",
+  "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (astronaut target); refs[1] becomes images.image_2 (portrait identity).",
+  "runtime_profile": "Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-role-replacement-test"
+  ],
+  "retry_reason": "同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。",
+  "status": "success",
+  "prompt_id": "427c6dfc-371b-48a7-8735-ccec66fa6629",
+  "elapsed_seconds": 105.219,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-ordinary-role-control_00001_.png",
+      "sha256": "eeb2ee93cd16fd2589d40a15f4da2405fc72af47a35aa2fe74ff5e57e887772b",
+      "public_sha256": "f97da25c0a99ab409e8f366bf95829dbc13f11d2c80369363e797e3ad92e53d6"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 18.062,
+  "encoding_elapsed_seconds": 12.031,
+  "sampling_elapsed_seconds": 66.11,
+  "timing_scope": "Sum of reference preparation, encoding, sampling and decode submission-to-history times; excludes service cold starts",
+  "mask_attachments": false,
+  "acceptance_scope": "普通与UN编码器的同条件配对；单例不作优劣统计",
+  "reference_elapsed_seconds": 9.016
+}

@@ -1,0 +1,8 @@
+{
+  "interval_seconds_approx": 2,
+  "min_host_available_bytes": 2312974336,
+  "max_process_tree_rss_bytes": 9352134656,
+  "guard_threshold_mib": 768,
+  "guard_triggered": false,
+  "interpretation": "RSS includes mapped file pages; not equivalent to anonymous memory or Windows commit"
+}

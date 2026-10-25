@@ -1,0 +1,41 @@
+{
+  "id": "turbo-un-multiref-natural",
+  "model": "turbo-un",
+  "feature": "多图参考／主体合成 · 修复重试",
+  "recipe": "edit",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+  "refs": [
+    "cat",
+    "fox"
+  ],
+  "inputs": [
+    "cat",
+    "fox"
+  ],
+  "prompt": "Replace only the orange cat in image 1 with a red fox matching image 2: long canine muzzle, black nose, black legs, white cheeks, orange fur and a bushy white-tipped tail. The seated fox turns its head right in profile. Its entire body and tail fit in the image. Preserve the rainy night cafe scene, lights and framing of image 1. No cat, no moss or forest.",
+  "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+  "runtime_profile": "Existing UN GGUF encoder;8 steps; same seed/prompt in reference-removal pair",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-multiref"
+  ],
+  "retry_reason": "两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。",
+  "status": "success",
+  "prompt_id": "9a9801f3-07b4-4d2d-aeba-967b10946de8",
+  "elapsed_seconds": 126.171,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-un-multiref-natural_00001_.png",
+      "sha256": "30df74babd6a9a337e492131ef601328ed9a7b32e7f218d2a73f28cb02927c4f",
+      "public_sha256": "67690bfc77f06d4494519874f39f494e311462e94417491347579c21afb76a47"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 21.047,
+  "encoding_elapsed_seconds": 30.047,
+  "sampling_elapsed_seconds": 66.062,
+  "timing_scope": "Sum of reference preparation, encoding, sampling and decode submission-to-history times; excludes service cold starts",
+  "mask_attachments": false,
+  "acceptance_scope": "实测普通多图编辑与参考移除对照；物种生成达到，完整尾部和精确参考身份未通过",
+  "reference_elapsed_seconds": 9.015
+}

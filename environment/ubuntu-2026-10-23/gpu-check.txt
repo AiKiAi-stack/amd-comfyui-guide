@@ -1,0 +1,4 @@
+[1;91mE-001h rocSHMEM[0m Could not open libnuma. Returning	[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48[0m
+torch: 2.12.0+rocm7.14.0 HIP: 7.14.60850
+GPU: AMD Radeon RX 6650 XT
+GPU CHECK PASSED

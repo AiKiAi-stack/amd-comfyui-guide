@@ -1,0 +1,16 @@
+{
+  "date_of_supplement": "2026-10-24",
+  "raw_run": "runs/ubuntu-20261023-qwen-no-pin-01",
+  "status": "failed_no_completed_generation",
+  "raw_summary_running_is_stale": true,
+  "images": 0,
+  "last_model_event": "Requested to load QwenImage21TEModel_",
+  "runner_error": {
+    "error": "timeout",
+    "prompt_id": "0725c13e-2e7d-4898-a36f-a64d57490878"
+  },
+  "controller_cleanup_error": "subprocess.TimeoutExpired while waiting 20 seconds for service exit",
+  "current_state": "Host rebooted; historical PIDs are not live service evidence",
+  "no_native_exception_or_oom_marker_in_retained_log": true,
+  "interpretation": "Disabling pinning did not complete Qwen loading; no inference that it fixes Linux or Windows unloading."
+}

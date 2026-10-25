@@ -1,0 +1,38 @@
+{
+  "case_id": "flux2-klein-replace-zh-gguf-te",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "operator_ram_guard",
+  "images": [],
+  "workflow_sha256": "adf02d34be3d9fe6c61fa9361f3d0b424f6e076bc31462c12cf4693e64f7fae8",
+  "pid": 38065,
+  "prompt_id": "8a0092fa-8fe1-4f2b-a868-2c3e380ac5d6",
+  "validation_errors": {},
+  "error": "Available physical RAM below 1536MiB; operator stop, not native OOM",
+  "minimum_available_ram_mib": 1116.890625,
+  "elapsed_seconds": 32.538,
+  "total_seconds": 53.636,
+  "server_exit": -15
+}

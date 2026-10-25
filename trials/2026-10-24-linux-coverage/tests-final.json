@@ -1,0 +1,36 @@
+{
+  "total": 44,
+  "passed": true,
+  "suites": [
+    {
+      "suite": "platform",
+      "count": 15,
+      "log": "runs/linux-coverage-20261024/tests-platform-post-guidance.log"
+    },
+    {
+      "suite": "archive",
+      "count": 8,
+      "log": "runs/linux-coverage-20261024/tests-archive-final.log"
+    },
+    {
+      "suite": "conditioned",
+      "count": 11,
+      "log": "runs/linux-coverage-20261024/tests-final-test_conditioned_graph.py.log"
+    },
+    {
+      "suite": "workflow",
+      "count": 6,
+      "log": "runs/linux-coverage-20261024/tests-final-test_workflow_checks.py.log"
+    },
+    {
+      "suite": "components",
+      "count": 2,
+      "log": "runs/linux-coverage-20261024/tests-final-test_checkpoint_components.py.log"
+    },
+    {
+      "suite": "model_paths",
+      "count": 2,
+      "log": "runs/linux-coverage-20261024/tests-final-test_setup_model_paths.py.log"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+test_arbitrary_migrated_directory_resolves_under_that_directory (test_setup_model_paths.ModelPathTests) ... ok
+test_original_models_directory_keeps_same_effective_paths (test_setup_model_paths.ModelPathTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

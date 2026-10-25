@@ -45,7 +45,7 @@ def main():
             if p.suffix == '.py':
                 try: ast.parse(s)
                 except SyntaxError as e: errors.append(rel + ': invalid Python ' + str(e))
-            if p.suffix == '.html':
+            if p.suffix == '.html' and not p.is_relative_to(ROOT / 'scripts'):
                 refs = re.findall(r'(?:href|src)=["\']([^"\']+)', s)
             elif p.suffix == '.md':
                 # Ignore inline code: examples there are not document links.

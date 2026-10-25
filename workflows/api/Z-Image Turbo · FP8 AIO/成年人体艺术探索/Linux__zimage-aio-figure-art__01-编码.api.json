@@ -1,0 +1,54 @@
+{
+  "34": {
+    "inputs": {
+      "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "20": {
+    "inputs": {
+      "clip": [
+        "34",
+        1
+      ],
+      "text": "A tasteful charcoal life drawing of a clearly adult woman aged 35, seated in a relaxed studio pose, nonsexual full-body nude figure study, classical art school anatomy study, no sexual activity, textured paper, no text."
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "40": {
+    "inputs": {
+      "conditioning": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut"
+  },
+  "6": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage"
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "20",
+        0
+      ],
+      "negative": [
+        "40",
+        0
+      ],
+      "latent": [
+        "6",
+        0
+      ],
+      "prefix": "linux-coverage-zimage-aio-figure-art",
+      "workflow_sha256": "82b3ea0537eda517418ee5ac84f238f36d05db29d9cced4e33f1c054d61ef786"
+    }
+  }
+}

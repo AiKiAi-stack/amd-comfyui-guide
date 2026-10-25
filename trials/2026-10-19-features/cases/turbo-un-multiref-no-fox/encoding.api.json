@@ -1,0 +1,41 @@
+{
+  "2": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+      "type": "qwen_image"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeRepairQwenReferences",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Replace only the orange cat in image 1 with a red fox matching image 2: long canine muzzle, black nose, black legs, white cheeks, orange fur and a bushy white-tipped tail. The seated fox turns its head right in profile. Its entire body and tail fit in the image. Preserve the rainy night cafe scene, lights and framing of image 1. No cat, no moss or forest.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "file": "repair_conditioning/turbo-un-multiref-no-fox-refs-22c0932682c2.safetensors",
+      "expected_sha256": "980a297bdc5bc42d6883e93ef0ee7e3abb942fb6984147d5ef492505ad2002ff"
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent": [
+        "4",
+        2
+      ],
+      "prefix": "turbo-un-multiref-no-fox",
+      "workflow_sha256": "8f5e21f790c054e51e671617ed725c8cf40f49688c59d28912f7ee6b347e920d"
+    }
+  }
+}

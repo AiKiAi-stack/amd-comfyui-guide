@@ -1,6 +1,5 @@
 {
   "checked_at_utc": "2026-10-21T02:04:46.655256+00:00",
-  "scope": "Recorded features only; excludes H3, does not convert every generalization limit into a new task",
   "source_sha256": {
     "cases.json": "33fd42600eaa89ee0ba0896396d0f488e92a5015e7cf9cfad55064fa7f194f2c",
     "blocked.json": "363bb9d63a408844794810047f9b3b22a128d78468d716cf9e457e3f335be999",
@@ -644,20 +643,6 @@
       "result_file": "trials/2026-10-19-features/cases/turbo-un-pose-reference-test/result.json"
     },
     {
-      "id": "ref2va-5frame-diagnostic",
-      "model": "MiniMax H3 Ref2VA Q4_0",
-      "feature": "5帧加载、采样、解码诊断",
-      "category": "passed_scoped_or_material",
-      "excluded_h3": true,
-      "execution": "success",
-      "verdict": "加载、采样、解码链路通过；不是视频功能验收",
-      "detail": "最新一次使用GPU FP16 VAE并预留2GB显存，实际保存5张384×256 PNG与无声WebP。首尾帧可见青色机器人、洋红围巾、方形黑眼和浅色背景，画面相似；约0.2秒不能评价动作流畅、正常时长质量或BFS角色替换。此前CPU VAE超时、INT8 VAE HIPBLAS错误及未预留显存的FP16采样OOM均保留。433.08秒包含服务启动；系统已用内存采样峰值约14.19GiB，API显存采样峰值约4.84GiB，不是所有瞬时分配的精确峰值。",
-      "reason": null,
-      "successful_retry": null,
-      "in_html": true,
-      "result_file": "trials/2026-10-19-features/cases/ref2va-5frame-diagnostic/result.json"
-    },
-    {
       "id": "flux2-klein-t2i",
       "model": "FLUX.2 Klein 4B distilled FP8",
       "feature": "文生图／短文字",
@@ -992,76 +977,6 @@
       "successful_retry": null,
       "in_html": true,
       "result_file": "trials/2026-10-19-features/cases/qwen-caption-cpu/result.json"
-    },
-    {
-      "id": "minimax-h3-bfs-role-replacement",
-      "model": "MiniMax H3 + BFS 角色替换工作流",
-      "feature": "角色替换",
-      "category": "blocked_no_output",
-      "excluded_h3": true,
-      "execution": "missing",
-      "verdict": "本功能未验证；加载诊断已通过",
-      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "successful_retry": null,
-      "in_html": true,
-      "result_file": null
-    },
-    {
-      "id": "minimax-h3-bfs-long-audio-degradation",
-      "model": "MiniMax H3 + BFS 角色替换工作流",
-      "feature": "长音频驱动／长视频后段劣化改善",
-      "category": "blocked_no_output",
-      "excluded_h3": true,
-      "execution": "missing",
-      "verdict": "本功能未验证；加载诊断已通过",
-      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "successful_retry": null,
-      "in_html": true,
-      "result_file": null
-    },
-    {
-      "id": "minimax-h3-bfs-one-click-head-swap",
-      "model": "MiniMax H3 + BFS 角色替换工作流",
-      "feature": "一键换头",
-      "category": "blocked_no_output",
-      "excluded_h3": true,
-      "execution": "missing",
-      "verdict": "本功能未验证；加载诊断已通过",
-      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "successful_retry": null,
-      "in_html": true,
-      "result_file": null
-    },
-    {
-      "id": "minimax-h3-video-continuation",
-      "model": "MiniMax H3 原生视频生成／续写工作流",
-      "feature": "视频续写",
-      "category": "blocked_no_output",
-      "excluded_h3": true,
-      "execution": "missing",
-      "verdict": "本功能未验证；加载诊断已通过",
-      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "successful_retry": null,
-      "in_html": true,
-      "result_file": null
-    },
-    {
-      "id": "minimax-h3-one-click-target-replacement",
-      "model": "MiniMax H3 视频编辑工作流",
-      "feature": "一键目标替换",
-      "category": "blocked_no_output",
-      "excluded_h3": true,
-      "execution": "missing",
-      "verdict": "本功能未验证；加载诊断已通过",
-      "detail": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "reason": "独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。",
-      "successful_retry": null,
-      "in_html": true,
-      "result_file": null
     },
     {
       "id": "zimage-gguf-photo",

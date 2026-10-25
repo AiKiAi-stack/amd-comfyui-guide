@@ -1,0 +1,826 @@
+{
+  "id": "56fce845-d40a-47f0-a54c-86e964d1ee62",
+  "revision": 0,
+  "last_node_id": 1,
+  "last_link_id": 12,
+  "nodes": [
+    {
+      "id": "case01_1",
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        110,
+        140
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "qwen-image-2.1-Q4_K_M.gguf"
+      ],
+      "widgets_values_named": {
+        "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+      }
+    },
+    {
+      "id": "case01_2",
+      "type": "CLIPLoaderGGUF",
+      "pos": [
+        110,
+        338
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+        "qwen_image"
+      ],
+      "widgets_values_named": {
+        "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+        "type": "qwen_image"
+      }
+    },
+    {
+      "id": "case01_3",
+      "type": "VAELoader",
+      "pos": [
+        110,
+        560
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae名称",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            2,
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "qwen_image_2.1_vae_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    {
+      "id": "case02_4",
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+        870,
+        140
+      ],
+      "size": [
+        420,
+        310
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1
+        },
+        {
+          "localized_name": "image_1",
+          "name": "images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "localized_name": "image_2",
+          "name": "images.image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 2
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "negative_prompt",
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "resolution",
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ]
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ]
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+        "Transform this photograph into a delicate watercolor painting. Keep the orange cat, its pose, the cafe entrance, the rainy street and the original framing. Use visible textured paper and soft watercolor washes. No text.",
+        "blurry, distorted, watermark",
+        512
+      ],
+      "widgets_values_named": {
+        "prompt": "Transform this photograph into a delicate watercolor painting. Keep the orange cat, its pose, the cafe entrance, the rainy street and the original framing. Use visible textured paper and soft watercolor washes. No text.",
+        "negative_prompt": "blurry, distorted, watermark",
+        "resolution": 512
+      }
+    },
+    {
+      "id": "case02_5",
+      "type": "KSampler",
+      "pos": [
+        1400,
+        140
+      ],
+      "size": [
+        270,
+        262
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 4
+        },
+        {
+          "localized_name": "正面条件",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 5
+        },
+        {
+          "localized_name": "负面条件",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "localized_name": "Latent图像",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "localized_name": "种子",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "步数",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "采样器名称",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "调度器",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "降噪",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        66503001,
+        "fixed",
+        15,
+        1,
+        "euler",
+        "simple",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 66503001,
+        "control_after_generate": "fixed",
+        "steps": 15,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    {
+      "id": "case02_6",
+      "type": "VAEDecode",
+      "pos": [
+        1780,
+        140
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "Latent",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 8
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": "case02_7",
+      "type": "SaveImage",
+      "pos": [
+        2030,
+        140
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图片",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "localized_name": "文件名前缀",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "linux-coverage/qwen-style-edit-stage-nobacking"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "linux-coverage/qwen-style-edit-stage-nobacking"
+      }
+    },
+    {
+      "id": "case02_30",
+      "type": "LoadImage",
+      "pos": [
+        110,
+        758
+      ],
+      "size": [
+        270,
+        314
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "选择文件上传",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ]
+        },
+        {
+          "localized_name": "遮罩",
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ModelLibrary_42d5d9635f9c_cat.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "ModelLibrary_42d5d9635f9c_cat.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": "case02_31",
+      "type": "ImageScale",
+      "pos": [
+        490,
+        362
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 11
+        },
+        {
+          "localized_name": "缩放算法",
+          "name": "upscale_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscale_method"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "宽度",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "高度",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "裁剪",
+          "name": "crop",
+          "type": "COMBO",
+          "widget": {
+            "name": "crop"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "lanczos",
+        512,
+        512,
+        "disabled"
+      ],
+      "widgets_values_named": {
+        "upscale_method": "lanczos",
+        "width": 512,
+        "height": 512,
+        "crop": "disabled"
+      }
+    },
+    {
+      "id": "case02_81",
+      "type": "QwenImage21Cache",
+      "pos": [
+        490,
+        140
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 12
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dtype",
+          "name": "dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenImage21Cache"
+      },
+      "widgets_values": [
+        "off",
+        "default"
+      ],
+      "widgets_values_named": {
+        "device": "off",
+        "dtype": "default"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Note",
+      "pos": [
+        100,
+        -360
+      ],
+      "size": [
+        1600,
+        360
+      ],
+      "flags": {},
+      "order": -1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Qwen-Image 2.1 · Base Q4_K_M / 图生图与风格转换\n来源：Linux 实际尝试配方，执行/视觉状态见本例结论\n本例结论：达到本例水彩风格转换目标\n注意：该条图片来自分阶段执行，本整图只作配方展示，直接整图尚未验收。\n配置：Linux 分阶段/分进程，编码归档后结束进程，再采样；整图未验收；KEKE 只读权重；1536MiB 物理 RAM 保护；--reserve-vram 1.0 --use-split-cross-attention --force-fp16 --force-upcast-attention --disable-pinned-memory --bf16-text-enc；保存前缀改到本轮独立目录；原 Windows 图与评价不改；Linux 编码器采用 UN GGUF Q4_K，区别于原 Windows INT8/普通编码器；扩散权重不变；实例级 GGUF CLIP CPU backing v4，FP16/upcast；不据此宣称原 Windows 配方已在 Linux 执行；独立编码阶段移除为同进程卸载设计的 CLIP CPU backing，并关闭 pinned，减少首轮加载峰值；与原普通整图分开，不称整图重载修复。；Linux 规避配置采用 CPU/BF16 编码、独立进程 GPU 采样；原 GPU/FP16 与 BF16 的失败记录保留，不宣称根因已修复；非有限数检查仍严格启用\n完整启动命令：BARELY_COMFY_CHUNKED_CPU_LOGITS=1 COMFY_GFX1032_INT8_FALLBACK=1 BARELY_COMFY_CHUNKED_GPU_LOGITS=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=4 bash scripts/start_ubuntu.sh --fast-disk --reserve-vram 1.0 --use-split-cross-attention --force-fp16 --force-upcast-attention --disable-pinned-memory --bf16-text-enc\n输入：ModelLibrary_42d5d9635f9c_cat.png\nUN GGUF 编码器需把 mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf 放在编码器同目录，由加载器自动配对。\n操作：先核对模型与输入，修改提示词，单次运行；seed 控制已设为 fixed。\n注意：历史结果来自分阶段/分进程执行；本整图只是配方整理，未验证直接连续运行。"
+      ],
+      "color": "#25394d",
+      "bgcolor": "#344b60",
+      "title": "使用说明 · 平台 / 配方 / 输入"
+    }
+  ],
+  "links": [
+    [
+      1,
+      "case01_2",
+      0,
+      "case02_4",
+      0,
+      "CLIP"
+    ],
+    [
+      3,
+      "case02_31",
+      0,
+      "case02_4",
+      1,
+      "IMAGE"
+    ],
+    [
+      2,
+      "case01_3",
+      0,
+      "case02_4",
+      3,
+      "VAE"
+    ],
+    [
+      4,
+      "case02_81",
+      0,
+      "case02_5",
+      0,
+      "MODEL"
+    ],
+    [
+      5,
+      "case02_4",
+      0,
+      "case02_5",
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      "case02_4",
+      1,
+      "case02_5",
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      "case02_4",
+      2,
+      "case02_5",
+      3,
+      "LATENT"
+    ],
+    [
+      8,
+      "case02_5",
+      0,
+      "case02_6",
+      0,
+      "LATENT"
+    ],
+    [
+      9,
+      "case01_3",
+      0,
+      "case02_6",
+      1,
+      "VAE"
+    ],
+    [
+      10,
+      "case02_6",
+      0,
+      "case02_7",
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      "case02_30",
+      0,
+      "case02_31",
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      "case01_1",
+      0,
+      "case02_81",
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.559322033898305,
+      "offset": [
+        43.03030303030303,
+        503.030303030303
+      ]
+    },
+    "model_feature_library": {
+      "title": "Qwen-Image 2.1 · Base Q4_K_M / 图生图与风格转换",
+      "note": "UI format generated by ComfyUI itself; round-trip checked without model execution"
+    }
+  },
+  "version": 0.4
+}

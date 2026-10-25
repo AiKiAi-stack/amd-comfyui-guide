@@ -19,6 +19,23 @@ spec.loader.exec_module(archive)
 
 
 class ArchiveTests(unittest.TestCase):
+    def test_caption_round_trip_requires_integrity_and_preserves_exact_text(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / "runs") as directory:
+            folder_paths.get_input_directory = lambda: directory
+            text = 'A ginger cat at night. 中文与换行\nremain exact.'
+            result = archive.SaveRepairText().save(text, "caption", "graph-sha")
+            relative = result["result"][0];digest = result["ui"]["archive_sha256"][0]
+            self.assertEqual(archive.LoadRepairText().load(relative, digest), (text,))
+            with self.assertRaisesRegex(ValueError, "verified text"):
+                archive.LoadRepairText().load(relative)
+            with self.assertRaisesRegex(ValueError, "checksum"):
+                archive.LoadRepairText().load(relative, "wrong")
+
+    def test_nonfinite_error_locates_conditioning_field(self):
+        value = {"positive": [[torch.tensor([float("nan"), float("inf")]), {}]]}
+        with self.assertRaisesRegex(ValueError, r"path=root\.positive\[0\]\[0\].*nan=1, inf=1"):
+            archive.pack(value, {})
+
     def test_nonfinite_latent_fails_before_writing_black_image_source(self):
         with tempfile.TemporaryDirectory(dir=ROOT / "runs") as directory:
             folder_paths.get_input_directory = lambda: directory

@@ -1,0 +1,131 @@
+{
+  "case_id": "turbo-un-multiref-bf16-cpu-encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../turbo-un-multiref-bf16-cpu-encode--sample/7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "0e83df5c3ef215d8302278902798d259b33e29acfd1faa23883b736cf8dbbc3a",
+      "original_sha256": "758c158d2b6567683fceb26545d12b37afbe56ff3bf1fd591574b095b61c9c09",
+      "rgb_sha256": "991986b3307d9da64bdefa350c06136be74cd673bef02e138602ceb49496cb88"
+    }
+  ],
+  "workflow_sha256": "fd397f36a6a711942cf49cfdc04d890d709426cfac08d7492a805f2b3d40681e",
+  "pid": 11862,
+  "prompt_id": "02c60d67-bc83-4b0b-85cf-80293500f54c",
+  "validation_errors": {},
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-un-multiref-stage-nobacking-bf16-te_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "02c60d67-bc83-4b0b-85cf-80293500f54c",
+        "timestamp": 1792910373680
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "02c60d67-bc83-4b0b-85cf-80293500f54c",
+        "timestamp": 1792910373682
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "02c60d67-bc83-4b0b-85cf-80293500f54c",
+        "timestamp": 1792910473051
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6986.703125,
+  "elapsed_seconds": 258.913,
+  "total_seconds": 277.171,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 158.596,
+  "encoding_command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc",
+    "--cpu"
+  ],
+  "encoding_environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "sampling_seconds": 100.317,
+  "conditioning_archive": "repair_conditioning/linux-coverage-turbo-un-multiref-bf16-cpu-encode-a91464f5e7d3.safetensors",
+  "conditioning_sha256": "7d457256e93b7743c94be251aed46a2881a6eeda1d6bf57ca2becfdb8cb855a5",
+  "encoding_pid": 11552,
+  "sampling_pid": 11862,
+  "encoding_exited_before_sampling": true
+}

@@ -1,0 +1,6 @@
+{
+  "status": "operator_bounded_observation",
+  "reason": "Core disable-mmap and disable-pinned-memory flags did not cover GGUFReader mmap storage. Stack identifies GGMLTensor.to inside ModelPatcher.load, not text encoder unload. No output during bounded observation.",
+  "time": 1792858405.7474847,
+  "raw_log": "runs/linux-coverage-20261024/kroma-opd-q2-t2i-fox-512/attempt-1792858232825545791/server.log"
+}

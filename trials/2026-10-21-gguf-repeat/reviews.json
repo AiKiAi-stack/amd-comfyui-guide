@@ -4,11 +4,31 @@
     "execution": "5/5 images in the same server process, reserve-vram 2.0, original full prompt with changed colors and seeds",
     "visual": "pass",
     "cases": [
-      {"index": 1, "subject": "red teapot, two lemons", "verdict": "pass"},
-      {"index": 2, "subject": "blue teapot, two lemons", "verdict": "pass"},
-      {"index": 3, "subject": "green teapot, two lemons", "verdict": "pass"},
-      {"index": 4, "subject": "yellow teapot, two lemons", "verdict": "pass"},
-      {"index": 5, "subject": "purple teapot, two lemons", "verdict": "pass"}
+      {
+        "index": 1,
+        "subject": "red teapot, two lemons",
+        "verdict": "pass"
+      },
+      {
+        "index": 2,
+        "subject": "blue teapot, two lemons",
+        "verdict": "pass"
+      },
+      {
+        "index": 3,
+        "subject": "green teapot, two lemons",
+        "verdict": "pass"
+      },
+      {
+        "index": 4,
+        "subject": "yellow teapot, two lemons",
+        "verdict": "pass"
+      },
+      {
+        "index": 5,
+        "subject": "purple teapot, two lemons",
+        "verdict": "pass"
+      }
     ],
     "limitations": "Historical native crash did not reproduce. No root-cause patch validated. No long-term or higher-resolution guarantee."
   },
@@ -22,9 +42,21 @@
     "execution": "3/3 images in the same server process",
     "visual": "pass",
     "cases": [
-      {"index": 1, "subject": "red teapot, two lemons, wooden table", "verdict": "pass"},
-      {"index": 2, "subject": "blue teapot, two lemons, wooden table", "verdict": "pass"},
-      {"index": 3, "subject": "green teapot, two lemons, wooden table", "verdict": "pass"}
+      {
+        "index": 1,
+        "subject": "red teapot, two lemons, wooden table",
+        "verdict": "pass"
+      },
+      {
+        "index": 2,
+        "subject": "blue teapot, two lemons, wooden table",
+        "verdict": "pass"
+      },
+      {
+        "index": 3,
+        "subject": "green teapot, two lemons, wooden table",
+        "verdict": "pass"
+      }
     ],
     "limitations": "512x512, 9 steps, one local GPU and fixed weights. Three generations do not establish long-term stability. Prompt colors and seeds change; this is text-to-image, not image editing."
   }

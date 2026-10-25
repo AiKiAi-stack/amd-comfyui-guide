@@ -6,7 +6,7 @@ from pathlib import Path
 import subprocess
 import sys
 import time
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 import psutil
 
@@ -51,6 +51,34 @@ def stop_tree(pid):
             pass
 
 
+def unload_owned_models(url, server, timeout=30):
+    """Exercise ComfyUI's real /free path and require observed GPU memory release."""
+    def stats():
+        with urlopen(url + '/system_stats', timeout=3) as response:
+            return json.load(response)
+
+    before = stats()
+    request = Request(url + '/free', data=json.dumps({
+        'unload_models': True, 'free_memory': True}).encode(),
+        headers={'Content-Type': 'application/json'})
+    with urlopen(request, timeout=3) as response:
+        if response.status != 200:
+            raise RuntimeError('Owned service rejected unload request')
+    deadline = time.monotonic() + timeout
+    while True:
+        if server.poll() is not None:
+            raise RuntimeError(f'Service exited during explicit model unload: {server.returncode}')
+        after = stats()
+        gpu = [device for device in after['devices'] if device['type'] != 'cpu']
+        if gpu and all(device['torch_vram_total'] <= 256 * 1024**2 for device in gpu):
+            return {'before': before['devices'], 'after': after['devices'],
+                    'gpu_reserved_below_256_mib': True,
+                    'meaning': 'Real /free requested; observed allocator memory release, not OOM recovery proof'}
+        if time.monotonic() >= deadline:
+            raise TimeoutError('Explicit unload requested but GPU memory release was not observed')
+        time.sleep(1)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runtime", type=Path, required=True)
@@ -68,6 +96,8 @@ def main():
     parser.add_argument("--min-commit-mib", type=int, default=1024,
                         help="Stop the owned trial before Windows commit is exhausted; 0 disables the guard")
     parser.add_argument("--extra-arg", action="append", default=[])
+    parser.add_argument("--unload-between", action="store_true",
+                        help="Exercise /free after every successful case and require GPU allocator release")
     args = parser.parse_args()
     runtime, out = args.runtime.resolve(), args.out.resolve()
     url = f"http://127.0.0.1:{args.port}"
@@ -102,12 +132,14 @@ def main():
     elif args.profile == "gpu-text-dynamic":
         command += ["--enable-dynamic-vram", "--reserve-vram", "1.0", "--use-split-cross-attention"]
     else:
-        command += ["--enable-dynamic-vram", "--reserve-vram", "2.0", "--fp8_e4m3fn-text-enc"]
+        command += ["--enable-dynamic-vram", "--reserve-vram", "2.0", "--fp8_e4m3fn-text-enc",
+                    "--use-split-cross-attention"]
     if args.model_paths:
         command += ["--extra-model-paths-config", str(args.model_paths.resolve())]
     command += args.extra_arg
     summary = {"status": "running", "command": command, "profile": args.profile,
                "min_commit_mib": args.min_commit_mib,
+               "explicit_unload_after_each_case": args.unload_between,
                "chunked_logits": args.chunked_logits or args.gpu_chunked_logits,
                "gpu_chunked_logits": args.gpu_chunked_logits, "int8_fallback": args.int8_fallback, "cases": []}
 
@@ -174,6 +206,14 @@ def main():
             print("DONE", label, active_child.returncode, flush=True)
             if active_child.returncode != 0:
                 raise RuntimeError(f"Replay failed for {label}; see retained logs/history")
+            if args.unload_between:
+                summary['active_unload'] = label
+                save()
+                evidence = unload_owned_models(url, server)
+                summary['cases'][-1]['explicit_unload'] = evidence
+                summary.pop('active_unload', None)
+                save()
+                print('UNLOADED', label, flush=True)
         summary["status"] = "execution_pass_visual_review_pending"
     except (Exception, KeyboardInterrupt) as error:
         summary["status"] = "failed"

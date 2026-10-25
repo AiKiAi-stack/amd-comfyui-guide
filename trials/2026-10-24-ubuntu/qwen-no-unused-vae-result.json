@@ -1,0 +1,176 @@
+{
+  "status": "failed",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--output-directory",
+    "/path/to/barely-comfy/runs/ubuntu-20261024-qwen-no-unused-vae-01/images"
+  ],
+  "same_process": true,
+  "min_available_ram_mib": 1536,
+  "phases": [
+    {
+      "id": "round-01-encode",
+      "api_sha256": "f6485917dff44594ca5a9613a0de8a2a2a4ff3289eadfe3c9a69964c7b21c3d6",
+      "exit_code": 0,
+      "seconds": 49.04634213200188,
+      "prompt_id": "f8b1ac86-84bc-4d9c-8770-f83e883bed8f",
+      "history_sha256": "8641a1145face6a321aeb01da53816dd31041711dfc33d27f3766e1fc5bcd4a3",
+      "explicit_unload": {
+        "before": [
+          {
+            "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+            "type": "cuda",
+            "index": 0,
+            "vram_total": 8573157376,
+            "vram_free": 1851231232,
+            "torch_vram_total": 6408896512,
+            "torch_vram_free": 20417536
+          }
+        ],
+        "samples": [
+          {
+            "seconds": 0.0056368709992966615,
+            "devices": [
+              {
+                "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+                "type": "cuda",
+                "index": 0,
+                "vram_total": 8573157376,
+                "vram_free": 1851231232,
+                "torch_vram_total": 6408896512,
+                "torch_vram_free": 20417536
+              }
+            ]
+          },
+          {
+            "seconds": 1.0084355020007933,
+            "devices": [
+              {
+                "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+                "type": "cuda",
+                "index": 0,
+                "vram_total": 8573157376,
+                "vram_free": 5804354560,
+                "torch_vram_total": 6408896512,
+                "torch_vram_free": 3973540864
+              }
+            ]
+          }
+        ],
+        "http_status": 200,
+        "gpu_reserved_below_256_mib": false,
+        "gpu_active_below_256_mib": false
+      }
+    }
+  ],
+  "images": [],
+  "precision_change": "Explicit FP16 with upcast attention; not equivalent to default FP32 casting",
+  "free_check": "active",
+  "host_trim": true,
+  "decode_probe_only": false,
+  "omit_unused_vae": true,
+  "runner_sha256_at_startup": "991814f31dc47188c518329425f58b91b2a711896e2f5d33152f0d574a932256",
+  "runtime_source_sha256": {
+    "ComfyUI/custom_nodes/ComfyUI-GGUF/nodes.py": "5370cda6fdf110d16ebef3bf05f4e3cb0fa25305a39c5cd396ef7fe60587d19f",
+    "ComfyUI/custom_nodes/ComfyUI-GGUF/ops.py": "b927e24a7b00c181e9511900fb5afde45464793cf460e1d39a5e736ba093ce64",
+    "ComfyUI/comfy_extras/nodes_qwen.py": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+    "ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
+    "model-paths.yaml": "bd966bd09fcc481f8d50efd2d9338e08012152ee7b5ca9fbf2fcaca68437865f"
+  },
+  "pid": 147847,
+  "system_stats": {
+    "system": {
+      "os": "linux",
+      "ram_total": 16571342848,
+      "ram_free": 8655863808,
+      "comfyui_version": "0.41.0",
+      "required_frontend_version": "1.55.17",
+      "installed_templates_version": "0.11.87",
+      "required_templates_version": "0.11.87",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.17",
+          "required": "1.55.17"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.87",
+          "required": "0.11.87"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.38",
+          "required": "0.2.38"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "pytorch_version": "2.12.0+rocm7.14.0",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "ComfyUI/main.py",
+        "--listen",
+        "127.0.0.1",
+        "--port",
+        "8190",
+        "--cpu-vae",
+        "--disable-async-offload",
+        "--disable-dynamic-vram",
+        "--fast-disk",
+        "--reserve-vram",
+        "1.0",
+        "--use-split-cross-attention",
+        "--force-fp16",
+        "--force-upcast-attention",
+        "--extra-model-paths-config",
+        "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+        "--output-directory",
+        "/path/to/barely-comfy/runs/ubuntu-20261024-qwen-no-unused-vae-01/images"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 8537505792,
+        "torch_vram_total": 0,
+        "torch_vram_free": 0
+      }
+    ]
+  },
+  "operator_stop": "physical_ram_guard",
+  "error": "Physical RAM below 1536MiB; stopping owned service",
+  "server_stopped": true,
+  "server_exit_code": 0,
+  "raw_run": "runs/ubuntu-20261024-qwen-no-unused-vae-01"
+}

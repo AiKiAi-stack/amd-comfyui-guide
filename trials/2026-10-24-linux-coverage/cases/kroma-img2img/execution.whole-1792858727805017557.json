@@ -1,0 +1,40 @@
+{
+  "case_id": "kroma-img2img",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "controller_error",
+  "images": [],
+  "workflow_sha256": "309b25b8e11e71706b90c572e82dfcc772eeac4b350e59796826f2fb8a910218",
+  "pid": 10528,
+  "prompt_id": "1241d75d-48d1-4d48-851b-cac251383888",
+  "validation_errors": {},
+  "error": "timed out",
+  "minimum_available_ram_mib": 4275.6015625,
+  "elapsed_seconds": 46.184,
+  "total_seconds": 61.197,
+  "server_exit": -15
+}

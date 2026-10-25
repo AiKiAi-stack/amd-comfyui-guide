@@ -1,0 +1,134 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  },
+  "2": {
+    "inputs": {
+      "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+      "type": "qwen_image"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "CLIPLoader (GGUF)"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
+      "after_sampling": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "LoadVaeAfterSampling",
+    "_meta": {
+      "title": "Load VAE after sampling"
+    }
+  },
+  "4": {
+    "inputs": {
+      "prompt": "A gothic horror oil painting. A skeletal ghost in a torn black cloak stands in the doorway of an abandoned cathedral at midnight, holding a rusty ceremonial sword pointed toward the floor. Empty eye sockets glow faint blue, thick fog rolls over broken stone tiles, a red moon is visible through a shattered stained-glass window. Ominous atmosphere, dramatic chiaroscuro, no blood, no injuries, no text.",
+      "negative_prompt": "",
+      "resolution": 512,
+      "clip": [
+        "repair_clip_cpu_backing",
+        0
+      ]
+    },
+    "class_type": "TextEncodeQwenImage21",
+    "_meta": {
+      "title": "文本编码 Qwen Image 2.1"
+    }
+  },
+  "5": {
+    "inputs": {
+      "seed": 210665042,
+      "steps": 15,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "81",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent_image": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "6": {
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "7": {
+    "inputs": {
+      "filename_prefix": "platform-library-webui-blue",
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "81": {
+    "inputs": {
+      "device": "off",
+      "dtype": "default",
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "QwenImage21Cache",
+    "_meta": {
+      "title": "Qwen Image 2.1 缓存"
+    }
+  },
+  "repair_clip_cpu_backing": {
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "RetainGgufClipCpuBacking",
+    "_meta": {
+      "title": "Retain original GGUF CLIP CPU storage (experimental)"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "trials/2026-10-19-features/feature-report.html": {
+    "sha256": "e585eb25d1b19253071cb81c943bacfff85fb666cd86de1e5dfca44f3b83af0d",
+    "bytes": 379439
+  },
+  "trials/2026-10-19-features/feature-report.md": {
+    "sha256": "344707de6f3da879bc2860bb52d981cdf594145843a921b78132736d420af41c",
+    "bytes": 201466
+  },
+  "trials/2026-10-19-features/cases.json": {
+    "sha256": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a",
+    "bytes": 121449
+  },
+  "trials/2026-10-19-features/reviews.json": {
+    "sha256": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f",
+    "bytes": 37373
+  },
+  "trials/2026-10-19-features/baseline.json": {
+    "sha256": "3b6e0f3bf5b7b630e2c9ca7a23a5d7f62c37c40fbd28f7c176c1b8110ade146b",
+    "bytes": 7142
+  },
+  "trials/2026-10-19-features/blocked.json": {
+    "sha256": "ea7df837e9faaf24fa9d8d1e425e92bc7004efd301ca391b1ac2bc8c43232ff2",
+    "bytes": 8761
+  },
+  "trials/2026-10-19-features/build_report.py": {
+    "sha256": "01ab3691f2deb936bb78300e833440311c4d7e7df4a835f04ba198585025b223",
+    "bytes": 41503
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "existing_local_models": {
+    "base_path": "/media/user/系统/MyProject/amd_comfy/ComfyUI",
+    "diffusion_models": "models/diffusion_models",
+    "text_encoders": "models/text_encoders",
+    "vae": "models/vae",
+    "checkpoints": "models/checkpoints",
+    "loras": "models/loras",
+    "embeddings": "models/embeddings",
+    "controlnet": "models/controlnet",
+    "clip_vision": "models/clip_vision",
+    "upscale_models": "models/upscale_models"
+  },
+  "nvme_zimage": {
+    "base_path": "/media/user/GIAO/AIModels/amd_comfy/zimage-20261020",
+    "is_default": true,
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae",
+    "checkpoints": "checkpoints"
+  },
+  "nvme_repair": {
+    "base_path": "/media/user/GIAO/AIModels/amd_comfy/repair-20261021",
+    "is_default": true,
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae",
+    "loras": "loras"
+  },
+  "nvme_flux2": {
+    "base_path": "/media/user/GIAO/AIModels/amd_comfy/flux2-klein-20261020",
+    "is_default": true,
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae"
+  }
+}

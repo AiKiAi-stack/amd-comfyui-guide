@@ -1,0 +1,20 @@
+{
+  "prompt_id": "28d3a568-510b-4278-941b-ddd6fd4322d5",
+  "status": "success",
+  "outputs": {
+    "18": {
+      "images": [
+        {
+          "filename": "repeat-02-blue_00001_.png",
+          "subfolder": "",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

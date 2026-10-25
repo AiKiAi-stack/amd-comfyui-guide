@@ -1,0 +1,100 @@
+{
+  "case_id": "kroma-head-swap",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--disable-mmap"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../kroma-head-swap--sample/case03_9-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "9b5b5a90e7e6d5e67963df6b3ebacbe43ba33783592dc9d09c3634d948276ecd",
+      "original_sha256": "e4fb6f5d787c83b1f64689cb69b90396361bac5fcaee1b4530453d9c77a9393b",
+      "rgb_sha256": "988b22b39ee25c306c3eee068b13cd1e1f409cb2198acbe2b84cfc8603b053b3"
+    }
+  ],
+  "workflow_sha256": "a74e52fbd8893ebb8e6747a4b8c6faf6e352471754416a5eec5564375eec3e15",
+  "pid": 18212,
+  "prompt_id": "6c48356b-7b7f-490b-b765-11584e935a8a",
+  "validation_errors": {},
+  "outputs": {
+    "case03_9": {
+      "images": [
+        {
+          "filename": "kroma-head-swap_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "6c48356b-7b7f-490b-b765-11584e935a8a",
+        "timestamp": 1792859139048
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "6c48356b-7b7f-490b-b765-11584e935a8a",
+        "timestamp": 1792859139048
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "6c48356b-7b7f-490b-b765-11584e935a8a",
+        "timestamp": 1792859229587
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 2514.20703125,
+  "elapsed_seconds": 124.992,
+  "total_seconds": 106.442,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 32.559,
+  "sampling_seconds": 92.433,
+  "conditioning_archive": "repair_conditioning/linux-coverage-kroma-head-swap-31e241e5b034.safetensors",
+  "conditioning_sha256": "6dad5b756bb3ff09a16e3462637d8c5755f6e462e267f7f6112431010fa31b11",
+  "encoding_pid": 17497,
+  "sampling_pid": 18212,
+  "encoding_exited_before_sampling": true
+}

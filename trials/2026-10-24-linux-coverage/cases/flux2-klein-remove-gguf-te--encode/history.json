@@ -1,0 +1,193 @@
+{
+  "7f0db1e0-d99c-47ab-b8c1-0bbea4afc304": {
+    "prompt": [
+      0,
+      "7f0db1e0-d99c-47ab-b8c1-0bbea4afc304",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_42d5d9635f9c_cat.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "3": {
+          "class_type": "GetImageSize",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+            "type": "flux2"
+          }
+        },
+        "6": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "5",
+              0
+            ],
+            "text": "Remove the cat completely. Fill the place where the cat was with the natural cafe doorway and wet pavement. Keep the same empty rainy street, cafe window, lighting and camera view. No animals remain."
+          }
+        },
+        "8": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "6",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ],
+            "latent": [
+              "9",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "8",
+              0
+            ],
+            "latent": [
+              "9",
+              0
+            ]
+          }
+        },
+        "16": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": [
+              "3",
+              0
+            ],
+            "height": [
+              "3",
+              1
+            ],
+            "batch_size": 1
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "10",
+              0
+            ],
+            "negative": [
+              "11",
+              0
+            ],
+            "latent": [
+              "16",
+              0
+            ],
+            "prefix": "linux-coverage-flux2-klein-remove-gguf-te",
+            "workflow_sha256": "9c3a36e8731bb2522203bffa1f4351fb24aba06fbd9e1dda4f6eb830f9961ff7"
+          }
+        }
+      },
+      {
+        "create_time": 1792860546031
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-flux2-klein-remove-gguf-te-497e1fa90a99.safetensors"
+        ],
+        "archive_sha256": [
+          "970862f35a8828f7f66bc19a573a77995e8ec5428f39c040c0dafb44fcbef24f"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "7f0db1e0-d99c-47ab-b8c1-0bbea4afc304",
+            "timestamp": 1792860546031
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "7f0db1e0-d99c-47ab-b8c1-0bbea4afc304",
+            "timestamp": 1792860546073
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "7f0db1e0-d99c-47ab-b8c1-0bbea4afc304",
+            "timestamp": 1792860566485
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

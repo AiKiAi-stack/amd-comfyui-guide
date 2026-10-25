@@ -1,0 +1,57 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+      "type": "moss_image",
+      "device": "default"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "{\"summary\":{\"caption\":\"A clean studio product photograph on a pale grey table. A bright red teapot on the left and a tall blue ceramic vase on the right, clearly separated.\"},\"items\":[{\"label\":\"object\",\"caption\":\"one bright red teapot with a handle and spout, on the left\",\"bbox\":[-96,-226,184,-16]},{\"label\":\"object\",\"caption\":\"one tall blue ceramic vase, on the right\",\"bbox\":[-116,44,184,214]}],\"bbox_coord_space\":\"abs_centralized\",\"bbox_format\":\"yxyx\"}",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "blurry, distorted, watermark",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent": [
+        "6",
+        0
+      ],
+      "prefix": "linux-coverage-moss-layout",
+      "workflow_sha256": "734cba7d6cf0a4fbba85a97d7f8161c48e00d67d9f6bf7e32a379b6bbcb14ccf"
+    }
+  }
+}

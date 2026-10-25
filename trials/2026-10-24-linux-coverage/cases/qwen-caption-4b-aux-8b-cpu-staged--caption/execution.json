@@ -1,0 +1,89 @@
+{
+  "case_id": "qwen-caption-4b-aux-8b-cpu-staged--caption",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "aa506b6d1f887dac4767f8ebd5eb8456d8aa4df9d3cc2b79c4f9e3ee679f45d7",
+  "pid": 19230,
+  "prompt_id": "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+  "validation_errors": {},
+  "outputs": {
+    "42": {
+      "text": [
+        "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+      ],
+      "files": [
+        {
+          "filename": "qwen-caption-4b-aux-8b-cpu-staged-prompt_00001.txt",
+          "subfolder": "linux-coverage",
+          "type": "output"
+        }
+      ]
+    },
+    "repair_save_caption": {
+      "text": [
+        "repair_conditioning/qwen-caption-4b-aux-8b-cpu-staged-caption-baa04d731548.safetensors",
+        "SHA256: d01c138116b1bfb7caadef0e7b3d22bcc8cfc786358c0efc78d54c2a2029cfe7",
+        "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+      ],
+      "archive_sha256": [
+        "d01c138116b1bfb7caadef0e7b3d22bcc8cfc786358c0efc78d54c2a2029cfe7"
+      ],
+      "caption": [
+        "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+        "timestamp": 1792915091315
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+        "timestamp": 1792915091317
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+        "timestamp": 1792915126126
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6156.46484375,
+  "elapsed_seconds": 36.237,
+  "total_seconds": 61.447,
+  "server_exit": -15
+}

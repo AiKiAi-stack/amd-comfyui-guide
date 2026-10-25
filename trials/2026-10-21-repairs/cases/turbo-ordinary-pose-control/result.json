@@ -1,0 +1,45 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 18.11,
+  "images": [
+    {
+      "file": "7-0-turbo-ordinary-pose-control_00001_.png",
+      "original_sha256": "3abe7b76f0d61cb4fb046cddf2b228444a53a9278282a1790b9157d3358038ff",
+      "public_sha256": "4060e988847cd0cce85cd8d48989908013f8f3461b63ec793a1b78deafec41e3",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-ordinary-pose-control",
+  "feature": "turbo-un-pose-reference-test",
+  "verdict": "partial",
+  "review": "同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。",
+  "inputs": [
+    "pose-guide",
+    "kroma-portrait-a"
+  ],
+  "acceptance_scope": "普通与UN编码器的同条件配对；单例不作优劣统计",
+  "prompt_id": "2ec3fea7-24fe-4342-b3f5-764c27c5314e",
+  "raw_history_sha256": "e1b49eaf71eafe7271959be5b0beb564bc1ef9c2e76f3a225186e4a844b7eeca",
+  "decoding_elapsed_seconds": 18.11,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 66.109,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "0c65efd1ce5970dca82adad39c024245f04e9dcb4f259ac23284819e2d9cc747",
+  "workflow_sha256": "b1382c5158d7409ea038f1be009070e1511b14613a55f00c6146bccd82a39f51",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 9.015,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "1840e913880eeec5a617c1a2c3eaa1b74a542ce43bc87da2f9aa71c0c1050d60"
+}

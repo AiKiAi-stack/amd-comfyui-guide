@@ -1,0 +1,6 @@
+{
+  "verdict": "达到本例文字渲染目标",
+  "review": "奶油色纸面上 HELLO 五个黑色大写字母完整，下面有单个橙子，无额外文字。验证本例 512 图的文字与布局，不推断任意长文本都能正确渲染。",
+  "visual_inspected": true,
+  "platform": "Linux"
+}

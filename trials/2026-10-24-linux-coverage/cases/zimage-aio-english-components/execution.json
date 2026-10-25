@@ -1,0 +1,97 @@
+{
+  "case_id": "zimage-aio-english-components",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../zimage-aio-english-components--sample/26-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "be2e47408588f2896badab33485e702be1ace5c525b16a14f9753fe94fdfdcdb",
+      "original_sha256": "a28ee54d6c062daa4581f202d8acf9d309fb5c0fe709bad00c3c15bfcdb3ea82",
+      "rgb_sha256": "7ae568fb02ca6aa3137f726f970e6c13cdf1e545286dff2473e367718ff07c87"
+    }
+  ],
+  "workflow_sha256": "443ce5bbc259f87d611eeffe8be3607b631c69de787149e666dc643ba5808b9e",
+  "pid": 130602,
+  "prompt_id": "ed61283e-3cc0-4958-9837-adbdcbea65c3",
+  "validation_errors": {},
+  "outputs": {
+    "26": {
+      "images": [
+        {
+          "filename": "zimage-aio-english-components_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "ed61283e-3cc0-4958-9837-adbdcbea65c3",
+        "timestamp": 1792891025491
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "ed61283e-3cc0-4958-9837-adbdcbea65c3",
+        "timestamp": 1792891025491
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "ed61283e-3cc0-4958-9837-adbdcbea65c3",
+        "timestamp": 1792891080261
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 3020.453125,
+  "elapsed_seconds": 72.75399999999999,
+  "total_seconds": 68.758,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 16.131,
+  "sampling_seconds": 56.623,
+  "conditioning_archive": "repair_conditioning/linux-coverage-zimage-aio-english-components-c61130728692.safetensors",
+  "conditioning_sha256": "a6606cb4218bbf4382543e6f44ce66560372ab92e047c80b7ed525a1ab9b1758",
+  "encoding_pid": 130396,
+  "sampling_pid": 130602,
+  "encoding_exited_before_sampling": true
+}

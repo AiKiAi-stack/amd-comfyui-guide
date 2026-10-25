@@ -1,0 +1,162 @@
+{
+  "case_id": "qwen-caption-4b-aux-8b-cpu-staged",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../qwen-caption-4b-aux-8b-cpu-staged--sample/7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "2a7dc4ff62fd66547a5c191186380a832d50a4c482b13493a30794f5f0611ab5",
+      "original_sha256": "5b2e14bfa2c2bed802b4b96b8ae44bbe3ef2130671b73ea84c28607fc3f5de1f",
+      "rgb_sha256": "bd105e971ec7c21c369d1127760412b3c62a6942aba196aeeaabb9bad648ecb4"
+    }
+  ],
+  "workflow_sha256": "05e7c4dc9ca10a2ed766eeed6b41e272e32f23275b2cb88813d371727bc0b70c",
+  "pid": 19403,
+  "prompt_id": "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+  "validation_errors": {},
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "qwen-caption-4b-aux-8b-cpu-staged_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+        "timestamp": 1792915212331
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+        "timestamp": 1792915212332
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+        "timestamp": 1792915292099
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6156.46484375,
+  "elapsed_seconds": 174.72500000000002,
+  "total_seconds": 226.147,
+  "server_exit": -15,
+  "staged": true,
+  "phase_names": [
+    "caption",
+    "encode",
+    "sample"
+  ],
+  "caption_text": "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement.",
+  "caption_text_file": "trials/2026-10-24-linux-coverage/cases/qwen-caption-4b-aux-8b-cpu-staged/caption.txt",
+  "caption_text_sha256": "cc98575575f1fb9bff7335ee1b498acc07fff9c0aabf825c975884a71258acbe",
+  "caption_archive": "repair_conditioning/qwen-caption-4b-aux-8b-cpu-staged-caption-baa04d731548.safetensors",
+  "caption_archive_sha256": "d01c138116b1bfb7caadef0e7b3d22bcc8cfc786358c0efc78d54c2a2029cfe7",
+  "conditioning_archive": "repair_conditioning/qwen-caption-4b-aux-8b-cpu-staged-conditions-9a435b8d41fb.safetensors",
+  "conditioning_sha256": "4825b6b77aec6dad8b3970bb5f96cc9239f2004b2b8d8cc6bb69fda6e2e6926c",
+  "caption_pid": 19230,
+  "encoding_pid": 19311,
+  "sampling_pid": 19403,
+  "caption_exited_before_encoding": true,
+  "encoding_exited_before_sampling": true,
+  "caption_command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "encoding_command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc",
+    "--cpu"
+  ],
+  "encoding_environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "caption_seconds": 36.237,
+  "encoding_seconds": 58.198,
+  "sampling_seconds": 80.29
+}

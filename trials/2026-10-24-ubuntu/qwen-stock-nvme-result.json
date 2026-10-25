@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-24",
+  "raw_run": "runs/ubuntu-20261024-qwen-stock-nvme-01",
+  "status": "failed",
+  "runner_error": {
+    "error": "timed out",
+    "elapsed_seconds": 96.94744011099988
+  },
+  "failure_boundary": "60 second HTTP request timeout during text encoder load, not the configured 480 second workflow deadline",
+  "server_stopped": true,
+  "native_exception_observed": false,
+  "oom_observed": false,
+  "images": 0,
+  "cpu_detach_patch_enabled": false
+}

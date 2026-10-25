@@ -1,0 +1,45 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 18.062,
+  "images": [
+    {
+      "file": "7-0-turbo-ordinary-role-control_00001_.png",
+      "original_sha256": "eeb2ee93cd16fd2589d40a15f4da2405fc72af47a35aa2fe74ff5e57e887772b",
+      "public_sha256": "f97da25c0a99ab409e8f366bf95829dbc13f11d2c80369363e797e3ad92e53d6",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-ordinary-role-control",
+  "feature": "turbo-un-role-replacement-test",
+  "verdict": "partial",
+  "review": "同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。",
+  "inputs": [
+    "astronaut",
+    "kroma-portrait-a"
+  ],
+  "acceptance_scope": "普通与UN编码器的同条件配对；单例不作优劣统计",
+  "prompt_id": "427c6dfc-371b-48a7-8735-ccec66fa6629",
+  "raw_history_sha256": "ce2fb0530c9d14d9fdb88427c7e8d2ac8a85131417e381220efbdffc6873e2c0",
+  "decoding_elapsed_seconds": 18.062,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 66.11,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "cfce24fedf3715e6fcc0246f3c5df0ca1751d5fbc9d64e95be51f86f1621662e",
+  "workflow_sha256": "ac39d7754b8c966804cb3b2c48c3142bc29a46845705a42dc7b42bac2c8907ed",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 12.031,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "08a412f9913d29831b45c5c79415d9d1ddb6ca7e9edfe18642f158e1b9fac777"
+}

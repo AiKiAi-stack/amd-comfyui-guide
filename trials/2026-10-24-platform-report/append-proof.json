@@ -1,0 +1,12 @@
+{
+  "README.md": {
+    "original_prefix_bytes": 5416,
+    "original_prefix_sha256": "ea8b931648027c6aa049a50bf1b78a9a79deac01b5c7b89987345606f8d4349b",
+    "prefix_unchanged": true
+  },
+  "handoff.md": {
+    "original_prefix_bytes": 42404,
+    "original_prefix_sha256": "f2d5b89dfa44a5960de3438c53d295320967308ed3ab45976134478ae5f7860e",
+    "prefix_unchanged": true
+  }
+}

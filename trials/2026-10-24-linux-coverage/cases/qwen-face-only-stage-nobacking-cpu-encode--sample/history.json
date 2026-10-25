@@ -1,0 +1,148 @@
+{
+  "df918d8a-15b7-4b33-aebc-a5c23d99e0e0": {
+    "prompt": [
+      0,
+      "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+      {
+        "case01_1": {
+          "class_type": "UnetLoaderGGUF",
+          "inputs": {
+            "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+          }
+        },
+        "case01_3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "case03_5": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "case03_81",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ],
+            "seed": 66503001,
+            "steps": 15,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          }
+        },
+        "case03_6": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "case03_5",
+              0
+            ],
+            "vae": [
+              "case01_3",
+              0
+            ]
+          }
+        },
+        "case03_7": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "case03_6",
+              0
+            ],
+            "filename_prefix": "linux-coverage/qwen-face-only-stage-nobacking"
+          }
+        },
+        "case03_81": {
+          "class_type": "QwenImage21Cache",
+          "inputs": {
+            "model": [
+              "case01_1",
+              0
+            ],
+            "device": "off",
+            "dtype": "default"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/linux-coverage-qwen-face-only-stage-nobacking-cpu-encode-b685cc5d72fa.safetensors",
+            "expected_sha256": "91019b3057fd7decabb99eee0d539b958723113bb125506135953d527e160d9e"
+          }
+        }
+      },
+      {
+        "create_time": 1792912442745
+      },
+      [
+        "case03_7"
+      ]
+    ],
+    "outputs": {
+      "case03_7": {
+        "images": [
+          {
+            "filename": "qwen-face-only-stage-nobacking_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 512,
+              "height": 512
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+            "timestamp": 1792912442746
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+            "timestamp": 1792912442747
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+            "timestamp": 1792912610080
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "case03_7": {
+        "node_id": "case03_7",
+        "display_node": "case03_7",
+        "parent_node": null,
+        "real_node_id": "case03_7"
+      }
+    }
+  }
+}

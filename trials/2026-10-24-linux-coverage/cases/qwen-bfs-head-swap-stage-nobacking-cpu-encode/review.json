@@ -1,0 +1,7 @@
+{
+  "verdict": "BFS LoRA换头部分达到",
+  "review": "指定 BFS LoRA strength1.0 已连接原生加载节点，采样成功，日志未见未加载键警告。铜红卷发、浅肤色、绿眼与较明显雀斑可见，三分之四头向、外套、围巾和公园背景保留；仍与参考五官比例存在差异，身份只记部分达到。没有在本轮拆分 head_swap 前缀/LoRA 的消融，不能将差异单独归因于 LoRA，也不关闭旧 Windows 待办。图片健康，CPU/BF16 编码、独立 GPU 采样。",
+  "visual_inspected": true,
+  "image_healthy": true,
+  "platform": "Linux"
+}

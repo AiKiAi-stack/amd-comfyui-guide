@@ -6,7 +6,7 @@
 
 精确节点参数见各卡片的 workflow / api.json。API 执行成功只说明工作流成功返回；功能视觉成功以视觉结论为准。
 
-生成于：2026-10-22 11:49 中国标准时间
+生成于：2026-10-22 15:56 中国标准时间
 
 ## 图生图／洗图（`moss-img2img`）
 
@@ -780,39 +780,6 @@ Use image 1 only as a rough visual pose guide and image 2 only as the identity r
 预期结果：An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.
 
 workflow / api.json：[turbo-un-pose-reference-test/api.json](cases/turbo-un-pose-reference-test/api.json)
-
-</details>
-
----
-
-## 5帧加载、采样、解码诊断（`ref2va-5frame-diagnostic`）
-
-- 模型：MiniMax H3 Ref2VA Q4_0（诊断）
-- 来源级别：本机诊断，不是作者BFS整合包复现；4步无Turbo LoRA，不用于画质或视频功能验收
-- 执行：API 执行成功 · 无可用输出图片；耗时：433.08 秒
-- 视觉结论：加载、采样、解码链路通过；不是视频功能验收
-- 运行配置：RX6650XT；隔离H3 worktree、GGUF DynamicVRAM、4B ClipProj、GPU FP16视频VAE；--reserve-vram 2.0、同步卸载，未开启INT8 fallback。384×256、5帧、4步。433.08秒包含服务启动；仅加载诊断，不用于正常视频画质结论。
-
-最新一次使用GPU FP16 VAE并预留2GB显存，实际保存5张384×256 PNG与无声WebP。首尾帧可见青色机器人、洋红围巾、方形黑眼和浅色背景，画面相似；约0.2秒不能评价动作流畅、正常时长质量或BFS角色替换。此前CPU VAE超时、INT8 VAE HIPBLAS错误及未预留显存的FP16采样OOM均保留。433.08秒包含服务启动；系统已用内存采样峰值约14.19GiB，API显存采样峰值约4.84GiB，不是所有瞬时分配的精确峰值。
-
-输入图片：
-- 输入 1 · D:/AI/barely-comfy\trials\2026-10-19-h3\input\cyan-robot-reference.png：输入图片未找到
-
-输出图片：
-- 无输出
-
-<details>
-<summary>Prompt、预期结果与 workflow</summary>
-
-Prompt:
-
-```text
-<Picture 1> is a small cyan toy robot with a magenta scarf and two square black eyes. One robot waves its right hand against a plain cream background. Locked camera, soft studio light. No music or speech.
-```
-
-预期结果：384×256、5帧、4步，无声WebP与逐帧PNG；只核验加载采样解码链路。
-
-workflow / api.json：[ref2va-5frame-diagnostic/api.json](cases/ref2va-5frame-diagnostic/api.json)
 
 </details>
 
@@ -2940,6 +2907,300 @@ workflow / api.json：[turbo-fox-profile-wide-mask/api.json](cases/turbo-fox-pro
 
 ---
 
+## 角色替换（全身含服装） · 修复重试（`turbo-un-role-isolated`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。
+- 执行：API 执行成功；耗时：136.734 秒
+- 视觉结论：部分达到
+- 运行配置：Existing Turbo GGUF + UN GGUF encoder; CPU reference precompute → GPU text → FP16 sampling → CPU VAE
+
+四阶段完整执行8步并CPU解码。宇航服和头盔已完全去除，单名红卷发女性以黄褐色户外服在丛林前行；场景、站位和主要构图保留。脸部尺寸较小，雀斑、绿眼和精确身份未获证明，仍记部分达到；不是专用角色控制。
+
+四阶段完整执行8步并CPU解码。宇航服和头盔已完全去除，单名红卷发女性以黄褐色户外服在丛林前行；场景、站位和主要构图保留。脸部尺寸较小，雀斑、绿眼和精确身份未获证明，仍记部分达到；不是专用角色控制。
+
+输入图片：
+- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-un-role-isolated_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.
+```
+
+预期结果：A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.
+
+workflow / api.json：[turbo-un-role-isolated/api.json](cases/turbo-un-role-isolated/api.json)
+
+</details>
+
+---
+
+## 姿态参考（图像指令） · 修复重试（`turbo-un-pose-isolated`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。
+- 执行：API 执行成功；耗时：135.203 秒
+- 视觉结论：部分达到
+- 运行配置：Same Turbo UN weights and original prompt/seed; isolated reference/text/sampling/decode
+
+参考隔离后完整8步和CPU解码。红卷发成年女性、青色运动服、白背景、水平展开双臂及画面右侧屈膝可见，未复制骨架线；与示意的大体姿态相符。人物面部细节及精确身份不足，不能作为专用姿态约束或精确身份验收。
+
+参考隔离后完整8步和CPU解码。红卷发成年女性、青色运动服、白背景、水平展开双臂及画面右侧屈膝可见，未复制骨架线；与示意的大体姿态相符。人物面部细节及精确身份不足，不能作为专用姿态约束或精确身份验收。
+
+输入图片：
+- 输入 1 · pose-guide：![输入 1 · pose-guide](../../ComfyUI/input/featurebench/pose-guide.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-un-pose-isolated_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.
+```
+
+预期结果：An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.
+
+workflow / api.json：[turbo-un-pose-isolated/api.json](cases/turbo-un-pose-isolated/api.json)
+
+</details>
+
+---
+
+## 多图参考／主体合成 · 修复重试（`turbo-un-multiref-natural`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能
+- 执行：API 执行成功；耗时：126.171 秒
+- 视觉结论：部分达到
+- 运行配置：Existing UN GGUF encoder;8 steps; same seed/prompt in reference-removal pair
+
+两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。
+
+两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-un-multiref-natural_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace only the orange cat in image 1 with a red fox matching image 2: long canine muzzle, black nose, black legs, white cheeks, orange fur and a bushy white-tipped tail. The seated fox turns its head right in profile. Its entire body and tail fit in the image. Preserve the rainy night cafe scene, lights and framing of image 1. No cat, no moss or forest.
+```
+
+预期结果：同时采用第一图雨街背景和第二图狐狸主体。
+
+workflow / api.json：[turbo-un-multiref-natural/api.json](cases/turbo-un-multiref-natural/api.json)
+
+</details>
+
+---
+
+## 多图参考／主体合成 · 修复重试（`turbo-un-multiref-no-fox`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能
+- 执行：API 执行成功；耗时：93.141 秒
+- 视觉结论：部分达到
+- 运行配置：Existing UN GGUF encoder;8 steps; same seed/prompt in reference-removal pair
+
+删除image2及其VAE参考，保持同一提示、seed、扩散权重后，依然生成清晰红狐和相似雨街。说明本提示本身足以生成狐狸，不能把两图结果外观相似作为参考身份保留证明。
+
+删除image2及其VAE参考，保持同一提示、seed、扩散权重后，依然生成清晰红狐和相似雨街。说明本提示本身足以生成狐狸，不能把两图结果外观相似作为参考身份保留证明。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-un-multiref-no-fox_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace only the orange cat in image 1 with a red fox matching image 2: long canine muzzle, black nose, black legs, white cheeks, orange fur and a bushy white-tipped tail. The seated fox turns its head right in profile. Its entire body and tail fit in the image. Preserve the rainy night cafe scene, lights and framing of image 1. No cat, no moss or forest.
+```
+
+预期结果：同时采用第一图雨街背景和第二图狐狸主体。
+
+workflow / api.json：[turbo-un-multiref-no-fox/api.json](cases/turbo-un-multiref-no-fox/api.json)
+
+</details>
+
+---
+
+## 角色替换（全身含服装） · 修复重试（`turbo-ordinary-role-control`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。
+- 执行：API 执行成功；耗时：105.219 秒
+- 视觉结论：部分达到
+- 运行配置：Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference
+
+同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。
+
+同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。
+
+输入图片：
+- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-ordinary-role-control_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.
+```
+
+预期结果：A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.
+
+workflow / api.json：[turbo-ordinary-role-control/api.json](cases/turbo-ordinary-role-control/api.json)
+
+</details>
+
+---
+
+## 姿态参考（图像指令） · 修复重试（`turbo-ordinary-pose-control`）
+
+- 模型：Qwen 2.1 Turbo-UN
+- 来源级别：作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。
+- 执行：API 执行成功；耗时：102.249 秒
+- 视觉结论：部分达到
+- 运行配置：Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference
+
+同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。
+
+同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。
+
+输入图片：
+- 输入 1 · pose-guide：![输入 1 · pose-guide](../../ComfyUI/input/featurebench/pose-guide.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/turbo-ordinary-pose-control_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.
+```
+
+预期结果：An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.
+
+workflow / api.json：[turbo-ordinary-pose-control/api.json](cases/turbo-ordinary-pose-control/api.json)
+
+</details>
+
+---
+
+## 换头／人物身份参考 · 修复重试（`kroma-head-cropped-reference`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题；一般参考编辑探索，非专用换头模型
+- 执行：API 执行成功；耗时：90.173 秒
+- 视觉结论：部分达到
+- 运行配置：Dynamic GPU encoding; Kroma Q2_K FP16 with upcast; isolated CPU decode
+
+裁切参考排除黄毛衣，并扩大头发合成范围后完整4步及CPU解码。红卷发、雀斑、绿眼与左转头向出现，但黑色长发仍保留，颈部有重影且黄色仍混入领口。问题没有解决，保留独立失败视觉证据。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 裁切参考排除黄毛衣，并扩大头发合成范围后完整4步及CPU解码。红卷发、雀斑、绿眼与左转头向出现，但黑色长发仍保留，颈部有重影且黄色仍混入领口。问题没有解决，保留独立失败视觉证据。
+
+输入图片：
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-head-cropped-reference_00001_.png)
+
+附件：
+- kroma-head-cropped-reference-input_00001_.png：![kroma-head-cropped-reference-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-head-cropped-reference-input_00001_.png)
+- kroma-head-cropped-reference-mask_00001_.png：![kroma-head-cropped-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-head-cropped-reference-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace only the complete head and hair of the woman in image 1 with the fictional adult woman from image 2: many freckles, green eyes, short curly copper hair. Keep the same three-quarter head turn looking LEFT. Remove every trace of black hair. Preserve the red scarf, navy coat, park scene and body. No yellow sweater, no extra neck or hair.
+```
+
+预期结果：B服装姿态背景保留，头部外观采用A。
+
+workflow / api.json：[kroma-head-cropped-reference/api.json](cases/kroma-head-cropped-reference/api.json)
+
+</details>
+
+---
+
+## 多图参考 · 修复重试（`kroma-multiref-no-fox`）
+
+- 模型：Kroma v0.3.1 OPD Q2
+- 来源级别：公众号索引标题；沿用上游Krea2接法探索
+- 执行：API 执行成功；耗时：60.063 秒
+- 视觉结论：部分达到
+- 运行配置：Existing Kroma GGUF; source image1 only; FP16/upcast4step
+
+去掉第二狐狸参考（文本视觉输入及第二ReferenceLatent）后依然生成红狐。此轮采样为FP16，而历史双参考是默认精度，尚不能作为严格单变量对照；已另排匹配FP16的双参考控制，不能以此宣称参考无效。
+
+输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 去掉第二狐狸参考（文本视觉输入及第二ReferenceLatent）后依然生成红狐。此轮采样为FP16，而历史双参考是默认精度，尚不能作为严格单变量对照；已另排匹配FP16的双参考控制，不能以此宣称参考无效。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-no-fox_00001_.png)
+
+附件：
+- kroma-multiref-no-fox-input_00001_.png：![kroma-multiref-no-fox-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-no-fox-input_00001_.png)
+- kroma-multiref-no-fox-mask_00001_.png：![kroma-multiref-no-fox-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-no-fox-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.
+```
+
+预期结果：同时采用雨街背景和参考狐狸主体。
+
+workflow / api.json：[kroma-multiref-no-fox/api.json](cases/kroma-multiref-no-fox/api.json)
+
+</details>
+
+---
+
 ## 文生图：雨夜上海咖啡馆橘猫（768×768）（`qwen-base-t2i-cat-768`）
 
 - 模型：Qwen-Image-2.1
@@ -3132,171 +3393,6 @@ workflow / api.json：[旧基线 api.json：qwen-turbo-api.json](../2026-10-18/q
 
 ---
 
-## 角色替换（`minimax-h3-bfs-role-replacement`）
-
-- 模型：MiniMax H3 / BFS
-- 来源级别：I｜索引标题明示；A｜作者站外摘要展示参考角色替换样例；W｜公开 BFS/原生节点工作流；T｜本功能未运行；另有独立加载诊断
-- 执行：阻塞 · 无输出
-- 视觉结论：本功能未验证；加载诊断已通过
-
-独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://bbs.monster/thread-5296-1-1.html",
-  "https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/blob/main/docs/character-swap.md"
-]
-
-输入图片：
-- 此功能没有输入图片。
-
-输出图片：
-- 无输出
-
-阻塞原因：独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://bbs.monster/thread-5296-1-1.html",
-  "https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/blob/main/docs/character-swap.md"
-]
-
----
-
-## 长音频驱动／长视频后段劣化改善（`minimax-h3-bfs-long-audio-degradation`）
-
-- 模型：MiniMax H3 / BFS
-- 来源级别：I｜索引标题明示；A｜作者站外摘要提及长音频开关、首尾对照及该样例的后段改善；T｜本功能未运行；另有独立加载诊断
-- 执行：阻塞 · 无输出
-- 视觉结论：本功能未验证；加载诊断已通过
-
-独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://bbs.monster/thread-5296-1-1.html"
-]
-
-输入图片：
-- 此功能没有输入图片。
-
-输出图片：
-- 无输出
-
-阻塞原因：独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://bbs.monster/thread-5296-1-1.html"
-]
-
----
-
-## 一键换头（`minimax-h3-bfs-one-click-head-swap`）
-
-- 模型：MiniMax H3 / BFS
-- 来源级别：I｜索引标题明示；当前可读站外摘要未逐项验证该功能；T｜本功能未运行；另有独立加载诊断
-- 执行：阻塞 · 无输出
-- 视觉结论：本功能未验证；加载诊断已通过
-
-独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md"
-]
-
-输入图片：
-- 此功能没有输入图片。
-
-输出图片：
-- 无输出
-
-阻塞原因：独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md"
-]
-
----
-
-## 视频续写（`minimax-h3-video-continuation`）
-
-- 模型：MiniMax H3 / BFS
-- 来源级别：I｜索引标题明示；M｜ComfyUI 官方 H3 文档有分段续写流程，但不证明标题的“一键”主张；T｜本功能未运行；另有独立加载诊断
-- 执行：阻塞 · 无输出
-- 视觉结论：本功能未验证；加载诊断已通过
-
-独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
-]
-
-输入图片：
-- 此功能没有输入图片。
-
-输出图片：
-- 无输出
-
-阻塞原因：独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
-]
-
----
-
-## 一键目标替换（`minimax-h3-one-click-target-replacement`）
-
-- 模型：MiniMax H3 / BFS
-- 来源级别：I｜索引标题明示；M｜官方文档有遮罩视频编辑/物件移除相关流程，但不等同于标题的“一键目标替换”；T｜本功能未运行；另有独立加载诊断
-- 执行：阻塞 · 无输出
-- 视觉结论：本功能未验证；加载诊断已通过
-
-独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
-]
-
-输入图片：
-- 此功能没有输入图片。
-
-输出图片：
-- 无输出
-
-阻塞原因：独立5帧加载/采样/解码诊断已通过并保存输出，但不是本项功能的验收。本项对应的BFS/长视频/音频工作流尚无实际输出，仍未验证；不能用诊断图补位。
-证据：[
-  "../../research/liuyue-comfyui-models-2026-10-18.md",
-  "../../research/liuyue-five-model-trial-sources.md",
-  "../../research/feature-claims-2026-10-19.md",
-  "../2026-10-18/README.md",
-  "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
-]
-
----
-
 ## 双GGUF文生图／低显存运行（`zimage-gguf-photo`）
 
 - 模型：Z-Image-Turbo GGUF Q4_K_M / Qwen3-4B Q4_K_M
@@ -3316,3 +3412,251 @@ CPU文本配置耗时过长且整机可用内存低于0.5GB；API中止后装载
 
 阻塞原因：CPU文本配置耗时过长且整机可用内存低于0.5GB；API中止后装载仍未返回，已结束本任务服务。无输出，不判为模型功能失败。
 证据：trials\2026-10-20-zimage\cases\zimage-gguf-photo\operator-stop.json
+
+
+## 2026-10-24 报告漏卡补记
+
+原有评价保留；以下补齐已执行但遗漏的案例。
+
+## 多图参考／主体合成 · 修复重试（`qwen-multiref-full-tail`）
+
+- 模型：Qwen-Image-2.1
+- 来源级别：公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能
+- 执行：API 执行成功；耗时：156.468 秒
+- 视觉结论：部分达到
+- 运行配置：Exact prior archived text/ref conditioning; fresh FP16/upcast15step; CPU decode/full-tail composite
+
+复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。
+
+复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。
+
+输入图片：
+- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+
+输出图片：
+![输出 1](../../ComfyUI/output/RepairBench/qwen-multiref-full-tail_00001_.png)
+
+附件：
+- qwen-multiref-full-tail-input_00001_.png：![qwen-multiref-full-tail-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-full-tail-input_00001_.png)
+- qwen-multiref-full-tail-mask_00001_.png：![qwen-multiref-full-tail-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-full-tail-mask_00001_.png)
+
+<details>
+<summary>Prompt、预期结果与 workflow</summary>
+
+Prompt:
+
+```text
+Replace only the orange cat in image 1 with the EXACT red fox from image 2, seated at the SAME location on the right side beside the glass cafe door. The fox faces the viewer as in image 2: narrow long muzzle, large pointed ears, bright detailed eyes, white cheeks and chest, orange fur, black forelegs, long bushy white-tipped tail. Keep the fox head clearly lit by warm cafe light, not black. Its paws rest directly on the ordinary concrete step. No forest, no moss, no rock. Keep all rainy night background, glass, red neon reflections and framing of image 1.
+```
+
+预期结果：同时采用第一图雨街背景和第二图狐狸主体。
+
+workflow / api.json：[qwen-multiref-full-tail/api.json](cases/qwen-multiref-full-tail/api.json)
+
+</details>
+
+## 2026-10-24 追加：Ubuntu 路径兼容补充图库
+
+以下是已有 Windows 实验输出，未重新生成。仅修复绝对路径跨平台显示；原评价仍见对应卡片。
+
+
+### 图生图／洗图 · moss-img2img
+
+![历史输出](../../ComfyUI/output/FeatureBench/moss-img2img_00001_.png)
+
+### 布局描述（JSON 提示） · moss-layout
+
+![历史输出](../../ComfyUI/output/FeatureBench/moss-layout_00001_.png)
+
+### 画面文字渲染 · moss-text
+
+![历史输出](../../ComfyUI/output/FeatureBench/moss-text_00001_.png)
+
+### 文生图素材：虚构人像 A · kroma-portrait-a
+
+![历史输出](../../ComfyUI/output/FeatureBench/kroma-portrait-a_00001_.png)
+
+### 文生图素材：虚构人像 B · kroma-portrait-b
+
+![历史输出](../../ComfyUI/output/FeatureBench/kroma-portrait-b_00001_.png)
+
+### 图生图／洗图 · kroma-img2img
+
+![历史输出](../../ComfyUI/output/FeatureBench/kroma-img2img_00001_.png)
+
+### 文生图素材：风格参考 · kroma-style-source
+
+![历史输出](../../ComfyUI/output/FeatureBench/kroma-style-source_00001_.png)
+
+### 遮罩局部重绘 · qwen-inpaint
+
+![历史输出](../../ComfyUI/output/FeatureBench/qwen-inpaint_00001_.png)
+
+### 多图参考／主体合成 · qwen-multiref
+
+![历史输出](../../ComfyUI/output/FeatureBench/qwen-multiref_00001_.png)
+
+### 换头／人物身份参考 · qwen-face-swap
+
+![历史输出](../../ComfyUI/output/FeatureBench/qwen-face-swap_00001_.png)
+
+### 图生图／风格转换 · qwen-style-edit
+
+![历史输出](../../ComfyUI/output/FeatureBench/qwen-style-edit_00001_.png)
+
+### 风格参考 · kroma-style-ref
+
+![历史输出](../../ComfyUI/output/FeatureBench/kroma-style-ref_00001_.png)
+
+### 多图参考 · kroma-multiref
+
+![历史输出](../../ComfyUI/output/FeatureBench/kroma-multiref_00001_.png)
+
+### 换头／人物身份参考 · kroma-head-swap
+
+![历史输出](../../ComfyUI/output/FeatureBench/kroma-head-swap_00001_.png)
+
+### 换脸／仅面部身份 · qwen-face-only
+
+![历史输出](../../ComfyUI/output/FeatureBench/qwen-face-only_00001_.png)
+
+### 原生 8 步文生图 · turbo-un-t2i
+
+![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-t2i_00001_.png)
+
+### 遮罩局部重绘 · turbo-un-inpaint
+
+![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-inpaint_00001_.png)
+
+### 多图参考／主体合成 · turbo-un-multiref
+
+![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-multiref_00001_.png)
+
+### 换头／人物身份参考 · turbo-un-face-swap
+
+![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-face-swap_00001_.png)
+
+### 换头／BFS 专用 LoRA 对照 · qwen-bfs-head-swap
+
+![历史输出](../../ComfyUI/output/FeatureBench/qwen-bfs-head-swap_00001_.png)
+
+### 角色替换（全身含服装） · turbo-un-role-replacement-test
+
+![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-role-replacement-test_00001_.png)
+
+### 姿态参考（图像指令） · turbo-un-pose-reference-test
+
+![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-pose-reference-test_00001_.png)
+
+### 文生图／短文字 · flux2-klein-t2i
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i_00001_.png)
+
+### 文生图／GPU FP8文本编码对照 · flux2-klein-t2i-gpu-text
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png)
+
+### 文本编码GPU配置对照／写实文生图 · zimage-gguf-photo-gpu-text
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png)
+
+### 平铺工作流修改提示词 · zimage-gguf-prompt-change
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png)
+
+### 量化版英文文字渲染 · zimage-gguf-english
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png)
+
+### 量化版中文文字渲染 · zimage-gguf-chinese
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png)
+
+### 写实文生图／源工作流9步 · zimage-aio-photo-9step
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png)
+
+### 中文文字渲染 · zimage-aio-chinese
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png)
+
+### 英文文字渲染 · zimage-aio-english
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png)
+
+### 非色情成年人体艺术探索 · zimage-aio-figure-art
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png)
+
+### 文章4步效果比较 · zimage-aio-photo-4step
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png)
+
+### 文章推荐8步生成 · zimage-aio-photo-8step
+
+![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png)
+
+### 单图编辑／改色 · flux2-klein-single-color
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-single-color_00001_.png)
+
+### NVMe动态配置诊断／文生图对照 · flux2-klein-t2i-nvme-control
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png)
+
+### 双图编辑／配色与Logo迁移 · flux2-klein-dual-logo
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-dual-logo_00001_.png)
+
+### 双人合成／人物一致性 · flux2-klein-dual-people
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-dual-people_00001_.png)
+
+### 风格转换 · flux2-klein-style
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png)
+
+### 对象替换／中文指令 · flux2-klein-replace-zh
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-replace-zh_00001_.png)
+
+### 对象删除 · flux2-klein-remove
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-remove_00001_.png)
+
+### 迭代编辑／第二轮修改 · flux2-klein-iterative
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-iterative_00001_.png)
+
+### 诊断对照／恢复默认锁页内存 · flux2-klein-t2i-pinned-control
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png)
+
+### 单图编辑／改色（恢复锁页内存重试） · flux2-klein-single-color-pinned
+
+![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
+
+### 文生图：雨夜上海咖啡馆橘猫（768×768） · qwen-base-t2i-cat-768
+
+![历史输出](../../ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png)
+
+### 语义图像编辑：橘猫变白猫（512×512；非遮罩局部重绘） · qwen-base-edit-orange-to-white-cat-512
+
+![历史输出](../../ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png)
+
+### 文生图：雾林苔石上的狐狸（512×512，4 步） · kroma-opd-q2-t2i-fox-512
+
+![历史输出](../../ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png)
+
+### 文生图：丛林宇航员（512×512，8 步 LoRA 候选） · moss-sft-dmd-8step-t2i-astronaut-512
+
+![历史输出](../../ComfyUI/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png)
+
+### 文生图对照：丛林宇航员（512×512，50 步） · moss-sft-50step-t2i-astronaut-512
+
+![历史输出](../../ComfyUI/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png)
+
+### 文生图：雨夜咖啡馆白猫（512×512，8 步；普通 Turbo 对照，非 UN） · qwen-turbo-plain-t2i-white-cat-512
+
+![历史输出](../../ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png)

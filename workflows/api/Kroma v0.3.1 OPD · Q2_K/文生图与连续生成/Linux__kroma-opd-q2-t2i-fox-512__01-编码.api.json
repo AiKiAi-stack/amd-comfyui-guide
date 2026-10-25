@@ -1,0 +1,56 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "A little red fox sitting on a mossy rock in a misty forest, detailed fur, soft morning light, cinematic photography, no text",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "4",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent": [
+        "6",
+        0
+      ],
+      "prefix": "linux-coverage-kroma-opd-q2-t2i-fox-512",
+      "workflow_sha256": "45bb03d9655bf8ef3aae171ce0fe49b7d9853863cdd75e0eee2be1103c8da849"
+    }
+  }
+}

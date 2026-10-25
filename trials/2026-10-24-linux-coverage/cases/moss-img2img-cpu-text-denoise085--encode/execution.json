@@ -1,0 +1,74 @@
+{
+  "case_id": "moss-img2img-cpu-text-denoise085--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "e9b96605d8edf529a07e421bd1a723d3faacb995ec32b2017fb91a5781e8c845",
+  "pid": 148570,
+  "prompt_id": "7de0f635-d94d-4a49-8325-10775c5e4508",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-moss-img2img-cpu-text-denoise085-55968f9079dd.safetensors"
+      ],
+      "archive_sha256": [
+        "092397b893783dc3b5e7612a3cfa777bd063ed49debd17592173450bcebf2898"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "7de0f635-d94d-4a49-8325-10775c5e4508",
+        "timestamp": 1792893582414
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "7de0f635-d94d-4a49-8325-10775c5e4508",
+        "timestamp": 1792893582416
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "7de0f635-d94d-4a49-8325-10775c5e4508",
+        "timestamp": 1792893729958
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6687.3359375,
+  "elapsed_seconds": 148.302,
+  "total_seconds": 174.415,
+  "server_exit": -15
+}

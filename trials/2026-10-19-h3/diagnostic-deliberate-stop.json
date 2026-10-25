@@ -1,9 +1,0 @@
-{
-  "reason": "Deliberate stop after completed 4-step sampling and prolonged wait without output; next compare GPU VAE. This is not a model crash or automatic timeout.",
-  "prompt_id": "bda6af71-32c8-4b4d-b2d7-766f87b5b296",
-  "stopped_at": 1792429103.9241633,
-  "pids": [
-    21096,
-    5148
-  ]
-}

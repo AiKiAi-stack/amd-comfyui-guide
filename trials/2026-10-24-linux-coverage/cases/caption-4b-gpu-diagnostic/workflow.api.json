@@ -1,0 +1,68 @@
+{
+  "caption_clip": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "image": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_42d5d9635f9c_liuyue-qwen-base-source.png"
+    }
+  },
+  "scale": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "image",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 256,
+      "height": 256,
+      "crop": "disabled"
+    }
+  },
+  "caption": {
+    "class_type": "TextGenerate",
+    "inputs": {
+      "clip": [
+        "caption_clip",
+        0
+      ],
+      "image": [
+        "scale",
+        0
+      ],
+      "prompt": "Describe the image in one short English sentence naming the subject, place and lighting. Output only the sentence.",
+      "max_length": 40,
+      "sampling_mode": "off",
+      "thinking": false,
+      "use_default_template": true,
+      "mtp": "off"
+    }
+  },
+  "save": {
+    "class_type": "SaveText",
+    "inputs": {
+      "text": [
+        "caption",
+        0
+      ],
+      "filename_prefix": "linux-coverage/caption-4b-gpu-diagnostic",
+      "format": "txt"
+    }
+  },
+  "preview": {
+    "class_type": "PreviewAny",
+    "inputs": {
+      "source": [
+        "caption",
+        0
+      ]
+    }
+  }
+}

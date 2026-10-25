@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 9.032,
+  "images": [
+    {
+      "file": "repair_save_input-0-kroma-head-cropped-reference-input_00001_.png",
+      "original_sha256": "27499522f3d35c48f43a1a01b10d7a2cb7ab3cc794c960f7feafe722a2094dae",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-kroma-head-cropped-reference-mask_00001_.png",
+      "original_sha256": "e5da29fcfba64461c60febaefcd564d54bd68e030aca16c61c50cd4f27d22c5b",
+      "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case03_9-0-kroma-head-cropped-reference_00001_.png",
+      "original_sha256": "c782e283e6d1dedc2b4adcff74ab3a593b173bb3e5f4ecfe6d84ff8ee709a6e1",
+      "public_sha256": "1de574f845e6b7ff231bbf8b14f09e26616f705a654e73b73e9fc96aa0abaeab",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-head-cropped-reference",
+  "feature": "kroma-head-swap",
+  "verdict": "partial",
+  "review": "裁切参考排除黄毛衣，并扩大头发合成范围后完整4步及CPU解码。红卷发、雀斑、绿眼与左转头向出现，但黑色长发仍保留，颈部有重影且黄色仍混入领口。问题没有解决，保留独立失败视觉证据。",
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "acceptance_scope": "普通Kroma双图换头，非Krea BFS；黑发残留、领口污染及精确身份未通过",
+  "mask_measurement": {
+    "outside_pixels": 71048,
+    "outside_changed_pixels": 3,
+    "outside_max_channel_difference": 1,
+    "inside_pixels": 191096,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 71044,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "c31c91a3-1571-4c99-88c3-5d0f3c1ae078",
+  "raw_history_sha256": "82b01e1c025c72052b2253fb7c17341796acdac6c87f10226440cff4bfb0e230",
+  "decoding_elapsed_seconds": 9.032,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 60.094,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "2874da193df29825b5a25f05bd586903e62d8ff3e31452663461040003a791d5",
+  "workflow_sha256": "e85a85b6dfa43173b438c77fa8bd99e5e6f20d050077002eb5a899ef268132c8",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 21.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "fecbcc72f05677a5982f111220f1ab46cf54c5cdc395e44dbcc491229d22f4ef"
+}
