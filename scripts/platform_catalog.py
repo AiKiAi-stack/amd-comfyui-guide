@@ -19,7 +19,6 @@ MODELS = {
     'flux2': 'FLUX.2 Klein 4B · FP8',
     'zimage-gguf': 'Z-Image Turbo · 双 GGUF Q4_K_M',
     'zimage-aio': 'Z-Image Turbo · FP8 AIO',
-    'flux3-un': 'Flux.3-5.6B-UN · 配方待确认',
 }
 FEATURES = {
     't2i': '文生图与连续生成', 't2i-1024': '文生图 · 1024 分辨率',
@@ -31,7 +30,7 @@ FEATURES = {
     'caption': '自动反推提示词并再生成', 'logo': '双图配色与 Logo 迁移',
     'people': '双人合成与人物一致性', 'replace': '对象替换 · 中文指令',
     'remove': '对象删除', 'color': '单图改色', 'iterative': '迭代编辑与蝴蝶结细节',
-    'figure': '成年人体艺术探索', 'unconfirmed': '文生图 · 权重与配方待确认',
+    'figure': '成年人体艺术探索',
 }
 
 

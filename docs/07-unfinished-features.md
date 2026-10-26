@@ -2,7 +2,6 @@
 
 本轮直接请求本机 8767 报告，并比对 `cases.json`、`blocked.json`、`baseline.json`、`reviews.json` 和每项 `result.json`。上一轮的运行故障清单不等于完整的功能待办，本文件补上视觉目标失败、部分达到、未执行、漏报和验证缺口。
 
-
 **上面是开始修复前的基线，旧失败状态保留。** 后续 [实际修复重试](../trials/2026-10-21-repairs/README.md) 已验收自动反推再出图、中文茶壶正常结构和水彩夜景；1024² 已完成运行，但额外文字仍未满足完整提示词。此外，Kroma 裁切风格参考的猫头鹰、背向猫水彩，Qwen 遮罩内明确狐狸、MOSS 原生 SFT 水彩及 Z-Image CPU FP16 单张重试已通过。2026-10-22 的 Kroma 自然裁切参考加完整尾部合成，已达到原多图融合案例的雨街+狐狸主体目标；精确动物身份与参考消融仍未验证。Turbo 自然参考、侧转长吻加完整采样遮罩，也已达到原遮罩内猫变狐目标；四阶段GPU编码实际跑通，内存压力和native根因仍保留。小蝴蝶结直接模型输出仍未达尺寸；CPU 反推配置、精确身份迁移和底层卸载崩溃也没有因分阶段成功而被结案。
 
 ## 优先处理的失败或无输出：5 条记录
@@ -59,7 +58,6 @@
 
 ## 报告之外和配方层面的欠项
 
-- **Flux.3-5.6B-UN**：没有出现在这份总报告中。来源记录仍未确认作者精确 UN 权重、编码器与四步配方；不能拿标准 Klein 代替。ModelScope 标准版文生图/编辑只留下准备记录，三份标准版权重此前按用户要求删除，本轮不恢复下载。见 [来源审计](../research/flux3-un-source-audit-2026-10-20.md) 和 [删除记录](../trials/2026-10-20-flux3/modelscope-weights-deleted.json)。此项不混入上述 19 条报告内记录。
 - **Qwen BFS 官方配方**：当前案例为15步、未加载Pruna，未复现带Pruna的8步工作流。2026-10-22再次核对作者指南：Pruna是可选加速器，不是BFS必需依赖；缺少它不能作为BFS无法继续的理由。仍需拆开head_swap前缀和BFS LoRA，验证各自贡献。来源：https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/docs/qwen-image-2.1.md 。
 - **多参考输入的必要性**：Kroma、Qwen 和 Turbo-UN 的成功/部分成功单例都缺少去掉某张参考的消融，不能将画面相似直接当作两张参考均生效的证明。
 - **Turbo-UN 角色/姿态**：目前是普通双图语义编辑探索，不能代替专用姿态控制或作者整合工作流验收；普通 Turbo 与 UN 的效果差异也没有同条件对照。
@@ -73,6 +71,6 @@
 
 重新运行原始输出检查：48 条结果记录，图片绑定/元数据错误 0，报告缺图 0。审计脚本也确认报告漏卡从 1 变为 0。见 [修正前](../trials/2026-10-21-feature-backlog/audit-before.json)、[修正后](../trials/2026-10-21-feature-backlog/audit-after.json)；这些是当前磁盘证据核对，不是新功能验收。
 
-建议执行顺序：自动反推 GPU/CPU 内存链路 → FLUX.2 1024 崩溃 → Kroma 风格参考与遮罩物种替换 → 换脸/换头保持 → 其他风格/编辑细节。Flux.3 精确资产和已删除标准版另行处理，不因排队就自动恢复下载。
+建议执行顺序：自动反推 GPU/CPU 内存链路 → FLUX.2 1024 崩溃 → Kroma 风格参考与遮罩物种替换 → 换脸/换头保持 → 其他风格/编辑细节。
 
 可重跑清单核对：`python scripts/audit_feature_backlog.py --source <实验根目录> --out runs/backlog-audit.json`。报告入口：[本机图文报告](http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html)。

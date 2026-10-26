@@ -6,8 +6,7 @@
     "moss": "MOSS Image SFT · INT8",
     "flux2": "FLUX.2 Klein 4B · FP8",
     "zimage-gguf": "Z-Image Turbo · 双 GGUF Q4_K_M",
-    "zimage-aio": "Z-Image Turbo · FP8 AIO",
-    "flux3-un": "Flux.3-5.6B-UN · 配方待确认"
+    "zimage-aio": "Z-Image Turbo · FP8 AIO"
   },
   "features": {
     "t2i": "文生图与连续生成",
@@ -31,8 +30,7 @@
     "remove": "对象删除",
     "color": "单图改色",
     "iterative": "迭代编辑与蝴蝶结细节",
-    "figure": "成年人体艺术探索",
-    "unconfirmed": "文生图 · 权重与配方待确认"
+    "figure": "成年人体艺术探索"
   },
   "records": [
     {
@@ -111,10 +109,10 @@
             {
               "seed": 2106650,
               "steps": 25,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -209,10 +207,10 @@
             {
               "seed": 2106651,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -302,10 +300,10 @@
             {
               "seed": 2106653,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -394,7 +392,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -402,17 +400,17 @@
             {
               "seed": 2106654,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -501,7 +499,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -509,10 +507,10 @@
             {
               "seed": 2106654,
               "steps": 50,
-              "cfg": 3,
+              "cfg": 3.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -601,7 +599,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -698,7 +696,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -706,7 +704,7 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
               "denoise": 0.6
@@ -716,7 +714,7 @@
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -791,7 +789,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -799,17 +797,17 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -884,7 +882,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -892,17 +890,17 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -980,10 +978,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1061,10 +1059,10 @@
             {
               "seed": 66502002,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1145,7 +1143,7 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
               "denoise": 0.6
@@ -1226,10 +1224,10 @@
             {
               "seed": 66502004,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1322,10 +1320,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1333,10 +1331,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1344,10 +1342,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1355,10 +1353,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1366,10 +1364,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1458,10 +1456,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1553,10 +1551,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1564,10 +1562,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1575,10 +1573,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1668,10 +1666,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1679,10 +1677,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1690,10 +1688,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1774,10 +1772,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1868,10 +1866,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1879,10 +1877,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1890,10 +1888,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -1986,10 +1984,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -1997,10 +1995,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -2008,10 +2006,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -2104,10 +2102,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -2115,10 +2113,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -2126,10 +2124,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -2221,10 +2219,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -2232,10 +2230,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
@@ -2243,10 +2241,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -2323,7 +2321,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -2427,7 +2425,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -2532,7 +2530,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -2637,7 +2635,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -2748,17 +2746,17 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "bfs_head_v1.1_qwen_2.1.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -2847,7 +2845,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -2954,7 +2952,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -5369,10 +5367,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -5463,10 +5461,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -6488,10 +6486,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -6582,10 +6580,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -6674,7 +6672,7 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
               "denoise": 0.4
@@ -6771,10 +6769,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -7360,7 +7358,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -7368,7 +7366,7 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
               "denoise": 0.85
@@ -7378,7 +7376,7 @@
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -9895,10 +9893,10 @@
             {
               "seed": 210665042,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -9967,10 +9965,10 @@
             {
               "seed": 210665043,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -10088,10 +10086,10 @@
             {
               "seed": 2106653,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -10215,7 +10213,7 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
               "denoise": 0.6
@@ -10344,10 +10342,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -10474,10 +10472,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -10604,10 +10602,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -12937,7 +12935,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -12945,17 +12943,17 @@
             {
               "seed": 2106654,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -13061,7 +13059,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -13069,7 +13067,7 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
               "denoise": 0.6
@@ -13079,7 +13077,7 @@
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -13183,7 +13181,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -13191,17 +13189,17 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -13305,7 +13303,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -13313,17 +13311,17 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -13427,7 +13425,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -13564,7 +13562,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -14186,7 +14184,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -14194,17 +14192,17 @@
             {
               "seed": 2106654,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -14322,7 +14320,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -14330,7 +14328,7 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
               "denoise": 0.6
@@ -14340,7 +14338,7 @@
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -14458,7 +14456,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -14466,17 +14464,17 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -14592,7 +14590,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -14600,17 +14598,17 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -14733,7 +14731,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -14861,7 +14859,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -14988,7 +14986,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -15115,7 +15113,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -15242,7 +15240,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -15370,10 +15368,10 @@
             {
               "seed": 2106651,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -15624,7 +15622,7 @@
           [
             "ModelSamplingAuraFlow",
             {
-              "shift": 5
+              "shift": 5.0
             }
           ],
           [
@@ -15632,7 +15630,7 @@
             {
               "seed": 66501001,
               "steps": 8,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "sgm_uniform",
               "denoise": 0.85
@@ -15642,7 +15640,7 @@
             "LoraLoaderModelOnly",
             {
               "lora_name": "moss-image-sft-8-steps-dmd-lora.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -15754,7 +15752,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -15897,10 +15895,10 @@
             {
               "seed": 66502001,
               "steps": 4,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -16156,7 +16154,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -16300,7 +16298,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -16445,10 +16443,10 @@
             {
               "seed": 2106651,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -16576,10 +16574,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -16707,10 +16705,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -16836,10 +16834,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -16966,10 +16964,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -17095,10 +17093,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -17213,10 +17211,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -17343,17 +17341,17 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ],
           [
             "LoraLoaderModelOnly",
             {
               "lora_name": "bfs_head_v1.1_qwen_2.1.safetensors",
-              "strength_model": 1
+              "strength_model": 1.0
             }
           ]
         ],
@@ -17626,7 +17624,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -17770,7 +17768,7 @@
           [
             "CFGGuider",
             {
-              "cfg": 1
+              "cfg": 1.0
             }
           ],
           [
@@ -17901,10 +17899,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -18039,10 +18037,10 @@
             {
               "seed": 66503001,
               "steps": 15,
-              "cfg": 1,
+              "cfg": 1.0,
               "sampler_name": "euler",
               "scheduler": "simple",
-              "denoise": 1
+              "denoise": 1.0
             }
           ]
         ],
@@ -18062,28 +18060,6 @@
         "linux-coverage-qwen-caption-4b-aux-8b-cpu-staged--sample"
       ],
       "workflow_id": "linux-coverage-qwen-caption-4b-aux-8b-cpu-staged"
-    },
-    {
-      "id": "pending-flux3-un",
-      "case_id": "flux3-un-unconfirmed",
-      "model_id": "flux3-un",
-      "feature_id": "unconfirmed",
-      "platform": "Windows",
-      "title": "准确权重与编码器配方未确认",
-      "verdict": "未验证",
-      "execution": "未执行",
-      "review": "原交接保留待办；没有确认 Flux.3-5.6B-UN 的精确权重与四步配方，不使用 FLUX.2 Klein 的结果代替。",
-      "blocked": true,
-      "images": [],
-      "profile": "",
-      "expected": "",
-      "prompt": "",
-      "source": null,
-      "source_case_file": "handoff.md",
-      "workflow_reason": "待明确准确模型与配方",
-      "original_model_label": "Flux.3-5.6B-UN",
-      "claim_level": "交接待办，非执行结果",
-      "original_case": {}
     }
   ],
   "legacy_record_count": 95,

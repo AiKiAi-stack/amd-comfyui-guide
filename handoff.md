@@ -88,8 +88,6 @@ Windows 侧还使用了 G 盘 NVMe 的现有副本：`G:/AIModels/amd_comfy/{rep
 
 此次重新运行审计：仓库 `cases.json` 有 **89 个案例**，另有 6 个旧基线和 6 个阻塞项，预期 **101 张卡片**；HTML 缺少 `qwen-multiref-full-tail`。也不能用它覆盖10月21日“19条”的历史基线。
 
-
-
 `trials/2026-10-22-coverage/coverage.json` 的 `queued`、Ubuntu `plan.json` 的 `running`、部分原始 summary 的 `running` 都可能停留在中断前。以具体执行记录、停止补记、history、实际文件为准。新审计保存在忽略目录 `runs/handoff-2026-10-24-audit.json`，可随时重新生成。
 
 ## 6. 已实现的代码与可用规避
@@ -143,7 +141,6 @@ BFS 的 Pruna 是作者文档中的**可选加速器**，缺它不构成继续�
 - Ubuntu22.04.5 / kernel6.8.0-138、16GB RAM、无swap；独立 Linux Python3.12.14 环境在 `runtime/ubuntu/.venv`。系统Python3.10、Windows环境未替换。
 - 固定 ComfyUI `ce1e922d8623bb507180e32a0c01a7d0e29edef7`，GGUF `373048b8403a7820620065210a691263d4da0a61`；从原本地 Git commit 导出，排除旧 Windows 工作区脏源码。
 - torch2.12.0+rocm7.14.0、torchvision0.27.0+rocm7.14.0、ROCm7.14.0、原生 gfx1032；未设置 `HSA_OVERRIDE_GFX_VERSION`。FP32/FP16/BF16 GEMM、SDPA和最小GPU检查均有通过记录。原 Windows ROCm7.2/torch2.9.1初始化故障仍是独立历史问题。
-- 模型通过 `runtime/ubuntu/model-paths.yaml` 访问 `../amd_comfy/ComfyUI/models`；三份 Z-Image 权重重新计算 SHA，与历史一致。没有重新下载模型、恢复被删 Flux.3，或启用 CPU backing 候选。
 - **Z-Image 同进程3/3完整出图、3/3目视通过**：红/蓝/绿壶，两颗柠檬，512²、9步、CFG1、Euler/simple、shift3，GPU文本、CPU VAE；文本和采样每次重跑。提交至history约300.97/102.35/40.20秒，冷启动和缓存状态不同，不能直接归因提速。
 - GGUF真实Q4_K约8.3MB和INT8真实8MiB权重各200轮GPU→CPU/unpatch通过，包括交替人为Python异常后的显式清理；没有启用候选修复。小参数探针不模拟真实OOM、整模型或原生崩溃。
 - 相同seed的 PyTorch attention 对照成功并目视通过，图与默认attention不逐像素相同，缓存/冷热状态未控制，不能宣称加速。该服务真实 `/free` 使allocator从6,415,187,968降至33,554,432字节，服务继续响应；仍不是异常/OOM恢复。
@@ -219,7 +216,7 @@ python3 -m http.server 8767 --bind 127.0.0.1
 3. **验证Windows Kroma CPU-backing候选的正确性**：默认pinned、LoRA加载/强度变化/卸载恢复、真实输出差异、多个完整模型、正常卸载与异常/OOM清理分别做。Linux如试候选，另建实验，不用Linux成功关闭Windows问题。通过前默认关闭。
 4. **人物/动物身份与参考消融**：固定输入顺序、seed、模型/精度，拆BFS前缀和LoRA；Kroma `index`/`index_timestep_zero`、清旧头latent、8步兼容性分别测。验收包括五官/雀斑、头向、发型、衣领/背景污染、完整尾部，不能只看“像一个狐狸/红发人”。
 5. **CPU反推和FLUX细节**：原Qwen8B CPU继续记未完成；Smol需改善重复和延迟、核对输入内容并自动接出图，另标替代模型。FLUX直接模型的额外文字和小蝴蝶结尺寸未过，后续尝试需拿到真实PNG；不能只记录4/4采样后解码保护停止。必要时拆采样/CPU tiled解码，保留原保护阈值，别单纯降低保护硬跑。
-6. **其余独立待办**：Flux.3-5.6B-UN精确权重/编码器/4步配方仍未确认，不能拿标准Klein或FLUX.2代替。用户删除的标准ModelScope权重不自动恢复。H3目前仅384×256、5帧、4步诊断可执行，正常视频、角色替换、BFS、续写、长音频没有完整验收；124帧失败曾在其他任务并行时发生OpenBLAS分配失败，不能当资源隔离后的硬件上限。H3在最近修复任务中被排除优先级，保留待办即可。
+用户删除的标准ModelScope权重不自动恢复。H3目前仅384×256、5帧、4步诊断可执行，正常视频、角色替换、BFS、续写、长音频没有完整验收；124帧失败曾在其他任务并行时发生OpenBLAS分配失败，不能当资源隔离后的硬件上限。H3在最近修复任务中被排除优先级，保留待办即可。
 
 每个新尝试：记录问题/假设 → 固定工作流与源版本 → 单变量对照 → 实际执行/资源 → 输入输出/目视 → 判断是否仅规避 → 剩余项。更新 `docs/08` 或新增Linux日记，并把原始文件保存在全新 `runs/<唯一名称>/`。
 
@@ -234,7 +231,6 @@ python3 -m http.server 8767 --bind 127.0.0.1
 - 另有旧Codex调度 `automation`，本次读到配置仍为ACTIVE、每天00:30、目标会话 `01a154a0-96d0-7a51-abeb-15db83195437`。它属于Windows侧Codex状态，不随共享代码自动成为Ubuntu会话；本次未更改调度，别因看见heartbeat就认为相关计算已完成。后续若保留自动续跑，先确认不会重复启动任务。
 - 本文件只恢复开发上下文；没有替接手后的Ubuntu实时验证做保证。事实优先级：实际源码/模型hash/执行图与history/输出 > 结果补记与目视review > 日记 > 旧会话里的阶段性总结。
 
-
 ## 13. Ubuntu 2026-10-24 续接追加（保留以上历史）
 
 已补齐 qwen-multiref-full-tail 卡片，101条卡片齐全，旧100张article内容逐字节保留；未将部分达到改成通过。Linux环境等版本迁到SSD，95个依赖版本一致；7份模型核对SHA后复用只读挂载GIAO的NVMe副本，旧环境和HDD配置保留。CPU-detach fixture已修正，未改GGUF实际pin回调测试明确失败，CPU-only副本通过，并已仅应用Linux runtime，备份和hash均保存。
@@ -242,7 +238,6 @@ python3 -m http.server 8767 --bind 127.0.0.1
 SSD/NVMe未改代码基线仍在编码器加载时HTTP60秒超时；补丁后编码器可完成，但原默认FP32 casting整图触发1536MiB RAM保护。后续FP16、分阶段条件/latent归档、真实/free验证的实际结果见 [10月24日续接](docs/10-ubuntu-continuation-2026-10-24.md) 和 [本轮实验](trials/2026-10-24-ubuntu/README.md)。已有raw summary遗留running用结果补记澄清，勿当服务活着。
 
 运行前确认NVMe仍挂载、GPU临时ACL有效；两个旧Windows卸载问题及CPU-backing候选未由这些Linux实测结案。源码固定commit仍是导出基线，运行副本另有明确patch hash，不能仅凭commit误认完全未改。
-
 
 ## 14. Ubuntu 本轮收尾状态（2026-10-24 追加）
 
@@ -253,7 +248,6 @@ SSD/NVMe未改代码基线仍在编码器加载时HTTP60秒超时；补丁后编
 34项回归通过；CPU detach有效fixture的原实现失败和候选通过均保留；默认/active释放指标分开。报告补齐漏卡后101张卡片，另追加50案例的历史Windows输出图库，原101张article字节保留、review文件未改。95个依赖版本与10月23日一致，SSD/NVMe及补丁源码SHA见新环境快照。
 
 完整结果、每组失败边界、图片/history/源码绑定及复跑命令见 [10月24日实验](trials/2026-10-24-ubuntu/README.md)、[结果索引](trials/2026-10-24-ubuntu/outcomes.json)、[续接日记](docs/10-ubuntu-continuation-2026-10-24.md)。本轮没有改写Windows结论，没有把身份、LoRA、CPU8B、FLUX细节及Windows native故障关闭；原49条重复尝试审计仍保留。后续优先研究Qwen主机内存峰值，而不是无限重复同一大图或降低保护阈值。
-
 
 ## 15. Ubuntu 重启后续接追加（2026-10-24）
 
@@ -269,10 +263,9 @@ Python 3.12.14 基础运行库复制到 `/home/user/.local/share/barely-comfy/py
 
 本轮 24 项测试通过（18 工作流+2 无参考 VAE 契约+4 GGUF GPU 探针）；完整与部分卸载原路径先红后绿证据均保留。最终两图健康，精确提示仍部分达到；纯文本无 LoRA 验证不能关闭 LoRA/身份/参考消融、异常、Windows native、CPU8B、FLUX 或视频待办。旧报告卡片、reviews/cases 与 10 月 24 日首轮文档未改。详见 [重启后日记](docs/11-ubuntu-reboot-continuation-2026-10-24.md)、[本轮全部证据](trials/2026-10-24-ubuntu-followup/README.md) 与 [结果索引](trials/2026-10-24-ubuntu-followup/outcomes.json)。
 
-
 ## 16. 模型 / 功能 / 平台汇报及 WebUI 库（2026-10-24 追加）
 
-用户要求的 HTML 已重排为“模型 → 功能 → Windows / Linux”：9 系列、46 功能组、106 证据条目，保留 101 条 Windows 历史 + 4 条既有 Linux 实测 + 1 条 Flux.3 配方待确认。未测平台不继承通过。原 Windows HTML/MD 完整归档到同目录 `feature-report.windows-20261024.*`，原 cases/reviews/baseline/blocked 与原主 Markdown 未改，SHA 校验通过。旧生成脚本 CLI 转到新布局，历史 helper 保留，旧脚本字节备份位于新 trial。
+未测平台不继承通过。原 Windows HTML/MD 完整归档到同目录 `feature-report.windows-20261024.*`，原 cases/reviews/baseline/blocked 与原主 Markdown 未改，SHA 校验通过。旧生成脚本 CLI 转到新布局，历史 helper 保留，旧脚本字节备份位于新 trial。
 
 `workflows/` 提供 100 份独立 API 配方、99 份真实前端导出/重载后参数与连线一致的 UI JSON、12 份内容不变的输入图片和完整 zip。99 份已安装到当前 runtime `user/default/workflows/模型功能库/模型/功能/`，后端列表可见。历史分阶段配方明确标注没有在当前 Linux 整图验收；所有 Windows 评价和未闭环事项保留。
 
@@ -282,10 +275,9 @@ Python 3.12.14 基础运行库复制到 `/home/user/.local/share/barely-comfy/py
 
 详见 `docs/12-platform-report-workflow-library-2026-10-24.md`、`workflows/README.md`、`trials/2026-10-24-platform-report/`；库生成流程见 README，HTML 入口原地址不变。
 
-
 ## 17. Linux功能补图收尾（2026-10-25追加，保留以上历史）
 
-已完成本轮模型/功能/平台补图：9系列47组169条证据，新增42张Linux实测图，40组已有Linux输出；仍无图的7组为H3六组与Flux.3一组，依赖/权重/输入或准确配方不足。21组至少有一条达到本例目标，其余质量与身份细节保持实际部分/未达标，不将有图等同全通过。Windows101条源评价、原MD与完整HTML/MD归档SHA不改；根README/本文件仅追加。
+已完成本轮模型/功能/平台补图：9系列47组169条证据，新增42张Linux实测图，40组已有Linux输出；21组至少有一条达到本例目标，其余质量与身份细节保持实际部分/未达标，不将有图等同全通过。Windows101条源评价、原MD与完整HTML/MD归档SHA不改；根README/本文件仅追加。
 
 最终268份UI前端导入/导出/重载核对通过，184份安装并在后端列表可见；H3诊断缺节点的API继续受阻。新Linux整图未验收的不默认安装，阶段文件与精确归档可用；完整包包含文字/条件归档，轻量包需先生成归档。API/输入/RGB/文件/阶段/归档SHA和模型盘21份权重只读清单均有证据。
 
@@ -303,4 +295,8 @@ Kroma主体外参考裁图得到猫头鹰；FLUX中文结构指令得到单嘴�
 
 ## 2026-10-26 报告阅读修订追加
 
-报告默认收起重复记录，67条Linux记录补齐测试目的、改动和结果；63条近期记录按时间排列，4条较早记录注明登记顺序。状态统一为通过/部分达到/未达到/未出图/未测试，原Windows评价不改。本轮未新增推理。Flux.3-5.6B-UN重新核查后仍缺作者匹配权重和工作流，不能执行；具体缺项见trials/2026-10-26-report-edit/flux3-status.md。已应用Humanizer和Vercel界面指南。GitHub继续更新PR #1。
+报告默认收起重复记录，67条Linux记录补齐测试目的、改动和结果；63条近期记录按时间排列，4条较早记录注明登记顺序。状态统一为通过/部分达到/未达到/未出图/未测试，原Windows评价不改。本轮未新增推理。已应用Humanizer和Vercel界面指南。GitHub继续更新PR #1。
+
+## 2026-10-26 范围整理与阅读优化
+
+按用户要求移除不再保留的系列及其资料、占位条目和旧总览截图。当前7系列、40项功能、162条记录；95条Windows原评价和卡片不变。Linux当前21项通过、18项部分达到、1项未达到。按Humanizer和Vercel界面指南补充结果筛选、网址状态保存、键盘跳转和图片尺寸。268份UI/API及184份本机推荐工作流的模型参数不变，本轮未推理。下载包需随新索引发布；继续更新GitHub PR #1。

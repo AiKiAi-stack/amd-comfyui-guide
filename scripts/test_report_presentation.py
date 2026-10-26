@@ -1,6 +1,7 @@
 import unittest
 import json
-from platform_catalog import ROOT
+import struct
+from platform_catalog import ROOT, MODELS
 from build_platform_report import TRIAL_NOTES
 from build_platform_report import platform_panel, display_status
 
@@ -25,6 +26,23 @@ class ReportPresentationTests(unittest.TestCase):
             self.assertEqual(note['source_sha256'],record['source_sha256'])
             for field in ('label','purpose','change','result'):
                 self.assertTrue(note[field],(record['id'],field))
+
+    def test_scope_contains_only_the_seven_tested_series(self):
+        catalog=json.loads((ROOT/'workflows/catalog.json').read_text())
+        self.assertEqual(set(MODELS), {'qwen-base','qwen-turbo','kroma','moss','flux2','zimage-gguf','zimage-aio'})
+        self.assertEqual(len(catalog['records']),162)
+        self.assertEqual(len({(r['model_id'],r['feature_id']) for r in catalog['records']}),40)
+        self.assertTrue(all(r['model_id'] in MODELS for r in catalog['records']))
+        self.assertEqual(sum(r['platform']=='Windows' for r in catalog['records']),95)
+
+    def test_images_reserve_their_actual_non_square_dimensions(self):
+        catalog=json.loads((ROOT/'workflows/catalog.json').read_text())
+        record=next(r for r in catalog['records'] if r['case_id']=='flux2-teapot-structure-linux-repair' and r['platform']=='Linux')
+        with (ROOT/record['images'][0]).open('rb') as stream:header=stream.read(24)
+        width,height=struct.unpack('>II',header[16:24])
+        self.assertNotEqual(width,height)
+        content=platform_panel('Linux',[record],{})
+        self.assertIn(f'width="{width}" height="{height}"',content)
 
     def test_status_terms_are_small_and_consistent(self):
         for source,expected in [('达到本例目标','通过'),('执行通过 · 提示细节部分达到','部分达到'),('未达到水彩风格目标','未达到'),('中止 · 无输出','未出图'),('未验证','未测试')]:

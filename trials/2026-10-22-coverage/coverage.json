@@ -103,8 +103,7 @@
     "BFS prefix/LoRA contribution",
     "Real continuous encoding and full-model reload",
     "Native GGUF/INT8 OOM cleanup root",
-    "ROCm7.2 GPU initialization",
-    "Flux.3 exact UN provenance"
+    "ROCm7.2 GPU initialization"
   ],
   "warning": "queued means prepared but not yet executed; pass is feature-specific, not native-crash root cause resolution"
 }

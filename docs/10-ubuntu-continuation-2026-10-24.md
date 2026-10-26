@@ -12,7 +12,7 @@
 
 安装器现支持 `--venv /绝对/SSD路径` 建立独立环境并链接到 runtime，以及显式 `--gguf-cpu-detach` 应用本轮补丁。默认不自动启用该补丁；已有环境若指向其他位置会拒绝覆盖。重复安装保留已有 `model-paths.yaml`，避免覆盖人工核验的 NVMe 配置；本次 `--skip-install` 续接检查退出0，配置 SHA 前后相同，见 [续接检查](../trials/2026-10-24-ubuntu/setup-resume-check.json)。
 
-已有 NVMe 分区 GIAO 通过 `udisksctl mount -b /dev/nvme0n1p2 --options ro` **只读挂载**到 `/media/user/GIAO`。复用其中的 `AIModels/amd_comfy/repair-20261021`、`zimage-20261020`、`flux2-klein-20261020`；Qwen/Z-Image 所需 7 个文件重新计算 SHA，与原模型一致，见 [模型校验](../trials/2026-10-24-ubuntu/nvme-model-hashes.json)。没有下载/复制大模型，没有恢复 Flux.3。
+已有 NVMe 分区 GIAO 通过 `udisksctl mount -b /dev/nvme0n1p2 --options ro` **只读挂载**到 `/media/user/GIAO`。复用其中的 `AIModels/amd_comfy/repair-20261021`、`zimage-20261020`、`flux2-klein-20261020`；Qwen/Z-Image 所需 7 个文件重新计算 SHA，与原模型一致，见 [模型校验](../trials/2026-10-24-ubuntu/nvme-model-hashes.json)。
 
 当前 `runtime/ubuntu/model-paths.yaml` 优先索引上述 NVMe 目录，原 HDD 路径保留作为补充；原配置在 `model-paths.hdd-20261023.yaml`。挂载是本次会话状态，不保证重启后存在；若 NVMe 未挂载，先按实际分区重新只读挂载，再启动，避免悄悄回退到慢盘。源码仍在共享盘，故此项不是纯粹的单变量性能基准。
 

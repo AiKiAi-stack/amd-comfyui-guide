@@ -7,8 +7,7 @@
     "moss": "MOSS Image SFT · INT8",
     "flux2": "FLUX.2 Klein 4B · FP8",
     "zimage-gguf": "Z-Image Turbo · 双 GGUF Q4_K_M",
-    "zimage-aio": "Z-Image Turbo · FP8 AIO",
-    "flux3-un": "Flux.3-5.6B-UN · 配方待确认"
+    "zimage-aio": "Z-Image Turbo · FP8 AIO"
   },
   "features": {
     "t2i": "文生图与连续生成",
@@ -7315,28 +7314,6 @@
         "linux-coverage-turbo-un-multiref-bf16-cpu-encode--sample"
       ],
       "workflow_id": "linux-coverage-turbo-un-multiref-bf16-cpu-encode"
-    },
-    {
-      "id": "pending-flux3-un",
-      "case_id": "flux3-un-unconfirmed",
-      "model_id": "flux3-un",
-      "feature_id": "unconfirmed",
-      "platform": "Windows",
-      "title": "准确权重与编码器配方未确认",
-      "verdict": "未验证",
-      "execution": "未执行",
-      "review": "原交接保留待办；没有确认 Flux.3-5.6B-UN 的精确权重与四步配方，不使用 FLUX.2 Klein 的结果代替。",
-      "blocked": true,
-      "images": [],
-      "profile": "",
-      "expected": "",
-      "prompt": "",
-      "source": null,
-      "source_case_file": "handoff.md",
-      "workflow_reason": "待明确准确模型与配方",
-      "original_model_label": "Flux.3-5.6B-UN",
-      "claim_level": "交接待办，非执行结果",
-      "original_case": {}
     }
   ],
   "workflows": [

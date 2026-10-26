@@ -6,7 +6,6 @@
 
 - `runtime/ubuntu/.venv`：独立 Linux Python 3.12 环境，首次使用本机 Codex 附带的 Python 3.12.14 建立；系统 Python 3.10 和旧 Windows `.venv` 不变。
 - `runtime/ubuntu/ComfyUI`：从旧本地 Git 对象导出固定提交 `ce1e922d8623bb507180e32a0c01a7d0e29edef7`，GGUF 固定 `373048b8403a7820620065210a691263d4da0a61`。不复制旧工作区未提交源码改动。
-- 现有 `amd_comfy/ComfyUI/models` 通过 `model-paths.yaml` 查找。模型没有重新下载、移动或复制，也没有恢复已删除的 Flux.3 权重。Z-Image 使用的三个文件重新计算 SHA，与 Windows 历史清单完全相同。
 - PyTorch `2.12.0+rocm7.14.0`、torchvision `0.27.0+rocm7.14.0`、ROCm `7.14.0`，使用原生 `device-gfx1032`。没有设置 `HSA_OVERRIDE_GFX_VERSION`。本轮未安装非必需的 torchaudio/devel。
 - 本地辅助节点单独复制到新运行目录；只在该副本应用已有的 attention 奇数查询切片补丁，并保留原文件和 SHA。INT8/GGUF 候选规避插件默认不开启。
 

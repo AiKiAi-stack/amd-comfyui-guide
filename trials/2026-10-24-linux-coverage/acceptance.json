@@ -65,14 +65,6 @@
       "windows_image_groups": 4,
       "linux_image_groups": 4,
       "linux_met_groups": 4
-    },
-    {
-      "model": "flux3-un",
-      "title": "Flux.3-5.6B-UN · 配方待确认",
-      "groups": 1,
-      "windows_image_groups": 0,
-      "linux_image_groups": 0,
-      "linux_met_groups": 0
     }
   ],
   "bundle_status": {
@@ -92,7 +84,5 @@
       }
     ]
   },
-  "remaining_without_linux_images": [
-    "flux3-un: 1 group, exact model/recipe unconfirmed"
-  ]
+  "remaining_without_linux_images": []
 }

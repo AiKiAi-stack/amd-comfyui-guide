@@ -1,7 +1,7 @@
 {
-  "tag": "linux-model-workflows-2026-10-25",
+  "tag": "model-feature-workflows-2026-10-26",
   "assets": {
-    "model-feature-workflows.zip": "https://github.com/AiKiAi-stack/barely-comfy/releases/download/linux-model-workflows-2026-10-25/model-feature-workflows.zip",
-    "model-feature-workflows-light.zip": "https://github.com/AiKiAi-stack/barely-comfy/releases/download/linux-model-workflows-2026-10-25/model-feature-workflows-light.zip"
+    "model-feature-workflows.zip": "https://github.com/AiKiAi-stack/barely-comfy/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip",
+    "model-feature-workflows-light.zip": "https://github.com/AiKiAi-stack/barely-comfy/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip"
   }
 }

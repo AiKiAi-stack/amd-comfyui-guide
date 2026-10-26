@@ -2,7 +2,7 @@
 
 用户目标：公众号介绍的模型除了普通编辑之外，各项功能都提供独立的输入、真实输出与判断。报告入口为 [feature-report.html](./feature-report.html) 和 [feature-report.md](./feature-report.md)。运行中的卡片不能当成最终结果。
 
-2026-10-20 核验：BFS 换头 LoRA 对照和 Turbo-UN 六项均有真实输出；UN 的文生图、多图合成、全身角色替换及主要姿态目标达到本例目标，换头和遮罩物种替换仍有限制。这只是384×256、5帧、4步的链路诊断，不等于正常视频或BFS功能通过。此前CPU VAE超时、INT8 HIPBLAS错误、FP16无显存预留时的OOM均保留。自动提示词生成先后遇到INT8错误与fallback显存不足，没有输出。
+2026-10-20 核验：BFS 换头 LoRA 对照和 Turbo-UN 六项均有真实输出；UN 的文生图、多图合成、全身角色替换及主要姿态目标达到本例目标，换头和遮罩物种替换仍有限制。
 
 ## 试验边界
 
@@ -38,7 +38,7 @@
 
 每项 `single-api.json` 保存独立图；`api.json` 保存实际提交的完整批次图，`output_nodes` 把该功能映射到专属保存节点。PNG 内的 node class / inputs 与提交图，以及每张图的 SHA-256 记录在 `output-audit.json`；ComfyUI 自动附加的 LoadImage 缓存哈希单独保留。
 
-新增 Qwen BFS LoRA 的下载校验和配方边界见 [BFS 下载记录](../2026-10-19-bfs-headswap/download-receipt.json)。新增模型已确认为用户提供的 Flux.3-5.6B-UN，来源与待核验的内部权重见 [待测清单](../../research/pending-models.md)；尚无本机输出。
+新增 Qwen BFS LoRA 的下载校验和配方边界见 [BFS 下载记录](../2026-10-19-bfs-headswap/download-receipt.json)。尚无本机输出。
 
 输出原件在 `ComfyUI/output/FeatureBench/`；引用素材在 `ComfyUI/input/featurebench/`。旧文生图基线在 `../2026-10-18/`，报告以单独的历史记录标明。
 

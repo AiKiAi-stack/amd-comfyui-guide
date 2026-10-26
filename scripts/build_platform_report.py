@@ -3,6 +3,8 @@ import html
 import json
 import os
 import shlex
+import struct
+from functools import lru_cache
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import quote
@@ -14,8 +16,8 @@ from report_evidence import comparison, ISSUE_FILE
 PRESENTATION = ROOT / 'trials/2026-10-26-report-edit'
 TRIAL_NOTES = json.loads((PRESENTATION / 'trial-notes.json').read_text()) if (PRESENTATION / 'trial-notes.json').is_file() else {}
 READING_SUMMARIES = json.loads((PRESENTATION / 'reading-summaries.json').read_text()) if (PRESENTATION / 'reading-summaries.json').is_file() else {}
-MODEL_LABELS = {**MODELS, 'qwen-base':'Qwen-Image 2.1 Base', 'qwen-turbo':'Qwen-Image 2.1 Turbo', 'kroma':'Kroma 0.3.1 OPD', 'moss':'MOSS Image SFT', 'flux2':'FLUX.2 Klein 4B', 'zimage-gguf':'Z-Image Turbo · 双GGUF', 'zimage-aio':'Z-Image Turbo · FP8 AIO', 'flux3-un':'Flux.3-5.6B-UN'}
-FEATURE_LABELS = {**FEATURES, 't2i':'文生图', 't2i-1024':'1024文生图', 'style':'水彩风格转换', 'style-reference':'参考图风格', 'head':'换头', 'head-lora':'LoRA换头', 'face':'仅换脸', 'inpaint':'局部重绘', 'color':'图片改色', 'multiref':'多图合成', 'caption':'自动描述再生成', 'role':'全身人物替换', 'pose':'姿态参考', 'iterative':'小尺寸编辑', 'figure':'人体素描', 'unconfirmed':'文生图（缺少作者文件）'}
+MODEL_LABELS = {**MODELS, 'qwen-base':'Qwen-Image 2.1 Base', 'qwen-turbo':'Qwen-Image 2.1 Turbo', 'kroma':'Kroma 0.3.1 OPD', 'moss':'MOSS Image SFT', 'flux2':'FLUX.2 Klein 4B', 'zimage-gguf':'Z-Image Turbo · 双GGUF', 'zimage-aio':'Z-Image Turbo · FP8 AIO'}
+FEATURE_LABELS = {**FEATURES, 't2i':'文生图', 't2i-1024':'1024文生图', 'style':'水彩风格转换', 'style-reference':'参考图风格', 'head':'换头', 'head-lora':'LoRA换头', 'face':'仅换脸', 'inpaint':'局部重绘', 'color':'图片改色', 'multiref':'多图合成', 'caption':'自动描述再生成', 'role':'全身人物替换', 'pose':'姿态参考', 'iterative':'小尺寸编辑', 'figure':'人体素描'}
 
 
 def display_status(record):
@@ -47,7 +49,7 @@ def trial_story(record, index):
     change = note.get('change') or '原始配置与提示词见本次参数。'
     outcome = note.get('result') or record.get('review') or '原记录未提供结果说明。'
     status, style = display_status(record)
-    return ('<li class="trial-row"><div class="trial-heading"><strong>第' + str(index) + '次 · ' + escape(label)
+    return ('<li class="trial-row"><div class="trial-heading"><strong>方案' + str(index) + ' · ' + escape(label)
         + '</strong><span class="chip ' + style + '">' + status + '</span></div><p class="muted">' + date
         + '</p><p><b>' + ('测试目的' if index == 1 else '为什么再测') + '：</b>' + escape(purpose)
         + '</p><p><b>本次改动：</b>' + escape(change) + '</p><p><b>结果：</b>' + escape(outcome) + '</p>')
@@ -59,6 +61,17 @@ def escape(value):
 
 def url(path):
     return quote(os.path.relpath(ROOT / path, HERE).replace(os.sep, '/'), safe='/._-')
+
+
+@lru_cache(maxsize=None)
+def image_dimensions(path):
+    file = ROOT / path
+    if file.is_file():
+        with file.open('rb') as stream: header = stream.read(24)
+        if header[:8] == b'\x89PNG\r\n\x1a\n':
+            width, height = struct.unpack('>II', header[16:24])
+            return f'width="{width}" height="{height}"'
+    return 'width="512" height="512"'
 
 
 def link(path, label, download=False):
@@ -144,7 +157,7 @@ def reproduction(record, job, phase_jobs=()):
         steps.append('<strong>本条历史结果来自分阶段 / 分进程执行。</strong>整理后的整图只保留计算配方，不能把导入成功当作整图已在当前 Linux 跑通；原记录的执行边界仍适用。')
     models = ''.join(f'<li><code>{escape(m["file"])}</code><span class="chip {"good" if m["available"] is True else "bad"}">{"当前可见" if m["available"] is True else "未在当前服务找到"}</span></li>' for m in job['models'])
     inputs = ''.join(f'<li>节点 <code>{escape(a["node"])}</code> → <code>{escape(a["file"])}</code></li>' for a in job['inputs']) or '<li>纯文本，不需要输入图片。</li>'
-    input_images = ''.join(f'<a href="{url("workflows/input/" + a["file"])}" target="_blank" rel="noopener"><img loading="lazy" src="{url("workflows/input/" + a["file"])}" alt="输入节点 {escape(a["node"])}：{escape(a["file"])}"></a>' for a in job['inputs'] if a['available'])
+    input_images = ''.join(f'<a href="{url("workflows/input/" + a["file"])}" target="_blank" rel="noopener"><img {image_dimensions("workflows/input/" + a["file"])} loading="lazy" src="{url("workflows/input/" + a["file"])}" alt="输入节点 {escape(a["node"])}：{escape(a["file"])}"></a>' for a in job['inputs'] if a['available'])
     params = '\n'.join(parameters(graph)) or '本例为后处理 / 合成，未记录采样参数。'
     actions = link(job['api'], 'API文件')
     if job.get('frontend_import', {}).get('pass'):
@@ -203,7 +216,7 @@ def feature_evidence(by_platform):
             output += '<p><b>' + label + '：</b>' + escape(issue[field]) + '</p>'
         output += '<p>查看相关记录：' + '、'.join('<a href="#' + escape(r['id']) + '">' + escape(r['case_id']) + '</a>' for r in affected) + '</p></details>'
     if not by_platform['Linux']:
-        output += '<p class="muted">Flux.3-5.6B-UN仍未测试：缺少可核对的UN权重和四步工作流。本轮查找结果见下方来源记录。</p>'
+        output += '<p class="muted">尚无本平台的运行记录。</p>'
     elif not ids:
         output += '<p class="muted">本组没有新增运行问题；图像效果见上方结果。</p>'
     return '<details class="technical-details"><summary>配置差异与问题排查</summary>' + output + '</section></details>'
@@ -212,8 +225,8 @@ def feature_evidence(by_platform):
 def record_html(record, job, phase_jobs=()):
     state, style = workflow_state(job)
     status_label, status_style = display_status(record)
-    images = ''.join(f'<a href="{url(p)}" target="_blank" rel="noopener"><img loading="lazy" src="{url(p)}" alt="{escape(record["case_id"])} 输出"></a>' for p in record['images'])
-    auxiliary = ''.join(f'<a href="{url(p)}" target="_blank" rel="noopener"><img loading="lazy" src="{url(p)}" alt="输入或遮罩预览，不计生成结果"></a>' for p in record.get('auxiliary_images', []))
+    images = ''.join(f'<a href="{url(p)}" target="_blank" rel="noopener"><img {image_dimensions(p)} loading="lazy" src="{url(p)}" alt="{escape(record["case_id"])} 输出"></a>' for p in record['images'])
+    auxiliary = ''.join(f'<a href="{url(p)}" target="_blank" rel="noopener"><img {image_dimensions(p)} loading="lazy" src="{url(p)}" alt="输入或遮罩预览，不计生成结果"></a>' for p in record.get('auxiliary_images', []))
     return (f'<details class="attempt" id="{escape(record["id"])}"><summary>'
             f'<span>{escape(record["title"])}</span><span class="chip {status_style}">{status_label}</span></summary>'
             f'<p class="case-id">{escape(record["case_id"])} · 执行：{escape(record["execution"])}</p>'
@@ -231,12 +244,12 @@ def record_html(record, job, phase_jobs=()):
 def platform_panel(platform, records, jobs):
     if not records:
         return (f'<section class="platform empty" data-platform="{platform}"><div class="platform-label"><span class="os-icon">{platform[0]}</span><h4>{platform}</h4>'
-                '<span class="chip pending">未测试</span></div><p>缺少作者UN版本的权重和四步工作流，尚未提交运行。</p>'
-                '<p class="muted">获取匹配文件后，先验证512像素文生图，再验证图片编辑。</p></section>')
+                '<span class="chip pending">未测试</span></div><p>尚无本平台的运行记录。</p>'
+                '</section>')
     records = ordered_trials(records)
     sample = representative(records)
     label, style = display_status(sample)
-    image_html = ''.join(f'<a href="{url(p)}" target="_blank" rel="noopener"><img loading="lazy" src="{url(p)}" alt="{platform} {escape(FEATURE_LABELS.get(sample.get("feature_id"),sample["title"]))}输出"></a>' for p in sample['images'][:1])
+    image_html = ''.join(f'<a href="{url(p)}" target="_blank" rel="noopener"><img {image_dimensions(p)} loading="lazy" src="{url(p)}" alt="{platform} {escape(FEATURE_LABELS.get(sample.get("feature_id"),sample["title"]))}输出"></a>' for p in sample['images'][:1])
     output = '<div class="preview">' + image_html + '</div>' if image_html else '<div class="no-image">尚无输出图片</div>'
     job = jobs.get(sample.get('workflow_id'))
     phase_jobs = [jobs[k] for k in sample.get('phase_workflow_ids', []) if k in jobs]
@@ -248,7 +261,7 @@ def platform_panel(platform, records, jobs):
     if platform == 'Linux':
         timed = all(TRIAL_NOTES.get(r['id'], {}).get('order_unix_ms') is not None for r in records)
         order_note = '按先后排列，时间为北京时间' if timed else '按原方案登记顺序；旧记录缺少完整时间'
-        history = '<details class="test-history"><summary>测试过程 · ' + str(len(records)) + '次</summary><p class="muted">' + order_note + '。不同配置分别记为一次；不能合并当作连续稳定性测试。</p><ol class="trial-list">'
+        history = '<details class="test-history"><summary>测试过程 · ' + str(len(records)) + '个方案</summary><p class="muted">' + order_note + '。每个方案列出改动和结果。</p><ol class="trial-list">'
         for index, record in enumerate(records, 1):
             history += trial_story(record, index) + record_html(record, jobs.get(record.get('workflow_id')), [jobs[k] for k in record.get('phase_workflow_ids',[]) if k in jobs]) + '</li>'
         history += '</ol></details>'
@@ -284,26 +297,26 @@ def build_report():
             has_linux = bool(by_platform['Linux'])
             linux_image = any(r['images'] for r in by_platform['Linux'])
             linux_met = any(r['images'] and r['execution'] == 'success' and verdict_class(r['verdict']) == 'good' for r in by_platform['Linux'])
+            current_linux = representative(ordered_trials(by_platform['Linux']))
+            linux_status = display_status(current_linux)[0] if current_linux else '未测试'
             searchable = ' '.join([title, feature] + [r['case_id'] + ' ' + str(r['verdict']) for r in rows]).lower()
             feature_jobs = [jobs[r['workflow_id']] for r in rows if r.get('workflow_id') in jobs]
             importable = any(j.get('frontend_import', {}).get('pass') for j in feature_jobs)
-            features.append(f'<article class="feature" id="{mid}--{fid}" data-search="{escape(searchable)}" data-linux="{str(has_linux).lower()}" data-linux-image="{str(linux_image).lower()}" data-linux-met="{str(linux_met).lower()}" data-workflow="{str(importable).lower()}">'
+            features.append(f'<article class="feature" id="{mid}--{fid}" data-search="{escape(searchable)}" data-linux-status="{linux_status}" data-linux="{str(has_linux).lower()}" data-linux-image="{str(linux_image).lower()}" data-linux-met="{str(linux_met).lower()}" data-workflow="{str(importable).lower()}">'
                 f'<header class="feature-heading"><div><p class="eyebrow">{escape(title)}</p><h3>{escape(feature)}</h3></div>'
                 f'<div class="feature-tags"><span class="chip {"good" if linux_image else "bad" if has_linux else "pending"}">{"两平台有图" if linux_image else "Linux 未出图" if has_linux else "Linux 未测试"}</span></div></header>'
                 '<div class="platform-grid">' + ''.join(platform_panel(p, by_platform[p], jobs) for p in ('Windows', 'Linux')) + '</div>' + feature_evidence(by_platform) + '</article>')
         nav.append(f'<a class="model-link" href="#model-{mid}" data-model="{mid}"><span>{escape(title)}</span><small>{len(features)} 项功能</small></a>')
-        blocker = ('<p class="blocker">未能开始：缺少可核对的作者UN版主模型、编码器和四步工作流。2026-10-26重新查找仍未确认匹配文件。<a href="https://www.compshare.cn/images/uc0UnUzrIbtD" target="_blank" rel="noopener">作者页面</a> · ' + link('trials/2026-10-26-report-edit/flux3-status.md','本轮核查与缺项') + '</p>') if mid == 'flux3-un' else ''
-        model_html.append(f'<section class="model-section" id="model-{mid}" data-model="{mid}"><header class="model-heading"><h2>{escape(title)}</h2><span>{len(features)} 项功能 · {len(model_records)} 条记录</span></header>{blocker}{"".join(features)}</section>')
+        model_html.append(f'<section class="model-section" id="model-{mid}" data-model="{mid}"><header class="model-heading"><h2>{escape(title)}</h2><span>{len(features)} 项功能</span></header>{"".join(features)}</section>')
     template = (ROOT / 'scripts/platform_report_template.html').read_text()
     html_text = template.replace('@@NAV@@', ''.join(nav)).replace('@@MODELS@@', ''.join(model_html))
     replacements = {'@@MODEL_COUNT@@': str(len(model_html)), '@@FEATURE_COUNT@@': str(feature_count),
                     '@@RECORD_COUNT@@': str(len(records)), '@@UI_COUNT@@': str(sum(j.get('frontend_import', {}).get('pass', False) for j in catalog['workflows']))}
     for token, value in replacements.items(): html_text = html_text.replace(token, value)
-    groups = {(r['model_id'], r['feature_id']) for r in records}
-    linux_groups = {(r['model_id'], r['feature_id']) for r in records if r['platform'] == 'Linux'}
-    image_groups = {(r['model_id'], r['feature_id']) for r in records if r['platform'] == 'Linux' and r['images']}
-    coverage = f'Linux 功能进度：{len(image_groups)} / {len(groups)} 组已有输出图片；{len(linux_groups - image_groups)} 组已尝试但尚无图片；{len(groups - linux_groups)} 组尚未执行。图片与功能目视结论分别记录。'
-    html_text = html_text.replace('@@COVERAGE@@', escape(f'Linux：{len(image_groups)} / {len(groups)} 项功能已有图片；有图但未达到目标的项目仍标为部分达到或未达到。Flux.3-5.6B-UN缺少作者文件，尚未测试。'))
+    linux_outcomes = [display_status(representative(ordered_trials([r for r in records if r['platform'] == 'Linux' and (r['model_id'],r['feature_id']) == pair])))[0]
+        for pair in sorted({(r['model_id'],r['feature_id']) for r in records if r['platform'] == 'Linux'})]
+    coverage = 'Linux：' + '，'.join(f'{linux_outcomes.count(status)}项{status}' for status in ('通过','部分达到','未达到')) + '。'
+    html_text = html_text.replace('@@COVERAGE@@', escape(coverage))
     bundle_status_path = ROOT / 'workflows/bundle-status.json'
     bundle_status = json.loads(bundle_status_path.read_text()) if bundle_status_path.exists() else {}
     synced = bundle_status.get('catalog_sha256') == sha(ROOT / 'workflows/catalog.json')

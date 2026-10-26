@@ -10,4 +10,4 @@
 
 采用了GitHub上的[Humanizer](https://github.com/blader/humanizer)精简冗余措辞，以及[Vercel Web Design Guidelines](https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines)检查标签、层级、键盘焦点和窄屏布局。两项技能已安装，本轮直接阅读其规则后应用。
 
-Flux.3-5.6B-UN仍未测试，缺少可核对的作者UN权重和四步工作流；本轮重新检查了作者页及Hugging Face搜索，详见[缺项说明](../trials/2026-10-26-report-edit/flux3-status.md)。本轮没有用标准Klein替代该版本，也没有把查找文件记成推理测试。
+本轮没有用标准Klein替代该版本，也没有把查找文件记成推理测试。

@@ -954,24 +954,6 @@
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-20-flux3/author-assets/screenshot-image-edit.png",
-    "original_sha256": "e86eb25b41bda92434c6498b80567767bbb517a7181381718c3d367c03eb1e6c",
-    "public_sha256": "e86eb25b41bda92434c6498b80567767bbb517a7181381718c3d367c03eb1e6c",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
-    "file": "trials/2026-10-20-flux3/author-assets/screenshot-image-to-image.png",
-    "original_sha256": "df98d9f8eb7ce35280f14c347c658e19f5f668ebc34e06441588ea7b6ce18348",
-    "public_sha256": "df98d9f8eb7ce35280f14c347c658e19f5f668ebc34e06441588ea7b6ce18348",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
-    "file": "trials/2026-10-20-flux3/author-assets/screenshot-text-to-image.png",
-    "original_sha256": "89322e077a678f5811eadc35d3219b10a54c63588cf896ec742d067cc2b3df71",
-    "public_sha256": "89322e077a678f5811eadc35d3219b10a54c63588cf896ec742d067cc2b3df71",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
     "file": "trials/2026-10-21-gguf-repeat/no-reserve/repeat-01-red_00001_.png",
     "original_sha256": "c66f3e070d38b4ff7d2689f466da21f146aa91a45ef4d997f602a05c3ed99315",
     "public_sha256": "c66f3e070d38b4ff7d2689f466da21f146aa91a45ef4d997f602a05c3ed99315",
@@ -1902,18 +1884,6 @@
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/report-desktop.png",
-    "original_sha256": "bb581d0f47624d0f6946a3bc606222eb84d848f09bb4f5f9c6cb26e0e131766b",
-    "public_sha256": "bb581d0f47624d0f6946a3bc606222eb84d848f09bb4f5f9c6cb26e0e131766b",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
-    "file": "trials/2026-10-24-linux-coverage/report-mobile.png",
-    "original_sha256": "f8e184caf59c526805bd308194e4f9bb39a53aab6c460926544d4ed06d219217",
-    "public_sha256": "f8e184caf59c526805bd308194e4f9bb39a53aab6c460926544d4ed06d219217",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
     "file": "trials/2026-10-24-linux-coverage/report-qwen-comparison.png",
     "original_sha256": "e2577ae12387e6c848a20234ae5f4e21b1c9d1c8daee1057c13bdab2b7b1c977",
     "public_sha256": "e2577ae12387e6c848a20234ae5f4e21b1c9d1c8daee1057c13bdab2b7b1c977",
@@ -1929,18 +1899,6 @@
     "file": "trials/2026-10-24-platform-report/platform-library-webui-blue_00001_.png",
     "original_sha256": "9d7f6f138408d2082db28dd83ad084b56dc5993241ae783bceacf839807844c9",
     "public_sha256": "9d7f6f138408d2082db28dd83ad084b56dc5993241ae783bceacf839807844c9",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
-    "file": "trials/2026-10-24-platform-report/report-desktop.png",
-    "original_sha256": "09c5f9dc5d2b3ba9f4538564335ad7b7efb027cecb8769305b58744c7eca66ce",
-    "public_sha256": "09c5f9dc5d2b3ba9f4538564335ad7b7efb027cecb8769305b58744c7eca66ce",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
-    "file": "trials/2026-10-24-platform-report/report-mobile.png",
-    "original_sha256": "ea3281479ef2d8c3c3548f455794d80639bdb30349ec3b3036f7a81c61233832",
-    "public_sha256": "ea3281479ef2d8c3c3548f455794d80639bdb30349ec3b3036f7a81c61233832",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
@@ -1971,12 +1929,6 @@
     "file": "trials/2026-10-24-ubuntu/qwen-green-isolated/7-0-reload-02-green_00001_.png",
     "original_sha256": "f3461b6ac6f4a29709ee1f82122e6c41fb8d55db367a90af0f3bd043d44c730a",
     "public_sha256": "f3461b6ac6f4a29709ee1f82122e6c41fb8d55db367a90af0f3bd043d44c730a",
-    "change": "metadata removed, visual bitstream unchanged"
-  },
-  {
-    "file": "trials/2026-10-24-ubuntu/report-gallery.png",
-    "original_sha256": "cc174eb83bf74b87a38944e3513c609ea295a8ef045c7335e17b8d18c1b754e8",
-    "public_sha256": "cc174eb83bf74b87a38944e3513c609ea295a8ef045c7335e17b8d18c1b754e8",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
@@ -2040,15 +1992,15 @@
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-26-report-edit/report-desktop.png",
-    "original_sha256": "96a9a87122238d3bd360f8b1af0371e68726083a8e255937d021609aa1097212",
-    "public_sha256": "96a9a87122238d3bd360f8b1af0371e68726083a8e255937d021609aa1097212",
+    "file": "trials/2026-10-26-report-polish/report-desktop.png",
+    "original_sha256": "58ec99a8d4854c812b3b77003d67b46095195eacbcad28465182e5046b30ec84",
+    "public_sha256": "58ec99a8d4854c812b3b77003d67b46095195eacbcad28465182e5046b30ec84",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-26-report-edit/report-mobile.png",
-    "original_sha256": "c69a3f26d402d0ce2d80486f9b9f42b1a90368fb6260707cfcd713b699fd6a12",
-    "public_sha256": "c69a3f26d402d0ce2d80486f9b9f42b1a90368fb6260707cfcd713b699fd6a12",
+    "file": "trials/2026-10-26-report-polish/report-mobile.png",
+    "original_sha256": "3763df0e40f9426a026c76b04d493402592b184f74baf4364ad16c00958d3007",
+    "public_sha256": "3763df0e40f9426a026c76b04d493402592b184f74baf4364ad16c00958d3007",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {

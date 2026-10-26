@@ -228,14 +228,6 @@ def prepare(base='http://127.0.0.1:8188', install_inputs=True, snapshot=None):
                 metadata['frontend_import'] = old['frontend_import']
         record['workflow_id'] = metadata['id']
         jobs.append(metadata)
-    # One family is still unconfirmed; do not substitute FLUX.2 for it.
-    records.append({'id': 'pending-flux3-un', 'case_id': 'flux3-un-unconfirmed',
-        'model_id': 'flux3-un', 'feature_id': 'unconfirmed', 'platform': 'Windows',
-        'title': '准确权重与编码器配方未确认', 'verdict': '未验证', 'execution': '未执行',
-        'review': '原交接保留待办；没有确认 Flux.3-5.6B-UN 的精确权重与四步配方，不使用 FLUX.2 Klein 的结果代替。',
-        'blocked': True, 'images': [], 'profile': '', 'expected': '', 'prompt': '',
-        'source': None, 'source_case_file': 'handoff.md', 'workflow_reason': '待明确准确模型与配方',
-        'original_model_label': 'Flux.3-5.6B-UN', 'claim_level': '交接待办，非执行结果', 'original_case': {}})
     manifest = {'version': 1, 'models': MODELS, 'features': FEATURES, 'records': records,
                 'workflows': jobs, 'input_assets': assets_manifest,
                 'current_profile': 'coverage-in-progress' if snapshot else 'qwen' if '--force-fp16' in stats['system'].get('argv', []) else 'standard',

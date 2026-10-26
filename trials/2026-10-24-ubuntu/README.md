@@ -66,4 +66,4 @@
 
 [追加图库的50个历史案例和SHA](report-path-gallery.json)修复旧Windows绝对路径在Linux显示为空的问题；全部101张既有article字节保持一致，239个HTML图片链接均存在。浏览器已核对实际显示；原卡片及旧评价不变。更多保存检查见 [保留证明](preservation-check.json)。
 
-![Ubuntu 历史图库显示核对](report-gallery.png)
+
