@@ -34,3 +34,7 @@ python -m http.server 8767 --bind 127.0.0.1
 - [公开副本与数据处理](docs/05-evidence-and-privacy.md)、[上游授权](THIRD_PARTY_NOTICES.md)、[贡献说明](CONTRIBUTING.md)
 
 仓库不包含模型权重、虚拟环境、账号配置或文章全文。原始模型测试图和结论按各次记录保留。
+
+## 独立语音 WebUI
+
+[Ming-3.0-TTS-0.5B 本地语音工作台](standalone/ming-tts-webui/README.md)：Docker Compose部署的Gradio页面，提供内置音色、声音克隆、长文分段和本机API。

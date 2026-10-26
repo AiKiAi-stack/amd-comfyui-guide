@@ -1,0 +1,20 @@
+{
+  "revision": "8d66b70a00f05ad183fa8a863b4ce609fc83cbc0",
+  "checks": [
+    {
+      "file": "campplus.onnx",
+      "sha256": "a6ac6a63997761ae2997373e2ee1c47040854b4b759ea41ec48e4e42df0f4d73",
+      "matches": true
+    },
+    {
+      "file": "model.safetensors",
+      "sha256": "45c4d78d8ad6b1d942e3da86ba035fece02de569f7b2ca7e9d121dfaf18d674c",
+      "matches": true
+    },
+    {
+      "file": "tokenizer.json",
+      "sha256": "87d54ca3b44ea2f822ba39a0a45cb1b61644bd6606d9d3536dea75367bffb06d",
+      "matches": true
+    }
+  ]
+}

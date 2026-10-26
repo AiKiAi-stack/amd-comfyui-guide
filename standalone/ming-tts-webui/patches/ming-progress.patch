@@ -1,0 +1,21 @@
+diff --git a/ming_tts.py b/ming_tts.py
+index 1fe6926..26bd5db 100644
+--- a/ming_tts.py
++++ b/ming_tts.py
+@@ -275,6 +275,7 @@ class MingTTS:
+         trim_silence=True,
+         raw_text=False,
+         output_path=None,
++        progress_callback=None,
+     ):
+         """Synthesize ``text`` and return a ``(1, samples)`` waveform.
+ 
+@@ -328,6 +329,8 @@ class MingTTS:
+             request["taskname"] == "STYLE" and len(fragments) > 1)
+         chunks = []
+         for index, fragment in enumerate(fragments):
++            if progress_callback is not None:
++                progress_callback(index, len(fragments))
+             chunk = self.model.generate(
+                 prompt=request["prompt"],
+                 text=fragment,
