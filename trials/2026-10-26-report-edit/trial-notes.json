@@ -1,0 +1,709 @@
+{
+  "linux-zimage-1": {
+    "source_sha256": "3b622ce614357c0f9333ed14f83089e165b6b9f84e997c9470700db027ab958d",
+    "label": "红色茶壶提示词",
+    "purpose": "检查修改颜色提示词后能否在同一服务继续生成。",
+    "change": "只改变本例的颜色提示词；完整参数见原记录。",
+    "result": "红色陶瓷茶壶，单壶嘴和把手正常，两颗柠檬清晰；无黑图、坏块或明显结构损坏。",
+    "order_unix_ms": null,
+    "order_source": "历史方案登记顺序"
+  },
+  "linux-zimage-2": {
+    "source_sha256": "46ea856469fb42462fb4a1addeda4bd61cb15e58c8f8e0f72125cc80674af49c",
+    "label": "蓝色茶壶提示词",
+    "purpose": "检查修改颜色提示词后能否在同一服务继续生成。",
+    "change": "只改变本例的颜色提示词；完整参数见原记录。",
+    "result": "蓝色陶瓷茶壶和两颗柠檬，结构正常；颜色确实改变，无黑图或坏块。",
+    "order_unix_ms": null,
+    "order_source": "历史方案登记顺序"
+  },
+  "linux-qwen-blue": {
+    "source_sha256": "5e6fcc9433b8a54f44c3294a465416632e716d11f5c4f9eb5779b42dad6dbb5e",
+    "label": "蓝色眼睛提示词",
+    "purpose": "检查修改颜色提示词后能否在同一服务继续生成。",
+    "change": "只改变本例的颜色提示词；完整参数见原记录。",
+    "result": "512×512 完整 PNG，黑斗篷骷髅、教堂门口、朝地面的锈剑、石地浓雾及窗外红月可辨认，无黑图或明显坏块。",
+    "order_unix_ms": null,
+    "order_source": "历史方案登记顺序"
+  },
+  "linux-qwen-green": {
+    "source_sha256": "ea964d01093cb50783634bbdc46124b385ee87e69c1d2a86b1ce96ef430c9812",
+    "label": "绿色眼睛提示词",
+    "purpose": "检查修改颜色提示词后能否在同一服务继续生成。",
+    "change": "只改变本例的颜色提示词；完整参数见原记录。",
+    "result": "512×512 完整 PNG，黑斗篷骷髅、教堂门口、朝地面的锈剑、石地浓雾及窗外红月可辨认，无黑图或明显坏块。",
+    "order_unix_ms": null,
+    "order_source": "历史方案登记顺序"
+  },
+  "linux-coverage-kroma-opd-q2-t2i-fox-512": {
+    "source_sha256": "45bb03d9655bf8ef3aae171ce0fe49b7d9853863cdd75e0eee2be1103c8da849",
+    "order_unix_ms": 1792858567816,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "512×512 图片健康，橙红狐狸坐在覆苔石头上，雾林、纵向树干与柔和逆光清楚。"
+  },
+  "linux-coverage-kroma-img2img": {
+    "source_sha256": "309b25b8e11e71706b90c572e82dfcc772eeac4b350e59796826f2fb8a910218",
+    "order_unix_ms": 1792858737813,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "水彩笔触、纸张质感和雨夜霓虹可辨，橘猫、门边与街道主要元素保留；猫改为面向镜头，构图和姿态没有严格保持。"
+  },
+  "linux-coverage-kroma-style-ref": {
+    "source_sha256": "66f3afb4037a3c82728f84b1296d6f84a6dfe3d89ed02402e6891ee455713a10",
+    "order_unix_ms": 1792858824613,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "蓝橙配色和粗纸/印刷质感有转移，但主体仍是狐狸，没有按提示替换为树枝上的猫头鹰。"
+  },
+  "linux-coverage-kroma-multiref": {
+    "source_sha256": "b59ac0512607d05b2dc9e7d69ebe68b207ea01449f597a93c0f88b99a9f47923",
+    "order_unix_ms": 1792858945378,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "雨夜咖啡馆背景和红狐主体均可辨，橘猫已被替换；但保留了参考图的苔石/森林式前景，狐狸偏插画化，构图与完整尾部未严格达到。"
+  },
+  "linux-coverage-kroma-head-swap": {
+    "source_sha256": "a74e52fbd8893ebb8e6747a4b8c6faf6e352471754416a5eec5564375eec3e15",
+    "order_unix_ms": 1792859092312,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "红卷发、浅色眼睛和雀斑向参考人物靠近，海军蓝外套、红围巾及公园背景基本保留。"
+  },
+  "linux-coverage-flux2-klein-t2i-gpu-text": {
+    "source_sha256": "a4cc34163955db83a76da47af1776aac84ac6defea1f5313998259576222b5de",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/flux2-klein-t2i-gpu-text--encode/attempt-1792859275984122507/memory.jsonl",
+      "first_line": {
+        "time": 1792859292.0241137,
+        "available_mib": 6907.828125
+      },
+      "sha256": "100938b016853ef1842ea0302f26b4d215b0b004a9bdb93e5435dc8c3f9d2bc7"
+    },
+    "order_unix_ms": 1792859292024,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-flux2-klein-t2i-gpu-text-gguf-te": {
+    "source_sha256": "71823f32849875cba498a752ff795c40b09eeefab376cf20fe2dc4cdf70b1565",
+    "order_unix_ms": 1792859596928,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "橘猫、咖啡馆门口、雨夜湿地反光和奶油色 HELLO 小牌都清楚，图像健康，文生图主要目标达到；背景仍有多余招牌文字/字形，不满足 no other writing 的精确限制。"
+  },
+  "linux-coverage-flux2-klein-single-color": {
+    "source_sha256": "cddf8792c1725e17bbcd143f7a7eb1b1925d0149b6cb4503edce3b7798704256",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/flux2-klein-single-color--encode/attempt-1792859354212551260/memory.jsonl",
+      "first_line": {
+        "time": 1792859372.2370105,
+        "available_mib": 7548.19921875
+      },
+      "sha256": "f10ed7216454e34acf6b13c1192f4f9a7addd3e8003a0ba6f99ef2ff8abbbbf4"
+    },
+    "order_unix_ms": 1792859372237,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-flux2-klein-single-color-gguf-te": {
+    "source_sha256": "330ef2f0270b3b9a65abed543fda06dc6a6103086474a4232319d2c02fd47f85",
+    "order_unix_ms": 1792859720136,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "白色手提包已改为蓝色，主要包型、提手、皮革纹理、拍摄角度和浅灰影棚背景基本保留，图片健康。"
+  },
+  "linux-coverage-flux2-klein-dual-logo": {
+    "source_sha256": "3ad92bd046ec52e9828377c6cd3a75fbd6dd290282ac5ed5b5e1e355e07a12ae",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/flux2-klein-dual-logo/attempt-1792859396589369376/memory.jsonl",
+      "first_line": {
+        "time": 1792859422.705556,
+        "available_mib": 7720.6875
+      },
+      "sha256": "3d3b87998a0ebedceb0673a8f28955eb71f630ca3d614b7ddf4726c324628957"
+    },
+    "order_unix_ms": 1792859422706,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-flux2-klein-dual-logo-gguf-te": {
+    "source_sha256": "f81e5f63b6baec8d5b7b59265d2d1d3e24bfaf85afc2f2cb1addf23da79c027e",
+    "order_unix_ms": 1792859849349,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "白包转成参考 Logo 的蓝色，包正面出现黄绿色 C 形标志；主体包型、提手与灰色背景基本保留。"
+  },
+  "linux-coverage-flux2-klein-dual-people-gguf-te": {
+    "source_sha256": "ca4391c189b051880e9ed3b14735890f5b76e8fa89dd99dd2c952c98b0bd0b67",
+    "order_unix_ms": 1792860148935,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "恰好两名成年人物并排出现在公园；左侧红卷发、雀斑和芥末黄毛衣，右侧深色直发、蓝外套与红围巾可辨，未明显串成同一人。"
+  },
+  "linux-coverage-flux2-klein-style-gguf-te": {
+    "source_sha256": "330fb1774fbaf565abb09a809d16d5f6b8ed57469920ca3165b648fd3166f24a",
+    "order_unix_ms": 1792860298302,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "水彩晕染、冷压纸纹理和橘猫背影、咖啡馆门边构图清楚；画面明显变亮，原雨夜霓虹氛围未保持。"
+  },
+  "linux-coverage-flux2-klein-replace-zh-gguf-te": {
+    "source_sha256": "adf02d34be3d9fe6c61fa9361f3d0b424f6e076bc31462c12cf4693e64f7fae8",
+    "order_unix_ms": 1792860422579,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "手提包被替换为红色陶瓷壶状物，灰色背景和居中产品构图基本保留；壶两侧都像壶嘴，没有形成正常单壶嘴加把手结构。"
+  },
+  "linux-coverage-flux2-klein-remove-gguf-te": {
+    "source_sha256": "9c3a36e8731bb2522203bffa1f4351fb24aba06fbd9e1dda4f6eb830f9961ff7",
+    "order_unix_ms": 1792860546031,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "猫已完全移除，画面为咖啡馆门口、盆栽与湿润霓虹街道，未见残留动物或明显猫形轮廓。"
+  },
+  "linux-coverage-flux2-klein-iterative-gguf-te": {
+    "source_sha256": "73ca15ddf598044490c7925d28ece40cf265f8a7693e011b37e49dc16fed40d9",
+    "order_unix_ms": 1792860664069,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "蓝色包、灰色背景保留，左侧提手出现红色丝绸蝴蝶结。"
+  },
+  "linux-coverage-flux2-klein-t2i-1024-gguf-te": {
+    "source_sha256": "c8b5a5a768ace18bcea1ac13a9a9d27c408ef012837a8d6360ed598e7f16fc6e",
+    "order_unix_ms": 1792860770676,
+    "order_source": "ComfyUI execution_start",
+    "label": "改用GGUF文本编码器",
+    "purpose": "原文本编码器触发内存保护，检查更小的量化编码器能否完成。",
+    "change": "文本编码器由safetensors换为Q4 GGUF；这不是原编码器配方通过。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-zimage-gguf-english": {
+    "source_sha256": "93961e9a50c36ad72c30f9dedb4d96c37ac50a5e59759b204dfc614b118d4fa7",
+    "order_unix_ms": 1792861192824,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "白底招牌的 HELLO 五个字母完整、顺序正确，黑色无衬线字体清楚，蓝墙背景可辨，未见多余可读文字。"
+  },
+  "linux-coverage-zimage-gguf-chinese": {
+    "source_sha256": "f5ff530db43cb8c9abdd1d434c33dfdc8a20ec51c2ba35b839e0b8a900591af1",
+    "order_unix_ms": 1792861593166,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "你好世界四字完整、无明显错字，白牌蓝墙和居中文字清楚。"
+  },
+  "linux-coverage-zimage-aio-photo-9step": {
+    "source_sha256": "f470e19c1f5bb6487855de6445e37f013060ec7dc3e36fe4dc3f56b97a483f2b",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/zimage-aio-photo-9step--encode/attempt-1792861697994644776/memory.jsonl",
+      "first_line": {
+        "time": 1792861712.1585774,
+        "available_mib": 8165.51171875
+      },
+      "sha256": "a2289464903db24af4d55ba497f68d18883d495f84ccc63ae694b3bb5d488f94"
+    },
+    "order_unix_ms": 1792861712159,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-zimage-aio-chinese": {
+    "source_sha256": "9b6f1974e9e0423a173112c929e28a03c2131a7683cd80f9f65303df868ee6af",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/zimage-aio-chinese--encode/attempt-1792861786444468793/memory.jsonl",
+      "first_line": {
+        "time": 1792861801.5334015,
+        "available_mib": 7251.43359375
+      },
+      "sha256": "5688513d13a54736e37e1a2ec7b1c2ec68132af48c5cf394e8aae29d22921d1e"
+    },
+    "order_unix_ms": 1792861801533,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-zimage-aio-english": {
+    "source_sha256": "083772c6b47628a0dc4c71ca7b40cee5b38ab180f0486aea22bce75d207b91b7",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/zimage-aio-english--encode/attempt-1792861869408435191/memory.jsonl",
+      "first_line": {
+        "time": 1792861883.5034835,
+        "available_mib": 7682.1015625
+      },
+      "sha256": "927cac344be0536a471402c486f13c7d42c7d9e09684a328c4edd919da426fc9"
+    },
+    "order_unix_ms": 1792861883503,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-zimage-aio-figure-art": {
+    "source_sha256": "82b3ea0537eda517418ee5ac84f238f36d05db29d9cced4e33f1c054d61ef786",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/zimage-aio-figure-art--encode/attempt-1792861952480791260/memory.jsonl",
+      "first_line": {
+        "time": 1792861966.5825443,
+        "available_mib": 7760.70703125
+      },
+      "sha256": "be810a7d95935d0a2695babb3b00e9c95081757592cf9d847d1cbd14d63e10a8"
+    },
+    "order_unix_ms": 1792861966583,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-moss-sft-dmd-8step-t2i-astronaut-512": {
+    "source_sha256": "65c4272a28a500d466ee1429e045f143a7a1f550fe74a28372d69de25035f7d1",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/moss-sft-dmd-8step-t2i-astronaut-512--encode/attempt-1792862036248097769/memory.jsonl",
+      "first_line": {
+        "time": 1792862051.2802124,
+        "available_mib": 7792.71484375
+      },
+      "sha256": "b2726b58f42a2e2ae104814596ae4d6905e48a2ff3130557034817673ebfb88d"
+    },
+    "order_unix_ms": 1792862051280,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-moss-img2img": {
+    "source_sha256": "3d7c1b2062c9b8f6cf50cf05895450eac24d4e2945b2aa958595cdbba5875e25",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/moss-img2img--encode/attempt-1792862122549874036/memory.jsonl",
+      "first_line": {
+        "time": 1792862137.6508188,
+        "available_mib": 7840.21484375
+      },
+      "sha256": "185eb6493fae5fdcdfae37e6b035bb749b655b9052ada1f6d940a7e90ace4efb"
+    },
+    "order_unix_ms": 1792862137651,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-moss-layout": {
+    "source_sha256": "734cba7d6cf0a4fbba85a97d7f8161c48e00d67d9f6bf7e32a379b6bbcb14ccf",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/moss-layout--encode/attempt-1792862207662401716/memory.jsonl",
+      "first_line": {
+        "time": 1792862222.7474916,
+        "available_mib": 7830.90625
+      },
+      "sha256": "1a3ba17e4bea79cceed6a3a77484d978ca6b9e5daee3dfdde98bb9fb3f07a45a"
+    },
+    "order_unix_ms": 1792862222747,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-moss-text": {
+    "source_sha256": "34650b2139a2cfe0c3beba24683dc54230f594e2683257b43b21c345ce5f4b10",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/moss-text--encode/attempt-1792862301221305705/memory.jsonl",
+      "first_line": {
+        "time": 1792862315.2683196,
+        "available_mib": 7512.29296875
+      },
+      "sha256": "d1552a8b4d6f4082cd529a711676b1bf30b38abd2ed2505eb1bb0b5d9e14a725"
+    },
+    "order_unix_ms": 1792862315268,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-turbo-un-t2i": {
+    "source_sha256": "d78e649a72c78c3fcd829b60fa7e77e00f59f28a86665df70f11962110537a76",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/turbo-un-t2i--encode/attempt-1792862573063408291/memory.jsonl",
+      "first_line": {
+        "time": 1792862588.1924994,
+        "available_mib": 7556.0
+      },
+      "sha256": "579ab4968fea5c137621ea9d0a56d36a3416c64f414d27a18602671fa9c22e65"
+    },
+    "order_unix_ms": 1792862588192,
+    "order_source": "资源监控开始时间",
+    "label": "GPU编码的初始方案",
+    "purpose": "首次检查本功能在Linux上的表现。",
+    "change": "采用本例登记的Linux配置；与Windows的差异见参数。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-turbo-un-t2i-stage-nobacking": {
+    "source_sha256": "65212af225ed1bc3a3bceab4eb4a2f1e44d11a242682047635ef3bf291cd257a",
+    "order_unix_ms": 1792890531744,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码，去掉额外CPU副本",
+    "purpose": "减少编码加载时的内存占用，再检查能否完成编码和出图。",
+    "change": "移除为同进程卸载保留的CPU副本，关闭锁页内存，并把编码与采样分开进程。",
+    "result": "白色长毛猫望向雨窗和霓虹反光，室内暖光清楚，图片健康、未见明确多余文字。"
+  },
+  "linux-coverage-zimage-aio-photo-9step-components": {
+    "source_sha256": "c04e34aa825c2d033d86ae0bfb3581998c08d2c6b2dd25de65039940107f4ee7",
+    "order_unix_ms": 1792890777759,
+    "order_source": "ComfyUI execution_start",
+    "label": "分开加载checkpoint组件",
+    "purpose": "整套组件同时加载触发内存保护，检查只加载当前阶段所需部分能否完成。",
+    "change": "编码时只加载编码器；采样和解码时只加载对应组件，权重文件不变。",
+    "result": "红色陶瓷茶壶、正常单壶嘴与把手、两颗柠檬、木桌及左侧窗光清楚，反光和纹理正常，未见明显破图或多余文字。"
+  },
+  "linux-coverage-zimage-aio-chinese-components": {
+    "source_sha256": "fb554642842238dc749c39d07cf8341f8d0ebbbf9274c865a725260964e9fa93",
+    "order_unix_ms": 1792890872733,
+    "order_source": "ComfyUI execution_start",
+    "label": "分开加载checkpoint组件",
+    "purpose": "整套组件同时加载触发内存保护，检查只加载当前阶段所需部分能否完成。",
+    "change": "编码时只加载编码器；采样和解码时只加载对应组件，权重文件不变。",
+    "result": "你好世界四字清楚，白牌蓝墙、黑字居中，无明显额外字符。"
+  },
+  "linux-coverage-zimage-aio-english-components": {
+    "source_sha256": "443ce5bbc259f87d611eeffe8be3607b631c69de787149e666dc643ba5808b9e",
+    "order_unix_ms": 1792890996709,
+    "order_source": "ComfyUI execution_start",
+    "label": "分开加载checkpoint组件",
+    "purpose": "整套组件同时加载触发内存保护，检查只加载当前阶段所需部分能否完成。",
+    "change": "编码时只加载编码器；采样和解码时只加载对应组件，权重文件不变。",
+    "result": "HELLO 拼写完整、黑色大字清楚，白色横牌与蓝墙基本符合要求，未见多余文字。"
+  },
+  "linux-coverage-zimage-aio-figure-art-components": {
+    "source_sha256": "c9e1fe5ffc778a2ac8e355b4e695da41dac652df2be0756e4390f8e84755e416",
+    "order_unix_ms": 1792891122398,
+    "order_source": "ComfyUI execution_start",
+    "label": "分开加载checkpoint组件",
+    "purpose": "整套组件同时加载触发内存保护，检查只加载当前阶段所需部分能否完成。",
+    "change": "编码时只加载编码器；采样和解码时只加载对应组件，权重文件不变。",
+    "result": "成年女性外观、坐姿、完整人体炭笔写生和纹理纸张可辨，为非性化的美术习作场景，未见额外人物或明显整屏破图。"
+  },
+  "linux-coverage-moss-sft-dmd-8step-t2i-astronaut-512-cpu-text": {
+    "source_sha256": "3617af3e2c47ff96956f13af0c5bb001bfa7bcded1b9d9482b257e7be523e8b2",
+    "order_unix_ms": 1792891229406,
+    "order_source": "ComfyUI execution_start",
+    "label": "改为CPU文本编码",
+    "purpose": "GPU编码方案触发内存保护，检查把编码移到CPU能否完成。",
+    "change": "保留同一文本权重，改为CPU编码；编码与GPU采样分开进程。",
+    "result": "宇航员在浓密丛林中行走，白色宇航服、植被与穿林光束清楚，图像健康，无明显乱码或整屏噪声。"
+  },
+  "linux-coverage-moss-img2img-cpu-text": {
+    "source_sha256": "d0568f250a0e887c2ee0031ce1f03fc789d8a8ebaaba3568754dccb66228b3b9",
+    "order_unix_ms": 1792891454345,
+    "order_source": "ComfyUI execution_start",
+    "label": "改为CPU文本编码",
+    "purpose": "GPU编码方案触发内存保护，检查把编码移到CPU能否完成。",
+    "change": "保留同一文本权重，改为CPU编码；编码与GPU采样分开进程。",
+    "result": "宇航员、丛林与居中全身构图保留，但画面仍以写实/三维质感为主，没有清楚的水彩晕染和纸张纹理。"
+  },
+  "linux-coverage-moss-layout-cpu-text": {
+    "source_sha256": "401f87541961cf3110ff98805bc71142718bb9c21b32757bf4816e35ab0677a3",
+    "order_unix_ms": 1792891684239,
+    "order_source": "ComfyUI execution_start",
+    "label": "改为CPU文本编码",
+    "purpose": "GPU编码方案触发内存保护，检查把编码移到CPU能否完成。",
+    "change": "保留同一文本权重，改为CPU编码；编码与GPU采样分开进程。",
+    "result": "红色茶壶在左、蓝色花瓶在右，主体分离清楚，颜色和产品摄影背景符合描述。"
+  },
+  "linux-coverage-moss-text-cpu-text": {
+    "source_sha256": "9bf670dfc307a0a3be937d94f9cc5f998815761ecc01a4f1a42536a71a27ff61",
+    "order_unix_ms": 1792891927387,
+    "order_source": "ComfyUI execution_start",
+    "label": "改为CPU文本编码",
+    "purpose": "GPU编码方案触发内存保护，检查把编码移到CPU能否完成。",
+    "change": "保留同一文本权重，改为CPU编码；编码与GPU采样分开进程。",
+    "result": "奶油色纸面上 HELLO 五个黑色大写字母完整，下面有单个橙子，无额外文字。"
+  },
+  "linux-coverage-turbo-un-inpaint-stage-nobacking": {
+    "source_sha256": "69981eab383d54e391c5a4e013f685cd3f43a11b8973c8f9621bb8e3c4ed2e63",
+    "order_unix_ms": 1792892152427,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码，去掉额外CPU副本",
+    "purpose": "减少编码加载时的内存占用，再检查能否完成编码和出图。",
+    "change": "移除为同进程卸载保留的CPU副本，关闭锁页内存，并把编码与采样分开进程。",
+    "result": "遮罩外 193144 个像素与本例输入逐像素完全一致，证明最终合成的保护区域有效；遮罩内动物仍偏圆头猫形，未能明确达到红狐替换目标。"
+  },
+  "linux-coverage-turbo-un-multiref-stage-nobacking": {
+    "source_sha256": "5ddbfc5db57038baddc96baf6e26bf55fd61f5d98c48215209ac6a9225c9b558",
+    "order_unix_ms": 1792892378923,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码，去掉额外CPU副本",
+    "purpose": "减少编码加载时的内存占用，再检查能否完成编码和出图。",
+    "change": "移除为同进程卸载保留的CPU副本，关闭锁页内存，并把编码与采样分开进程。",
+    "result": "编码结果出现NaN，数值检查停止后续处理，没有输出图片。"
+  },
+  "linux-coverage-turbo-un-face-swap-stage-nobacking": {
+    "source_sha256": "3883495e46ce35e184819b31217b4d9bcf460635f33e06e0974251d6947af0af",
+    "order_unix_ms": 1792892476603,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码，去掉额外CPU副本",
+    "purpose": "减少编码加载时的内存占用，再检查能否完成编码和出图。",
+    "change": "移除为同进程卸载保留的CPU副本，关闭锁页内存，并把编码与采样分开进程。",
+    "result": "编码结果出现NaN，数值检查停止后续处理，没有输出图片。"
+  },
+  "linux-coverage-turbo-un-role-replacement-test-stage-nobacking": {
+    "source_sha256": "be416f51225ee8abbf69ccb174e38427ae4ca595d693b18f6f82739f49446485",
+    "order_unix_ms": 1792892597338,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码，去掉额外CPU副本",
+    "purpose": "减少编码加载时的内存占用，再检查能否完成编码和出图。",
+    "change": "移除为同进程卸载保留的CPU副本，关闭锁页内存，并把编码与采样分开进程。",
+    "result": "编码结果出现NaN，数值检查停止后续处理，没有输出图片。"
+  },
+  "linux-coverage-turbo-un-pose-reference-test-stage-nobacking": {
+    "source_sha256": "6a14b1d7d6796b4dd1867de606b7a916228bbdfb6ee6d0c2fe2543e1f01808eb",
+    "order_unix_ms": 1792910005751,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码，去掉额外CPU副本",
+    "purpose": "减少编码加载时的内存占用，再检查能否完成编码和出图。",
+    "change": "移除为同进程卸载保留的CPU副本，关闭锁页内存，并把编码与采样分开进程。",
+    "result": "编码结果出现NaN，数值检查停止后续处理，没有输出图片。"
+  },
+  "linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking": {
+    "source_sha256": "e6dbcb49868006e0752f88b0b95ff4b375f33ad30a0561020f11529c5a4bb73b",
+    "order_unix_ms": 1792910105228,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码，去掉额外CPU副本",
+    "purpose": "减少编码加载时的内存占用，再检查能否完成编码和出图。",
+    "change": "移除为同进程卸载保留的CPU副本，关闭锁页内存，并把编码与采样分开进程。",
+    "result": "编码结果出现NaN，数值检查停止后续处理，没有输出图片。"
+  },
+  "linux-coverage-flux2-klein-t2i-1024-gguf-te-tiled": {
+    "source_sha256": "e3b122fc0cfe903ebaf659cd5827759ad658788fac54bc5e112ca6ffa0a17b9d",
+    "order_unix_ms": 1792893326226,
+    "order_source": "ComfyUI execution_start",
+    "label": "改为分块解码",
+    "purpose": "普通解码在采样完成后触发内存保护，需要降低解码时的内存用量。",
+    "change": "改用VAEDecodeTiled，tile256、overlap64；保留该方案的编码器和采样设置。",
+    "result": "已取得真实 1024×1024 PNG：橘色长毛猫、雨夜街景、暖咖啡馆及 HELLO 牌清楚，未见明显分块接缝；街边招牌仍有额外字符，未满足 no other writing。"
+  },
+  "linux-coverage-moss-img2img-cpu-text-denoise085": {
+    "source_sha256": "fed50e142f93ea877ff041bf65db708fef9f57e69917e9ca22b01a7568f9b61c",
+    "order_unix_ms": 1792893582414,
+    "order_source": "ComfyUI execution_start",
+    "label": "重绘强度从0.6改为0.85",
+    "purpose": "前一次仍像照片，检查提高重绘强度能否得到水彩效果。",
+    "change": "只把denoise从0.6改为0.85，输入和seed保持原值。",
+    "result": "单变量将 denoise0.6 提到0.85 后，仍为偏摄影的宇航员丛林图；主体居中和全身构图保留，但未见明确水彩晕染/纸纹。"
+  },
+  "linux-coverage-turbo-un-multiref-stage-nobacking-bf16-te": {
+    "source_sha256": "fd397f36a6a711942cf49cfdc04d890d709426cfac08d7492a805f2b3d40681e",
+    "order_unix_ms": 1792892781831,
+    "order_source": "ComfyUI execution_start",
+    "label": "GPU编码改用BF16",
+    "purpose": "FP16方案的编码结果出现NaN，检查改用BF16能否避免。",
+    "change": "文本编码改为BF16，扩散仍用FP16；没有关闭NaN检查。",
+    "result": "编码结果出现NaN，数值检查停止后续处理，没有输出图片。"
+  },
+  "linux-coverage-kroma-style-no-subject-reference-linux-repair": {
+    "source_sha256": "d5c5cf75e64a62a43cc88eedf73b3d024a139425234f1e0412089bd6e9fccf38",
+    "order_unix_ms": 1792893819339,
+    "order_source": "ComfyUI execution_start",
+    "label": "裁掉风格参考图中的狐狸",
+    "purpose": "完整参考图让猫头鹰目标变成狐狸，检查去掉参考主体是否有效。",
+    "change": "只取不含狐狸的参考角落；保留猫头鹰目标和蓝橙版画风格。",
+    "result": "裁取不含狐狸的参考角落后，输出明确为有圆眼、短喙及爪子的单只猫头鹰；蓝橙几何色块与粗纸纹保留，没有狐狸主体。"
+  },
+  "linux-coverage-flux2-teapot-structure-linux-repair": {
+    "source_sha256": "6fd92e8a8a8cbfb6ce01622777d6bc0c889fbff5aa8b8c58ad470842e00a188a",
+    "order_unix_ms": 1792914115694,
+    "order_source": "ComfyUI execution_start",
+    "label": "提示词写清左侧壶嘴、右侧把手",
+    "purpose": "上一方案生成了两个壶嘴，需要检查更明确的结构描述。",
+    "change": "使用明确的中文结构提示；完整输入尺寸和参数列在原记录中。",
+    "result": "红色陶瓷茶壶具有单个壶身/壶盖、画面左侧一个弯曲壶嘴和右侧完整镂空C形把手，未再出现双壶嘴或手提包；浅灰背景、柔光与居中布局保留。"
+  },
+  "linux-coverage-turbo-un-multiref-bf16-cpu-encode": {
+    "source_sha256": "fd397f36a6a711942cf49cfdc04d890d709426cfac08d7492a805f2b3d40681e",
+    "order_unix_ms": 1792910203884,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "CPU/BF16 编码的正负条件和参考 latent 通过有限数检查；独立 GPU 采样获得健康图片。"
+  },
+  "linux-coverage-turbo-un-pose-reference-test-stage-nobacking-cpu-encode": {
+    "source_sha256": "6a14b1d7d6796b4dd1867de606b7a916228bbdfb6ee6d0c2fe2543e1f01808eb",
+    "order_unix_ms": 1792910515223,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "白底全身成年女性、水平伸开的双臂、分腿及画面右侧膝盖弯曲均符合姿态提示，深青运动服和红色卷发保留，未复制骨架线条或关节点。"
+  },
+  "linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode": {
+    "source_sha256": "e6dbcb49868006e0752f88b0b95ff4b375f33ad30a0561020f11529c5a4bb73b",
+    "order_unix_ms": 1792910832629,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "输入为背对镜头的橘猫，输出已变为白色长毛猫；背向坐姿、窗边位置、雨夜街景与红色霓虹反射保持主要构图一致。"
+  },
+  "linux-coverage-qwen-inpaint-stage-nobacking-cpu-encode": {
+    "source_sha256": "5dbff95cad8e37470e557e193e99c8cab26fe2cd2ee02718e938f648d0fdc989",
+    "order_unix_ms": 1792911076530,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "最终 ImageCompositeMasked 合成图的已保存零遮罩区域193144像素与源图完全相同，最大通道差0；这是最终合成保护，不代表原始扩散解码的背景零变化。"
+  },
+  "linux-coverage-qwen-multiref-stage-nobacking-cpu-encode": {
+    "source_sha256": "be8fd8fe023d8e1743ba4584d49086ab4dc04c09781be647b7828009715e6835",
+    "order_unix_ms": 1792911303928,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "红棕狐狸的尖耳长吻、白色口鼻/胸部、黑腿及蓬松白尖尾可辨，尾部在画面右侧完整展开；雨夜咖啡馆构图保留，没有带入森林背景。"
+  },
+  "linux-coverage-qwen-face-swap-stage-nobacking-cpu-encode": {
+    "source_sha256": "dc4056d5c056c483d06acc07954aef4925542b3b038075e7d66d4553a3971584",
+    "order_unix_ms": 1792911654295,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "铜红卷发、浅肤色、绿色眼睛与少量雀斑可见，脸部主特征向参考图迁移；深蓝外套、红围巾和公园背景保留，没有黄色上衣串入。"
+  },
+  "linux-coverage-qwen-style-edit-stage-nobacking-cpu-encode": {
+    "source_sha256": "4be2b063eb76c70d09e386b55c84d9c764f6c4b01f05aa5a87d1052143e1a10c",
+    "order_unix_ms": 1792912016163,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "已出现明确的水彩晕染、颗粒纸纹及柔和边缘，橘猫背向坐姿、咖啡馆入口、雨湿街面与主要取景保留。"
+  },
+  "linux-coverage-qwen-face-only-stage-nobacking-cpu-encode": {
+    "source_sha256": "1c629d12175bb92fe1e92755c308f389e435a46562957aae5d6b2f1a3996cbe2",
+    "order_unix_ms": 1792912273432,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "黑色直发及原侧向姿态保留，外套、红围巾与公园背景没有明显迁移参考图的黄色衣服；脸部已变为浅肤色、绿眼，并有少量雀斑。"
+  },
+  "linux-coverage-qwen-caption-gpu-chunked-stage-nobacking-cpu-encode": {
+    "source_sha256": "4364cd3c26983fe6ed9da28b17a96b0abb9e71b32091c6eb701d7c3bef1eb456",
+    "order_unix_ms": 1792912620284,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "运行约312秒只生成12个token，因延迟过高主动停止，没有输出图片。"
+  },
+  "linux-coverage-qwen-bfs-head-swap-stage-nobacking-cpu-encode": {
+    "source_sha256": "2922e36907d6038675bd00ef4d4a041c0be6eb745574af41f54f94da7e091669",
+    "order_unix_ms": 1792912964103,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "指定 BFS LoRA strength1.0 已连接原生加载节点，采样成功，日志未见未加载键警告。"
+  },
+  "linux-coverage-turbo-fox-profile-wide-mask-linux-repair-cpu-encode": {
+    "source_sha256": "e20ab5fcc4951ceccea48beca0ff372fd1d192ec4905ee635c613065182e4e10",
+    "order_unix_ms": 1792914195691,
+    "order_source": "ComfyUI execution_start",
+    "label": "扩大遮罩，并明确狐狸侧脸",
+    "purpose": "小遮罩方案的动物缺少狐狸特征，需要检查扩大重绘区域后的效果。",
+    "change": "同时修改遮罩和提示词，采用CPU/BF16编码；不能把改善只归因于遮罩。",
+    "result": "扩大遮罩并明确侧面提示后，长吻、尖耳、白色颊部/胸部和蓬松白尖尾均清楚，狐狸种属可辨；雨夜咖啡馆主体背景保留，头部附近的反光和边缘过渡仍稍显生硬。"
+  },
+  "linux-coverage-turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode": {
+    "source_sha256": "3883495e46ce35e184819b31217b4d9bcf460635f33e06e0974251d6947af0af",
+    "order_unix_ms": 1792914498892,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "红色卷发、浅肤色和绿色眼睛已迁移，深蓝外套、红围巾和公园背景保留。"
+  },
+  "linux-coverage-turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode": {
+    "source_sha256": "be416f51225ee8abbf69ccb174e38427ae4ca595d693b18f6f82739f49446485",
+    "order_unix_ms": 1792914782982,
+    "order_source": "ComfyUI execution_start",
+    "label": "CPU编码（BF16）",
+    "purpose": "同系列GPU参考编码出现NaN，检查换到CPU后能否完成本功能。",
+    "change": "编码阶段使用CPU/BF16，编码结束后重启为GPU采样；输入和具体精度差异见参数。",
+    "result": "宇航员的头盔、面罩、宇航服与手套已替换为一名红色短卷发成年女性，穿芥末橙户外服、长裤和靴子，保持单人全身前行、丛林小径与阳光场景。"
+  },
+  "linux-coverage-qwen-caption-gpu-bf16-backing-v4": {
+    "source_sha256": "83c458b27c6db1f060998a4f88870f1f40df7e5b14474afd61d41c2a64671a0a",
+    "time_evidence": {
+      "file": "runs/linux-coverage-20261024/qwen-caption-gpu-bf16-backing-v4--encode/attempt-1792913318819913201/memory.jsonl",
+      "first_line": {
+        "time": 1792913342.1121883,
+        "available_mib": 10332.53515625
+      },
+      "sha256": "287a0c6750ff18d6745ea30ee7770886be405806abe17bf59d3c94e1a4f89fcc"
+    },
+    "order_unix_ms": 1792913342112,
+    "order_source": "资源监控开始时间",
+    "label": "8B模型在GPU生成描述",
+    "purpose": "检查能否避开8B模型在CPU上逐字生成过慢的问题。",
+    "change": "反推移到GPU，使用BF16并保留CPU副本；同时改变多项设置。",
+    "result": "可用内存低于1536MiB，控制器停止运行，没有输出图片。"
+  },
+  "linux-coverage-qwen-caption-4b-aux-8b-cpu-staged": {
+    "source_sha256": "05e7c4dc9ca10a2ed766eeed6b41e272e32f23275b2cb88813d371727bc0b70c",
+    "order_unix_ms": 1792915091315,
+    "order_source": "ComfyUI execution_start",
+    "label": "4B模型生成描述，再交给8B编码",
+    "purpose": "8B CPU反推太慢，GPU方案又触发内存保护，改用4B模型生成描述。",
+    "change": "描述模型改为4B并在GPU运行，8B编码与图片采样另开进程。",
+    "result": "4B辅助模型生成了完整英文句子，橘猫、夜间湿路、店铺和红色霓虹反射与输入吻合；gazing out a window 的内外方位不够准确，原猫在窗外面向橱窗。"
+  }
+}

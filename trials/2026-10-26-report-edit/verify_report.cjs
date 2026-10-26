@@ -1,0 +1,41 @@
+const fs=require('fs');
+const {chromium}=require('playwright');
+(async()=>{
+ const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
+ try {
+  const page=await browser.newPage({viewport:{width:1600,height:1100}});
+  await page.emulateMedia({reducedMotion:'reduce'});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const before=JSON.parse(fs.readFileSync('trials/2026-10-26-report-edit/baseline.json','utf8')).visible_characters;
+  await page.goto('http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html',{waitUntil:'networkidle'});
+  const after=(await page.locator('body').innerText()).length;
+  const findings={models:await page.locator('.model-section').count(),features:await page.locator('.feature').count(),records:await page.locator('.attempt').count(),defaultVisibleTrials:await page.locator('.attempt:visible').count(),beforeVisibleCharacters:before,afterVisibleCharacters:after,reduction:Math.round((1-after/before)*100)};
+  if(findings.defaultVisibleTrials!==0 || findings.models!==8 || findings.features!==41 || findings.records!==163 || findings.reduction<30)throw Error(JSON.stringify(findings));
+  await page.screenshot({path:'trials/2026-10-26-report-edit/report-desktop.png'});
+  const target=page.locator('#qwen-base--color');
+  await target.screenshot({path:'trials/2026-10-26-report-edit/color-comparison.png'});
+  const history=target.locator('[data-platform="Linux"] .test-history');
+  await history.locator(':scope > summary').click();
+  findings.colorTrialLabels=await history.locator('.trial-heading strong').allTextContents();
+  const text=await history.innerText();
+  if(!text.includes('为什么再测')||!text.includes('本次改动')||!text.includes('NaN')||findings.colorTrialLabels.length!==2)throw Error('Missing trial explanations');
+  const headings=findings.colorTrialLabels.join(' ');
+  if(headings.indexOf('GPU')>=headings.indexOf('CPU编码'))throw Error('Trials must run GPU failure before CPU success');
+  await history.screenshot({path:'trials/2026-10-26-report-edit/color-test-history.png'});
+  await history.locator(':scope > summary').click();
+  await page.evaluate(()=>{location.hash='linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking'});
+  await page.waitForFunction(()=>document.querySelector('#linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking').open);
+  findings.deepLinkOpensHistory=await history.evaluate(el=>el.open);
+  if(!findings.deepLinkOpensHistory)throw Error('A case link must open its hidden history');
+  await page.locator('#search').fill('no-such-case');
+  findings.noResults=await page.locator('#empty-result').isVisible();await page.locator('#clear').click();
+  const flux=page.locator('#model-flux3-un');findings.fluxBlocker=await flux.locator('.blocker').innerText();
+  if(!(await flux.innerText()).includes('未测试')||!findings.fluxBlocker.includes('缺少'))throw Error('Flux UN must disclose missing prerequisites');
+  await page.setViewportSize({width:390,height:844});
+  findings.mobileOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+  await page.evaluate(()=>window.scrollTo(0,0));await page.screenshot({path:'trials/2026-10-26-report-edit/report-mobile.png'});
+  findings.errors=errors;
+  if(findings.mobileOverflow||errors.length||!findings.noResults)throw Error(JSON.stringify(findings));
+  fs.writeFileSync('trials/2026-10-26-report-edit/browser-checks.json',JSON.stringify(findings,null,2));console.log(JSON.stringify(findings));
+ }finally{await browser.close()}
+})().catch(e=>{console.error(e);process.exitCode=1});

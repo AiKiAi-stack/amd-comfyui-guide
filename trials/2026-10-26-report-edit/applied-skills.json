@@ -1,0 +1,14 @@
+[
+  {
+    "name": "humanizer",
+    "repository": "https://github.com/blader/humanizer",
+    "skill_sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+    "used_for": "plain factual report prose"
+  },
+  {
+    "name": "web-design-guidelines",
+    "repository": "https://github.com/vercel-labs/agent-skills",
+    "skill_sha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+    "used_for": "labels, hierarchy, keyboard focus, narrow-screen layout"
+  }
+]

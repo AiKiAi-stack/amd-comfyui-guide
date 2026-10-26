@@ -2028,6 +2028,30 @@
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
+    "file": "trials/2026-10-26-report-edit/color-comparison.png",
+    "original_sha256": "2960ac6d714dde9874734a3278bbc3bfd3673758bb5486cf1f8c27541feeeaa1",
+    "public_sha256": "2960ac6d714dde9874734a3278bbc3bfd3673758bb5486cf1f8c27541feeeaa1",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-26-report-edit/color-test-history.png",
+    "original_sha256": "98e09eae4d72cb322bc56c960ef6a7f3bc3923a2a9e2776468fad0f045af16e1",
+    "public_sha256": "98e09eae4d72cb322bc56c960ef6a7f3bc3923a2a9e2776468fad0f045af16e1",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-26-report-edit/report-desktop.png",
+    "original_sha256": "96a9a87122238d3bd360f8b1af0371e68726083a8e255937d021609aa1097212",
+    "public_sha256": "96a9a87122238d3bd360f8b1af0371e68726083a8e255937d021609aa1097212",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
+    "file": "trials/2026-10-26-report-edit/report-mobile.png",
+    "original_sha256": "c69a3f26d402d0ce2d80486f9b9f42b1a90368fb6260707cfcd713b699fd6a12",
+    "public_sha256": "c69a3f26d402d0ce2d80486f9b9f42b1a90368fb6260707cfcd713b699fd6a12",
+    "change": "metadata removed, visual bitstream unchanged"
+  },
+  {
     "file": "workflows/input/ModelLibrary_02b141b1b04e_kroma-portrait-a.png",
     "original_sha256": "02b141b1b04e8f27d48d2999659b14249188a8d9be3bb566ddc99176f0828222",
     "public_sha256": "02b141b1b04e8f27d48d2999659b14249188a8d9be3bb566ddc99176f0828222",
