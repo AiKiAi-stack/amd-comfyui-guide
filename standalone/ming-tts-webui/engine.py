@@ -103,7 +103,7 @@ class Engine:
             load_start = time.perf_counter()
             if self.model is None:
                 if not (MODEL_PATH / "model.safetensors").exists():
-                    raise RuntimeError("找不到完整模型，请先运行安装脚本下载权重。")
+                    raise RuntimeError("找不到完整模型，请按使用说明下载权重，再检查模型目录。")
                 sys.path.insert(0, str(UPSTREAM))
                 from ming_tts import MingTTS
                 self.model = MingTTS(str(MODEL_PATH), text_normalization=True)

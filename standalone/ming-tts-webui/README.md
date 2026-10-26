@@ -78,6 +78,24 @@ HTTP接口说明在 <http://127.0.0.1:7861/docs>。请求由同一把模型锁�
 
 ## 重建与检查
 
+从仓库新下载本应用时，先安装兼容的Docker和AMD驱动，复制`.env.example`为`.env`并按实际路径修改。创建目录并构建镜像，然后用一次性容器下载固定版本的官方权重。下面是当前这台机器的路径；代理不需要时删除对应`-e HTTPS_PROXY`参数。
+
+```bash
+cp .env.example .env
+mkdir -p /media/wbb/KEKE/AIModels/Ming-3.0-tts-0.5B
+mkdir -p /media/wbb/KEKE/Apps/ming-tts/data/{outputs,tmp,cache}
+bash build.sh
+sudo docker run --rm --network host -u "$(id -u):$(id -g)" \
+  -e HF_HUB_OFFLINE=0 -e HF_HUB_DISABLE_XET=1 \
+  -e HTTPS_PROXY=http://127.0.0.1:7897 \
+  -v /media/wbb/KEKE/AIModels/Ming-3.0-tts-0.5B:/models \
+  -v /media/wbb/KEKE/Apps/ming-tts/data:/data \
+  ming-tts-webui:local python -c "from huggingface_hub import snapshot_download; snapshot_download('inclusionAI/Ming-3.0-tts-0.5B', revision='8d66b70a00f05ad183fa8a863b4ce609fc83cbc0', local_dir='/models', allow_patterns=['*.json','*.txt','*.safetensors','*.onnx'])"
+bash start.sh
+```
+
+日常重建与检查：
+
 ```bash
 bash build.sh
 sudo docker compose run --rm --no-deps webui python -m unittest -v test_requests.py test_audio_runtime.py test_api.py
