@@ -1,0 +1,38 @@
+{
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "case01_7": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/kroma-style-owl-explicit-a5d386158099.safetensors",
+      "expected_sha256": "fedf0d994356ebfe663ff995a7d4a758ed0d390639ef87067a1407c8f19c6476"
+    }
+  },
+  "case01_8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case01_7",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_8",
+        0
+      ],
+      "filename_prefix": "RepairBench/kroma-style-owl-explicit"
+    }
+  }
+}

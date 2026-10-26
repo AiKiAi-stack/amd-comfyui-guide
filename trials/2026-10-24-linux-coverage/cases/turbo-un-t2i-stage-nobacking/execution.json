@@ -1,0 +1,100 @@
+{
+  "case_id": "turbo-un-t2i-stage-nobacking",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../turbo-un-t2i-stage-nobacking--sample/7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "85730cf9bf184d3074387fb88eeed31981cd5a07414715886cf3422efcfdcfe8",
+      "original_sha256": "0c4056d91a7b53d6481e5af32c870ed6b0ca7d9b62b6381bcb00ce5e826d5145",
+      "rgb_sha256": "51ab60e072875ec81d0b1aaf81fe612cddec36067be807970c7d846228a92c9b"
+    }
+  ],
+  "workflow_sha256": "65212af225ed1bc3a3bceab4eb4a2f1e44d11a242682047635ef3bf291cd257a",
+  "pid": 127860,
+  "prompt_id": "484f1e00-2f29-4a42-bce4-bdae7cb9846f",
+  "validation_errors": {},
+  "outputs": {
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-un-t2i-stage-nobacking_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "484f1e00-2f29-4a42-bce4-bdae7cb9846f",
+        "timestamp": 1792890583157
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "484f1e00-2f29-4a42-bce4-bdae7cb9846f",
+        "timestamp": 1792890583158
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "484f1e00-2f29-4a42-bce4-bdae7cb9846f",
+        "timestamp": 1792890639640
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 4044.91015625,
+  "elapsed_seconds": 96.66499999999999,
+  "total_seconds": 71.402,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 38.271,
+  "sampling_seconds": 58.394,
+  "conditioning_archive": "repair_conditioning/linux-coverage-turbo-un-t2i-stage-nobacking-923345f5f7f4.safetensors",
+  "conditioning_sha256": "f8e048e2aff39b7578ed9c3a48e68237dda4852c6e300084cfcbc04050052968",
+  "encoding_pid": 127670,
+  "sampling_pid": 127860,
+  "encoding_exited_before_sampling": true
+}

@@ -1,0 +1,7 @@
+{
+  "stopped_controller_pids": [
+    10333
+  ],
+  "reason": "HTTP polling timeout was incorrectly terminal during model loading; retain first attempt and retry with bounded transient polling",
+  "time": 1792857774.7119253
+}

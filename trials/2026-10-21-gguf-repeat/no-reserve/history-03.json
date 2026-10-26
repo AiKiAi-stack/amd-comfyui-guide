@@ -1,0 +1,20 @@
+{
+  "prompt_id": "f940fa94-c06f-4c64-a2d1-91eb8efba3f4",
+  "status": "success",
+  "outputs": {
+    "18": {
+      "images": [
+        {
+          "filename": "repeat-03-green_00001_.png",
+          "subfolder": "",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

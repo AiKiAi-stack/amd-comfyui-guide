@@ -1,0 +1,38 @@
+{
+  "id": "kroma-style-owl-explicit",
+  "model": "kroma",
+  "feature": "风格参考 · 修复重试",
+  "recipe": "reference",
+  "claim_level": "上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA",
+  "refs": [
+    "featurebench/kroma-style-source.png"
+  ],
+  "inputs": [
+    "featurebench/kroma-style-source.png"
+  ],
+  "prompt": "A single OWL bird with large round forward-facing eyes, a short hooked beak, feathered wings and two talons, perched on one branch. Only a bird, no fox, no mammal, no rock. Use only the reference image's blue and orange geometric screen-print palette and rough paper grain. Replace the entire fox subject with the owl. New bird composition. No text.",
+  "expected": "参考图的蓝橙双色版画风格迁移到新主体猫头鹰。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-style-ref\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "黑图问题已避开，蓝橙森林纸纹正常，出现猫头鹰；但原狐狸仍完整留在画面中，未满足仅新主体、不要狐狸。保留此未达完整目标的对照。",
+  "repairs": [
+    "kroma-style-ref"
+  ],
+  "runtime_profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码",
+  "status": "success",
+  "prompt_id": "6179490c-63cf-4955-be5b-37144cac2bb7",
+  "elapsed_seconds": 81.406,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-style-owl-explicit_00001_.png",
+      "sha256": "7aeff69cc8e88457200788b784ef80797b12d2cb45f836cfe1909d9c79e89108",
+      "public_sha256": "77b13e6c330b7fc6c0ab417d98e1e3d50818a818c12431bfd965e1040abe3151"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 9.203,
+  "encoding_elapsed_seconds": 12.047,
+  "sampling_elapsed_seconds": 60.156,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": false
+}

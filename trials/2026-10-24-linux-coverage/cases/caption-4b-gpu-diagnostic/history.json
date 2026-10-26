@@ -1,0 +1,144 @@
+{
+  "3126c50a-a528-4b04-a6ca-4ae5186aaf3f": {
+    "prompt": [
+      0,
+      "3126c50a-a528-4b04-a6ca-4ae5186aaf3f",
+      {
+        "caption_clip": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+            "type": "krea2",
+            "device": "default"
+          }
+        },
+        "image": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_42d5d9635f9c_liuyue-qwen-base-source.png"
+          }
+        },
+        "scale": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "image",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 256,
+            "height": 256,
+            "crop": "disabled"
+          }
+        },
+        "caption": {
+          "class_type": "TextGenerate",
+          "inputs": {
+            "clip": [
+              "caption_clip",
+              0
+            ],
+            "image": [
+              "scale",
+              0
+            ],
+            "prompt": "Describe the image in one short English sentence naming the subject, place and lighting. Output only the sentence.",
+            "max_length": 40,
+            "sampling_mode": "off",
+            "thinking": false,
+            "use_default_template": true,
+            "mtp": "off"
+          }
+        },
+        "save": {
+          "class_type": "SaveText",
+          "inputs": {
+            "text": [
+              "caption",
+              0
+            ],
+            "filename_prefix": "linux-coverage/caption-4b-gpu-diagnostic",
+            "format": "txt"
+          }
+        },
+        "preview": {
+          "class_type": "PreviewAny",
+          "inputs": {
+            "source": [
+              "caption",
+              0
+            ]
+          }
+        }
+      },
+      {
+        "create_time": 1792913882984
+      },
+      [
+        "preview",
+        "save"
+      ]
+    ],
+    "outputs": {
+      "preview": {
+        "text": [
+          "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+        ]
+      },
+      "save": {
+        "text": [
+          "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+        ],
+        "files": [
+          {
+            "filename": "caption-4b-gpu-diagnostic_00001.txt",
+            "subfolder": "linux-coverage",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "3126c50a-a528-4b04-a6ca-4ae5186aaf3f",
+            "timestamp": 1792913882984
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "3126c50a-a528-4b04-a6ca-4ae5186aaf3f",
+            "timestamp": 1792913882987
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "3126c50a-a528-4b04-a6ca-4ae5186aaf3f",
+            "timestamp": 1792913921697
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "preview": {
+        "node_id": "preview",
+        "display_node": "preview",
+        "parent_node": null,
+        "real_node_id": "preview"
+      },
+      "save": {
+        "node_id": "save",
+        "display_node": "save",
+        "parent_node": null,
+        "real_node_id": "save"
+      }
+    }
+  }
+}

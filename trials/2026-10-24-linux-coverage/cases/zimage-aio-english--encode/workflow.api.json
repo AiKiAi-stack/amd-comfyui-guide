@@ -1,0 +1,54 @@
+{
+  "34": {
+    "inputs": {
+      "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "20": {
+    "inputs": {
+      "clip": [
+        "34",
+        1
+      ],
+      "text": "A straight-on product photograph of a single cafe sign. The sign has exactly one large word: \"HELLO\". Bold black sans-serif letters on a clean white rectangular sign, centered, plain blue wall behind it, no other text."
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "40": {
+    "inputs": {
+      "conditioning": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut"
+  },
+  "6": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage"
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "20",
+        0
+      ],
+      "negative": [
+        "40",
+        0
+      ],
+      "latent": [
+        "6",
+        0
+      ],
+      "prefix": "linux-coverage-zimage-aio-english",
+      "workflow_sha256": "083772c6b47628a0dc4c71ca7b40cee5b38ab180f0486aea22bce75d207b91b7"
+    }
+  }
+}

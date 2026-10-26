@@ -1,0 +1,47 @@
+{
+  "id": "turbo-mask-fox-reference",
+  "model": "turbo-un",
+  "feature": "遮罩局部重绘 · 修复重试",
+  "recipe": "inpaint",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.",
+  "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+  "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-inpaint"
+  ],
+  "retry_reason": "修正本次新增附件的两个悬空节点引用，复用原成功编码/采样归档后完整解码。主体有黑耳、蓬松白尖尾，但背向圆头和身体仍偏猫、长吻不可见，不能确认完整狐狸替换，部分达到。",
+  "status": "success",
+  "prompt_id": "115f8eb5-20cb-4d0a-bf3d-f6c6891cf669",
+  "elapsed_seconds": 940.688,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-mask-fox-reference-input_00001_.png",
+      "sha256": "88b40d2206a365065cb91b1315f4227c24c19d26a1964240835da5bb9e727664",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-mask-fox-reference-mask_00001_.png",
+      "sha256": "776ce2678a229df460fc83c9eab5e27a90767c55a1e6914840e43313ae16b471",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-mask-fox-reference_00001_.png",
+      "sha256": "0f49eabff0e12e717a466a2d3c44ad5fa9017775b8c7e71b0a66b9c9ee36dbc0",
+      "public_sha256": "c88048a12641ccc1e699f29a7842fcca66742bfcacd76998d8bc536c5cee37aa"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 21.125,
+  "encoding_elapsed_seconds": 871.516,
+  "sampling_elapsed_seconds": 48.047,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true
+}

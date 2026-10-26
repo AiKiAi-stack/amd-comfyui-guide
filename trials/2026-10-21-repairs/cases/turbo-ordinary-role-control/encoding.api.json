@@ -1,0 +1,42 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_w4a8.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeRepairQwenReferences",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "file": "repair_conditioning/turbo-ordinary-role-control-refs-b5a3a9f41cdd.safetensors",
+      "expected_sha256": "b8b5c9702026d5dd77130dc65814c7e48fbf59fa2ba3d8feea84e3d904e1b56b"
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent": [
+        "4",
+        2
+      ],
+      "prefix": "turbo-ordinary-role-control",
+      "workflow_sha256": "f8a261d49a1659ac40393b40bfaed023ed5d298bc20093729641a69cf5298333"
+    }
+  }
+}

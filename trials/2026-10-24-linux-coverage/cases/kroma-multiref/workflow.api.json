@@ -1,0 +1,207 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+    }
+  },
+  "case01_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "case02_5": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "case02_41",
+        0
+      ]
+    }
+  },
+  "case02_6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "case02_7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "case02_41",
+        0
+      ],
+      "negative": [
+        "case02_5",
+        0
+      ],
+      "latent_image": [
+        "case02_6",
+        0
+      ],
+      "seed": 66502001,
+      "steps": 4,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case02_8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case02_7",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case02_9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case02_8",
+        0
+      ],
+      "filename_prefix": "linux-coverage/kroma-multiref"
+    }
+  },
+  "case02_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_42d5d9635f9c_cat.png"
+    }
+  },
+  "case02_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case02_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case02_33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_0404624e132d_fox.png"
+    }
+  },
+  "case02_34": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case02_33",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case02_40": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "prompt": "Use the rainy cafe street background from image 1. Replace the orange cat in image 1 with the red fox from image 2. Preserve the fox orange fur, black paws and white chest. The fox sits beside the cafe entrance. Do not use the forest background. Photorealistic.",
+      "image1": [
+        "case02_31",
+        0
+      ],
+      "image2": [
+        "case02_34",
+        0
+      ]
+    }
+  },
+  "case02_100": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "case02_31",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case02_120": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "case02_40",
+        0
+      ],
+      "latent": [
+        "case02_100",
+        0
+      ]
+    }
+  },
+  "case02_101": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "case02_34",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case02_121": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": [
+        "case02_120",
+        0
+      ],
+      "latent": [
+        "case02_101",
+        0
+      ]
+    }
+  },
+  "case02_41": {
+    "class_type": "FluxKontextMultiReferenceLatentMethod",
+    "inputs": {
+      "conditioning": [
+        "case02_121",
+        0
+      ],
+      "reference_latents_method": "index_timestep_zero"
+    }
+  }
+}

@@ -30,4 +30,4 @@ MOSS 第三方 8 步 DMD 的当前模型卡建议直接将 `lora.safetensors` �
 
 GPT-6 Luna（Max）只读复核确认：两个崩溃都进入 `GGMLTensor.to()`，但首次是注意力中的张量搬运，第二次是腾显存时的部分卸载。GGUF loader 通过 `GGUFReader` 和 `torch.from_numpy(tensor.data)` 保留 mmap 数据；插件也有通过设备搬运解除 mmap 链接的代码。因此 mmap 张量与设备搬运的交互是排查线索，尚不能证明 `fast-disk` 或 DynamicVRAM 是根因。关闭 `fast-disk` 也不会关闭 GGUF 自身的 mmap。相关上游旁证：[GGUF #444](https://github.com/city96/ComfyUI-GGUF/issues/444)、[ComfyUI #14142](https://github.com/Comfy-Org/ComfyUI/issues/14142)，均不等于本机问题已被上游复现。
 
-MiniMax-H3 BFS 角色替换的附加 LoRA 约 81 MB，但必需的主模型、32B 编码器、音视频 VAE 基础文件合计约 42.47 GB，超过本机 16 GB RAM 的合理试机范围。没有下载 H3 基础权重，也不将附加 LoRA 单独存在视为试跑。
+

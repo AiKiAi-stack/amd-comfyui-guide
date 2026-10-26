@@ -1,0 +1,148 @@
+{
+  "case_id": "turbo-un-inpaint-stage-nobacking",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../turbo-un-inpaint-stage-nobacking--sample/59-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
+      "original_sha256": "7fc1bc26f39c3fbafdded20490eebcfbb349a101ea517029e400972b8043a555",
+      "rgb_sha256": "3d86960a868ab2eee482b07ad9c72a87bdcb4d58f735d2cc3ebff20cb2172319"
+    },
+    {
+      "file": "../turbo-un-inpaint-stage-nobacking--sample/58-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "02a8fc871f214020338f17f0739590406419e609ae63be509480c016f2a4b1ef",
+      "original_sha256": "45210b82bf9a54414291bacc09731764600d1f7cad645835329fd2627f40befa",
+      "rgb_sha256": "cf7facf9d18cb97ca60da1afaac74c604bafcc3d489385201d60d2633f57b83e"
+    },
+    {
+      "file": "../turbo-un-inpaint-stage-nobacking--sample/7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "823e59a23de619caa5001fc2d1212fb08e7be793dd965992c80ea604e1c6a400",
+      "original_sha256": "6e4174b7cea23cfcc0910d592b0dc0e0194a68332aedb040d79d5d1d4b6eb3d6",
+      "rgb_sha256": "8bbad324eed2a3e7696666cd23ed63a07f9967096efd6828fb1b4ef0d5b0845f"
+    }
+  ],
+  "workflow_sha256": "69981eab383d54e391c5a4e013f685cd3f43a11b8973c8f9621bb8e3c4ed2e63",
+  "pid": 138499,
+  "prompt_id": "761f9bd5-6ba9-4fe5-a29d-828f322bcf9a",
+  "validation_errors": {},
+  "outputs": {
+    "59": {
+      "images": [
+        {
+          "filename": "turbo-un-inpaint-stage-nobacking_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "58": {
+      "images": [
+        {
+          "filename": "turbo-un-inpaint-stage-nobacking_00002_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-un-inpaint-stage-nobacking_00003_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "761f9bd5-6ba9-4fe5-a29d-828f322bcf9a",
+        "timestamp": 1792892273353
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "761f9bd5-6ba9-4fe5-a29d-828f322bcf9a",
+        "timestamp": 1792892273356
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "761f9bd5-6ba9-4fe5-a29d-828f322bcf9a",
+        "timestamp": 1792892354933
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 2287.4296875,
+  "elapsed_seconds": 163.159,
+  "total_seconds": 122.713,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 80.672,
+  "sampling_seconds": 82.487,
+  "conditioning_archive": "repair_conditioning/linux-coverage-turbo-un-inpaint-stage-nobacking-c5657ae3eb2a.safetensors",
+  "conditioning_sha256": "49bdd93e256ee71c754e33bafd5532e644bad9abb6136e4b4728bf988e26eec3",
+  "encoding_pid": 138344,
+  "sampling_pid": 138499,
+  "encoding_exited_before_sampling": true
+}

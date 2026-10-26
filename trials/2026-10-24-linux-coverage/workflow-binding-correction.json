@@ -1,0 +1,7 @@
+{
+  "cases": [
+    "flux2-klein-t2i-gpu-text",
+    "flux2-klein-single-color"
+  ],
+  "reason": "Failed encoding aggregate must bind to full source graph; original encoding digest remains separately recorded and prior JSON is retained."
+}

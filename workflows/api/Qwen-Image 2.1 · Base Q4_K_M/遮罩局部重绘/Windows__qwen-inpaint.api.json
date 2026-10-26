@@ -1,0 +1,231 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+    }
+  },
+  "case01_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_w4a8.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "case01_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Replace only the orange cat with a small red fox sitting in the same location facing away from the camera. Keep the rainy Shanghai cafe street and all other areas unchanged. Photorealistic.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case01_31",
+        0
+      ]
+    }
+  },
+  "case01_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "case01_4",
+        0
+      ],
+      "negative": [
+        "case01_4",
+        1
+      ],
+      "latent_image": [
+        "case01_55",
+        0
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case01_6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case01_5",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_56",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-inpaint"
+    }
+  },
+  "case01_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_42d5d9635f9c_cat.png"
+    }
+  },
+  "case01_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case01_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case01_50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0.0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "case01_51": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1.0,
+      "width": 230,
+      "height": 300
+    }
+  },
+  "case01_52": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "case01_51",
+        0
+      ],
+      "left": 12,
+      "top": 12,
+      "right": 12,
+      "bottom": 12
+    }
+  },
+  "case01_53": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "case01_50",
+        0
+      ],
+      "source": [
+        "case01_52",
+        0
+      ],
+      "x": 250,
+      "y": 200,
+      "operation": "add"
+    }
+  },
+  "case01_54": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "case01_31",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_55": {
+    "class_type": "SetLatentNoiseMask",
+    "inputs": {
+      "samples": [
+        "case01_54",
+        0
+      ],
+      "mask": [
+        "case01_53",
+        0
+      ]
+    }
+  },
+  "case01_56": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "case01_31",
+        0
+      ],
+      "source": [
+        "case01_6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "case01_53",
+        0
+      ]
+    }
+  },
+  "case01_57": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "case01_53",
+        0
+      ]
+    }
+  },
+  "case01_58": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_57",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-inpaint-mask"
+    }
+  },
+  "case01_59": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_31",
+        0
+      ],
+      "filename_prefix": "FeatureBench/qwen-inpaint-input"
+    }
+  }
+}

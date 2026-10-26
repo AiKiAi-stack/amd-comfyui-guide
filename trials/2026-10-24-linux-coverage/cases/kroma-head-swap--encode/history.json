@@ -1,0 +1,230 @@
+{
+  "afc3a4f6-13ee-4710-adcb-e359c29b5f5e": {
+    "prompt": [
+      0,
+      "afc3a4f6-13ee-4710-adcb-e359c29b5f5e",
+      {
+        "case01_2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+            "type": "krea2",
+            "device": "default"
+          }
+        },
+        "case01_3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_vae.safetensors"
+          }
+        },
+        "case03_5": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "case03_41",
+              0
+            ]
+          }
+        },
+        "case03_6": {
+          "class_type": "EmptyLatentImage",
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          }
+        },
+        "case03_30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_e5aabefc21cb_kroma-portrait-b.png"
+          }
+        },
+        "case03_31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "case03_30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "case03_33": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_02b141b1b04e_kroma-portrait-a.png"
+          }
+        },
+        "case03_34": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "case03_33",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "case03_40": {
+          "class_type": "TextEncodeQwenImageEditPlus",
+          "inputs": {
+            "clip": [
+              "case01_2",
+              0
+            ],
+            "prompt": "Edit image 1: replace the head and facial identity with the fictional adult woman from image 2, including curly copper-red hair and freckles. Keep the navy coat, red scarf, body pose and park background of image 1. Only one person.",
+            "image1": [
+              "case03_31",
+              0
+            ],
+            "image2": [
+              "case03_34",
+              0
+            ]
+          }
+        },
+        "case03_100": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "case03_31",
+              0
+            ],
+            "vae": [
+              "case01_3",
+              0
+            ]
+          }
+        },
+        "case03_120": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "case03_40",
+              0
+            ],
+            "latent": [
+              "case03_100",
+              0
+            ]
+          }
+        },
+        "case03_101": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "case03_34",
+              0
+            ],
+            "vae": [
+              "case01_3",
+              0
+            ]
+          }
+        },
+        "case03_121": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "case03_120",
+              0
+            ],
+            "latent": [
+              "case03_101",
+              0
+            ]
+          }
+        },
+        "case03_41": {
+          "class_type": "FluxKontextMultiReferenceLatentMethod",
+          "inputs": {
+            "conditioning": [
+              "case03_121",
+              0
+            ],
+            "reference_latents_method": "index_timestep_zero"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "case03_41",
+              0
+            ],
+            "negative": [
+              "case03_5",
+              0
+            ],
+            "latent": [
+              "case03_6",
+              0
+            ],
+            "prefix": "linux-coverage-kroma-head-swap",
+            "workflow_sha256": "a74e52fbd8893ebb8e6747a4b8c6faf6e352471754416a5eec5564375eec3e15"
+          }
+        }
+      },
+      {
+        "create_time": 1792859092312
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-kroma-head-swap-31e241e5b034.safetensors"
+        ],
+        "archive_sha256": [
+          "6dad5b756bb3ff09a16e3462637d8c5755f6e462e267f7f6112431010fa31b11"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "afc3a4f6-13ee-4710-adcb-e359c29b5f5e",
+            "timestamp": 1792859092312
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "afc3a4f6-13ee-4710-adcb-e359c29b5f5e",
+            "timestamp": 1792859092390
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "afc3a4f6-13ee-4710-adcb-e359c29b5f5e",
+            "timestamp": 1792859122711
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

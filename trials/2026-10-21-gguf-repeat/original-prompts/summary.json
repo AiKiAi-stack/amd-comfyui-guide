@@ -1,0 +1,283 @@
+{
+  "status": "execution_pass_visual_review_pending",
+  "command": [
+    "RUNTIME_ROOT\\.venv\\Scripts\\python.exe",
+    "-X",
+    "faulthandler",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--extra-model-paths-config",
+    "MODEL_PATHS.yaml",
+    "--output-directory",
+    "RUN_OUTPUT\\images",
+    "--reserve-vram",
+    "2.0"
+  ],
+  "cases": [
+    {
+      "index": 1,
+      "color": "red",
+      "prompt_id": "f25adb75-4c60-4ba4-8add-33e5f0c7c06e",
+      "seconds": 109.98,
+      "images": [
+        {
+          "file": "repeat-01-red_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            57.83701308997361,
+            77.1601684649104,
+            82.9879950426695
+          ],
+          "original_sha256": "84cc0f179b7141cafbe9fcd5e87589cbc80fd9e255281a40e662d24c7a2eeae5",
+          "public_sha256": "a2e5532d945d081811c3d8dd77165b44fbbcadc4e183a9ee5fe841b717a4d049",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "63488c5ab77585a55277174c1b0b37b8af300d5cde70c60ff1e9a8dc198e7ab9",
+      "cached_nodes": [],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    },
+    {
+      "index": 2,
+      "color": "blue",
+      "prompt_id": "beacb2b8-6a2b-4ca5-aeb1-c56128786c0c",
+      "seconds": 50.23,
+      "images": [
+        {
+          "file": "repeat-02-blue_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            74.5218695038353,
+            71.30745730366772,
+            74.50954619043483
+          ],
+          "original_sha256": "515f8d218285b13354d2ad83ced31d0d6a54c3f6425f3b0b8768281d7217519b",
+          "public_sha256": "7e015338fa22a229a712a95392048d084c93914c563ab7f99e0da86b2ab8257c",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "89c0f34826cf4b0e72634a677c7869589063056343fe7aa9d51623544e979ee6",
+      "cached_nodes": [
+        "9",
+        "7",
+        "11",
+        "3",
+        "5",
+        "4"
+      ],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    },
+    {
+      "index": 3,
+      "color": "green",
+      "prompt_id": "f3c72404-1858-4c8c-93ca-27e4c62b2baf",
+      "seconds": 48.12,
+      "images": [
+        {
+          "file": "repeat-03-green_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            59.83450791210208,
+            61.33233075002695,
+            67.40935378093647
+          ],
+          "original_sha256": "e87839a2536334c620424a460b7b696502993ccba3fc1dc1f9bec4d831eab054",
+          "public_sha256": "82ae0f76d9dd79ec2cb5dbd5da01b1584ea0e4b7511e936a56840bad73dd19bb",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "842490f7d1b1230774c8987606c9166adc3e4dabd9f4a7a2c2dc0764289e9e63",
+      "cached_nodes": [
+        "9",
+        "7",
+        "11",
+        "3",
+        "5",
+        "4"
+      ],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    },
+    {
+      "index": 4,
+      "color": "yellow",
+      "prompt_id": "0fdb2f41-9490-4c74-98ed-91b205c25b18",
+      "seconds": 48.12,
+      "images": [
+        {
+          "file": "repeat-04-yellow_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            62.10850652513164,
+            64.01765319905779,
+            68.0650618876961
+          ],
+          "original_sha256": "7d54aa002921dd0c3cb016226f1a2d15822c1c4bcebcc589fec1005d5b13578f",
+          "public_sha256": "39d0625d3ab6d2388288d2f7442c0dbcafe50c845e5c341875e918fa3841116f",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "bd455a22d7c40a7f9a06b29ce8341274cdef255c625f10f33ac95b74da189e19",
+      "cached_nodes": [
+        "9",
+        "7",
+        "11",
+        "3",
+        "5",
+        "4"
+      ],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    },
+    {
+      "index": 5,
+      "color": "purple",
+      "prompt_id": "8f8205ee-179d-49f6-8e15-42374bfadc18",
+      "seconds": 48.11,
+      "images": [
+        {
+          "file": "repeat-05-purple_00001_.png",
+          "size": [
+            512,
+            512
+          ],
+          "stddev": [
+            67.76768905703983,
+            75.41160355369949,
+            75.49664880368672
+          ],
+          "original_sha256": "b4df41f308969dd84c98d9bb8cf39548f1a32025ab61f515712e35a2f8e17631",
+          "public_sha256": "0ae4384911240646cad56be7e9b1fc786dd282b643d3a9ea8b33c00f06ff5d6e",
+          "pixels_unchanged": true
+        }
+      ],
+      "status": "execution_pass_visual_review_pending",
+      "raw_history_sha256": "b831d79a781e609af2426e082d3beaf4a10e389a4e80f804e813cf2a3f2c78b3",
+      "cached_nodes": [
+        "9",
+        "7",
+        "11",
+        "3",
+        "5",
+        "4"
+      ],
+      "text_encoding_reran": true,
+      "sampling_reran": true
+    }
+  ],
+  "same_process": true,
+  "comfyui_revision": "ce1e922d8623bb507180e32a0c01a7d0e29edef7",
+  "gguf_revision": "373048b8403a7820620065210a691263d4da0a61",
+  "pid": 15820,
+  "system_stats": {
+    "system": {
+      "os": "win32",
+      "ram_total": 16984231936,
+      "ram_free": 9362956288,
+      "comfyui_version": "0.41.0",
+      "required_frontend_version": "1.55.17",
+      "installed_templates_version": "0.11.87",
+      "required_templates_version": "0.11.87",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.17",
+          "required": "1.55.17"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.87",
+          "required": "0.11.87"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.38",
+          "required": "0.2.38"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+      "pytorch_version": "2.12.0+rocm7.14.0",
+      "embedded_python": false,
+      "deploy_environment": "local-git"
+    },
+    "devices": [
+      {
+        "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 8573157376,
+        "vram_free": 8413839360,
+        "torch_vram_total": 2097152,
+        "torch_vram_free": 2097152
+      }
+    ]
+  },
+  "server_stopped": true,
+  "raw_summary_sha256": "ead83214abf21956eb09cbc4c8e0fa32a57c16cd940ac28f0f329e6b4481a0bd",
+  "log_signal": [
+    "[INFO] Enabled pinned memory 6478.0",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] loaded completely; 5156.86 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] Requested to load Lumina2",
+    "[INFO] loaded partially; 4145.49 MB usable, 4124.40 MB loaded, 709.66 MB offloaded, 21.09 MB buffer reserved, lowvram patches: 0",
+    "[INFO] Requested to load AutoencodingEngine",
+    "[INFO] loaded completely;  319.75 MB loaded, full load: True",
+    "[INFO] Prompt executed in 108.54 seconds",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] Unloaded partially: 2279.57 MB freed, 1844.82 MB remains loaded, 30.76 MB buffer reserved, lowvram patches: 0",
+    "[INFO] loaded completely; 3191.66 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] loaded partially; 4137.37 MB usable, 4116.27 MB loaded, 717.79 MB offloaded, 21.09 MB buffer reserved, lowvram patches: 0",
+    "[INFO] Prompt executed in 48.90 seconds",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] Unloaded partially: 2302.21 MB freed, 1814.06 MB remains loaded, 30.76 MB buffer reserved, lowvram patches: 0",
+    "[INFO] loaded completely; 3222.43 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] loaded partially; 4137.37 MB usable, 4116.27 MB loaded, 717.79 MB offloaded, 21.09 MB buffer reserved, lowvram patches: 0",
+    "[INFO] Prompt executed in 46.68 seconds",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] Unloaded partially: 2302.21 MB freed, 1814.06 MB remains loaded, 30.76 MB buffer reserved, lowvram patches: 0",
+    "[INFO] loaded completely; 3222.43 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] loaded partially; 4137.37 MB usable, 4116.27 MB loaded, 717.79 MB offloaded, 21.09 MB buffer reserved, lowvram patches: 0",
+    "[INFO] Prompt executed in 46.88 seconds",
+    "[INFO] Requested to load ZImageTEModel_",
+    "[INFO] Unloaded partially: 2302.21 MB freed, 1814.06 MB remains loaded, 30.76 MB buffer reserved, lowvram patches: 0",
+    "[INFO] loaded completely; 3222.43 MB usable, 2813.50 MB loaded, full load: True",
+    "[INFO] loaded partially; 4137.37 MB usable, 4116.27 MB loaded, 717.79 MB offloaded, 21.09 MB buffer reserved, lowvram patches: 0",
+    "[INFO] Prompt executed in 46.92 seconds"
+  ],
+  "published_evidence": "Selected status, workflows, pixel-identical PNGs, hashes and log signal. Raw logs/history retained locally."
+}

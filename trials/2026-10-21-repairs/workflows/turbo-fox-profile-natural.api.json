@@ -1,0 +1,327 @@
+{
+  "1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "qwen-image-2.1-turbo-Q4_K_M.gguf"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+      "type": "qwen_image"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "31",
+        0
+      ],
+      "images.image_2": [
+        "repair_fox_crop",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "64",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "56",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-fox-profile-natural"
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "51": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 230,
+      "height": 300
+    }
+  },
+  "52": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "51",
+        0
+      ],
+      "left": 12,
+      "top": 12,
+      "right": 12,
+      "bottom": 12
+    }
+  },
+  "53": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "50",
+        0
+      ],
+      "source": [
+        "52",
+        0
+      ],
+      "x": 250,
+      "y": 200,
+      "operation": "add"
+    }
+  },
+  "54": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "repair_clean",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "55": {
+    "class_type": "SetLatentNoiseMask",
+    "inputs": {
+      "samples": [
+        "54",
+        0
+      ],
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "56": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "60": {
+    "class_type": "CFGGuider",
+    "inputs": {
+      "model": [
+        "81",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "cfg": 1
+    }
+  },
+  "61": {
+    "class_type": "ManualSigmas",
+    "inputs": {
+      "sigmas": "1.0, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0.0"
+    }
+  },
+  "62": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    }
+  },
+  "63": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 66503001
+    }
+  },
+  "64": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "63",
+        0
+      ],
+      "guider": [
+        "60",
+        0
+      ],
+      "sampler": [
+        "62",
+        0
+      ],
+      "sigmas": [
+        "61",
+        0
+      ],
+      "latent_image": [
+        "55",
+        0
+      ]
+    }
+  },
+  "81": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "off",
+      "dtype": "default"
+    }
+  },
+  "repair_blank": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1,
+      "color": 8355711
+    }
+  },
+  "repair_clean": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "repair_blank",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "repair_fox": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/fox.png"
+    }
+  },
+  "repair_mask_image": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "repair_save_mask": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_mask_image",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-fox-profile-natural-mask"
+    }
+  },
+  "repair_save_input": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-fox-profile-natural-input"
+    }
+  },
+  "repair_fox_crop": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "repair_fox",
+        0
+      ],
+      "x": 200,
+      "y": 160,
+      "width": 210,
+      "height": 220
+    }
+  }
+}

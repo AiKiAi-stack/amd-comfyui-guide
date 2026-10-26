@@ -1,0 +1,4 @@
+{
+  "reason": "Stop pending same-precision cases to test the observed non-finite two-reference encoder with only BF16 text precision changed; completed FP16 errors remain intact.",
+  "time": 1792892766.7294168
+}

@@ -1,0 +1,114 @@
+{
+  "30f46363-8541-467f-a5e6-fea639bca0d4": {
+    "prompt": [
+      0,
+      "30f46363-8541-467f-a5e6-fea639bca0d4",
+      {
+        "20": {
+          "inputs": {
+            "clip": [
+              "34_clip",
+              0
+            ],
+            "text": "A straight-on product photograph of a single cafe sign. The sign has exactly one large word: \"HELLO\". Bold black sans-serif letters on a clean white rectangular sign, centered, plain blue wall behind it, no other text."
+          },
+          "class_type": "CLIPTextEncode"
+        },
+        "40": {
+          "inputs": {
+            "conditioning": [
+              "20",
+              0
+            ]
+          },
+          "class_type": "ConditioningZeroOut"
+        },
+        "6": {
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage"
+        },
+        "34_clip": {
+          "class_type": "LoadCheckpointClipOnly",
+          "inputs": {
+            "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "20",
+              0
+            ],
+            "negative": [
+              "40",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ],
+            "prefix": "linux-coverage-zimage-aio-english-components",
+            "workflow_sha256": "443ce5bbc259f87d611eeffe8be3607b631c69de787149e666dc643ba5808b9e"
+          }
+        }
+      },
+      {
+        "create_time": 1792890996709
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-zimage-aio-english-components-c61130728692.safetensors"
+        ],
+        "archive_sha256": [
+          "a6606cb4218bbf4382543e6f44ce66560372ab92e047c80b7ed525a1ab9b1758"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "30f46363-8541-467f-a5e6-fea639bca0d4",
+            "timestamp": 1792890996709
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "30f46363-8541-467f-a5e6-fea639bca0d4",
+            "timestamp": 1792890996710
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "30f46363-8541-467f-a5e6-fea639bca0d4",
+            "timestamp": 1792891012832
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

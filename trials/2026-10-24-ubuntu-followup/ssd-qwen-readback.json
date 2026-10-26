@@ -1,0 +1,30 @@
+[
+  {
+    "file": "/home/user/.local/share/barely-comfy/models/qwen-20261024/diffusion_models/qwen-image-2.1-Q4_K_M.gguf",
+    "bytes": 4199565024,
+    "sha256": "631d532e7ca71e8d90a87c71d3699761a812039d22e3370e87498d87754660fe",
+    "matches_copy_manifest": true,
+    "seconds": 9.317602873999931
+  },
+  {
+    "file": "/home/user/.local/share/barely-comfy/models/qwen-20261024/text_encoders/Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+    "bytes": 5287517120,
+    "sha256": "8123f36d2b3e562deef164dffdae33bdb1d152797ad10bb630827eaa7bce795d",
+    "matches_copy_manifest": true,
+    "seconds": 11.477822017000108
+  },
+  {
+    "file": "/home/user/.local/share/barely-comfy/models/qwen-20261024/vae/qwen_image_2.1_vae_bf16.safetensors",
+    "bytes": 675509688,
+    "sha256": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9",
+    "matches_copy_manifest": true,
+    "seconds": 1.2043883409996852
+  },
+  {
+    "file": "/home/user/.local/share/barely-comfy/models/qwen-20261024/text_encoders/mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf",
+    "bytes": 1159029984,
+    "sha256": "d9870a1f168db3d814596216aaf35702154147b443572c7939acca1802621ac6",
+    "matches_copy_manifest": true,
+    "seconds": 3.149337487000139
+  }
+]

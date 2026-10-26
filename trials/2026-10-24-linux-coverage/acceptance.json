@@ -1,0 +1,88 @@
+{
+  "time": 1792916266.7543669,
+  "model_count": 9,
+  "feature_groups": 47,
+  "linux_image_groups": 40,
+  "linux_met_groups": 21,
+  "new_generated_images": 42,
+  "records": 169,
+  "frontend_import_pass": 268,
+  "installed_ui": 184,
+  "tests": 44,
+  "models": [
+    {
+      "model": "qwen-base",
+      "title": "Qwen-Image 2.1 · Base Q4_K_M",
+      "groups": 9,
+      "windows_image_groups": 9,
+      "linux_image_groups": 9,
+      "linux_met_groups": 3
+    },
+    {
+      "model": "qwen-turbo",
+      "title": "Qwen-Image 2.1 Turbo · 普通 / UN 编码器",
+      "groups": 6,
+      "windows_image_groups": 6,
+      "linux_image_groups": 6,
+      "linux_met_groups": 1
+    },
+    {
+      "model": "kroma",
+      "title": "Kroma v0.3.1 OPD · Q2_K",
+      "groups": 5,
+      "windows_image_groups": 5,
+      "linux_image_groups": 5,
+      "linux_met_groups": 2
+    },
+    {
+      "model": "moss",
+      "title": "MOSS Image SFT · INT8",
+      "groups": 4,
+      "windows_image_groups": 4,
+      "linux_image_groups": 4,
+      "linux_met_groups": 3
+    },
+    {
+      "model": "flux2",
+      "title": "FLUX.2 Klein 4B · FP8",
+      "groups": 9,
+      "windows_image_groups": 9,
+      "linux_image_groups": 9,
+      "linux_met_groups": 5
+    },
+    {
+      "model": "zimage-gguf",
+      "title": "Z-Image Turbo · 双 GGUF Q4_K_M",
+      "groups": 3,
+      "windows_image_groups": 3,
+      "linux_image_groups": 3,
+      "linux_met_groups": 3
+    },
+    {
+      "model": "zimage-aio",
+      "title": "Z-Image Turbo · FP8 AIO",
+      "groups": 4,
+      "windows_image_groups": 4,
+      "linux_image_groups": 4,
+      "linux_met_groups": 4
+    }
+  ],
+  "bundle_status": {
+    "time": 1792915838.7154233,
+    "catalog_sha256": "556561f8642149d2e95bbb602be8d37ba510d5483260591a0afc6c19a86dbfd8",
+    "installed_ui": 184,
+    "bundles": [
+      {
+        "file": "model-feature-workflows.zip",
+        "bytes": 377627639,
+        "sha256": "b0b170eaace8535d15a808cc3feb863f2b857ecdf0b5a100623e5f52bc0330d0"
+      },
+      {
+        "file": "model-feature-workflows-light.zip",
+        "bytes": 12234610,
+        "sha256": "feb18eb07b5cb88ea5548e4ffaec6ae5cea90f5ea10dbb725006232d688c687d"
+      }
+    ]
+  },
+  "remaining_without_linux_images": []
+}

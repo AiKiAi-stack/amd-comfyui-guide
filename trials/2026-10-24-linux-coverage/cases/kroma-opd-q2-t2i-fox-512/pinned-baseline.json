@@ -1,0 +1,13 @@
+{
+  "status": "operator_bounded_observation",
+  "reason": "No sampling or PNG during bounded model-switch observation; process stopped for one-variable unpinned comparison. Debugger attempt did not yield a stack and was terminated; its RAM overhead was not a model OOM.",
+  "time": 1792858045.172621,
+  "profile_args": [
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "raw_log": "runs/linux-coverage-20261024/kroma-opd-q2-t2i-fox-512/attempt-1792857775149832156/server.log"
+}

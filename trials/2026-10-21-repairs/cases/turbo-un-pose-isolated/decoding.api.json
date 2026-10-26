@@ -1,0 +1,38 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "64",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-un-pose-isolated"
+    }
+  },
+  "64": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/turbo-un-pose-isolated-1226e3812657.safetensors",
+      "expected_sha256": "813caa44f74746de3c0485ab7cb2f13f8d06ba74591a1ae0a4217eda52e098e4"
+    }
+  }
+}

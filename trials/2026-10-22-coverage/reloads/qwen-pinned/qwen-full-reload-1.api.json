@@ -1,0 +1,64 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+    }
+  },
+  "case03_5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case03_81",
+        0
+      ],
+      "positive": [
+        "repair_load_conditions",
+        0
+      ],
+      "negative": [
+        "repair_load_conditions",
+        1
+      ],
+      "latent_image": [
+        "repair_load_conditions",
+        2
+      ],
+      "seed": 66503002,
+      "steps": 15,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1
+    }
+  },
+  "case03_81": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "repair_load_conditions": {
+    "class_type": "LoadRepairConditioning",
+    "inputs": {
+      "file": "repair_conditioning/qwen-face-only-mask-0a91fd3715c9.safetensors",
+      "expected_sha256": "f5fa520ce36110f783d7d3ca122f33153fd1e5d2416060a5b58e424726664380"
+    }
+  },
+  "repair_save_latent": {
+    "class_type": "SaveRepairLatent",
+    "inputs": {
+      "latent": [
+        "case03_5",
+        0
+      ],
+      "prefix": "qwen-full-reload-1",
+      "workflow_sha256": "f13200b75412e32389dfe226cba7cb0a0c9a9fcf38ade348e04e4886bb5c505e"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "operator_stopped_during_text_model_load",
+  "images": [],
+  "native_crash_observed": false,
+  "oom_observed": false,
+  "ram_guard_triggered": false,
+  "controller_exit_code": 1,
+  "cleanup_issue": "Controller stop_tree/server.wait raised TimeoutExpired during operator SIGINT cleanup; both controller and server subsequently verified exited. Raw summary may retain running status; operator-stop record is authoritative.",
+  "raw_summary_sha256": "f2bde50024bc12997cdd89c10856cdc8057bbf4c2b8c032d0ba75b15fe9e2b72",
+  "stack": "qwen-pinned-load-stack.txt",
+  "scope": "First Qwen full-model pinned-memory attempt; no image or reload validation"
+}

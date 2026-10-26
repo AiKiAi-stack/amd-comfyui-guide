@@ -28,6 +28,3 @@ Qwen、Z-Image 的 `GGMLTensor.to` / `partially_unload` 路径出现过原生异
 
 本机 D: 为 SATA HDD，G: 为 NVMe；后续成功案例使用 G: 模型副本，且也改变了文字编码与动态显存配置。不能把速度变化全部归因于 SSD。8GB文件不是8GB运行显存；16GB系统内存也可能成为瓶颈，CPU编码不一定更实用。
 
-## H3：OOM 不一定发生在 VAE
-
-曾在 `SamplerCustomAdvanced` 的权重反量化/clone 时 OOM，尚未走到解码。之后预留显存的五帧诊断成功，仅说明极小链路可执行。不能写成正常视频、BFS换人或长音频成功。

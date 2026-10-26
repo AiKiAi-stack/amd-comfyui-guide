@@ -1,0 +1,8 @@
+{
+  "minimum_available_physical_bytes": 1984761856,
+  "peak_process_tree_rss_bytes": 8998088704,
+  "guard_mib": 768,
+  "guard_triggered": false,
+  "sample_count": 188,
+  "rss_includes_file_mapped_pages": true
+}

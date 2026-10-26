@@ -1,0 +1,62 @@
+[
+  {
+    "case": "kroma-head-direction-mask",
+    "sampled_latent_sha256": "7e1e3b2cbf935c963a96abd94cf09642c1ac4b9a4b8830ef9d6da1e8ed3dcf1f",
+    "tensors": [
+      {
+        "tensor": "tensor_0",
+        "dtype": "F32",
+        "elements": 65536,
+        "nonfinite": 65536
+      }
+    ]
+  },
+  {
+    "case": "kroma-multiref-local-composite",
+    "sampled_latent_sha256": "764730a6bb6387e3516f2376916d4bab0bc048ddaf6c83bde6b58e6da4da58f8",
+    "tensors": [
+      {
+        "tensor": "tensor_0",
+        "dtype": "F32",
+        "elements": 65536,
+        "nonfinite": 65536
+      }
+    ]
+  },
+  {
+    "case": "kroma-style-no-subject-reference",
+    "sampled_latent_sha256": "e518ee4074b41a4cd5cd6e69ac35c13ab7b8b2a0b26fae25f0b7fffad189b29a",
+    "tensors": [
+      {
+        "tensor": "tensor_0",
+        "dtype": "F32",
+        "elements": 65536,
+        "nonfinite": 65536
+      }
+    ]
+  },
+  {
+    "case": "kroma-style-owl-explicit",
+    "sampled_latent_sha256": "fedf0d994356ebfe663ff995a7d4a758ed0d390639ef87067a1407c8f19c6476",
+    "tensors": [
+      {
+        "tensor": "tensor_0",
+        "dtype": "F32",
+        "elements": 65536,
+        "nonfinite": 65536
+      }
+    ]
+  },
+  {
+    "case": "kroma-watercolor-denoise040",
+    "sampled_latent_sha256": "fb048cef513ea84b5af000187333e19b695e8057acb8b77a871fa1ee44aa2173",
+    "tensors": [
+      {
+        "tensor": "tensor_0",
+        "dtype": "F32",
+        "elements": 65536,
+        "nonfinite": 65536
+      }
+    ]
+  }
+]

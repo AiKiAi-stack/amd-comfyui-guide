@@ -1,0 +1,40 @@
+{
+  "case_id": "turbo-un-t2i",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "operator_ram_guard",
+  "images": [],
+  "workflow_sha256": "d78e649a72c78c3fcd829b60fa7e77e00f59f28a86665df70f11962110537a76",
+  "pid": 44009,
+  "prompt_id": "d3df57f0-41d7-41dd-949d-395f6d544786",
+  "validation_errors": {},
+  "error": "Available physical RAM below 1536MiB; operator stop, not native OOM",
+  "minimum_available_ram_mib": 1520.1484375,
+  "elapsed_seconds": 197.027,
+  "total_seconds": 229.044,
+  "server_exit": -15
+}

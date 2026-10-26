@@ -1,0 +1,43 @@
+{
+  "id": "turbo-un-pose-isolated",
+  "model": "turbo-un",
+  "feature": "姿态参考（图像指令） · 修复重试",
+  "recipe": "edit",
+  "claim_level": "作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。",
+  "exploratory": true,
+  "refs": [
+    "pose-guide",
+    "kroma-portrait-a"
+  ],
+  "inputs": [
+    "pose-guide",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+  "expected": "An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.",
+  "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control.",
+  "runtime_profile": "Same Turbo UN weights and original prompt/seed; isolated reference/text/sampling/decode",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-pose-reference-test"
+  ],
+  "retry_reason": "参考隔离后完整8步和CPU解码。红卷发成年女性、青色运动服、白背景、水平展开双臂及画面右侧屈膝可见，未复制骨架线；与示意的大体姿态相符。人物面部细节及精确身份不足，不能作为专用姿态约束或精确身份验收。",
+  "status": "success",
+  "prompt_id": "f1bf0b8b-321e-463c-9941-c2e2f777ba3a",
+  "elapsed_seconds": 135.203,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-un-pose-isolated_00001_.png",
+      "sha256": "f6d5adfdc558c8f3ec968ef25400d11888e147888475f3f019d56444e38c88a1",
+      "public_sha256": "bc56a0904f39dc87cd295dbca6bbf4f4f0d0c4e3d69db607464c475a7d540bfc"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 21.047,
+  "encoding_elapsed_seconds": 33.046,
+  "sampling_elapsed_seconds": 72.094,
+  "timing_scope": "Sum of reference preparation, encoding, sampling and decode submission-to-history times; excludes service cold starts",
+  "mask_attachments": false,
+  "acceptance_scope": "普通双图语义姿态跟随，大体动作达到；精确关节和身份未验收",
+  "reference_elapsed_seconds": 9.016
+}

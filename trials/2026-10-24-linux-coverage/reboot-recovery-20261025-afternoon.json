@@ -1,0 +1,24 @@
+{
+  "time": 1792909965.4392743,
+  "boot": "7887.62 93085.24\n",
+  "pending_cases": [
+    "turbo-un-pose-reference-test-stage-nobacking",
+    "qwen-base-edit-orange-to-white-cat-512-stage-nobacking",
+    "qwen-inpaint-stage-nobacking",
+    "qwen-multiref-stage-nobacking",
+    "qwen-face-swap-stage-nobacking",
+    "qwen-style-edit-stage-nobacking",
+    "qwen-face-only-stage-nobacking",
+    "qwen-caption-gpu-chunked-stage-nobacking",
+    "qwen-bfs-head-swap-stage-nobacking",
+    "turbo-fox-profile-wide-mask-linux-repair",
+    "flux2-teapot-structure-linux-repair",
+    "turbo-un-multiref-stage-nobacking-bf16-te-retry",
+    "turbo-un-face-swap-stage-nobacking-bf16-te",
+    "turbo-un-role-replacement-test-stage-nobacking-bf16-te"
+  ],
+  "project_mount": "ED9647E7ADB82948",
+  "model_readonly_mount": "58BC08A6BC08812C",
+  "previous_processes_survived": false,
+  "note": "未落盘 execution 的阶段保留原 raw 日志；本次重新启动，不将重启中断称为模型失败"
+}

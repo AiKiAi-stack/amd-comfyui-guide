@@ -1,0 +1,35 @@
+{
+  "id": "flux2-tiny-bow",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "迭代编辑／第二轮修改 · 修复重试",
+  "recipe": "single",
+  "inputs": [
+    "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+  ],
+  "refs": [
+    "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+  ],
+  "depends_on": "flux2-klein-single-color-pinned",
+  "prompt": "Add one tiny red silk bow at the lower attachment of the left handle of this blue handbag. The entire bow including ribbon tails is only about eight percent of the handbag width, smaller than the handle attachment. Keep the whole bag visible, its blue leather, shape, handles, framing, light grey studio background and lighting unchanged.",
+  "expected": "在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。",
+  "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+  "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+  "runtime_profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
+  "gpu_text": true,
+  "memory_profile": "dynamic-nvme-pinned",
+  "repairs": [
+    "flux2-klein-iterative"
+  ],
+  "retry_reason": "蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。",
+  "status": "success",
+  "prompt_id": "93d2959d-39e1-4ac1-a897-288a9bd039bb",
+  "elapsed_seconds": 27.062,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/flux2-tiny-bow_00001_.png",
+      "sha256": "3053e9dd672d4110aa4fd466e86e780699468a8aefa1d1469003606ec4af5efe",
+      "public_sha256": "f6c99fa31ff2c4d55e7109b8e7f67312e50c698afdca704ea870e9bbf4d9d360"
+    }
+  ],
+  "review": "partial"
+}

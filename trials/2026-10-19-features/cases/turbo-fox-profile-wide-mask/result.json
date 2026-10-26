@@ -1,0 +1,50 @@
+{
+  "id": "turbo-fox-profile-wide-mask",
+  "model": "turbo-un",
+  "feature": "遮罩局部重绘 · 修复重试",
+  "recipe": "inpaint",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "prompt": "Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.",
+  "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+  "runtime_profile": "Exact prior text/reference conditions and initial samples; wider noise/composite mask only; FP16 sampling and isolated CPU decode",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-inpaint"
+  ],
+  "retry_reason": "保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。",
+  "status": "success",
+  "prompt_id": "d1469a0d-5965-424a-9f7a-61bf6d38d1c9",
+  "elapsed_seconds": 87.328,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-input_00001_.png",
+      "sha256": "c596865a109decd2a672bc546624fa0845c33fdc826d8b1fba74785d02b7d101",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-mask_00001_.png",
+      "sha256": "58ffacfa51f26b568fd18f793033ec87f87bb3bb436a4d6b963cd3e3cd7bb27b",
+      "public_sha256": "b1a537b3fc195a8808829b624c0283317f4801cd7d5ae51fbf4606042efab000"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask_00001_.png",
+      "sha256": "2244606b618338faf8ea9e6b1aa12ebb38b77395bf7a56bff0f7b76471638729",
+      "public_sha256": "14a641596325bf2f5320e49a00794b1bc5c2b6f9c85d5c46dfe03cd5763e934f"
+    }
+  ],
+  "review": "pass",
+  "decoding_elapsed_seconds": 18.14,
+  "encoding_elapsed_seconds": 3.032,
+  "sampling_elapsed_seconds": 66.156,
+  "timing_scope": "Current condition refresh, sampling and decode; original text/reference encoding reused and excluded; cold starts excluded",
+  "mask_attachments": true,
+  "acceptance_scope": "遮罩内明确变狐，背向身体保留；遮罩外由最终合成保留。精确动物身份及长期稳定未验收"
+}

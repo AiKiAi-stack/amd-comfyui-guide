@@ -1,0 +1,147 @@
+{
+  "6610aee2-1233-453d-a122-0837d8ef733b": {
+    "prompt": [
+      0,
+      "6610aee2-1233-453d-a122-0837d8ef733b",
+      {
+        "9": {
+          "class_type": "UnetLoaderGGUF",
+          "inputs": {
+            "unet_name": "z_image_turbo-Q4_K_M.gguf"
+          }
+        },
+        "11": {
+          "class_type": "ModelSamplingAuraFlow",
+          "inputs": {
+            "model": [
+              "9",
+              0
+            ],
+            "shift": 3.0
+          }
+        },
+        "10": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "11",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ],
+            "seed": 665025003,
+            "steps": 9,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          }
+        },
+        "4": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          }
+        },
+        "6": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "10",
+              0
+            ],
+            "vae": [
+              "4",
+              0
+            ]
+          }
+        },
+        "18": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "6",
+              0
+            ],
+            "filename_prefix": "linux-coverage/zimage-gguf-chinese"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/linux-coverage-zimage-gguf-chinese-0509712bc3b5.safetensors",
+            "expected_sha256": "1f0953657543fbec4f47c9172187f9279dbca14034e4602e030569a3885323e8"
+          }
+        }
+      },
+      {
+        "create_time": 1792861614447
+      },
+      [
+        "18"
+      ]
+    ],
+    "outputs": {
+      "18": {
+        "images": [
+          {
+            "filename": "zimage-gguf-chinese_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 512,
+              "height": 512
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "6610aee2-1233-453d-a122-0837d8ef733b",
+            "timestamp": 1792861614448
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "6610aee2-1233-453d-a122-0837d8ef733b",
+            "timestamp": 1792861614448
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "6610aee2-1233-453d-a122-0837d8ef733b",
+            "timestamp": 1792861667705
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "18": {
+        "node_id": "18",
+        "display_node": "18",
+        "parent_node": null,
+        "real_node_id": "18"
+      }
+    }
+  }
+}

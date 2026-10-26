@@ -1,0 +1,49 @@
+{
+  "id": "turbo-head-direction-mask",
+  "model": "turbo-un",
+  "feature": "换头／人物身份参考 · 修复重试",
+  "recipe": "edit",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+  "expected": "B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。",
+  "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-face-swap"
+  ],
+  "retry_reason": "左三分之四侧转、短红卷发及原深蓝外套红围巾保留，扩大遮罩后没有旧黑发长条；雀斑偏弱、五官身份仍与 A 有差异，身份复现部分达到。",
+  "status": "success",
+  "prompt_id": "7c9ffc23-3b95-4ea5-9125-16da9c8d3bc5",
+  "elapsed_seconds": 936.891,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-head-direction-mask-input_00001_.png",
+      "sha256": "f046c13aa72cd84990df1aba6e91fd423947b9d8a3766ec912b1e3b89670522c",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-head-direction-mask-mask_00001_.png",
+      "sha256": "b865979f509aecb8d03d32be83c5d079b3f1524fdacaadc99112d452d7eb83dc",
+      "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-head-direction-mask_00001_.png",
+      "sha256": "bfc37c7be5667f2580fd9838b20ba692f005512f112aa5da1c77f60d8ee41523",
+      "public_sha256": "b3baa1d6d71a33f84e5f00a00495e543c11652bdb5b69b27b1b2f648fbb8f9a6"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 18.125,
+  "encoding_elapsed_seconds": 870.641,
+  "sampling_elapsed_seconds": 48.125,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true
+}

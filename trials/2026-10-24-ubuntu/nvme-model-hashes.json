@@ -1,0 +1,51 @@
+[
+  {
+    "file": "/media/user/GIAO/AIModels/amd_comfy/zimage-20261020/diffusion_models/z_image_turbo-Q4_K_M.gguf",
+    "bytes": 4981532736,
+    "sha256": "745ec270db042409fde084d6b5cfccabf214a7fe5a494edf994a391125656afd",
+    "matches_20261023": true,
+    "seconds": 6.476
+  },
+  {
+    "file": "/media/user/GIAO/AIModels/amd_comfy/zimage-20261020/text_encoders/Qwen3-4B-Q4_K_M.gguf",
+    "bytes": 2497281312,
+    "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
+    "matches_20261023": true,
+    "seconds": 3.221
+  },
+  {
+    "file": "/media/user/GIAO/AIModels/amd_comfy/zimage-20261020/vae/ae.safetensors",
+    "bytes": 335304388,
+    "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+    "matches_20261023": true,
+    "seconds": 0.442
+  },
+  {
+    "file": "/media/user/GIAO/AIModels/amd_comfy/repair-20261021/diffusion_models/qwen-image-2.1-Q4_K_M.gguf",
+    "bytes": 4199565024,
+    "sha256": "631d532e7ca71e8d90a87c71d3699761a812039d22e3370e87498d87754660fe",
+    "matches_20261023": true,
+    "seconds": 5.45
+  },
+  {
+    "file": "/media/user/GIAO/AIModels/amd_comfy/repair-20261021/text_encoders/Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+    "bytes": 5287517120,
+    "sha256": "8123f36d2b3e562deef164dffdae33bdb1d152797ad10bb630827eaa7bce795d",
+    "matches_20261023": true,
+    "seconds": 6.903
+  },
+  {
+    "file": "/media/user/GIAO/AIModels/amd_comfy/repair-20261021/vae/qwen_image_2.1_vae_bf16.safetensors",
+    "bytes": 675509688,
+    "sha256": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9",
+    "matches_20261023": true,
+    "seconds": 0.861
+  },
+  {
+    "file": "/media/user/GIAO/AIModels/amd_comfy/repair-20261021/text_encoders/mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf",
+    "bytes": 1159029984,
+    "sha256": "d9870a1f168db3d814596216aaf35702154147b443572c7939acca1802621ac6",
+    "matches_20261023": true,
+    "seconds": 1.498
+  }
+]

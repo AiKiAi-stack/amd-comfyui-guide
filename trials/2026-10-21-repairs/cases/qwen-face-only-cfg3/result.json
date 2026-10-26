@@ -1,0 +1,69 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 18.11,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-face-only-cfg3-input_00001_.png",
+      "original_sha256": "b9c4ae21ea01d85b6cb79065115639288995ef38986db97eb12ee08f92ea34a6",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-face-only-cfg3-mask_00001_.png",
+      "original_sha256": "4a944a78af1b08ebd87936c53acd06d9155e01cc53ddf7ad26ad2f8328f4223b",
+      "public_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case03_7-0-qwen-face-only-cfg3_00001_.png",
+      "original_sha256": "ba843d54e274c943f54a21f813bb6b82e60a525eb615795a6572fb265a92419d",
+      "public_sha256": "104a665e2af408662a92bb2554371971d95561e1e463175831d12e65191f3aca",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "qwen-face-only-cfg3",
+  "feature": "qwen-face-only",
+  "verdict": "partial",
+  "review": "与相同FP16的CFG1控制只改变CFG为3。侧转黑发服装保留，绿眼与雀斑较清楚，但仍是相近生成脸，鼻/眼/脸部比例未能确认与A相同；不能据更高CFG认定精确身份修复。",
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "acceptance_scope": "只改变CFG的同条件对照；精确身份未通过",
+  "mask_measurement": {
+    "outside_pixels": 214148,
+    "outside_changed_pixels": 3,
+    "outside_max_channel_difference": 1,
+    "inside_pixels": 47996,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 214144,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "803753df-6a35-4522-a0ab-ddefc1b1a4be",
+  "raw_history_sha256": "04ebf60918c086241047af2a15810e7744de4b43336e38bdfcaa6e27f957a07f",
+  "decoding_elapsed_seconds": 18.11,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 114.172,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "6f2086d688d83d50089af03843332e2f32bed0c276f8bc0765fcb798039e65b6",
+  "workflow_sha256": "53682f94c76ed88e5282b92044e502899927e70bbad9b848a05f92fd394d42fb",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.015,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "e59c2a2e3d724ff4f5be1d4c118d87b14050d532ad1145be4903974499a7f291"
+}

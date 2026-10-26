@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "stdout": "Already applied; existing patch record preserved\nAlready applied; existing evidence preserved\nReady for GPU checks: /home/user/.local/share/barely-comfy/ubuntu-20261024/.venv/bin/python /path/to/barely-comfy/scripts/check_gpu.py\n",
+  "stderr": "",
+  "model_config_preserved": true,
+  "model_config_sha256": "bd966bd09fcc481f8d50efd2d9338e08012152ee7b5ca9fbf2fcaca68437865f"
+}

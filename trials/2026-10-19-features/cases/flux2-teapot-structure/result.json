@@ -1,0 +1,34 @@
+{
+  "id": "flux2-teapot-structure",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "对象替换／中文指令 · 修复重试",
+  "recipe": "single",
+  "inputs": [
+    "flux2-klein-bench/handbag_white.png"
+  ],
+  "refs": [
+    "flux2-klein-bench/handbag_white.png"
+  ],
+  "prompt": "将白色手提包完整替换成一只正常结构的红色陶瓷茶壶：单个圆形壶身和壶盖，画面左侧恰好一个弯曲壶嘴，画面右侧恰好一个完整的C形把手，把手有清楚的镂空。不要两个壶嘴，不要两个把手，不要手提包。保留浅灰色背景、柔和灯光、居中拍摄角度和原图的画面布局。",
+  "expected": "包被红色茶壶取代，背景和产品摄影构图保留。",
+  "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+  "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+  "runtime_profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
+  "gpu_text": true,
+  "memory_profile": "dynamic-nvme-pinned",
+  "repairs": [
+    "flux2-klein-replace-zh"
+  ],
+  "retry_reason": "实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。",
+  "status": "success",
+  "prompt_id": "b8004c69-17e1-4c97-b703-a9fe02a91243",
+  "elapsed_seconds": 51.703,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/flux2-teapot-structure_00001_.png",
+      "sha256": "5d15ca47aecdd9da4674042a14adbfa9b465dca50b535db01e395ae8f1f799b7",
+      "public_sha256": "af7663ccea0c16e7346fb7f6319a764b96fad6b7fada12c4733def895ffbf371"
+    }
+  ],
+  "review": "pass"
+}

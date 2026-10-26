@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "elapsed_seconds": 9.094,
+  "images": [
+    {
+      "file": "repair_save_input-0-kroma-multiref-ref384-input_00001_.png",
+      "original_sha256": "3fd20c10daeae7078394705fd1a13bd45ebdf67fa919553ac9275dcad4a47b25",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-kroma-multiref-ref384-mask_00001_.png",
+      "original_sha256": "2136663af30f49ca1c38d532b56875a6c129155c1906a6479fb17bd9c288b532",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case02_9-0-kroma-multiref-ref384_00001_.png",
+      "original_sha256": "322c9742d090e5016328dafed38eab62fd2305f0318ff945e2c54655d1a15ee4",
+      "public_sha256": "19cb88d2d27674a138cf1fef83d9b465532e11ca3b1d414e6150b2cb697f8111",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-multiref-ref384",
+  "feature": "kroma-multiref",
+  "verdict": "partial",
+  "review": "只将两路 VAE 参考降至 384 后完成 512 输出。正面狐狸清楚，但苔石仍污染咖啡馆前景、右边残留原主体重影，身份也有差异；执行成功，合成质量部分达到。",
+  "mask_measurement": {
+    "outside_pixels": 193144,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 69000,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 193144,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "766c6f01-16b9-42f7-a9d7-5709acd7839f",
+  "raw_history_sha256": "0cde9d3091d49a78832f3f4ff4c56f561ed44e1ce04a82d7b7f9e58b077e64e0",
+  "decoding_elapsed_seconds": 9.094,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 54.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "621af684f9a231dea473036fecfb85f2bfcd1b1f7a3b64f6ec55b1a305d00462",
+  "workflow_sha256": "3942c51461ac4b17696b7afe3fe3f0e1178ec815572eba361acfd4db15686bcc",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 24.391,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "05bcc807353fcf038b0ef49ad7c4dea7331c84b8e53060d6880fe04bb80a936e"
+}

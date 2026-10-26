@@ -1,0 +1,96 @@
+{
+  "case_id": "flux2-klein-t2i-gpu-text-gguf-te",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../flux2-klein-t2i-gpu-text-gguf-te--sample/13-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "80fce2500ade46b8c66ac7e02e524c82241c4170932720e7c0e705e31b7388ce",
+      "original_sha256": "5aeb2fcba46e0630c9971f34a73077dfa58e28a276219db17306d20e96368b8c",
+      "rgb_sha256": "b0cd9685c9c546fb1b8ef1b5bf34d5f1057a5ee8f66c5e6158d1cb41590b180d"
+    }
+  ],
+  "workflow_sha256": "71823f32849875cba498a752ff795c40b09eeefab376cf20fe2dc4cdf70b1565",
+  "pid": 22814,
+  "prompt_id": "352bf494-3e17-4eae-b110-0ad8299adcb0",
+  "validation_errors": {},
+  "outputs": {
+    "13": {
+      "images": [
+        {
+          "filename": "flux2-klein-t2i-gpu-text-gguf-te_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "352bf494-3e17-4eae-b110-0ad8299adcb0",
+        "timestamp": 1792859618054
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "352bf494-3e17-4eae-b110-0ad8299adcb0",
+        "timestamp": 1792859618055
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "352bf494-3e17-4eae-b110-0ad8299adcb0",
+        "timestamp": 1792859644699
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 3865.546875,
+  "elapsed_seconds": 44.317,
+  "total_seconds": 33.251,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 16.073,
+  "sampling_seconds": 28.244,
+  "conditioning_archive": "repair_conditioning/linux-coverage-flux2-klein-t2i-gpu-text-gguf-te-a6f7f841fdbc.safetensors",
+  "conditioning_sha256": "373270dcbc9787eb04fa61791d599e309cf05cc332089f8e206adb1f982f26d4",
+  "encoding_pid": 22452,
+  "sampling_pid": 22814,
+  "encoding_exited_before_sampling": true
+}

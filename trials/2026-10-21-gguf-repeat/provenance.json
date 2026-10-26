@@ -1,0 +1,41 @@
+{
+  "sources": {
+    "ComfyUI": {
+      "revision": "ce1e922d8623bb507180e32a0c01a7d0e29edef7",
+      "dirty": false
+    },
+    "ComfyUI-GGUF": {
+      "revision": "373048b8403a7820620065210a691263d4da0a61",
+      "dirty": false
+    }
+  },
+  "models": [
+    {
+      "file": "z_image_turbo-Q4_K_M.gguf",
+      "source_repo": "jayn7/Z-Image-Turbo-GGUF",
+      "source_revision": "6e2dff8e3abd78051c1211fb5833a03818a2f3cc",
+      "bytes": 4981532736,
+      "sha256": "745ec270db042409fde084d6b5cfccabf214a7fe5a494edf994a391125656afd",
+      "verified_date": "2026-10-21",
+      "storage": "G: NVMe mirror"
+    },
+    {
+      "file": "Qwen3-4B-Q4_K_M.gguf",
+      "source_repo": "unsloth/Qwen3-4B-GGUF",
+      "source_revision": "22c9fc8a8c7700b76a1789366280a6a5a1ad1120",
+      "bytes": 2497281312,
+      "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
+      "verified_date": "2026-10-21",
+      "storage": "G: NVMe mirror"
+    },
+    {
+      "file": "ae.safetensors",
+      "source_repo": "Comfy-Org/z_image_turbo",
+      "source_revision": "6fc90a3b1b653e935a0d175e260736de25b84df5",
+      "bytes": 335304388,
+      "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+      "verified_date": "2026-10-21",
+      "storage": "G: NVMe mirror"
+    }
+  ]
+}

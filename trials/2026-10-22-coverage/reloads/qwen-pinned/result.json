@@ -1,0 +1,142 @@
+{
+  "status": "execution_pass_visual_review_pending",
+  "profile": "gpu-text",
+  "explicit_unload_after_each_case": true,
+  "native_exception_observed": false,
+  "oom_observed": false,
+  "final_server_exit_code": 15,
+  "server_stopped": true,
+  "raw_summary_sha256": "702064e83629f2ca6093d6af7a39958ccf3305bb07df44581702e859deef004c",
+  "raw_log_sha256": "10d66bdc5317d2bc1b75d3a340a569b7a531db9754aa75fa0fbd77773d37ed5f",
+  "cases": [
+    {
+      "id": "qwen-full-reload-1",
+      "exit_code": 0,
+      "seconds": 64.33,
+      "explicit_unload": {
+        "before": [
+          {
+            "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+            "type": "cuda",
+            "index": 0,
+            "vram_total": 8573157376,
+            "vram_free": 4010377728,
+            "torch_vram_total": 4435476480,
+            "torch_vram_free": 137527808
+          }
+        ],
+        "after": [
+          {
+            "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+            "type": "cuda",
+            "index": 0,
+            "vram_total": 8573157376,
+            "vram_free": 8272674816,
+            "torch_vram_total": 67108864,
+            "torch_vram_free": 33554432
+          }
+        ],
+        "gpu_reserved_below_256_mib": true,
+        "meaning": "Real /free requested; observed allocator memory release, not OOM recovery proof"
+      },
+      "prompt_id": "071ea764-7b09-4d83-b5a9-57f8296cf1d6",
+      "sampler_node": "case03_5",
+      "sampler_reran": true,
+      "finite_latent_archive": {
+        "text": [
+          "repair_conditioning/qwen-full-reload-1-d6b7b5a9fbd0.safetensors"
+        ],
+        "archive_sha256": [
+          "f0d81ec979a82f4873dcfb28070a7c91ebf0eb81edc08a315d80980765bbf28d"
+        ]
+      },
+      "raw_history_sha256": "4043d077ef4a4693a0369eecaa415ee279af85c04cc0872a73ca6b46be17b8c8"
+    },
+    {
+      "id": "qwen-full-reload-2",
+      "exit_code": 0,
+      "seconds": 56.25,
+      "explicit_unload": {
+        "before": [
+          {
+            "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+            "type": "cuda",
+            "index": 0,
+            "vram_total": 8573157376,
+            "vram_free": 4113178624,
+            "torch_vram_total": 4276092928,
+            "torch_vram_free": 91430912
+          }
+        ],
+        "after": [
+          {
+            "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+            "type": "cuda",
+            "index": 0,
+            "vram_total": 8573157376,
+            "vram_free": 8272674816,
+            "torch_vram_total": 67108864,
+            "torch_vram_free": 33554432
+          }
+        ],
+        "gpu_reserved_below_256_mib": true,
+        "meaning": "Real /free requested; observed allocator memory release, not OOM recovery proof"
+      },
+      "prompt_id": "61de0739-7700-4737-bb0b-4035c530d9b4",
+      "sampler_node": "case03_5",
+      "sampler_reran": true,
+      "finite_latent_archive": {
+        "text": [
+          "repair_conditioning/qwen-full-reload-2-239447d33730.safetensors"
+        ],
+        "archive_sha256": [
+          "42cb4252a3a198eba91d8ce04ca17c3d56f248a53e414c8ef20c714ac9afbbb5"
+        ]
+      },
+      "raw_history_sha256": "e91ff3b49471231e262142d9efc714c3740333fc8c0486d34bfdf27f5b36d0f9"
+    },
+    {
+      "id": "qwen-full-reload-3",
+      "exit_code": 0,
+      "seconds": 56.23,
+      "explicit_unload": {
+        "before": [
+          {
+            "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+            "type": "cuda",
+            "index": 0,
+            "vram_total": 8573157376,
+            "vram_free": 4113178624,
+            "torch_vram_total": 4276092928,
+            "torch_vram_free": 91430912
+          }
+        ],
+        "after": [
+          {
+            "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+            "type": "cuda",
+            "index": 0,
+            "vram_total": 8573157376,
+            "vram_free": 8272674816,
+            "torch_vram_total": 67108864,
+            "torch_vram_free": 33554432
+          }
+        ],
+        "gpu_reserved_below_256_mib": true,
+        "meaning": "Real /free requested; observed allocator memory release, not OOM recovery proof"
+      },
+      "prompt_id": "6a6cf0e7-e488-4c60-9dff-fb7323b46773",
+      "sampler_node": "case03_5",
+      "sampler_reran": true,
+      "finite_latent_archive": {
+        "text": [
+          "repair_conditioning/qwen-full-reload-3-2ea84d808e8a.safetensors"
+        ],
+        "archive_sha256": [
+          "4737785085549fef95da1767c33cd63eb6a80dd5d46b8ab04d0423afb4891d59"
+        ]
+      },
+      "raw_history_sha256": "0293e9d3af4c073284b307c025f0cec47d12784e8d7f45fe2f6ec9089edf0769"
+    }
+  ]
+}

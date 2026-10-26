@@ -1,0 +1,53 @@
+{
+  "1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+    }
+  },
+  "7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "repair_load_conditions",
+        0
+      ],
+      "negative": [
+        "repair_load_conditions",
+        1
+      ],
+      "latent_image": [
+        "repair_load_conditions",
+        2
+      ],
+      "seed": 66502001,
+      "steps": 4,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 0.4
+    }
+  },
+  "repair_load_conditions": {
+    "class_type": "LoadRepairConditioning",
+    "inputs": {
+      "file": "repair_conditioning/kroma-watercolor-denoise040-53a334e5ea15.safetensors",
+      "expected_sha256": "1de15cd82035ef8d53594152f04d8a97a438760a740edf0f5cd601e0e3691ca4"
+    }
+  },
+  "repair_save_latent": {
+    "class_type": "SaveRepairLatent",
+    "inputs": {
+      "latent": [
+        "7",
+        0
+      ],
+      "prefix": "kroma-watercolor-denoise040",
+      "workflow_sha256": "d7728b558c5d5f4e21e9fcea239bb746d27125cb8685c59a2afa0733dcd7b805"
+    }
+  }
+}

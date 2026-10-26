@@ -1,0 +1,71 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "case01_7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "repair_load_conditions",
+        0
+      ],
+      "negative": [
+        "repair_load_conditions",
+        1
+      ],
+      "latent_image": [
+        "repair_load_conditions",
+        2
+      ],
+      "seed": 66502001,
+      "steps": 4,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "case01_8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "case01_7",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ]
+    }
+  },
+  "case01_9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "case01_8",
+        0
+      ],
+      "filename_prefix": "linux-coverage/kroma-style-ref"
+    }
+  },
+  "repair_load_conditions": {
+    "class_type": "LoadRepairConditioning",
+    "inputs": {
+      "file": "repair_conditioning/linux-coverage-kroma-style-ref-5b835be80940.safetensors",
+      "expected_sha256": "53401c69e68d9c971219a8cbba3f441e44162a6bb57daa1770551a028b3845a4"
+    }
+  }
+}

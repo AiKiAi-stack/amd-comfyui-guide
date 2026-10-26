@@ -1,0 +1,6 @@
+{
+  "workflow_sha256": "f25f594de618aa0890e6f95d5700ea55102f1ff27e36a277b045564d4d8815a6",
+  "archive_sha256": "d20944acec28b7769e4303b15d41068fd5e21604dba43a3acb65ee9f0ed18e5e",
+  "archive_file": "repair_conditioning/qwen-caption-gpu-chunked-d043069a43cb.safetensors",
+  "encoding_process_exited_before_sampling": true
+}

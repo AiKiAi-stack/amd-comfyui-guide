@@ -1,0 +1,74 @@
+{
+  "case_id": "moss-text-cpu-text--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "48df2725f282120258b4bf713613e012028d3c78c2e945d6aaef749daf40f7c1",
+  "pid": 137079,
+  "prompt_id": "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-moss-text-cpu-text-3366ecdb74d8.safetensors"
+      ],
+      "archive_sha256": [
+        "87928c6fe382e185bfcad2fc3d4e34b7367a30334ec572d75dede2c42312f315"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+        "timestamp": 1792891927387
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+        "timestamp": 1792891927388
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+        "timestamp": 1792892075311
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 6994.8984375,
+  "elapsed_seconds": 148.358,
+  "total_seconds": 181.858,
+  "server_exit": -15
+}

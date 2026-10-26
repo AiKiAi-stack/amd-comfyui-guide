@@ -1,0 +1,109 @@
+{
+  "original_records": [
+    {
+      "issue": "qwen-caption",
+      "retry": "qwen-caption-gpu-chunked",
+      "status": "pass"
+    },
+    {
+      "issue": "qwen-caption-cpu",
+      "retry": "qwen-caption-cpu-fp32",
+      "status": "attempted_unresolved",
+      "evidence": "runs/qwen-caption-cpu-fp32-v1/encoding/operator-stop.json"
+    },
+    {
+      "issue": "kroma-style-ref",
+      "retry": "kroma-style-no-subject-reference",
+      "status": "pass"
+    },
+    {
+      "issue": "flux2-klein-t2i-1024",
+      "retry": "flux2-1024-blank-facade",
+      "status": "queued"
+    },
+    {
+      "issue": "zimage-gguf-photo",
+      "retry": "zimage-cpu-text-fp16",
+      "status": "single_run_pass"
+    },
+    {
+      "issue": "moss-img2img",
+      "retry": "moss-watercolor-base-sft",
+      "status": "pass"
+    },
+    {
+      "issue": "kroma-img2img",
+      "retry": "kroma-watercolor-back-view",
+      "status": "pass"
+    },
+    {
+      "issue": "qwen-inpaint",
+      "retry": "qwen-mask-fox-reference",
+      "status": "pass"
+    },
+    {
+      "issue": "turbo-un-inpaint",
+      "retry": "turbo-fox-profile-wide-mask",
+      "status": "pass"
+    },
+    {
+      "issue": "qwen-multiref",
+      "retry": "qwen-multiref-full-tail",
+      "status": "partial"
+    },
+    {
+      "issue": "kroma-multiref",
+      "retry": "kroma-multiref-full-tail",
+      "status": "pass"
+    },
+    {
+      "issue": "qwen-face-swap",
+      "retry": "qwen-head-direction-mask",
+      "status": "partial"
+    },
+    {
+      "issue": "qwen-face-only",
+      "retry": "qwen-face-only-cfg3",
+      "status": "partial"
+    },
+    {
+      "issue": "qwen-bfs-head-swap",
+      "retry": "qwen-bfs-full-hair-tiled",
+      "status": "partial"
+    },
+    {
+      "issue": "turbo-un-face-swap",
+      "retry": "turbo-head-direction-mask",
+      "status": "partial"
+    },
+    {
+      "issue": "kroma-head-swap",
+      "retry": "kroma-head-cropped-reference",
+      "status": "partial"
+    },
+    {
+      "issue": "flux2-klein-style",
+      "retry": "flux2-watercolor-night",
+      "status": "pass"
+    },
+    {
+      "issue": "flux2-klein-replace-zh",
+      "retry": "flux2-teapot-structure",
+      "status": "pass"
+    },
+    {
+      "issue": "flux2-klein-iterative",
+      "retry": "flux2-tiny-bow-fingertip",
+      "status": "partial"
+    }
+  ],
+  "additional_gaps": [
+    "Turbo role/pose/multiref isolated retries and ordinary encoder comparisons",
+    "Reference removal ablation",
+    "BFS prefix/LoRA contribution",
+    "Real continuous encoding and full-model reload",
+    "Native GGUF/INT8 OOM cleanup root",
+    "ROCm7.2 GPU initialization"
+  ],
+  "warning": "queued means prepared but not yet executed; pass is feature-specific, not native-crash root cause resolution"
+}

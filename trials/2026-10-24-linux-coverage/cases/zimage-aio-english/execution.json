@@ -1,0 +1,41 @@
+{
+  "case_id": "zimage-aio-english",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "operator_ram_guard",
+  "images": [],
+  "workflow_sha256": "083772c6b47628a0dc4c71ca7b40cee5b38ab180f0486aea22bce75d207b91b7",
+  "pid": 41707,
+  "prompt_id": "5f01fe22-b5a9-4d99-98c2-6c56c12d9a29",
+  "validation_errors": {},
+  "error": "Available physical RAM below 1536MiB; operator stop, not native OOM",
+  "minimum_available_ram_mib": 999.09765625,
+  "elapsed_seconds": 18.28,
+  "total_seconds": 32.288,
+  "server_exit": -15,
+  "staged": true,
+  "failed_phase": "encoding",
+  "encoding_workflow_sha256": "557cd9797e8ba33bc1060e6c2db451f9c480919af3f9bfee5f3a871937ac6633"
+}

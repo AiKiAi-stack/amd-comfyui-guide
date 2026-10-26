@@ -1,0 +1,28 @@
+{
+  "time": 1792828350.8823783,
+  "reason": "No sampler progress for more than 120 seconds after model switch; server in D state, GPU busy 0 percent. Operator stops owned runner; not a completed /free or OOM recovery.",
+  "pid": 20965,
+  "runner_pid": 20964,
+  "process": {
+    "pid": 20965,
+    "cpu_times": [
+      295.82,
+      9.5,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "status": "disk-sleep",
+    "memory_info": [
+      11428257792,
+      34443816960,
+      1915957248,
+      27963392,
+      0,
+      12662362112,
+      0
+    ]
+  },
+  "wchan": "lock_mm_and_find_vma",
+  "minimum_ram_guard_unchanged_mib": 1536
+}

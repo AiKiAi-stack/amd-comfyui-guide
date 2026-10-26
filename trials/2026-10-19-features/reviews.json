@@ -84,11 +84,6 @@
     "detail": "实际输出为单人侧转人像，铜红卷发、浅肤色、雀斑和绿眼特征清晰；蓝大衣、红围巾、公园背景保留。普通双图换头输出偏正面，本次 BFS LoRA 图保留了更明显的三分之四侧转角度。五官外观仍有差异，不能据单例认定精确身份复现。该对照同时增加 head_swap 前缀和 LoRA，未单独消融两者；15步、未加载 Pruna LoRA，不是官方8步配方复现。",
     "image": "qwen-bfs-head-swap_00001_.png"
   },
-  "ref2va-5frame-diagnostic": {
-    "verdict": "加载、采样、解码链路通过；不是视频功能验收",
-    "detail": "最新一次使用GPU FP16 VAE并预留2GB显存，实际保存5张384×256 PNG与无声WebP。首尾帧可见青色机器人、洋红围巾、方形黑眼和浅色背景，画面相似；约0.2秒不能评价动作流畅、正常时长质量或BFS角色替换。此前CPU VAE超时、INT8 VAE HIPBLAS错误及未预留显存的FP16采样OOM均保留。433.08秒包含服务启动；系统已用内存采样峰值约14.19GiB，API显存采样峰值约4.84GiB，不是所有瞬时分配的精确峰值。",
-    "image": "ref2va-5frame-diagnostic-frames_00001_.png"
-  },
   "turbo-un-t2i": {
     "verdict": "达到本例文生图目标",
     "detail": "本次 UN GGUF 编码器组合实际完成8步，得到独立白猫、雨窗和霓虹街景图片，未见黑图或纹理噪声。CPU文字编码、GPU扩散、CPU VAE混合配置，总用时526.25秒；不是纯GPU，也未测试去限制效果。",
@@ -220,5 +215,215 @@
   "flux2-klein-single-color-pinned": {
     "verdict": "通过",
     "notes": "目视对照白包输入与实际输出：包身和提手均变为蓝色，保留居中手提包、皮革纹理和灰色摄影背景，包型及细节有小幅重绘，非像素保留。提交后30.52秒；恢复默认锁页内存后使用相同编辑图、权重和种子重试成功。旧禁用锁页配置的噪声图作为独立case保留；迭代编辑仅可使用本次已通过输出，derived_input哈希已与PNG一致。"
+  },
+  "qwen-caption-cpu": {
+    "verdict": "失败：CPU反推内存不足，无提示词或图片",
+    "detail": "CPU文本/视觉编码重试在 TextGenerate 失败，DefaultCPUAllocator 申请 2,489,319,424 字节失败。提交后 540.84 秒，无 text_outputs、无 images。此前 GPU INT8 错误与浮点回退后的 OOM 仍保留；本次 CPU 重试也未完成自动反推后再生成。依据 result.json 的错误终态补记，不冒充视觉验收。",
+    "image": null
+  },
+  "qwen-caption-gpu-chunked": {
+    "verdict": "通过",
+    "detail": "自动从输入生成完整英文提示词，再自动编码并生成独立 512x512 PNG。实际查看：橘猫坐在雨夜湿路边凝望暖色橱窗，红色霓虹与湿地反光清楚；与反推文字一致，无明显噪声。构图与原图不同，任务是语义再生成，不是原图精确复刻。 这是分阶段规避方案；旧 CPU 配置和底层卸载问题仍未解决。",
+    "image": "qwen-caption-gpu-chunked_00001_.png"
+  },
+  "flux2-teapot-structure": {
+    "verdict": "通过",
+    "detail": "实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。",
+    "image": "flux2-teapot-structure_00001_.png"
+  },
+  "flux2-tiny-bow": {
+    "verdict": "部分达到",
+    "detail": "蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。",
+    "image": "flux2-tiny-bow_00001_.png"
+  },
+  "flux2-watercolor-night": {
+    "verdict": "通过",
+    "detail": "实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。",
+    "image": "flux2-watercolor-night_00001_.png"
+  },
+  "flux2-1024-attention": {
+    "verdict": "部分达到",
+    "detail": "完整 1024×1024，四步采样、CPU VAE 解码与保存均成功，目视为正常雨夜橘猫，HELLO 清楚。仍有额外招牌文字，未满足 no other writing。一次成功不能证明历史原生崩溃根因已修复。",
+    "image": "flux2-1024-attention_00001_.png"
+  },
+  "qwen-mask-fox-reference": {
+    "verdict": "通过",
+    "detail": "完整执行成功。实际查看：主体有长尖嘴、黑耳背、黑腿与大面积白尾尖，明确为狐狸；身体仍背向，头略向右转露出吻部。最终合成保证遮罩外像素保持，不能归功于模型本身的局部精度。灰化原猫参考区域并增加狐狸参考，属于条件和提示词调整，不证明精确身份复刻。",
+    "image": "qwen-mask-fox-reference_00001_.png"
+  },
+  "qwen-multiref-local-composite": {
+    "verdict": "部分达到",
+    "detail": "狐狸物种、黑腿和白胸清楚，正面姿态与参考接近，背景通过局部合成保留。仍不能确认精确身份：眼色有差异，右侧尾巴被边缘裁切，白尾尖没有完整出现。主体融合改善但未完全验收；遮罩外保持由合成提供。自动缓存配置将每步约38秒的重算降至后续约4秒，本轮完成约104秒，不代表长期稳定。",
+    "image": "qwen-multiref-local-composite_00001_.png"
+  },
+  "qwen-head-direction-mask": {
+    "verdict": "部分达到",
+    "detail": "左向三分之四侧脸保持，铜红卷发、绿色眼睛和雀斑已转移，海军蓝大衣、红围巾及背景保留。右侧仍有一缕原黑长发残留，精确五官身份也未证明；因此仅部分达到。遮罩外像素保留来自最终合成。",
+    "image": "qwen-head-direction-mask_00001_.png"
+  },
+  "qwen-face-only-mask": {
+    "verdict": "部分达到",
+    "detail": "单独进程完成。黑发、左向三分之四侧脸、蓝大衣和红围巾保留；面部有浅雀斑与绿眼。与参考 A 对照，眼形、鼻形和雀斑分布仍有差异，不能认定精确身份迁移，仍部分达到。",
+    "image": "qwen-face-only-mask_00001_.png"
+  },
+  "qwen-bfs-direction-mask": {
+    "verdict": "部分达到",
+    "detail": "15 步采样保存 latent 后退出，再由独立 CPU 进程完成 VAE 解码和 PNG。左向三分之四头向、铜红卷发、雀斑、绿眼和蓝大衣红围巾保留；右侧仍有细束黑发残留，五官与参考 A 仍有差异，精确身份未通过。遮罩外保持由最终合成实现。",
+    "image": "qwen-bfs-direction-mask_00001_.png"
+  },
+  "kroma-style-owl-explicit": {
+    "verdict": "部分达到",
+    "detail": "黑图问题已避开，蓝橙森林纸纹正常，出现猫头鹰；但原狐狸仍完整留在画面中，未满足仅新主体、不要狐狸。保留此未达完整目标的对照。",
+    "image": "kroma-style-owl-explicit_00001_.png"
+  },
+  "kroma-style-no-subject-reference": {
+    "verdict": "通过",
+    "detail": "将同一参考图裁取左上森林/配色区域（x40、y25、400×125）再编码，排除原狐狸主体。输出为枝上的清楚猫头鹰，蓝橙双色与纸纹/版画风格保留，画面未复制狐狸。属于本案例的参考内容控制改进，不宣称通用风格分离。",
+    "image": "kroma-style-no-subject-reference_00001_.png"
+  },
+  "kroma-watercolor-denoise040": {
+    "verdict": "部分达到",
+    "detail": "正常水彩笔触与纸面感、雨夜红色倒影及窗边猫保留；denoise 从 0.6 降为 0.4 仍把原严格背向猫改为可见眼鼻的侧脸，姿态目标未通过。",
+    "image": "kroma-watercolor-denoise040_00001_.png"
+  },
+  "kroma-head-direction-mask": {
+    "verdict": "部分达到",
+    "detail": "修正奇数查询切片并升精度后完成四步与解码。侧脸方向、红卷发、雀斑和绿眼转移；但头部偏大、黑发明显残留，颈部/围巾有叠影与接缝，身份不精确，不能作为可用换头成品验收。",
+    "image": "kroma-head-direction-mask_00001_.png"
+  },
+  "zimage-cpu-text-fp16": {
+    "verdict": "通过",
+    "detail": "在 RX 6650 XT 上完整完成 CPU 文本编码、9 步 512×512 采样、CPU VAE 与 PNG。目视为正常红色单壶嘴/单把手茶壶、两颗柠檬、深木桌和左侧窗光，无文字或噪声。显式 FP16 CPU 文本编码并读取同 SHA 的 G 盘模型缓存；没有用 GPU 文本编码成功替代本项。记录 RAM/commit 观测，未采集精确峰值显存，单次成功不证明历史连续崩溃根因已解决。",
+    "image": "zimage-cpu-text-fp16_00001_.png"
+  },
+  "turbo-head-direction-mask": {
+    "verdict": "部分达到",
+    "detail": "左三分之四侧转、短红卷发及原深蓝外套红围巾保留，扩大遮罩后没有旧黑发长条；雀斑偏弱、五官身份仍与 A 有差异，身份复现部分达到。",
+    "image": "turbo-head-direction-mask_00001_.png"
+  },
+  "flux2-tiny-bow-fingertip": {
+    "verdict": "部分达到",
+    "detail": "蓝包与灰色摄影背景保留，蝴蝶结比首轮小，但红色包围框宽 48px，占包体宽 259px 的 18.5%，仍明显超过指甲/背带宽度要求；直接提示词尺寸控制未通过。",
+    "image": "flux2-tiny-bow-fingertip_00001_.png"
+  },
+  "kroma-watercolor-back-view": {
+    "verdict": "通过",
+    "detail": "明确背面提示后，水彩纸面、松散笔触、深色雨夜与暖红反射清楚；猫严格背向，没有眼鼻侧脸，原窗边构图保留。本固定输入配方目视通过。",
+    "image": "kroma-watercolor-back-view_00001_.png"
+  },
+  "kroma-multiref-ref384": {
+    "verdict": "部分达到",
+    "detail": "只将两路 VAE 参考降至 384 后完成 512 输出。正面狐狸清楚，但苔石仍污染咖啡馆前景、右边残留原主体重影，身份也有差异；执行成功，合成质量部分达到。",
+    "image": "kroma-multiref-ref384_00001_.png"
+  },
+  "moss-watercolor-denoise085": {
+    "verdict": "部分达到",
+    "detail": "显式 FP16 UNet 后八步采样完整完成，保留丛林中的全身宇航员；画面仍接近摄影，粗纸与水彩笔触没有明确达到，风格转换部分达到。",
+    "image": "moss-watercolor-denoise085_00001_.png"
+  },
+  "qwen-bfs-full-hair-tiled": {
+    "verdict": "部分达到",
+    "detail": "复用已校验的原 15 步 BFS latent，仅将最终合成遮罩扩大至覆盖长黑发并改用 CPU tiled VAE。红卷发、侧转、衣服保留且旧黑发条消除；五官仍与参考不同，身份目标部分达到；不冒充重新采样。",
+    "image": "qwen-bfs-full-hair-tiled_00001_.png"
+  },
+  "turbo-mask-fox-reference": {
+    "verdict": "部分达到",
+    "detail": "修正本次新增附件的两个悬空节点引用，复用原成功编码/采样归档后完整解码。主体有黑耳、蓬松白尖尾，但背向圆头和身体仍偏猫、长吻不可见，不能确认完整狐狸替换，部分达到。",
+    "image": "turbo-mask-fox-reference_00001_.png"
+  },
+  "kroma-multiref-clean-reference": {
+    "verdict": "部分达到",
+    "detail": "裁掉苔石并清除原猫后，输出不再有苔石和猫重影，狐狸外形清楚；但中性参考的灰色矩形被迁入背景，前景融合仍失败。记录为部分达到，不作为干净合成验收。",
+    "image": "kroma-multiref-clean-reference_00001_.png"
+  },
+  "moss-watercolor-base-sft": {
+    "verdict": "通过",
+    "detail": "使用同一已存在 SFT 基础权重，移除八步 DMD LoRA，28 步/CFG3/denoise0.85、FP16 UNet。输出有明确水彩大笔触、绿叶晕染与粗纸纹，保留丛林、白色全身宇航员和行走构图；本固定输入配方目视通过，八步风格不足对照保留。",
+    "image": "moss-watercolor-base-sft_00001_.png"
+  },
+  "flux2-tiny-bow-sized-composite": {
+    "verdict": "通过",
+    "detail": "尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。",
+    "image": "flux2-tiny-bow-sized-composite_00001_.png"
+  },
+  "kroma-multiref-natural-crop": {
+    "verdict": "部分达到",
+    "detail": "去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。",
+    "image": "kroma-multiref-natural-crop_00001_.png"
+  },
+  "kroma-multiref-full-tail": {
+    "verdict": "通过",
+    "detail": "复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。",
+    "image": "kroma-multiref-full-tail_00001_.png"
+  },
+  "turbo-fox-clean-latent": {
+    "verdict": "部分达到",
+    "detail": "只将采样初始VAE输入从原猫图改为抹猫图。复用经图依赖与SHA验证的旧正/负条件，刷新4.48秒、8步采样及解码完整完成；主体仍偏圆头猫形背影，并出现灰边框，物种替换未通过。新旧归档已验证正负条件逐张量完全一致、noise_mask一致，初始samples确实改变。",
+    "image": "turbo-fox-clean-latent_00001_.png"
+  },
+  "qwen-face-only-cfg1-fp16": {
+    "verdict": "部分达到",
+    "detail": "相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。",
+    "image": "qwen-face-only-cfg1-fp16_00001_.png"
+  },
+  "qwen-face-only-cfg3": {
+    "verdict": "部分达到",
+    "detail": "与相同FP16的CFG1控制只改变CFG为3。侧转黑发服装保留，绿眼与雀斑较清楚，但仍是相近生成脸，鼻/眼/脸部比例未能确认与A相同；不能据更高CFG认定精确身份修复。",
+    "image": "qwen-face-only-cfg3_00001_.png"
+  },
+  "turbo-fox-profile-precomputed": {
+    "verdict": "部分达到",
+    "detail": "四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。",
+    "image": "turbo-fox-profile-precomputed_00001_.png"
+  },
+  "turbo-fox-profile-wide-mask": {
+    "verdict": "通过",
+    "detail": "保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。",
+    "image": "turbo-fox-profile-wide-mask_00001_.png"
+  },
+  "turbo-un-role-isolated": {
+    "verdict": "部分达到",
+    "detail": "四阶段完整执行8步并CPU解码。宇航服和头盔已完全去除，单名红卷发女性以黄褐色户外服在丛林前行；场景、站位和主要构图保留。脸部尺寸较小，雀斑、绿眼和精确身份未获证明，仍记部分达到；不是专用角色控制。",
+    "image": "turbo-un-role-isolated_00001_.png"
+  },
+  "turbo-un-pose-isolated": {
+    "verdict": "部分达到",
+    "detail": "参考隔离后完整8步和CPU解码。红卷发成年女性、青色运动服、白背景、水平展开双臂及画面右侧屈膝可见，未复制骨架线；与示意的大体姿态相符。人物面部细节及精确身份不足，不能作为专用姿态约束或精确身份验收。",
+    "image": "turbo-un-pose-isolated_00001_.png"
+  },
+  "turbo-un-multiref-natural": {
+    "verdict": "部分达到",
+    "detail": "两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。",
+    "image": "turbo-un-multiref-natural_00001_.png"
+  },
+  "turbo-un-multiref-no-fox": {
+    "verdict": "部分达到",
+    "detail": "删除image2及其VAE参考，保持同一提示、seed、扩散权重后，依然生成清晰红狐和相似雨街。说明本提示本身足以生成狐狸，不能把两图结果外观相似作为参考身份保留证明。",
+    "image": "turbo-un-multiref-no-fox_00001_.png"
+  },
+  "turbo-ordinary-role-control": {
+    "verdict": "部分达到",
+    "detail": "同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。",
+    "image": "turbo-ordinary-role-control_00001_.png"
+  },
+  "turbo-ordinary-pose-control": {
+    "verdict": "部分达到",
+    "detail": "同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。",
+    "image": "turbo-ordinary-pose-control_00001_.png"
+  },
+  "kroma-head-cropped-reference": {
+    "verdict": "部分达到",
+    "detail": "裁切参考排除黄毛衣，并扩大头发合成范围后完整4步及CPU解码。红卷发、雀斑、绿眼与左转头向出现，但黑色长发仍保留，颈部有重影且黄色仍混入领口。问题没有解决，保留独立失败视觉证据。",
+    "image": "kroma-head-cropped-reference_00001_.png"
+  },
+  "kroma-multiref-no-fox": {
+    "verdict": "部分达到",
+    "detail": "去掉第二狐狸参考（文本视觉输入及第二ReferenceLatent）后依然生成红狐。此轮采样为FP16，而历史双参考是默认精度，尚不能作为严格单变量对照；已另排匹配FP16的双参考控制，不能以此宣称参考无效。",
+    "image": "kroma-multiref-no-fox_00001_.png"
+  },
+  "qwen-multiref-full-tail": {
+    "verdict": "部分达到",
+    "detail": "复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。",
+    "image": "qwen-multiref-full-tail_00001_.png"
   }
 }

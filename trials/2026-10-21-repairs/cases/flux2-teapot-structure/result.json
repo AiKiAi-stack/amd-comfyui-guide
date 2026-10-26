@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "elapsed_seconds": 51.703,
+  "images": [
+    {
+      "file": "19-0-flux2-teapot-structure_00001_.png",
+      "original_sha256": "5d15ca47aecdd9da4674042a14adbfa9b465dca50b535db01e395ae8f1f799b7",
+      "public_sha256": "af7663ccea0c16e7346fb7f6319a764b96fad6b7fada12c4733def895ffbf371",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "flux2-klein-replace-zh",
+  "verdict": "pass",
+  "review": "实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。",
+  "prompt_id": "b8004c69-17e1-4c97-b703-a9fe02a91243",
+  "raw_history_sha256": "5f12871881426eb7618bb7b621b44ba23a8724d303fa2516f06db834cf77d676",
+  "workflow_sha256": "7183bfe462f51d4c6853658a1b4c845107728ea4ffcf7234e5c3fd3685473b9b"
+}

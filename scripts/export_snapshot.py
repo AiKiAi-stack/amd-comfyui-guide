@@ -9,6 +9,7 @@ import html
 import json
 import re
 import struct
+import subprocess
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -56,11 +57,15 @@ def strip_metadata(data, suffix):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', type=Path, required=True)
+    parser.add_argument('--git-visible', action='store_true', help='Include the complete Git-visible source snapshot')
     args = parser.parse_args()
     source = args.source.resolve()
     if source == ROOT or source in ROOT.parents:
         parser.error('Source and publication checkout must be separate.')
     selected = set()
+    if args.git_visible:
+        names = subprocess.check_output(['git', '-C', str(source), 'ls-files', '-c', '-o', '--exclude-standard', '-z']).decode().split('\0')
+        selected.update(source / name for name in names if name and (source / name).is_file())
     excluded = {'source-file-index.json', 'source-metrics.json', 'hf-search.json', 'source-judge-summary.json'}
     for folder in ('trials', 'research'):
         for file in (source / folder).rglob('*'):
@@ -73,15 +78,11 @@ def main():
     for file in source.glob('*.json'):
         selected.add(file)
     for folder in ('gfx1032_quant_fallback', 'feature_bench_ordering'):
-        file = source / 'ComfyUI/custom_nodes' / folder / '__init__.py'
+        file = source / 'code_source' / folder / '__init__.py'
+        if not file.is_file(): file = source / 'ComfyUI/custom_nodes' / folder / '__init__.py'
         dest = ROOT / 'code_source' / folder / '__init__.py'
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(file.read_bytes())
-    # Only H3 helper source, never its clone, venv, model files or cached downloads.
-    for file in (source / 'h3-sandbox').glob('*'):
-        if file.is_file() and file.suffix.lower() in TEXT:
-            selected.add(file)
-
     # Follow report/document links and JSON media paths within the source tree.
     queue = list(selected)
     visited = set()
@@ -127,8 +128,9 @@ def main():
     def sanitize(text):
         for prefix in (str(source), str(source).replace('\\', '/')):
             for form in (prefix, prefix.replace('\\', '\\\\')):
-                replacement = 'D:/AI/barely-comfy'
+                replacement = '/path/to/barely-comfy' if prefix.startswith('/') else 'D:/AI/barely-comfy'
                 text = text.replace(form, replacement)
+        text = text.replace('/home/user', '/home/user').replace('/media/user/MODELS', '/media/user/MODELS').replace('/media/user', '/media/user')
         # No private article snapshots, OS profile names, network shares or auth links.
         text = re.sub(r'[A-Z]:[\\/]+Users[\\/]+[^\\/\s"<>]+', 'D:/PUBLIC_USER', text, flags=re.I)
         text = re.sub(r'D:(?:\\\\|\\|/)+Downloads(?:\\\\|\\|/)+WeChatArticles[^\n"\'<>`]*', '[private-article-snapshot]', text, flags=re.I)

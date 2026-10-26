@@ -1,0 +1,200 @@
+{
+  "1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "qwen-image-2.1-turbo-Q4_K_M.gguf"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "64",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "56",
+        0
+      ],
+      "filename_prefix": "linux-coverage/turbo-fox-profile-wide-mask-linux-repair"
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_42d5d9635f9c_cat.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "56": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "repair_wide_mask",
+        0
+      ]
+    }
+  },
+  "60": {
+    "class_type": "CFGGuider",
+    "inputs": {
+      "model": [
+        "81",
+        0
+      ],
+      "positive": [
+        "repair_load_conditions",
+        0
+      ],
+      "negative": [
+        "repair_load_conditions",
+        1
+      ],
+      "cfg": 1
+    }
+  },
+  "61": {
+    "class_type": "ManualSigmas",
+    "inputs": {
+      "sigmas": "1.0, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0.0"
+    }
+  },
+  "62": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    }
+  },
+  "63": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 66503001
+    }
+  },
+  "64": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "63",
+        0
+      ],
+      "guider": [
+        "60",
+        0
+      ],
+      "sampler": [
+        "62",
+        0
+      ],
+      "sigmas": [
+        "61",
+        0
+      ],
+      "latent_image": [
+        "repair_load_conditions",
+        2
+      ]
+    }
+  },
+  "81": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "off",
+      "dtype": "default"
+    }
+  },
+  "repair_wide_white": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 260,
+      "height": 312
+    }
+  },
+  "repair_wide_feather": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "repair_wide_white",
+        0
+      ],
+      "left": 12,
+      "top": 12,
+      "right": 0,
+      "bottom": 0
+    }
+  },
+  "repair_wide_mask": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "50",
+        0
+      ],
+      "source": [
+        "repair_wide_feather",
+        0
+      ],
+      "x": 250,
+      "y": 200,
+      "operation": "add"
+    }
+  },
+  "repair_load_conditions": {
+    "class_type": "LoadRepairConditioning",
+    "inputs": {
+      "file": "repair_conditioning/linux-coverage-turbo-fox-profile-wide-mask-linux-repair-cpu-encode-818bf140a8a0.safetensors",
+      "expected_sha256": "5d7e5080847576539329456eae7849ee9715b696ad855f4cadbab6eea1d6fa47"
+    }
+  }
+}

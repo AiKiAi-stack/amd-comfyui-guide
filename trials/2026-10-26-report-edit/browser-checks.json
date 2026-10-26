@@ -1,0 +1,18 @@
+{
+  "models": 8,
+  "features": 41,
+  "records": 163,
+  "defaultVisibleTrials": 0,
+  "beforeVisibleCharacters": 26527,
+  "afterVisibleCharacters": 9705,
+  "reduction": 63,
+  "colorTrialLabels": [
+    "第1次 · GPU编码，去掉额外CPU副本",
+    "第2次 · CPU编码（BF16）"
+  ],
+  "deepLinkOpensHistory": true,
+  "noResults": true,
+  "fluxBlocker": "未能开始：缺少可核对的作者UN版主模型、编码器和四步工作流。2026-10-26重新查找仍未确认匹配文件。作者页面 · 本轮核查与缺项",
+  "mobileOverflow": false,
+  "errors": []
+}

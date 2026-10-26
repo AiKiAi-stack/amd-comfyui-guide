@@ -1,0 +1,19 @@
+[1;91mE-001h rocSHMEM[0m Could not open libnuma. Returning	[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48[0m
+/path/to/barely-comfy/scripts/test_gguf_clip_cpu_backing.py:48: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/rockrel/rockrel/external-builds/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  raw = torch.from_numpy(tensor.data)
+.E
+======================================================================
+ERROR: test_real_unpatch_reuses_original_cpu_storage (__main__.CpuBackingTests.test_real_unpatch_reuses_original_cpu_storage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/barely-comfy/scripts/test_gguf_clip_cpu_backing.py", line 74, in test_real_unpatch_reuses_original_cpu_storage
+    active = stock if args.baseline else self.candidate().RetainGgufClipCpuBacking().enable(Clip(stock))[0].patcher
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/path/to/barely-comfy/code_source/gguf_clip_cpu_backing/__init__.py", line 83, in enable
+    raise ValueError('Enable before the first GPU load, on inference-only CPU weights')
+ValueError: Enable before the first GPU load, on inference-only CPU weights
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.047s
+
+FAILED (errors=1)

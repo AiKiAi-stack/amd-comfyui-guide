@@ -1,0 +1,146 @@
+{
+  "886cb25e-f707-48ef-8db7-bfea9d0e47dd": {
+    "prompt": [
+      0,
+      "886cb25e-f707-48ef-8db7-bfea9d0e47dd",
+      {
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+            "type": "krea2",
+            "device": "default"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_vae.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "Watercolor illustration of an orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street. Preserve the composition, soft translucent watercolor, textured paper.",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "4",
+              0
+            ]
+          }
+        },
+        "30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_42d5d9635f9c_cat.png"
+          }
+        },
+        "31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "32": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "31",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "latent": [
+              "32",
+              0
+            ],
+            "prefix": "linux-coverage-kroma-img2img",
+            "workflow_sha256": "309b25b8e11e71706b90c572e82dfcc772eeac4b350e59796826f2fb8a910218"
+          }
+        }
+      },
+      {
+        "create_time": 1792858737812
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-kroma-img2img-288f584a6f5a.safetensors"
+        ],
+        "archive_sha256": [
+          "39de77c8a731450b51c07a65ccc0e52c28ae0c4ddc6b63a456ed5221ebb999dc"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "886cb25e-f707-48ef-8db7-bfea9d0e47dd",
+            "timestamp": 1792858737813
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "886cb25e-f707-48ef-8db7-bfea9d0e47dd",
+            "timestamp": 1792858737929
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "886cb25e-f707-48ef-8db7-bfea9d0e47dd",
+            "timestamp": 1792858758994
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

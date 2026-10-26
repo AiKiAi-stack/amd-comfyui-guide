@@ -1,0 +1,42 @@
+{
+  "id": "qwen-caption-gpu-chunked",
+  "model": "qwen",
+  "feature": "自动反推并再生成 · 分阶段修复重试",
+  "recipe": "caption",
+  "claim_level": "同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试",
+  "refs": [
+    "featurebench/cat.png"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "TextGenerate 自动生成并传入，不手工填写 caption",
+  "expected": "先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。",
+  "qwen_cache_device": "off",
+  "runtime_profile": "512×512，15步，GPU 文本/扩散、CPU VAE。编码阶段禁用 pinned memory；采样保持默认 pinned。进程分离规避卸载崩溃，非底层修复。两个阶段提交后耗时之和，不含服务冷启动。",
+  "retry_reason": "修复原 qwen-caption 失败：限制 INT8 输出层临时矩阵，并隔离编码与采样进程。",
+  "repairs": [
+    "qwen-caption"
+  ],
+  "prior_attempt_evidence": "cases/qwen-caption/result.json",
+  "status": "success",
+  "prompt_id": "e2b7519e-4a58-416d-be73-c2e5a141783b",
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-caption-gpu-chunked_00001_.png",
+      "sha256": "5b925033c7c1fd0b93fc746ec6b3dfa2d18d350eb94722bec110fc930bdfe157",
+      "public_sha256": "83a98c6af63bd0acc2ef56e4141ff9a4b2c4eacbb490a5a8aa81e8cbff98c200"
+    }
+  ],
+  "text_outputs": [
+    "A lone ginger cat sits on a wet sidewalk at night, gazing into a warmly lit storefront with rain-slicked glass, as neon red signs cast glowing reflections on the damp pavement, creating a moody, cinematic urban scene with shallow depth of field."
+  ],
+  "elapsed_seconds": 256.625,
+  "review": "pass",
+  "staged_execution": {
+    "encoding_prompt_id": "2ea08e60-0aff-49bd-965d-6f9985061278",
+    "encoding_seconds": 102.453,
+    "sampling_seconds": 154.172,
+    "root_cause_fixed": false
+  }
+}

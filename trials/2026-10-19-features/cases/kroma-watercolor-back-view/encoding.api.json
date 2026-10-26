@@ -1,0 +1,86 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Watercolor painting on visibly textured paper of the SAME ginger cat seen strictly FROM BEHIND, facing away from the viewer toward the warm shop window. Show the back of its head and both ear backs only, NO visible face, NO visible eyes, NO visible nose. Preserve its seated back-facing pose and original composition, the rainy NIGHT, deep shadows, red neon reflections on wet street, and warm window on the right. Transparent watercolor washes, pigment blooms and visible brush strokes. No new objects, no daylight.",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": [
+        "4",
+        0
+      ]
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "32": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "31",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent": [
+        "32",
+        0
+      ],
+      "prefix": "kroma-watercolor-back-view",
+      "workflow_sha256": "7039ac891cce1e422baef4bc45e02ed4ac34757ec9b838cca6732829767b427d"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[1;91mE-001h rocSHMEM[0m Could not open libnuma. Returning	[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48[0m
+E
+======================================================================
+ERROR: test_real_pin_callback_detaches_mmap_without_gpu_workspace (__main__.CpuDetachTests.test_real_pin_callback_detaches_mmap_without_gpu_workspace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/barely-comfy/scripts/test_gguf_cpu_detach.py", line 32, in test_real_pin_callback_detaches_mmap_without_gpu_workspace
+    source = next(t for t in reader.tensors if t.tensor_type == gguf.GGMLQuantizationType.Q4_K
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+----------------------------------------------------------------------
+Ran 1 test in 0.093s
+
+FAILED (errors=1)

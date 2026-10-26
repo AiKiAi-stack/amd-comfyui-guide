@@ -1,0 +1,49 @@
+{
+  "id": "kroma-multiref-no-fox",
+  "model": "kroma",
+  "feature": "多图参考 · 修复重试",
+  "recipe": "reference",
+  "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+  "refs": [
+    "cat"
+  ],
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.",
+  "expected": "同时采用雨街背景和参考狐狸主体。",
+  "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+  "reference_vae_resolution": 512,
+  "retry_reason": "去掉第二狐狸参考（文本视觉输入及第二ReferenceLatent）后依然生成红狐。此轮采样为FP16，而历史双参考是默认精度，尚不能作为严格单变量对照；已另排匹配FP16的双参考控制，不能以此宣称参考无效。",
+  "repairs": [
+    "kroma-multiref"
+  ],
+  "runtime_profile": "Existing Kroma GGUF; source image1 only; FP16/upcast4step",
+  "status": "success",
+  "prompt_id": "f90e050a-d22b-43be-bc92-4cc8e245c60d",
+  "elapsed_seconds": 60.063,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-no-fox-input_00001_.png",
+      "sha256": "9eb456ef28f2a6fe274d5d106ec78fa2ff29b36d05cb52fef7fb8d1807de6499",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-no-fox-mask_00001_.png",
+      "sha256": "56b6ff9891efb28104f92633b01d12e5c511396ca830873cc27039189e848396",
+      "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-multiref-no-fox_00001_.png",
+      "sha256": "40b4b9dccc1f7c543bd32cfbffe91ffa6f7867f2672165c5d44ceb3cab59cfe1",
+      "public_sha256": "672fa63acfa2a8cbbad008ae906b96755c6bdc850c5d6c081bf61e90b2e2b139"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 9.016,
+  "encoding_elapsed_seconds": 12.031,
+  "sampling_elapsed_seconds": 39.016,
+  "timing_scope": "Sum of encoding, sampling, decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": true,
+  "acceptance_scope": "参考移除探索，待同精度控制完成后判定；不验收精确参考身份"
+}

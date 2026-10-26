@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 21.031,
+  "images": [
+    {
+      "file": "7-0-turbo-un-multiref-no-fox_00001_.png",
+      "original_sha256": "e867da860f56e41672c6999930de7a1733d40b80442365914e2f2a69790f0bc7",
+      "public_sha256": "47c4aaae9483e097a6ef17a0c68b12c290d2126ff6c5b6d944e8ec6d28b9aa2a",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-un-multiref-no-fox",
+  "feature": "turbo-un-multiref",
+  "verdict": "partial",
+  "review": "删除image2及其VAE参考，保持同一提示、seed、扩散权重后，依然生成清晰红狐和相似雨街。说明本提示本身足以生成狐狸，不能把两图结果外观相似作为参考身份保留证明。",
+  "inputs": [
+    "cat"
+  ],
+  "acceptance_scope": "实测普通多图编辑与参考移除对照；物种生成达到，完整尾部和精确参考身份未通过",
+  "prompt_id": "aab7ecc5-4342-40c5-8291-e06971a04688",
+  "raw_history_sha256": "b4b3663d036f8dd57baf0e6a5402a057c0f59493a2d415d99575ee5efe7fcfdb",
+  "decoding_elapsed_seconds": 21.031,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 48.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "1b01acb53e85ebedbbf5b4573bc7984b1dda6fa83106a6ad11f8c4166542f21b",
+  "workflow_sha256": "6c4a2a898ed30e56f37aa43bc06a0c88fa710d62927519950c3d0fb0abf6099a",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 18.032,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "66ebe90eef7346debbbc36e6a8e5112576e21659b96dfdab6ed568a9ca0733cf"
+}

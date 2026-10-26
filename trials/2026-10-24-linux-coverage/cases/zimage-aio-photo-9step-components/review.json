@@ -1,0 +1,6 @@
+{
+  "verdict": "达到本例文生图目标",
+  "review": "红色陶瓷茶壶、正常单壶嘴与把手、两颗柠檬、木桌及左侧窗光清楚，反光和纹理正常，未见明显破图或多余文字。验证同一 AIO checkpoint 的分组件、分阶段流程，整图未由此验收。",
+  "visual_inspected": true,
+  "platform": "Linux"
+}

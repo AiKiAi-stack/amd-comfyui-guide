@@ -1,0 +1,49 @@
+{
+  "status": "success",
+  "elapsed_seconds": 21.062,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-bfs-direction-mask-input_00001_.png",
+      "original_sha256": "793fe3a27a327867615a3f82dabe70dff3ec8ca87619cf8bce89aa03d80666d5",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-bfs-direction-mask-mask_00001_.png",
+      "original_sha256": "0a8b1028010a61a319c3b113a2b1d205e12fe181c57b091d24705ca172958bcc",
+      "public_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-qwen-bfs-direction-mask_00001_.png",
+      "original_sha256": "94115f83a9cb6b0c3ddd9132b6f7e4c42db19698341a91a055620c9c7230f9c8",
+      "public_sha256": "5aebbd6f0e527c56a33f641b1adaa4e1160081988c60699866e5d449201aa452",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "qwen-bfs-head-swap",
+  "verdict": "partial",
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "review": "15 步采样保存 latent 后退出，再由独立 CPU 进程完成 VAE 解码和 PNG。左向三分之四头向、铜红卷发、雀斑、绿眼和蓝大衣红围巾保留；右侧仍有细束黑发残留，五官与参考 A 仍有差异，精确身份未通过。遮罩外保持由最终合成实现。",
+  "prompt_id": "6d7da485-de01-433a-bc11-f464a9f8613d",
+  "raw_history_sha256": "18715deeb60c42fea636915981f7ce4d0eac7bc3d33924e6147472f379c6fbfe",
+  "decoding_elapsed_seconds": 21.062,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 72.219,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "e099b66405281e3f97fa4d0f3e54cf938d9d6a319d8f0b570f94ce3e7d47adea",
+  "workflow_sha256": "bc25bd08452a350c235ad3c8f674983ef4b23f0c0431901a1b5e9580342751d6",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.203,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "87c96fda5138b7a91e562b06e65e1e8324660c634c5b927a733e9442c192c9ac"
+}

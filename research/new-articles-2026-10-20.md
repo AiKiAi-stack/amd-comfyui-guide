@@ -26,7 +26,6 @@
 - https://huggingface.co/black-forest-labs/FLUX.2-klein-4B
 - 本地官方模板：`.venv/Lib/site-packages/comfyui_workflow_templates_json/templates/image_flux2_klein_image_edit_4b_distilled.json`。
 - 下载固定版本、字节数和 SHA-256 写入 `trials/2026-10-20-flux2-klein/download-manifest.json`，完成后每个文件另有校验收据。
-- 与此前用户叫停的 FLUX.3 标准版不是同一模型；本轮按新请求测试第一篇所指定的 FLUX.2 Klein 4B 蒸馏版。该流程所需的 Flux2 VAE 会重新下载，之前删除的其他权重不恢复。
 
 ## 本机进展
 

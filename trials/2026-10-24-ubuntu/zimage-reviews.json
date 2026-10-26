@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-24",
+  "scope": "GGUF CPU detach Linux copy regression; 512x512 9 steps, one owned PID; not Windows root-cause acceptance",
+  "cases": [
+    {
+      "index": 1,
+      "file": "zimage-repeat/repeat-01-red_00001_.png",
+      "verdict": "pass",
+      "review": "红色陶瓷茶壶，单壶嘴和把手正常，两颗柠檬清晰；无黑图、坏块或明显结构损坏。"
+    },
+    {
+      "index": 2,
+      "file": "zimage-repeat/repeat-02-blue_00001_.png",
+      "verdict": "pass",
+      "review": "蓝色陶瓷茶壶和两颗柠檬，结构正常；颜色确实改变，无黑图或坏块。"
+    }
+  ]
+}

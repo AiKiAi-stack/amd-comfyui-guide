@@ -1,0 +1,15 @@
+{
+  "first_complete_raw_image": "runs/ubuntu-20261024-qwen-phases-active-02/images/UbuntuQwen/reload-01-blue_00001_.png",
+  "host_trim_raw_image": "runs/ubuntu-20261024-qwen-host-trim-01/images/UbuntuQwen/reload-01-blue_00001_.png",
+  "pixels_equal": false,
+  "size": [
+    512,
+    512
+  ],
+  "scope": "One measured FP16 image under this seed/workflow; not a universal equivalence proof",
+  "mean_absolute_channel_difference_0_255": 0.0843353271484375,
+  "maximum_channel_difference": 23,
+  "fraction_pixels_with_any_channel_changed": 0.187255859375,
+  "visual_health_of_both": "pass; exact eye color details remain partial",
+  "causality": "Not controlled for all kernel/allocator/cache effects; do not attribute pixel differences specifically to heap trim"
+}

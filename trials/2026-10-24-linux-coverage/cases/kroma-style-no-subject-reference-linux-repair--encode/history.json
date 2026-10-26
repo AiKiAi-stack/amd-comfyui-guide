@@ -1,0 +1,194 @@
+{
+  "6c0197c9-4ec0-42fe-af41-1e355189370c": {
+    "prompt": [
+      0,
+      "6c0197c9-4ec0-42fe-af41-1e355189370c",
+      {
+        "case01_2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+            "type": "krea2",
+            "device": "default"
+          }
+        },
+        "case01_3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_vae.safetensors"
+          }
+        },
+        "case01_5": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "case01_41",
+              0
+            ]
+          }
+        },
+        "case01_6": {
+          "class_type": "EmptyLatentImage",
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          }
+        },
+        "case01_30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_07b736da6af4_kroma-style-source.png"
+          }
+        },
+        "case01_31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "repair_crop",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "case01_40": {
+          "class_type": "TextEncodeQwenImageEditPlus",
+          "inputs": {
+            "clip": [
+              "case01_2",
+              0
+            ],
+            "prompt": "A single OWL bird with large round forward-facing eyes, a short hooked beak, feathered wings and two talons, perched on one branch. Only a bird, no fox, no mammal, no rock. Use only the reference image's blue and orange geometric screen-print palette and rough paper grain. Replace the entire fox subject with the owl. New bird composition. No text.",
+            "image1": [
+              "case01_31",
+              0
+            ]
+          }
+        },
+        "case01_100": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "case01_31",
+              0
+            ],
+            "vae": [
+              "case01_3",
+              0
+            ]
+          }
+        },
+        "case01_120": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "case01_40",
+              0
+            ],
+            "latent": [
+              "case01_100",
+              0
+            ]
+          }
+        },
+        "case01_41": {
+          "class_type": "FluxKontextMultiReferenceLatentMethod",
+          "inputs": {
+            "conditioning": [
+              "case01_120",
+              0
+            ],
+            "reference_latents_method": "index_timestep_zero"
+          }
+        },
+        "repair_crop": {
+          "class_type": "ImageCrop",
+          "inputs": {
+            "image": [
+              "case01_30",
+              0
+            ],
+            "width": 400,
+            "height": 125,
+            "x": 40,
+            "y": 25
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "case01_41",
+              0
+            ],
+            "negative": [
+              "case01_5",
+              0
+            ],
+            "latent": [
+              "case01_6",
+              0
+            ],
+            "prefix": "linux-coverage-kroma-style-no-subject-reference-linux-repair",
+            "workflow_sha256": "d5c5cf75e64a62a43cc88eedf73b3d024a139425234f1e0412089bd6e9fccf38"
+          }
+        }
+      },
+      {
+        "create_time": 1792893819338
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-kroma-style-no-subject-reference-linux-repair-e1bd24fdb2e9.safetensors"
+        ],
+        "archive_sha256": [
+          "7680e1b906da251152f376ad76d996e36c2cf16af6fb78eabf90d83017da40e4"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "6c0197c9-4ec0-42fe-af41-1e355189370c",
+            "timestamp": 1792893819339
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "6c0197c9-4ec0-42fe-af41-1e355189370c",
+            "timestamp": 1792893819341
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "6c0197c9-4ec0-42fe-af41-1e355189370c",
+            "timestamp": 1792893844320
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

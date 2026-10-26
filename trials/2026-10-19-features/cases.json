@@ -325,7 +325,7 @@
     "expected": "在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。",
     "lora": {
       "name": "bfs_head_v1.1_qwen_2.1.safetensors",
-      "strength": 1.0
+      "strength": 1
     },
     "qwen_cache_device": "off",
     "runtime_profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。"
@@ -371,23 +371,6 @@
     "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control.",
     "runtime_profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
     "qwen_cache_device": "off"
-  },
-  {
-    "id": "ref2va-5frame-diagnostic",
-    "model": "MiniMax H3 Ref2VA Q4_0",
-    "feature": "5帧加载、采样、解码诊断",
-    "recipe": "video-diagnostic",
-    "claim_level": "本机诊断，不是作者BFS整合包复现；4步无Turbo LoRA，不用于画质或视频功能验收",
-    "inputs": [
-      "D:/AI/barely-comfy\\trials\\2026-10-19-h3\\input\\cyan-robot-reference.png"
-    ],
-    "prompt": "<Picture 1> is a small cyan toy robot with a magenta scarf and two square black eyes. One robot waves its right hand against a plain cream background. Locked camera, soft studio light. No music or speech.",
-    "expected": "384×256、5帧、4步，无声WebP与逐帧PNG；只核验加载采样解码链路。",
-    "runtime_profile": "RX6650XT；隔离H3 worktree、GGUF DynamicVRAM、4B ClipProj、GPU FP16视频VAE；--reserve-vram 2.0、同步卸载，未开启INT8 fallback。384×256、5帧、4步。433.08秒包含服务启动；仅加载诊断，不用于正常视频画质结论。",
-    "evidence": [
-      "../../research/h3-minimal-executable-audit.md",
-      "../2026-10-19-h3/diagnostic-gpu-vae-native-reserve2-result.json"
-    ]
   },
   {
     "id": "flux2-klein-t2i",
@@ -863,5 +846,978 @@
     "memory_profile": "dynamic-nvme-pinned",
     "retry_of": "flux2-klein-single-color",
     "creates_iterative_input": true
+  },
+  {
+    "id": "qwen-caption-cpu",
+    "model": "qwen",
+    "feature": "自动反推提示词并再生成（CPU编码重试）",
+    "recipe": "caption",
+    "claim_level": "同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "unused",
+    "expected": "先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512像素；8B W4A8文本/视觉编码在CPU、GPU扩散、CPU VAE；15步，prefix缓存off。启动参数--disable-dynamic-vram --lowvram --disable-async-offload --fast-disk；未开启gfx1032 INT8 fallback。耗时从提交计，服务启动另计。旧GPU INT8错误与fallback OOM保留在qwen-caption案例。",
+    "retry_of": "qwen-caption"
+  },
+  {
+    "id": "qwen-caption-gpu-chunked",
+    "model": "qwen",
+    "feature": "自动反推并再生成 · 分阶段修复重试",
+    "recipe": "caption",
+    "claim_level": "同作者较早 Qwen 站外记录提到自动提示词，非当前公众号原文确认；本轮以核心 TextGenerate 作额外工作流测试",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "TextGenerate 自动生成并传入，不手工填写 caption",
+    "expected": "先输出与输入猫咪雨街相符的提示词，再用该文字独立生成图片。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512×512，15步，GPU 文本/扩散、CPU VAE。编码阶段禁用 pinned memory；采样保持默认 pinned。进程分离规避卸载崩溃，非底层修复。两个阶段提交后耗时之和，不含服务冷启动。",
+    "retry_reason": "修复原 qwen-caption 失败：限制 INT8 输出层临时矩阵，并隔离编码与采样进程。",
+    "repairs": [
+      "qwen-caption"
+    ],
+    "prior_attempt_evidence": "cases/qwen-caption/result.json"
+  },
+  {
+    "id": "flux2-teapot-structure",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "对象替换／中文指令 · 修复重试",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/handbag_white.png"
+    ],
+    "prompt": "将白色手提包完整替换成一只正常结构的红色陶瓷茶壶：单个圆形壶身和壶盖，画面左侧恰好一个弯曲壶嘴，画面右侧恰好一个完整的C形把手，把手有清楚的镂空。不要两个壶嘴，不要两个把手，不要手提包。保留浅灰色背景、柔和灯光、居中拍摄角度和原图的画面布局。",
+    "expected": "包被红色茶壶取代，背景和产品摄影构图保留。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "repairs": [
+      "flux2-klein-replace-zh"
+    ],
+    "retry_reason": "实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。"
+  },
+  {
+    "id": "flux2-tiny-bow",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "迭代编辑／第二轮修改 · 修复重试",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+    ],
+    "depends_on": "flux2-klein-single-color-pinned",
+    "prompt": "Add one tiny red silk bow at the lower attachment of the left handle of this blue handbag. The entire bow including ribbon tails is only about eight percent of the handbag width, smaller than the handle attachment. Keep the whole bag visible, its blue leather, shape, handles, framing, light grey studio background and lighting unchanged.",
+    "expected": "在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "repairs": [
+      "flux2-klein-iterative"
+    ],
+    "retry_reason": "蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。"
+  },
+  {
+    "id": "flux2-watercolor-night",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "风格转换 · 修复重试",
+    "recipe": "single",
+    "inputs": [
+      "featurebench/cat.png"
+    ],
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "prompt": "Paint this exact rainy NIGHT scene in delicate watercolor on textured cold-pressed paper. Keep it dark: deep midnight navy shadows and bright warm neon reflections on wet pavement. Preserve the cat facing AWAY from the camera, its pose and exact location, cafe window, plants, camera framing and all object positions. No daylight, no white daytime sky, no bright overexposure.",
+    "expected": "咖啡馆猫的主体与构图保留，出现明确水彩笔触和纸张质感。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "repairs": [
+      "flux2-klein-style"
+    ],
+    "retry_reason": "实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。"
+  },
+  {
+    "id": "flux2-1024-attention",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "文生图／1024分辨率 · 修复重试",
+    "recipe": "t2i",
+    "inputs": [],
+    "refs": [],
+    "prompt": "A fluffy orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street, holding a small cream sign that reads HELLO. Cinematic photograph, warm cafe light, wet pavement reflections, no other writing.",
+    "expected": "橘猫、雨夜咖啡馆构图，以及可读的 HELLO。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
+    "gpu_text": true,
+    "resolution": 1024,
+    "repairs": [
+      "flux2-klein-t2i-1024"
+    ],
+    "retry_reason": "完整 1024×1024，四步采样、CPU VAE 解码与保存均成功，目视为正常雨夜橘猫，HELLO 清楚。仍有额外招牌文字，未满足 no other writing。一次成功不能证明历史原生崩溃根因已修复。"
+  },
+  {
+    "id": "qwen-mask-fox-reference",
+    "model": "qwen",
+    "feature": "遮罩局部重绘 · 修复重试",
+    "recipe": "inpaint",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "prompt": "Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.",
+    "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+    "repairs": [
+      "qwen-inpaint"
+    ],
+    "runtime_profile": "512×512、15步、GPU扩散/CPU VAE；原生量化文本编码阶段动态VRAM且禁用 pinned，采样另进程/默认 pinned。编码约28秒、采样112秒，均不含冷启动。灰化猫区域+狐狸参考，最终遮罩合成。",
+    "retry_reason": "完整执行成功。实际查看：主体有长尖嘴、黑耳背、黑腿与大面积白尾尖，明确为狐狸；身体仍背向，头略向右转露出吻部。最终合成保证遮罩外像素保持，不能归功于模型本身的局部精度。灰化原猫参考区域并增加狐狸参考，属于条件和提示词调整，不证明精确身份复刻。"
+  },
+  {
+    "id": "qwen-multiref-local-composite",
+    "model": "qwen",
+    "feature": "多图参考／主体合成 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "prompt": "Replace only the orange cat in image 1 with the EXACT red fox from image 2, seated at the SAME location on the right side beside the glass cafe door. The fox faces the viewer as in image 2: narrow long muzzle, large pointed ears, bright detailed eyes, white cheeks and chest, orange fur, black forelegs, long bushy white-tipped tail. Keep the fox head clearly lit by warm cafe light, not black. Its paws rest directly on the ordinary concrete step. No forest, no moss, no rock. Keep all rainy night background, glass, red neon reflections and framing of image 1.",
+    "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512×512、15步。复用已核对编码图与文件时间的归档条件；单独 GPU 采样进程，Qwen cache=auto、默认 pinned、CPU VAE。采样约101秒，不含服务冷启动；背景由遮罩合成。",
+    "repairs": [
+      "qwen-multiref"
+    ],
+    "retry_reason": "狐狸物种、黑腿和白胸清楚，正面姿态与参考接近，背景通过局部合成保留。仍不能确认精确身份：眼色有差异，右侧尾巴被边缘裁切，白尾尖没有完整出现。主体融合改善但未完全验收；遮罩外保持由合成提供。自动缓存配置将每步约38秒的重算降至后续约4秒，本轮完成约104秒，不代表长期稳定。",
+    "mask_attachments": true
+  },
+  {
+    "id": "qwen-head-direction-mask",
+    "model": "qwen",
+    "feature": "换头／人物身份参考 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "512×512、15步，编码与采样进程分离，cache=auto；采样cache-none仍不能保证跨案例资源稳定。保留左向头向，增加头部遮罩合成；精确身份和全部黑发替换尚未验收。",
+    "repairs": [
+      "qwen-face-swap"
+    ],
+    "retry_reason": "左向三分之四侧脸保持，铜红卷发、绿色眼睛和雀斑已转移，海军蓝大衣、红围巾及背景保留。右侧仍有一缕原黑长发残留，精确五官身份也未证明；因此仅部分达到。遮罩外像素保留来自最终合成。",
+    "mask_attachments": true
+  },
+  {
+    "id": "qwen-face-only-mask",
+    "model": "qwen",
+    "feature": "换脸／仅面部身份 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "面部特征转向A，B的黑发、服装与场景保持。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "独立采样进程、复用校验后的动态显存编码条件、Qwen cache auto；身份精确迁移仍未通过",
+    "repairs": [
+      "qwen-face-only"
+    ],
+    "retry_reason": "单独进程完成。黑发、左向三分之四侧脸、蓝大衣和红围巾保留；面部有浅雀斑与绿眼。与参考 A 对照，眼形、鼻形和雀斑分布仍有差异，不能认定精确身份迁移，仍部分达到。",
+    "mask_attachments": true
+  },
+  {
+    "id": "qwen-bfs-direction-mask",
+    "model": "qwen",
+    "feature": "换头／BFS 专用 LoRA 对照 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "prompt": "head_swap: Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。",
+    "lora": {
+      "name": "bfs_head_v1.1_qwen_2.1.safetensors",
+      "strength": 1
+    },
+    "qwen_cache_device": "off",
+    "runtime_profile": "编码、FP16 15 步采样、CPU 解码三个独立进程；Qwen cache auto；保留 BFS LoRA 原强度",
+    "repairs": [
+      "qwen-bfs-head-swap"
+    ],
+    "retry_reason": "15 步采样保存 latent 后退出，再由独立 CPU 进程完成 VAE 解码和 PNG。左向三分之四头向、铜红卷发、雀斑、绿眼和蓝大衣红围巾保留；右侧仍有细束黑发残留，五官与参考 A 仍有差异，精确身份未通过。遮罩外保持由最终合成实现。",
+    "mask_attachments": true
+  },
+  {
+    "id": "kroma-style-owl-explicit",
+    "model": "kroma",
+    "feature": "风格参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA",
+    "refs": [
+      "featurebench/kroma-style-source.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-style-source.png"
+    ],
+    "prompt": "A single OWL bird with large round forward-facing eyes, a short hooked beak, feathered wings and two talons, perched on one branch. Only a bird, no fox, no mammal, no rock. Use only the reference image's blue and orange geometric screen-print palette and rough paper grain. Replace the entire fox subject with the owl. New bird composition. No text.",
+    "expected": "参考图的蓝橙双色版画风格迁移到新主体猫头鹰。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-style-ref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "黑图问题已避开，蓝橙森林纸纹正常，出现猫头鹰；但原狐狸仍完整留在画面中，未满足仅新主体、不要狐狸。保留此未达完整目标的对照。",
+    "repairs": [
+      "kroma-style-ref"
+    ],
+    "runtime_profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码"
+  },
+  {
+    "id": "kroma-style-no-subject-reference",
+    "model": "kroma",
+    "feature": "风格参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "上游 Krea2 官方参考路径；当前仅Kroma Q2无专用style LoRA",
+    "refs": [
+      "featurebench/kroma-style-source.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-style-source.png"
+    ],
+    "prompt": "A single OWL bird with large round forward-facing eyes, a short hooked beak, feathered wings and two talons, perched on one branch. Only a bird, no fox, no mammal, no rock. Use only the reference image's blue and orange geometric screen-print palette and rough paper grain. Replace the entire fox subject with the owl. New bird composition. No text.",
+    "expected": "参考图的蓝橙双色版画风格迁移到新主体猫头鹰。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-style-ref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "将同一参考图裁取左上森林/配色区域（x40、y25、400×125）再编码，排除原狐狸主体。输出为枝上的清楚猫头鹰，蓝橙双色与纸纹/版画风格保留，画面未复制狐狸。属于本案例的参考内容控制改进，不宣称通用风格分离。",
+    "repairs": [
+      "kroma-style-ref"
+    ],
+    "runtime_profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码"
+  },
+  {
+    "id": "kroma-watercolor-denoise040",
+    "model": "kroma",
+    "feature": "图生图／洗图 · 修复重试",
+    "recipe": "img2img",
+    "claim_level": "公众号索引标题",
+    "inputs": [
+      "featurebench/cat.png"
+    ],
+    "prompt": "Watercolor illustration of an orange cat sitting by a cafe doorway on a rainy neon-lit Shanghai street. Preserve the composition, soft translucent watercolor, textured paper.",
+    "expected": "雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。",
+    "repairs": [
+      "kroma-img2img"
+    ],
+    "runtime_profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码",
+    "retry_reason": "正常水彩笔触与纸面感、雨夜红色倒影及窗边猫保留；denoise 从 0.6 降为 0.4 仍把原严格背向猫改为可见眼鼻的侧脸，姿态目标未通过。",
+    "refs": [
+      "featurebench/cat.png"
+    ]
+  },
+  {
+    "id": "kroma-head-direction-mask",
+    "model": "kroma",
+    "feature": "换头／人物身份参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；一般参考编辑探索，非专用换头模型",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "B服装姿态背景保留，头部外观采用A。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-head-swap\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "修正奇数查询切片并升精度后完成四步与解码。侧脸方向、红卷发、雀斑和绿眼转移；但头部偏大、黑发明显残留，颈部/围巾有叠影与接缝，身份不精确，不能作为可用换头成品验收。",
+    "repairs": [
+      "kroma-head-swap"
+    ],
+    "runtime_profile": "动态显存编码；FP16 split attention + 分数升精度 + 奇数切片补丁；独立 CPU 解码"
+  },
+  {
+    "id": "zimage-cpu-text-fp16",
+    "model": "Z-Image GGUF",
+    "feature": "双GGUF文生图／低显存运行 · 修复重试",
+    "recipe": "t2i",
+    "prompt": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark.",
+    "expected": "相同写实场景能实际生成；记录峰值显存/内存和耗时后才评价8GB可运行。",
+    "inputs": [],
+    "refs": [],
+    "claim_level": "本机明确 CPU 文本编码 FP16 配置，完成出图；精确显存峰值未采样",
+    "repairs": [
+      "zimage-gguf-photo"
+    ],
+    "runtime_profile": "低显存模式 + CPU FP16 文本编码 + reserve 2GB + CPU VAE；相同权重的 SSD 缓存；RAM/commit 仍接近上限",
+    "retry_reason": "在 RX 6650 XT 上完整完成 CPU 文本编码、9 步 512×512 采样、CPU VAE 与 PNG。目视为正常红色单壶嘴/单把手茶壶、两颗柠檬、深木桌和左侧窗光，无文字或噪声。显式 FP16 CPU 文本编码并读取同 SHA 的 G 盘模型缓存；没有用 GPU 文本编码成功替代本项。记录 RAM/commit 观测，未采集精确峰值显存，单次成功不证明历史连续崩溃根因已解决。"
+  },
+  {
+    "id": "turbo-head-direction-mask",
+    "model": "turbo-un",
+    "feature": "换头／人物身份参考 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "B 的服装、姿态与公园保留；身份特征改成 A 的红发、雀斑、绿眼。",
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-face-swap"
+    ],
+    "retry_reason": "左三分之四侧转、短红卷发及原深蓝外套红围巾保留，扩大遮罩后没有旧黑发长条；雀斑偏弱、五官身份仍与 A 有差异，身份复现部分达到。",
+    "mask_attachments": true
+  },
+  {
+    "id": "flux2-tiny-bow-fingertip",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "迭代编辑／第二轮修改 · 修复重试",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+    ],
+    "depends_on": "flux2-klein-single-color-pinned",
+    "prompt": "Add one MINUSCULE red ribbon bow at the lower stitching of the LEFT handle. It is smaller than the width of the handle: two tiny loops with very SHORT ends, like a fingernail-sized decorative accent. Keep the blue handbag, leather texture, both handles, grey backdrop, camera and lighting exactly unchanged. No long ribbon tails. The red detail should be barely noticeable on the bag.",
+    "expected": "在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "FLUX.2 pinned memory; stronger small-size prompt",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "repairs": [
+      "flux2-klein-iterative"
+    ],
+    "retry_reason": "蓝包与灰色摄影背景保留，蝴蝶结比首轮小，但红色包围框宽 48px，占包体宽 259px 的 18.5%，仍明显超过指甲/背带宽度要求；直接提示词尺寸控制未通过。"
+  },
+  {
+    "id": "kroma-watercolor-back-view",
+    "model": "kroma",
+    "feature": "图生图／洗图 · 修复重试",
+    "recipe": "img2img",
+    "claim_level": "公众号索引标题",
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "Watercolor painting on visibly textured paper of the SAME ginger cat seen strictly FROM BEHIND, facing away from the viewer toward the warm shop window. Show the back of its head and both ear backs only, NO visible face, NO visible eyes, NO visible nose. Preserve its seated back-facing pose and original composition, the rainy NIGHT, deep shadows, red neon reflections on wet street, and warm window on the right. Transparent watercolor washes, pigment blooms and visible brush strokes. No new objects, no daylight.",
+    "expected": "雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。",
+    "repairs": [
+      "kroma-img2img"
+    ],
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "retry_reason": "明确背面提示后，水彩纸面、松散笔触、深色雨夜与暖红反射清楚；猫严格背向，没有眼鼻侧脸，原窗边构图保留。本固定输入配方目视通过。"
+  },
+  {
+    "id": "kroma-multiref-ref384",
+    "model": "kroma",
+    "feature": "多图参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "cat",
+      "fox"
+    ],
+    "prompt": "Replace only the orange cat in image 1 with the EXACT red fox from image 2, seated at the SAME location on the right side beside the glass cafe door. The fox faces the viewer as in image 2: narrow long muzzle, large pointed ears, bright detailed eyes, white cheeks and chest, orange fur, black forelegs, long bushy white-tipped tail. Keep the fox head clearly lit by warm cafe light, not black. Its paws rest directly on the ordinary concrete step. No forest, no moss, no rock. Keep all rainy night background, glass, red neon reflections and framing of image 1.",
+    "expected": "同时采用雨街背景和参考狐狸主体。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "只将两路 VAE 参考降至 384 后完成 512 输出。正面狐狸清楚，但苔石仍污染咖啡馆前景、右边残留原主体重影，身份也有差异；执行成功，合成质量部分达到。",
+    "repairs": [
+      "kroma-multiref"
+    ],
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "mask_attachments": true
+  },
+  {
+    "id": "moss-watercolor-denoise085",
+    "model": "moss",
+    "feature": "图生图／洗图 · 修复重试",
+    "recipe": "img2img",
+    "claim_level": "公众号索引标题",
+    "inputs": [
+      "astronaut"
+    ],
+    "prompt": "A watercolor illustration of the same astronaut walking through a lush jungle, soft watercolor washes, visible paper texture, green foliage and warm sunlight. Preserve the centered full-body composition.",
+    "expected": "宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。",
+    "repairs": [
+      "moss-img2img"
+    ],
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "retry_reason": "显式 FP16 UNet 后八步采样完整完成，保留丛林中的全身宇航员；画面仍接近摄影，粗纸与水彩笔触没有明确达到，风格转换部分达到。"
+  },
+  {
+    "id": "qwen-bfs-full-hair-tiled",
+    "model": "qwen",
+    "feature": "换头／BFS 专用 LoRA 对照 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "head_swap: Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。",
+    "lora": {
+      "name": "bfs_head_v1.1_qwen_2.1.safetensors",
+      "strength": 1
+    },
+    "qwen_cache_device": "off",
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "repairs": [
+      "qwen-bfs-head-swap"
+    ],
+    "retry_reason": "复用已校验的原 15 步 BFS latent，仅将最终合成遮罩扩大至覆盖长黑发并改用 CPU tiled VAE。红卷发、侧转、衣服保留且旧黑发条消除；五官仍与参考不同，身份目标部分达到；不冒充重新采样。",
+    "mask_attachments": true
+  },
+  {
+    "id": "turbo-mask-fox-reference",
+    "model": "turbo-un",
+    "feature": "遮罩局部重绘 · 修复重试",
+    "recipe": "inpaint",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+    "refs": [
+      "featurebench/cat.png"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.",
+    "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-inpaint"
+    ],
+    "retry_reason": "修正本次新增附件的两个悬空节点引用，复用原成功编码/采样归档后完整解码。主体有黑耳、蓬松白尖尾，但背向圆头和身体仍偏猫、长吻不可见，不能确认完整狐狸替换，部分达到。",
+    "mask_attachments": true
+  },
+  {
+    "id": "kroma-multiref-clean-reference",
+    "model": "kroma",
+    "feature": "多图参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "cat",
+      "fox"
+    ],
+    "prompt": "Replace the blank region in image 1 with one complete red fox, using only the facial fur identity from image 2. Seated fox, slender canine body, long pointed muzzle, black ears and black lower legs, white chest and one large bushy WHITE-TIPPED tail. The fox sits directly on the cafe doorstep, no rock, no moss, no forest, no cat. Keep the rainy cafe background and lighting from image 1.",
+    "expected": "同时采用雨街背景和参考狐狸主体。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "裁掉苔石并清除原猫后，输出不再有苔石和猫重影，狐狸外形清楚；但中性参考的灰色矩形被迁入背景，前景融合仍失败。记录为部分达到，不作为干净合成验收。",
+    "repairs": [
+      "kroma-multiref"
+    ],
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "mask_attachments": true
+  },
+  {
+    "id": "moss-watercolor-base-sft",
+    "model": "moss",
+    "feature": "图生图／洗图 · 修复重试",
+    "recipe": "img2img",
+    "claim_level": "公众号索引标题",
+    "inputs": [
+      "astronaut"
+    ],
+    "prompt": "A loose hand-painted WATERCOLOR on rough off-white cotton paper. The same full-body astronaut walking through the jungle, centered. Clearly visible paper fibers in light areas, transparent pigment pooling and wet-on-wet blooms, broad green washes, dry-brush edges and unpainted paper gaps. Simplify the spacesuit and foliage into large brush strokes. Preserve the walking pose and centered full-body composition. No photograph, no photographic surface detail, no 3D render.\nphotograph, photorealistic, glossy 3D render, tiny photographic details, blurry, distorted, watermark",
+    "expected": "宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。",
+    "repairs": [
+      "moss-img2img"
+    ],
+    "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+    "retry_reason": "使用同一已存在 SFT 基础权重，移除八步 DMD LoRA，28 步/CFG3/denoise0.85、FP16 UNet。输出有明确水彩大笔触、绿叶晕染与粗纸纹，保留丛林、白色全身宇航员和行走构图；本固定输入配方目视通过，八步风格不足对照保留。"
+  },
+  {
+    "id": "flux2-tiny-bow-sized-composite",
+    "model": "FLUX.2 Klein 4B distilled FP8",
+    "feature": "迭代编辑／固定尺寸合成规避",
+    "recipe": "single",
+    "inputs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png",
+      "repair_inputs/flux2-bow-large.png"
+    ],
+    "refs": [
+      "flux2-klein-bench/flux2-klein-single-color-pinned.png",
+      "repair_inputs/flux2-bow-large.png"
+    ],
+    "depends_on": "flux2-klein-single-color-pinned",
+    "prompt": "无新增模型提示词；从上轮 FLUX 输出裁取红结，缩至22×20并遮罩合成。直接模型尺寸控制仍部分达到。",
+    "expected": "在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。",
+    "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "runtime_profile": "CPU deterministic postprocess of retained FLUX sample",
+    "gpu_text": true,
+    "memory_profile": "dynamic-nvme-pinned",
+    "repairs": [
+      "flux2-klein-iterative"
+    ],
+    "retry_reason": "尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。",
+    "mask_attachments": true
+  },
+  {
+    "id": "kroma-multiref-natural-crop",
+    "model": "kroma",
+    "feature": "多图参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "prompt": "In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.",
+    "expected": "同时采用雨街背景和参考狐狸主体。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。",
+    "repairs": [
+      "kroma-multiref"
+    ],
+    "runtime_profile": "Dynamic GPU text encoding; Kroma FP16 weights with split/upcast attention; isolated CPU decode; natural reference crops",
+    "mask_attachments": true
+  },
+  {
+    "id": "kroma-multiref-full-tail",
+    "model": "kroma",
+    "feature": "多图参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "prompt": "In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.",
+    "expected": "同时采用雨街背景和参考狐狸主体。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。",
+    "repairs": [
+      "kroma-multiref"
+    ],
+    "runtime_profile": "Same archived Kroma sample as natural-crop; final mask width260 height312, bottom feather0; CPU decode only",
+    "mask_attachments": true
+  },
+  {
+    "id": "turbo-fox-clean-latent",
+    "model": "turbo-un",
+    "feature": "遮罩局部重绘 · 修复重试",
+    "recipe": "inpaint",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "prompt": "Fill only the blank region in image 1 with a clearly recognizable RED FOX from image 2, seated on the cafe doorstep. A slender canine body, long pointed black-backed ears, black lower legs and a large bushy tail with a clean WHITE TIP. The body faces away as before, with a slightly visible long pointed muzzle. No cat, no rounded cat head, no forest, no mossy rock. Preserve the rainy night cafe scene outside the replacement region.",
+    "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+    "runtime_profile": "Exact archived text/reference conditions; CPU recomputed initial latent; FP16 UNet/upcast sampling; isolated CPU decode",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-inpaint"
+    ],
+    "retry_reason": "只将采样初始VAE输入从原猫图改为抹猫图。复用经图依赖与SHA验证的旧正/负条件，刷新4.48秒、8步采样及解码完整完成；主体仍偏圆头猫形背影，并出现灰边框，物种替换未通过。新旧归档已验证正负条件逐张量完全一致、noise_mask一致，初始samples确实改变。",
+    "mask_attachments": true
+  },
+  {
+    "id": "qwen-face-only-cfg1-fp16",
+    "model": "qwen",
+    "feature": "换脸／仅面部身份 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "面部特征转向A，B的黑发、服装与场景保持。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "Exact reused encoding; FP16 UNet, split/upcast attention, CFG1,15steps, CPU decode",
+    "repairs": [
+      "qwen-face-only"
+    ],
+    "retry_reason": "相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。",
+    "mask_attachments": true
+  },
+  {
+    "id": "qwen-face-only-cfg3",
+    "model": "qwen",
+    "feature": "换脸／仅面部身份 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题",
+    "refs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "inputs": [
+      "featurebench/kroma-portrait-b.png",
+      "featurebench/kroma-portrait-a.png"
+    ],
+    "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+    "expected": "面部特征转向A，B的黑发、服装与场景保持。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "Exact reused encoding; FP16 UNet, split/upcast attention, CFG3,15steps, CPU decode",
+    "repairs": [
+      "qwen-face-only"
+    ],
+    "retry_reason": "与相同FP16的CFG1控制只改变CFG为3。侧转黑发服装保留，绿眼与雀斑较清楚，但仍是相近生成脸，鼻/眼/脸部比例未能确认与A相同；不能据更高CFG认定精确身份修复。",
+    "mask_attachments": true
+  },
+  {
+    "id": "turbo-fox-profile-precomputed",
+    "model": "turbo-un",
+    "feature": "遮罩局部重绘 · 修复重试",
+    "recipe": "inpaint",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "prompt": "Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.",
+    "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+    "runtime_profile": "CPU reference VAE precompute → GPU text without VAE → FP16 isolated sampling → CPU decode; core reference preprocessing preserved exactly",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-inpaint"
+    ],
+    "retry_reason": "四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。",
+    "mask_attachments": true
+  },
+  {
+    "id": "turbo-fox-profile-wide-mask",
+    "model": "turbo-un",
+    "feature": "遮罩局部重绘 · 修复重试",
+    "recipe": "inpaint",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+    "refs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "inputs": [
+      "featurebench/cat.png",
+      "featurebench/fox.png"
+    ],
+    "prompt": "Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.",
+    "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+    "runtime_profile": "Exact prior text/reference conditions and initial samples; wider noise/composite mask only; FP16 sampling and isolated CPU decode",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-inpaint"
+    ],
+    "retry_reason": "保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。",
+    "mask_attachments": true
+  },
+  {
+    "id": "turbo-un-role-isolated",
+    "model": "turbo-un",
+    "feature": "角色替换（全身含服装） · 修复重试",
+    "recipe": "edit",
+    "claim_level": "作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。",
+    "exploratory": true,
+    "refs": [
+      "astronaut",
+      "kroma-portrait-a"
+    ],
+    "inputs": [
+      "astronaut",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+    "expected": "A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.",
+    "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (astronaut target); refs[1] becomes images.image_2 (portrait identity).",
+    "runtime_profile": "Existing Turbo GGUF + UN GGUF encoder; CPU reference precompute → GPU text → FP16 sampling → CPU VAE",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-role-replacement-test"
+    ],
+    "retry_reason": "四阶段完整执行8步并CPU解码。宇航服和头盔已完全去除，单名红卷发女性以黄褐色户外服在丛林前行；场景、站位和主要构图保留。脸部尺寸较小，雀斑、绿眼和精确身份未获证明，仍记部分达到；不是专用角色控制。",
+    "mask_attachments": false
+  },
+  {
+    "id": "turbo-un-pose-isolated",
+    "model": "turbo-un",
+    "feature": "姿态参考（图像指令） · 修复重试",
+    "recipe": "edit",
+    "claim_level": "作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。",
+    "exploratory": true,
+    "refs": [
+      "pose-guide",
+      "kroma-portrait-a"
+    ],
+    "inputs": [
+      "pose-guide",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+    "expected": "An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.",
+    "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control.",
+    "runtime_profile": "Same Turbo UN weights and original prompt/seed; isolated reference/text/sampling/decode",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-pose-reference-test"
+    ],
+    "retry_reason": "参考隔离后完整8步和CPU解码。红卷发成年女性、青色运动服、白背景、水平展开双臂及画面右侧屈膝可见，未复制骨架线；与示意的大体姿态相符。人物面部细节及精确身份不足，不能作为专用姿态约束或精确身份验收。",
+    "mask_attachments": false
+  },
+  {
+    "id": "turbo-un-multiref-natural",
+    "model": "turbo-un",
+    "feature": "多图参考／主体合成 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+    "refs": [
+      "cat",
+      "fox"
+    ],
+    "inputs": [
+      "cat",
+      "fox"
+    ],
+    "prompt": "Replace only the orange cat in image 1 with a red fox matching image 2: long canine muzzle, black nose, black legs, white cheeks, orange fur and a bushy white-tipped tail. The seated fox turns its head right in profile. Its entire body and tail fit in the image. Preserve the rainy night cafe scene, lights and framing of image 1. No cat, no moss or forest.",
+    "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+    "runtime_profile": "Existing UN GGUF encoder;8 steps; same seed/prompt in reference-removal pair",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-multiref"
+    ],
+    "retry_reason": "两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。",
+    "mask_attachments": false
+  },
+  {
+    "id": "turbo-un-multiref-no-fox",
+    "model": "turbo-un",
+    "feature": "多图参考／主体合成 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+    "refs": [
+      "cat"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "Replace only the orange cat in image 1 with a red fox matching image 2: long canine muzzle, black nose, black legs, white cheeks, orange fur and a bushy white-tipped tail. The seated fox turns its head right in profile. Its entire body and tail fit in the image. Preserve the rainy night cafe scene, lights and framing of image 1. No cat, no moss or forest.",
+    "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+    "runtime_profile": "Existing UN GGUF encoder;8 steps; same seed/prompt in reference-removal pair",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-multiref"
+    ],
+    "retry_reason": "删除image2及其VAE参考，保持同一提示、seed、扩散权重后，依然生成清晰红狐和相似雨街。说明本提示本身足以生成狐狸，不能把两图结果外观相似作为参考身份保留证明。",
+    "mask_attachments": false
+  },
+  {
+    "id": "turbo-ordinary-role-control",
+    "model": "turbo-un",
+    "feature": "角色替换（全身含服装） · 修复重试",
+    "recipe": "edit",
+    "claim_level": "作者站外视频显示角色替换入口；未证实入口对应成功输出。本条为现有双图编辑链路的探索配方，不是专用角色替换节点或模型输出。",
+    "exploratory": true,
+    "refs": [
+      "astronaut",
+      "kroma-portrait-a"
+    ],
+    "inputs": [
+      "astronaut",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+    "expected": "A full-body adult woman with image 2's visible identity cues replaces the whole astronaut and its clothing; image 1's walking pose, scale, jungle and composition remain recognizable. The identity reference is a head-and-shoulders portrait, so full-body identity consistency and outfit interpretation are prompt-guided and uncertain.",
+    "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (astronaut target); refs[1] becomes images.image_2 (portrait identity).",
+    "runtime_profile": "Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-role-replacement-test"
+    ],
+    "retry_reason": "同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。",
+    "mask_attachments": false
+  },
+  {
+    "id": "turbo-ordinary-pose-control",
+    "model": "turbo-un",
+    "feature": "姿态参考（图像指令） · 修复重试",
+    "recipe": "edit",
+    "claim_level": "作者站外视频显示姿态控制入口；未证实入口对应成功输出。本条只测试普通图像指令参考，不代表专用姿态控制或ControlNet能力。",
+    "exploratory": true,
+    "refs": [
+      "pose-guide",
+      "kroma-portrait-a"
+    ],
+    "inputs": [
+      "pose-guide",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+    "expected": "An adult woman resembling image 2, shown full-body with approximately horizontal outstretched arms, separated legs and a bent anatomical left knee. Pose adherence is uncertain because this is only a two-image semantic edit prompt with a schematic reference, not a pose-control model or dedicated control node.",
+    "wiring_note": "refs[0] becomes TextEncodeQwenImage21 images.image_1 (pose guide); refs[1] becomes images.image_2 (portrait identity). The pose guide is an instruction image and must not be described as hard-constraint control.",
+    "runtime_profile": "Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference",
+    "qwen_cache_device": "off",
+    "repairs": [
+      "turbo-un-pose-reference-test"
+    ],
+    "retry_reason": "同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。",
+    "mask_attachments": false
+  },
+  {
+    "id": "kroma-head-cropped-reference",
+    "model": "kroma",
+    "feature": "换头／人物身份参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；一般参考编辑探索，非专用换头模型",
+    "refs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "inputs": [
+      "kroma-portrait-b",
+      "kroma-portrait-a"
+    ],
+    "prompt": "Replace only the complete head and hair of the woman in image 1 with the fictional adult woman from image 2: many freckles, green eyes, short curly copper hair. Keep the same three-quarter head turn looking LEFT. Remove every trace of black hair. Preserve the red scarf, navy coat, park scene and body. No yellow sweater, no extra neck or hair.",
+    "expected": "B服装姿态背景保留，头部外观采用A。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-head-swap\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "裁切参考排除黄毛衣，并扩大头发合成范围后完整4步及CPU解码。红卷发、雀斑、绿眼与左转头向出现，但黑色长发仍保留，颈部有重影且黄色仍混入领口。问题没有解决，保留独立失败视觉证据。",
+    "repairs": [
+      "kroma-head-swap"
+    ],
+    "runtime_profile": "Dynamic GPU encoding; Kroma Q2_K FP16 with upcast; isolated CPU decode",
+    "mask_attachments": true
+  },
+  {
+    "id": "kroma-multiref-no-fox",
+    "model": "kroma",
+    "feature": "多图参考 · 修复重试",
+    "recipe": "reference",
+    "claim_level": "公众号索引标题；沿用上游Krea2接法探索",
+    "refs": [
+      "cat"
+    ],
+    "inputs": [
+      "cat"
+    ],
+    "prompt": "In image 1 replace the cat completely with the red fox from image 2. Only ONE fox, its long pointed muzzle, black ears, white chest and black lower legs clearly visible, one complete white-tipped bushy tail. Seat the fox directly on the cafe doorstep. Keep the original photographic rainy cafe background, no gray panel, no blank rectangle, no mossy stone or forest. Match the cafe lighting. Remove every trace of the old cat.",
+    "expected": "同时采用雨街背景和参考狐狸主体。",
+    "prior_attempt_evidence": "attempts\\kroma-ref1024-20261019-160446\\kroma-multiref\\result.json",
+    "reference_vae_resolution": 512,
+    "retry_reason": "去掉第二狐狸参考（文本视觉输入及第二ReferenceLatent）后依然生成红狐。此轮采样为FP16，而历史双参考是默认精度，尚不能作为严格单变量对照；已另排匹配FP16的双参考控制，不能以此宣称参考无效。",
+    "repairs": [
+      "kroma-multiref"
+    ],
+    "runtime_profile": "Existing Kroma GGUF; source image1 only; FP16/upcast4step",
+    "mask_attachments": true
+  },
+  {
+    "id": "qwen-multiref-full-tail",
+    "model": "qwen",
+    "feature": "多图参考／主体合成 · 修复重试",
+    "recipe": "edit",
+    "claim_level": "公众号索引标题；提示词不点名第二图主体，减少仅靠文字猜中任务的可能",
+    "refs": [
+      "cat",
+      "fox"
+    ],
+    "inputs": [
+      "cat",
+      "fox"
+    ],
+    "prompt": "Replace only the orange cat in image 1 with the EXACT red fox from image 2, seated at the SAME location on the right side beside the glass cafe door. The fox faces the viewer as in image 2: narrow long muzzle, large pointed ears, bright detailed eyes, white cheeks and chest, orange fur, black forelegs, long bushy white-tipped tail. Keep the fox head clearly lit by warm cafe light, not black. Its paws rest directly on the ordinary concrete step. No forest, no moss, no rock. Keep all rainy night background, glass, red neon reflections and framing of image 1.",
+    "expected": "同时采用第一图雨街背景和第二图狐狸主体。",
+    "qwen_cache_device": "off",
+    "runtime_profile": "Exact prior archived text/ref conditioning; fresh FP16/upcast15step; CPU decode/full-tail composite",
+    "repairs": [
+      "qwen-multiref"
+    ],
+    "retry_reason": "复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。",
+    "mask_attachments": true
   }
 ]

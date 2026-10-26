@@ -1,0 +1,6 @@
+{
+  "verdict": "达到本例文生图目标",
+  "review": "宇航员在浓密丛林中行走，白色宇航服、植被与穿林光束清楚，图像健康，无明显乱码或整屏噪声。相同 MOSS SFT INT8 加 8 步 DMD LoRA，9B 文本编码器以 CPU 分阶段运行；未据此验证原 GPU 编码、LoRA 强度变化或卸载恢复。",
+  "visual_inspected": true,
+  "platform": "Linux"
+}

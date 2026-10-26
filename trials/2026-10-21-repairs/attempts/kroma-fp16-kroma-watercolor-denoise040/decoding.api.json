@@ -1,0 +1,38 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "7": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/kroma-watercolor-denoise040-c3a07f9651f3.safetensors",
+      "expected_sha256": "fb048cef513ea84b5af000187333e19b695e8057acb8b77a871fa1ee44aa2173"
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "RepairBench/kroma-watercolor-denoise040"
+    }
+  }
+}

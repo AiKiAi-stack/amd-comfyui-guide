@@ -102,8 +102,13 @@ def result_asset(image) -> Path | None:
             candidates.append(base / str(subfolder) / str(filename))
             candidates.append(base / str(filename))
     elif image is not None:
-        raw = str(image).strip().replace("\\", os.sep)
+        raw = re.sub(r"/+", "/", str(image).strip().replace("\\", "/"))
         if raw:
+            # Historical Windows records bind to the same public subtree on Linux.
+            match = re.search(r"(?:^|/)ComfyUI/(input|output)/(.+)$", raw, re.IGNORECASE)
+            if match and ".." not in Path(match.group(2)).parts:
+                base = COMFY_INPUT if match.group(1).lower() == "input" else COMFY_OUTPUT
+                candidates.append(base / match.group(2))
             raw_path = Path(raw)
             if raw_path.is_absolute():
                 candidates.append(raw_path)
@@ -224,13 +229,14 @@ def mask_measurement_lines(audit_record: dict | None) -> list[str]:
             return text(value)
 
     return [
-        "遮罩外改变像素 / 总像素："
+        "按 8 位遮罩 PNG 统计，遮罩外改变像素 / 总像素："
         f"{count(measurement.get('outside_changed_pixels'))} / "
         f"{count(measurement.get('outside_pixels'))}",
         "遮罩内改变像素 / 总像素："
         f"{count(measurement.get('inside_changed_pixels'))} / "
         f"{count(measurement.get('inside_pixels'))}",
         "遮罩外像素保留由最终合成节点实现，不归因于模型本身。",
+        "极小的正羽化值可能在遮罩 PNG 中量化为 0；需结合浮点遮罩支持范围判断边缘差异。",
     ]
 
 
@@ -266,10 +272,6 @@ def display_model(case: dict) -> str:
         return "MOSS-Image-5B"
     if "kroma" in lower:
         return "Kroma v0.3.1 OPD Q2"
-    if "minimax" in lower:
-        if case.get("recipe") == "video-diagnostic":
-            return model + "（诊断）"
-        return "MiniMax H3 / BFS"
     if "turbo-plain" in str(case.get("id", "")) or "普通 Turbo 对照" in model:
         return "Qwen 2.1 Turbo（普通对照）"
     if "turbo-un" in lower or "uncensored" in lower or "turbo-un" in str(case.get("id", "")):
@@ -424,7 +426,7 @@ def render_case_html(case: dict, reviews, record: dict | None, result_exists: bo
     case_id = text(case.get("id"), "未命名")
     anchor_id = anchor_id or case_id
     review, review_detail = review_for(case_id, reviews, record)
-    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint"
+    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint" or bool(case.get("mask_attachments"))
     output_images = image_items(record.get("images")) if isinstance(record, dict) else []
     outputs, attachments = split_outputs(output_images, inpaint)
     if blocked:
@@ -535,7 +537,7 @@ def markdown_case(case: dict, reviews, record: dict | None, result_exists: bool,
                   *, blocked=False, baseline=False) -> str:
     case_id = text(case.get("id"), "未命名")
     review, review_detail = review_for(case_id, reviews, record)
-    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint"
+    inpaint = case.get("recipe") == "inpaint" or case_id == "qwen-inpaint" or bool(case.get("mask_attachments"))
     raw_images = image_items(record.get("images")) if isinstance(record, dict) else []
     outputs, attachments = split_outputs(raw_images, inpaint)
     if blocked:
@@ -850,6 +852,7 @@ def build_report() -> tuple[Path, Path]:
 
 
 if __name__ == "__main__":
-    html_report, markdown_report = build_report()
-    print(f"HTML: {html_report}")
-    print(f"Markdown: {markdown_report}")
+    import sys
+    sys.path.insert(0, str(HERE.parents[1] / "scripts"))
+    from build_platform_report import build_report as build_platform_report
+    print(f"HTML: {build_platform_report()}")

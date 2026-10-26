@@ -1,42 +1,5 @@
 [
   {
-    "id": "wechat-od9lqh-20261019",
-    "source_url": "https://mp.weixin.qq.com/s/-_od9lqhL1jMXxvzNdzAVQ",
-    "requested_at": "2026-10-19T11:27:09Z",
-    "priority": "after-current-five-model-feature-tests",
-    "title": "Flux.3-5.6B-UN",
-    "title_is_model_label": true,
-    "wechat_article_title": null,
-    "model": "Flux.3-5.6B-UN",
-    "publication_date": null,
-    "publication_date_user_claim": "2026-10-19",
-    "features": [
-      "文生图",
-      "图像编辑",
-      "图生图(洗图)",
-      "自动提示词",
-      "批量任务"
-    ],
-    "status": "pending_exact_weights_user_paused_standard_trial",
-    "source_access": "WeChat body remains unread. User supplied model name and links. Author mirror independently read on 2026-10-20: v1.0, updated 2026-10-18, CUDA13.2, feature claims only. Quark share independently rechecked in browser: four RAR volumes, 36.2G total; login modal requires QR/phone authentication. No archive downloaded or unpacked; exact internal weights/workflow unknown.",
-    "download_url": "https://example.invalid/private-share-removed",
-    "mirror_url": "https://www.compshare.cn/images/uc0UnUzrIbtD",
-    "mirror_updated_at": "2026-10-18",
-    "archive_files": [
-      "Flux.3-Image-5.6B-UN.part1.rar",
-      "Flux.3-Image-5.6B-UN.part2.rar",
-      "Flux.3-Image-5.6B-UN.part3.rar",
-      "Flux.3-Image-5.6B-UN.part4.rar"
-    ],
-    "next_step": "Exact author package only. HF exact-name and alias searches did not establish a matching public version; do not download or test related standard/encoder/LoRA candidates as substitutes.",
-    "output_images": [],
-    "source_audit": "research/flux3-un-source-audit-2026-10-20.md",
-    "hf_exact_version_audit": "research/flux3-hf-exact-version-search-2026-10-20.md",
-    "author_workflow_audit": "research/flux3-author-workflow-access-2026-10-20.md",
-    "standard_baseline_state": "All three ModelScope standard weight files deleted at user request on 2026-10-20; 11,022,645,311 bytes removed. No FLUX3 inference/output. Historical download receipts and small workflows retained.",
-    "standard_weights_deletion_receipt": "trials/2026-10-20-flux3/modelscope-weights-deleted.json"
-  },
-  {
     "id": "wechat-XNsQ6n0-flux2-klein-20261020",
     "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
     "title": "Flux.2 Klein 本地安装攻略和一键包!",

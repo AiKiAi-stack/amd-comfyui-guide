@@ -1,0 +1,39 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 12.013,
+  "images": [
+    {
+      "file": "7-0-reload-02-green_00001_.png",
+      "original_sha256": "9f2fbeceecd57b2f089963c550050b3630caa6a3008b2987d2bfc2973daac2eb",
+      "public_sha256": "f3461b6ac6f4a29709ee1f82122e6c41fb8d55db367a90af0f3bd043d44c730a",
+      "pixels_unchanged": true
+    }
+  ],
+  "verdict": "partial",
+  "visual_health": "pass",
+  "review": "512x512 完整PNG图像健康正常：黑斗篷骷髅幽灵、向下长剑、雾气、红月与教堂窗可见；眼眶及头骨有绿色/黄绿色调，强烈绿光不充分，精确提示细节仍为部分达到。本图在新的独立进程完成15步采样和CPU解码，是资源规避路径，不能计为与蓝图同进程连续重载通过。",
+  "prompt_id": "32741c6a-3229-435a-ba27-3137dac97ad1",
+  "raw_history_sha256": "701241d5aade96b0ccc114241e5e65b57a679bff82e6d68c7db38f425a8306cc",
+  "decoding_elapsed_seconds": 12.013,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 315.091,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "cdcd29fc2f3fe64fe450a32f4e4fee3933d744ccfeffbab90a6c3f8b601a1347",
+  "workflow_sha256": "686aade52c8190244ae215e37ef94ec422958dadd9bddf77db38fffd1273bc9e",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 51.177,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "75daddeb9713e3de65b7caa89badb4feee2ddb1ff880c91aa4a75d7ac6114094"
+}

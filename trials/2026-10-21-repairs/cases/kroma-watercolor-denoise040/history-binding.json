@@ -1,0 +1,20 @@
+{
+  "prompt_id": "b8de865f-8c2f-4631-81dc-d46354719a6b",
+  "status": "success",
+  "outputs": {
+    "9": {
+      "images": [
+        {
+          "filename": "kroma-watercolor-denoise040_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

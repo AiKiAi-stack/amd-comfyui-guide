@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 6.109,
+  "images": [
+    {
+      "file": "repair_save_input-0-kroma-multiref-natural-crop-input_00001_.png",
+      "original_sha256": "801ef2b9e50d30acb371b209c549765ca51f985c8da5ae53bdc60bb47b01a64e",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-kroma-multiref-natural-crop-mask_00001_.png",
+      "original_sha256": "082801753438f62929cf04cb5d9ee20a9fd4d64d74e5ba13b6d86aed7cc1c9f3",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case02_9-0-kroma-multiref-natural-crop_00001_.png",
+      "original_sha256": "02825e192c87155860d0244ac12c92eba1c6e696a6b7779cafa7a8c79a13c1f3",
+      "public_sha256": "4f3b57434d9ad52bf07af7ffab3a3fdfc20c3c1aa944d9b8eac4c070dadb8af8",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-multiref-natural-crop",
+  "feature": "kroma-multiref",
+  "verdict": "partial",
+  "review": "去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。",
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "acceptance_scope": "融合与完整主体均需达到；本次尾部未完整",
+  "mask_measurement": {
+    "outside_pixels": 193144,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 69000,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 193144,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "b57458e2-548c-4e52-9dc3-fc81787bb9bb",
+  "raw_history_sha256": "8c8ae69874cb2a5d4b8dfc8f333a4e85ec7edf697a587b3851567b72fb6d3e11",
+  "decoding_elapsed_seconds": 6.109,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 69.062,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "eb8fa013ff7e944de3c859755b7baabf7a1535c75827907556437fa92582769f",
+  "workflow_sha256": "6c1c3db142279e5826f638e79efa0af8ded8a294e7da36e78a6501e0a01d4a6b",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 21.032,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "616a006195c8c6db9a285afb7a409adc17753f9eaa722d91df202143659a1702"
+}

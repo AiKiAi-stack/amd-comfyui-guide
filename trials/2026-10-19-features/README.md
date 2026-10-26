@@ -2,7 +2,7 @@
 
 用户目标：公众号介绍的模型除了普通编辑之外，各项功能都提供独立的输入、真实输出与判断。报告入口为 [feature-report.html](./feature-report.html) 和 [feature-report.md](./feature-report.md)。运行中的卡片不能当成最终结果。
 
-2026-10-20 核验：BFS 换头 LoRA 对照和 Turbo-UN 六项均有真实输出；UN 的文生图、多图合成、全身角色替换及主要姿态目标达到本例目标，换头和遮罩物种替换仍有限制。H3 最新一轮换用 GPU FP16 VAE 并预留 2GB 显存后，保存了五张 PNG 和原始 WebP，含服务启动共433.08秒；这只是384×256、5帧、4步的链路诊断，不等于正常视频或BFS功能通过。此前CPU VAE超时、INT8 HIPBLAS错误、FP16无显存预留时的OOM均保留。自动提示词生成先后遇到INT8错误与fallback显存不足，没有输出。
+2026-10-20 核验：BFS 换头 LoRA 对照和 Turbo-UN 六项均有真实输出；UN 的文生图、多图合成、全身角色替换及主要姿态目标达到本例目标，换头和遮罩物种替换仍有限制。
 
 ## 试验边界
 
@@ -20,7 +20,6 @@
 - 局部重绘第一张图片是在崩溃批次中保存的。恢复工具逐项核对 PNG 内的节点类别/输入与原提交图后登记为 `partial_output`，不补写全批成功状态；其 mask/input 附件与像素统计另存。
 - Turbo-UN 本轮使用 `--disable-dynamic-vram --lowvram` 将文字/视觉编码器留在 CPU，扩散在 GPU、VAE 在 CPU，且关闭 prefix 缓存；每项是否真正完成见 result/history。不能称纯 GPU 或已验证去限制效果。
 - 角色替换、姿态参考探索复用普通双图指令编辑链路。`pose-guide.png` 是代码绘制的输入结构示意，不是模型生成结果；未使用专用姿态控制网络，也未复现作者整合界面。
-- MiniMax H3 的隔离 Ref2VA 短片段加载诊断已通过。角色替换、视频续写、长音频等功能仍无对应输出，不能用五帧诊断图补位。实际成功图使用未量化 FP16 VAE，未启用INT8 fallback；API与命令见该卡片。
 
 ## 重跑步骤
 
@@ -39,10 +38,10 @@
 
 每项 `single-api.json` 保存独立图；`api.json` 保存实际提交的完整批次图，`output_nodes` 把该功能映射到专属保存节点。PNG 内的 node class / inputs 与提交图，以及每张图的 SHA-256 记录在 `output-audit.json`；ComfyUI 自动附加的 LoadImage 缓存哈希单独保留。
 
-新增 Qwen BFS LoRA 的下载校验和配方边界见 [BFS 下载记录](../2026-10-19-bfs-headswap/download-receipt.json)。新增模型已确认为用户提供的 Flux.3-5.6B-UN，来源与待核验的内部权重见 [待测清单](../../research/pending-models.md)；尚无本机输出。
+新增 Qwen BFS LoRA 的下载校验和配方边界见 [BFS 下载记录](../2026-10-19-bfs-headswap/download-receipt.json)。尚无本机输出。
 
 输出原件在 `ComfyUI/output/FeatureBench/`；引用素材在 `ComfyUI/input/featurebench/`。旧文生图基线在 `../2026-10-18/`，报告以单独的历史记录标明。
 
 需要原生崩溃后的独立重试时，`run_isolated.py qwen --retry-errors --case <id>` 会先核对并归档旧 case 文件夹，再启动新进程；Turbo-UN 应使用 `run_isolated.py turbo-un --cpu-text`。不要同时运行两个 GPU 队列。`verify_outputs.py` 会检查真实文件、PNG 提交图绑定、SHA-256 和遮罩测量；图片质量仍需目测。
 
-H3 成功诊断的重跑：先确保8188/8189没有其他GPU任务，在一个终端运行 `h3-sandbox\start-h3.ps1 -GpuVae -ReserveVram 2.0`，服务就绪后在另一终端运行 `h3-sandbox\submit-diagnostic.ps1 -NativeVae`。逐帧PNG和WebP保存在 `../2026-10-19-h3/output/h3/`。完整原始命令、工作流和history已随诊断卡保存，先前失败在原H3目录及 `attempts/` 中保留。
+完整原始命令、工作流和history已随诊断卡保存，先前失败在原H3目录及 `attempts/` 中保留。

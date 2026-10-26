@@ -1,0 +1,7 @@
+{
+  "verdict": "未达到水彩风格目标",
+  "review": "单变量将 denoise0.6 提到0.85 后，仍为偏摄影的宇航员丛林图；主体居中和全身构图保留，但未见明确水彩晕染/纸纹。PNG 健康，不能以重绘更强或已经出图判定风格转换通过。CPU 文本编码与 GPU 采样分进程，原0.6结果保留。",
+  "visual_inspected": true,
+  "image_healthy": true,
+  "platform": "Linux"
+}

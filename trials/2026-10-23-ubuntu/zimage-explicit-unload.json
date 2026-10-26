@@ -1,0 +1,27 @@
+{
+  "before": [
+    {
+      "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 8573157376,
+      "vram_free": 1867766784,
+      "torch_vram_total": 6415187968,
+      "torch_vram_free": 99867648
+    }
+  ],
+  "after": [
+    {
+      "name": "cuda:0 AMD Radeon RX 6650 XT : native",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 8573157376,
+      "vram_free": 8141144064,
+      "torch_vram_total": 33554432,
+      "torch_vram_free": 0
+    }
+  ],
+  "seconds": 6.58,
+  "server_survived": true,
+  "scope": "Explicit /free on the owned Z-Image service; not real OOM recovery"
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "name": "test_workflow_checks",
+    "exit_code": 0,
+    "seconds": 0.2,
+    "stdout": "",
+    "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.164s\n\nOK\n"
+  },
+  {
+    "name": "test_replay_partial",
+    "exit_code": 1,
+    "seconds": 0.06,
+    "stdout": "",
+    "stderr": "E\n======================================================================\nERROR: test_accepted_partial_prompt_keeps_history_and_png_but_exits_failed (__main__.ReplayPartialTests.test_accepted_partial_prompt_keeps_history_and_png_but_exits_failed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/path/to/barely-comfy/scripts/test_replay_partial.py\", line 44, in test_accepted_partial_prompt_keeps_history_and_png_but_exits_failed\n    server = ThreadingHTTPServer((\"127.0.0.1\", 0), Handler)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socketserver.py\", line 453, in __init__\n    self.socket = socket.socket(self.address_family,\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py\", line 233, in __init__\n    _socket.socket.__init__(self, family, type, proto, fileno)\nPermissionError: [Errno 1] Operation not permitted\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+  },
+  {
+    "name": "test_conditioned_graph",
+    "exit_code": 0,
+    "seconds": 0.3,
+    "stdout": "",
+    "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.094s\n\nOK\n"
+  },
+  {
+    "name": "test_repair_conditioning",
+    "exit_code": 0,
+    "seconds": 1.6,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n......\n----------------------------------------------------------------------\nRan 6 tests in 0.352s\n\nOK\n"
+  },
+  {
+    "name": "test_split_attention_precision",
+    "exit_code": 0,
+    "seconds": 6.16,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n.WARNING:root:out of memory error, emptying cache and trying again\nWARNING:root:out of memory error, increasing steps and trying again 2\nWARNING:root:out of memory error, increasing steps and trying again 4\n.\n----------------------------------------------------------------------\nRan 2 tests in 0.325s\n\nOK\n"
+  },
+  {
+    "name": "test_qwen_reference_phases",
+    "exit_code": 0,
+    "seconds": 6.21,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n...\n----------------------------------------------------------------------\nRan 3 tests in 0.155s\n\nOK\n"
+  },
+  {
+    "name": "test_chunked_logits",
+    "exit_code": 0,
+    "seconds": 2.38,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n.\n----------------------------------------------------------------------\nRan 1 test in 0.079s\n\nOK\n"
+  },
+  {
+    "name": "test_replay_partial_outside_sandbox",
+    "exit_code": 0,
+    "seconds": 1.56,
+    "stdout": "",
+    "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.539s\n\nOK\n",
+    "reason": "Initial run could not create localhost socket inside sandbox"
+  }
+]

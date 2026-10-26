@@ -5,6 +5,7 @@ import json
 import re
 import struct
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from html import unescape
@@ -28,8 +29,9 @@ def main():
             errors.append(rel + ': excluded file type')
         if p.suffix in {'.md', '.html', '.json', '.py', '.ps1', '.txt', '.yml'}:
             s = p.read_text(encoding='utf-8-sig')
-            patterns = [r'gh[pousr]_[A-Za-z0-9]{20,}', r'github_pat_[A-Za-z0-9_]{20,}',
-                        r'hf_[A-Za-z0-9]{20,}', r'sk-[A-Za-z0-9_-]{24,}',
+            boundary = r'(?<![A-Za-z0-9_-])'
+            patterns = [boundary + r'gh[pousr]_[A-Za-z0-9]{20,}', boundary + r'github_pat_[A-Za-z0-9_]{20,}',
+                        boundary + r'hf_[A-Za-z0-9]{20,}', boundary + r'sk-[A-Za-z0-9_-]{24,}',
                         r'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----',
                         r'[A-Z]:[\\/]+Users[\\/]+[^\\/\s"<>]+',
                         r'https?://[^\s"<>]*[?&](?:token|access_token|signature|x-amz-signature)=']
@@ -43,7 +45,7 @@ def main():
             if p.suffix == '.py':
                 try: ast.parse(s)
                 except SyntaxError as e: errors.append(rel + ': invalid Python ' + str(e))
-            if p.suffix == '.html':
+            if p.suffix == '.html' and not p.is_relative_to(ROOT / 'scripts'):
                 refs = re.findall(r'(?:href|src)=["\']([^"\']+)', s)
             elif p.suffix == '.md':
                 # Ignore inline code: examples there are not document links.
@@ -73,7 +75,7 @@ def main():
                 index += size + 8 + size % 2
     manifest_path = ROOT / 'publication-manifest.json'
     if '--write-manifest' in sys.argv:
-        manifest = {'date': '2026-10-20', 'scope': 'Public sanitized tutorial snapshot; historical image hashes refer to local originals.',
+        manifest = {'date': date.today().isoformat(), 'scope': 'Public sanitized tutorial snapshot; historical image hashes refer to local originals.',
                     'files': {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                               for p in all_files if p != manifest_path}}
         manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf-8')

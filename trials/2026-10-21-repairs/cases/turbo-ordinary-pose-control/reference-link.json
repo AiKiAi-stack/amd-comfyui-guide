@@ -1,0 +1,10 @@
+{
+  "original_workflow_sha256": "b1382c5158d7409ea038f1be009070e1511b14613a55f00c6146bccd82a39f51",
+  "cached_workflow_sha256": "4cfe46180403ae02dc32bc02537cefe4042fc0fcbe1ab7289555b16563595131",
+  "archive_file": "repair_conditioning/turbo-ordinary-pose-control-refs-875a9536fca7.safetensors",
+  "archive_sha256": "c28b382d7469f38fff5ecee254ca12c7ad61457ceaa42487032a324849343aac",
+  "reference_api_sha256": "869c383729f6ece31349b5a83ef023340cba23d5600797a61284f4b1f15d3190",
+  "reference_history_sha256": "5560c97787d90cb66478255caef570604d4e25d3d5bd18f517aa46986f93bb52",
+  "reference_process_exited_before_text_encoding": true,
+  "meaning": "Installed core resize/alpha/VAE reference preparation; exact cached latents, no resident VAE during TE"
+}

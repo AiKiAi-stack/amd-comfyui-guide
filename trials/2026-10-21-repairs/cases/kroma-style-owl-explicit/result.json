@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "elapsed_seconds": 9.203,
+  "images": [
+    {
+      "file": "case01_9-0-kroma-style-owl-explicit_00001_.png",
+      "original_sha256": "7aeff69cc8e88457200788b784ef80797b12d2cb45f836cfe1909d9c79e89108",
+      "public_sha256": "77b13e6c330b7fc6c0ab417d98e1e3d50818a818c12431bfd965e1040abe3151",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "kroma-style-owl-explicit",
+  "feature": "kroma-style-ref",
+  "verdict": "partial",
+  "inputs": [
+    "featurebench/kroma-style-source.png"
+  ],
+  "review": "黑图问题已避开，蓝橙森林纸纹正常，出现猫头鹰；但原狐狸仍完整留在画面中，未满足仅新主体、不要狐狸。保留此未达完整目标的对照。",
+  "prompt_id": "6179490c-63cf-4955-be5b-37144cac2bb7",
+  "raw_history_sha256": "a6afb86771d8a5c4d699de9b41241bc9bac5f9d12be38be74b83ea39e975945c",
+  "decoding_elapsed_seconds": 9.203,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 60.156,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "eeb1ad71e8ae4e83d347ceffb6263a856c3d063c27a0b94587623520c3101b26",
+  "workflow_sha256": "15f1e94513e3a39d1c6adfce17efc3143ab1c64101fce14340474389efd81eb9",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 12.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "fccef1869762031ae234ba8cc379b1533774e9680aadfbc3c19428db1fbd4be4"
+}

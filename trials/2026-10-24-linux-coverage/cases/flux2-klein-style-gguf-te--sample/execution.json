@@ -1,0 +1,88 @@
+{
+  "case_id": "flux2-klein-style-gguf-te--sample",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "19-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "5f32d24f48ca3a9180937f1f7ad38cf8e0764325e637187494d1cda94d875456",
+      "original_sha256": "79f1cabd4af6d6dee105ed65824bedb4940a1948aac9e04466ae80c892fabfea",
+      "rgb_sha256": "ac4cbe71e4fef09d2dd147565a619c4158c6db623742cc21f416354cd149cb59"
+    }
+  ],
+  "workflow_sha256": "14ed13b91993fdff99f9f9d371fe1b2d6fdfd1437dc55d1f1944883fea108cd0",
+  "pid": 37958,
+  "prompt_id": "87c5861c-24c0-433f-981a-931e6f826761",
+  "validation_errors": {},
+  "outputs": {
+    "19": {
+      "images": [
+        {
+          "filename": "flux2-klein-style-gguf-te_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "87c5861c-24c0-433f-981a-931e6f826761",
+        "timestamp": 1792860325500
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "87c5861c-24c0-433f-981a-931e6f826761",
+        "timestamp": 1792860325502
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "87c5861c-24c0-433f-981a-931e6f826761",
+        "timestamp": 1792860354219
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 3121.79296875,
+  "elapsed_seconds": 30.33,
+  "total_seconds": 35.354,
+  "server_exit": -15
+}

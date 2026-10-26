@@ -1,0 +1,92 @@
+{
+  "case_id": "kroma-style-ref--sample",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--disable-mmap"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "case01_9-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "2dd156c428ae0f1f14d901c9fea03cb957373c8b5129e30ee36fa2c538644918",
+      "original_sha256": "7ebd1605937ad387eefcd07779d49bb58d7d05fcded629ccc3c96ee9a81e3807",
+      "rgb_sha256": "9975bc8fe7e2835e32ef4f7fd2e3b5b644d5b8a7a0f0f1637d03727255d1529e"
+    }
+  ],
+  "workflow_sha256": "cc72cb4e51cecbd59c28e162453801b55eff6f700776067504370207fb6db0f2",
+  "pid": 15565,
+  "prompt_id": "06ecd4d6-3f9f-4f95-8d4d-61f68ee156c1",
+  "validation_errors": {},
+  "outputs": {
+    "case01_9": {
+      "images": [
+        {
+          "filename": "kroma-style-ref_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "06ecd4d6-3f9f-4f95-8d4d-61f68ee156c1",
+        "timestamp": 1792858872001
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "06ecd4d6-3f9f-4f95-8d4d-61f68ee156c1",
+        "timestamp": 1792858872002
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "06ecd4d6-3f9f-4f95-8d4d-61f68ee156c1",
+        "timestamp": 1792858931386
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 4513.36328125,
+  "elapsed_seconds": 60.296,
+  "total_seconds": 71.304,
+  "server_exit": -15
+}

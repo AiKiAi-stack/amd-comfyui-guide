@@ -1,0 +1,9 @@
+{
+  "time": 1792913318.1541357,
+  "completed_before_stop": "/path/to/barely-comfy/trials/2026-10-24-linux-coverage/cases/qwen-bfs-head-swap-stage-nobacking-cpu-encode/execution.json",
+  "stopped_controller": 12172,
+  "owned_descendants": [
+    16349
+  ],
+  "reason": "Preserve completed BFS result; prioritize GPU caption and finish the remaining bounded cases"
+}

@@ -42,7 +42,7 @@ for case in cases:
                     entry["input_cache_hashes"] = {key: value["is_changed"] for key, value in image_prompt.items() if "is_changed" in value}
             entry["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
         record["images"].append(entry)
-    if case.get("recipe") == "inpaint":
+    if case.get("recipe") == "inpaint" or case.get("mask_attachments"):
         paths = [Path(p["path"] if isinstance(p, dict) else p) for p in result.get("images", [])]
         main = next((p for p in paths if p.name.startswith(case["id"] + "_")), None)
         mask = next((p for p in paths if p.name.startswith(case["id"] + "-mask_")), None)

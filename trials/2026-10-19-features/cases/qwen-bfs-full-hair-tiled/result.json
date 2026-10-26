@@ -1,0 +1,53 @@
+{
+  "id": "qwen-bfs-full-hair-tiled",
+  "model": "qwen",
+  "feature": "换头／BFS 专用 LoRA 对照 · 修复重试",
+  "recipe": "edit",
+  "claim_level": "第三方 BFS 专用方案的本机探索；15步且未使用Pruna8步LoRA，不是作者整合包复现",
+  "refs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "inputs": [
+    "kroma-portrait-b",
+    "kroma-portrait-a"
+  ],
+  "prompt": "head_swap: Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+  "expected": "在原双图任务上加 BFS LoRA，头部采用 A，同时保留 B 的红围巾、大衣、公园、头部角度；本机15步实验，不能称复现含Pruna的官方8步配方。",
+  "lora": {
+    "name": "bfs_head_v1.1_qwen_2.1.safetensors",
+    "strength": 1
+  },
+  "qwen_cache_device": "off",
+  "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+  "repairs": [
+    "qwen-bfs-head-swap"
+  ],
+  "retry_reason": "复用已校验的原 15 步 BFS latent，仅将最终合成遮罩扩大至覆盖长黑发并改用 CPU tiled VAE。红卷发、侧转、衣服保留且旧黑发条消除；五官仍与参考不同，身份目标部分达到；不冒充重新采样。",
+  "status": "success",
+  "prompt_id": "b486be21-14de-4662-ad27-0b2513278181",
+  "elapsed_seconds": 366.65700000000004,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-input_00001_.png",
+      "sha256": "ae843230f31bfe4246e261aa941a7c3001dfe26408093e1867ac4d9ae37131c9",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-mask_00001_.png",
+      "sha256": "1010d25c02349754857d44b364a444166881900f110c889cd8a0cce8286573a5",
+      "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled_00001_.png",
+      "sha256": "f4e9fbc565332df2cbbb93c55ba37cbcccb7891e1d5c428ff6e44e8f0c7007bb",
+      "public_sha256": "277336dd44ca382d89a8ae787da67632555feec4dadb3e86639a56dc2e948e7e"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 279.235,
+  "encoding_elapsed_seconds": 15.203,
+  "sampling_elapsed_seconds": 72.219,
+  "timing_scope": "Reused original encoding/sampling plus current tiled decode; excludes cold starts",
+  "mask_attachments": true
+}

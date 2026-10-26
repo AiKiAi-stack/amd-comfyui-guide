@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "positive_negative_exact": true,
+  "initial_samples_changed": true,
+  "noise_mask_exact": true,
+  "equal_tensors": 7,
+  "equal_literals": 6,
+  "source_archive_sha256": "05edce488e121e796014808a558e3faf7d3695055fe0ee68380b72b8d656b94d",
+  "new_archive_sha256": "dd317fb0d6dace6479a7a9a2df38acf140dadd372fe6e8fa35dc76ca047b0b29"
+}

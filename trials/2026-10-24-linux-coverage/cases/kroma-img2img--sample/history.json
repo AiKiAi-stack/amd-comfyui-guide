@@ -1,0 +1,137 @@
+{
+  "520baeaa-7cda-4f36-9f1b-9ad77c4fecb3": {
+    "prompt": [
+      0,
+      "520baeaa-7cda-4f36-9f1b-9ad77c4fecb3",
+      {
+        "1": {
+          "class_type": "UnetLoaderGGUF",
+          "inputs": {
+            "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_vae.safetensors"
+          }
+        },
+        "7": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ],
+            "seed": 66502001,
+            "steps": 4,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 0.6
+          }
+        },
+        "8": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "7",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "8",
+              0
+            ],
+            "filename_prefix": "linux-coverage/kroma-img2img"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/linux-coverage-kroma-img2img-288f584a6f5a.safetensors",
+            "expected_sha256": "39de77c8a731450b51c07a65ccc0e52c28ae0c4ddc6b63a456ed5221ebb999dc"
+          }
+        }
+      },
+      {
+        "create_time": 1792858772117
+      },
+      [
+        "9"
+      ]
+    ],
+    "outputs": {
+      "9": {
+        "images": [
+          {
+            "filename": "kroma-img2img_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 512,
+              "height": 512
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "520baeaa-7cda-4f36-9f1b-9ad77c4fecb3",
+            "timestamp": 1792858772117
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "520baeaa-7cda-4f36-9f1b-9ad77c4fecb3",
+            "timestamp": 1792858772118
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "520baeaa-7cda-4f36-9f1b-9ad77c4fecb3",
+            "timestamp": 1792858811768
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "9": {
+        "node_id": "9",
+        "display_node": "9",
+        "parent_node": null,
+        "real_node_id": "9"
+      }
+    }
+  }
+}

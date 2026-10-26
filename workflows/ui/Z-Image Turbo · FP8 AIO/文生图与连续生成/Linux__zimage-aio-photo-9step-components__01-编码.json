@@ -1,0 +1,362 @@
+{
+  "id": "725b0c9c-bbe2-4e21-b717-c6b36302dc8d",
+  "revision": 0,
+  "last_node_id": 41,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "EmptyLatentImage",
+      "pos": [
+        110,
+        140
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "宽度",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "高度",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "批量大小",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 20,
+      "type": "CLIPTextEncode",
+      "pos": [
+        490,
+        140
+      ],
+      "size": [
+        420,
+        310
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1
+        },
+        {
+          "localized_name": "文本",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            2,
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark."
+      ],
+      "widgets_values_named": {
+        "text": "A photorealistic studio photograph of a glossy red ceramic teapot beside two ripe lemons on a dark wooden table, soft window light from the left, realistic ceramic reflections, sharp detail, no people, no letters, no watermark."
+      }
+    },
+    {
+      "id": 40,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        1020,
+        140
+      ],
+      "size": [
+        140,
+        26
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "条件",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "条件",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConditioningZeroOut"
+      }
+    },
+    {
+      "id": "34_clip",
+      "type": "LoadCheckpointClipOnly",
+      "pos": [
+        110,
+        386
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "ckpt_name",
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadCheckpointClipOnly"
+      },
+      "widgets_values": [
+        "z-image-turbo-fp8-aio.safetensors"
+      ],
+      "widgets_values_named": {
+        "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+      }
+    },
+    {
+      "id": "repair_save_conditions",
+      "type": "SaveRepairConditioning",
+      "pos": [
+        1270,
+        140
+      ],
+      "size": [
+        270,
+        122
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 3
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "link": 5
+        },
+        {
+          "localized_name": "prefix",
+          "name": "prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "workflow_sha256",
+          "name": "workflow_sha256",
+          "type": "STRING",
+          "widget": {
+            "name": "workflow_sha256"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "字符串",
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveRepairConditioning"
+      },
+      "widgets_values": [
+        "linux-coverage-zimage-aio-photo-9step-components",
+        "c04e34aa825c2d033d86ae0bfb3581998c08d2c6b2dd25de65039940107f4ee7"
+      ],
+      "widgets_values_named": {
+        "prefix": "linux-coverage-zimage-aio-photo-9step-components",
+        "workflow_sha256": "c04e34aa825c2d033d86ae0bfb3581998c08d2c6b2dd25de65039940107f4ee7"
+      }
+    },
+    {
+      "id": 41,
+      "type": "Note",
+      "pos": [
+        100,
+        -360
+      ],
+      "size": [
+        1600,
+        360
+      ],
+      "flags": {},
+      "order": -1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Z-Image Turbo · FP8 AIO / 文生图与连续生成\n来源：Linux 实际尝试配方，执行/视觉状态见本例结论\n本例结论：达到本例文生图目标\n当前文件：阶段 1 编码。运行后记录条件归档路径与 SHA256，停止并重新启动服务，再打开下一阶段采样。修改提示词或输入后必须重新编码。\n配置：阶段 1 编码实际配置：--reserve-vram 1.0 --use-split-cross-attention；阶段完成后结束进程，再按下一阶段配置启动。\n本阶段启动参数：--reserve-vram 1.0 --use-split-cross-attention\n完整启动命令：COMFY_GFX1032_INT8_FALLBACK=1 BARELY_COMFY_CHUNKED_CPU_LOGITS=1 BARELY_COMFY_CHUNKED_GPU_LOGITS=1 OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=4 bash scripts/start_ubuntu.sh --fast-disk --reserve-vram 1.0 --use-split-cross-attention\n输入：纯文本，无输入图片\n操作：先核对模型与输入，修改提示词，单次运行；seed 控制已设为 fixed。\n注意：历史结果来自分阶段/分进程执行；本整图只是配方整理，未验证直接连续运行。"
+      ],
+      "color": "#25394d",
+      "bgcolor": "#344b60",
+      "title": "使用说明 · 平台 / 配方 / 输入"
+    }
+  ],
+  "links": [
+    [
+      1,
+      "34_clip",
+      0,
+      20,
+      0,
+      "CLIP"
+    ],
+    [
+      2,
+      20,
+      0,
+      40,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      3,
+      20,
+      0,
+      "repair_save_conditions",
+      0,
+      "CONDITIONING"
+    ],
+    [
+      4,
+      40,
+      0,
+      "repair_save_conditions",
+      1,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      6,
+      0,
+      "repair_save_conditions",
+      2,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.75,
+      "offset": [
+        6.666666666666671,
+        466.6666666666667
+      ]
+    },
+    "model_feature_library": {
+      "title": "Z-Image Turbo · FP8 AIO / 文生图与连续生成",
+      "note": "UI format generated by ComfyUI itself; round-trip checked without model execution"
+    }
+  },
+  "version": 0.4
+}

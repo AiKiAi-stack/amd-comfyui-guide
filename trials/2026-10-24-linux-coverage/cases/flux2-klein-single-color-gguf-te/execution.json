@@ -1,0 +1,96 @@
+{
+  "case_id": "flux2-klein-single-color-gguf-te",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../flux2-klein-single-color-gguf-te--sample/19-0.png",
+      "size": [
+        368,
+        672
+      ],
+      "sha256": "8d4859058f6f8984c0e69b7dae1eb8a753e7a1f9210db35274677aa8e3eab471",
+      "original_sha256": "c8e6dbe42706fb83495c0138a82a08f83e5efc903aa8ab576b40afc9f9696079",
+      "rgb_sha256": "23f0ffc4000bdde73d0532dd9733282e12a41bc90187ea99c0b1c7c636fd951c"
+    }
+  ],
+  "workflow_sha256": "330ef2f0270b3b9a65abed543fda06dc6a6103086474a4232319d2c02fd47f85",
+  "pid": 25062,
+  "prompt_id": "b454deb5-a14f-452a-b2a8-2b1520843d18",
+  "validation_errors": {},
+  "outputs": {
+    "19": {
+      "images": [
+        {
+          "filename": "flux2-klein-single-color-gguf-te_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 368,
+            "height": 672
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "b454deb5-a14f-452a-b2a8-2b1520843d18",
+        "timestamp": 1792859747318
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "b454deb5-a14f-452a-b2a8-2b1520843d18",
+        "timestamp": 1792859747326
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "b454deb5-a14f-452a-b2a8-2b1520843d18",
+        "timestamp": 1792859776633
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 2942.6953125,
+  "elapsed_seconds": 52.488,
+  "total_seconds": 35.37,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 22.125,
+  "sampling_seconds": 30.363,
+  "conditioning_archive": "repair_conditioning/linux-coverage-flux2-klein-single-color-gguf-te-0dbc2e81c3da.safetensors",
+  "conditioning_sha256": "1b4f42b99b31fb49492672234108339f04e8221eef9c6bcd3893d34f9788c4dd",
+  "encoding_pid": 24494,
+  "sampling_pid": 25062,
+  "encoding_exited_before_sampling": true
+}

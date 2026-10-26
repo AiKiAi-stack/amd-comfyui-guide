@@ -1,0 +1,18 @@
+{
+  "workflow_sha256": "7039ac891cce1e422baef4bc45e02ed4ac34757ec9b838cca6732829767b427d",
+  "archive_sha256": "f4c96bddffbf41f27e70c28f3d6b8f07f2cda0318bd6eb9bb7c7876da0eb6eea",
+  "archive_file": "repair_conditioning/kroma-watercolor-back-view-74d5546d7bdf.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": false,
+  "qwen_cache_device_override": null,
+  "encoding_api_sha256": "6139513f1a57026ae402c69726482085a52e9aa505a5500881df1dcb3fdb0af8",
+  "encoding_history_sha256": "ff6288d3b54b57e2d8dcd2526eee6190200e697b758682f88732fa7ebc4b4d96",
+  "inputs_checked_at_reuse": [],
+  "input_check_method": null,
+  "sampled_latent_file": "repair_conditioning/kroma-watercolor-back-view-d0c84a08317a.safetensors",
+  "sampled_latent_sha256": "3efe646d2ded31f9a214cd9473b66436d174a4165df760fb977863535a18cc37",
+  "sampling_reused": false,
+  "sampling_process_exited_before_decoding": true,
+  "sampling_api_sha256": "141554a7b86be174b65c988360e5317c54c0f92187ed9182e461e69e75e2000b",
+  "sampling_history_sha256": "1052006c403091f6904715649356ffab070bcd5634f1cef37714dfd3e16bb7a1"
+}

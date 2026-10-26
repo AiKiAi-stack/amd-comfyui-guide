@@ -1,0 +1,117 @@
+{
+  "a818b533-5e29-4309-a9b2-e241842afcbe": {
+    "prompt": [
+      0,
+      "a818b533-5e29-4309-a9b2-e241842afcbe",
+      {
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+            "type": "moss_image",
+            "device": "cpu"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "Astronaut walking through a dense jungle, vibrant foliage, shafts of sunlight, detailed cinematic photograph, no text",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "blurry, low quality, distorted, watermark, text",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "6": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ],
+            "prefix": "linux-coverage-moss-sft-dmd-8step-t2i-astronaut-512-cpu-text",
+            "workflow_sha256": "3617af3e2c47ff96956f13af0c5bb001bfa7bcded1b9d9482b257e7be523e8b2"
+          }
+        }
+      },
+      {
+        "create_time": 1792891229405
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-moss-sft-dmd-8step-t2i-astronaut-512-cpu-text-44200e1f3004.safetensors"
+        ],
+        "archive_sha256": [
+          "6374e6c14f76e3559e9942d81f3a69203b9e60c42fd7b887b36ba25a243ecc1c"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "a818b533-5e29-4309-a9b2-e241842afcbe",
+            "timestamp": 1792891229406
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "a818b533-5e29-4309-a9b2-e241842afcbe",
+            "timestamp": 1792891229406
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "a818b533-5e29-4309-a9b2-e241842afcbe",
+            "timestamp": 1792891377401
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

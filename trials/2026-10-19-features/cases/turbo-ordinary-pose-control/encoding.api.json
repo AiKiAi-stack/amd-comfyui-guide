@@ -1,0 +1,42 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_w4a8.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeRepairQwenReferences",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Use image 1 only as a rough visual pose guide and image 2 only as the identity reference for the adult woman with curly copper-red hair, fair freckled skin and green eyes. Create one fully clothed, full-body photorealistic woman, front-facing on a plain white studio background. Reproduce the guide's stance as closely as possible: both arms straight out horizontally in a T-pose, feet apart, and the woman's anatomical left knee bent (the knee on the viewer-right side of image 1). Dress her in simple fitted dark teal athletic clothes and shoes. Do not copy the stick figure, colored joints, or diagram lines. Treat image 1 as a visual instruction, not as a hard pose constraint.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "file": "repair_conditioning/turbo-ordinary-pose-control-refs-875a9536fca7.safetensors",
+      "expected_sha256": "c28b382d7469f38fff5ecee254ca12c7ad61457ceaa42487032a324849343aac"
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent": [
+        "4",
+        2
+      ],
+      "prefix": "turbo-ordinary-pose-control",
+      "workflow_sha256": "4cfe46180403ae02dc32bc02537cefe4042fc0fcbe1ab7289555b16563595131"
+    }
+  }
+}

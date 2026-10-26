@@ -1,52 +1,36 @@
 # Barely Comfy
 
-> 8GB. Almost comfortable.
+在RX 6650 XT（8GB显存、16GB内存）上部署ComfyUI，记录Windows和Ubuntu的实际运行结果。
 
-RX 6650 XT · ComfyUI 实测手册：显存刚够，坑也不少。
+[打开功能报告](trials/2026-10-19-features/feature-report.html) · [使用工作流](workflows/README.md) · [Ubuntu安装与启动](docs/09-ubuntu-setup-2026-10-23.md)
 
-Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图，到模型编辑、多参考输入与原生崩溃排查。**Draft · 2026-10-20**，持续整理中。
+当前保留7个模型系列、40项功能。Linux有21项通过、18项部分达到、1项未达到；40项均有输出图片。Windows的95条原评价与案例保留在报告中。
 
-这是一台 RX 6650 XT（gfx1032，8GB VRAM）+ 16GB RAM 的单机实验，不是所有 AMD 显卡的兼容性承诺。记录成功，也保留噪声图、失败工作流、部分达到和未验证项。API 返回 success 后仍要查看图片。
+报告默认显示当前结果和图片。展开“测试过程”可查看每个方案为什么测、改了什么、结果如何。搜索和结果筛选随网址保存，刷新后可恢复。
 
-## 从这里开始
+## 查看报告
 
-1. [环境与从零搭建](docs/01-setup.md)：固定版本、AMD Python 环境、GPU 最小检查。
-2. [第一张图与单项重跑](docs/02-first-image.md)：下载所需模型、提交 API 图、保存新证据。
-3. [模型实测导航](docs/03-models.md)：Qwen、MOSS、Kroma、FLUX、Z-Image 与 H3 的边界。
-4. [遇到的坑](docs/04-troubleshooting.md)：INT8、时间尺度、GGUF 卸载、锁页内存与 OOM。
-5. [完整图文报告（GitHub 可直接阅读）](trials/2026-10-19-features/feature-report.md)。
+浏览报告不需要显卡或模型。克隆仓库后运行：
 
-[在线图文报告](https://aikiai-stack.github.io/barely-comfy/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
-
-```powershell
+```bash
 git clone https://github.com/AiKiAi-stack/barely-comfy.git
 cd barely-comfy
 python -m http.server 8767 --bind 127.0.0.1
 ```
 
-打开 <http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html>。浏览报告不需要显卡、ComfyUI 或模型权重。
+打开 <http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html>。
 
-## 能在这里找到什么
+## 使用ComfyUI工作流
 
-- 一项功能对应独立 case ID、输入、提示词、实际提交图、执行结果与目视结论。
-- Qwen Image / Turbo / UN、MOSS SFT 与 8步 LoRA、Kroma Q2 的实测。
-- FLUX.2 Klein 七项编辑，以及禁用锁页内存产生噪声的对照。
-- Z-Image AIO 与 GGUF，9/8/4 步、中文与英文文字、连续运行的差异。
-- Flux.3 的失败/来源记录，以及 H3 五帧诊断；H3 视频功能仍未验收。
-- `code_source/` 的两个本地辅助节点，以及 `trials/` 的原始实验脚本和工作流。
+本库提供268份经过前端导入检查的UI工作流及对应API，本机已安装184份推荐工作流。完整包包含输入图片和编码结果，不含模型权重；在其他机器上使用或修改输入前，请看[工作流说明](workflows/README.md)。
 
-![FLUX.2 Klein 实测输出](ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
+需要分步运行的方案，必须按该项说明切换启动配置。工作流能打开、实际出图、达到目标和长期稳定分别记录，不互相替代。两平台配置没有完全统一，耗时不能用于系统速度排名。
 
-这张蓝包来自独立改色案例；输入、提示词与验收限制请到完整报告查看，不能单凭单张图判断编辑质量。
+## 文档与原始记录
 
-## 阅读约定
+- [Windows安装记录](docs/01-setup.md)、[第一张图](docs/02-first-image.md)
+- [故障与修复](docs/06-failure-tracker.md)、[当前报告说明](docs/16-report-polish-2026-10-26.md)
+- [Windows原始图文报告](trials/2026-10-19-features/feature-report.md)、[早期进展](docs/17-readme-history-2026-10-26.md)
+- [公开副本与数据处理](docs/05-evidence-and-privacy.md)、[上游授权](THIRD_PARTY_NOTICES.md)、[贡献说明](CONTRIBUTING.md)
 
-**执行成功 ≠ 视觉通过 ≠ 长期稳定。** 耗时区分服务启动、模型冷加载、提交后总时间和采样时间；缓存、CPU 编码、CPU VAE 与存储位置都影响结果。默认从 512 级别测试，不能把本机结果外推为 1024 或其他显卡也可用。
-
-`trials/` 下早期 README 是历史快照，可能写有当时“尚未运行”的状态。当前总览以完整报告和对应 case 的最新结果为准，尝试过程不覆写成全部成功。
-
-## 数据与贡献
-
-参见 [证据结构及公开副本处理](docs/05-evidence-and-privacy.md)、[上游来源与授权范围](THIRD_PARTY_NOTICES.md) 和 [贡献说明](CONTRIBUTING.md)。仓库没有模型权重、虚拟环境、账号配置或原始文章全文。公开图片移除了文本/EXIF 元数据，视觉像素保持不变；原件校验和与公开副本校验和分开记录。
-
-下一步：在全新 Windows 环境验证安装闭环、补充 UI 导入版工作流、补充其他显卡的独立案例。欢迎提交有图、有参数、有失败证据的复现记录。
+仓库不包含模型权重、虚拟环境、账号配置或文章全文。原始模型测试图和结论按各次记录保留。

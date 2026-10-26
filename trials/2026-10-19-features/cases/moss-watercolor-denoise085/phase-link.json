@@ -1,0 +1,25 @@
+{
+  "workflow_sha256": "e5a1f2dd49f89f5ffd10fb26842b7785c4a25f73169a465dc3b2bc5bc30a9e0f",
+  "archive_sha256": "7a6db1ee69f7c85e4cdf82918321022a58899dc9219f3d1ada6b804b0c59af09",
+  "archive_file": "repair_conditioning/moss-watercolor-denoise085-f84a62ba0d86.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": true,
+  "qwen_cache_device_override": null,
+  "encoding_api_sha256": "29a91f8976c9cbc4b908b22fedd2104f63674738f137c06fe0726f66031f2205",
+  "encoding_history_sha256": "52983525f04bcc94cceabc5afb7da510d8378dd56098c8b77389b9e536f3dbfd",
+  "inputs_checked_at_reuse": [
+    {
+      "file": "featurebench/astronaut.png",
+      "sha256_at_reuse": "4c225838709ebb5298aaea418e2a3f0dbc1b5748dbe0fc71651d8aca31bd0f70",
+      "mtime_ns": 1792392985701068900
+    }
+  ],
+  "input_check_method": "filesystem mtime predates execution; hashes recorded at reuse",
+  "sampled_latent_file": "repair_conditioning/moss-watercolor-denoise085-f37c9dca93b0.safetensors",
+  "sampled_latent_sha256": "d89e6346cf7e899b6b918c34d1eee3a4ad7e3735ded5948f624ee0340979ed7d",
+  "sampling_reused": false,
+  "sampling_source_workflow_sha256": "e5a1f2dd49f89f5ffd10fb26842b7785c4a25f73169a465dc3b2bc5bc30a9e0f",
+  "sampling_process_exited_before_decoding": true,
+  "sampling_api_sha256": "00e7e8b06fc0ef49416f4697c9faca5b7dbe1c65058e6f601def0b170c6a40eb",
+  "sampling_history_sha256": "5bc12d5ae03e86ebf02433208817646cfad71e64ee6148113ea817a20b9de997"
+}

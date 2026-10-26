@@ -8,6 +8,8 @@ from urllib.error import URLError
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
+from workflow_checks import known_workflow_errors
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -23,6 +25,9 @@ def main():
         graph = graph['prompt']
     if not graph or not all(isinstance(v, dict) and 'class_type' in v for v in graph.values()):
         parser.error('Expected an API prompt, not a UI workflow.')
+    errors = known_workflow_errors(graph)
+    if errors:
+        raise SystemExit('\n'.join(errors))
 
     def request(path, payload=None):
         data = None if payload is None else json.dumps(payload).encode()
@@ -43,8 +48,9 @@ def main():
     started = time.monotonic()
     submission = json.loads(request('/prompt', {'prompt': graph}))
     save('submission.json', submission)
-    if submission.get('node_errors') or not submission.get('prompt_id'):
+    if not submission.get('prompt_id'):
         raise SystemExit('Submission rejected; inspect submission.json')
+    validation_errors = submission.get('node_errors', {})
     prompt_id = submission['prompt_id']
     print('SUBMITTED', prompt_id, flush=True)
     while time.monotonic() - started < args.timeout:
@@ -66,10 +72,12 @@ def main():
                 (args.out / name).write_bytes(data)
                 images.append({'file': name, 'sha256': hashlib.sha256(data).hexdigest()})
         status = item.get('status', {}).get('status_str', 'unknown')
-        save('result.json', {'status': status, 'elapsed_seconds': round(time.monotonic()-started, 3),
+        saved_status = 'partial_output' if validation_errors and images else status
+        save('result.json', {'status': saved_status, 'execution_status': status, 'validation_errors': validation_errors,
+                            'elapsed_seconds': round(time.monotonic()-started, 3),
                             'images': images, 'visual_verdict': 'pending manual inspection'})
         print(status, args.out, 'Visual review is required.')
-        if status != 'success':
+        if status != 'success' or validation_errors:
             raise SystemExit(1)
         return
     save('runner-error.json', {'error': 'timeout', 'prompt_id': prompt_id})

@@ -1,0 +1,39 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 15.009,
+  "images": [
+    {
+      "file": "7-0-reload-01-blue_00001_.png",
+      "original_sha256": "2c626c6ae10716954721b7754b37080d4ffe81a2283f973bb94c305a44c6b830",
+      "public_sha256": "f18658361c7b47948ff1e21b6ce86bc2e56f135c26a4b4de8616becff6e7326f",
+      "pixels_unchanged": true
+    }
+  ],
+  "verdict": "partial",
+  "visual_health": "pass",
+  "review": "512x512 完整PNG可用：黑斗篷骷髅幽灵立于教堂门口，长剑朝下，雾气、破旧石地和红月可见；无黑图、NaN坏块或明显结构破坏。眼部蓝光较弱，破碎彩窗细节不充分，不能把全部提示细节判为通过。此图只证明本轮FP16分阶段路径；第二轮编码后来触发1536MiB物理RAM保护，同进程两轮尚未通过。",
+  "prompt_id": "759a15b3-c5ce-487c-bfd0-e9c28c4a8948",
+  "raw_history_sha256": "cc762025c942f9b91ebc72b3e72453ac29329ca38a50011ddd9f85f34a83fc59",
+  "decoding_elapsed_seconds": 15.009,
+  "sampling_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 318.091,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "e041c39d3918d05e6fa6f3696c5c905a6ad66ffc8832ed3df373ca3800c33d61",
+  "workflow_sha256": "9db8439e7109b5ca1c5926fbe50604cd8d8da7ce5451f8a3152adc6ee608500f",
+  "encoding_result": {
+    "status": "success",
+    "execution_status": "success",
+    "validation_errors": {},
+    "elapsed_seconds": 48.095,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "3be93b1e10d36d61ef699966619ce84f2b7a5fa3d6d66cf974180c9eea1cbf4d"
+}

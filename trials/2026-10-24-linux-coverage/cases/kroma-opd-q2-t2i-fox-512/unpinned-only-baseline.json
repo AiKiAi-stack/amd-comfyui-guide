@@ -1,0 +1,6 @@
+{
+  "status": "operator_bounded_observation",
+  "reason": "Disabling core pinning alone did not produce sampling/output during bounded observation. Separate next probe disables safetensors mmap.",
+  "raw_log": "runs/linux-coverage-20261024/kroma-opd-q2-t2i-fox-512/attempt-1792858045627947146/server.log",
+  "time": 1792858232.2840672
+}

@@ -1,0 +1,33 @@
+{
+  "id": "moss-watercolor-denoise085",
+  "model": "moss",
+  "feature": "图生图／洗图 · 修复重试",
+  "recipe": "img2img",
+  "claim_level": "公众号索引标题",
+  "inputs": [
+    "astronaut"
+  ],
+  "prompt": "A watercolor illustration of the same astronaut walking through a lush jungle, soft watercolor washes, visible paper texture, green foliage and warm sunlight. Preserve the centered full-body composition.",
+  "expected": "宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。",
+  "repairs": [
+    "moss-img2img"
+  ],
+  "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+  "retry_reason": "显式 FP16 UNet 后八步采样完整完成，保留丛林中的全身宇航员；画面仍接近摄影，粗纸与水彩笔触没有明确达到，风格转换部分达到。",
+  "status": "success",
+  "prompt_id": "626b898e-39a4-4282-a5db-a8e82d9b4d4d",
+  "elapsed_seconds": 48.126,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/moss-watercolor-denoise085_00001_.png",
+      "sha256": "362cf3a3176aa2c551a0335aac184ca796990e3968cf09870842e23a38d6f303",
+      "public_sha256": "dfa2cc46a4e6b50450d2715081bdcfcff6d4a1f1656f2bdb47dd6f934b56a65c"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 6.063,
+  "encoding_elapsed_seconds": 15.047,
+  "sampling_elapsed_seconds": 27.016,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": false
+}

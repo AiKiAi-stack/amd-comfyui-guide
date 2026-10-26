@@ -1,0 +1,833 @@
+[
+  {
+    "id": "windows-qwen-base-t2i-cat-768",
+    "pass": true,
+    "node_count": 8,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-base-edit-orange-to-white-cat-512",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-opd-q2-t2i-fox-512",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-sft-dmd-8step-t2i-astronaut-512",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-sft-50step-t2i-astronaut-512",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-turbo-plain-t2i-white-cat-512",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-moss-img2img",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-moss-layout",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Node 4: input text changed",
+      "Node 4: input text changed"
+    ]
+  },
+  {
+    "id": "windows-moss-text",
+    "pass": true,
+    "node_count": 12,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-portrait-a",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-portrait-b",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-kroma-img2img",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-style-source",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-inpaint",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-multiref",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-face-swap",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-style-edit",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-caption",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-style-ref",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-multiref",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-head-swap",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-face-only",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-t2i",
+    "pass": true,
+    "node_count": 13,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-un-inpaint",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-multiref",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-face-swap",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-bfs-head-swap",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-role-replacement-test",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-pose-reference-test",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-t2i",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-t2i-gpu-text",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-t2i-1024",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-photo-gpu-text",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-prompt-change",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-english",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-gguf-chinese",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-photo-9step",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-chinese",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-english",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-figure-art",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-photo-4step",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-zimage-aio-photo-8step",
+    "pass": true,
+    "node_count": 9,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-single-color",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-t2i-nvme-control",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-dual-logo",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-dual-people",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-style",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-replace-zh",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-remove",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-iterative",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-klein-t2i-pinned-control",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-flux2-klein-single-color-pinned",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-caption-cpu",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-caption-gpu-chunked",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-teapot-structure",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-tiny-bow",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-watercolor-night",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-1024-attention",
+    "pass": true,
+    "node_count": 14,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-qwen-mask-fox-reference",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-multiref-local-composite",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-head-direction-mask",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-face-only-mask",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-bfs-direction-mask",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-style-owl-explicit",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-style-no-subject-reference",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-watercolor-denoise040",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-head-direction-mask",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-zimage-cpu-text-fp16",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "windows-turbo-head-direction-mask",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-tiny-bow-fingertip",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-watercolor-back-view",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-multiref-ref384",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-moss-watercolor-denoise085",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-bfs-full-hair-tiled",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-mask-fox-reference",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-multiref-clean-reference",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-moss-watercolor-base-sft",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-flux2-tiny-bow-sized-composite",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-multiref-natural-crop",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-multiref-full-tail",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-fox-clean-latent",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-face-only-cfg1-fp16",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-face-only-cfg3",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-fox-profile-precomputed",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-fox-profile-wide-mask",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-role-isolated",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-pose-isolated",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-multiref-natural",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-un-multiref-no-fox",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-ordinary-role-control",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-turbo-ordinary-pose-control",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-head-cropped-reference",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-kroma-multiref-no-fox",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-qwen-multiref-full-tail",
+    "pass": false,
+    "reason": "前端回环参数或连线不一致",
+    "errors": [
+      "Missing UI node LoadImage",
+      "Missing UI node LoadImage"
+    ]
+  },
+  {
+    "id": "windows-zimage-gguf-photo",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-zimage-1",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-zimage-2",
+    "pass": true,
+    "node_count": 11,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-qwen-blue",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  },
+  {
+    "id": "linux-qwen-green",
+    "pass": true,
+    "node_count": 10,
+    "original_inputs_preserved": true,
+    "fixed_seed_controls": true,
+    "note": "导入/导出通过；不是模型执行通过"
+  }
+]

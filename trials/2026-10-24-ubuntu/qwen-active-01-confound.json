@@ -1,0 +1,7 @@
+{
+  "raw_run": "runs/ubuntu-20261024-qwen-phases-active-01",
+  "status": "stopped_by_physical_ram_guard",
+  "diagnostic_confound": "Root GDB attach loaded debug symbols and consumed additional host RAM; process suspension also invalidates timing comparisons. Trace session stopped.",
+  "not_valid_for_model_capacity_or_performance_conclusion": true,
+  "no_completed_png": true
+}

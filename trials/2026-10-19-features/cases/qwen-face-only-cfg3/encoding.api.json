@@ -1,0 +1,97 @@
+{
+  "case01_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_w4a8.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "case01_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "case03_4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "case01_2",
+        0
+      ],
+      "vae": [
+        "case01_3",
+        0
+      ],
+      "prompt": "Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Keep ALL the BLACK straight hair from image 1 unchanged; edit only the exposed facial skin. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "case03_31",
+        0
+      ],
+      "images.image_2": [
+        "case03_34",
+        0
+      ]
+    }
+  },
+  "case03_30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-b.png"
+    }
+  },
+  "case03_31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case03_30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "case03_33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/kroma-portrait-a.png"
+    }
+  },
+  "case03_34": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "case03_33",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "repair_save_conditions": {
+    "class_type": "SaveRepairConditioning",
+    "inputs": {
+      "positive": [
+        "case03_4",
+        0
+      ],
+      "negative": [
+        "case03_4",
+        1
+      ],
+      "latent": [
+        "case03_4",
+        2
+      ],
+      "prefix": "qwen-face-only-mask",
+      "workflow_sha256": "1f2a3354eb0d5146ad72b1570da621b1fbd1b4d85f15ea3d9ebe22e34467fe18"
+    }
+  }
+}

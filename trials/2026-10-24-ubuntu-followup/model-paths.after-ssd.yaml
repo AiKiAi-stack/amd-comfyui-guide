@@ -1,0 +1,21 @@
+{
+  "existing_local_models": {
+    "base_path": "/media/user/系统/MyProject/amd_comfy/ComfyUI",
+    "diffusion_models": "models/diffusion_models",
+    "text_encoders": "models/text_encoders",
+    "vae": "models/vae",
+    "checkpoints": "models/checkpoints",
+    "loras": "models/loras",
+    "embeddings": "models/embeddings",
+    "controlnet": "models/controlnet",
+    "clip_vision": "models/clip_vision",
+    "upscale_models": "models/upscale_models"
+  },
+  "linux_ssd_qwen": {
+    "base_path": "/home/user/.local/share/barely-comfy/models/qwen-20261024",
+    "is_default": true,
+    "diffusion_models": "diffusion_models",
+    "text_encoders": "text_encoders",
+    "vae": "vae"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "case_id": "kroma-style-no-subject-reference-linux-repair--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--disable-mmap"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "71a3822606e3821aab11e9132e7c2d1f9146de4e183dd00bd7c6909f29d74234",
+  "pid": 149513,
+  "prompt_id": "6c0197c9-4ec0-42fe-af41-1e355189370c",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-kroma-style-no-subject-reference-linux-repair-e1bd24fdb2e9.safetensors"
+      ],
+      "archive_sha256": [
+        "7680e1b906da251152f376ad76d996e36c2cf16af6fb78eabf90d83017da40e4"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "6c0197c9-4ec0-42fe-af41-1e355189370c",
+        "timestamp": 1792893819339
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "6c0197c9-4ec0-42fe-af41-1e355189370c",
+        "timestamp": 1792893819341
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "6c0197c9-4ec0-42fe-af41-1e355189370c",
+        "timestamp": 1792893844320
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 3319.40234375,
+  "elapsed_seconds": 26.178,
+  "total_seconds": 49.332,
+  "server_exit": -15
+}

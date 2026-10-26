@@ -1,0 +1,7 @@
+{
+  "verdict": "执行出图 · 主体合成部分达到",
+  "review": "CPU/BF16 编码的正负条件和参考 latent 通过有限数检查；独立 GPU 采样获得健康图片。雨夜咖啡馆中出现红棕毛、白口鼻/胸部和黑腿的狐狸主体，未直接复制参考森林；尾部没有完整展示，不能验收长尾与全部个体特征。仅此分阶段规避配方通过出图，不关闭原 GPU 编码 NaN、普通整图或同进程重载问题。",
+  "visual_inspected": true,
+  "image_healthy": true,
+  "platform": "Linux"
+}

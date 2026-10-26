@@ -1,0 +1,101 @@
+{
+  "case_id": "kroma-style-no-subject-reference-linux-repair",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--disable-mmap"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../kroma-style-no-subject-reference-linux-repair--sample/case01_9-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "730b06288a2947b9154b33bb164ffa212c4112fa0a161a8e9794960d3f95df05",
+      "original_sha256": "42a99b5b4106d780f591e230226e6b4df0440a61f804510e90f17de1aef7a077",
+      "rgb_sha256": "8002e55829a554938d6f7e81e11285e438a0274029a4e79f74192784f1e49622"
+    }
+  ],
+  "workflow_sha256": "d5c5cf75e64a62a43cc88eedf73b3d024a139425234f1e0412089bd6e9fccf38",
+  "pid": 149879,
+  "prompt_id": "a6e18a24-d066-480b-ab1a-8cd5d2d1c5ec",
+  "validation_errors": {},
+  "outputs": {
+    "case01_9": {
+      "images": [
+        {
+          "filename": "kroma-style-no-subject-reference-linux-repair_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "a6e18a24-d066-480b-ab1a-8cd5d2d1c5ec",
+        "timestamp": 1792893857771
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "a6e18a24-d066-480b-ab1a-8cd5d2d1c5ec",
+        "timestamp": 1792893857772
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "a6e18a24-d066-480b-ab1a-8cd5d2d1c5ec",
+        "timestamp": 1792893926793
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 3319.40234375,
+  "elapsed_seconds": 96.458,
+  "total_seconds": 131.744,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 26.178,
+  "sampling_seconds": 70.28,
+  "conditioning_archive": "repair_conditioning/linux-coverage-kroma-style-no-subject-reference-linux-repair-e1bd24fdb2e9.safetensors",
+  "conditioning_sha256": "7680e1b906da251152f376ad76d996e36c2cf16af6fb78eabf90d83017da40e4",
+  "encoding_pid": 149513,
+  "sampling_pid": 149879,
+  "encoding_exited_before_sampling": true
+}

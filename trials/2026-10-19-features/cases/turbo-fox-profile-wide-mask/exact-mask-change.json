@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "positive_negative_exact": true,
+  "initial_samples_changed": false,
+  "noise_mask_exact": false,
+  "changed_latent_field": "noise_mask",
+  "other_latent_fields_exact": true,
+  "equal_tensors": 7,
+  "equal_literals": 6,
+  "source_archive_sha256": "259ed766cdea0425396e541b189b3cf3284ad0d5ce0a3805d373b680c86b372d",
+  "new_archive_sha256": "c12422de71fbf54b1f1008474b011d8cdafbad8d1984e98ddea3e586e5d54614"
+}

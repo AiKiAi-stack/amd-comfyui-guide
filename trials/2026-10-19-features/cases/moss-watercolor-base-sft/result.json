@@ -1,0 +1,33 @@
+{
+  "id": "moss-watercolor-base-sft",
+  "model": "moss",
+  "feature": "图生图／洗图 · 修复重试",
+  "recipe": "img2img",
+  "claim_level": "公众号索引标题",
+  "inputs": [
+    "astronaut"
+  ],
+  "prompt": "A loose hand-painted WATERCOLOR on rough off-white cotton paper. The same full-body astronaut walking through the jungle, centered. Clearly visible paper fibers in light areas, transparent pigment pooling and wet-on-wet blooms, broad green washes, dry-brush edges and unpainted paper gaps. Simplify the spacesuit and foliage into large brush strokes. Preserve the walking pose and centered full-body composition. No photograph, no photographic surface detail, no 3D render.\nphotograph, photorealistic, glossy 3D render, tiny photographic details, blurry, distorted, watermark",
+  "expected": "宇航员丛林构图保留，风格变为水彩；这是 VAE latent 图生图，不代表原生参考图语义编辑。",
+  "repairs": [
+    "moss-img2img"
+  ],
+  "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+  "retry_reason": "使用同一已存在 SFT 基础权重，移除八步 DMD LoRA，28 步/CFG3/denoise0.85、FP16 UNet。输出有明确水彩大笔触、绿叶晕染与粗纸纹，保留丛林、白色全身宇航员和行走构图；本固定输入配方目视通过，八步风格不足对照保留。",
+  "status": "success",
+  "prompt_id": "751db807-26d6-496e-9483-bc806c3d2b63",
+  "elapsed_seconds": 141.312,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/moss-watercolor-base-sft_00001_.png",
+      "sha256": "4b998350f53c2bdfb3f9bc163a9a25765bdb1f0806607e91cdd3bc0e1428a369",
+      "public_sha256": "7defe318d3ef543d93c095e78f2b60eacdfeb677026c17e900fd5d10b812e7c1"
+    }
+  ],
+  "review": "pass",
+  "decoding_elapsed_seconds": 6.078,
+  "encoding_elapsed_seconds": 15.046,
+  "sampling_elapsed_seconds": 120.188,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": false
+}

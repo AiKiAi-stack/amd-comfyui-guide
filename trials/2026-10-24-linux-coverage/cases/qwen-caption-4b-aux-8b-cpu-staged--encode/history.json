@@ -1,0 +1,111 @@
+{
+  "2e12c1af-4a60-4054-afd3-f612ab7285fe": {
+    "prompt": [
+      0,
+      "2e12c1af-4a60-4054-afd3-f612ab7285fe",
+      {
+        "2": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+            "type": "qwen_image"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "prompt": [
+              "42",
+              0
+            ],
+            "negative_prompt": "blurry, distorted, watermark",
+            "resolution": 512
+          }
+        },
+        "42": {
+          "class_type": "LoadRepairText",
+          "inputs": {
+            "file": "repair_conditioning/qwen-caption-4b-aux-8b-cpu-staged-caption-baa04d731548.safetensors",
+            "expected_sha256": "d01c138116b1bfb7caadef0e7b3d22bcc8cfc786358c0efc78d54c2a2029cfe7"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "latent": [
+              "4",
+              2
+            ],
+            "prefix": "qwen-caption-4b-aux-8b-cpu-staged-conditions",
+            "workflow_sha256": "05e7c4dc9ca10a2ed766eeed6b41e272e32f23275b2cb88813d371727bc0b70c"
+          }
+        }
+      },
+      {
+        "create_time": 1792915137664
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/qwen-caption-4b-aux-8b-cpu-staged-conditions-9a435b8d41fb.safetensors",
+          "SHA256: 4825b6b77aec6dad8b3970bb5f96cc9239f2004b2b8d8cc6bb69fda6e2e6926c"
+        ],
+        "archive_sha256": [
+          "4825b6b77aec6dad8b3970bb5f96cc9239f2004b2b8d8cc6bb69fda6e2e6926c"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "2e12c1af-4a60-4054-afd3-f612ab7285fe",
+            "timestamp": 1792915137665
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "2e12c1af-4a60-4054-afd3-f612ab7285fe",
+            "timestamp": 1792915137666
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "2e12c1af-4a60-4054-afd3-f612ab7285fe",
+            "timestamp": 1792915195166
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

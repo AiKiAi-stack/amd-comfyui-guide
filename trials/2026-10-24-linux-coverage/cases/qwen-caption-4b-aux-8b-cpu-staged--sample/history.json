@@ -1,0 +1,148 @@
+{
+  "684a93cf-0c81-48d0-9bf9-77f257e6ef7d": {
+    "prompt": [
+      0,
+      "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+      {
+        "1": {
+          "class_type": "UnetLoaderGGUF",
+          "inputs": {
+            "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "5": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "81",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ],
+            "seed": 66503001,
+            "steps": 15,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          }
+        },
+        "6": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "5",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "6",
+              0
+            ],
+            "filename_prefix": "linux-coverage/qwen-caption-4b-aux-8b-cpu-staged"
+          }
+        },
+        "81": {
+          "class_type": "QwenImage21Cache",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "device": "off",
+            "dtype": "default"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/qwen-caption-4b-aux-8b-cpu-staged-conditions-9a435b8d41fb.safetensors",
+            "expected_sha256": "4825b6b77aec6dad8b3970bb5f96cc9239f2004b2b8d8cc6bb69fda6e2e6926c"
+          }
+        }
+      },
+      {
+        "create_time": 1792915212330
+      },
+      [
+        "7"
+      ]
+    ],
+    "outputs": {
+      "7": {
+        "images": [
+          {
+            "filename": "qwen-caption-4b-aux-8b-cpu-staged_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 512,
+              "height": 512
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+            "timestamp": 1792915212331
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+            "timestamp": 1792915212332
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "684a93cf-0c81-48d0-9bf9-77f257e6ef7d",
+            "timestamp": 1792915292099
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "7": {
+        "node_id": "7",
+        "display_node": "7",
+        "parent_node": null,
+        "real_node_id": "7"
+      }
+    }
+  }
+}

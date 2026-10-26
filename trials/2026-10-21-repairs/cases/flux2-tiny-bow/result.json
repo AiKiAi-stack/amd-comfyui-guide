@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "elapsed_seconds": 27.062,
+  "images": [
+    {
+      "file": "19-0-flux2-tiny-bow_00001_.png",
+      "original_sha256": "3053e9dd672d4110aa4fd466e86e780699468a8aefa1d1469003606ec4af5efe",
+      "public_sha256": "f6c99fa31ff2c4d55e7109b8e7f67312e50c698afdca704ea870e9bbf4d9d360",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "flux2-klein-iterative",
+  "verdict": "partial",
+  "review": "蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。",
+  "prompt_id": "93d2959d-39e1-4ac1-a897-288a9bd039bb",
+  "raw_history_sha256": "4b0b9805a5c76340d48b59d0b1bd55945f07b5ab2aff5190f9d1eb3473f77235",
+  "workflow_sha256": "41dd176b02e21cbfb1aad746ee05f5e4742c27ff315fba5782bfa0a43d5c2b7e"
+}

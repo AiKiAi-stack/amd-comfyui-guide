@@ -1,0 +1,15 @@
+{
+  "sources": [
+    "https://github.com/lbouaraba/comfyui-krea2edit",
+    "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/blob/main/docs/krea-2.md",
+    "https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/raw/main/bfs_head_swap_v1.1_krea2.safetensors"
+  ],
+  "node_source_inspected_commit": "13ef60f20828949becada815d3cbc371eb5ccaab",
+  "node_installation": "not installed: current local core already supports ref_latents; source-only clone outside custom_nodes",
+  "model_file": "bfs_head_swap_v1.1_krea2.safetensors",
+  "bytes": 914159816,
+  "sha256": "abc6c468c578b36e6bd960106ad5886afd3f5321e4fe2de26c05bb5c6585b836",
+  "storage_drive": "G",
+  "compatibility": "Experimental Kroma OPD Q2_K candidate, not claimed supported by BFS author",
+  "native_reference_path": "Current SingleStreamDiT._forward handles reference_latents; index_timestep_zero computes t0 for refs, index shares time conditions; inspect actual core rather than relying on older plugin README"
+}

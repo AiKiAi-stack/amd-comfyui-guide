@@ -1,0 +1,1109 @@
+{
+  "installed": [
+    {
+      "id": "windows-qwen-base-t2i-cat-768",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/文生图与连续生成/Windows__qwen-base-t2i-cat-768.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/文生图与连续生成/Windows__qwen-base-t2i-cat-768.json",
+      "sha256": "097e464572a768a91b5337e1df4c0b4c806e51dce842f748ad2d97bcd3f5031b"
+    },
+    {
+      "id": "windows-qwen-base-edit-orange-to-white-cat-512",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/单图改色/Windows__qwen-base-edit-orange-to-white-cat-512.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/单图改色/Windows__qwen-base-edit-orange-to-white-cat-512.json",
+      "sha256": "29d6f1cb8828549f30e7a4cfde70ad315badbebe3bd45a36b84f40d5e1e79321"
+    },
+    {
+      "id": "windows-kroma-opd-q2-t2i-fox-512",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-opd-q2-t2i-fox-512.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-opd-q2-t2i-fox-512.json",
+      "sha256": "080864b6db9636d1befb5e97a3fc701bce6f2875f756f27e956effff0e5ee71b"
+    },
+    {
+      "id": "windows-moss-sft-dmd-8step-t2i-astronaut-512",
+      "source": "workflows/ui/MOSS Image SFT · INT8/文生图与连续生成/Windows__moss-sft-dmd-8step-t2i-astronaut-512.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/文生图与连续生成/Windows__moss-sft-dmd-8step-t2i-astronaut-512.json",
+      "sha256": "a6decc1606f2c8c015b93ec73e594aa71a03feefb5ab3b23f486a6413c0b1134"
+    },
+    {
+      "id": "windows-moss-sft-50step-t2i-astronaut-512",
+      "source": "workflows/ui/MOSS Image SFT · INT8/文生图与连续生成/Windows__moss-sft-50step-t2i-astronaut-512.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/文生图与连续生成/Windows__moss-sft-50step-t2i-astronaut-512.json",
+      "sha256": "4a4196bcd6ee7f5224a1038e0179716c1da74adc990fb3186f0956a756c419ba"
+    },
+    {
+      "id": "windows-qwen-turbo-plain-t2i-white-cat-512",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Windows__qwen-turbo-plain-t2i-white-cat-512.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Windows__qwen-turbo-plain-t2i-white-cat-512.json",
+      "sha256": "1dac726ced147dd996c53cb4118d4eda11a85665e3a9f9a0d79e49be80c042d2"
+    },
+    {
+      "id": "windows-moss-img2img",
+      "source": "workflows/ui/MOSS Image SFT · INT8/图生图与风格转换/Windows__moss-img2img.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/图生图与风格转换/Windows__moss-img2img.json",
+      "sha256": "ac8c3960b47db44e1539db38c3ddd65b182e4c167172781b5e39837edfa5d733"
+    },
+    {
+      "id": "windows-moss-layout",
+      "source": "workflows/ui/MOSS Image SFT · INT8/布局与位置描述/Windows__moss-layout.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/布局与位置描述/Windows__moss-layout.json",
+      "sha256": "124a198bdd332434649ca083d56f7dc20e5768b8a4ad74a6f86e7a05e53b2757"
+    },
+    {
+      "id": "windows-moss-text",
+      "source": "workflows/ui/MOSS Image SFT · INT8/英文文字渲染/Windows__moss-text.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/英文文字渲染/Windows__moss-text.json",
+      "sha256": "ad58ce3c843daf0814d6b3c0304639337143f85c7f2b476134537ad3dab618e7"
+    },
+    {
+      "id": "windows-kroma-portrait-a",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-portrait-a.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-portrait-a.json",
+      "sha256": "f9ee9e6ff50bdc5b50c93d69f36d468deadb45a6931ea7f50d2a906c07a36f7e"
+    },
+    {
+      "id": "windows-kroma-portrait-b",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-portrait-b.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-portrait-b.json",
+      "sha256": "47a7a1637b4cb7bbdbccc968d5633372aab53a0c8aca510b4e5c180ce9e5e5e8"
+    },
+    {
+      "id": "windows-kroma-img2img",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Windows__kroma-img2img.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Windows__kroma-img2img.json",
+      "sha256": "5b546f1b3ad93ea733b3e639b9ab34adafa98d973abebccb5879617c7b5f9b1e"
+    },
+    {
+      "id": "windows-kroma-style-source",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-style-source.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Windows__kroma-style-source.json",
+      "sha256": "c065e0e6da89d7a70bf443c911fc5d403854614c0906e6cbcdb5c50dd170a6be"
+    },
+    {
+      "id": "windows-qwen-inpaint",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Windows__qwen-inpaint.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Windows__qwen-inpaint.json",
+      "sha256": "f21bf12a5b8702c1331c30b50f6595acb99560655d025faccea00d708b8e099e"
+    },
+    {
+      "id": "windows-qwen-multiref",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Windows__qwen-multiref.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Windows__qwen-multiref.json",
+      "sha256": "c2fadeeb111a6ae1c41ed094afbf67b1552c31bfc7fd781143ac6e211a432aab"
+    },
+    {
+      "id": "windows-qwen-face-swap",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Windows__qwen-face-swap.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Windows__qwen-face-swap.json",
+      "sha256": "30b71730655c5467fdb52405dc5ae5143443adfe357b6df5a94a617752488c44"
+    },
+    {
+      "id": "windows-qwen-style-edit",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/图生图与风格转换/Windows__qwen-style-edit.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/图生图与风格转换/Windows__qwen-style-edit.json",
+      "sha256": "66feaeab85644e1d5651b5f51c73e150db87b803f6f2bbc9029bb3a0b8e21bb3"
+    },
+    {
+      "id": "windows-qwen-caption",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Windows__qwen-caption.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Windows__qwen-caption.json",
+      "sha256": "fa70ea865bd6544c36efe80aaca99c2880b43aa5124ca1be222e6560388bc468"
+    },
+    {
+      "id": "windows-kroma-style-ref",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Windows__kroma-style-ref.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Windows__kroma-style-ref.json",
+      "sha256": "e5b4d9c2679745b18f920590e747610c6ec3913f6ba4726731e0f2afbdc41255"
+    },
+    {
+      "id": "windows-kroma-multiref",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref.json",
+      "sha256": "77e3a5a4301b0004243f0fecc32dc4d857d529cb19fb135ed116e5783d7d9fe4"
+    },
+    {
+      "id": "windows-kroma-head-swap",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Windows__kroma-head-swap.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Windows__kroma-head-swap.json",
+      "sha256": "9982ff25dec9ddb446d96154cc91d75ec5baed156b6bfd6ef04c48cf6d3c6bd8"
+    },
+    {
+      "id": "windows-qwen-face-only",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only.json",
+      "sha256": "6f8ced15e4fd083197b6491c6598bdbd72c51498beea832667d78778dcede5fd"
+    },
+    {
+      "id": "windows-turbo-un-t2i",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Windows__turbo-un-t2i.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Windows__turbo-un-t2i.json",
+      "sha256": "b0c8b277fdb84352526911e6572983ab6d5ca87e1b985463ebf489d4dc6703c3"
+    },
+    {
+      "id": "windows-turbo-un-inpaint",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-un-inpaint.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-un-inpaint.json",
+      "sha256": "c79c6b194ce6d0e77fcd4a47876414247800d88b7d10a4b76af8d11ff17175d0"
+    },
+    {
+      "id": "windows-turbo-un-multiref",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Windows__turbo-un-multiref.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Windows__turbo-un-multiref.json",
+      "sha256": "d45b29930d906402e44b83556d0edc3f1e14be3237a84dd3d018350f6800c0c4"
+    },
+    {
+      "id": "windows-turbo-un-face-swap",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Windows__turbo-un-face-swap.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Windows__turbo-un-face-swap.json",
+      "sha256": "e655cd89efb3af5af9ee0b0cb85e5a92049b923742183cdba44ed5d4bd78eecb"
+    },
+    {
+      "id": "windows-qwen-bfs-head-swap",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Windows__qwen-bfs-head-swap.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Windows__qwen-bfs-head-swap.json",
+      "sha256": "d6bb28d56b86db6919118a099d7978ca7cacf7879e884939c707470e53a7372c"
+    },
+    {
+      "id": "windows-turbo-un-role-replacement-test",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Windows__turbo-un-role-replacement-test.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Windows__turbo-un-role-replacement-test.json",
+      "sha256": "fc1592d3105cbd778d515a0109816bd2b3aaa146931ea13ada0b5163a0dbe8e1"
+    },
+    {
+      "id": "windows-turbo-un-pose-reference-test",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Windows__turbo-un-pose-reference-test.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Windows__turbo-un-pose-reference-test.json",
+      "sha256": "8d98a924a7537df8b5544260951ed6d60d5ea126d6f7501b5b5a731234f50ba2"
+    },
+    {
+      "id": "windows-flux2-klein-t2i",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i.json",
+      "sha256": "381ac0c53aaf8e6c8abf7f888633d801803473ef553457ff014130f6d65396cd"
+    },
+    {
+      "id": "windows-flux2-klein-t2i-gpu-text",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i-gpu-text.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i-gpu-text.json",
+      "sha256": "1ba568a037b8abc1b07a2401321ac183ef4a403306566dca06295e2f0faad5b4"
+    },
+    {
+      "id": "windows-flux2-klein-t2i-1024",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Windows__flux2-klein-t2i-1024.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Windows__flux2-klein-t2i-1024.json",
+      "sha256": "5421ea0d1772db28a7b9428532aecc2c6868ed57b8dd7a6ece8692504c647326"
+    },
+    {
+      "id": "windows-zimage-gguf-photo-gpu-text",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-gguf-photo-gpu-text.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-gguf-photo-gpu-text.json",
+      "sha256": "28b253931a6312079f898d853f59c676bf1f254bdfd5d7aa2cd86ada3ba083ef"
+    },
+    {
+      "id": "windows-zimage-gguf-prompt-change",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-gguf-prompt-change.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-gguf-prompt-change.json",
+      "sha256": "7cdacbe16af7d943cee87861391ee8261ebb0ca3b627146791a7f00432483ba6"
+    },
+    {
+      "id": "windows-zimage-gguf-english",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/英文文字渲染/Windows__zimage-gguf-english.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/英文文字渲染/Windows__zimage-gguf-english.json",
+      "sha256": "0c485003f8653e7eecac9bbc7dc32f7d3ce694fcf7b39046b691dab065e44787"
+    },
+    {
+      "id": "windows-zimage-gguf-chinese",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/中文文字渲染/Windows__zimage-gguf-chinese.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/中文文字渲染/Windows__zimage-gguf-chinese.json",
+      "sha256": "47540a7f78019b10f5e271446ede77341160d6a0dbe3a21b81cb39d9c846de0f"
+    },
+    {
+      "id": "windows-zimage-aio-photo-9step",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/文生图与连续生成/Windows__zimage-aio-photo-9step.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/文生图与连续生成/Windows__zimage-aio-photo-9step.json",
+      "sha256": "a912cd721cb5c995bc33ffc746dce9d7576c16147af5545289c3aed7794fc576"
+    },
+    {
+      "id": "windows-zimage-aio-chinese",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/中文文字渲染/Windows__zimage-aio-chinese.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/中文文字渲染/Windows__zimage-aio-chinese.json",
+      "sha256": "421b2c3fc74af9b167b3dac4fd1c1540ee94a2948aac65635bd81005919b8d91"
+    },
+    {
+      "id": "windows-zimage-aio-english",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/英文文字渲染/Windows__zimage-aio-english.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/英文文字渲染/Windows__zimage-aio-english.json",
+      "sha256": "b8fc5e070a23fdf22fecf19813a6e84869e46efa668569cabcd3362dadb885eb"
+    },
+    {
+      "id": "windows-zimage-aio-figure-art",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/成年人体艺术探索/Windows__zimage-aio-figure-art.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/成年人体艺术探索/Windows__zimage-aio-figure-art.json",
+      "sha256": "4cc80da574c9a8dddd8addf535aae820adb51d4c21c3228dd04ae9f858026bb8"
+    },
+    {
+      "id": "windows-zimage-aio-photo-4step",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/文生图与连续生成/Windows__zimage-aio-photo-4step.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/文生图与连续生成/Windows__zimage-aio-photo-4step.json",
+      "sha256": "7d3cde0a0215c3fed7ddaf3fa18cf5e84c0a30f4771d47ddc66c9169a5cfdd05"
+    },
+    {
+      "id": "windows-zimage-aio-photo-8step",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/文生图与连续生成/Windows__zimage-aio-photo-8step.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/文生图与连续生成/Windows__zimage-aio-photo-8step.json",
+      "sha256": "5ff8746bf0489404e7056b74529bcdf665be67e1712c3d656f90907407e71171"
+    },
+    {
+      "id": "windows-flux2-klein-single-color",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/单图改色/Windows__flux2-klein-single-color.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/单图改色/Windows__flux2-klein-single-color.json",
+      "sha256": "0c004888d4a2de6c7bbe1d5d45180a51a89eebc81bbf620147402772e096c93e"
+    },
+    {
+      "id": "windows-flux2-klein-t2i-nvme-control",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i-nvme-control.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i-nvme-control.json",
+      "sha256": "338d4cfddaa834e191d59276433f2cb1c756be0184b962d0bc5531c3b1842d06"
+    },
+    {
+      "id": "windows-flux2-klein-dual-logo",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/双图配色与 Logo 迁移/Windows__flux2-klein-dual-logo.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/双图配色与 Logo 迁移/Windows__flux2-klein-dual-logo.json",
+      "sha256": "b71cfb4b6837c87a180b95a8e73e7c6cc0e20e5e591a2c1f38aa077a639cd84d"
+    },
+    {
+      "id": "windows-flux2-klein-dual-people",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/双人合成与人物一致性/Windows__flux2-klein-dual-people.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/双人合成与人物一致性/Windows__flux2-klein-dual-people.json",
+      "sha256": "e082ed3f89a3edce40da3b8e0fa940c819f43fb9ebbf81e97ab3b0c250d1c3d1"
+    },
+    {
+      "id": "windows-flux2-klein-style",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/图生图与风格转换/Windows__flux2-klein-style.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/图生图与风格转换/Windows__flux2-klein-style.json",
+      "sha256": "32a113732bdfaa85d52e47ac5dda778802fffb98bdfdab92118da42c3d34c45e"
+    },
+    {
+      "id": "windows-flux2-klein-replace-zh",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Windows__flux2-klein-replace-zh.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Windows__flux2-klein-replace-zh.json",
+      "sha256": "f60b86b15134c92d69e92e0f521a5ec833abb35a69227afa035536e33d878101"
+    },
+    {
+      "id": "windows-flux2-klein-remove",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象删除/Windows__flux2-klein-remove.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象删除/Windows__flux2-klein-remove.json",
+      "sha256": "6c3da0f7159f184b0e1714ecc555253653f9aa17ad9ad983659613576309b7da"
+    },
+    {
+      "id": "windows-flux2-klein-iterative",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-klein-iterative.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-klein-iterative.json",
+      "sha256": "42c9db706fad85ad0b5799f9d435321702f9f65e6bc2f8149f1f1a70a999b8a4"
+    },
+    {
+      "id": "windows-flux2-klein-t2i-pinned-control",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i-pinned-control.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图与连续生成/Windows__flux2-klein-t2i-pinned-control.json",
+      "sha256": "edf9ef5f5a7af9bf55060ec87b27bd7db00e68fc52b6e92f95b66cb95e348921"
+    },
+    {
+      "id": "windows-flux2-klein-single-color-pinned",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/单图改色/Windows__flux2-klein-single-color-pinned.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/单图改色/Windows__flux2-klein-single-color-pinned.json",
+      "sha256": "15139c160b22e8393d987d7f96534a49c3eda8f047f13099358b28173daa8d98"
+    },
+    {
+      "id": "windows-qwen-caption-cpu",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Windows__qwen-caption-cpu.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Windows__qwen-caption-cpu.json",
+      "sha256": "c649e313a1ec3d893be0c6e86fa147e7802492cb20358d6dca072f5eac609e1f"
+    },
+    {
+      "id": "windows-qwen-caption-gpu-chunked",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Windows__qwen-caption-gpu-chunked.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Windows__qwen-caption-gpu-chunked.json",
+      "sha256": "cf7c202232215882711964555bf294f0714002a7184b3edeb91908d08d51f58f"
+    },
+    {
+      "id": "windows-flux2-teapot-structure",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Windows__flux2-teapot-structure.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Windows__flux2-teapot-structure.json",
+      "sha256": "33099c9f376ede4ad3d90ee1f01ad2c61d53550ea122a58b8fe8adc7e897c62c"
+    },
+    {
+      "id": "windows-flux2-tiny-bow",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-tiny-bow.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-tiny-bow.json",
+      "sha256": "68f7d53740ebc9b2dd09afce60ca21ae39edfe8916bfe4f4602bbb7ed8cd1369"
+    },
+    {
+      "id": "windows-flux2-watercolor-night",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/图生图与风格转换/Windows__flux2-watercolor-night.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/图生图与风格转换/Windows__flux2-watercolor-night.json",
+      "sha256": "055618a20cfba750f349e13ae9a41e230bf30b03b4d33c68441a4a0909684a64"
+    },
+    {
+      "id": "windows-flux2-1024-attention",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Windows__flux2-1024-attention.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Windows__flux2-1024-attention.json",
+      "sha256": "01983d397228e3e7ad828c4cb5872b50d031e68200b2fef51cb44c5009bf7678"
+    },
+    {
+      "id": "windows-qwen-mask-fox-reference",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Windows__qwen-mask-fox-reference.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Windows__qwen-mask-fox-reference.json",
+      "sha256": "060cce903fe0164930d29dac4e22a57902ff4801fd0b416520f799984407e0d7"
+    },
+    {
+      "id": "windows-qwen-multiref-local-composite",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Windows__qwen-multiref-local-composite.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Windows__qwen-multiref-local-composite.json",
+      "sha256": "ea996cde81697431d674b58ce21d2e1621fe202c4ad798b753e16a14bdde2876"
+    },
+    {
+      "id": "windows-qwen-head-direction-mask",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Windows__qwen-head-direction-mask.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Windows__qwen-head-direction-mask.json",
+      "sha256": "1a2384c83cd7d6ff374d9a2a9bb33beaeb4699688b7d05a4a35b745bc81d0de1"
+    },
+    {
+      "id": "windows-qwen-face-only-mask",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only-mask.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only-mask.json",
+      "sha256": "54e71d9cc2518a3c90b9f2a54dff9f9be69755926c351d60d09c8c548bdf2087"
+    },
+    {
+      "id": "windows-qwen-bfs-direction-mask",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Windows__qwen-bfs-direction-mask.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Windows__qwen-bfs-direction-mask.json",
+      "sha256": "f1e42f5fcc86a7a4b306af7ddc5b4ce0a32cf1d2bcdc0281c33a313f87c14b0d"
+    },
+    {
+      "id": "windows-kroma-style-owl-explicit",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Windows__kroma-style-owl-explicit.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Windows__kroma-style-owl-explicit.json",
+      "sha256": "eb4c379e34cac7f79bfddd9d6420d8c71989397513a325036047a8e40f147421"
+    },
+    {
+      "id": "windows-kroma-style-no-subject-reference",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Windows__kroma-style-no-subject-reference.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Windows__kroma-style-no-subject-reference.json",
+      "sha256": "f611cdf659ca615121f0b3d392bad172e6c785076b73663984b03bde04edbf4a"
+    },
+    {
+      "id": "windows-kroma-watercolor-denoise040",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Windows__kroma-watercolor-denoise040.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Windows__kroma-watercolor-denoise040.json",
+      "sha256": "79b3844031a4cd350f8771623e7e0d195b2aacd8720f372e74b8d3da912b2909"
+    },
+    {
+      "id": "windows-kroma-head-direction-mask",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Windows__kroma-head-direction-mask.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Windows__kroma-head-direction-mask.json",
+      "sha256": "f7357f525d4e33b74b3f75cf3afa9cfacf588ca4942d03a28dfb522e50d06418"
+    },
+    {
+      "id": "windows-zimage-cpu-text-fp16",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-cpu-text-fp16.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-cpu-text-fp16.json",
+      "sha256": "c056d4d4752fe36e0db7139cc913be237ac6942f2fd98011f7c14691e2d1166f"
+    },
+    {
+      "id": "windows-turbo-head-direction-mask",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Windows__turbo-head-direction-mask.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Windows__turbo-head-direction-mask.json",
+      "sha256": "c5b6981390e9b5a22a84e039c5d56f76e29748554520d076b027947d6f8b6919"
+    },
+    {
+      "id": "windows-flux2-tiny-bow-fingertip",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-tiny-bow-fingertip.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-tiny-bow-fingertip.json",
+      "sha256": "f13a7d6d50a5fb01beb97918f2915cf516cdb3b5526c7838ca1dbe4db7c7fb71"
+    },
+    {
+      "id": "windows-kroma-watercolor-back-view",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Windows__kroma-watercolor-back-view.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Windows__kroma-watercolor-back-view.json",
+      "sha256": "582da994466f6bc4b3662a5120f3508641c257026463d2ab40e9bedf88e31078"
+    },
+    {
+      "id": "windows-kroma-multiref-ref384",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-ref384.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-ref384.json",
+      "sha256": "d52aaa4d1d985d005bec48443564ffb9fdffb0b21ca998a3036393baac56cecb"
+    },
+    {
+      "id": "windows-moss-watercolor-denoise085",
+      "source": "workflows/ui/MOSS Image SFT · INT8/图生图与风格转换/Windows__moss-watercolor-denoise085.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/图生图与风格转换/Windows__moss-watercolor-denoise085.json",
+      "sha256": "faa5fddfe07a13121e486fde30e9c716ca8f8c535628334ec44f15e6a2cb0983"
+    },
+    {
+      "id": "windows-qwen-bfs-full-hair-tiled",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Windows__qwen-bfs-full-hair-tiled.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Windows__qwen-bfs-full-hair-tiled.json",
+      "sha256": "c2dec0a8bcd0abc15954c0765d85eb50dcf5b772df0ec1877fb2384e264962fe"
+    },
+    {
+      "id": "windows-turbo-mask-fox-reference",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-mask-fox-reference.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-mask-fox-reference.json",
+      "sha256": "01f62ed4267af2ee690192edc8ce0ac9913d19244dd6329d05876e8ddeaffac6"
+    },
+    {
+      "id": "windows-kroma-multiref-clean-reference",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-clean-reference.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-clean-reference.json",
+      "sha256": "80b64b5eab5a5501d92402e3b300863aa299252083e7159e36ed3c7eab44a518"
+    },
+    {
+      "id": "windows-moss-watercolor-base-sft",
+      "source": "workflows/ui/MOSS Image SFT · INT8/图生图与风格转换/Windows__moss-watercolor-base-sft.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/图生图与风格转换/Windows__moss-watercolor-base-sft.json",
+      "sha256": "26a9f162a921b3b324fb60690fbbd4431c9ea315df68036a3b6b1da04f9ff74d"
+    },
+    {
+      "id": "windows-flux2-tiny-bow-sized-composite",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-tiny-bow-sized-composite.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Windows__flux2-tiny-bow-sized-composite.json",
+      "sha256": "8a05c87e8c07fd0a1e21ac22bedb29a5011261d860893f084fd5d4d3518dcec3"
+    },
+    {
+      "id": "windows-kroma-multiref-natural-crop",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-natural-crop.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-natural-crop.json",
+      "sha256": "227cd46741d86bb97724b8cda31fa23e86921a71c740a4792698d00fb612e3e3"
+    },
+    {
+      "id": "windows-kroma-multiref-full-tail",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-full-tail.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-full-tail.json",
+      "sha256": "c0f6cf26634298e0fddf6523e473778ac2cafd794109103f9b1cb2e1bb153253"
+    },
+    {
+      "id": "windows-turbo-fox-clean-latent",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-fox-clean-latent.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-fox-clean-latent.json",
+      "sha256": "45cb2a35ad781ade1f585dc0c3af9804a1865f1ef35a83e01d3112db2799b17b"
+    },
+    {
+      "id": "windows-qwen-face-only-cfg1-fp16",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only-cfg1-fp16.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only-cfg1-fp16.json",
+      "sha256": "d132de48ce83ffbed6d95a8a784d948e253d9d6cc237be097b91761c9937354a"
+    },
+    {
+      "id": "windows-qwen-face-only-cfg3",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only-cfg3.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Windows__qwen-face-only-cfg3.json",
+      "sha256": "77b230792abbd2560a8d7709d22dd1667cf89ae4583fe8117cef28d53272b7d7"
+    },
+    {
+      "id": "windows-turbo-fox-profile-precomputed",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-fox-profile-precomputed.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-fox-profile-precomputed.json",
+      "sha256": "a5115d389717217b38d9283c5470dc94165735abefd6f73ac74636f4a747959d"
+    },
+    {
+      "id": "windows-turbo-fox-profile-wide-mask",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-fox-profile-wide-mask.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Windows__turbo-fox-profile-wide-mask.json",
+      "sha256": "471b3144a366f76f847623ed6ed579f6e6a308b339b263a66180069a031d145a"
+    },
+    {
+      "id": "windows-turbo-un-role-isolated",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Windows__turbo-un-role-isolated.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Windows__turbo-un-role-isolated.json",
+      "sha256": "6693bfd4c072499b43cfbce5087256bbb2a87c3e1e0927e033792e663a18ace0"
+    },
+    {
+      "id": "windows-turbo-un-pose-isolated",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Windows__turbo-un-pose-isolated.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Windows__turbo-un-pose-isolated.json",
+      "sha256": "d09bc36bc8d4721b77eefea565caecb6129d2f9b3f8932888599c588f97b6ba2"
+    },
+    {
+      "id": "windows-turbo-un-multiref-natural",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Windows__turbo-un-multiref-natural.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Windows__turbo-un-multiref-natural.json",
+      "sha256": "cf7fd5202ed0a0fdb642f1e6cda0254dcc28f0916e9ed2ae6efc4f7e38779dde"
+    },
+    {
+      "id": "windows-turbo-un-multiref-no-fox",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Windows__turbo-un-multiref-no-fox.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Windows__turbo-un-multiref-no-fox.json",
+      "sha256": "67e9949d735985511fed8b9ada2172f94b9c11ee7c72230e43f245a77290d722"
+    },
+    {
+      "id": "windows-turbo-ordinary-role-control",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Windows__turbo-ordinary-role-control.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Windows__turbo-ordinary-role-control.json",
+      "sha256": "71bb5909f7dba2d2e21f7b28e6880e13b9fbede70fe457598bec107a9460e1ab"
+    },
+    {
+      "id": "windows-turbo-ordinary-pose-control",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Windows__turbo-ordinary-pose-control.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Windows__turbo-ordinary-pose-control.json",
+      "sha256": "6cd3e6eb69e471bcb859d1d0359c0d188dddd940caa755883cae7cf43bef5ad6"
+    },
+    {
+      "id": "windows-kroma-head-cropped-reference",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Windows__kroma-head-cropped-reference.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Windows__kroma-head-cropped-reference.json",
+      "sha256": "6cc2de7c20c2d11a56b5d0de6033f47bda1f3964edafbbeb9d9dc368cf77156f"
+    },
+    {
+      "id": "windows-kroma-multiref-no-fox",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-no-fox.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Windows__kroma-multiref-no-fox.json",
+      "sha256": "88e25db50e863acf6bcaa1984be810a49cf91d56e5e73d9840ed3ee7692d332e"
+    },
+    {
+      "id": "windows-qwen-multiref-full-tail",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Windows__qwen-multiref-full-tail.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Windows__qwen-multiref-full-tail.json",
+      "sha256": "8558970b8515b025fe6110353f855c36ab8dd7a2fe71dcdb004d750a52ac5a16"
+    },
+    {
+      "id": "windows-zimage-gguf-photo",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-gguf-photo.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Windows__zimage-gguf-photo.json",
+      "sha256": "3622373c8548c7f27fdabe20ee09ce76d925e57ab3e0ab9120d416a0fa2ca62c"
+    },
+    {
+      "id": "linux-zimage-1",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Linux__zimage-linux-1.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Linux__zimage-linux-1.json",
+      "sha256": "9903240b82dce85d0654e86f913fb0c326e76ab4575cf4b201e3d6dc99000fa8"
+    },
+    {
+      "id": "linux-zimage-2",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Linux__zimage-linux-2.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/文生图与连续生成/Linux__zimage-linux-2.json",
+      "sha256": "1cfbdd8b36d9a99da8ee18ff3cb6bd361dd6d2f505b1fa9018e76a3aa7edbb44"
+    },
+    {
+      "id": "linux-qwen-blue",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/文生图与连续生成/Linux__qwen-linux-blue.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/文生图与连续生成/Linux__qwen-linux-blue.json",
+      "sha256": "105b302ad97b91d91460cfd38023d37b75d3cc4bed511c0ece764b846f778d48"
+    },
+    {
+      "id": "linux-qwen-green",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/文生图与连续生成/Linux__qwen-linux-green.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/文生图与连续生成/Linux__qwen-linux-green.json",
+      "sha256": "5b9158ae79f88eaa16cc09703984a23bac9c4f8a1b84e0ecf07bb5622bc7b018"
+    },
+    {
+      "id": "linux-coverage-kroma-opd-q2-t2i-fox-512--encode",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Linux__kroma-opd-q2-t2i-fox-512__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Linux__kroma-opd-q2-t2i-fox-512__01-编码.json",
+      "sha256": "50673e07f6bde67d5838cdd6980988abf893e4bc7985882b5b7071fd3aa4c183"
+    },
+    {
+      "id": "linux-coverage-kroma-opd-q2-t2i-fox-512--sample",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Linux__kroma-opd-q2-t2i-fox-512__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/文生图与连续生成/Linux__kroma-opd-q2-t2i-fox-512__02-采样.json",
+      "sha256": "3ccbb713fa17e04ce47b48c7283c7b37c26a829104bef905e1ff9e52026a7ad8"
+    },
+    {
+      "id": "linux-coverage-kroma-img2img--encode",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Linux__kroma-img2img__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Linux__kroma-img2img__01-编码.json",
+      "sha256": "aca25e591e86e63f8fbbd2d0a7242e30cf2e23627415195c23617ef611521261"
+    },
+    {
+      "id": "linux-coverage-kroma-img2img--sample",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Linux__kroma-img2img__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/图生图与风格转换/Linux__kroma-img2img__02-采样.json",
+      "sha256": "6ada349a4a020cd2e8f95180ea9fe9512109b337bcb8190c5d3e8cefe8153543"
+    },
+    {
+      "id": "linux-coverage-kroma-style-ref--encode",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-ref__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-ref__01-编码.json",
+      "sha256": "b31580ef04b36b1afa8d26842f6376f691a3e2e799e337ab0f212961c79888d4"
+    },
+    {
+      "id": "linux-coverage-kroma-style-ref--sample",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-ref__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-ref__02-采样.json",
+      "sha256": "3f1971c32e574ae8c74421a24d86feadcf5334b51af63485778b13fef6f88254"
+    },
+    {
+      "id": "linux-coverage-kroma-multiref--encode",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Linux__kroma-multiref__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Linux__kroma-multiref__01-编码.json",
+      "sha256": "2ecf45cc99a0246a2e3022412d53dca5589cbd969fb307f14ccb56db8a28b21a"
+    },
+    {
+      "id": "linux-coverage-kroma-multiref--sample",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Linux__kroma-multiref__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/多图参考与主体合成/Linux__kroma-multiref__02-采样.json",
+      "sha256": "972c2bac6174ee53f5d672b9ba0de3d4c6f54cacc8f3819e20886a11d5dc0168"
+    },
+    {
+      "id": "linux-coverage-kroma-head-swap--encode",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Linux__kroma-head-swap__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Linux__kroma-head-swap__01-编码.json",
+      "sha256": "a08246394e8c4d1bdcc868ee31f7b04595cb5a5e7bc09f33d51b373e74a97b59"
+    },
+    {
+      "id": "linux-coverage-kroma-head-swap--sample",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Linux__kroma-head-swap__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/换头与人物身份参考/Linux__kroma-head-swap__02-采样.json",
+      "sha256": "43f9cf2fbd590570fd4ba1c23d1536a521130471ae5bf6fa0c37cf6a6607b917"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-t2i-gpu-text-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图与连续生成/Linux__flux2-klein-t2i-gpu-text-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图与连续生成/Linux__flux2-klein-t2i-gpu-text-gguf-te__01-编码.json",
+      "sha256": "a377fe5d027be94fb1e3f17edc14e00a8e1218bb4f2d06820c1b85d7e8cb14ba"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-t2i-gpu-text-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图与连续生成/Linux__flux2-klein-t2i-gpu-text-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图与连续生成/Linux__flux2-klein-t2i-gpu-text-gguf-te__02-采样.json",
+      "sha256": "2a9fb4abf2b938a5df07304687f1d39d8e9d984127713e1a99849eb815e47d12"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-single-color-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/单图改色/Linux__flux2-klein-single-color-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/单图改色/Linux__flux2-klein-single-color-gguf-te__01-编码.json",
+      "sha256": "a60c3cd490d5b4d2fc82e8bae4a742048243f280d30af36d7a0f1012c43eacfe"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-single-color-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/单图改色/Linux__flux2-klein-single-color-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/单图改色/Linux__flux2-klein-single-color-gguf-te__02-采样.json",
+      "sha256": "c2be8e692a4b832b6ecb87955010e2803838e13248f468a0e1494c50a64d651b"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-dual-logo-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/双图配色与 Logo 迁移/Linux__flux2-klein-dual-logo-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/双图配色与 Logo 迁移/Linux__flux2-klein-dual-logo-gguf-te__01-编码.json",
+      "sha256": "9827d18c31fe2d58d8e196ac53f035f0d61769136e594134a00b18e46054410f"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-dual-logo-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/双图配色与 Logo 迁移/Linux__flux2-klein-dual-logo-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/双图配色与 Logo 迁移/Linux__flux2-klein-dual-logo-gguf-te__02-采样.json",
+      "sha256": "50a562c1338988b3d52f91daa426676662d2e0b6c15694ea8807f958d4643a7a"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-dual-people-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/双人合成与人物一致性/Linux__flux2-klein-dual-people-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/双人合成与人物一致性/Linux__flux2-klein-dual-people-gguf-te__01-编码.json",
+      "sha256": "2092bc01d2544a4078a0c521fe618a98b2187f64bb22069e484bf99f8ba4e0a3"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-dual-people-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/双人合成与人物一致性/Linux__flux2-klein-dual-people-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/双人合成与人物一致性/Linux__flux2-klein-dual-people-gguf-te__02-采样.json",
+      "sha256": "2f09a2c13e4c7b40562cec2c5207765c0c9f2296d05f731fe5d12a2adf743e88"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-style-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/图生图与风格转换/Linux__flux2-klein-style-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/图生图与风格转换/Linux__flux2-klein-style-gguf-te__01-编码.json",
+      "sha256": "bee5464ebf492f15ef9ed67e54aa34251664d25d4739e31be2f8052008169e51"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-style-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/图生图与风格转换/Linux__flux2-klein-style-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/图生图与风格转换/Linux__flux2-klein-style-gguf-te__02-采样.json",
+      "sha256": "b76b95e3da2dea7c8ee2735ce968fba8d9de5bb7746dc114d5ea4812a0c91274"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-replace-zh-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-klein-replace-zh-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-klein-replace-zh-gguf-te__01-编码.json",
+      "sha256": "6708754d9684f9a8eff11da0b5c63d9758cbd2f17899336947bd6b950a949a2a"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-replace-zh-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-klein-replace-zh-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-klein-replace-zh-gguf-te__02-采样.json",
+      "sha256": "5bd97825ed8480e59f1a694fe2a369c7e1ff80eb7bb75cf33764a825c1a6572b"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-remove-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象删除/Linux__flux2-klein-remove-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象删除/Linux__flux2-klein-remove-gguf-te__01-编码.json",
+      "sha256": "abca2e73021e8f26deec9714e31adc31b52bdc5e9b2422a2c4f2d0f961f36dfb"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-remove-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象删除/Linux__flux2-klein-remove-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象删除/Linux__flux2-klein-remove-gguf-te__02-采样.json",
+      "sha256": "219737f55f8fbb9432ae0196021834a595db8c54e979504fd9904afbe4e29317"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-iterative-gguf-te--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Linux__flux2-klein-iterative-gguf-te__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Linux__flux2-klein-iterative-gguf-te__01-编码.json",
+      "sha256": "266bf880e1d0ed5f6fec2ea35d12b82fc11296aa176a45e9e2451d7247becc4d"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-iterative-gguf-te--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Linux__flux2-klein-iterative-gguf-te__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/迭代编辑与蝴蝶结细节/Linux__flux2-klein-iterative-gguf-te__02-采样.json",
+      "sha256": "0a99eda6b0b0b0f4d90028234cb199fc3ea1e385ce69e1e1b7843158ee3a96e3"
+    },
+    {
+      "id": "linux-coverage-zimage-gguf-english--encode",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/英文文字渲染/Linux__zimage-gguf-english__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/英文文字渲染/Linux__zimage-gguf-english__01-编码.json",
+      "sha256": "d27d1170542ce732e4682cbc90a66a9d7594fe05f1e3d376735784a12a33728d"
+    },
+    {
+      "id": "linux-coverage-zimage-gguf-english--sample",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/英文文字渲染/Linux__zimage-gguf-english__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/英文文字渲染/Linux__zimage-gguf-english__02-采样.json",
+      "sha256": "8ea7e9a69dcb6aa9abeaca6d8a08222fd2413e180320626ffef4d119f2fe8843"
+    },
+    {
+      "id": "linux-coverage-zimage-gguf-chinese--encode",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/中文文字渲染/Linux__zimage-gguf-chinese__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/中文文字渲染/Linux__zimage-gguf-chinese__01-编码.json",
+      "sha256": "78815b2a34aa38348aa5d035337e6446f2b963a15f43807e26b1141e098f8528"
+    },
+    {
+      "id": "linux-coverage-zimage-gguf-chinese--sample",
+      "source": "workflows/ui/Z-Image Turbo · 双 GGUF Q4_K_M/中文文字渲染/Linux__zimage-gguf-chinese__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · 双 GGUF Q4_K_M/中文文字渲染/Linux__zimage-gguf-chinese__02-采样.json",
+      "sha256": "714101824b965776f0a2c9cf34071daef7e17cdc9d1b61cc5763549981cfefd4"
+    },
+    {
+      "id": "linux-coverage-turbo-un-t2i-stage-nobacking--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Linux__turbo-un-t2i-stage-nobacking__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Linux__turbo-un-t2i-stage-nobacking__01-编码.json",
+      "sha256": "3a77efe0955195c05bbfc74a140fdea39d73cf96669879797281a7c313a3a50b"
+    },
+    {
+      "id": "linux-coverage-turbo-un-t2i-stage-nobacking--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Linux__turbo-un-t2i-stage-nobacking__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Linux__turbo-un-t2i-stage-nobacking__02-采样.json",
+      "sha256": "210ef97668e111c47f18dcd0eb4711440d4b1c30b02893d0ca9156b8681165f4"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-photo-9step-components--encode",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/文生图与连续生成/Linux__zimage-aio-photo-9step-components__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/文生图与连续生成/Linux__zimage-aio-photo-9step-components__01-编码.json",
+      "sha256": "3c89de7caba39b3ae3ab16fb031a458b3ca433715e3d5a1a252af8c84d67bc37"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-photo-9step-components--sample",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/文生图与连续生成/Linux__zimage-aio-photo-9step-components__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/文生图与连续生成/Linux__zimage-aio-photo-9step-components__02-采样.json",
+      "sha256": "d4a90292dff55cdd816972c68c9e82d83445bb00ffecc66b91dc2940bfd09a02"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-chinese-components--encode",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/中文文字渲染/Linux__zimage-aio-chinese-components__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/中文文字渲染/Linux__zimage-aio-chinese-components__01-编码.json",
+      "sha256": "3f92b88c9d85c4b3f5b3c103418473296236114a04066306a21743febf5b64f0"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-chinese-components--sample",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/中文文字渲染/Linux__zimage-aio-chinese-components__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/中文文字渲染/Linux__zimage-aio-chinese-components__02-采样.json",
+      "sha256": "17a464103648a4fe13e7aff6127954f4890a597fb746e83729a3c94dc88f8542"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-english-components--encode",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/英文文字渲染/Linux__zimage-aio-english-components__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/英文文字渲染/Linux__zimage-aio-english-components__01-编码.json",
+      "sha256": "acbebb47ba620d8bb97913067884c7e08f060c61c2c799589d3abb7b2270f09d"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-english-components--sample",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/英文文字渲染/Linux__zimage-aio-english-components__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/英文文字渲染/Linux__zimage-aio-english-components__02-采样.json",
+      "sha256": "95c72e62153274b760412f086166107af3070d7f0904df5d8d3af5da24c11362"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-figure-art-components--encode",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/成年人体艺术探索/Linux__zimage-aio-figure-art-components__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/成年人体艺术探索/Linux__zimage-aio-figure-art-components__01-编码.json",
+      "sha256": "8d150bfdc8bd697f4b899c8d7988be4cebeea81745b87ebdf2f2732d9beb80bb"
+    },
+    {
+      "id": "linux-coverage-zimage-aio-figure-art-components--sample",
+      "source": "workflows/ui/Z-Image Turbo · FP8 AIO/成年人体艺术探索/Linux__zimage-aio-figure-art-components__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Z-Image Turbo · FP8 AIO/成年人体艺术探索/Linux__zimage-aio-figure-art-components__02-采样.json",
+      "sha256": "d4f9a0401a807134bb013c89d781153b0b3507d58076f235e36d539c29b56e5d"
+    },
+    {
+      "id": "linux-coverage-moss-sft-dmd-8step-t2i-astronaut-512-cpu-text--encode",
+      "source": "workflows/ui/MOSS Image SFT · INT8/文生图与连续生成/Linux__moss-sft-dmd-8step-t2i-astronaut-512-cpu-text__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/文生图与连续生成/Linux__moss-sft-dmd-8step-t2i-astronaut-512-cpu-text__01-编码.json",
+      "sha256": "b42cffcf847d7f26d4b7bb62848ed929fb4c7ed31be1ecc9152fbb3c3c6f24bf"
+    },
+    {
+      "id": "linux-coverage-moss-sft-dmd-8step-t2i-astronaut-512-cpu-text--sample",
+      "source": "workflows/ui/MOSS Image SFT · INT8/文生图与连续生成/Linux__moss-sft-dmd-8step-t2i-astronaut-512-cpu-text__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/文生图与连续生成/Linux__moss-sft-dmd-8step-t2i-astronaut-512-cpu-text__02-采样.json",
+      "sha256": "d51607bd0f56001e591e409c468f633e2c1a2cf9cd41ef1141412ce404deb46a"
+    },
+    {
+      "id": "linux-coverage-moss-img2img-cpu-text--encode",
+      "source": "workflows/ui/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text__01-编码.json",
+      "sha256": "74a7738d65c91ffb4fad546cc1ff1120a4983431817346324b56b0b09eea6249"
+    },
+    {
+      "id": "linux-coverage-moss-img2img-cpu-text--sample",
+      "source": "workflows/ui/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text__02-采样.json",
+      "sha256": "47e867f817728cafebe1e2d194fb62a80b06039f2c61c472860389b2c9b76355"
+    },
+    {
+      "id": "linux-coverage-moss-layout-cpu-text--encode",
+      "source": "workflows/ui/MOSS Image SFT · INT8/布局与位置描述/Linux__moss-layout-cpu-text__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/布局与位置描述/Linux__moss-layout-cpu-text__01-编码.json",
+      "sha256": "8ad243a7a91d8bf345a77b9442ebebb23fbf927f5a9ececbbaa2e028a2791454"
+    },
+    {
+      "id": "linux-coverage-moss-layout-cpu-text--sample",
+      "source": "workflows/ui/MOSS Image SFT · INT8/布局与位置描述/Linux__moss-layout-cpu-text__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/布局与位置描述/Linux__moss-layout-cpu-text__02-采样.json",
+      "sha256": "3f76dcb7773607985befb3637795f9a487561678af2c4fc720451b66823b2092"
+    },
+    {
+      "id": "linux-coverage-moss-text-cpu-text--encode",
+      "source": "workflows/ui/MOSS Image SFT · INT8/英文文字渲染/Linux__moss-text-cpu-text__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/英文文字渲染/Linux__moss-text-cpu-text__01-编码.json",
+      "sha256": "7993784ac8491aa4f4900f542f8d48519ceaa5fd81fd64ea8cd8c69058ce328a"
+    },
+    {
+      "id": "linux-coverage-moss-text-cpu-text--sample",
+      "source": "workflows/ui/MOSS Image SFT · INT8/英文文字渲染/Linux__moss-text-cpu-text__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/英文文字渲染/Linux__moss-text-cpu-text__02-采样.json",
+      "sha256": "82ea1b54d95333cd537fe4fb72f8c51a94de1cb3031c8ab9bb7c661a4b7b5557"
+    },
+    {
+      "id": "linux-coverage-turbo-un-inpaint-stage-nobacking--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-un-inpaint-stage-nobacking__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-un-inpaint-stage-nobacking__01-编码.json",
+      "sha256": "992d25b424d94ce1fcd1b31d9d6e0bf694ce0a881583cb7a245f977b1e856f70"
+    },
+    {
+      "id": "linux-coverage-turbo-un-inpaint-stage-nobacking--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-un-inpaint-stage-nobacking__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-un-inpaint-stage-nobacking__02-采样.json",
+      "sha256": "2a14774b0b6724fdd13f22cc78a50e8fc3a0097e93fc902da4ad0fd03b245a5c"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-t2i-1024-gguf-te-tiled--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Linux__flux2-klein-t2i-1024-gguf-te-tiled__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Linux__flux2-klein-t2i-1024-gguf-te-tiled__01-编码.json",
+      "sha256": "54aca5f83e98d85aa0241b34ee4ec7368ec9527378673872bb322af4cbb62161"
+    },
+    {
+      "id": "linux-coverage-flux2-klein-t2i-1024-gguf-te-tiled--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Linux__flux2-klein-t2i-1024-gguf-te-tiled__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/文生图 · 1024 分辨率/Linux__flux2-klein-t2i-1024-gguf-te-tiled__02-采样.json",
+      "sha256": "ae704670157c2b61ded4188ad2a3984dfce7ce9c5ed34f78d92db1b235469640"
+    },
+    {
+      "id": "linux-coverage-moss-img2img-cpu-text-denoise085--encode",
+      "source": "workflows/ui/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text-denoise085__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text-denoise085__01-编码.json",
+      "sha256": "e3c4b4d602a527e6c15259a6d4feb365284c5fdcd98d141608a41710d58cecbb"
+    },
+    {
+      "id": "linux-coverage-moss-img2img-cpu-text-denoise085--sample",
+      "source": "workflows/ui/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text-denoise085__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/MOSS Image SFT · INT8/图生图与风格转换/Linux__moss-img2img-cpu-text-denoise085__02-采样.json",
+      "sha256": "e8f67df2cc2fbdca86fce164a87a514bc1e5bf9d1c6251e069986cf568c65148"
+    },
+    {
+      "id": "linux-coverage-kroma-style-no-subject-reference-linux-repair--encode",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-no-subject-reference-linux-repair__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-no-subject-reference-linux-repair__01-编码.json",
+      "sha256": "c9772387f780a8abebcfc47ba67823c45427330d357cbf92fb9c712e340d71c9"
+    },
+    {
+      "id": "linux-coverage-kroma-style-no-subject-reference-linux-repair--sample",
+      "source": "workflows/ui/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-no-subject-reference-linux-repair__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Kroma v0.3.1 OPD · Q2_K/风格参考 · 更换主体/Linux__kroma-style-no-subject-reference-linux-repair__02-采样.json",
+      "sha256": "951486504bd3cb49448b5a2b84f03797b43b5ec86c4746a64c94baa62c318d99"
+    },
+    {
+      "id": "linux-coverage-flux2-teapot-structure-linux-repair--encode",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-teapot-structure-linux-repair__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-teapot-structure-linux-repair__01-编码.json",
+      "sha256": "e8c15050b737ac414422fb9046fe7502e38b81305502150936857c4897594635"
+    },
+    {
+      "id": "linux-coverage-flux2-teapot-structure-linux-repair--sample",
+      "source": "workflows/ui/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-teapot-structure-linux-repair__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/FLUX.2 Klein 4B · FP8/对象替换 · 中文指令/Linux__flux2-teapot-structure-linux-repair__02-采样.json",
+      "sha256": "afd9907a4e338c95269c6571ca5e72cba15598e5bb3b6a9bffbcc98ed1d3cae2"
+    },
+    {
+      "id": "linux-coverage-turbo-un-multiref-bf16-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Linux__turbo-un-multiref-bf16-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Linux__turbo-un-multiref-bf16-cpu-encode__01-编码.json",
+      "sha256": "9eaf6447efd02e9405f67123ebe9973a2a10513c0542b9ae642c0cc3896b0057"
+    },
+    {
+      "id": "linux-coverage-turbo-un-multiref-bf16-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Linux__turbo-un-multiref-bf16-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/多图参考与主体合成/Linux__turbo-un-multiref-bf16-cpu-encode__02-采样.json",
+      "sha256": "0cd71b93639a87cde6b31642005db330c89c113bb9f852fd7a2555eb36aa0557"
+    },
+    {
+      "id": "linux-coverage-turbo-un-pose-reference-test-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Linux__turbo-un-pose-reference-test-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Linux__turbo-un-pose-reference-test-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "7d46604c05d89b4fc90756cae523e72143516a616a3db8a1f21a79c976c97782"
+    },
+    {
+      "id": "linux-coverage-turbo-un-pose-reference-test-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Linux__turbo-un-pose-reference-test-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/姿态参考/Linux__turbo-un-pose-reference-test-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "939c0861ef5dd8956ae0d6c7be6a0c07ae595104d7aeaa13e99477f97f6b2fcb"
+    },
+    {
+      "id": "linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/单图改色/Linux__qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/单图改色/Linux__qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "ce0a304ea566494f1f101ffffe5b9312aca49c6fac0ec5dcdb4bc3d1e0745e9e"
+    },
+    {
+      "id": "linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/单图改色/Linux__qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/单图改色/Linux__qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "51b5ee5d16ed7f6c8efe74d1815d3526c2c72181affaed3f10cce13026eae245"
+    },
+    {
+      "id": "linux-coverage-qwen-inpaint-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Linux__qwen-inpaint-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Linux__qwen-inpaint-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "34cc34becf79e8e7dddfd567f7b9b4ea1c00fa84d6363daf63a791d66cad1ad6"
+    },
+    {
+      "id": "linux-coverage-qwen-inpaint-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Linux__qwen-inpaint-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/遮罩局部重绘/Linux__qwen-inpaint-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "341fdd2bb6e4a52e0111d185015d5228e04dcd6c6a859d9f46d703cc41310354"
+    },
+    {
+      "id": "linux-coverage-qwen-multiref-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Linux__qwen-multiref-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Linux__qwen-multiref-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "addabec306f15294e4f8079675addcdfa824b3b0dc9484e0813d68a344f5355c"
+    },
+    {
+      "id": "linux-coverage-qwen-multiref-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Linux__qwen-multiref-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/多图参考与主体合成/Linux__qwen-multiref-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "140bf577420e57213e658f96f319406bb633d955e5e95521088b0123e6092358"
+    },
+    {
+      "id": "linux-coverage-qwen-face-swap-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Linux__qwen-face-swap-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Linux__qwen-face-swap-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "52b16fe01c1d40ddde9f689ca4b5f44938954f617003a7260bf153e92ff4de5a"
+    },
+    {
+      "id": "linux-coverage-qwen-face-swap-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Linux__qwen-face-swap-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/换头与人物身份参考/Linux__qwen-face-swap-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "bc3041875e217a958a8f376145399b38d81b7b9fcf903efc90b918a2f7970c2d"
+    },
+    {
+      "id": "linux-coverage-qwen-style-edit-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/图生图与风格转换/Linux__qwen-style-edit-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/图生图与风格转换/Linux__qwen-style-edit-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "c793f31aaf59b3303b01dcb4923a685f999965da867e1f6be1996fcfcd5a2f9f"
+    },
+    {
+      "id": "linux-coverage-qwen-style-edit-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/图生图与风格转换/Linux__qwen-style-edit-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/图生图与风格转换/Linux__qwen-style-edit-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "0f93fa28201dd7225edcd04ca5470e1f2778465e3ee63e4bada5745c17e52085"
+    },
+    {
+      "id": "linux-coverage-qwen-face-only-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Linux__qwen-face-only-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Linux__qwen-face-only-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "66b4d0d86553d55ca6e6bde5b72d122a6bee9a0bd15be21eec5dcc664ebf3faf"
+    },
+    {
+      "id": "linux-coverage-qwen-face-only-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Linux__qwen-face-only-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/仅面部身份替换/Linux__qwen-face-only-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "cce04b9b9b0b4fdf6a73b90473690799c62af383c4d393ebd89f7fcbf498e072"
+    },
+    {
+      "id": "linux-coverage-qwen-bfs-head-swap-stage-nobacking-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Linux__qwen-bfs-head-swap-stage-nobacking-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Linux__qwen-bfs-head-swap-stage-nobacking-cpu-encode__01-编码.json",
+      "sha256": "46221ae3e436ed8e2be830e865d97abbea5b99579bda3f3f24fd9860255442a8"
+    },
+    {
+      "id": "linux-coverage-qwen-bfs-head-swap-stage-nobacking-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Linux__qwen-bfs-head-swap-stage-nobacking-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/BFS LoRA 专用换头/Linux__qwen-bfs-head-swap-stage-nobacking-cpu-encode__02-采样.json",
+      "sha256": "e93d97b31bc7d34bb01a5b1ae647caf015235602b73941900c345b21ef69f0ad"
+    },
+    {
+      "id": "linux-coverage-turbo-fox-profile-wide-mask-linux-repair-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-fox-profile-wide-mask-linux-repair-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-fox-profile-wide-mask-linux-repair-cpu-encode__01-编码.json",
+      "sha256": "a4bdfe9bbf4a493b792601bb6e09e5e98649f8653010d90f781d5986a81a9d6f"
+    },
+    {
+      "id": "linux-coverage-turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-fox-profile-wide-mask-linux-repair-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/遮罩局部重绘/Linux__turbo-fox-profile-wide-mask-linux-repair-cpu-encode__02-采样.json",
+      "sha256": "025e0d857f8fcee1d62b7008cc15e70d9eba662002c4bb7911c2bda547e0b9e6"
+    },
+    {
+      "id": "linux-coverage-turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Linux__turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Linux__turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode__01-编码.json",
+      "sha256": "4faf942268792ddb937102fac9f50e72e3ce0ebf87d1d8522657870639c85ce8"
+    },
+    {
+      "id": "linux-coverage-turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Linux__turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/换头与人物身份参考/Linux__turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode__02-采样.json",
+      "sha256": "0a114bd90065f870a8f88db971b0fef0bbd93c01cbd7dd536868b2fe1168bb4b"
+    },
+    {
+      "id": "linux-coverage-turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Linux__turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode__01-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Linux__turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode__01-编码.json",
+      "sha256": "4ab29be3157407075cbc801c2a11dde5164e61d870cbc3a917e9eaf7849fde68"
+    },
+    {
+      "id": "linux-coverage-turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Linux__turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode__02-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/全身角色替换/Linux__turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode__02-采样.json",
+      "sha256": "4cf686a5ea0a676f34d514c774903df2eb542ac8e24f7ab5dfec1b9c32dbc510"
+    },
+    {
+      "id": "linux-coverage-qwen-caption-4b-aux-8b-cpu-staged--caption",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Linux__qwen-caption-4b-aux-8b-cpu-staged__01-反推.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Linux__qwen-caption-4b-aux-8b-cpu-staged__01-反推.json",
+      "sha256": "a77e2a38bbc9eca462842fe28899bad833f000819953db95208038780db60c06"
+    },
+    {
+      "id": "linux-coverage-qwen-caption-4b-aux-8b-cpu-staged--encode",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Linux__qwen-caption-4b-aux-8b-cpu-staged__02-编码.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Linux__qwen-caption-4b-aux-8b-cpu-staged__02-编码.json",
+      "sha256": "5b84c8d001163c1f17cbd1cbe5322a0fdb98d8b084c1acf98ec4365e62e9e115"
+    },
+    {
+      "id": "linux-coverage-qwen-caption-4b-aux-8b-cpu-staged--sample",
+      "source": "workflows/ui/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Linux__qwen-caption-4b-aux-8b-cpu-staged__03-采样.json",
+      "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 · Base Q4_K_M/自动反推提示词并再生成/Linux__qwen-caption-4b-aux-8b-cpu-staged__03-采样.json",
+      "sha256": "1e0cac22dfb9804b4925eac819aada66546cd098b46dd1dad3404d578b179f20"
+    }
+  ],
+  "count": 184
+}

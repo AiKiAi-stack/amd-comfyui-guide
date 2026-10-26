@@ -1,0 +1,12 @@
+{
+  "file": "ComfyUI/comfy/ldm/modules/attention.py",
+  "changed": true,
+  "before_sha256": "15e4d191c645cb3b475a2d48b16d3d9ac4ff6c4c9b7b714f03ecc25bfb1bf80a",
+  "after_sha256": "fd2633df26e6f536a77b00c93fd4f3501718540c0b112bd17b62dea513e36456",
+  "comfyui_commit": "ce1e922d8623bb507180e32a0c01a7d0e29edef7",
+  "before_test_exit": 1,
+  "after_test_exit": 0,
+  "no_upcast_test_exit": 1,
+  "tests": 2,
+  "scope": "Ceiling query slices support uneven sequence lengths; attention score upcasting is a separate explicit runtime option."
+}

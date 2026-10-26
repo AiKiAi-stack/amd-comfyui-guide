@@ -1,0 +1,75 @@
+{
+  "case_id": "turbo-un-inpaint-stage-nobacking--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "35d8f3ab624303609d3f6f7f452d13f3672575972948872e9979ea777ed23011",
+  "pid": 138344,
+  "prompt_id": "8f83fcb0-6c37-4390-a62e-4f6baac858d3",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-turbo-un-inpaint-stage-nobacking-c5657ae3eb2a.safetensors"
+      ],
+      "archive_sha256": [
+        "49bdd93e256ee71c754e33bafd5532e644bad9abb6136e4b4728bf988e26eec3"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "8f83fcb0-6c37-4390-a62e-4f6baac858d3",
+        "timestamp": 1792892152427
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "8f83fcb0-6c37-4390-a62e-4f6baac858d3",
+        "timestamp": 1792892152547
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "8f83fcb0-6c37-4390-a62e-4f6baac858d3",
+        "timestamp": 1792892231645
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 2287.4296875,
+  "elapsed_seconds": 80.672,
+  "total_seconds": 94.861,
+  "server_exit": -15
+}

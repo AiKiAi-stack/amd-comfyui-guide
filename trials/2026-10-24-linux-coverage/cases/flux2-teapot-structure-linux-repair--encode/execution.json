@@ -1,0 +1,72 @@
+{
+  "case_id": "flux2-teapot-structure-linux-repair--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "04ccc07b9f4625a551d8693775870f41f0c99a98436afbbe352f7e2e62433385",
+  "pid": 17072,
+  "prompt_id": "cc862b8d-a06e-456a-95c2-ee9012153209",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-flux2-teapot-structure-linux-repair-dc9ddc9f06c0.safetensors"
+      ],
+      "archive_sha256": [
+        "8f33afa15c4e74815ff7f0f995f068397e8fcf4c371235fc22c3c8aea38e1540"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "cc862b8d-a06e-456a-95c2-ee9012153209",
+        "timestamp": 1792914115694
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "cc862b8d-a06e-456a-95c2-ee9012153209",
+        "timestamp": 1792914115701
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "cc862b8d-a06e-456a-95c2-ee9012153209",
+        "timestamp": 1792914135374
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 8875.68359375,
+  "elapsed_seconds": 20.387,
+  "total_seconds": 46.8,
+  "server_exit": -15
+}

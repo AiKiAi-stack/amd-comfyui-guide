@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 200.737,
+  "images": [
+    {
+      "file": "18-0-repeat-01-red_00001_.png",
+      "original_sha256": "c1ddd752a06d62934fed1345b5de744d831febcf64615e0a106041e3cc33e334",
+      "public_sha256": "c72197a2856731bef840fdc9fe42e60f08576557326c3a7960ce35d4fac9b671",
+      "pixels_unchanged": true
+    }
+  ],
+  "verdict": "pass",
+  "review": "Normal red ceramic teapot with two lemons; no black/noise output; same complete workflow and seed as the first default-attention image.",
+  "pixels_identical_to_default_attention_red": false,
+  "sampling_seconds_approx": 38,
+  "speed_conclusion": "No isolated performance claim: model/file/kernel caches differ between processes.",
+  "prompt_id": "4bec89b0-d173-4ae1-ba06-38d2e6fbb1a7",
+  "raw_history_sha256": "8bdbcfecb85bcba1e5de01b566e459a431e85695948fbac747683f9d1b6d7490"
+}

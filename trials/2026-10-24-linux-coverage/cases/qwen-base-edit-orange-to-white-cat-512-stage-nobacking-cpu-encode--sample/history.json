@@ -1,0 +1,137 @@
+{
+  "e646edeb-ef5c-452a-8449-f4d989fa8bff": {
+    "prompt": [
+      0,
+      "e646edeb-ef5c-452a-8449-f4d989fa8bff",
+      {
+        "1": {
+          "class_type": "UnetLoaderGGUF",
+          "inputs": {
+            "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "5": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "positive": [
+              "repair_load_conditions",
+              0
+            ],
+            "negative": [
+              "repair_load_conditions",
+              1
+            ],
+            "latent_image": [
+              "repair_load_conditions",
+              2
+            ],
+            "seed": 2106651,
+            "steps": 15,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          }
+        },
+        "6": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "5",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "6",
+              0
+            ],
+            "filename_prefix": "linux-coverage/qwen-base-edit-orange-to-white-cat-512-stage-nobacking"
+          }
+        },
+        "repair_load_conditions": {
+          "class_type": "LoadRepairConditioning",
+          "inputs": {
+            "file": "repair_conditioning/linux-coverage-qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode-1d4a11354083.safetensors",
+            "expected_sha256": "36214499d02557834274ca2cb922068a59da9b5479743358a9519e0ba712f85e"
+          }
+        }
+      },
+      {
+        "create_time": 1792910967095
+      },
+      [
+        "7"
+      ]
+    ],
+    "outputs": {
+      "7": {
+        "images": [
+          {
+            "filename": "qwen-base-edit-orange-to-white-cat-512-stage-nobacking_00001_.png",
+            "subfolder": "linux-coverage",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 512,
+              "height": 512
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "e646edeb-ef5c-452a-8449-f4d989fa8bff",
+            "timestamp": 1792910967096
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "e646edeb-ef5c-452a-8449-f4d989fa8bff",
+            "timestamp": 1792910967097
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "e646edeb-ef5c-452a-8449-f4d989fa8bff",
+            "timestamp": 1792911053806
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "7": {
+        "node_id": "7",
+        "display_node": "7",
+        "parent_node": null,
+        "real_node_id": "7"
+      }
+    }
+  }
+}

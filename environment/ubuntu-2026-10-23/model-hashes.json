@@ -1,0 +1,20 @@
+[
+  {
+    "file": "diffusion_models/z_image_turbo-Q4_K_M.gguf",
+    "bytes": 4981532736,
+    "sha256": "745ec270db042409fde084d6b5cfccabf214a7fe5a494edf994a391125656afd",
+    "hash_seconds": 52.27
+  },
+  {
+    "file": "text_encoders/Qwen3-4B-Q4_K_M.gguf",
+    "bytes": 2497281312,
+    "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
+    "hash_seconds": 24.7
+  },
+  {
+    "file": "vae/ae.safetensors",
+    "bytes": 335304388,
+    "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38",
+    "hash_seconds": 4.17
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "elapsed_seconds": 112.312,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-mask-fox-reference-input_00001_.png",
+      "original_sha256": "e5bcf10c3e85abe5b464cc423ab88da44488c31f2affe94c99ecebe5d1645b54",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-mask-fox-reference-mask_00001_.png",
+      "original_sha256": "80d618b29b01c1075668d41cb5b57d870a53d8820b07c08eac606f481a9cb7a1",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case01_7-0-qwen-mask-fox-reference_00001_.png",
+      "original_sha256": "9c114fcf567f17d008ddeb1c95b6df3bd52bd46506a37cb5b3124f3bc9e2717b",
+      "public_sha256": "3b351c8db480c215d748737588e598350da966e9473f84fe09d651e4384c265f",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "qwen-inpaint",
+  "verdict": "pass",
+  "review": "完整执行成功。实际查看：主体有长尖嘴、黑耳背、黑腿与大面积白尾尖，明确为狐狸；身体仍背向，头略向右转露出吻部。最终合成保证遮罩外像素保持，不能归功于模型本身的局部精度。灰化原猫参考区域并增加狐狸参考，属于条件和提示词调整，不证明精确身份复刻。",
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "prompt_id": "47ddb82e-a795-44a9-bd68-9199b00fcce8",
+  "raw_history_sha256": "551cc801e7ff83256ac6dc8b9a9963f6910eb5b76125321a105b947177736ba9",
+  "workflow_sha256": "2a3bc78178b9506b56e0a0ad4bc46d78591acb5581ecbecbeae0e699cc483143",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 27.078,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "8bbb837117ac95e22689511f0e88f8fae43a8a15abad7f769948a24984d1f389"
+}

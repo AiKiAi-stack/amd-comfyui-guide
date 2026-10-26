@@ -1,0 +1,117 @@
+{
+  "ef89ac33-37fb-4aa5-947c-0f748963f57f": {
+    "prompt": [
+      0,
+      "ef89ac33-37fb-4aa5-947c-0f748963f57f",
+      {
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+            "type": "moss_image",
+            "device": "cpu"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "{\"summary\":{\"caption\":\"A clean studio product photograph on a pale grey table. A bright red teapot on the left and a tall blue ceramic vase on the right, clearly separated.\"},\"items\":[{\"label\":\"object\",\"caption\":\"one bright red teapot with a handle and spout, on the left\",\"bbox\":[-96,-226,184,-16]},{\"label\":\"object\",\"caption\":\"one tall blue ceramic vase, on the right\",\"bbox\":[-116,44,184,214]}],\"bbox_coord_space\":\"abs_centralized\",\"bbox_format\":\"yxyx\"}",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "blurry, distorted, watermark",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "6": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ],
+            "prefix": "linux-coverage-moss-layout-cpu-text",
+            "workflow_sha256": "401f87541961cf3110ff98805bc71142718bb9c21b32757bf4816e35ab0677a3"
+          }
+        }
+      },
+      {
+        "create_time": 1792891684238
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-moss-layout-cpu-text-0782216358dc.safetensors"
+        ],
+        "archive_sha256": [
+          "e692fb70fdabc98b5c997556bb98505f003d273ea0fc5d5f3e51f8f55f3f4987"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "ef89ac33-37fb-4aa5-947c-0f748963f57f",
+            "timestamp": 1792891684239
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "ef89ac33-37fb-4aa5-947c-0f748963f57f",
+            "timestamp": 1792891684239
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "ef89ac33-37fb-4aa5-947c-0f748963f57f",
+            "timestamp": 1792891831543
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

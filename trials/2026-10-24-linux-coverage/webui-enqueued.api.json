@@ -1,0 +1,149 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "qwen-image-2.1-turbo-Q4_K_M.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "6": {
+    "inputs": {
+      "samples": [
+        "64",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "7": {
+    "inputs": {
+      "filename_prefix": "linux-coverage-webui-turbo-sample",
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "60": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "81",
+        0
+      ],
+      "positive": [
+        "repair_load_conditions",
+        0
+      ],
+      "negative": [
+        "repair_load_conditions",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "61": {
+    "inputs": {
+      "sigmas": "1.0, 0.978453, 0.95418, 0.926626, 0.89508, 0.845148, 0.704534, 0.414568, 0.0"
+    },
+    "class_type": "ManualSigmas",
+    "_meta": {
+      "title": "自定义Sigmas"
+    }
+  },
+  "62": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "63": {
+    "inputs": {
+      "noise_seed": 66503001
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "64": {
+    "inputs": {
+      "noise": [
+        "63",
+        0
+      ],
+      "guider": [
+        "60",
+        0
+      ],
+      "sampler": [
+        "62",
+        0
+      ],
+      "sigmas": [
+        "61",
+        0
+      ],
+      "latent_image": [
+        "repair_load_conditions",
+        2
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "81": {
+    "inputs": {
+      "device": "off",
+      "dtype": "default",
+      "model": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "QwenImage21Cache",
+    "_meta": {
+      "title": "Qwen Image 2.1 缓存"
+    }
+  },
+  "repair_load_conditions": {
+    "inputs": {
+      "file": "repair_conditioning/linux-coverage-turbo-un-t2i-stage-nobacking-923345f5f7f4.safetensors",
+      "expected_sha256": "f8e048e2aff39b7578ed9c3a48e68237dda4852c6e300084cfcbc04050052968"
+    },
+    "class_type": "LoadRepairConditioning",
+    "_meta": {
+      "title": "LoadRepairConditioning"
+    }
+  }
+}

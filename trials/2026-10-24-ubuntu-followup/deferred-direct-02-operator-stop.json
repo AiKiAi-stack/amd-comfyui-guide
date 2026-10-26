@@ -1,0 +1,27 @@
+{
+  "time": 1792828822.8727162,
+  "reason": "Round 1 complete; round 2 has no sampler progress for >120s after partial-request full CPU restore. Record as stalled, not two-round pass.",
+  "pid": 21516,
+  "runner_pid": 21515,
+  "process": {
+    "status": "sleeping",
+    "memory_info": [
+      11259015168,
+      34125651968,
+      4596273152,
+      27963392,
+      0,
+      9975799808,
+      0
+    ],
+    "pid": 21516,
+    "cpu_times": [
+      755.05,
+      23.25,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "wchan": "ep_poll"
+}

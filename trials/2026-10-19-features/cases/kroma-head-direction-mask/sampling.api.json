@@ -1,0 +1,53 @@
+{
+  "case01_1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "kroma-v0.3.1-turbo-opd-Q2_K.gguf"
+    }
+  },
+  "case03_7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "case01_1",
+        0
+      ],
+      "positive": [
+        "repair_load_conditions",
+        0
+      ],
+      "negative": [
+        "repair_load_conditions",
+        1
+      ],
+      "latent_image": [
+        "repair_load_conditions",
+        2
+      ],
+      "seed": 66502001,
+      "steps": 4,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "repair_load_conditions": {
+    "class_type": "LoadRepairConditioning",
+    "inputs": {
+      "file": "repair_conditioning/kroma-head-direction-mask-f315138f3117.safetensors",
+      "expected_sha256": "81537b69e3da34944a537a0e5a5c8c2ef96adb8a9d893f5cf213889859fdab67"
+    }
+  },
+  "repair_save_latent": {
+    "class_type": "SaveRepairLatent",
+    "inputs": {
+      "latent": [
+        "case03_7",
+        0
+      ],
+      "prefix": "kroma-head-direction-mask",
+      "workflow_sha256": "c1f95fdad630afecc456c8574962344e9b978b64b6dd2648669c1dfb439e6e03"
+    }
+  }
+}

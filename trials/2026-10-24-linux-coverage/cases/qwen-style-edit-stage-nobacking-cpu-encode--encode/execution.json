@@ -1,0 +1,77 @@
+{
+  "case_id": "qwen-style-edit-stage-nobacking-cpu-encode--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc",
+    "--cpu"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "675c9cfbf4ece17637d0249c0d1abc5040dc2ecafc6bd8347d7a4f5cbe39ef63",
+  "pid": 15188,
+  "prompt_id": "4adfe367-ee41-4021-984b-778c57801939",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-qwen-style-edit-stage-nobacking-cpu-encode-e7d8c8312ed0.safetensors"
+      ],
+      "archive_sha256": [
+        "140a96a4648ed5850d5f53f20ca3b49feca48398eb4819751b6e07956db9b065"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "4adfe367-ee41-4021-984b-778c57801939",
+        "timestamp": 1792912016163
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "4adfe367-ee41-4021-984b-778c57801939",
+        "timestamp": 1792912016165
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "4adfe367-ee41-4021-984b-778c57801939",
+        "timestamp": 1792912123882
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7054.41015625,
+  "elapsed_seconds": 108.555,
+  "total_seconds": 128.751,
+  "server_exit": -15
+}

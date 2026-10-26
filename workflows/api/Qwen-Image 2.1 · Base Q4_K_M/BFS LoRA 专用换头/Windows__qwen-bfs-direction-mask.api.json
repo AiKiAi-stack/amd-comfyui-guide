@@ -1,0 +1,250 @@
+{
+  "1": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_w4a8.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "head_swap: Keep the exact THREE-QUARTER head rotation of image 1: the nose points toward the LEFT side of the picture, eyes looking left, far cheek partly hidden. Do not turn to the camera. Transfer the fictional adult woman identity from image 2: pale skin with many clearly visible freckles, green eyes and her facial features. Replace all black hair with SHORT copper-red CURLS from image 2, no remaining black hair. Keep the navy coat, red scarf, body, park background, camera view and lighting of image 1 unchanged. No yellow sweater. One person.",
+      "negative_prompt": "blurry, distorted, watermark",
+      "resolution": 512,
+      "images.image_1": [
+        "31",
+        0
+      ],
+      "images.image_2": [
+        "34",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "81",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "4",
+        1
+      ],
+      "latent_image": [
+        "4",
+        2
+      ],
+      "seed": 66503001,
+      "steps": 15,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_composite",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask"
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_e5aabefc21cb_kroma-portrait-b.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "33": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "ModelLibrary_02b141b1b04e_kroma-portrait-a.png"
+    }
+  },
+  "34": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "33",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "80": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "bfs_head_v1.1_qwen_2.1.safetensors",
+      "strength_model": 1
+    }
+  },
+  "81": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "80",
+        0
+      ],
+      "device": "off",
+      "dtype": "default"
+    }
+  },
+  "repair_black": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "repair_white": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 390,
+      "height": 385
+    }
+  },
+  "repair_feather": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "repair_white",
+        0
+      ],
+      "left": 16,
+      "top": 16,
+      "right": 16,
+      "bottom": 16
+    }
+  },
+  "repair_mask": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "repair_black",
+        0
+      ],
+      "source": [
+        "repair_feather",
+        0
+      ],
+      "x": 65,
+      "y": 20,
+      "operation": "add"
+    }
+  },
+  "repair_composite": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "repair_mask",
+        0
+      ]
+    }
+  },
+  "repair_mask_image": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "repair_mask",
+        0
+      ]
+    }
+  },
+  "repair_save_mask": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_mask_image",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask-mask"
+    }
+  },
+  "repair_save_input": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "RepairBench/qwen-bfs-direction-mask-input"
+    }
+  }
+}

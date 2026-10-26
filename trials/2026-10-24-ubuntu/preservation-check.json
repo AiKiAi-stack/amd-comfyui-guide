@@ -1,0 +1,75 @@
+{
+  "original_11_modified_files": [
+    {
+      "file": "docs/07-unfinished-features.md",
+      "before_sha256": "b5cf827cd332fbec258cb8e991a58894b8cdebba1240f30ce05385cb290d4991",
+      "current_sha256": "b5cf827cd332fbec258cb8e991a58894b8cdebba1240f30ce05385cb290d4991",
+      "unchanged": true
+    },
+    {
+      "file": "docs/08-repair-journal-2026-10-22.md",
+      "before_sha256": "13d80d8f2a22d4aa22564dfb3d9d7de9be3effa8a465f34079013ba79e515d96",
+      "current_sha256": "13d80d8f2a22d4aa22564dfb3d9d7de9be3effa8a465f34079013ba79e515d96",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/probe_quantized_offload.py",
+      "before_sha256": "9907551bd862589a4a763f157dabe3b6542aae96f1bff06d6bcb831e9ce1863c",
+      "current_sha256": "9907551bd862589a4a763f157dabe3b6542aae96f1bff06d6bcb831e9ce1863c",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/run_qwen_reference_repair.py",
+      "before_sha256": "4281d8377f2c7d0f7d60fbb186c8fa891bdc195b87c9735e4df82187cfdf7bca",
+      "current_sha256": "4281d8377f2c7d0f7d60fbb186c8fa891bdc195b87c9735e4df82187cfdf7bca",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/run_repair_batch.py",
+      "before_sha256": "1c5b1eaf5172e372e15196bcc00db87e28d7ece2a51c39470b28640143f025b6",
+      "current_sha256": "1c5b1eaf5172e372e15196bcc00db87e28d7ece2a51c39470b28640143f025b6",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/test_conditioned_graph.py",
+      "before_sha256": "bad3a36faa83b8b80a191e35ab11dba116137f4ca917cbc013e65983346e7462",
+      "current_sha256": "bad3a36faa83b8b80a191e35ab11dba116137f4ca917cbc013e65983346e7462",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/verify_reference_conditions.py",
+      "before_sha256": "9d004a1c5132d8448caded80337c5107591a04c72df025121a81d706d6090695",
+      "current_sha256": "9d004a1c5132d8448caded80337c5107591a04c72df025121a81d706d6090695",
+      "unchanged": true
+    },
+    {
+      "file": "trials/2026-10-19-features/cases.json",
+      "before_sha256": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a",
+      "current_sha256": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a",
+      "unchanged": true
+    },
+    {
+      "file": "trials/2026-10-19-features/feature-report.html",
+      "before_sha256": "2e75cc70ae739a9772a4c2c2a9cf7f1fb7179759ac1347c47ed3840d400088ba",
+      "current_sha256": "e585eb25d1b19253071cb81c943bacfff85fb666cd86de1e5dfca44f3b83af0d",
+      "unchanged": false
+    },
+    {
+      "file": "trials/2026-10-19-features/feature-report.md",
+      "before_sha256": "5168394f9cd40eaaa90ba8b4fcc79ec1edc5afb3d3b926c6bb86df8e51ff2452",
+      "current_sha256": "344707de6f3da879bc2860bb52d981cdf594145843a921b78132736d420af41c",
+      "unchanged": false
+    },
+    {
+      "file": "trials/2026-10-19-features/reviews.json",
+      "before_sha256": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f",
+      "current_sha256": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f",
+      "unchanged": true
+    }
+  ],
+  "original_100_article_bytes_preserved": true,
+  "markdown_original_bytes_are_prefix": true,
+  "handoff_addition": "Section 13 appended with binary append; the other amd_comfy/handoff.md copy is not an identical baseline and was not substituted",
+  "handoff_prefix_before_our_section13_sha256": "04f81a3688fe5b51127352a95468bfb60d687c3e845624a9b1e980b68baa65f3",
+  "windows_conclusions_not_rewritten": true
+}

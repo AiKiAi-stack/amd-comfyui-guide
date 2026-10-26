@@ -1,0 +1,25 @@
+{
+  "status": "failed",
+  "error": "Replay failed for qwen-caption-cpu-fp32; see retained logs/history",
+  "native_exception_observed": false,
+  "oom_observed": false,
+  "server_stopped": true,
+  "cases": [
+    {
+      "id": "qwen-caption-cpu-fp32",
+      "exit_code": 1,
+      "seconds": 698.02
+    }
+  ],
+  "raw_summary_sha256": "fc59420fad40590dee5b03f76ff30611304ae349e18413e48bc50f7dab090500",
+  "raw_log_sha256": "5237509633b1707722f7a3a8ecedaacdc58ccb5e1a5863daaf2968b5932b8586",
+  "operator_detail": {
+    "reason": "FP32 did not materially resolve8B CPU autoregressive latency: first token372.31s; second token at~582s. At664s observation only2/40 tokens. Stop impractical variant and attempt existing4B CPU caption separately.",
+    "phase_status": "two_tokens_only",
+    "full_caption": false,
+    "full_image": false,
+    "observed_elapsed_seconds": 664,
+    "model": "same qwen3vl_8b_w4a8",
+    "requested_dtype": "float32"
+  }
+}

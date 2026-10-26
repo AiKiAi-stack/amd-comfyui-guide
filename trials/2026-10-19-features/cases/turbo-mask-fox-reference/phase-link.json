@@ -1,0 +1,30 @@
+{
+  "workflow_sha256": "bd0a21a9fc795dcead15518366132e423a20f7b5c4048474624430ca622f705c",
+  "archive_sha256": "05edce488e121e796014808a558e3faf7d3695055fe0ee68380b72b8d656b94d",
+  "archive_file": "repair_conditioning/turbo-mask-fox-reference-714f8d882240.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": true,
+  "qwen_cache_device_override": "auto",
+  "encoding_api_sha256": "9b599d6a45c2b859ec2a86c62fb5c05a1a609ee31579ae7b5e85d6944c8a5b55",
+  "encoding_history_sha256": "8c01ceca6f44e17bf59b504f213d2184574f27e0d0b9479b1188ffd9f7b910a0",
+  "inputs_checked_at_reuse": [
+    {
+      "file": "featurebench/cat.png",
+      "sha256_at_reuse": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457",
+      "mtime_ns": 1792292328891044700
+    },
+    {
+      "file": "featurebench/fox.png",
+      "sha256_at_reuse": "b82b948a2182e60fc90d86aa0211b8c9ee45e9f43866410e0270bbf7aeadf304",
+      "mtime_ns": 1792391655317801400
+    }
+  ],
+  "input_check_method": "filesystem mtime predates execution; hashes recorded at reuse",
+  "sampled_latent_file": "repair_conditioning/turbo-mask-fox-reference-b40b6b44b604.safetensors",
+  "sampled_latent_sha256": "6961782cf9ebdb4f8bb08ef55cfd4409d73a063a49b0079821d69e46dbb251fd",
+  "sampling_reused": true,
+  "sampling_source_workflow_sha256": "13eb749aad8d080a4e8e1493ecdc24047e3d61cd59d6de4ecf29293ecf7b10e6",
+  "sampling_process_exited_before_decoding": true,
+  "sampling_api_sha256": "37c270bd31a0a6aa5702e1ddf13f70f2277e85d01769759f0b09dc888a50ec91",
+  "sampling_history_sha256": "8cde23fff27b07285594cc179c9dbab22d670030b0423db6a1dafce4074f78c7"
+}

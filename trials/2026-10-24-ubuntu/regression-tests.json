@@ -1,0 +1,100 @@
+[
+  {
+    "name": "test_workflow_checks",
+    "exit_code": 0,
+    "seconds": 0.2747406560001764,
+    "stdout": "",
+    "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.209s\n\nOK\n"
+  },
+  {
+    "name": "test_replay_partial",
+    "exit_code": 0,
+    "seconds": 0.6329488849996778,
+    "stdout": "",
+    "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.556s\n\nOK\n"
+  },
+  {
+    "name": "test_conditioned_graph",
+    "exit_code": 0,
+    "seconds": 0.6227296800002478,
+    "stdout": "",
+    "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.504s\n\nOK\n"
+  },
+  {
+    "name": "test_repair_conditioning",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "/path/to/barely-comfy/scripts/test_repair_conditioning.py"
+    ],
+    "exit_code": 0,
+    "seconds": 3.4067652839985385,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n......\n----------------------------------------------------------------------\nRan 6 tests in 0.052s\n\nOK\n"
+  },
+  {
+    "name": "test_split_attention_precision",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "/path/to/barely-comfy/scripts/test_split_attention_precision.py",
+      "--runtime",
+      "runtime/ubuntu"
+    ],
+    "exit_code": 0,
+    "seconds": 3.7325104199990164,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n.WARNING:root:out of memory error, emptying cache and trying again\nWARNING:root:out of memory error, increasing steps and trying again 2\nWARNING:root:out of memory error, increasing steps and trying again 4\n.\n----------------------------------------------------------------------\nRan 2 tests in 0.019s\n\nOK\n"
+  },
+  {
+    "name": "test_qwen_reference_phases",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "/path/to/barely-comfy/scripts/test_qwen_reference_phases.py",
+      "--runtime",
+      "runtime/ubuntu"
+    ],
+    "exit_code": 0,
+    "seconds": 7.249213204999251,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n...\n----------------------------------------------------------------------\nRan 3 tests in 0.010s\n\nOK\n"
+  },
+  {
+    "name": "test_chunked_logits",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "/path/to/barely-comfy/scripts/test_chunked_logits.py",
+      "--runtime",
+      "runtime/ubuntu"
+    ],
+    "exit_code": 0,
+    "seconds": 2.5739458950010885,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n.\n----------------------------------------------------------------------\nRan 1 test in 0.011s\n\nOK\n"
+  },
+  {
+    "name": "test_gguf_cpu_detach",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "/path/to/barely-comfy/scripts/test_gguf_cpu_detach.py",
+      "--runtime",
+      "runtime/ubuntu",
+      "--gguf",
+      "/media/user/GIAO/AIModels/amd_comfy/zimage-20261020/diffusion_models/z_image_turbo-Q4_K_M.gguf"
+    ],
+    "exit_code": 0,
+    "seconds": 4.295688185997278,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n./path/to/barely-comfy/scripts/test_gguf_cpu_detach.py:52: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/rockrel/rockrel/external-builds/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)\n  raw = torch.from_numpy(source.data)\n.\n----------------------------------------------------------------------\nRan 2 tests in 0.030s\n\nOK\n"
+  },
+  {
+    "name": "test_qwen_no_reference_vae",
+    "command": [
+      "runtime/ubuntu/.venv/bin/python",
+      "scripts/test_qwen_no_reference_vae.py",
+      "--runtime",
+      "runtime/ubuntu"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "\u001b[1;91mE-001h rocSHMEM\u001b[0m Could not open libnuma. Returning\t\u001b[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48\u001b[0m\n..\n----------------------------------------------------------------------\nRan 2 tests in 0.004s\n\nOK\n"
+  }
+]

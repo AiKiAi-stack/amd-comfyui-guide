@@ -1,0 +1,10 @@
+{
+  "original_workflow_sha256": "9ec73034a43142eb5809b333db7ac6ef16a4b553318272b9dc166a0a23df85e5",
+  "cached_workflow_sha256": "8b2d1418045ac6fef105c4fcb198798a74a33eaf5f2319d60f4d397173f15f3c",
+  "archive_file": "repair_conditioning/turbo-fox-profile-precomputed-refs-e07434c3035e.safetensors",
+  "archive_sha256": "e5cb88709778720b11f01a02bab0b9dd75f2d40f5d2abded69f55a0735861d72",
+  "reference_api_sha256": "9a7728eeb6f410fe463aa228db489925f7a0b2366c509a9a6e166b872f10d0f3",
+  "reference_history_sha256": "c531d416defab4daa6ef47aa15c917ac1c6bd3d2ace85fbf536f806fc1c4ad7d",
+  "reference_process_exited_before_text_encoding": true,
+  "meaning": "Installed core resize/alpha/VAE reference preparation; exact cached latents, no resident VAE during TE"
+}

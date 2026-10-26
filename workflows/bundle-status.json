@@ -1,0 +1,22 @@
+{
+  "time": 1792997253.8449247,
+  "catalog_sha256": "8c3f86e2098fbed80e6239e532d5a053306e2bbaf63d9b16c94259a6151b1f6f",
+  "installed_ui": 184,
+  "installed_scope": "verified local source installation, not installation on the reader machine",
+  "bundles": [
+    {
+      "file": "model-feature-workflows.zip",
+      "url": "https://github.com/AiKiAi-stack/barely-comfy/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip",
+      "bytes": 377667737,
+      "sha256": "334c2006ed1fe4a8c13a42282b16478f135a0bea6b754b8ea7d594499705cfe3",
+      "files": 595
+    },
+    {
+      "file": "model-feature-workflows-light.zip",
+      "url": "https://github.com/AiKiAi-stack/barely-comfy/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip",
+      "bytes": 12274708,
+      "sha256": "a29880e3d375b66e7611b24be333305320eddd2d0ff512e87816c9a4f9b6fe61",
+      "files": 551
+    }
+  ]
+}

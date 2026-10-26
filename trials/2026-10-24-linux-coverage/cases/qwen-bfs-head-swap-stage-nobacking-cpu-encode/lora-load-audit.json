@@ -1,0 +1,18 @@
+{
+  "workflow_node": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "bfs_head_v1.1_qwen_2.1.safetensors",
+      "strength_model": 1.0
+    }
+  },
+  "file": "/media/user/MODELS/AIModels/amd_comfy/comfyui-models-20261024/loras/bfs_head_v1.1_qwen_2.1.safetensors",
+  "sha256": "d1d748d5601077f3b6d05766f6823510e901970d916afa404a97e85dc92fa88e",
+  "sample_log": "runs/linux-coverage-20261024/qwen-bfs-head-swap-stage-nobacking-cpu-encode--sample/attempt-1792913120815618221/server.log",
+  "unloaded_key_warnings": [],
+  "scope": "Native loader node, declared strength and absence of unmatched-key warnings; no no-LoRA ablation or quantitative identity comparison."
+}

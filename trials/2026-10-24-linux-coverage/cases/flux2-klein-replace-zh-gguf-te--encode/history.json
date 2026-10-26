@@ -1,0 +1,193 @@
+{
+  "5addcc35-a975-4165-9cda-132b56f0e6ff": {
+    "prompt": [
+      0,
+      "5addcc35-a975-4165-9cda-132b56f0e6ff",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_051449bbec05_handbag_white.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "3": {
+          "class_type": "GetImageSize",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+            "type": "flux2"
+          }
+        },
+        "6": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "5",
+              0
+            ],
+            "text": "将图片中的白色手提包替换成一只红色陶瓷茶壶，保留原来的浅灰色背景、拍摄角度、柔和灯光和居中产品摄影构图。画面中不再出现手提包。"
+          }
+        },
+        "8": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "6",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ],
+            "latent": [
+              "9",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "8",
+              0
+            ],
+            "latent": [
+              "9",
+              0
+            ]
+          }
+        },
+        "16": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": [
+              "3",
+              0
+            ],
+            "height": [
+              "3",
+              1
+            ],
+            "batch_size": 1
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "10",
+              0
+            ],
+            "negative": [
+              "11",
+              0
+            ],
+            "latent": [
+              "16",
+              0
+            ],
+            "prefix": "linux-coverage-flux2-klein-replace-zh-gguf-te",
+            "workflow_sha256": "adf02d34be3d9fe6c61fa9361f3d0b424f6e076bc31462c12cf4693e64f7fae8"
+          }
+        }
+      },
+      {
+        "create_time": 1792860422579
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-flux2-klein-replace-zh-gguf-te-f528a236b6e2.safetensors"
+        ],
+        "archive_sha256": [
+          "3ef7c0ca496e652443d870be5f2c1d466bce45ffb0fa34d6df0355bb9f2d8db0"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "5addcc35-a975-4165-9cda-132b56f0e6ff",
+            "timestamp": 1792860422579
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "5addcc35-a975-4165-9cda-132b56f0e6ff",
+            "timestamp": 1792860422688
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "5addcc35-a975-4165-9cda-132b56f0e6ff",
+            "timestamp": 1792860442624
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

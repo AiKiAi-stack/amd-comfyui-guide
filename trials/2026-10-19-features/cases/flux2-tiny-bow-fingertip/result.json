@@ -1,0 +1,35 @@
+{
+  "id": "flux2-tiny-bow-fingertip",
+  "model": "FLUX.2 Klein 4B distilled FP8",
+  "feature": "迭代编辑／第二轮修改 · 修复重试",
+  "recipe": "single",
+  "inputs": [
+    "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+  ],
+  "refs": [
+    "flux2-klein-bench/flux2-klein-single-color-pinned.png"
+  ],
+  "depends_on": "flux2-klein-single-color-pinned",
+  "prompt": "Add one MINUSCULE red ribbon bow at the lower stitching of the LEFT handle. It is smaller than the width of the handle: two tiny loops with very SHORT ends, like a fingernail-sized decorative accent. Keep the blue handbag, leather texture, both handles, grey backdrop, camera and lighting exactly unchanged. No long ribbon tails. The red detail should be barely noticeable on the bag.",
+  "expected": "在第一轮蓝包结果上添加左侧提手红蝴蝶结，蓝色与包型保留。",
+  "claim_level": "微信正文与官方模板；自编功能验收提示词，Logo迁移沿用文章提示词",
+  "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+  "runtime_profile": "FLUX.2 pinned memory; stronger small-size prompt",
+  "gpu_text": true,
+  "memory_profile": "dynamic-nvme-pinned",
+  "repairs": [
+    "flux2-klein-iterative"
+  ],
+  "retry_reason": "蓝包与灰色摄影背景保留，蝴蝶结比首轮小，但红色包围框宽 48px，占包体宽 259px 的 18.5%，仍明显超过指甲/背带宽度要求；直接提示词尺寸控制未通过。",
+  "status": "success",
+  "prompt_id": "f8f1e32d-013d-48f8-85f9-92b89bb717f5",
+  "elapsed_seconds": 33.172,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/flux2-tiny-bow-fingertip_00001_.png",
+      "sha256": "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8",
+      "public_sha256": "5a0a332e0000be41484097a8bb47062397f3a97ebfd3e4d81e76c0fab44faf03"
+    }
+  ],
+  "review": "partial"
+}

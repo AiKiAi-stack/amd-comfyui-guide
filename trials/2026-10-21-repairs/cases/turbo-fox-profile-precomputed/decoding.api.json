@@ -1,0 +1,151 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "64",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "7": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "56",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-fox-profile-precomputed"
+    }
+  },
+  "30": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "featurebench/cat.png"
+    }
+  },
+  "31": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "30",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 512,
+      "height": 512,
+      "crop": "disabled"
+    }
+  },
+  "50": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "51": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 1,
+      "width": 230,
+      "height": 300
+    }
+  },
+  "52": {
+    "class_type": "FeatherMask",
+    "inputs": {
+      "mask": [
+        "51",
+        0
+      ],
+      "left": 12,
+      "top": 12,
+      "right": 12,
+      "bottom": 12
+    }
+  },
+  "53": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "50",
+        0
+      ],
+      "source": [
+        "52",
+        0
+      ],
+      "x": 250,
+      "y": 200,
+      "operation": "add"
+    }
+  },
+  "56": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "31",
+        0
+      ],
+      "source": [
+        "6",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "64": {
+    "class_type": "LoadRepairLatent",
+    "inputs": {
+      "file": "repair_conditioning/turbo-fox-profile-precomputed-b6a14206ede9.safetensors",
+      "expected_sha256": "c8730b67d2c24748fbe6ccdd445300b568050a14c4c74f40a2e7d85d9d5a4028"
+    }
+  },
+  "repair_mask_image": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "53",
+        0
+      ]
+    }
+  },
+  "repair_save_mask": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "repair_mask_image",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-fox-profile-precomputed-mask"
+    }
+  },
+  "repair_save_input": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "31",
+        0
+      ],
+      "filename_prefix": "RepairBench/turbo-fox-profile-precomputed-input"
+    }
+  }
+}

@@ -44,7 +44,6 @@ Set-Location D:/AI/barely-comfy
 - Kroma：`run_image_model.py kroma`，Q2 GGUF、512×512、4 步；已在本机成功生成狐狸图，总用时约 4 分 45 秒（含加载），采样约 17.8 秒。输出 `ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png`。建议在新启动的 ComfyUI 服务中单独运行。
 - MOSS：启用下方兼容开关后，`run_image_model.py moss` 的 SFT INT8、512×512、50 步基础测试已成功（缓存后约 3 分 18 秒）；`run_image_model.py moss8` 的 LoRA 强度 1、8 步、CFG 1 候选也成功（含 LoRA 初始化约 3 分 8 秒）。当前作者未明示完整 sampler/scheduler/shift 配方；本轮用 Euler/sgm_uniform、AuraFlow shift 5，核心内置 MOSS 的 timestep multiplier 必须保持为 1。正确基础图为 `Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png`；`00001_` 是已作废的错误时间尺度噪声图。
 - Turbo-Un：`run_qwen_turbo.py uncensored` 是实验组合，已经触发过 GGUF 编码器卸载的原生崩溃。普通 Turbo 成功不能算作这个组合成功。
-- MiniMax H3：基础文件合计约 42.47 GB，本轮因本机内存约束没有下载运行。
 
 MOSS 的原生 INT8 算子在这块 gfx1032 显卡上报过 `HIPBLAS_STATUS_INVALID_VALUE`。本地兼容开关位于 `ComfyUI/custom_nodes/gfx1032_quant_fallback/__init__.py`，默认不启用。需要 MOSS 回退配置时，在新 PowerShell 中先设置环境变量，再按第 1 步启动服务：
 

@@ -1,0 +1,1328 @@
+{
+  "serialized": {
+    "id": "fcd037d3-9539-4d73-846b-cc4b1694b69b",
+    "revision": 0,
+    "last_node_id": 81,
+    "last_link_id": 11,
+    "nodes": [
+      {
+        "id": 1,
+        "type": "UnetLoaderGGUF",
+        "pos": [
+          100,
+          130
+        ],
+        "size": [
+          270,
+          58
+        ],
+        "flags": {},
+        "order": 0,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "unet_name",
+            "name": "unet_name",
+            "type": "COMBO",
+            "widget": {
+              "name": "unet_name"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "模型",
+            "name": "MODEL",
+            "type": "MODEL",
+            "links": [
+              10
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "UnetLoaderGGUF"
+        },
+        "widgets_values": [
+          "qwen-image-2.1-Q4_K_M.gguf"
+        ],
+        "widgets_values_named": {
+          "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+        }
+      },
+      {
+        "id": 2,
+        "type": "CLIPLoaderGGUF",
+        "pos": [
+          100,
+          318
+        ],
+        "size": [
+          270,
+          82
+        ],
+        "flags": {},
+        "order": 1,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "clip_name",
+            "name": "clip_name",
+            "type": "COMBO",
+            "widget": {
+              "name": "clip_name"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "type",
+            "name": "type",
+            "type": "COMBO",
+            "widget": {
+              "name": "type"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "CLIP",
+            "name": "CLIP",
+            "type": "CLIP",
+            "links": [
+              11
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "CLIPLoaderGGUF"
+        },
+        "widgets_values": [
+          "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+          "qwen_image"
+        ],
+        "widgets_values_named": {
+          "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+          "type": "qwen_image"
+        }
+      },
+      {
+        "id": 3,
+        "type": "LoadVaeAfterSampling",
+        "pos": [
+          1839.1421875,
+          130
+        ],
+        "size": [
+          270,
+          58
+        ],
+        "flags": {},
+        "order": 6,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "after_sampling",
+            "name": "after_sampling",
+            "type": "LATENT",
+            "link": 1
+          },
+          {
+            "localized_name": "vae_name",
+            "name": "vae_name",
+            "type": "COMBO",
+            "widget": {
+              "name": "vae_name"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "VAE",
+            "name": "VAE",
+            "type": "VAE",
+            "links": [
+              8
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "LoadVaeAfterSampling"
+        },
+        "widgets_values": [
+          "qwen_image_2.1_vae_bf16.safetensors"
+        ],
+        "widgets_values_named": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      {
+        "id": 4,
+        "type": "TextEncodeQwenImage21",
+        "pos": [
+          969.1421875,
+          130
+        ],
+        "size": [
+          400,
+          206
+        ],
+        "flags": {},
+        "order": 4,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "clip",
+            "name": "clip",
+            "type": "CLIP",
+            "link": 2
+          },
+          {
+            "localized_name": "image_1",
+            "name": "images.image_1",
+            "shape": 7,
+            "type": "IMAGE",
+            "link": null
+          },
+          {
+            "localized_name": "vae",
+            "name": "vae",
+            "shape": 7,
+            "type": "VAE",
+            "link": null
+          },
+          {
+            "localized_name": "prompt",
+            "name": "prompt",
+            "type": "STRING",
+            "widget": {
+              "name": "prompt"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "negative_prompt",
+            "name": "negative_prompt",
+            "type": "STRING",
+            "widget": {
+              "name": "negative_prompt"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "resolution",
+            "name": "resolution",
+            "type": "INT",
+            "widget": {
+              "name": "resolution"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "positive",
+            "name": "positive",
+            "type": "CONDITIONING",
+            "links": [
+              4
+            ]
+          },
+          {
+            "localized_name": "negative",
+            "name": "negative",
+            "type": "CONDITIONING",
+            "links": [
+              5
+            ]
+          },
+          {
+            "localized_name": "latent",
+            "name": "latent",
+            "type": "LATENT",
+            "links": [
+              6
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "TextEncodeQwenImage21"
+        },
+        "widgets_values": [
+          "A gothic horror oil painting. A skeletal ghost in a torn black cloak stands in the doorway of an abandoned cathedral at midnight, holding a rusty ceremonial sword pointed toward the floor. Empty eye sockets glow faint blue, thick fog rolls over broken stone tiles, a red moon is visible through a shattered stained-glass window. Ominous atmosphere, dramatic chiaroscuro, no blood, no injuries, no text.",
+          "",
+          512
+        ],
+        "widgets_values_named": {
+          "prompt": "A gothic horror oil painting. A skeletal ghost in a torn black cloak stands in the doorway of an abandoned cathedral at midnight, holding a rusty ceremonial sword pointed toward the floor. Empty eye sockets glow faint blue, thick fog rolls over broken stone tiles, a red moon is visible through a shattered stained-glass window. Ominous atmosphere, dramatic chiaroscuro, no blood, no injuries, no text.",
+          "negative_prompt": "",
+          "resolution": 512
+        }
+      },
+      {
+        "id": 5,
+        "type": "KSampler",
+        "pos": [
+          1469.1421875,
+          130
+        ],
+        "size": [
+          270,
+          262
+        ],
+        "flags": {},
+        "order": 5,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "模型",
+            "name": "model",
+            "type": "MODEL",
+            "link": 3
+          },
+          {
+            "localized_name": "正面条件",
+            "name": "positive",
+            "type": "CONDITIONING",
+            "link": 4
+          },
+          {
+            "localized_name": "负面条件",
+            "name": "negative",
+            "type": "CONDITIONING",
+            "link": 5
+          },
+          {
+            "localized_name": "Latent图像",
+            "name": "latent_image",
+            "type": "LATENT",
+            "link": 6
+          },
+          {
+            "localized_name": "种子",
+            "name": "seed",
+            "type": "INT",
+            "widget": {
+              "name": "seed"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "步数",
+            "name": "steps",
+            "type": "INT",
+            "widget": {
+              "name": "steps"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "cfg",
+            "name": "cfg",
+            "type": "FLOAT",
+            "widget": {
+              "name": "cfg"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "采样器名称",
+            "name": "sampler_name",
+            "type": "COMBO",
+            "widget": {
+              "name": "sampler_name"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "调度器",
+            "name": "scheduler",
+            "type": "COMBO",
+            "widget": {
+              "name": "scheduler"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "降噪",
+            "name": "denoise",
+            "type": "FLOAT",
+            "widget": {
+              "name": "denoise"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "Latent",
+            "name": "LATENT",
+            "type": "LATENT",
+            "links": [
+              1,
+              7
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "KSampler"
+        },
+        "widgets_values": [
+          210665042,
+          "randomize",
+          15,
+          1,
+          "euler",
+          "simple",
+          1
+        ],
+        "widgets_values_named": {
+          "seed": 210665042,
+          "control_after_generate": "randomize",
+          "steps": 15,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1
+        }
+      },
+      {
+        "id": 6,
+        "type": "VAEDecode",
+        "pos": [
+          2209.1421875,
+          130
+        ],
+        "size": [
+          140,
+          46
+        ],
+        "flags": {},
+        "order": 7,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "Latent",
+            "name": "samples",
+            "type": "LATENT",
+            "link": 7
+          },
+          {
+            "localized_name": "vae",
+            "name": "vae",
+            "type": "VAE",
+            "link": 8
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "图像",
+            "name": "IMAGE",
+            "type": "IMAGE",
+            "links": [
+              9
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "VAEDecode"
+        }
+      },
+      {
+        "id": 7,
+        "type": "SaveImage",
+        "pos": [
+          2449.1421875,
+          130
+        ],
+        "size": [
+          270,
+          58
+        ],
+        "flags": {},
+        "order": 8,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "图片",
+            "name": "images",
+            "type": "IMAGE",
+            "link": 9
+          },
+          {
+            "localized_name": "文件名前缀",
+            "name": "filename_prefix",
+            "type": "STRING",
+            "widget": {
+              "name": "filename_prefix"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "images",
+            "name": "images",
+            "type": "IMAGE",
+            "links": null
+          }
+        ],
+        "properties": {},
+        "widgets_values": [
+          "UbuntuQwen/reload-01-blue"
+        ],
+        "widgets_values_named": {
+          "filename_prefix": "UbuntuQwen/reload-01-blue"
+        }
+      },
+      {
+        "id": 81,
+        "type": "QwenImage21Cache",
+        "pos": [
+          470,
+          130
+        ],
+        "size": [
+          270,
+          82
+        ],
+        "flags": {},
+        "order": 2,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "model",
+            "name": "model",
+            "type": "MODEL",
+            "link": 10
+          },
+          {
+            "localized_name": "device",
+            "name": "device",
+            "type": "COMBO",
+            "widget": {
+              "name": "device"
+            },
+            "link": null
+          },
+          {
+            "localized_name": "dtype",
+            "name": "dtype",
+            "type": "COMBO",
+            "widget": {
+              "name": "dtype"
+            },
+            "link": null
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "模型",
+            "name": "MODEL",
+            "type": "MODEL",
+            "links": [
+              3
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "QwenImage21Cache"
+        },
+        "widgets_values": [
+          "off",
+          "default"
+        ],
+        "widgets_values_named": {
+          "device": "off",
+          "dtype": "default"
+        }
+      },
+      {
+        "id": "repair_clip_cpu_backing",
+        "type": "RetainGgufClipCpuBacking",
+        "pos": [
+          470,
+          342
+        ],
+        "size": [
+          399.1421875,
+          26
+        ],
+        "flags": {},
+        "order": 3,
+        "mode": 0,
+        "inputs": [
+          {
+            "localized_name": "clip",
+            "name": "clip",
+            "type": "CLIP",
+            "link": 11
+          }
+        ],
+        "outputs": [
+          {
+            "localized_name": "CLIP",
+            "name": "CLIP",
+            "type": "CLIP",
+            "links": [
+              2
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "RetainGgufClipCpuBacking"
+        }
+      }
+    ],
+    "links": [
+      [
+        1,
+        5,
+        0,
+        3,
+        0,
+        "LATENT"
+      ],
+      [
+        2,
+        "repair_clip_cpu_backing",
+        0,
+        4,
+        0,
+        "CLIP"
+      ],
+      [
+        3,
+        81,
+        0,
+        5,
+        0,
+        "MODEL"
+      ],
+      [
+        4,
+        4,
+        0,
+        5,
+        1,
+        "CONDITIONING"
+      ],
+      [
+        5,
+        4,
+        1,
+        5,
+        2,
+        "CONDITIONING"
+      ],
+      [
+        6,
+        4,
+        2,
+        5,
+        3,
+        "LATENT"
+      ],
+      [
+        7,
+        5,
+        0,
+        6,
+        0,
+        "LATENT"
+      ],
+      [
+        8,
+        3,
+        0,
+        6,
+        1,
+        "VAE"
+      ],
+      [
+        9,
+        6,
+        0,
+        7,
+        0,
+        "IMAGE"
+      ],
+      [
+        10,
+        1,
+        0,
+        81,
+        0,
+        "MODEL"
+      ],
+      [
+        11,
+        2,
+        0,
+        "repair_clip_cpu_backing",
+        0,
+        "CLIP"
+      ]
+    ],
+    "groups": [],
+    "config": {},
+    "extra": {
+      "ds": {
+        "scale": 0.9,
+        "offset": [
+          416,
+          110
+        ]
+      }
+    },
+    "version": 0.4
+  },
+  "prompt": {
+    "workflow": {
+      "id": "fcd037d3-9539-4d73-846b-cc4b1694b69b",
+      "revision": 0,
+      "last_node_id": 81,
+      "last_link_id": 11,
+      "nodes": [
+        {
+          "id": 1,
+          "type": "UnetLoaderGGUF",
+          "pos": [
+            100,
+            130
+          ],
+          "size": [
+            270,
+            58
+          ],
+          "flags": {},
+          "order": 0,
+          "mode": 0,
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "MODEL",
+              "type": "MODEL",
+              "links": [
+                10
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "UnetLoaderGGUF"
+          },
+          "widgets_values": [
+            "qwen-image-2.1-Q4_K_M.gguf"
+          ],
+          "widgets_values_named": {
+            "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+          }
+        },
+        {
+          "id": 2,
+          "type": "CLIPLoaderGGUF",
+          "pos": [
+            100,
+            318
+          ],
+          "size": [
+            270,
+            82
+          ],
+          "flags": {},
+          "order": 1,
+          "mode": 0,
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "CLIP",
+              "type": "CLIP",
+              "links": [
+                11
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "CLIPLoaderGGUF"
+          },
+          "widgets_values": [
+            "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+            "qwen_image"
+          ],
+          "widgets_values_named": {
+            "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+            "type": "qwen_image"
+          }
+        },
+        {
+          "id": 3,
+          "type": "LoadVaeAfterSampling",
+          "pos": [
+            1839.1421875,
+            130
+          ],
+          "size": [
+            270,
+            58
+          ],
+          "flags": {},
+          "order": 6,
+          "mode": 0,
+          "inputs": [
+            {
+              "name": "after_sampling",
+              "type": "LATENT",
+              "link": 1
+            }
+          ],
+          "outputs": [
+            {
+              "name": "VAE",
+              "type": "VAE",
+              "links": [
+                8
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "LoadVaeAfterSampling"
+          },
+          "widgets_values": [
+            "qwen_image_2.1_vae_bf16.safetensors"
+          ],
+          "widgets_values_named": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        {
+          "id": 4,
+          "type": "TextEncodeQwenImage21",
+          "pos": [
+            969.1421875,
+            130
+          ],
+          "size": [
+            400,
+            206
+          ],
+          "flags": {},
+          "order": 4,
+          "mode": 0,
+          "inputs": [
+            {
+              "name": "clip",
+              "type": "CLIP",
+              "link": 2
+            },
+            {
+              "name": "images.image_1",
+              "shape": 7,
+              "type": "IMAGE",
+              "link": null
+            },
+            {
+              "name": "vae",
+              "shape": 7,
+              "type": "VAE",
+              "link": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "positive",
+              "type": "CONDITIONING",
+              "links": [
+                4
+              ]
+            },
+            {
+              "name": "negative",
+              "type": "CONDITIONING",
+              "links": [
+                5
+              ]
+            },
+            {
+              "name": "latent",
+              "type": "LATENT",
+              "links": [
+                6
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "TextEncodeQwenImage21"
+          },
+          "widgets_values": [
+            "A gothic horror oil painting. A skeletal ghost in a torn black cloak stands in the doorway of an abandoned cathedral at midnight, holding a rusty ceremonial sword pointed toward the floor. Empty eye sockets glow faint blue, thick fog rolls over broken stone tiles, a red moon is visible through a shattered stained-glass window. Ominous atmosphere, dramatic chiaroscuro, no blood, no injuries, no text.",
+            "",
+            512
+          ],
+          "widgets_values_named": {
+            "prompt": "A gothic horror oil painting. A skeletal ghost in a torn black cloak stands in the doorway of an abandoned cathedral at midnight, holding a rusty ceremonial sword pointed toward the floor. Empty eye sockets glow faint blue, thick fog rolls over broken stone tiles, a red moon is visible through a shattered stained-glass window. Ominous atmosphere, dramatic chiaroscuro, no blood, no injuries, no text.",
+            "negative_prompt": "",
+            "resolution": 512
+          }
+        },
+        {
+          "id": 5,
+          "type": "KSampler",
+          "pos": [
+            1469.1421875,
+            130
+          ],
+          "size": [
+            270,
+            262
+          ],
+          "flags": {},
+          "order": 5,
+          "mode": 0,
+          "inputs": [
+            {
+              "name": "model",
+              "type": "MODEL",
+              "link": 3
+            },
+            {
+              "name": "positive",
+              "type": "CONDITIONING",
+              "link": 4
+            },
+            {
+              "name": "negative",
+              "type": "CONDITIONING",
+              "link": 5
+            },
+            {
+              "name": "latent_image",
+              "type": "LATENT",
+              "link": 6
+            }
+          ],
+          "outputs": [
+            {
+              "name": "LATENT",
+              "type": "LATENT",
+              "links": [
+                1,
+                7
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "KSampler"
+          },
+          "widgets_values": [
+            210665042,
+            "randomize",
+            15,
+            1,
+            "euler",
+            "simple",
+            1
+          ],
+          "widgets_values_named": {
+            "seed": 210665042,
+            "control_after_generate": "randomize",
+            "steps": 15,
+            "cfg": 1,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1
+          }
+        },
+        {
+          "id": 6,
+          "type": "VAEDecode",
+          "pos": [
+            2209.1421875,
+            130
+          ],
+          "size": [
+            140,
+            46
+          ],
+          "flags": {},
+          "order": 7,
+          "mode": 0,
+          "inputs": [
+            {
+              "name": "samples",
+              "type": "LATENT",
+              "link": 7
+            },
+            {
+              "name": "vae",
+              "type": "VAE",
+              "link": 8
+            }
+          ],
+          "outputs": [
+            {
+              "name": "IMAGE",
+              "type": "IMAGE",
+              "links": [
+                9
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "VAEDecode"
+          }
+        },
+        {
+          "id": 7,
+          "type": "SaveImage",
+          "pos": [
+            2449.1421875,
+            130
+          ],
+          "size": [
+            270,
+            58
+          ],
+          "flags": {},
+          "order": 8,
+          "mode": 0,
+          "inputs": [
+            {
+              "name": "images",
+              "type": "IMAGE",
+              "link": 9
+            }
+          ],
+          "outputs": [
+            {
+              "name": "images",
+              "type": "IMAGE",
+              "links": null
+            }
+          ],
+          "properties": {},
+          "widgets_values": [
+            "UbuntuQwen/reload-01-blue"
+          ],
+          "widgets_values_named": {
+            "filename_prefix": "UbuntuQwen/reload-01-blue"
+          }
+        },
+        {
+          "id": 81,
+          "type": "QwenImage21Cache",
+          "pos": [
+            470,
+            130
+          ],
+          "size": [
+            270,
+            82
+          ],
+          "flags": {},
+          "order": 2,
+          "mode": 0,
+          "inputs": [
+            {
+              "name": "model",
+              "type": "MODEL",
+              "link": 10
+            }
+          ],
+          "outputs": [
+            {
+              "name": "MODEL",
+              "type": "MODEL",
+              "links": [
+                3
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "QwenImage21Cache"
+          },
+          "widgets_values": [
+            "off",
+            "default"
+          ],
+          "widgets_values_named": {
+            "device": "off",
+            "dtype": "default"
+          }
+        },
+        {
+          "id": "repair_clip_cpu_backing",
+          "type": "RetainGgufClipCpuBacking",
+          "pos": [
+            470,
+            342
+          ],
+          "size": [
+            399.1421875,
+            26
+          ],
+          "flags": {},
+          "order": 3,
+          "mode": 0,
+          "inputs": [
+            {
+              "name": "clip",
+              "type": "CLIP",
+              "link": 11
+            }
+          ],
+          "outputs": [
+            {
+              "name": "CLIP",
+              "type": "CLIP",
+              "links": [
+                2
+              ]
+            }
+          ],
+          "properties": {
+            "Node name for S&R": "RetainGgufClipCpuBacking"
+          }
+        }
+      ],
+      "links": [
+        [
+          1,
+          5,
+          0,
+          3,
+          0,
+          "LATENT"
+        ],
+        [
+          2,
+          "repair_clip_cpu_backing",
+          0,
+          4,
+          0,
+          "CLIP"
+        ],
+        [
+          3,
+          81,
+          0,
+          5,
+          0,
+          "MODEL"
+        ],
+        [
+          4,
+          4,
+          0,
+          5,
+          1,
+          "CONDITIONING"
+        ],
+        [
+          5,
+          4,
+          1,
+          5,
+          2,
+          "CONDITIONING"
+        ],
+        [
+          6,
+          4,
+          2,
+          5,
+          3,
+          "LATENT"
+        ],
+        [
+          7,
+          5,
+          0,
+          6,
+          0,
+          "LATENT"
+        ],
+        [
+          8,
+          3,
+          0,
+          6,
+          1,
+          "VAE"
+        ],
+        [
+          9,
+          6,
+          0,
+          7,
+          0,
+          "IMAGE"
+        ],
+        [
+          10,
+          1,
+          0,
+          81,
+          0,
+          "MODEL"
+        ],
+        [
+          11,
+          2,
+          0,
+          "repair_clip_cpu_backing",
+          0,
+          "CLIP"
+        ]
+      ],
+      "groups": [],
+      "config": {},
+      "extra": {
+        "ds": {
+          "scale": 0.9,
+          "offset": [
+            416,
+            110
+          ]
+        },
+        "frontendVersion": "1.55.17"
+      },
+      "version": 0.4
+    },
+    "output": {
+      "1": {
+        "inputs": {
+          "unet_name": "qwen-image-2.1-Q4_K_M.gguf"
+        },
+        "class_type": "UnetLoaderGGUF",
+        "_meta": {
+          "title": "Unet Loader (GGUF)"
+        }
+      },
+      "2": {
+        "inputs": {
+          "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+          "type": "qwen_image"
+        },
+        "class_type": "CLIPLoaderGGUF",
+        "_meta": {
+          "title": "CLIPLoader (GGUF)"
+        }
+      },
+      "3": {
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors",
+          "after_sampling": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "LoadVaeAfterSampling",
+        "_meta": {
+          "title": "Load VAE after sampling"
+        }
+      },
+      "4": {
+        "inputs": {
+          "prompt": "A gothic horror oil painting. A skeletal ghost in a torn black cloak stands in the doorway of an abandoned cathedral at midnight, holding a rusty ceremonial sword pointed toward the floor. Empty eye sockets glow faint blue, thick fog rolls over broken stone tiles, a red moon is visible through a shattered stained-glass window. Ominous atmosphere, dramatic chiaroscuro, no blood, no injuries, no text.",
+          "negative_prompt": "",
+          "resolution": 512,
+          "clip": [
+            "repair_clip_cpu_backing",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImage21",
+        "_meta": {
+          "title": "文本编码 Qwen Image 2.1"
+        }
+      },
+      "5": {
+        "inputs": {
+          "seed": 210665042,
+          "steps": 15,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "81",
+            0
+          ],
+          "positive": [
+            "4",
+            0
+          ],
+          "negative": [
+            "4",
+            1
+          ],
+          "latent_image": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      },
+      "6": {
+        "inputs": {
+          "samples": [
+            "5",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "7": {
+        "inputs": {
+          "filename_prefix": "UbuntuQwen/reload-01-blue",
+          "images": [
+            "6",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      },
+      "81": {
+        "inputs": {
+          "device": "off",
+          "dtype": "default",
+          "model": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "QwenImage21Cache",
+        "_meta": {
+          "title": "Qwen Image 2.1 缓存"
+        }
+      },
+      "repair_clip_cpu_backing": {
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ]
+        },
+        "class_type": "RetainGgufClipCpuBacking",
+        "_meta": {
+          "title": "Retain original GGUF CLIP CPU storage (experimental)"
+        }
+      }
+    }
+  },
+  "nodeCount": 9
+}

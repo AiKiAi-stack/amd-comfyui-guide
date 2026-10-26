@@ -1,0 +1,62 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 21.125,
+  "images": [
+    {
+      "file": "repair_save_input-0-turbo-mask-fox-reference-input_00001_.png",
+      "original_sha256": "88b40d2206a365065cb91b1315f4227c24c19d26a1964240835da5bb9e727664",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-turbo-mask-fox-reference-mask_00001_.png",
+      "original_sha256": "776ce2678a229df460fc83c9eab5e27a90767c55a1e6914840e43313ae16b471",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "7-0-turbo-mask-fox-reference_00001_.png",
+      "original_sha256": "0f49eabff0e12e717a466a2d3c44ad5fa9017775b8c7e71b0a66b9c9ee36dbc0",
+      "public_sha256": "c88048a12641ccc1e699f29a7842fcca66742bfcacd76998d8bc536c5cee37aa",
+      "pixels_unchanged": true
+    }
+  ],
+  "label": "turbo-mask-fox-reference",
+  "feature": "turbo-un-inpaint",
+  "verdict": "partial",
+  "review": "修正本次新增附件的两个悬空节点引用，复用原成功编码/采样归档后完整解码。主体有黑耳、蓬松白尖尾，但背向圆头和身体仍偏猫、长吻不可见，不能确认完整狐狸替换，部分达到。",
+  "mask_measurement": {
+    "outside_pixels": 193144,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 69000,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support": {
+      "outside_pixels": 193144,
+      "outside_changed_pixels": 0,
+      "outside_max_channel_difference": 0,
+      "basis": "Boolean support reconstructed from actual SolidMask/FeatherMask/add graph"
+    }
+  },
+  "prompt_id": "115f8eb5-20cb-4d0a-bf3d-f6c6891cf669",
+  "raw_history_sha256": "fd5585fdcd509d38dc58fc4dd65b8e3afa3364b6739b7be27b050f4394a18917",
+  "decoding_elapsed_seconds": 21.125,
+  "sampling_result": {
+    "status": "success",
+    "elapsed_seconds": 48.047,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "sampling_history_sha256": "8cde23fff27b07285594cc179c9dbab22d670030b0423db6a1dafce4074f78c7",
+  "workflow_sha256": "4268dcea63144f1aede02beea185b2f4e6fdf7b4a495896e35a2a410e4801dd3",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 871.516,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "8c01ceca6f44e17bf59b504f213d2184574f27e0d0b9479b1188ffd9f7b910a0"
+}

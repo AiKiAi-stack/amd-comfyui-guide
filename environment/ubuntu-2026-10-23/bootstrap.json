@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-23",
+  "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "python_bootstrap": "3.12.14 (Codex bundled runtime)",
+  "source_revisions": {
+    "ComfyUI": {
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "commit": "ce1e922d8623bb507180e32a0c01a7d0e29edef7",
+      "dirty": false
+    },
+    "ComfyUI-GGUF": {
+      "url": "https://github.com/city96/ComfyUI-GGUF",
+      "commit": "373048b8403a7820620065210a691263d4da0a61",
+      "dirty": false
+    }
+  },
+  "source_method": "git archive of pinned commits from local Windows checkout; uncommitted source patches excluded",
+  "lab_head": "a6f531db38b0d948233f44a6ea24d9d32e72983a",
+  "previous_changes_sha256": {
+    "docs/07-unfinished-features.md": "b5cf827cd332fbec258cb8e991a58894b8cdebba1240f30ce05385cb290d4991",
+    "docs/08-repair-journal-2026-10-22.md": "13d80d8f2a22d4aa22564dfb3d9d7de9be3effa8a465f34079013ba79e515d96",
+    "scripts/probe_quantized_offload.py": "9907551bd862589a4a763f157dabe3b6542aae96f1bff06d6bcb831e9ce1863c",
+    "scripts/run_qwen_reference_repair.py": "4281d8377f2c7d0f7d60fbb186c8fa891bdc195b87c9735e4df82187cfdf7bca",
+    "scripts/run_repair_batch.py": "1c5b1eaf5172e372e15196bcc00db87e28d7ece2a51c39470b28640143f025b6",
+    "scripts/test_conditioned_graph.py": "bad3a36faa83b8b80a191e35ab11dba116137f4ca917cbc013e65983346e7462",
+    "scripts/verify_reference_conditions.py": "9d004a1c5132d8448caded80337c5107591a04c72df025121a81d706d6090695",
+    "trials/2026-10-19-features/cases.json": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a",
+    "trials/2026-10-19-features/feature-report.html": "2e75cc70ae739a9772a4c2c2a9cf7f1fb7179759ac1347c47ed3840d400088ba",
+    "trials/2026-10-19-features/feature-report.md": "5168394f9cd40eaaa90ba8b4fcc79ec1edc5afb3d3b926c6bb86df8e51ff2452",
+    "trials/2026-10-19-features/reviews.json": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f"
+  },
+  "gpu_access": "Temporary per-user ACL granted; persistent group membership unchanged",
+  "models": "Existing amd_comfy/ComfyUI/models, configured as external search paths; not copied or downloaded",
+  "swap_bytes": 0,
+  "bootstrap_python_executable": "/home/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "bootstrap_git_executable": "/home/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/git"
+}

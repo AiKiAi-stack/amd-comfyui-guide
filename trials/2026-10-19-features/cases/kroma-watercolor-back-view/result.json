@@ -1,0 +1,33 @@
+{
+  "id": "kroma-watercolor-back-view",
+  "model": "kroma",
+  "feature": "图生图／洗图 · 修复重试",
+  "recipe": "img2img",
+  "claim_level": "公众号索引标题",
+  "inputs": [
+    "cat"
+  ],
+  "prompt": "Watercolor painting on visibly textured paper of the SAME ginger cat seen strictly FROM BEHIND, facing away from the viewer toward the warm shop window. Show the back of its head and both ear backs only, NO visible face, NO visible eyes, NO visible nose. Preserve its seated back-facing pose and original composition, the rainy NIGHT, deep shadows, red neon reflections on wet street, and warm window on the right. Transparent watercolor washes, pigment blooms and visible brush strokes. No new objects, no daylight.",
+  "expected": "雨街猫咪构图保留，转成水彩风格；不是语义参考编辑。",
+  "repairs": [
+    "kroma-img2img"
+  ],
+  "runtime_profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
+  "retry_reason": "明确背面提示后，水彩纸面、松散笔触、深色雨夜与暖红反射清楚；猫严格背向，没有眼鼻侧脸，原窗边构图保留。本固定输入配方目视通过。",
+  "status": "success",
+  "prompt_id": "47a59396-7f21-4a5f-b536-baea9923b6f1",
+  "elapsed_seconds": 51.39,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/kroma-watercolor-back-view_00001_.png",
+      "sha256": "7e1c094f6f25c88a0c8696a533c63d64ac84b69d506334b2df2d87b764ad6e46",
+      "public_sha256": "fad0708b7f3088e454af10deb55c3e96ff131b111b605189530479e27dc0f49e"
+    }
+  ],
+  "review": "pass",
+  "decoding_elapsed_seconds": 6.141,
+  "encoding_elapsed_seconds": 12.046,
+  "sampling_elapsed_seconds": 33.203,
+  "timing_scope": "Sum of encoding, sampling and decoding submission-to-history times; excludes cold starts",
+  "mask_attachments": false
+}

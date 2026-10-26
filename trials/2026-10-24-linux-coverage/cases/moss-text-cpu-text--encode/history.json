@@ -1,0 +1,117 @@
+{
+  "fd5b05bb-bba2-4915-9cf7-fde9b51f749c": {
+    "prompt": [
+      0,
+      "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+      {
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+            "type": "moss_image",
+            "device": "cpu"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "A minimalist poster on plain cream paper. The single word HELLO is printed in huge bold clean black capital letters across the upper half. A single small orange fruit below the word. Exact text: HELLO. No other text.",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "text": "blurry, distorted, watermark",
+            "clip": [
+              "2",
+              0
+            ]
+          }
+        },
+        "6": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "latent": [
+              "6",
+              0
+            ],
+            "prefix": "linux-coverage-moss-text-cpu-text",
+            "workflow_sha256": "9bf670dfc307a0a3be937d94f9cc5f998815761ecc01a4f1a42536a71a27ff61"
+          }
+        }
+      },
+      {
+        "create_time": 1792891927387
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-moss-text-cpu-text-3366ecdb74d8.safetensors"
+        ],
+        "archive_sha256": [
+          "87928c6fe382e185bfcad2fc3d4e34b7367a30334ec572d75dede2c42312f315"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+            "timestamp": 1792891927387
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+            "timestamp": 1792891927388
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "fd5b05bb-bba2-4915-9cf7-fde9b51f749c",
+            "timestamp": 1792892075311
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

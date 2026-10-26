@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "elapsed_seconds": 96.25,
+  "images": [
+    {
+      "file": "repair_save_input-0-qwen-face-only-mask-input_00001_.png",
+      "original_sha256": "2ff14ee878f18ec36b87bc23e944533971d9d4ef592ff358d54c29ef0f9f9150",
+      "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "repair_save_mask-0-qwen-face-only-mask-mask_00001_.png",
+      "original_sha256": "86d81ccbef6a3c48be8393f4715365108ddeb2b3ec996b86cc003bb68a82d055",
+      "public_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "case03_7-0-qwen-face-only-mask_00001_.png",
+      "original_sha256": "f60ae7b01b4e61b47f45477185cb44ae17ac88f4878af1a00228c4fcc6b618af",
+      "public_sha256": "80888e1dc51d908838951b8262014cfa020495a6e234185da50c0ba6f9a31b71",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "qwen-face-only",
+  "verdict": "partial",
+  "inputs": [
+    "featurebench/kroma-portrait-b.png",
+    "featurebench/kroma-portrait-a.png"
+  ],
+  "review": "单独进程完成。黑发、左向三分之四侧脸、蓝大衣和红围巾保留；面部有浅雀斑与绿眼。与参考 A 对照，眼形、鼻形和雀斑分布仍有差异，不能认定精确身份迁移，仍部分达到。",
+  "prompt_id": "4a90f542-0e55-4d9d-9e3d-b8eebf73ee25",
+  "raw_history_sha256": "12452cf3f6ec9005d76cd40b33570a715217a3c29d829fe581a5785ce4b5ec77",
+  "workflow_sha256": "0c8cb91af24737d584f80e57aee11e6bd4651a847d85c5cf04bd08c5b5a73c81",
+  "encoding_result": {
+    "status": "success",
+    "elapsed_seconds": 15.015,
+    "images": [],
+    "visual_verdict": "pending manual inspection"
+  },
+  "encoding_history_sha256": "e59c2a2e3d724ff4f5be1d4c118d87b14050d532ad1145be4903974499a7f291"
+}

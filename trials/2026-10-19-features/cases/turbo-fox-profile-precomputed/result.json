@@ -1,0 +1,51 @@
+{
+  "id": "turbo-fox-profile-precomputed",
+  "model": "turbo-un",
+  "feature": "遮罩局部重绘 · 修复重试",
+  "recipe": "inpaint",
+  "claim_level": "公众号索引/作者站外演示；独立 UN 编码器组合",
+  "refs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "inputs": [
+    "featurebench/cat.png",
+    "featurebench/fox.png"
+  ],
+  "prompt": "Replace the cat in image 1 completely with the RED FOX from image 2. The fox sits with its back and slender canine body facing the camera as before, but turns its head RIGHT in a clear side profile: an unmistakably LONG pointed canine muzzle and black nose are fully visible. Long black-backed triangular ears, thick neck ruff, black lower legs, very large bushy orange tail with a WHITE TIP. One fox only, no cat. Keep the cafe door, night street, reflections and lighting. No blank rectangle, no gray panel, no mossy stone or forest.",
+  "expected": "遮罩区域内猫变狐；遮罩外像素由工作流合成保留。",
+  "runtime_profile": "CPU reference VAE precompute → GPU text without VAE → FP16 isolated sampling → CPU decode; core reference preprocessing preserved exactly",
+  "qwen_cache_device": "off",
+  "repairs": [
+    "turbo-un-inpaint"
+  ],
+  "retry_reason": "四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。",
+  "status": "success",
+  "prompt_id": "6fe9626a-7282-487f-8d3c-2099a1dc5575",
+  "elapsed_seconds": 142.468,
+  "images": [
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-input_00001_.png",
+      "sha256": "30f18fd0f8a8323f0ac8a30df53a52eebc5633cc527d7ffcbca65f0f360837ff",
+      "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-mask_00001_.png",
+      "sha256": "69cd29fb3efa9da75bd7b3acca8bd9b9de6b22f456e34d9baefd7de0b9299e67",
+      "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507"
+    },
+    {
+      "path": "ComfyUI/output/RepairBench/turbo-fox-profile-precomputed_00001_.png",
+      "sha256": "4391a5fc0de78f4350ef5a5fca976f69fcda438c44778c9064588e85ac6db466",
+      "public_sha256": "3a0e07b45cb5726cdabd11aebd4c4c2757ffae063ccc1569cc9fe9ae74c3fa16"
+    }
+  ],
+  "review": "partial",
+  "decoding_elapsed_seconds": 21.094,
+  "encoding_elapsed_seconds": 37.172,
+  "sampling_elapsed_seconds": 72.156,
+  "timing_scope": "Sum reference VAE precompute, GPU text, sampling, CPU decode; excludes cold starts",
+  "mask_attachments": true,
+  "acceptance_scope": "执行与明确狐狸形态通过；遮罩边缘残影未通过；物理RAM峰值压力仍高，非长期稳定验收",
+  "reference_precompute_elapsed_seconds": 12.046
+}

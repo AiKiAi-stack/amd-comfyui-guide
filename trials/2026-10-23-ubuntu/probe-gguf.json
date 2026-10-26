@@ -1,0 +1,21 @@
+{
+  "kind": "gguf",
+  "torch_version": "2.12.0+rocm7.14.0",
+  "device": "AMD Radeon RX 6650 XT",
+  "requested_cycles": 200,
+  "completed_cycles": 200,
+  "status": "pass_bounded_probe_only",
+  "scope": "One bounded weight; ordinary and synthetic-exception unpatch, not real OOM recovery",
+  "tensor_name": "layers.0.attention.out.weight",
+  "quantization": "Q4_K",
+  "storage_bytes": 8294400,
+  "logical_shape": [
+    3840,
+    3840
+  ],
+  "initial_storage": "GGUF reader memory-mapped array retained for probe lifetime",
+  "cpu_backing_repair_enabled": false,
+  "explicit_cleanup_completed": true,
+  "elapsed_seconds": 1.469,
+  "storage_sha256": "c3b24e4d3d9d2a2147cf576833edcc5e2b14ef2bcb1f655afb921462540bd546"
+}

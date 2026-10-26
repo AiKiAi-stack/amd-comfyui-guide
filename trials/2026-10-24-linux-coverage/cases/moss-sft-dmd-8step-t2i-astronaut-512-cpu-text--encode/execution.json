@@ -1,0 +1,74 @@
+{
+  "case_id": "moss-sft-dmd-8step-t2i-astronaut-512-cpu-text--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "e7227eae5da7e424cf54776b7868d41dda57e93a8238a4c77660168c87611207",
+  "pid": 133093,
+  "prompt_id": "a818b533-5e29-4309-a9b2-e241842afcbe",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-moss-sft-dmd-8step-t2i-astronaut-512-cpu-text-44200e1f3004.safetensors"
+      ],
+      "archive_sha256": [
+        "6374e6c14f76e3559e9942d81f3a69203b9e60c42fd7b887b36ba25a243ecc1c"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "a818b533-5e29-4309-a9b2-e241842afcbe",
+        "timestamp": 1792891229406
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "a818b533-5e29-4309-a9b2-e241842afcbe",
+        "timestamp": 1792891229406
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "a818b533-5e29-4309-a9b2-e241842afcbe",
+        "timestamp": 1792891377401
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7152.28125,
+  "elapsed_seconds": 148.308,
+  "total_seconds": 161.432,
+  "server_exit": -15
+}

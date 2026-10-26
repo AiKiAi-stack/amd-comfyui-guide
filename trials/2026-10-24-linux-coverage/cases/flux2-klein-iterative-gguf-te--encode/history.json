@@ -1,0 +1,193 @@
+{
+  "fc8cfc75-8b23-4e4f-ab93-4751c42e7a5e": {
+    "prompt": [
+      0,
+      "fc8cfc75-8b23-4e4f-ab93-4751c42e7a5e",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_5a4b68288ffc_flux2-klein-single-color-pinned.png"
+          }
+        },
+        "2": {
+          "class_type": "ImageScaleToTotalPixels",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ],
+            "upscale_method": "nearest-exact",
+            "megapixels": 0.25,
+            "resolution_steps": 1
+          }
+        },
+        "3": {
+          "class_type": "GetImageSize",
+          "inputs": {
+            "image": [
+              "2",
+              0
+            ]
+          }
+        },
+        "5": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+            "type": "flux2"
+          }
+        },
+        "6": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "flux2-vae.safetensors"
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "5",
+              0
+            ],
+            "text": "Keep this blue handbag exactly as it is, and add a small red silk bow tied around the left handle. Preserve the blue color, bag shape and light grey studio background."
+          }
+        },
+        "8": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ]
+          }
+        },
+        "9": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "6",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "7",
+              0
+            ],
+            "latent": [
+              "9",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "8",
+              0
+            ],
+            "latent": [
+              "9",
+              0
+            ]
+          }
+        },
+        "16": {
+          "class_type": "EmptyFlux2LatentImage",
+          "inputs": {
+            "width": [
+              "3",
+              0
+            ],
+            "height": [
+              "3",
+              1
+            ],
+            "batch_size": 1
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "10",
+              0
+            ],
+            "negative": [
+              "11",
+              0
+            ],
+            "latent": [
+              "16",
+              0
+            ],
+            "prefix": "linux-coverage-flux2-klein-iterative-gguf-te",
+            "workflow_sha256": "73ca15ddf598044490c7925d28ece40cf265f8a7693e011b37e49dc16fed40d9"
+          }
+        }
+      },
+      {
+        "create_time": 1792860664068
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-flux2-klein-iterative-gguf-te-4ffd71440061.safetensors"
+        ],
+        "archive_sha256": [
+          "1e0aed6006233354b2d329637b9dab70f118931bb28a9c755ea569b8693497e5"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fc8cfc75-8b23-4e4f-ab93-4751c42e7a5e",
+            "timestamp": 1792860664069
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "fc8cfc75-8b23-4e4f-ab93-4751c42e7a5e",
+            "timestamp": 1792860664130
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "fc8cfc75-8b23-4e4f-ab93-4751c42e7a5e",
+            "timestamp": 1792860683990
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

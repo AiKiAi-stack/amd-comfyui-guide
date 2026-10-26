@@ -1,0 +1,154 @@
+{
+  "b14de624-cda6-47f9-9482-25b0a2ad9cf1": {
+    "prompt": [
+      0,
+      "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+      {
+        "30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_42d5d9635f9c_cat.png"
+          }
+        },
+        "31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 256,
+            "height": 256,
+            "crop": "disabled"
+          }
+        },
+        "40": {
+          "class_type": "TextGenerate",
+          "inputs": {
+            "clip": [
+              "caption_clip4b",
+              0
+            ],
+            "image": [
+              "31",
+              0
+            ],
+            "prompt": "Describe the image in one short English sentence naming the subject, place and lighting. Output only the sentence.",
+            "max_length": 40,
+            "sampling_mode": "off",
+            "thinking": false,
+            "use_default_template": true,
+            "mtp": "off"
+          }
+        },
+        "42": {
+          "class_type": "SaveText",
+          "inputs": {
+            "text": [
+              "40",
+              0
+            ],
+            "filename_prefix": "linux-coverage/qwen-caption-4b-aux-8b-cpu-staged-prompt",
+            "format": "txt"
+          }
+        },
+        "caption_clip4b": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+            "type": "krea2",
+            "device": "default"
+          }
+        },
+        "repair_save_caption": {
+          "class_type": "SaveRepairText",
+          "inputs": {
+            "text": [
+              "42",
+              0
+            ],
+            "prefix": "qwen-caption-4b-aux-8b-cpu-staged-caption",
+            "workflow_sha256": "05e7c4dc9ca10a2ed766eeed6b41e272e32f23275b2cb88813d371727bc0b70c"
+          }
+        }
+      },
+      {
+        "create_time": 1792915091315
+      },
+      [
+        "42",
+        "repair_save_caption"
+      ]
+    ],
+    "outputs": {
+      "42": {
+        "text": [
+          "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+        ],
+        "files": [
+          {
+            "filename": "qwen-caption-4b-aux-8b-cpu-staged-prompt_00001.txt",
+            "subfolder": "linux-coverage",
+            "type": "output"
+          }
+        ]
+      },
+      "repair_save_caption": {
+        "text": [
+          "repair_conditioning/qwen-caption-4b-aux-8b-cpu-staged-caption-baa04d731548.safetensors",
+          "SHA256: d01c138116b1bfb7caadef0e7b3d22bcc8cfc786358c0efc78d54c2a2029cfe7",
+          "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+        ],
+        "archive_sha256": [
+          "d01c138116b1bfb7caadef0e7b3d22bcc8cfc786358c0efc78d54c2a2029cfe7"
+        ],
+        "caption": [
+          "A ginger cat sits on a wet sidewalk at night, gazing out a window of a dimly lit shop with neon signs casting red reflections on the pavement."
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+            "timestamp": 1792915091315
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+            "timestamp": 1792915091317
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "b14de624-cda6-47f9-9482-25b0a2ad9cf1",
+            "timestamp": 1792915126126
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "42": {
+        "node_id": "42",
+        "display_node": "42",
+        "parent_node": null,
+        "real_node_id": "42"
+      },
+      "repair_save_caption": {
+        "node_id": "repair_save_caption",
+        "display_node": "repair_save_caption",
+        "parent_node": null,
+        "real_node_id": "repair_save_caption"
+      }
+    }
+  }
+}

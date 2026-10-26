@@ -1,0 +1,20 @@
+[1;91mE-001h rocSHMEM[0m Could not open libnuma. Returning	[90mNUMAWrapper@src/gda/numa_wrapper.cpp:48[0m
+/path/to/barely-comfy/scripts/test_gguf_clip_cpu_backing.py:48: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/rockrel/rockrel/external-builds/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  raw = torch.from_numpy(tensor.data)
+.WARNING:root:[CLIP-CPU-BACKING] retained 2 CPU storages, 2211844 raw bytes; no dense copy
+WARNING:root:[CLIP-CPU-BACKING] restored 2 original CPU parameter storages
+WARNING:root:[CLIP-CPU-BACKING] restored 2 original CPU parameter storages
+WARNING:root:[CLIP-CPU-BACKING] restored 2 original CPU parameter storages
+F
+======================================================================
+FAIL: test_real_unpatch_reuses_original_cpu_storage (__main__.CpuBackingTests.test_real_unpatch_reuses_original_cpu_storage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/path/to/barely-comfy/scripts/test_gguf_clip_cpu_backing.py", line 99, in test_real_unpatch_reuses_original_cpu_storage
+    self.assertIs(type(clone), type(active))
+AssertionError: <class 'clip_backing_fixture.nodes.GGUFModelPatcher'> is not <class 'clip_candidate._specialize.<locals>.GgufClipCpuBackingPatcher'>
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.141s
+
+FAILED (failures=1)

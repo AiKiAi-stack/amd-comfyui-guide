@@ -1,0 +1,30 @@
+{
+  "workflow_sha256": "72e906bceea0bbbe92785348068c1a8255753fef279a64674eb70ae8a9985b9e",
+  "archive_sha256": "f3cd859348f1c8fb8ab237daf8b2cba4997b187c7d39d84235b70151822d1af8",
+  "archive_file": "repair_conditioning/turbo-un-role-isolated-a7bd2f56217f.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": false,
+  "qwen_cache_device_override": null,
+  "reused_text_conditions": null,
+  "encoding_api_sha256": "aef5c9bd16fec584d8da6360fb7f24473bf1a7acee5ec098698d1259ad2e5b98",
+  "encoding_history_sha256": "42b7c96660fe513fe5b46a6e56dee7ddb9ff442758e123196733179447076290",
+  "inputs_checked_at_reuse": [],
+  "input_check_method": null,
+  "sampled_latent_file": "repair_conditioning/turbo-un-role-isolated-b940e3f0c859.safetensors",
+  "sampled_latent_sha256": "a10772565672d1f7da4cd77fdc65de3e13b68f07c6a2257b61fca65545984caa",
+  "sampling_reused": false,
+  "sampling_source_workflow_sha256": "72e906bceea0bbbe92785348068c1a8255753fef279a64674eb70ae8a9985b9e",
+  "sampling_process_exited_before_decoding": true,
+  "sampling_api_sha256": "99dcd746e586a508d3eddfaf2199e43484079380600c34a1fcf00f053438c79f",
+  "sampling_history_sha256": "1abd101d6ef3b6c8c8c4ce8b2d744d82338b84b380cd5e84190e24a9f7cd22c1",
+  "reference_precompute": {
+    "original_workflow_sha256": "f29ffdd09b762bb877f19829a5fb0532d3d5e94ee8b1f5b534aa6244a7abef74",
+    "cached_workflow_sha256": "72e906bceea0bbbe92785348068c1a8255753fef279a64674eb70ae8a9985b9e",
+    "archive_file": "repair_conditioning/turbo-un-role-isolated-refs-21e1de62a895.safetensors",
+    "archive_sha256": "450d7fbe499e81c1c1665fc74ee3a1ae6628bcab7d4808529d10484515bd82df",
+    "reference_api_sha256": "a49174612409f3c8fbc3cad7fcb0c0a155cb651ddbfae46286a44c7de1fa1f8f",
+    "reference_history_sha256": "3b23d9590ed87d1140fc3b18fb871515999e7fcc3b0d45487272934dfbf1b642",
+    "reference_process_exited_before_text_encoding": true,
+    "meaning": "Installed core resize/alpha/VAE reference preparation; exact cached latents, no resident VAE during TE"
+  }
+}

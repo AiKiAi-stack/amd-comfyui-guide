@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-24",
+  "ubuntu_environment_ready": true,
+  "gpu": "RX 6650 XT gfx1032",
+  "dependency_versions_preserved": 95,
+  "regressions_passed": 34,
+  "zimage": {
+    "same_process_images": 2,
+    "visual_pass": 2,
+    "seconds": [
+      188.56,
+      168.51
+    ],
+    "source": "zimage-repeat/summary.json",
+    "review": "zimage-reviews.json"
+  },
+  "qwen": {
+    "published_complete_pngs": 2,
+    "visual_health_pass": 2,
+    "prompt_details": "partial",
+    "same_process_repeated_full_generation": "not accepted; physical RAM guard stopped subsequent encoding/unload",
+    "isolated_single_workflow": "execution pass, process exit 0",
+    "cpu_heap_trim": "experimental; failed to solve repeated reload",
+    "omit_unused_vae": "contract tests pass; full-model unload still triggered RAM guard",
+    "sources": [
+      "qwen-first-complete/result.json",
+      "qwen-green-isolated/result.json",
+      "qwen-no-unused-vae-result.json"
+    ]
+  },
+  "report": {
+    "cards": 101,
+    "missing_cards": [],
+    "historical_cases_with_appended_visible_outputs": 50,
+    "existing_101_article_bytes_preserved": true,
+    "original_review_files_unchanged": true
+  },
+  "services": {
+    "comfyui_url": "http://127.0.0.1:8188",
+    "comfyui_pid": 152913,
+    "report_url": "http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html"
+  },
+  "persistent_limitations": [
+    "GPU ACL and readonly NVMe mount must be rechecked after reboot",
+    "Qwen same-process reload and Windows native unload issue remain open",
+    "No OOM recovery acceptance; no identity or LoRA feature acceptance inferred"
+  ]
+}

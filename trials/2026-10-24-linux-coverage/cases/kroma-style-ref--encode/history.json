@@ -1,0 +1,181 @@
+{
+  "a77a3298-e931-4bec-b9f8-11f0246d9b42": {
+    "prompt": [
+      0,
+      "a77a3298-e931-4bec-b9f8-11f0246d9b42",
+      {
+        "case01_2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+            "type": "krea2",
+            "device": "default"
+          }
+        },
+        "case01_3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_vae.safetensors"
+          }
+        },
+        "case01_5": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "case01_41",
+              0
+            ]
+          }
+        },
+        "case01_6": {
+          "class_type": "EmptyLatentImage",
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          }
+        },
+        "case01_30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_07b736da6af4_kroma-style-source.png"
+          }
+        },
+        "case01_31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "case01_30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "case01_40": {
+          "class_type": "TextEncodeQwenImageEditPlus",
+          "inputs": {
+            "clip": [
+              "case01_2",
+              0
+            ],
+            "prompt": "Use the visual style of the reference image: bold geometric two-color blue and orange screenprint, rough paper texture. Create a new image of an owl perched on a branch. Preserve the reference print style, not its fox subject. No text.",
+            "image1": [
+              "case01_31",
+              0
+            ]
+          }
+        },
+        "case01_100": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "case01_31",
+              0
+            ],
+            "vae": [
+              "case01_3",
+              0
+            ]
+          }
+        },
+        "case01_120": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "case01_40",
+              0
+            ],
+            "latent": [
+              "case01_100",
+              0
+            ]
+          }
+        },
+        "case01_41": {
+          "class_type": "FluxKontextMultiReferenceLatentMethod",
+          "inputs": {
+            "conditioning": [
+              "case01_120",
+              0
+            ],
+            "reference_latents_method": "index_timestep_zero"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "case01_41",
+              0
+            ],
+            "negative": [
+              "case01_5",
+              0
+            ],
+            "latent": [
+              "case01_6",
+              0
+            ],
+            "prefix": "linux-coverage-kroma-style-ref",
+            "workflow_sha256": "66f3afb4037a3c82728f84b1296d6f84a6dfe3d89ed02402e6891ee455713a10"
+          }
+        }
+      },
+      {
+        "create_time": 1792858824613
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-kroma-style-ref-5b835be80940.safetensors"
+        ],
+        "archive_sha256": [
+          "53401c69e68d9c971219a8cbba3f441e44162a6bb57daa1770551a028b3845a4"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "a77a3298-e931-4bec-b9f8-11f0246d9b42",
+            "timestamp": 1792858824613
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "a77a3298-e931-4bec-b9f8-11f0246d9b42",
+            "timestamp": 1792858824667
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "a77a3298-e931-4bec-b9f8-11f0246d9b42",
+            "timestamp": 1792858859344
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

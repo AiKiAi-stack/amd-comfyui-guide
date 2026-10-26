@@ -1,0 +1,23 @@
+{
+  "workflow_sha256": "af253f6551a065e22548f4536cfce125892a5979afc3282640c819c05593d222",
+  "archive_sha256": "7cb6c99a5b393a411d82ec46f35f69e470c74429d83222a25dbc0e5dfde2d032",
+  "archive_file": "repair_conditioning/qwen-head-direction-mask-8bf546b52c82.safetensors",
+  "encoding_process_exited_before_sampling": true,
+  "encoding_reused": true,
+  "qwen_cache_device_override": "auto",
+  "encoding_api_sha256": "5ba98bdcdf16a1e0fefa50037bc3a28aa25761f117212d11386322cbc71993d9",
+  "encoding_history_sha256": "160ee878fa7a28db83ffe97b902f4c76e22751e598f9a6ba246814263e3cff57",
+  "inputs_checked_at_reuse": [
+    {
+      "file": "featurebench/kroma-portrait-b.png",
+      "sha256_at_reuse": "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed",
+      "mtime_ns": 1792395739584342300
+    },
+    {
+      "file": "featurebench/kroma-portrait-a.png",
+      "sha256_at_reuse": "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10",
+      "mtime_ns": 1792395416412274000
+    }
+  ],
+  "input_check_method": "filesystem mtime predates execution; hashes recorded at reuse"
+}

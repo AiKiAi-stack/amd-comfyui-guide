@@ -1,0 +1,24 @@
+{
+  "method": "Deterministic CPU crop, resize and masked composite; no new model sample",
+  "source_case": "flux2-tiny-bow-fingertip",
+  "source_original_sha256": "bfb145c31284f6d373663816f4c06e93583dace4234133fa99c576793a0f49e8",
+  "source_public_sha256": "5a0a332e0000be41484097a8bb47062397f3a97ebfd3e4d81e76c0fab44faf03",
+  "patch_size": [
+    22,
+    20
+  ],
+  "position": [
+    122,
+    328
+  ],
+  "mask_threshold_red": 0.3,
+  "outside_measurement": {
+    "outside_pixels": 247078,
+    "outside_changed_pixels": 0,
+    "outside_max_channel_difference": 0,
+    "inside_pixels": 218,
+    "basis": "8-bit saved mask PNG; tiny positive feather corners may quantize to zero",
+    "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model.",
+    "float_mask_support_unavailable": "Exact mask support unavailable for GrowMask"
+  }
+}

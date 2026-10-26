@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "profile": "gpu-text-dynamic",
+  "guard_threshold_mib": 1024,
+  "operator_stop": "manual_slow_variant_stop",
+  "operator_stop_note": {
+    "reason": "CPU FP16 VAE exceeded several minutes before text encoding; stopping this slow variant, not a native crash",
+    "owned_server_pid": 23104,
+    "stopped_utc": "2026-10-22T03:24:59.1804862Z"
+  },
+  "error": "Service exited during turbo-fox-profile-natural: 15; inspect logs for cause",
+  "final_server_exit_code": 15,
+  "server_stopped": true,
+  "native_exception_observed": false,
+  "oom_observed": false,
+  "source_summary_sha256": "ea7acd85376d8832882919443f9e8e15489bfb80abb2b3724f36a8d8c5537b0e",
+  "stderr_sha256": "395c9727642e98801662dd62b69d7d9c81c748c5a3828c21b98c559edae43dc7",
+  "images": [],
+  "scope": "Failure or protective/operator stop; no PNG produced; logs retained locally"
+}

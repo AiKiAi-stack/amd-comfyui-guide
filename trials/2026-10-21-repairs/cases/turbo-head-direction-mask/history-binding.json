@@ -1,0 +1,48 @@
+{
+  "prompt_id": "7c9ffc23-3b95-4ea5-9125-16da9c8d3bc5",
+  "status": "success",
+  "outputs": {
+    "repair_save_input": {
+      "images": [
+        {
+          "filename": "turbo-head-direction-mask-input_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "repair_save_mask": {
+      "images": [
+        {
+          "filename": "turbo-head-direction-mask-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    },
+    "7": {
+      "images": [
+        {
+          "filename": "turbo-head-direction-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}

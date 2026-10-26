@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "elapsed_seconds": 81.093,
+  "images": [
+    {
+      "file": "13-0-flux2-1024-attention_00001_.png",
+      "original_sha256": "3bdf10bb158ab83023a1825d4b4d149debb5a00fa5f37a364dc7afc3e6362064",
+      "public_sha256": "877fe791fbf76bdecfb14ba444166c145b0a87699ae787682f2b939fc3977e00",
+      "pixels_unchanged": true
+    }
+  ],
+  "feature": "flux2-klein-t2i-1024",
+  "verdict": "partial",
+  "operational_verdict": "pass",
+  "review": "完整 1024×1024，四步采样、CPU VAE 解码与保存均成功，目视为正常雨夜橘猫，HELLO 清楚。仍有额外招牌文字，未满足 no other writing。一次成功不能证明历史原生崩溃根因已修复。",
+  "prompt_id": "37a9b193-fbe0-43b2-b3f8-d73326958a73",
+  "raw_history_sha256": "4853725610b313874c6aec7ccbfc88fa57ee1b57a9bf874023467b45753386a6",
+  "workflow_sha256": "b2b35ba7f866cfef487617340ea9c0ed96b47c181a616f19e74477f38d3db99c"
+}

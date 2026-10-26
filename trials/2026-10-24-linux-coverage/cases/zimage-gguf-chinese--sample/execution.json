@@ -1,0 +1,88 @@
+{
+  "case_id": "zimage-gguf-chinese--sample",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "18-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "7993c5dc01e2c0764fb7a2e4406f43f208eadb3c4a25b22b08a9a7aaec2ebc39",
+      "original_sha256": "619424a3c1f7984969c1a759531e81176be2d8106a6c53d6eff927842b5f8a60",
+      "rgb_sha256": "2d54435cd31a7f267d4235923f88330b3fa85bb833be06c8aca1792227bfa4fc"
+    }
+  ],
+  "workflow_sha256": "43167345734f4475d16942b39f04dd62f682d6dbe9df1790282199465351a88c",
+  "pid": 40724,
+  "prompt_id": "6610aee2-1233-453d-a122-0837d8ef733b",
+  "validation_errors": {},
+  "outputs": {
+    "18": {
+      "images": [
+        {
+          "filename": "zimage-gguf-chinese_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "6610aee2-1233-453d-a122-0837d8ef733b",
+        "timestamp": 1792861614448
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "6610aee2-1233-453d-a122-0837d8ef733b",
+        "timestamp": 1792861614448
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "6610aee2-1233-453d-a122-0837d8ef733b",
+        "timestamp": 1792861667705
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7069.73046875,
+  "elapsed_seconds": 54.22,
+  "total_seconds": 59.263,
+  "server_exit": -15
+}

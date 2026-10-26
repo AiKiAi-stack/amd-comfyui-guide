@@ -1,0 +1,75 @@
+{
+  "2": {
+    "inputs": {
+      "model": [
+        "34_model_vae",
+        0
+      ],
+      "shift": 3
+    },
+    "class_type": "ModelSamplingAuraFlow"
+  },
+  "17": {
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "repair_load_conditions",
+        0
+      ],
+      "negative": [
+        "repair_load_conditions",
+        1
+      ],
+      "latent_image": [
+        "repair_load_conditions",
+        2
+      ],
+      "seed": 665025001,
+      "steps": 9,
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "denoise": 1
+    },
+    "class_type": "KSampler"
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "17",
+        0
+      ],
+      "vae": [
+        "34_model_vae",
+        1
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "26": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ],
+      "filename_prefix": "linux-coverage/zimage-aio-photo-9step-components"
+    },
+    "class_type": "SaveImage"
+  },
+  "34_model_vae": {
+    "class_type": "LoadCheckpointModelVaeOnly",
+    "inputs": {
+      "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+    }
+  },
+  "repair_load_conditions": {
+    "class_type": "LoadRepairConditioning",
+    "inputs": {
+      "file": "repair_conditioning/linux-coverage-zimage-aio-photo-9step-components-1a0d22aeb35e.safetensors",
+      "expected_sha256": "879a65d0b26f7cab6e2404c3c05f97d6dcdd802ce94c0eb2974a877a717e7c45"
+    }
+  }
+}

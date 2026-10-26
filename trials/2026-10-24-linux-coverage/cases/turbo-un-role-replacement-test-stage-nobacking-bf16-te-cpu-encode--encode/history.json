@@ -1,0 +1,157 @@
+{
+  "1cd6306b-d48d-4195-ab25-15770a71ae55": {
+    "prompt": [
+      0,
+      "1cd6306b-d48d-4195-ab25-15770a71ae55",
+      {
+        "2": {
+          "class_type": "CLIPLoaderGGUF",
+          "inputs": {
+            "clip_name": "Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "Use image 1 as the target scene and pose. Replace the entire astronaut with the adult woman shown in image 2, using her identity cues: short curly copper-red hair, fair freckled skin and green eyes. Replace the helmet, visor, spacesuit, gloves and all astronaut gear completely; show a fully visible woman in practical mustard-orange outdoor clothing, hiking trousers and boots. Preserve image 1's full-body forward walking stride, subject scale and placement, jungle path, dense tropical foliage, sunlight, camera framing and overall composition. Keep exactly one person. Do not retain any astronaut equipment, add another person, or change the jungle scene.",
+            "negative_prompt": "blurry, distorted, watermark",
+            "resolution": 512,
+            "images.image_1": [
+              "31",
+              0
+            ],
+            "images.image_2": [
+              "34",
+              0
+            ]
+          }
+        },
+        "30": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_06f3c1a0c570_astronaut.png"
+          }
+        },
+        "31": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "30",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "33": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "ModelLibrary_02b141b1b04e_kroma-portrait-a.png"
+          }
+        },
+        "34": {
+          "class_type": "ImageScale",
+          "inputs": {
+            "image": [
+              "33",
+              0
+            ],
+            "upscale_method": "lanczos",
+            "width": 512,
+            "height": 512,
+            "crop": "disabled"
+          }
+        },
+        "repair_save_conditions": {
+          "class_type": "SaveRepairConditioning",
+          "inputs": {
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "latent": [
+              "4",
+              2
+            ],
+            "prefix": "linux-coverage-turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode",
+            "workflow_sha256": "be416f51225ee8abbf69ccb174e38427ae4ca595d693b18f6f82739f49446485"
+          }
+        }
+      },
+      {
+        "create_time": 1792914782982
+      },
+      [
+        "repair_save_conditions"
+      ]
+    ],
+    "outputs": {
+      "repair_save_conditions": {
+        "text": [
+          "repair_conditioning/linux-coverage-turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode-7892275bd6ab.safetensors",
+          "SHA256: a54f42f2fe37249833f5ea13e169288f6f412c76fb0b167183613c6ff93cb21a"
+        ],
+        "archive_sha256": [
+          "a54f42f2fe37249833f5ea13e169288f6f412c76fb0b167183613c6ff93cb21a"
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "1cd6306b-d48d-4195-ab25-15770a71ae55",
+            "timestamp": 1792914782982
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "1cd6306b-d48d-4195-ab25-15770a71ae55",
+            "timestamp": 1792914782984
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "1cd6306b-d48d-4195-ab25-15770a71ae55",
+            "timestamp": 1792914946654
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "repair_save_conditions": {
+        "node_id": "repair_save_conditions",
+        "display_node": "repair_save_conditions",
+        "parent_node": null,
+        "real_node_id": "repair_save_conditions"
+      }
+    }
+  }
+}

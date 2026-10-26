@@ -1,0 +1,99 @@
+{
+  "case_id": "moss-text-cpu-text",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../moss-text-cpu-text--sample/10-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "6de4b86fd486419d9498d43a2efe0b6dcf0cc6072889e87ba5dd1abc21551943",
+      "original_sha256": "a5e7000844560fc93a37bf9e9024cdaa367184117297be398a3222aaddaae4e5",
+      "rgb_sha256": "4955a53d58d2ce936757bc3166a33f0d1347a6e589a905c4bd66b47e33f879bd"
+    }
+  ],
+  "workflow_sha256": "9bf670dfc307a0a3be937d94f9cc5f998815761ecc01a4f1a42536a71a27ff61",
+  "pid": 138218,
+  "prompt_id": "7802b2e1-cda0-420f-984b-446c2bab9693",
+  "validation_errors": {},
+  "outputs": {
+    "10": {
+      "images": [
+        {
+          "filename": "moss-text-cpu-text_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "7802b2e1-cda0-420f-984b-446c2bab9693",
+        "timestamp": 1792892083907
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "7802b2e1-cda0-420f-984b-446c2bab9693",
+        "timestamp": 1792892083909
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "7802b2e1-cda0-420f-984b-446c2bab9693",
+        "timestamp": 1792892136674
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 1731.79296875,
+  "elapsed_seconds": 202.571,
+  "total_seconds": 62.317,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 148.358,
+  "sampling_seconds": 54.213,
+  "conditioning_archive": "repair_conditioning/linux-coverage-moss-text-cpu-text-3366ecdb74d8.safetensors",
+  "conditioning_sha256": "87928c6fe382e185bfcad2fc3d4e34b7367a30334ec572d75dede2c42312f315",
+  "encoding_pid": 137079,
+  "sampling_pid": 138218,
+  "encoding_exited_before_sampling": true
+}

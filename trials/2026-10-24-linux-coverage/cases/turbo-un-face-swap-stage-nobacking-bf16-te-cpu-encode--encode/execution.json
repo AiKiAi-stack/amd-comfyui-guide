@@ -1,0 +1,77 @@
+{
+  "case_id": "turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode--encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc",
+    "--cpu"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [],
+  "workflow_sha256": "90c3ef34e0e0d75e4e99296bc0e67967ba4038ee9640f592cab12f7f6df816b1",
+  "pid": 18022,
+  "prompt_id": "1b5e02ab-578b-4bcd-a1a6-a3ef6484c9ec",
+  "validation_errors": {},
+  "outputs": {
+    "repair_save_conditions": {
+      "text": [
+        "repair_conditioning/linux-coverage-turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode-68e389966ef7.safetensors"
+      ],
+      "archive_sha256": [
+        "0342ffccac6aeb2d9fdc19246741205c9caccbb20aae9e93ef6316ce468448d4"
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "1b5e02ab-578b-4bcd-a1a6-a3ef6484c9ec",
+        "timestamp": 1792914498892
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "1b5e02ab-578b-4bcd-a1a6-a3ef6484c9ec",
+        "timestamp": 1792914498895
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "1b5e02ab-578b-4bcd-a1a6-a3ef6484c9ec",
+        "timestamp": 1792914657960
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 5889.5625,
+  "elapsed_seconds": 160.405,
+  "total_seconds": 181.519,
+  "server_exit": -15
+}

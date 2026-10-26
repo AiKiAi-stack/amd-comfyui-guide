@@ -1,0 +1,131 @@
+{
+  "case_id": "qwen-face-only-stage-nobacking-cpu-encode",
+  "command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc"
+  ],
+  "environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "status": "success",
+  "images": [
+    {
+      "file": "../qwen-face-only-stage-nobacking-cpu-encode--sample/case03_7-0.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "fac5084e2d10dc318a861413eeacf3b798b458a43ad3770d25173edb54efe66a",
+      "original_sha256": "d382cb733e85af9903b58e48e002145210f86153765f047531412ebb1eb6b2ed",
+      "rgb_sha256": "3b9f1d5a425ae13ab7a92101fc707a94d28e9681b8d070af0842f66ce6a229d1"
+    }
+  ],
+  "workflow_sha256": "1c629d12175bb92fe1e92755c308f389e435a46562957aae5d6b2f1a3996cbe2",
+  "pid": 15593,
+  "prompt_id": "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+  "validation_errors": {},
+  "outputs": {
+    "case03_7": {
+      "images": [
+        {
+          "filename": "qwen-face-only-stage-nobacking_00001_.png",
+          "subfolder": "linux-coverage",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "messages": [
+    [
+      "execution_start",
+      {
+        "prompt_id": "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+        "timestamp": 1792912442746
+      }
+    ],
+    [
+      "execution_cached",
+      {
+        "nodes": [],
+        "prompt_id": "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+        "timestamp": 1792912442747
+      }
+    ],
+    [
+      "execution_success",
+      {
+        "prompt_id": "df918d8a-15b7-4b33-aebc-a5c23d99e0e0",
+        "timestamp": 1792912610080
+      }
+    ]
+  ],
+  "minimum_available_ram_mib": 7021.71484375,
+  "elapsed_seconds": 325.522,
+  "total_seconds": 351.832,
+  "server_exit": -15,
+  "staged": true,
+  "encoding_seconds": 157.138,
+  "encoding_command": [
+    "/path/to/barely-comfy/runtime/ubuntu/.venv/bin/python",
+    "-u",
+    "ComfyUI/main.py",
+    "--listen",
+    "127.0.0.1",
+    "--port",
+    "8190",
+    "--cpu-vae",
+    "--disable-async-offload",
+    "--disable-dynamic-vram",
+    "--fast-disk",
+    "--extra-model-paths-config",
+    "/path/to/barely-comfy/runtime/ubuntu/model-paths.yaml",
+    "--reserve-vram",
+    "1.0",
+    "--use-split-cross-attention",
+    "--force-fp16",
+    "--force-upcast-attention",
+    "--disable-pinned-memory",
+    "--bf16-text-enc",
+    "--cpu"
+  ],
+  "encoding_environment": {
+    "COMFY_GFX1032_INT8_FALLBACK": "1",
+    "BARELY_COMFY_CHUNKED_CPU_LOGITS": "1",
+    "BARELY_COMFY_CHUNKED_GPU_LOGITS": "1",
+    "OPENBLAS_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "4"
+  },
+  "sampling_seconds": 168.384,
+  "conditioning_archive": "repair_conditioning/linux-coverage-qwen-face-only-stage-nobacking-cpu-encode-b685cc5d72fa.safetensors",
+  "conditioning_sha256": "91019b3057fd7decabb99eee0d539b958723113bb125506135953d527e160d9e",
+  "encoding_pid": 15420,
+  "sampling_pid": 15593,
+  "encoding_exited_before_sampling": true
+}

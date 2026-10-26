@@ -1,0 +1,50 @@
+{
+  "execution": {
+    "prompt_id": "5b5355b6-6ff4-4312-a5d8-2f608475d5ea",
+    "minimum_available_ram_mib": 7079.7734375,
+    "stopped": null,
+    "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Linux__turbo-un-t2i-stage-nobacking__02-采样.json",
+    "execution_status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "5b5355b6-6ff4-4312-a5d8-2f608475d5ea",
+            "timestamp": 1792915817160
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "5b5355b6-6ff4-4312-a5d8-2f608475d5ea",
+            "timestamp": 1792915817162
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "5b5355b6-6ff4-4312-a5d8-2f608475d5ea",
+            "timestamp": 1792915871781
+          }
+        ]
+      ]
+    },
+    "images": [
+      "trials/2026-10-24-linux-coverage/linux-coverage-webui-turbo-sample_00001_.png"
+    ]
+  },
+  "installed_source_binding": {
+    "id": "linux-coverage-turbo-un-t2i-stage-nobacking--sample",
+    "source": "workflows/ui/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Linux__turbo-un-t2i-stage-nobacking__02-采样.json",
+    "installed": "/path/to/barely-comfy/runtime/ubuntu/ComfyUI/user/default/workflows/模型功能库/Qwen-Image 2.1 Turbo · 普通 － UN 编码器/文生图与连续生成/Linux__turbo-un-t2i-stage-nobacking__02-采样.json",
+    "sha256": "49b846f70e93129e8017f67676d97c4c5277dc6ad80bfe1abe2bff22e477e696"
+  },
+  "source_sha256": "49b846f70e93129e8017f67676d97c4c5277dc6ad80bfe1abe2bff22e477e696",
+  "review": "Actual frontend queue produced a healthy white long-haired cat at a rainy neon window, with warm interior lighting. Only this cached sampling workflow was enqueued; import checks do not assert execution of the other files.",
+  "image_sha256": {
+    "trials/2026-10-24-linux-coverage/linux-coverage-webui-turbo-sample_00001_.png": "a6aad739dad49f8e86ebcbf01878c27351ec46e7b53eaa06000cbc1d932488f5"
+  }
+}

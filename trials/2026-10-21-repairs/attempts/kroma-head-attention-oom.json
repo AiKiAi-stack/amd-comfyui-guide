@@ -1,0 +1,17 @@
+{
+  "local_evidence": "runs/kroma-upcast-attention-v3/sampling/kroma-head-direction-mask-sample",
+  "failed_allocation_gib": 2.19,
+  "free_vram_gib": 2.02,
+  "oom_site": "attention_split: q @ k then scale",
+  "native_exception_observed_before_guard": true,
+  "native_stack": [
+    "GGUFModelPatcher.unpatch_model",
+    "ModelPatcher.unpatch_model",
+    "Module.to",
+    "GGMLTensor.to"
+  ],
+  "operator_stop": "automatic_commit_guard",
+  "final_natural_native_exit_not_claimed": true,
+  "subsequent_patch": "patches/comfyui-uneven-query-split.patch",
+  "subsequent_head_sampling_completed": true
+}

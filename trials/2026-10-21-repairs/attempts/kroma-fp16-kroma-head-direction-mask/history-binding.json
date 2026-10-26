@@ -1,0 +1,20 @@
+{
+  "prompt_id": "ce787033-efd1-401f-bb2a-2785c4174e5f",
+  "status": "success",
+  "outputs": {
+    "case03_9": {
+      "images": [
+        {
+          "filename": "kroma-head-direction-mask_00001_.png",
+          "subfolder": "RepairBench",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  }
+}
