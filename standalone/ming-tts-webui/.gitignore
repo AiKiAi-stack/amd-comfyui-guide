@@ -1,0 +1,14 @@
+.venv/
+upstream/
+outputs/
+.gradio-tmp/
+__pycache__/
+*.log
+research/model-info.json
+research/*.jpg
+research/*.png
+.build-torchaudio/
+.env
+!.env.example
+!research/long-text-webui.jpg
+research/build-definition.json
