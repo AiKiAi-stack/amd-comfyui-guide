@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1920px; height:1080px; background:#050505; overflow:hidden; }
+  .bg {
+    position:absolute; inset:0;
+    background:url('../../assets/src/qwen-multiref-fox.png') center/cover no-repeat;
+    filter:blur(26px) brightness(.52) saturate(.9);
+    transform:scale(1.08);
+  }
+  .overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(5,5,5,.97) 0%, rgba(5,5,5,.9) 36%, rgba(5,5,5,.42) 68%, rgba(5,5,5,.78) 100%);
+  }
+  .vignette {
+    position:absolute; inset:0;
+    background:radial-gradient(120% 85% at 26% 50%, rgba(5,5,5,0) 0%, rgba(5,5,5,.6) 100%);
+  }
+  .frame { position:absolute; inset:44px; border:1px solid rgba(201,162,39,.32); }
+  .content { position:absolute; left:140px; top:50%; transform:translateY(-50%); width:1280px; }
+  .rule { width:120px; height:3px; background:#C9A227; margin-bottom:34px; }
+  .eyebrow {
+    font:600 26px 'DejaVu Sans', sans-serif; letter-spacing:9px;
+    color:#C9A227; margin-bottom:36px; text-transform:uppercase;
+  }
+  h1 {
+    font:700 116px 'DejaVu Sans', sans-serif; letter-spacing:-2.5px;
+    line-height:1.02; color:#F2EFE8;
+  }
+  .tag { font:400 46px 'DejaVu Sans', sans-serif; color:#E8E4DA; margin-top:40px; letter-spacing:-.3px; }
+  .meta { font:400 26px 'DejaVu Sans', sans-serif; color:#9B968B; margin-top:48px; letter-spacing:1.5px; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="overlay"></div>
+  <div class="vignette"></div>
+  <div class="frame"></div>
+  <div class="content">
+    <div class="rule"></div>
+    <div class="eyebrow">AMD Radeon &middot; ComfyUI Guide</div>
+    <h1>AMD ComfyUI Guide</h1>
+    <div class="tag">ComfyUI on AMD &mdash; tested end to end.</div>
+    <div class="meta">RX 6650 XT &middot; Windows + Ubuntu &middot; 40 tested features &middot; 268 ready-to-use workflows</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1920px; height:1080px; background:#050505; overflow:hidden; }
+  body { padding:86px 90px 0 90px; }
+  .title { font:700 64px 'DejaVu Sans', sans-serif; color:#F2EFE8; letter-spacing:-1.5px; }
+  .sub { font:400 28px 'DejaVu Sans', sans-serif; color:#9B968B; margin-top:14px; }
+  .grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:26px; margin-top:52px; }
+  .card img { width:100%; height:378px; object-fit:cover; display:block; }
+  .card .lab { font:600 24px 'DejaVu Sans', sans-serif; color:#EDE9E1; margin-top:18px; }
+  .card .desc { font:400 20px 'DejaVu Sans', sans-serif; color:#8D887E; margin-top:5px; }
+  .footer {
+    position:absolute; left:90px; right:90px; bottom:70px;
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid rgba(201,162,39,.35); padding-top:26px;
+  }
+  .footer .left { font:400 24px 'DejaVu Sans', sans-serif; color:#9B968B; }
+  .footer .right { font:600 24px 'DejaVu Sans', sans-serif; color:#C9A227; letter-spacing:.5px; }
+</style>
+</head>
+<body>
+  <div class="title">Real outputs. Real measurements.</div>
+  <div class="sub">Every feature ships with its prompt, workflow, output image, timing and verdict.</div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="../../assets/src/qwen21-turbo-cat.png" alt="Qwen Image 2.1 Turbo output">
+      <div class="lab">Qwen Image 2.1 &middot; Turbo</div>
+      <div class="desc">Text to image</div>
+    </div>
+    <div class="card">
+      <img src="../../assets/src/flux2-klein-watercolor-cat.png" alt="FLUX.2 Klein output">
+      <div class="lab">FLUX.2 Klein</div>
+      <div class="desc">Style edit</div>
+    </div>
+    <div class="card">
+      <img src="../../assets/src/kroma-q2-forest-fox.png" alt="Kroma Q2 output">
+      <div class="lab">Kroma Q2</div>
+      <div class="desc">4-step sampling</div>
+    </div>
+    <div class="card">
+      <img src="../../assets/src/moss-sft-astronaut.png" alt="MOSS SFT output">
+      <div class="lab">MOSS SFT</div>
+      <div class="desc">8-step LoRA</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="left">7 model families &middot; 40 tested features &middot; 162 platform records</div>
+    <div class="right">Linux: 21 pass &middot; 18 partial &middot; 1 fail</div>
+  </div>
+</body>
+</html>
