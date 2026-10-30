@@ -111,3 +111,11 @@ sudo docker compose exec -T webui python tools/smoke_api.py preset --output /dat
 ```
 
 本机为RX 6650 XT，镜像固定使用`torch[device-gfx1032]==2.12.0+rocm7.14.0`；它不是通用NVIDIA镜像。容器隔离软件依赖，仍与其他应用共享显卡和显存。不要同时启动多个合成服务。
+
+## 仓库来源
+
+本仓库原为 [amd-comfyui-guide](https://github.com/AiKiAi-stack/amd-comfyui-guide) 的 `standalone/ming-tts-webui` 目录，拆分时保留了原提交历史；ComfyUI 部署教程、工作流与实测证据在主仓库。
+
+## 许可证
+
+[MIT](LICENSE)。
