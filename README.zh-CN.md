@@ -93,6 +93,10 @@ environment/  固定版本与硬件记录
 assets/       README 与站点视觉素材（由真实出图构建）
 ```
 
+## 相关项目
+
+- **[ming-tts-webui](https://github.com/AiKiAi-stack/ming-tts-webui)**：同机另做的 Ming-3.0-TTS 本地语音工作台（Gradio + FastAPI，AMD ROCm），已拆为独立仓库。
+
 ## 参与贡献
 
 最有价值的贡献是在其他 AMD 卡上复现——请带上输入、提示词、工作流、输出、耗时与失败证据。见 [CONTRIBUTING.md](CONTRIBUTING.md)。

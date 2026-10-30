@@ -93,6 +93,10 @@ environment/  pinned versions and hardware records
 assets/       README and site visuals, built from real outputs
 ```
 
+## Related
+
+- **[ming-tts-webui](https://github.com/AiKiAi-stack/ming-tts-webui)** — local Ming-3.0-TTS speech workbench (Gradio + FastAPI on AMD ROCm), split into its own repository.
+
 ## Contributing
 
 Reproductions on other AMD cards are the most useful contribution — bring input, prompt, workflow, output, timing and failure evidence. Read [CONTRIBUTING.md](CONTRIBUTING.md).
