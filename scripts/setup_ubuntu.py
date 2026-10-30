@@ -101,7 +101,7 @@ def main():
     model_config = runtime / 'model-paths.yaml'
     if not model_config.exists():
         model_config.write_text(json.dumps(paths, ensure_ascii=False, indent=2) + '\n')
-    input_source = ROOT / 'ComfyUI/input'
+    input_source = ROOT / 'evidence/report-assets/input'
     if input_source.is_dir():
         for asset in input_source.rglob('*'):
             target = runtime / 'ComfyUI/input' / asset.relative_to(input_source)

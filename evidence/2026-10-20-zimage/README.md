@@ -6,16 +6,16 @@
 
 ## 功能与实际输出
 
-- **写实文生图／源工作流9步**：目视通过；提交后 50.23 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png) · [结果](cases/zimage-aio-photo-9step/result.json)。
-- **文章推荐8步生成**：目视通过；提交后 30.09 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png) · [结果](cases/zimage-aio-photo-8step/result.json)。
-- **文章4步效果比较**：目视通过；提交后 20.08 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png) · [结果](cases/zimage-aio-photo-4step/result.json)。
-- **英文文字渲染**：目视通过；提交后 30.97 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png) · [结果](cases/zimage-aio-english/result.json)。
-- **中文文字渲染**：目视通过；提交后 30.17 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png) · [结果](cases/zimage-aio-chinese/result.json)。
-- **非色情成年人体艺术探索**：目视通过；提交后 30.16 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png) · [结果](cases/zimage-aio-figure-art/result.json)。
-- **平铺工作流修改提示词**：目视通过；提交后 125.77 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png) · [结果](cases/zimage-gguf-prompt-change/result.json)。
-- **量化版英文文字渲染**：目视通过；提交后 85.47 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png) · [结果](cases/zimage-gguf-english/result.json)。
-- **量化版中文文字渲染**：目视通过；提交后 75.34 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png) · [结果](cases/zimage-gguf-chinese/result.json)。
-- **文本编码GPU配置对照／写实文生图**：目视通过；提交后 124.59 秒。[图片](../../ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png) · [结果](cases/zimage-gguf-photo-gpu-text/result.json)。
+- **写实文生图／源工作流9步**：目视通过；提交后 50.23 秒。[图片](../report-assets/output/FeatureBench/zimage-aio-photo-9step_00001_.png) · [结果](cases/zimage-aio-photo-9step/result.json)。
+- **文章推荐8步生成**：目视通过；提交后 30.09 秒。[图片](../report-assets/output/FeatureBench/zimage-aio-photo-8step_00001_.png) · [结果](cases/zimage-aio-photo-8step/result.json)。
+- **文章4步效果比较**：目视通过；提交后 20.08 秒。[图片](../report-assets/output/FeatureBench/zimage-aio-photo-4step_00001_.png) · [结果](cases/zimage-aio-photo-4step/result.json)。
+- **英文文字渲染**：目视通过；提交后 30.97 秒。[图片](../report-assets/output/FeatureBench/zimage-aio-english_00001_.png) · [结果](cases/zimage-aio-english/result.json)。
+- **中文文字渲染**：目视通过；提交后 30.17 秒。[图片](../report-assets/output/FeatureBench/zimage-aio-chinese_00001_.png) · [结果](cases/zimage-aio-chinese/result.json)。
+- **非色情成年人体艺术探索**：目视通过；提交后 30.16 秒。[图片](../report-assets/output/FeatureBench/zimage-aio-figure-art_00001_.png) · [结果](cases/zimage-aio-figure-art/result.json)。
+- **平铺工作流修改提示词**：目视通过；提交后 125.77 秒。[图片](../report-assets/output/FeatureBench/zimage-gguf-prompt-change_00001_.png) · [结果](cases/zimage-gguf-prompt-change/result.json)。
+- **量化版英文文字渲染**：目视通过；提交后 85.47 秒。[图片](../report-assets/output/FeatureBench/zimage-gguf-english_00001_.png) · [结果](cases/zimage-gguf-english/result.json)。
+- **量化版中文文字渲染**：目视通过；提交后 75.34 秒。[图片](../report-assets/output/FeatureBench/zimage-gguf-chinese_00001_.png) · [结果](cases/zimage-gguf-chinese/result.json)。
+- **文本编码GPU配置对照／写实文生图**：目视通过；提交后 124.59 秒。[图片](../report-assets/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png) · [结果](cases/zimage-gguf-photo-gpu-text/result.json)。
 
 AIO 9/8/4步使用同一提示词与seed；8步与4步复用服务和缓存。三张均保留红茶壶、两个柠檬与左侧窗光，反射与表面细节随步数变化，不外推全部提示词质量。AIO与GGUF采样器不同，跨模型时长不构成量化精度的单变量比较。
 

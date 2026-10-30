@@ -18,3 +18,5 @@ __pycache__/
 *.rar
 .hf_home/
 node_modules/
+
+notes/
