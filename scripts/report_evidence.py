@@ -6,8 +6,8 @@ import re
 import struct
 
 ROOT = Path(__file__).resolve().parents[1]
-HERE = ROOT / 'trials/2026-10-19-features'
-ISSUE_FILE = ROOT / 'trials/2026-10-25-report-audit/linux-issues.json'
+HERE = ROOT / 'evidence/2026-10-19-features'
+ISSUE_FILE = ROOT / 'evidence/2026-10-25-report-audit/linux-issues.json'
 
 
 def read(path):

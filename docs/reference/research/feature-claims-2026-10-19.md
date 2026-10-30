@@ -1,6 +1,6 @@
 # 五组 ComfyUI 文章功能声明核对
 
-核验日期：2026-10-19。它不代表正在进行的本机功能试跑的最终状态。试跑进度与结果见[2026-10-19 功能试验记录](../../../trials/2026-10-19-features/)。搜狗标题和相对日期照录自[索引核验记录](liuyue-comfyui-models-2026-10-18.md)；不补写任何截断尾部。
+核验日期：2026-10-19。它不代表正在进行的本机功能试跑的最终状态。试跑进度与结果见[2026-10-19 功能试验记录](../../../evidence/2026-10-19-features)。搜狗标题和相对日期照录自[索引核验记录](liuyue-comfyui-models-2026-10-18.md)；不补写任何截断尾部。
 
 ## 证据等级
 
@@ -30,7 +30,7 @@
 
 [OpenMOSS 官方 ComfyUI 说明](https://github.com/OpenMOSS/MOSS-Image/blob/main/comfyui/README.md)给出的是本地模型目录加载和以空 latent 生成的文生图工作流，示例为 50 步、CFG 3、shift 5；它没有展示本文标题所说的图生图入口。OpenMOSS 自有 `moss-image` HFLoader 是一种加载路径；本机 ComfyUI 的核心 `UNETLoader` + `CLIPLoader`（CLIP 类型 `moss_image`）也能加载，HFLoader 插件不是必需节点。8 步来自第三方 [MOSS SFT DMD LoRA](https://huggingface.co/lodestones/MOSS-Image-SFT-8-steps-dmd)，不是 OpenMOSS 官方 Base/SFT 的默认步数。“Uncensored”也没有在 OpenMOSS 官方仓库中对应一个已确认的独立官方权重名。
 
-本机已有 `moss_image_sft_int8_convrot.safetensors`、`qwen3.5_9b_w4a8_gptq.safetensors`、`flux2-vae_small.safetensors` 和 `moss-image-sft-8-steps-dmd-lora.safetensors`。依据[本机试验记录](../../../trials/2026-10-18/README.md)，已用原生 `UNETLoader` + `CLIPLoader(moss_image)` 加载，并在 gfx1032 INT8 fallback 下完成 512×512、50 步 SFT 出图及 8 步 DMD LoRA 候选出图，均有输出与视觉检查记录（T）。因此 MOSS **可用现有权重和核心节点测试，且上述两组已实测成功**；缺少 OpenMOSS 自有 HFLoader 只代表少了一种可选加载途径。图生图仍只有作者整合包层面的入口证据，本机这次没有验证图生图，也不能把它说成官方基础流程已证实能力。
+本机已有 `moss_image_sft_int8_convrot.safetensors`、`qwen3.5_9b_w4a8_gptq.safetensors`、`flux2-vae_small.safetensors` 和 `moss-image-sft-8-steps-dmd-lora.safetensors`。依据[本机试验记录](../../../evidence/2026-10-18/README.md)，已用原生 `UNETLoader` + `CLIPLoader(moss_image)` 加载，并在 gfx1032 INT8 fallback 下完成 512×512、50 步 SFT 出图及 8 步 DMD LoRA 候选出图，均有输出与视觉检查记录（T）。因此 MOSS **可用现有权重和核心节点测试，且上述两组已实测成功**；缺少 OpenMOSS 自有 HFLoader 只代表少了一种可选加载途径。图生图仍只有作者整合包层面的入口证据，本机这次没有验证图生图，也不能把它说成官方基础流程已证实能力。
 
 ## 3. Qwen-Image-2.1-Turbo-UN
 
@@ -40,7 +40,7 @@
 
 上游 [Qwen-Image-2.1-Turbo 模型卡](https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo)确认 Turbo 是 8 步模型，支持文生图与图像编辑，并展示单图转换、多参考构图；[Qwen 2.1 官方说明](https://qwen.ai/blog?id=qwen-image-2.1)还说明基础模型的局部编辑与最多 10 张参考图。它们证明 Qwen 2.1 家族能力，不证明自定义 `UN/Uncensored` 权重与所有界面开关完全等同。8GB 是作者整合包的硬件主张；目前可找到的是单次 4060 约 6GB 画面/说明，不能推成 RX 6650 XT 上的保证。
 
-本机有 `qwen-image-2.1-turbo-Q4_K_M.gguf`、`Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf`、`mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf` 和 `qwen_image_2.1_vae_bf16.safetensors`；ComfyUI-GGUF 已安装。已有这些文件只表示具备尝试条件，不等于 Turbo-UN 组合已运行通过：本机试跑记录中，普通 Turbo 配合原编码器完成了 8 步出图；Turbo-UN 编码器组合则在 GGUF 编码器卸载时触发 Windows native access violation，未生成图片（见[试跑记录](../../../trials/2026-10-18/README.md)）。局部重绘、多图和角色替换也不能仅凭文件清单算作已验证。不能把这些文件标成与作者整合包相同版本。
+本机有 `qwen-image-2.1-turbo-Q4_K_M.gguf`、`Qwen-Image-2.1-Turbo-Uncensored-Q4_K.gguf`、`mmproj-Qwen-Image-2.1-Turbo-Uncensored-F16.gguf` 和 `qwen_image_2.1_vae_bf16.safetensors`；ComfyUI-GGUF 已安装。已有这些文件只表示具备尝试条件，不等于 Turbo-UN 组合已运行通过：本机试跑记录中，普通 Turbo 配合原编码器完成了 8 步出图；Turbo-UN 编码器组合则在 GGUF 编码器卸载时触发 Windows native access violation，未生成图片（见[试跑记录](../../../evidence/2026-10-18/README.md)）。局部重绘、多图和角色替换也不能仅凭文件清单算作已验证。不能把这些文件标成与作者整合包相同版本。
 
 ## 4. Qwen-Image-2.1
 

@@ -18,7 +18,7 @@ from PIL import Image
 from platform_catalog import ROOT, linked, sha
 from run_conditioned_repair import prune, conditioning_node
 
-TRIAL = ROOT / 'trials/2026-10-24-linux-coverage'
+TRIAL = ROOT / 'evidence/2026-10-24-linux-coverage'
 RUNTIME = ROOT / 'runtime/ubuntu'
 RAW = ROOT / 'runs/linux-coverage-20261024'
 

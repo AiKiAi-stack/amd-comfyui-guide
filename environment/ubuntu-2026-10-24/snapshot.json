@@ -20,11 +20,11 @@
     "runtime/ubuntu/ComfyUI/comfy/ldm/modules/attention.py": "e81f3c9dc9a0bc0b344529384e158e96a17c8b89d5abb5ac486f3a397f6d0b71",
     "runtime/ubuntu/ComfyUI/custom_nodes/repair_conditioning/__init__.py": "7c8811739f9ea3a7cf1464dc5f7f48023e6653464b07a619f36fcf8926e8eb4a",
     "runtime/ubuntu/model-paths.yaml": "bd966bd09fcc481f8d50efd2d9338e08012152ee7b5ca9fbf2fcaca68437865f",
-    "trials/2026-10-24-ubuntu/diagnostics/sitecustomize.py": "d038d22f7d1d3f0f3b9d9275c5f736e15e0c72eecb1ec28142a1220d461f5111",
+    "evidence/2026-10-24-ubuntu/diagnostics/sitecustomize.py": "d038d22f7d1d3f0f3b9d9275c5f736e15e0c72eecb1ec28142a1220d461f5111",
     "scripts/setup_ubuntu.py": "2883b055a10ac02ff6f9b0ed80b34c054880f99fee7a7a0e7f81e98fa85fa9c4"
   },
   "linux_venv": "/home/user/.local/share/barely-comfy/ubuntu-20261024/.venv",
-  "gguf_patch_record": "trials/2026-10-24-ubuntu/cpu-detach-runtime-patch.json",
-  "model_hashes": "trials/2026-10-24-ubuntu/nvme-model-hashes.json",
+  "gguf_patch_record": "evidence/2026-10-24-ubuntu/cpu-detach-runtime-patch.json",
+  "model_hashes": "evidence/2026-10-24-ubuntu/nvme-model-hashes.json",
   "diagnostics_enabled_only_for_opt_in_trials": true
 }

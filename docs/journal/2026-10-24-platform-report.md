@@ -1,12 +1,12 @@
 # 模型、功能与平台对照 / WebUI 工作流库（2026-10-24）
 
-[打开新版 HTML](../../trials/2026-10-19-features/feature-report.html)；本地入口仍为 `http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html`。
+[打开新版 HTML](../../evidence/2026-10-19-features/feature-report.html)；本地入口仍为 `http://127.0.0.1:8767/evidence/2026-10-19-features/feature-report.html`。
 
 页面按 **模型 → 功能 → Windows / Linux** 展示 9 个模型/权重系列、46 个功能分组、106 条执行或待办证据。左右平台各自展示输出、原评价、全部重试与失败记录，展开可看复现步骤、精确权重名、输入图片/顺序、提示词、seed、分辨率、步数及采样器。搜索和筛选可以只看两平台已有记录、Linux 待验证或有工作流的功能。
 
 不同平台的提示词、编码器、精度及执行方式可能不同；这份报告对照功能证据，不是严格跨平台速度基准。实际未验证的平台显示“未验证”，不继承另一平台的通过结论。最新有图案例只是代表例，历史失败没有删除。
 
-原报告完整归档为 [Windows HTML](../../trials/2026-10-19-features/feature-report.windows-20261024.html) 和 [Windows Markdown](../../trials/2026-10-19-features/feature-report.windows-20261024.md)，SHA256 与重排前逐字节相同。原 cases/reviews/baseline/blocked 和原主 Markdown 未修改；校验见 [保留证明](../../trials/2026-10-24-platform-report/preservation-after.json)。旧生成脚本的命令行入口改为生成新布局，历史渲染函数及备份保留。
+原报告完整归档为 [Windows HTML](../../evidence/2026-10-19-features/feature-report.windows-20261024.html) 和 [Windows Markdown](../../evidence/2026-10-19-features/feature-report.windows-20261024.md)，SHA256 与重排前逐字节相同。原 cases/reviews/baseline/blocked 和原主 Markdown 未修改；校验见 [保留证明](../../evidence/2026-10-24-platform-report/preservation-after.json)。旧生成脚本的命令行入口改为生成新布局，历史渲染函数及备份保留。
 
 ## 在 ComfyUI 使用
 
@@ -20,8 +20,8 @@ MOSS 按实际 SFT INT8 权重归类，原模型标签保留。Base 与 Turbo �
 
 ## 本轮复核
 
-- [9 项回归检查](../../trials/2026-10-24-platform-report/tests.txt)：历史字节和评价、模型/功能归类、平台边界、批量图抽取、可移植参数、输入内容、安装文件与 HTML 转义。
-- [桌面/手机真实浏览器检查](../../trials/2026-10-24-platform-report/report-browser-checks.json)：9 模型、46 功能、106 条记录、92 平台面板，搜索、筛选、展开、清除正常，手机无横向溢出。所有本地引用存在，zip CRC 正常。
-- [实际 WebUI 队列回执](../../trials/2026-10-24-platform-report/webui-queue-receipt.json)、[history](../../trials/2026-10-24-platform-report/webui-history.json)、[执行/内存](../../trials/2026-10-24-platform-report/webui-execution.json)、[图片与目视](../../trials/2026-10-24-platform-report/webui-visual-review.json)。从已安装 Qwen 蓝眼 UI JSON 打开，经 `app.queuePrompt` 实际提交，114.325 秒完成 512×512 图片，最低观测可用 RAM 3365.3MiB；没有触发 1536MiB 保护。只改保存前缀以保留独立证据，其他参数与库中 API 一致，未缓存模型计算节点。图像健康，蓝眼发光及彩窗精确细节仍部分达到。
+- [9 项回归检查](../../evidence/2026-10-24-platform-report/tests.txt)：历史字节和评价、模型/功能归类、平台边界、批量图抽取、可移植参数、输入内容、安装文件与 HTML 转义。
+- [桌面/手机真实浏览器检查](../../evidence/2026-10-24-platform-report/report-browser-checks.json)：9 模型、46 功能、106 条记录、92 平台面板，搜索、筛选、展开、清除正常，手机无横向溢出。所有本地引用存在，zip CRC 正常。
+- [实际 WebUI 队列回执](../../evidence/2026-10-24-platform-report/webui-queue-receipt.json)、[history](../../evidence/2026-10-24-platform-report/webui-history.json)、[执行/内存](../../evidence/2026-10-24-platform-report/webui-execution.json)、[图片与目视](../../evidence/2026-10-24-platform-report/webui-visual-review.json)。从已安装 Qwen 蓝眼 UI JSON 打开，经 `app.queuePrompt` 实际提交，114.325 秒完成 512×512 图片，最低观测可用 RAM 3365.3MiB；没有触发 1536MiB 保护。只改保存前缀以保留独立证据，其他参数与库中 API 一致，未缓存模型计算节点。图像健康，蓝眼发光及彩窗精确细节仍部分达到。
 
 本次真实出图复核的是一份已验收 Linux 配方。LoRA、人物身份、参考消融、CPU8B、Windows native、FLUX 细节、异常/OOM 清理和视频待办没有由此结案。未更新发布快照 manifest，也未发布线上站点。

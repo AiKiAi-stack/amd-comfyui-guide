@@ -8,16 +8,16 @@
 
 首张成功；第二张改变提示词，重新请求 ZImageTEModel 时，在 `GGMLTensor.to → Module._apply → partially_unload` 原生退出，`0xC0000005`，无第二张图片。
 
-- [历史失败摘要](../../trials/2026-10-20-zimage/cases/zimage-gguf-prompt-change/attempts/001-native-access-violation/attempt-summary.json)
-- [历史实测与独立服务成功边界](../../trials/2026-10-20-zimage/README.md)
+- [历史失败摘要](../../evidence/2026-10-20-zimage/cases/zimage-gguf-prompt-change/attempts/001-native-access-violation/attempt-summary.json)
+- [历史实测与独立服务成功边界](../../evidence/2026-10-20-zimage/README.md)
 - 新复现命令：`scripts/repro_gguf_repeat.py`，一个服务依次改变提示词与 seed，要求每张均有成功 history 和可解码 PNG；保留失败 history、图和进程退出码。实际图片另行目视检查。
 - 上游 [GGUF #444](https://github.com/city96/ComfyUI-GGUF/issues/444) 与 [未合并 PR #445](https://github.com/city96/ComfyUI-GGUF/pull/445) 讨论卸载时 mmap 权重访问冲突。其触发点为 `unpatch_model`，本机历史栈为 `partially_unload`，尚不能认定同一根因。
 - PR #445 曾有 LoRA 强度变化回归，不能直接把 `unpatch_weights=False` 当作完整修复。
-- 本轮三组各复用单一进程，3/3、3/3、5/5 均通过，合计 11 张，均完成图片检查。预留 2GB 与不额外预留均通过，不能将该参数认定为根因；[完整实测与重跑方法](../../trials/2026-10-21-gguf-repeat/README.md) 保留了每次实际工作流、图片、history 摘要和 SHA。
+- 本轮三组各复用单一进程，3/3、3/3、5/5 均通过，合计 11 张，均完成图片检查。预留 2GB 与不额外预留均通过，不能将该参数认定为根因；[完整实测与重跑方法](../../evidence/2026-10-21-gguf-repeat/README.md) 保留了每次实际工作流、图片、history 摘要和 SHA。
 
 ## BC-002 · Qwen GGUF 重载崩溃 · 待独立回归
 
-[历史失败](../../trials/2026-10-20-qwen-uncensored/attempts/q21-un-gothic-horror-gguf-reload-crash/result.json) 记录了 GGUF 重载访问冲突。CPU 编码、关闭前缀缓存和独立服务是历史规避方法。Z-Image 修复若有效，仍须单独测试 Qwen，不能自动标记已修复。
+[历史失败](../../evidence/2026-10-20-qwen-uncensored/attempts/q21-un-gothic-horror-gguf-reload-crash/result.json) 记录了 GGUF 重载访问冲突。CPU 编码、关闭前缀缓存和独立服务是历史规避方法。Z-Image 修复若有效，仍须单独测试 Qwen，不能自动标记已修复。
 
 ## BC-003 · MOSS INT8 首步 HIPBLAS 失败 · 已有规避，待回归
 
@@ -31,11 +31,11 @@ gfx1032 INT8 路径报 `HIPBLAS_STATUS_INVALID_VALUE`。已有 [显式启用的�
 
 ## BC-005 · Kroma 参考图节点内部升至 1024 导致 OOM · 降规格规避
 
-512 输入不代表内部参考潜空间仍是 512。历史上改为显式 `VAEEncode + ReferenceLatent` 512 后出图，原 1024 路径未修复。见 [保留的原失败](../../trials/2026-10-19-features/attempts/kroma-ref1024-20261019-160446/kroma-multiref/result.json)。
+512 输入不代表内部参考潜空间仍是 512。历史上改为显式 `VAEEncode + ReferenceLatent` 512 后出图，原 1024 路径未修复。见 [保留的原失败](../../evidence/2026-10-19-features/attempts/kroma-ref1024-20261019-160446/kroma-multiref/result.json)。
 
 ## BC-006 · FLUX.2 关闭锁页内存后出噪声 · 历史对照有效
 
-本机移除 `--disable-pinned-memory` 后文生图及编辑恢复；[原失败图和成功对照](../../trials/2026-10-20-flux2-klein/README.md) 均保留。底层 HIP/WDDM 原因未确认。上游 [#16337](https://github.com/Comfy-Org/ComfyUI/issues/16337) 也报告 AMD 动态显存噪声，但显卡不同，且其锁页开关对照结论不同，不能合并为一个通用故障。
+本机移除 `--disable-pinned-memory` 后文生图及编辑恢复；[原失败图和成功对照](../../evidence/2026-10-20-flux2-klein/README.md) 均保留。底层 HIP/WDDM 原因未确认。上游 [#16337](https://github.com/Comfy-Org/ComfyUI/issues/16337) 也报告 AMD 动态显存噪声，但显卡不同，且其锁页开关对照结论不同，不能合并为一个通用故障。
 
 ## BC-008 · ROCm 7.2 在 GPU 初始化时原生崩溃 · 未修复
 
@@ -49,7 +49,7 @@ Z-Image 失败日志还保留一次 `unrecognized arguments: --normalvram`；这
 
 CPU 原失败的 2,489,319,424 字节来自 `151936×4096` 输出层的全词表 float32 反量化。[可选分块插件](../../code_source/cpu_chunked_logits/bounded.py) 限制为每次 2048 行；[真实调用路径回归](../../scripts/test_chunked_logits.py) 未启用时触发 4099 行预算异常，启用后数值匹配完整 Linear。它不减少整个模型的基础内存，也不修复其他层的内存问题。
 
-大模型 GPU 反推已产生准确 caption，但直接接出图仍在 `QuantizedTensor._handle_to → partially_unload` 原生退出。之后使用 [条件归档](../../code_source/repair_conditioning/__init__.py) 和 [分阶段运行器](../../scripts/run_conditioned_repair.py)，编码进程退出再开始采样，实际自动 caption→编码→15 步→CPU VAE→PNG 全部完成并目视通过。见 [完整尝试与图片](../../trials/2026-10-21-repairs/README.md)。
+大模型 GPU 反推已产生准确 caption，但直接接出图仍在 `QuantizedTensor._handle_to → partially_unload` 原生退出。之后使用 [条件归档](../../code_source/repair_conditioning/__init__.py) 和 [分阶段运行器](../../scripts/run_conditioned_repair.py)，编码进程退出再开始采样，实际自动 caption→编码→15 步→CPU VAE→PNG 全部完成并目视通过。见 [完整尝试与图片](../../evidence/2026-10-21-repairs/README.md)。
 
 这是流程规避，不是修复 native unload；原 CPU 配置仍慢且未完整验收。另一次静态 caption 的 CPU 编码续跑先在采样中 OOM，清理时再原生退出，不能把所有栈都归成同一个 GGUF 问题。原始失败与人工保护性停止分别保留。
 
@@ -57,9 +57,9 @@ CPU 原失败的 2,489,319,424 字节来自 `151936×4096` 输出层的全词表
 
 Qwen 双参考使用 legacy 编码时先触发 Windows commit 保护；原生动态显存编码完成五项。采样服务的第二项仍可能触发保护，即使使用 `--cache-none`，不能把缓存开关称作跨案例内存修复。当前采用每项独立采样进程，并记录实际 cache 设置。
 
-BFS FP16 重试完成 15/15 步，却在 CPU VAE 加载时触发保护，没有 PNG。新增 `SaveRepairLatent/LoadRepairLatent` 后，采样归档并退出，再用独立 CPU 进程解码，得到完整图片。[结果与三阶段绑定](../../trials/2026-10-21-repairs/cases/qwen-bfs-direction-mask/result.json) 留有采样/编码/解码 API 和归档 SHA；视觉仍部分达到，运行完成不等于精确身份复现。
+BFS FP16 重试完成 15/15 步，却在 CPU VAE 加载时触发保护，没有 PNG。新增 `SaveRepairLatent/LoadRepairLatent` 后，采样归档并退出，再用独立 CPU 进程解码，得到完整图片。[结果与三阶段绑定](../../evidence/2026-10-21-repairs/cases/qwen-bfs-direction-mask/result.json) 留有采样/编码/解码 API 和归档 SHA；视觉仍部分达到，运行完成不等于精确身份复现。
 
-归档测试检查 dtype、noise mask 与原值精确往返；图测试检查解码阶段不再依赖采样模型而保留最终合成。保护性停止与 native access violation 分开记录，见 [尝试索引](../../trials/2026-10-21-repairs/attempts.json)。
+归档测试检查 dtype、noise mask 与原值精确往返；图测试检查解码阶段不再依赖采样模型而保留最终合成。保护性停止与 native access violation 分开记录，见 [尝试索引](../../evidence/2026-10-21-repairs/attempts.json)。
 
 ## BC-012 · split attention 黑图及奇数长度切片无效 · 数值回归通过，已有大模型独立输出
 

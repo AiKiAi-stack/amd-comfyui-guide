@@ -2,8 +2,8 @@
   "snapshot_date": "2026-10-19",
   "status": "exploratory_only_not_run",
   "workflow_binding": {
-    "builder": "trials/2026-10-19-features/feature_bench.py::turbo_un_graph",
-    "base_graph": "trials/2026-10-18/qwen-base-edit-512-api.json",
+    "builder": "evidence/2026-10-19-features/feature_bench.py::turbo_un_graph",
+    "base_graph": "evidence/2026-10-18/qwen-base-edit-512-api.json",
     "text_encoder_node": "TextEncodeQwenImage21",
     "reference_mapping": "qwen_graph enumerates case.refs in list order, adds LoadImage + ImageScale nodes at 512x512 with crop=disabled, then connects them to TextEncodeQwenImage21 inputs images.image_1, images.image_2, and so on. The first refs entry is therefore image 1 in the prompt; the second is image 2.",
     "turbo_un_mapping": "turbo_un_graph starts from qwen_graph, replaces the UNET and GGUF CLIP loaders with the Turbo-UN files, and replaces KSampler with the custom 8-step ManualSigmas sampler. Keep recipe=edit to exercise the existing two-image TextEncodeQwenImage21 path.",
@@ -20,9 +20,9 @@
     "visual_constraints": "No labels, clothing, face, background scene, or control-map encoding."
   },
   "evidence": [
-    "../trials/2026-10-19-features/feature_bench.py",
-    "../trials/2026-10-18/qwen-base-edit-512-api.json",
-    "../trials/2026-10-19-features/blocked.json",
+    "../evidence/2026-10-19-features/feature_bench.py",
+    "../evidence/2026-10-18/qwen-base-edit-512-api.json",
+    "../evidence/2026-10-19-features/blocked.json",
     "https://bbs.monster/thread-5262-1-1.html",
     "../ComfyUI/input/featurebench/astronaut.png",
     "../ComfyUI/input/featurebench/kroma-portrait-a.png",

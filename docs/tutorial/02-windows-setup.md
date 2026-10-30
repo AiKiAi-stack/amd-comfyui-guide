@@ -1,4 +1,4 @@
-# 01 · 环境与从零搭建
+# 02 · Windows 环境与从零搭建
 
 ## 已确认的实测环境
 
@@ -13,7 +13,7 @@ Windows、RX 6650 XT 8GB（gfx1032）、16GB RAM，Python 3.12.6。当前本机�
 ```powershell
 New-Item -ItemType Directory -Force D:\AI | Out-Null
 Set-Location D:\AI
-git clone https://github.com/AiKiAi-stack/barely-comfy.git
+git clone https://github.com/AiKiAi-stack/amd-comfyui-guide.git
 Set-Location barely-comfy
 py -3.12 -m venv .venv
 $env:PIP_CACHE_DIR = 'D:\AI\cache\pip'

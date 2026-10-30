@@ -2,10 +2,10 @@
 
 本轮继续完善“模型 → 功能 → Windows / Linux”汇报与 WebUI 工作流。只追加 Linux 实测和使用说明，不改原 Windows 评价、原图和原计算图。新汇报是功能证据对照；两平台可能采用不同编码器、精度或执行方式，不是同配置性能基准。
 
-- [本地汇报](../../trials/2026-10-19-features/feature-report.html)
+- [本地汇报](../../evidence/2026-10-19-features/feature-report.html)
 - [工作流使用说明](../../workflows/README.md)
-- [计划、结果、目视评价与原始阶段图](../../trials/2026-10-24-linux-coverage/README.md)
-- [保留的 Windows 原汇报](../../trials/2026-10-19-features/feature-report.windows-20261024.html)
+- [计划、结果、目视评价与原始阶段图](../../evidence/2026-10-24-linux-coverage/README.md)
+- [保留的 Windows 原汇报](../../evidence/2026-10-19-features/feature-report.windows-20261024.html)
 
 ## 实际执行与使用边界
 

@@ -43,6 +43,6 @@ def known_workflow_errors(graph):
                         f"MOSS timestep mismatch at sampler {sampler_id}: ModelSamplingSD3 sets the "
                         "wrong timestep scale for the tested moss_image_sft_int8_convrot model. "
                         "Use ModelSamplingAuraFlow with shift 5 (multiplier 1). "
-                        "See trials/2026-10-18/moss-wrong-timestep-api.json and moss-api.json.")
+                        "See evidence/2026-10-18/moss-wrong-timestep-api.json and moss-api.json.")
                 break
     return errors

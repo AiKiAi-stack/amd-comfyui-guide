@@ -23,7 +23,15 @@ PROJECT_ROOT = HERE.parents[1]
 COMFY = PROJECT_ROOT / "ComfyUI"
 COMFY_INPUT = COMFY / "input"
 COMFY_OUTPUT = COMFY / "output"
-ALLOWED_ASSET_ROOTS = (HERE, PROJECT_ROOT / "trials", COMFY_INPUT, COMFY_OUTPUT)
+ALLOWED_ASSET_ROOTS = (HERE, PROJECT_ROOT / "evidence", COMFY_INPUT, COMFY_OUTPUT)
+
+
+def normalize_legacy(value) -> str:
+    """Map historical `trials/` prefixes onto the renamed `evidence/` tree."""
+    value = str(value).replace("\\", "/")
+    if value.startswith("trials/"):
+        return "evidence/" + value[len("trials/"):]
+    return value
 
 
 def read_json(path: Path, fallback):
@@ -65,7 +73,7 @@ def input_asset(reference: str) -> Path | None:
     if not value:
         return None
 
-    raw_path = Path(value)
+    raw_path = Path(normalize_legacy(value))
     candidates: list[Path] = []
     if raw_path.is_absolute():
         candidates.append(raw_path)
@@ -78,7 +86,7 @@ def input_asset(reference: str) -> Path | None:
             if "/" not in normalized:
                 filename = normalized if Path(normalized).suffix else normalized + ".png"
                 candidates.append(COMFY_INPUT / "featurebench" / filename)
-            candidates.extend((HERE / Path(normalized), PROJECT_ROOT / Path(normalized)))
+            candidates.extend((HERE / Path(normalize_legacy(normalized)), PROJECT_ROOT / Path(normalize_legacy(normalized))))
 
     for candidate in candidates:
         resolved = safe_asset(candidate)
@@ -109,7 +117,7 @@ def result_asset(image) -> Path | None:
             if match and ".." not in Path(match.group(2)).parts:
                 base = COMFY_INPUT if match.group(1).lower() == "input" else COMFY_OUTPUT
                 candidates.append(base / match.group(2))
-            raw_path = Path(raw)
+            raw_path = Path(normalize_legacy(raw))
             if raw_path.is_absolute():
                 candidates.append(raw_path)
             else:
@@ -342,7 +350,7 @@ def legacy_api_path(case: dict) -> Path | None:
                 elif trials_match:
                     token = token[trials_match.start():]
 
-                raw_path = Path(token.replace("/", os.sep))
+                raw_path = Path(normalize_legacy(token).replace("/", os.sep))
                 candidates = [raw_path] if raw_path.is_absolute() else [
                     HERE / raw_path,
                     PROJECT_ROOT / raw_path,

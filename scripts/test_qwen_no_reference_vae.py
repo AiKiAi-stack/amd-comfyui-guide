@@ -16,7 +16,7 @@ import torch
 from comfy_extras.nodes_qwen import TextEncodeQwenImage21
 
 spec = importlib.util.spec_from_file_location('qwen_phase_runner',
-    Path(__file__).resolve().parents[1] / 'trials/2026-10-24-ubuntu/run_qwen_phases.py')
+    Path(__file__).resolve().parents[1] / 'evidence/2026-10-24-ubuntu/run_qwen_phases.py')
 runner = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(runner)
 

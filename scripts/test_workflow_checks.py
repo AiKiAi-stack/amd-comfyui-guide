@@ -8,7 +8,7 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WRONG = ROOT / "trials/2026-10-18/moss-wrong-timestep-api.json"
+WRONG = ROOT / "evidence/2026-10-18/moss-wrong-timestep-api.json"
 
 
 class ReplayPreflightTests(unittest.TestCase):

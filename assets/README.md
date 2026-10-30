@@ -16,7 +16,7 @@ All images are untouched official test outputs (512×512) from public evidence i
 | `qwen21-turbo-cat.png` | `ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png` | Qwen Image 2.1 Turbo, text to image |
 | `flux2-klein-watercolor-cat.png` | `ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png` | FLUX.2 Klein, style edit |
 | `kroma-q2-forest-fox.png` | `ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png` | Kroma Q2, 4-step sampling |
-| `moss-sft-astronaut.png` | `trials/2026-10-21-repairs/cases/moss-watercolor-base-sft/10-0-moss-watercolor-base-sft_00001_.png` | MOSS SFT, 8-step LoRA |
+| `moss-sft-astronaut.png` | `evidence/2026-10-21-repairs/cases/moss-watercolor-base-sft/10-0-moss-watercolor-base-sft_00001_.png` | MOSS SFT, 8-step LoRA |
 | `qwen-multiref-fox.png` | `ComfyUI/output/FeatureBench/qwen-multiref_00001_.png` | Qwen Image 2.1, multi-reference (banner background) |
 
 ## Rebuild

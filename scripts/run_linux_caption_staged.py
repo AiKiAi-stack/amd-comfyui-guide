@@ -7,7 +7,7 @@ from pathlib import Path
 from platform_catalog import ROOT, sha
 from run_conditioned_repair import prune, conditioning_node
 
-TRIAL=ROOT/'trials/2026-10-24-linux-coverage'
+TRIAL=ROOT/'evidence/2026-10-24-linux-coverage'
 
 
 def execute_caption_staged(case, timeout, execute, write_result):

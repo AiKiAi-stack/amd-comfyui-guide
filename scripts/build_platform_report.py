@@ -13,7 +13,7 @@ from platform_catalog import ROOT, HERE, MODELS, FEATURES, sha
 from report_evidence import comparison, ISSUE_FILE
 
 
-PRESENTATION = ROOT / 'trials/2026-10-26-report-edit'
+PRESENTATION = ROOT / 'evidence/2026-10-26-report-edit'
 TRIAL_NOTES = json.loads((PRESENTATION / 'trial-notes.json').read_text()) if (PRESENTATION / 'trial-notes.json').is_file() else {}
 READING_SUMMARIES = json.loads((PRESENTATION / 'reading-summaries.json').read_text()) if (PRESENTATION / 'reading-summaries.json').is_file() else {}
 MODEL_LABELS = {**MODELS, 'qwen-base':'Qwen-Image 2.1 Base', 'qwen-turbo':'Qwen-Image 2.1 Turbo', 'kroma':'Kroma 0.3.1 OPD', 'moss':'MOSS Image SFT', 'flux2':'FLUX.2 Klein 4B', 'zimage-gguf':'Z-Image Turbo · 双GGUF', 'zimage-aio':'Z-Image Turbo · FP8 AIO'}
@@ -59,13 +59,20 @@ def escape(value):
     return html.escape(str(value if value is not None else ''), quote=True)
 
 
+def _repo_path(path):
+    path = str(path).replace('\\', '/')
+    if path.startswith('trials/'):
+        path = 'evidence/' + path[len('trials/'):]
+    return ROOT / path
+
+
 def url(path):
-    return quote(os.path.relpath(ROOT / path, HERE).replace(os.sep, '/'), safe='/._-')
+    return quote(os.path.relpath(_repo_path(path), HERE).replace(os.sep, '/'), safe='/._-')
 
 
 @lru_cache(maxsize=None)
 def image_dimensions(path):
-    file = ROOT / path
+    file = _repo_path(path)
     if file.is_file():
         with file.open('rb') as stream: header = stream.read(24)
         if header[:8] == b'\x89PNG\r\n\x1a\n':

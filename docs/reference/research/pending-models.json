@@ -17,7 +17,7 @@
     "status": "seven_planned_edit_features_tested_with_partial_results",
     "source_access": "First article body successfully read through normal browser access before the same-domain safety block on a later URL.",
     "source_audit": "research/new-articles-2026-10-20.md",
-    "trial_folder": "trials/2026-10-20-flux2-klein",
+    "trial_folder": "evidence/2026-10-20-flux2-klein",
     "output_images": [
       "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
       "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
@@ -310,8 +310,8 @@
         "resource_summary": "cases/flux2-klein-iterative/resource-summary.json"
       }
     ],
-    "runtime_state": "trials/2026-10-20-flux2-klein/runtime-state.json",
-    "runtime_block_history": "trials/2026-10-20-flux2-klein/gpu-runtime-block.json"
+    "runtime_state": "evidence/2026-10-20-flux2-klein/runtime-state.json",
+    "runtime_block_history": "evidence/2026-10-20-flux2-klein/gpu-runtime-block.json"
   },
   {
     "id": "wechat-b-JAe4AbZCc5SDCcutRU_Q-20261020",
@@ -327,7 +327,7 @@
     ],
     "status": "planned_features_tested_512_optional_claims_unverified",
     "source_access": "User supplied offline body and screenshots; no new WeChat network access.",
-    "source_audit": "trials/2026-10-20-zimage/source-aio.md",
+    "source_audit": "evidence/2026-10-20-zimage/source-aio.md",
     "output_images": [
       "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-9step_00001_.png",
       "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png",
@@ -341,10 +341,10 @@
     "local_original": "[private-article-snapshot]",
     "original_sha256": "9946edf0d6aab4455debea11a3a38245a3b6084968527b7e4d4d57d5c5318179",
     "evidence": "User supplied offline body and screenshots; no new WeChat network access.",
-    "trial_folder": "trials/2026-10-20-zimage",
+    "trial_folder": "evidence/2026-10-20-zimage",
     "next_step": "Ten Z-Image outputs reviewed. 1024/6GB/quantization comparisons and optional branches remain unverified.",
-    "download_manifest": "trials/2026-10-20-zimage/download-manifest.json",
-    "preparation_status": "trials/2026-10-20-zimage/preparation-status.json",
+    "download_manifest": "evidence/2026-10-20-zimage/download-manifest.json",
+    "preparation_status": "evidence/2026-10-20-zimage/preparation-status.json",
     "latest_gpu_probe": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T140128Z\\result.json"
   },
   {
@@ -360,7 +360,7 @@
     ],
     "status": "planned_features_tested_512_optional_claims_unverified",
     "source_access": "User supplied offline body and screenshots; no new WeChat network access.",
-    "source_audit": "trials/2026-10-20-zimage/source-gguf.md",
+    "source_audit": "evidence/2026-10-20-zimage/source-gguf.md",
     "output_images": [
       "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-prompt-change_00001_.png",
       "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png",
@@ -372,10 +372,10 @@
     "local_original": "[private-article-snapshot]",
     "original_sha256": "f496872caa051f7afdc9f41772a38f1f436a66eecb3a928221143b6d3c91a403",
     "evidence": "User supplied offline body and screenshots; no new WeChat network access.",
-    "trial_folder": "trials/2026-10-20-zimage",
+    "trial_folder": "evidence/2026-10-20-zimage",
     "next_step": "Ten Z-Image outputs reviewed. 1024/6GB/quantization comparisons and optional branches remain unverified.",
-    "download_manifest": "trials/2026-10-20-zimage/download-manifest.json",
-    "preparation_status": "trials/2026-10-20-zimage/preparation-status.json",
+    "download_manifest": "evidence/2026-10-20-zimage/download-manifest.json",
+    "preparation_status": "evidence/2026-10-20-zimage/preparation-status.json",
     "latest_gpu_probe": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T140128Z\\result.json"
   }
 ]

@@ -39,7 +39,7 @@ bash scripts/start_ubuntu.sh
 
 GPU 最小检查通过，FP32/FP16/BF16 GEMM 与 SDPA 均通过。系统已有 `libnuma.so.1`，但 torch 导入时 rocSHMEM 仍提示找不到 `libnuma`；它没有阻止本轮计算，保留原日志，不改系统库链接来隐藏提示。
 
-连续出图、卸载诊断及目视结果见 [Ubuntu 独立试验记录](../../trials/2026-10-23-ubuntu/README.md)。原始日志和完整 history 留在被忽略的 `runs/ubuntu-*`，精选输出与摘要另存到新的 trial 目录。
+连续出图、卸载诊断及目视结果见 [Ubuntu 独立试验记录](../../evidence/2026-10-23-ubuntu/README.md)。原始日志和完整 history 留在被忽略的 `runs/ubuntu-*`，精选输出与摘要另存到新的 trial 目录。
 
 当前主机 16GB RAM、无 swap；连续测试显式设置 768MiB 物理可用内存保护。触发保护属于主动停止，不记录成 native crash。该保护不是 Linux OOM 的完整保证。
 

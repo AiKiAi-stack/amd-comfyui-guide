@@ -24,10 +24,10 @@
     "scripts/run_repair_batch.py": "1c5b1eaf5172e372e15196bcc00db87e28d7ece2a51c39470b28640143f025b6",
     "scripts/test_conditioned_graph.py": "bad3a36faa83b8b80a191e35ab11dba116137f4ca917cbc013e65983346e7462",
     "scripts/verify_reference_conditions.py": "9d004a1c5132d8448caded80337c5107591a04c72df025121a81d706d6090695",
-    "trials/2026-10-19-features/cases.json": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a",
-    "trials/2026-10-19-features/feature-report.html": "2e75cc70ae739a9772a4c2c2a9cf7f1fb7179759ac1347c47ed3840d400088ba",
-    "trials/2026-10-19-features/feature-report.md": "5168394f9cd40eaaa90ba8b4fcc79ec1edc5afb3d3b926c6bb86df8e51ff2452",
-    "trials/2026-10-19-features/reviews.json": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f"
+    "evidence/2026-10-19-features/cases.json": "91a8d4030de20b5c591fee20aff41ab9c38f451529992bf87e72e06670ed989a",
+    "evidence/2026-10-19-features/feature-report.html": "2e75cc70ae739a9772a4c2c2a9cf7f1fb7179759ac1347c47ed3840d400088ba",
+    "evidence/2026-10-19-features/feature-report.md": "5168394f9cd40eaaa90ba8b4fcc79ec1edc5afb3d3b926c6bb86df8e51ff2452",
+    "evidence/2026-10-19-features/reviews.json": "accc751fc73e0261fea237ddf4b7200b1236083af7e7e5891ae648bf5432e26f"
   },
   "gpu_access": "Temporary per-user ACL granted; persistent group membership unchanged",
   "models": "Existing amd_comfy/ComfyUI/models, configured as external search paths; not copied or downloaded",

@@ -9,7 +9,7 @@ from run_qwen_reference_repair import cached_reference_graph, reference_phase_gr
 
 class GraphTests(unittest.TestCase):
     def test_reference_batch_keeps_real_workflow_archives_independent(self):
-        root = Path(__file__).resolve().parents[1] / 'trials/2026-10-21-repairs/workflows'
+        root = Path(__file__).resolve().parents[1] / 'evidence/2026-10-21-repairs/workflows'
         paths = [root / (label + '.api.json') for label in ('turbo-un-pose-isolated', 'turbo-un-multiref-natural')]
         specs = prepare_workflows(paths)
         prefixes = [spec['reference']['repair_save_references']['inputs']['prefix'] for spec in specs]
@@ -23,7 +23,7 @@ class GraphTests(unittest.TestCase):
 
     def test_actual_turbo_reference_and_text_phases_do_not_share_models(self):
         import json
-        path = Path(__file__).resolve().parents[1] / 'trials/2026-10-21-repairs/workflows/turbo-fox-profile-natural.api.json'
+        path = Path(__file__).resolve().parents[1] / 'evidence/2026-10-21-repairs/workflows/turbo-fox-profile-natural.api.json'
         graph = json.loads(path.read_text(encoding='utf-8'))
         references = reference_phase_graph(graph, '4', '64', 'probe', 'source-sha')
         self.assertIn('3', references)  # VAE
@@ -102,7 +102,7 @@ class GraphTests(unittest.TestCase):
 
     def test_actual_turbo_custom_guider_encoding_excludes_denoiser(self):
         import json
-        path = Path(__file__).resolve().parents[1] / "trials/2026-10-21-repairs/workflows/turbo-mask-fox-reference.api.json"
+        path = Path(__file__).resolve().parents[1] / "evidence/2026-10-21-repairs/workflows/turbo-mask-fox-reference.api.json"
         graph = json.loads(path.read_text(encoding="utf-8"))
         sampler_id = next(k for k, n in graph.items() if n["class_type"] == "SamplerCustomAdvanced")
         guider_id = conditioning_node(graph, sampler_id)

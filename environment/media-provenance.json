@@ -954,1051 +954,1051 @@
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/no-reserve/repeat-01-red_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/no-reserve/repeat-01-red_00001_.png",
     "original_sha256": "c66f3e070d38b4ff7d2689f466da21f146aa91a45ef4d997f602a05c3ed99315",
     "public_sha256": "c66f3e070d38b4ff7d2689f466da21f146aa91a45ef4d997f602a05c3ed99315",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/no-reserve/repeat-02-blue_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/no-reserve/repeat-02-blue_00001_.png",
     "original_sha256": "9927f02e45de3c8919a43abe80ee2b65e50f412ba711b37ade250c277d80473b",
     "public_sha256": "9927f02e45de3c8919a43abe80ee2b65e50f412ba711b37ade250c277d80473b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/no-reserve/repeat-03-green_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/no-reserve/repeat-03-green_00001_.png",
     "original_sha256": "68a511dfbb6e72daaaff22a88cf2261cf064ad9e5e872f520ece500499bfcde6",
     "public_sha256": "68a511dfbb6e72daaaff22a88cf2261cf064ad9e5e872f520ece500499bfcde6",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/original-prompts/repeat-01-red_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/original-prompts/repeat-01-red_00001_.png",
     "original_sha256": "a2e5532d945d081811c3d8dd77165b44fbbcadc4e183a9ee5fe841b717a4d049",
     "public_sha256": "a2e5532d945d081811c3d8dd77165b44fbbcadc4e183a9ee5fe841b717a4d049",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/original-prompts/repeat-02-blue_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/original-prompts/repeat-02-blue_00001_.png",
     "original_sha256": "7e015338fa22a229a712a95392048d084c93914c563ab7f99e0da86b2ab8257c",
     "public_sha256": "7e015338fa22a229a712a95392048d084c93914c563ab7f99e0da86b2ab8257c",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/original-prompts/repeat-03-green_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/original-prompts/repeat-03-green_00001_.png",
     "original_sha256": "82ae0f76d9dd79ec2cb5dbd5da01b1584ea0e4b7511e936a56840bad73dd19bb",
     "public_sha256": "82ae0f76d9dd79ec2cb5dbd5da01b1584ea0e4b7511e936a56840bad73dd19bb",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/original-prompts/repeat-04-yellow_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/original-prompts/repeat-04-yellow_00001_.png",
     "original_sha256": "39d0625d3ab6d2388288d2f7442c0dbcafe50c845e5c341875e918fa3841116f",
     "public_sha256": "39d0625d3ab6d2388288d2f7442c0dbcafe50c845e5c341875e918fa3841116f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/original-prompts/repeat-05-purple_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/original-prompts/repeat-05-purple_00001_.png",
     "original_sha256": "0ae4384911240646cad56be7e9b1fc786dd282b643d3a9ea8b33c00f06ff5d6e",
     "public_sha256": "0ae4384911240646cad56be7e9b1fc786dd282b643d3a9ea8b33c00f06ff5d6e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/reserve2/repeat-01-red_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/reserve2/repeat-01-red_00001_.png",
     "original_sha256": "c66f3e070d38b4ff7d2689f466da21f146aa91a45ef4d997f602a05c3ed99315",
     "public_sha256": "c66f3e070d38b4ff7d2689f466da21f146aa91a45ef4d997f602a05c3ed99315",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/reserve2/repeat-02-blue_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/reserve2/repeat-02-blue_00001_.png",
     "original_sha256": "9927f02e45de3c8919a43abe80ee2b65e50f412ba711b37ade250c277d80473b",
     "public_sha256": "9927f02e45de3c8919a43abe80ee2b65e50f412ba711b37ade250c277d80473b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-gguf-repeat/reserve2/repeat-03-green_00001_.png",
+    "file": "evidence/2026-10-21-gguf-repeat/reserve2/repeat-03-green_00001_.png",
     "original_sha256": "68a511dfbb6e72daaaff22a88cf2261cf064ad9e5e872f520ece500499bfcde6",
     "public_sha256": "68a511dfbb6e72daaaff22a88cf2261cf064ad9e5e872f520ece500499bfcde6",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/attempts/kroma-fp16-kroma-head-direction-mask/case03_9-0-kroma-head-direction-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/attempts/kroma-fp16-kroma-head-direction-mask/case03_9-0-kroma-head-direction-mask_00001_.png",
     "original_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "public_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/attempts/kroma-fp16-kroma-multiref-local-composite/case02_9-0-kroma-multiref-local-composite_00001_.png",
+    "file": "evidence/2026-10-21-repairs/attempts/kroma-fp16-kroma-multiref-local-composite/case02_9-0-kroma-multiref-local-composite_00001_.png",
     "original_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "public_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/attempts/kroma-fp16-kroma-multiref-local-composite/repair_save_input-0-kroma-multiref-local-composite-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/attempts/kroma-fp16-kroma-multiref-local-composite/repair_save_input-0-kroma-multiref-local-composite-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/attempts/kroma-fp16-kroma-multiref-local-composite/repair_save_mask-0-kroma-multiref-local-composite-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/attempts/kroma-fp16-kroma-multiref-local-composite/repair_save_mask-0-kroma-multiref-local-composite-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/attempts/kroma-fp16-kroma-style-no-subject-reference/case01_9-0-kroma-style-no-subject-reference_00001_.png",
+    "file": "evidence/2026-10-21-repairs/attempts/kroma-fp16-kroma-style-no-subject-reference/case01_9-0-kroma-style-no-subject-reference_00001_.png",
     "original_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "public_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/attempts/kroma-fp16-kroma-style-owl-explicit/case01_9-0-kroma-style-owl-explicit_00001_.png",
+    "file": "evidence/2026-10-21-repairs/attempts/kroma-fp16-kroma-style-owl-explicit/case01_9-0-kroma-style-owl-explicit_00001_.png",
     "original_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "public_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/attempts/kroma-fp16-kroma-watercolor-denoise040/9-0-kroma-watercolor-denoise040_00001_.png",
+    "file": "evidence/2026-10-21-repairs/attempts/kroma-fp16-kroma-watercolor-denoise040/9-0-kroma-watercolor-denoise040_00001_.png",
     "original_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "public_sha256": "1707efe457307d0a5e2f5a1ec1cff55b2a44286f3c4d8dda32bf394be8963b8b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-1024-attention/13-0-flux2-1024-attention_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-1024-attention/13-0-flux2-1024-attention_00001_.png",
     "original_sha256": "877fe791fbf76bdecfb14ba444166c145b0a87699ae787682f2b939fc3977e00",
     "public_sha256": "877fe791fbf76bdecfb14ba444166c145b0a87699ae787682f2b939fc3977e00",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-teapot-structure/19-0-flux2-teapot-structure_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-teapot-structure/19-0-flux2-teapot-structure_00001_.png",
     "original_sha256": "af7663ccea0c16e7346fb7f6319a764b96fad6b7fada12c4733def895ffbf371",
     "public_sha256": "af7663ccea0c16e7346fb7f6319a764b96fad6b7fada12c4733def895ffbf371",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-tiny-bow/19-0-flux2-tiny-bow_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-tiny-bow/19-0-flux2-tiny-bow_00001_.png",
     "original_sha256": "f6c99fa31ff2c4d55e7109b8e7f67312e50c698afdca704ea870e9bbf4d9d360",
     "public_sha256": "f6c99fa31ff2c4d55e7109b8e7f67312e50c698afdca704ea870e9bbf4d9d360",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-tiny-bow-fingertip/19-0-flux2-tiny-bow-fingertip_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-tiny-bow-fingertip/19-0-flux2-tiny-bow-fingertip_00001_.png",
     "original_sha256": "5a0a332e0000be41484097a8bb47062397f3a97ebfd3e4d81e76c0fab44faf03",
     "public_sha256": "5a0a332e0000be41484097a8bb47062397f3a97ebfd3e4d81e76c0fab44faf03",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-tiny-bow-sized-composite/save-0-flux2-tiny-bow-sized-composite_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-tiny-bow-sized-composite/save-0-flux2-tiny-bow-sized-composite_00001_.png",
     "original_sha256": "7ae166ac971c1e0de80ae1d604e64a0a66776f09d2e8534a065f735e86d17c55",
     "public_sha256": "7ae166ac971c1e0de80ae1d604e64a0a66776f09d2e8534a065f735e86d17c55",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-tiny-bow-sized-composite/saveinput-0-flux2-tiny-bow-sized-composite-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-tiny-bow-sized-composite/saveinput-0-flux2-tiny-bow-sized-composite-input_00001_.png",
     "original_sha256": "3a246e34caaa96881ba87b03496a76a45f8d848b22002ec72c11c08630b75e6b",
     "public_sha256": "3a246e34caaa96881ba87b03496a76a45f8d848b22002ec72c11c08630b75e6b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-tiny-bow-sized-composite/savemask-0-flux2-tiny-bow-sized-composite-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-tiny-bow-sized-composite/savemask-0-flux2-tiny-bow-sized-composite-mask_00001_.png",
     "original_sha256": "ec3fbeef0a9ab40c3b933d0503af4536e14aaadcc0e1e2cdbc142ff6b361ff2d",
     "public_sha256": "ec3fbeef0a9ab40c3b933d0503af4536e14aaadcc0e1e2cdbc142ff6b361ff2d",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/flux2-watercolor-night/19-0-flux2-watercolor-night_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/flux2-watercolor-night/19-0-flux2-watercolor-night_00001_.png",
     "original_sha256": "8848a225d1576bd41094902ce437e63e5336de47ccdd10ca0673e50f6317c7c3",
     "public_sha256": "8848a225d1576bd41094902ce437e63e5336de47ccdd10ca0673e50f6317c7c3",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-head-cropped-reference/case03_9-0-kroma-head-cropped-reference_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-head-cropped-reference/case03_9-0-kroma-head-cropped-reference_00001_.png",
     "original_sha256": "1de574f845e6b7ff231bbf8b14f09e26616f705a654e73b73e9fc96aa0abaeab",
     "public_sha256": "1de574f845e6b7ff231bbf8b14f09e26616f705a654e73b73e9fc96aa0abaeab",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-head-cropped-reference/repair_save_input-0-kroma-head-cropped-reference-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-head-cropped-reference/repair_save_input-0-kroma-head-cropped-reference-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-head-cropped-reference/repair_save_mask-0-kroma-head-cropped-reference-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-head-cropped-reference/repair_save_mask-0-kroma-head-cropped-reference-mask_00001_.png",
     "original_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
     "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-head-direction-mask/case03_9-0-kroma-head-direction-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-head-direction-mask/case03_9-0-kroma-head-direction-mask_00001_.png",
     "original_sha256": "9d40a460f02780ad10e16c0519a814d6145ffa6b92da8e775c67bc6aeb450753",
     "public_sha256": "9d40a460f02780ad10e16c0519a814d6145ffa6b92da8e775c67bc6aeb450753",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-clean-reference/case02_9-0-kroma-multiref-clean-reference_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-clean-reference/case02_9-0-kroma-multiref-clean-reference_00001_.png",
     "original_sha256": "f1efebef704f25bdf372cb8f326d9eb641f625e57964ec770c9671c2dfae5fb7",
     "public_sha256": "f1efebef704f25bdf372cb8f326d9eb641f625e57964ec770c9671c2dfae5fb7",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-clean-reference/repair_save_input-0-kroma-multiref-clean-reference-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-clean-reference/repair_save_input-0-kroma-multiref-clean-reference-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-clean-reference/repair_save_mask-0-kroma-multiref-clean-reference-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-clean-reference/repair_save_mask-0-kroma-multiref-clean-reference-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-full-tail/case02_9-0-kroma-multiref-full-tail_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-full-tail/case02_9-0-kroma-multiref-full-tail_00001_.png",
     "original_sha256": "20739e7a29fa9632b8f08c118dae67a08e6678ea8669cb2131cb37ac7205089d",
     "public_sha256": "20739e7a29fa9632b8f08c118dae67a08e6678ea8669cb2131cb37ac7205089d",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-full-tail/repair_save_input-0-kroma-multiref-full-tail-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-full-tail/repair_save_input-0-kroma-multiref-full-tail-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-full-tail/repair_save_mask-0-kroma-multiref-full-tail-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-full-tail/repair_save_mask-0-kroma-multiref-full-tail-mask_00001_.png",
     "original_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
     "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-natural-crop/case02_9-0-kroma-multiref-natural-crop_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-natural-crop/case02_9-0-kroma-multiref-natural-crop_00001_.png",
     "original_sha256": "4f3b57434d9ad52bf07af7ffab3a3fdfc20c3c1aa944d9b8eac4c070dadb8af8",
     "public_sha256": "4f3b57434d9ad52bf07af7ffab3a3fdfc20c3c1aa944d9b8eac4c070dadb8af8",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-natural-crop/repair_save_input-0-kroma-multiref-natural-crop-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-natural-crop/repair_save_input-0-kroma-multiref-natural-crop-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-natural-crop/repair_save_mask-0-kroma-multiref-natural-crop-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-natural-crop/repair_save_mask-0-kroma-multiref-natural-crop-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-no-fox/case02_9-0-kroma-multiref-no-fox_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-no-fox/case02_9-0-kroma-multiref-no-fox_00001_.png",
     "original_sha256": "672fa63acfa2a8cbbad008ae906b96755c6bdc850c5d6c081bf61e90b2e2b139",
     "public_sha256": "672fa63acfa2a8cbbad008ae906b96755c6bdc850c5d6c081bf61e90b2e2b139",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-no-fox/repair_save_input-0-kroma-multiref-no-fox-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-no-fox/repair_save_input-0-kroma-multiref-no-fox-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-no-fox/repair_save_mask-0-kroma-multiref-no-fox-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-no-fox/repair_save_mask-0-kroma-multiref-no-fox-mask_00001_.png",
     "original_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
     "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-ref384/case02_9-0-kroma-multiref-ref384_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-ref384/case02_9-0-kroma-multiref-ref384_00001_.png",
     "original_sha256": "19cb88d2d27674a138cf1fef83d9b465532e11ca3b1d414e6150b2cb697f8111",
     "public_sha256": "19cb88d2d27674a138cf1fef83d9b465532e11ca3b1d414e6150b2cb697f8111",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-ref384/repair_save_input-0-kroma-multiref-ref384-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-ref384/repair_save_input-0-kroma-multiref-ref384-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-multiref-ref384/repair_save_mask-0-kroma-multiref-ref384-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-multiref-ref384/repair_save_mask-0-kroma-multiref-ref384-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-style-no-subject-reference/case01_9-0-kroma-style-no-subject-reference_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-style-no-subject-reference/case01_9-0-kroma-style-no-subject-reference_00001_.png",
     "original_sha256": "8681cc813bc9461198780f5523862104d40f107c25bf0937984ad12daaa1164b",
     "public_sha256": "8681cc813bc9461198780f5523862104d40f107c25bf0937984ad12daaa1164b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-style-owl-explicit/case01_9-0-kroma-style-owl-explicit_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-style-owl-explicit/case01_9-0-kroma-style-owl-explicit_00001_.png",
     "original_sha256": "77b13e6c330b7fc6c0ab417d98e1e3d50818a818c12431bfd965e1040abe3151",
     "public_sha256": "77b13e6c330b7fc6c0ab417d98e1e3d50818a818c12431bfd965e1040abe3151",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-watercolor-back-view/9-0-kroma-watercolor-back-view_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-watercolor-back-view/9-0-kroma-watercolor-back-view_00001_.png",
     "original_sha256": "fad0708b7f3088e454af10deb55c3e96ff131b111b605189530479e27dc0f49e",
     "public_sha256": "fad0708b7f3088e454af10deb55c3e96ff131b111b605189530479e27dc0f49e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/kroma-watercolor-denoise040/9-0-kroma-watercolor-denoise040_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/kroma-watercolor-denoise040/9-0-kroma-watercolor-denoise040_00001_.png",
     "original_sha256": "29fe1d637daa2080c9b1d6e3b279a5fa4cce77031a6df56276d35512271a64f7",
     "public_sha256": "29fe1d637daa2080c9b1d6e3b279a5fa4cce77031a6df56276d35512271a64f7",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/moss-watercolor-base-sft/10-0-moss-watercolor-base-sft_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/moss-watercolor-base-sft/10-0-moss-watercolor-base-sft_00001_.png",
     "original_sha256": "7defe318d3ef543d93c095e78f2b60eacdfeb677026c17e900fd5d10b812e7c1",
     "public_sha256": "7defe318d3ef543d93c095e78f2b60eacdfeb677026c17e900fd5d10b812e7c1",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/moss-watercolor-denoise085/10-0-moss-watercolor-denoise085_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/moss-watercolor-denoise085/10-0-moss-watercolor-denoise085_00001_.png",
     "original_sha256": "dfa2cc46a4e6b50450d2715081bdcfcff6d4a1f1656f2bdb47dd6f934b56a65c",
     "public_sha256": "dfa2cc46a4e6b50450d2715081bdcfcff6d4a1f1656f2bdb47dd6f934b56a65c",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-bfs-direction-mask/7-0-qwen-bfs-direction-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-bfs-direction-mask/7-0-qwen-bfs-direction-mask_00001_.png",
     "original_sha256": "5aebbd6f0e527c56a33f641b1adaa4e1160081988c60699866e5d449201aa452",
     "public_sha256": "5aebbd6f0e527c56a33f641b1adaa4e1160081988c60699866e5d449201aa452",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-bfs-direction-mask/repair_save_input-0-qwen-bfs-direction-mask-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-bfs-direction-mask/repair_save_input-0-qwen-bfs-direction-mask-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-bfs-direction-mask/repair_save_mask-0-qwen-bfs-direction-mask-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-bfs-direction-mask/repair_save_mask-0-qwen-bfs-direction-mask-mask_00001_.png",
     "original_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd",
     "public_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-bfs-full-hair-tiled/7-0-qwen-bfs-full-hair-tiled_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-bfs-full-hair-tiled/7-0-qwen-bfs-full-hair-tiled_00001_.png",
     "original_sha256": "277336dd44ca382d89a8ae787da67632555feec4dadb3e86639a56dc2e948e7e",
     "public_sha256": "277336dd44ca382d89a8ae787da67632555feec4dadb3e86639a56dc2e948e7e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-bfs-full-hair-tiled/repair_save_input-0-qwen-bfs-full-hair-tiled-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-bfs-full-hair-tiled/repair_save_input-0-qwen-bfs-full-hair-tiled-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-bfs-full-hair-tiled/repair_save_mask-0-qwen-bfs-full-hair-tiled-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-bfs-full-hair-tiled/repair_save_mask-0-qwen-bfs-full-hair-tiled-mask_00001_.png",
     "original_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
     "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-caption-phased/7-0-qwen-caption-gpu-chunked_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-caption-phased/7-0-qwen-caption-gpu-chunked_00001_.png",
     "original_sha256": "83a98c6af63bd0acc2ef56e4141ff9a4b2c4eacbb490a5a8aa81e8cbff98c200",
     "public_sha256": "83a98c6af63bd0acc2ef56e4141ff9a4b2c4eacbb490a5a8aa81e8cbff98c200",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-cfg1-fp16/case03_7-0-qwen-face-only-cfg1-fp16_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-cfg1-fp16/case03_7-0-qwen-face-only-cfg1-fp16_00001_.png",
     "original_sha256": "3758e3913c711470f44766dba7fdbdccf1e8d1e2820e952d8b1cc58a77ed0881",
     "public_sha256": "3758e3913c711470f44766dba7fdbdccf1e8d1e2820e952d8b1cc58a77ed0881",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-cfg1-fp16/repair_save_input-0-qwen-face-only-cfg1-fp16-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-cfg1-fp16/repair_save_input-0-qwen-face-only-cfg1-fp16-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-cfg1-fp16/repair_save_mask-0-qwen-face-only-cfg1-fp16-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-cfg1-fp16/repair_save_mask-0-qwen-face-only-cfg1-fp16-mask_00001_.png",
     "original_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
     "public_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-cfg3/case03_7-0-qwen-face-only-cfg3_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-cfg3/case03_7-0-qwen-face-only-cfg3_00001_.png",
     "original_sha256": "104a665e2af408662a92bb2554371971d95561e1e463175831d12e65191f3aca",
     "public_sha256": "104a665e2af408662a92bb2554371971d95561e1e463175831d12e65191f3aca",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-cfg3/repair_save_input-0-qwen-face-only-cfg3-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-cfg3/repair_save_input-0-qwen-face-only-cfg3-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-cfg3/repair_save_mask-0-qwen-face-only-cfg3-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-cfg3/repair_save_mask-0-qwen-face-only-cfg3-mask_00001_.png",
     "original_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
     "public_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-mask/case03_7-0-qwen-face-only-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-mask/case03_7-0-qwen-face-only-mask_00001_.png",
     "original_sha256": "80888e1dc51d908838951b8262014cfa020495a6e234185da50c0ba6f9a31b71",
     "public_sha256": "80888e1dc51d908838951b8262014cfa020495a6e234185da50c0ba6f9a31b71",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-mask/repair_save_input-0-qwen-face-only-mask-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-mask/repair_save_input-0-qwen-face-only-mask-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-face-only-mask/repair_save_mask-0-qwen-face-only-mask-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-face-only-mask/repair_save_mask-0-qwen-face-only-mask-mask_00001_.png",
     "original_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
     "public_sha256": "c872b6cbefdcb92f162692878b9a01b8ff191764e46b52f91dabdeaccd0f475f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-head-direction-mask/case01_7-0-qwen-head-direction-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-head-direction-mask/case01_7-0-qwen-head-direction-mask_00001_.png",
     "original_sha256": "2e34dc28707415a80ffd5fa76758e8b9ec9e865873478c1b1fa92b635a9b40bd",
     "public_sha256": "2e34dc28707415a80ffd5fa76758e8b9ec9e865873478c1b1fa92b635a9b40bd",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-head-direction-mask/repair_save_input-0-qwen-head-direction-mask-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-head-direction-mask/repair_save_input-0-qwen-head-direction-mask-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-head-direction-mask/repair_save_mask-0-qwen-head-direction-mask-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-head-direction-mask/repair_save_mask-0-qwen-head-direction-mask-mask_00001_.png",
     "original_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd",
     "public_sha256": "41797f82e7e8097c0440cc8b51b40a4bce92b95d7d9f90a0ac8634be9330debd",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-mask-fox-reference/case01_7-0-qwen-mask-fox-reference_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-mask-fox-reference/case01_7-0-qwen-mask-fox-reference_00001_.png",
     "original_sha256": "3b351c8db480c215d748737588e598350da966e9473f84fe09d651e4384c265f",
     "public_sha256": "3b351c8db480c215d748737588e598350da966e9473f84fe09d651e4384c265f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-mask-fox-reference/repair_save_input-0-qwen-mask-fox-reference-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-mask-fox-reference/repair_save_input-0-qwen-mask-fox-reference-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-mask-fox-reference/repair_save_mask-0-qwen-mask-fox-reference-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-mask-fox-reference/repair_save_mask-0-qwen-mask-fox-reference-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-multiref-full-tail/7-0-qwen-multiref-full-tail_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-multiref-full-tail/7-0-qwen-multiref-full-tail_00001_.png",
     "original_sha256": "2c24b8f08d12ec9c307915f8d0d9c93d7d1a95c53638554e1e3ba2bd8c5369d7",
     "public_sha256": "2c24b8f08d12ec9c307915f8d0d9c93d7d1a95c53638554e1e3ba2bd8c5369d7",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-multiref-full-tail/repair_save_input-0-qwen-multiref-full-tail-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-multiref-full-tail/repair_save_input-0-qwen-multiref-full-tail-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-multiref-full-tail/repair_save_mask-0-qwen-multiref-full-tail-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-multiref-full-tail/repair_save_mask-0-qwen-multiref-full-tail-mask_00001_.png",
     "original_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
     "public_sha256": "e2bf5413367a8e9bbeddd3614b038a2bdee68db7c4e532c93b25c09f11073b59",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-multiref-local-composite/7-0-qwen-multiref-local-composite_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-multiref-local-composite/7-0-qwen-multiref-local-composite_00001_.png",
     "original_sha256": "f317024e3961901dd287ee100a62f30222b8b6a3100fad9aadd71bf359312ea6",
     "public_sha256": "f317024e3961901dd287ee100a62f30222b8b6a3100fad9aadd71bf359312ea6",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-multiref-local-composite/repair_save_input-0-qwen-multiref-local-composite-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-multiref-local-composite/repair_save_input-0-qwen-multiref-local-composite-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/qwen-multiref-local-composite/repair_save_mask-0-qwen-multiref-local-composite-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/qwen-multiref-local-composite/repair_save_mask-0-qwen-multiref-local-composite-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-clean-latent/7-0-turbo-fox-clean-latent_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-clean-latent/7-0-turbo-fox-clean-latent_00001_.png",
     "original_sha256": "c54f4b7476675dd1d1fe2ae10f83a308473026ff2d96dc50036018e28b8c5fda",
     "public_sha256": "c54f4b7476675dd1d1fe2ae10f83a308473026ff2d96dc50036018e28b8c5fda",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-clean-latent/repair_save_input-0-turbo-fox-clean-latent-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-clean-latent/repair_save_input-0-turbo-fox-clean-latent-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-clean-latent/repair_save_mask-0-turbo-fox-clean-latent-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-clean-latent/repair_save_mask-0-turbo-fox-clean-latent-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-profile-precomputed/7-0-turbo-fox-profile-precomputed_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-profile-precomputed/7-0-turbo-fox-profile-precomputed_00001_.png",
     "original_sha256": "3a0e07b45cb5726cdabd11aebd4c4c2757ffae063ccc1569cc9fe9ae74c3fa16",
     "public_sha256": "3a0e07b45cb5726cdabd11aebd4c4c2757ffae063ccc1569cc9fe9ae74c3fa16",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-profile-precomputed/repair_save_input-0-turbo-fox-profile-precomputed-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-profile-precomputed/repair_save_input-0-turbo-fox-profile-precomputed-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-profile-precomputed/repair_save_mask-0-turbo-fox-profile-precomputed-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-profile-precomputed/repair_save_mask-0-turbo-fox-profile-precomputed-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-profile-wide-mask/7-0-turbo-fox-profile-wide-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-profile-wide-mask/7-0-turbo-fox-profile-wide-mask_00001_.png",
     "original_sha256": "14a641596325bf2f5320e49a00794b1bc5c2b6f9c85d5c46dfe03cd5763e934f",
     "public_sha256": "14a641596325bf2f5320e49a00794b1bc5c2b6f9c85d5c46dfe03cd5763e934f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-profile-wide-mask/repair_save_input-0-turbo-fox-profile-wide-mask-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-profile-wide-mask/repair_save_input-0-turbo-fox-profile-wide-mask-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-fox-profile-wide-mask/repair_save_mask-0-turbo-fox-profile-wide-mask-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-fox-profile-wide-mask/repair_save_mask-0-turbo-fox-profile-wide-mask-mask_00001_.png",
     "original_sha256": "b1a537b3fc195a8808829b624c0283317f4801cd7d5ae51fbf4606042efab000",
     "public_sha256": "b1a537b3fc195a8808829b624c0283317f4801cd7d5ae51fbf4606042efab000",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-head-direction-mask/7-0-turbo-head-direction-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-head-direction-mask/7-0-turbo-head-direction-mask_00001_.png",
     "original_sha256": "b3baa1d6d71a33f84e5f00a00495e543c11652bdb5b69b27b1b2f648fbb8f9a6",
     "public_sha256": "b3baa1d6d71a33f84e5f00a00495e543c11652bdb5b69b27b1b2f648fbb8f9a6",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-head-direction-mask/repair_save_input-0-turbo-head-direction-mask-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-head-direction-mask/repair_save_input-0-turbo-head-direction-mask-input_00001_.png",
     "original_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "public_sha256": "ccd09b5072738b4b71c81816f2df46a08cc5304223362aae81acbcd2299aaa5e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-head-direction-mask/repair_save_mask-0-turbo-head-direction-mask-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-head-direction-mask/repair_save_mask-0-turbo-head-direction-mask-mask_00001_.png",
     "original_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
     "public_sha256": "5bdfbc118d44a9ccc4075b647b73a7a5e7db00a9c8b64cc85bea93de8843ee11",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-mask-fox-reference/7-0-turbo-mask-fox-reference_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-mask-fox-reference/7-0-turbo-mask-fox-reference_00001_.png",
     "original_sha256": "c88048a12641ccc1e699f29a7842fcca66742bfcacd76998d8bc536c5cee37aa",
     "public_sha256": "c88048a12641ccc1e699f29a7842fcca66742bfcacd76998d8bc536c5cee37aa",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-mask-fox-reference/repair_save_input-0-turbo-mask-fox-reference-input_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-mask-fox-reference/repair_save_input-0-turbo-mask-fox-reference-input_00001_.png",
     "original_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "public_sha256": "85218f57d2211d193477b10d4c4fde1b89a6945d5790230a9598d5d956c60088",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-mask-fox-reference/repair_save_mask-0-turbo-mask-fox-reference-mask_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-mask-fox-reference/repair_save_mask-0-turbo-mask-fox-reference-mask_00001_.png",
     "original_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "public_sha256": "55898929a58af926b0d01bffca98823e16dc96e208032ae484f36dd3934d0507",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-ordinary-pose-control/7-0-turbo-ordinary-pose-control_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-ordinary-pose-control/7-0-turbo-ordinary-pose-control_00001_.png",
     "original_sha256": "4060e988847cd0cce85cd8d48989908013f8f3461b63ec793a1b78deafec41e3",
     "public_sha256": "4060e988847cd0cce85cd8d48989908013f8f3461b63ec793a1b78deafec41e3",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-ordinary-role-control/7-0-turbo-ordinary-role-control_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-ordinary-role-control/7-0-turbo-ordinary-role-control_00001_.png",
     "original_sha256": "f97da25c0a99ab409e8f366bf95829dbc13f11d2c80369363e797e3ad92e53d6",
     "public_sha256": "f97da25c0a99ab409e8f366bf95829dbc13f11d2c80369363e797e3ad92e53d6",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-un-multiref-natural/7-0-turbo-un-multiref-natural_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-un-multiref-natural/7-0-turbo-un-multiref-natural_00001_.png",
     "original_sha256": "67690bfc77f06d4494519874f39f494e311462e94417491347579c21afb76a47",
     "public_sha256": "67690bfc77f06d4494519874f39f494e311462e94417491347579c21afb76a47",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-un-multiref-no-fox/7-0-turbo-un-multiref-no-fox_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-un-multiref-no-fox/7-0-turbo-un-multiref-no-fox_00001_.png",
     "original_sha256": "47c4aaae9483e097a6ef17a0c68b12c290d2126ff6c5b6d944e8ec6d28b9aa2a",
     "public_sha256": "47c4aaae9483e097a6ef17a0c68b12c290d2126ff6c5b6d944e8ec6d28b9aa2a",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-un-pose-isolated/7-0-turbo-un-pose-isolated_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-un-pose-isolated/7-0-turbo-un-pose-isolated_00001_.png",
     "original_sha256": "bc56a0904f39dc87cd295dbca6bbf4f4f0d0c4e3d69db607464c475a7d540bfc",
     "public_sha256": "bc56a0904f39dc87cd295dbca6bbf4f4f0d0c4e3d69db607464c475a7d540bfc",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/turbo-un-role-isolated/7-0-turbo-un-role-isolated_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/turbo-un-role-isolated/7-0-turbo-un-role-isolated_00001_.png",
     "original_sha256": "1ee110cd97b69298ad1f4b250742d13a88b8f745c02723ee1c239f59d0fb87d2",
     "public_sha256": "1ee110cd97b69298ad1f4b250742d13a88b8f745c02723ee1c239f59d0fb87d2",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-21-repairs/cases/zimage-cpu-text-fp16/18-0-zimage-cpu-text-fp16_00001_.png",
+    "file": "evidence/2026-10-21-repairs/cases/zimage-cpu-text-fp16/18-0-zimage-cpu-text-fp16_00001_.png",
     "original_sha256": "a4d8cda09dcb159e5e4044005dfa8d5e1d12fd2818f5854f7a0ae43c53ce69e5",
     "public_sha256": "a4d8cda09dcb159e5e4044005dfa8d5e1d12fd2818f5854f7a0ae43c53ce69e5",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-23-ubuntu/pytorch-attention/18-0-repeat-01-red_00001_.png",
+    "file": "evidence/2026-10-23-ubuntu/pytorch-attention/18-0-repeat-01-red_00001_.png",
     "original_sha256": "c72197a2856731bef840fdc9fe42e60f08576557326c3a7960ce35d4fac9b671",
     "public_sha256": "c72197a2856731bef840fdc9fe42e60f08576557326c3a7960ce35d4fac9b671",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-23-ubuntu/zimage-repeat/repeat-01-red_00001_.png",
+    "file": "evidence/2026-10-23-ubuntu/zimage-repeat/repeat-01-red_00001_.png",
     "original_sha256": "e7e51598af29d06f7035142ec327f8d694b39cea8c8f310afcf93d91148e22b3",
     "public_sha256": "e7e51598af29d06f7035142ec327f8d694b39cea8c8f310afcf93d91148e22b3",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-23-ubuntu/zimage-repeat/repeat-02-blue_00001_.png",
+    "file": "evidence/2026-10-23-ubuntu/zimage-repeat/repeat-02-blue_00001_.png",
     "original_sha256": "8c330f251917e39aa112c3a58ada1fd161f7a88b8d7ceb92f4b5b989a35e76d4",
     "public_sha256": "8c330f251917e39aa112c3a58ada1fd161f7a88b8d7ceb92f4b5b989a35e76d4",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-23-ubuntu/zimage-repeat/repeat-03-green_00001_.png",
+    "file": "evidence/2026-10-23-ubuntu/zimage-repeat/repeat-03-green_00001_.png",
     "original_sha256": "22e8fdc6e837b915f7493de8e75985f8d2f235c3522a11260aab1bead74717b5",
     "public_sha256": "22e8fdc6e837b915f7493de8e75985f8d2f235c3522a11260aab1bead74717b5",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-dual-logo-gguf-te--sample/24-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-dual-logo-gguf-te--sample/24-0.png",
     "original_sha256": "ffa3a5cd2a480d6a373202522ba655af1e5d26a77b0227efcf2b47366d216981",
     "public_sha256": "ffa3a5cd2a480d6a373202522ba655af1e5d26a77b0227efcf2b47366d216981",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-dual-people-gguf-te--sample/24-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-dual-people-gguf-te--sample/24-0.png",
     "original_sha256": "8af441c81e2d85d88a3ef90cf525e61a41187b09ab3de275c5173e5638e1f8d6",
     "public_sha256": "8af441c81e2d85d88a3ef90cf525e61a41187b09ab3de275c5173e5638e1f8d6",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-iterative-gguf-te--sample/19-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-iterative-gguf-te--sample/19-0.png",
     "original_sha256": "1bfb4a5696ce6327f2cbdc96418fe6ced685a6c3977b4405dca9d6879b11696b",
     "public_sha256": "1bfb4a5696ce6327f2cbdc96418fe6ced685a6c3977b4405dca9d6879b11696b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-remove-gguf-te--sample/19-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-remove-gguf-te--sample/19-0.png",
     "original_sha256": "2b7c205905a4858ecc06454f613e405ad958c536d27b82d4bd26aac41fd07680",
     "public_sha256": "2b7c205905a4858ecc06454f613e405ad958c536d27b82d4bd26aac41fd07680",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-replace-zh-gguf-te--sample/19-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-replace-zh-gguf-te--sample/19-0.png",
     "original_sha256": "4ad66fcd3774ac1aa2e013b97d910129ae6f0388a3380893693c09ddf3ab68c2",
     "public_sha256": "4ad66fcd3774ac1aa2e013b97d910129ae6f0388a3380893693c09ddf3ab68c2",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-single-color-gguf-te--sample/19-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-single-color-gguf-te--sample/19-0.png",
     "original_sha256": "8d4859058f6f8984c0e69b7dae1eb8a753e7a1f9210db35274677aa8e3eab471",
     "public_sha256": "8d4859058f6f8984c0e69b7dae1eb8a753e7a1f9210db35274677aa8e3eab471",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-style-gguf-te--sample/19-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-style-gguf-te--sample/19-0.png",
     "original_sha256": "5f32d24f48ca3a9180937f1f7ad38cf8e0764325e637187494d1cda94d875456",
     "public_sha256": "5f32d24f48ca3a9180937f1f7ad38cf8e0764325e637187494d1cda94d875456",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-t2i-1024-gguf-te-tiled--sample/13-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-t2i-1024-gguf-te-tiled--sample/13-0.png",
     "original_sha256": "f14f9d5cc9603ea95569cb8f2dae00e6022eb6755dc7b107daa5469b652aea97",
     "public_sha256": "f14f9d5cc9603ea95569cb8f2dae00e6022eb6755dc7b107daa5469b652aea97",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-klein-t2i-gpu-text-gguf-te--sample/13-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-klein-t2i-gpu-text-gguf-te--sample/13-0.png",
     "original_sha256": "80fce2500ade46b8c66ac7e02e524c82241c4170932720e7c0e705e31b7388ce",
     "public_sha256": "80fce2500ade46b8c66ac7e02e524c82241c4170932720e7c0e705e31b7388ce",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/flux2-teapot-structure-linux-repair--sample/19-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/flux2-teapot-structure-linux-repair--sample/19-0.png",
     "original_sha256": "2d047a15dd6fac59cd4944a45bae988846ce97da3d47e239b4a7ef31c0a03972",
     "public_sha256": "2d047a15dd6fac59cd4944a45bae988846ce97da3d47e239b4a7ef31c0a03972",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/kroma-head-swap--sample/case03_9-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/kroma-head-swap--sample/case03_9-0.png",
     "original_sha256": "9b5b5a90e7e6d5e67963df6b3ebacbe43ba33783592dc9d09c3634d948276ecd",
     "public_sha256": "9b5b5a90e7e6d5e67963df6b3ebacbe43ba33783592dc9d09c3634d948276ecd",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/kroma-img2img--sample/9-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/kroma-img2img--sample/9-0.png",
     "original_sha256": "cad9ff39d3e5a0218bb60beac7aea5b23aa367161d7196299632e8e0bf7c832f",
     "public_sha256": "cad9ff39d3e5a0218bb60beac7aea5b23aa367161d7196299632e8e0bf7c832f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/kroma-multiref--sample/case02_9-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/kroma-multiref--sample/case02_9-0.png",
     "original_sha256": "41dcbcf9b8613b69ab79d6ad26a9700511d81940ec12049dfc25b066024cbe97",
     "public_sha256": "41dcbcf9b8613b69ab79d6ad26a9700511d81940ec12049dfc25b066024cbe97",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/kroma-opd-q2-t2i-fox-512--sample/9-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/kroma-opd-q2-t2i-fox-512--sample/9-0.png",
     "original_sha256": "c64e5edeaaa9cd569c81c394f5acfb05a841bab319045c5ef9c17b03803157e9",
     "public_sha256": "c64e5edeaaa9cd569c81c394f5acfb05a841bab319045c5ef9c17b03803157e9",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/kroma-style-no-subject-reference-linux-repair--sample/case01_9-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/kroma-style-no-subject-reference-linux-repair--sample/case01_9-0.png",
     "original_sha256": "730b06288a2947b9154b33bb164ffa212c4112fa0a161a8e9794960d3f95df05",
     "public_sha256": "730b06288a2947b9154b33bb164ffa212c4112fa0a161a8e9794960d3f95df05",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/kroma-style-ref--sample/case01_9-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/kroma-style-ref--sample/case01_9-0.png",
     "original_sha256": "2dd156c428ae0f1f14d901c9fea03cb957373c8b5129e30ee36fa2c538644918",
     "public_sha256": "2dd156c428ae0f1f14d901c9fea03cb957373c8b5129e30ee36fa2c538644918",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/moss-img2img-cpu-text--sample/10-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/moss-img2img-cpu-text--sample/10-0.png",
     "original_sha256": "6b4872835761c48a01cd5f4dfdc0728b5470220cf02db457565d9dfa65aac41c",
     "public_sha256": "6b4872835761c48a01cd5f4dfdc0728b5470220cf02db457565d9dfa65aac41c",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/moss-img2img-cpu-text-denoise085--sample/10-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/moss-img2img-cpu-text-denoise085--sample/10-0.png",
     "original_sha256": "1171606d475cb5dd1ba63b447d4acaeca7ec9e7579fe18d8715c1ba62c0efecb",
     "public_sha256": "1171606d475cb5dd1ba63b447d4acaeca7ec9e7579fe18d8715c1ba62c0efecb",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/moss-layout-cpu-text--sample/10-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/moss-layout-cpu-text--sample/10-0.png",
     "original_sha256": "f54fd620a43a8dbee9a1787c030eeffc6e27820b78addd6b633aafe59f6576bc",
     "public_sha256": "f54fd620a43a8dbee9a1787c030eeffc6e27820b78addd6b633aafe59f6576bc",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/moss-sft-dmd-8step-t2i-astronaut-512-cpu-text--sample/10-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/moss-sft-dmd-8step-t2i-astronaut-512-cpu-text--sample/10-0.png",
     "original_sha256": "73ca8dba1f17422c036fb5e0b5b5357b3e52b6b045524cd955ac49e8bbc187e7",
     "public_sha256": "73ca8dba1f17422c036fb5e0b5b5357b3e52b6b045524cd955ac49e8bbc187e7",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/moss-text-cpu-text--sample/10-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/moss-text-cpu-text--sample/10-0.png",
     "original_sha256": "6de4b86fd486419d9498d43a2efe0b6dcf0cc6072889e87ba5dd1abc21551943",
     "public_sha256": "6de4b86fd486419d9498d43a2efe0b6dcf0cc6072889e87ba5dd1abc21551943",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-base-edit-orange-to-white-cat-512-stage-nobacking-cpu-encode--sample/7-0.png",
     "original_sha256": "c11aa2f4879960e88e802f841b0e2ac16a41de9dfa773f837f69a3898c689a35",
     "public_sha256": "c11aa2f4879960e88e802f841b0e2ac16a41de9dfa773f837f69a3898c689a35",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-bfs-head-swap-stage-nobacking-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-bfs-head-swap-stage-nobacking-cpu-encode--sample/7-0.png",
     "original_sha256": "f300ab5cc24b7572d1c1967ef8eb688a8ffc3a542e540e493fd79c2786c82796",
     "public_sha256": "f300ab5cc24b7572d1c1967ef8eb688a8ffc3a542e540e493fd79c2786c82796",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-caption-4b-aux-8b-cpu-staged--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-caption-4b-aux-8b-cpu-staged--sample/7-0.png",
     "original_sha256": "2a7dc4ff62fd66547a5c191186380a832d50a4c482b13493a30794f5f0611ab5",
     "public_sha256": "2a7dc4ff62fd66547a5c191186380a832d50a4c482b13493a30794f5f0611ab5",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-face-only-stage-nobacking-cpu-encode--sample/case03_7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-face-only-stage-nobacking-cpu-encode--sample/case03_7-0.png",
     "original_sha256": "fac5084e2d10dc318a861413eeacf3b798b458a43ad3770d25173edb54efe66a",
     "public_sha256": "fac5084e2d10dc318a861413eeacf3b798b458a43ad3770d25173edb54efe66a",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-face-swap-stage-nobacking-cpu-encode--sample/case01_7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-face-swap-stage-nobacking-cpu-encode--sample/case01_7-0.png",
     "original_sha256": "d8b9c2e3a0c0c35046f4016794fb87ea8c2094981569b24f30d0cb10850f0058",
     "public_sha256": "d8b9c2e3a0c0c35046f4016794fb87ea8c2094981569b24f30d0cb10850f0058",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_58-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_58-0.png",
     "original_sha256": "02a8fc871f214020338f17f0739590406419e609ae63be509480c016f2a4b1ef",
     "public_sha256": "02a8fc871f214020338f17f0739590406419e609ae63be509480c016f2a4b1ef",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_59-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_59-0.png",
     "original_sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
     "public_sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-inpaint-stage-nobacking-cpu-encode--sample/case01_7-0.png",
     "original_sha256": "832b486bffa2268eafe5a27d547500932746e158807b2c1009df4df6e9052bc8",
     "public_sha256": "832b486bffa2268eafe5a27d547500932746e158807b2c1009df4df6e9052bc8",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-multiref-stage-nobacking-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-multiref-stage-nobacking-cpu-encode--sample/7-0.png",
     "original_sha256": "75775725e82ee82fa0ba93f6f2711690587df9787c8ed8012d8b4253ab6249e3",
     "public_sha256": "75775725e82ee82fa0ba93f6f2711690587df9787c8ed8012d8b4253ab6249e3",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/qwen-style-edit-stage-nobacking-cpu-encode--sample/case02_7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/qwen-style-edit-stage-nobacking-cpu-encode--sample/case02_7-0.png",
     "original_sha256": "e5abca66e0fffb6a412c59fda7040c0825710ce21cf18f612c73fe03d91b7c7c",
     "public_sha256": "e5abca66e0fffb6a412c59fda7040c0825710ce21cf18f612c73fe03d91b7c7c",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample/7-0.png",
     "original_sha256": "1cdc4ab5dd9d59cd6b0f8287b9cd34d74e7c440af749889785158578eaff90b9",
     "public_sha256": "1cdc4ab5dd9d59cd6b0f8287b9cd34d74e7c440af749889785158578eaff90b9",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample/repair_save_input-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample/repair_save_input-0.png",
     "original_sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
     "public_sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample/repair_save_mask-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-fox-profile-wide-mask-linux-repair-cpu-encode--sample/repair_save_mask-0.png",
     "original_sha256": "396c95a6398a4c6434bb0fd9466a39f26cd98df9493b96cf7b4e800b48a64330",
     "public_sha256": "396c95a6398a4c6434bb0fd9466a39f26cd98df9493b96cf7b4e800b48a64330",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-face-swap-stage-nobacking-bf16-te-cpu-encode--sample/7-0.png",
     "original_sha256": "5f7b7909392634ff643c8887faa7d8f86b8475f64639560037097e7f5a2e9209",
     "public_sha256": "5f7b7909392634ff643c8887faa7d8f86b8475f64639560037097e7f5a2e9209",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-inpaint-stage-nobacking--sample/58-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-inpaint-stage-nobacking--sample/58-0.png",
     "original_sha256": "02a8fc871f214020338f17f0739590406419e609ae63be509480c016f2a4b1ef",
     "public_sha256": "02a8fc871f214020338f17f0739590406419e609ae63be509480c016f2a4b1ef",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-inpaint-stage-nobacking--sample/59-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-inpaint-stage-nobacking--sample/59-0.png",
     "original_sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
     "public_sha256": "60a7f1dfecca0cc5e81298be3cc658671ce12b2eb98d7b1bbb1f4c415f123456",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-inpaint-stage-nobacking--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-inpaint-stage-nobacking--sample/7-0.png",
     "original_sha256": "823e59a23de619caa5001fc2d1212fb08e7be793dd965992c80ea604e1c6a400",
     "public_sha256": "823e59a23de619caa5001fc2d1212fb08e7be793dd965992c80ea604e1c6a400",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-multiref-bf16-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-multiref-bf16-cpu-encode--sample/7-0.png",
     "original_sha256": "0e83df5c3ef215d8302278902798d259b33e29acfd1faa23883b736cf8dbbc3a",
     "public_sha256": "0e83df5c3ef215d8302278902798d259b33e29acfd1faa23883b736cf8dbbc3a",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-pose-reference-test-stage-nobacking-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-pose-reference-test-stage-nobacking-cpu-encode--sample/7-0.png",
     "original_sha256": "0ba2df3629d9502bf73f40c6b149557d72fb0407378672f7fbf9764b794bb4c7",
     "public_sha256": "0ba2df3629d9502bf73f40c6b149557d72fb0407378672f7fbf9764b794bb4c7",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-role-replacement-test-stage-nobacking-bf16-te-cpu-encode--sample/7-0.png",
     "original_sha256": "2cc7e2798c5c0240491ce553420fac9cf7a2beddc39579f18b904901895b8171",
     "public_sha256": "2cc7e2798c5c0240491ce553420fac9cf7a2beddc39579f18b904901895b8171",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/turbo-un-t2i-stage-nobacking--sample/7-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/turbo-un-t2i-stage-nobacking--sample/7-0.png",
     "original_sha256": "85730cf9bf184d3074387fb88eeed31981cd5a07414715886cf3422efcfdcfe8",
     "public_sha256": "85730cf9bf184d3074387fb88eeed31981cd5a07414715886cf3422efcfdcfe8",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-chinese-components--sample/26-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/zimage-aio-chinese-components--sample/26-0.png",
     "original_sha256": "24aeb04258fdf2cc3cf6b074f9b7c473a628e90bc076a4780bc1722bf7162355",
     "public_sha256": "24aeb04258fdf2cc3cf6b074f9b7c473a628e90bc076a4780bc1722bf7162355",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-english-components--sample/26-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/zimage-aio-english-components--sample/26-0.png",
     "original_sha256": "be2e47408588f2896badab33485e702be1ace5c525b16a14f9753fe94fdfdcdb",
     "public_sha256": "be2e47408588f2896badab33485e702be1ace5c525b16a14f9753fe94fdfdcdb",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-figure-art-components--sample/26-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/zimage-aio-figure-art-components--sample/26-0.png",
     "original_sha256": "cff0f26e36f5c6bb9ec8508d229918dca65e972c71ceaa5135341c4905bbdb61",
     "public_sha256": "cff0f26e36f5c6bb9ec8508d229918dca65e972c71ceaa5135341c4905bbdb61",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/zimage-aio-photo-9step-components--sample/26-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/zimage-aio-photo-9step-components--sample/26-0.png",
     "original_sha256": "31eee2d6012b6b0c8f395e36062d594ffe5278ba6e34e7a27d827368a95fc4e9",
     "public_sha256": "31eee2d6012b6b0c8f395e36062d594ffe5278ba6e34e7a27d827368a95fc4e9",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/zimage-gguf-chinese--sample/18-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/zimage-gguf-chinese--sample/18-0.png",
     "original_sha256": "7993c5dc01e2c0764fb7a2e4406f43f208eadb3c4a25b22b08a9a7aaec2ebc39",
     "public_sha256": "7993c5dc01e2c0764fb7a2e4406f43f208eadb3c4a25b22b08a9a7aaec2ebc39",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/cases/zimage-gguf-english--sample/18-0.png",
+    "file": "evidence/2026-10-24-linux-coverage/cases/zimage-gguf-english--sample/18-0.png",
     "original_sha256": "29090ad90bcc9586ba2e308885b3c69ab1038906de593a3a9894f94550420304",
     "public_sha256": "29090ad90bcc9586ba2e308885b3c69ab1038906de593a3a9894f94550420304",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/installed-qwen-workflow.png",
+    "file": "evidence/2026-10-24-linux-coverage/installed-qwen-workflow.png",
     "original_sha256": "788b0bb18a4e7d74670642ecd3ddeda37ffcc6a4d917e94888dabc1a8567c82e",
     "public_sha256": "788b0bb18a4e7d74670642ecd3ddeda37ffcc6a4d917e94888dabc1a8567c82e",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/linux-coverage-webui-turbo-sample_00001_.png",
+    "file": "evidence/2026-10-24-linux-coverage/linux-coverage-webui-turbo-sample_00001_.png",
     "original_sha256": "a6aad739dad49f8e86ebcbf01878c27351ec46e7b53eaa06000cbc1d932488f5",
     "public_sha256": "4ca6937690fdfdf293af97bcf3deedf7a97cf7289222918047b979dfb5ca0dfd",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-linux-coverage/report-qwen-comparison.png",
+    "file": "evidence/2026-10-24-linux-coverage/report-qwen-comparison.png",
     "original_sha256": "e2577ae12387e6c848a20234ae5f4e21b1c9d1c8daee1057c13bdab2b7b1c977",
     "public_sha256": "e2577ae12387e6c848a20234ae5f4e21b1c9d1c8daee1057c13bdab2b7b1c977",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-platform-report/installed-qwen-workflow.png",
+    "file": "evidence/2026-10-24-platform-report/installed-qwen-workflow.png",
     "original_sha256": "e07702d6d0d0bbed950374007e99bf72fe54c02b45012010cde2265ed2aadfa1",
     "public_sha256": "e07702d6d0d0bbed950374007e99bf72fe54c02b45012010cde2265ed2aadfa1",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-platform-report/platform-library-webui-blue_00001_.png",
+    "file": "evidence/2026-10-24-platform-report/platform-library-webui-blue_00001_.png",
     "original_sha256": "9d7f6f138408d2082db28dd83ad084b56dc5993241ae783bceacf839807844c9",
     "public_sha256": "9d7f6f138408d2082db28dd83ad084b56dc5993241ae783bceacf839807844c9",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-platform-report/report-qwen-comparison.png",
+    "file": "evidence/2026-10-24-platform-report/report-qwen-comparison.png",
     "original_sha256": "3dfa8eced5d60eb67a2ff0fe9458d8db3a1d87782716edad59c73531e2eadbec",
     "public_sha256": "3dfa8eced5d60eb67a2ff0fe9458d8db3a1d87782716edad59c73531e2eadbec",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-platform-report/workflow-probe.png",
+    "file": "evidence/2026-10-24-platform-report/workflow-probe.png",
     "original_sha256": "d322fb05f2261cda4abeba72c31ee796ec3bb8f21377226f009e24fde98ca3af",
     "public_sha256": "d322fb05f2261cda4abeba72c31ee796ec3bb8f21377226f009e24fde98ca3af",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu/comfyui-ready.png",
+    "file": "evidence/2026-10-24-ubuntu/comfyui-ready.png",
     "original_sha256": "1bfb030fdf48f316567eef71289a914a6b28ddef0fc865128ee817736aeab27b",
     "public_sha256": "1bfb030fdf48f316567eef71289a914a6b28ddef0fc865128ee817736aeab27b",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu/qwen-first-complete/7-0-reload-01-blue_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu/qwen-first-complete/7-0-reload-01-blue_00001_.png",
     "original_sha256": "f18658361c7b47948ff1e21b6ce86bc2e56f135c26a4b4de8616becff6e7326f",
     "public_sha256": "f18658361c7b47948ff1e21b6ce86bc2e56f135c26a4b4de8616becff6e7326f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu/qwen-green-isolated/7-0-reload-02-green_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu/qwen-green-isolated/7-0-reload-02-green_00001_.png",
     "original_sha256": "f3461b6ac6f4a29709ee1f82122e6c41fb8d55db367a90af0f3bd043d44c730a",
     "public_sha256": "f3461b6ac6f4a29709ee1f82122e6c41fb8d55db367a90af0f3bd043d44c730a",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu/zimage-repeat/repeat-01-red_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu/zimage-repeat/repeat-01-red_00001_.png",
     "original_sha256": "e7e51598af29d06f7035142ec327f8d694b39cea8c8f310afcf93d91148e22b3",
     "public_sha256": "e7e51598af29d06f7035142ec327f8d694b39cea8c8f310afcf93d91148e22b3",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu/zimage-repeat/repeat-02-blue_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu/zimage-repeat/repeat-02-blue_00001_.png",
     "original_sha256": "8c330f251917e39aa112c3a58ada1fd161f7a88b8d7ceb92f4b5b989a35e76d4",
     "public_sha256": "8c330f251917e39aa112c3a58ada1fd161f7a88b8d7ceb92f4b5b989a35e76d4",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu-followup/clip-full-blue/7-0-reload-01-blue_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu-followup/clip-full-blue/7-0-reload-01-blue_00001_.png",
     "original_sha256": "6511e04d96c89eba5820f232d33a650667c5cdb69cc5b0afb5a8e09507e110d0",
     "public_sha256": "6511e04d96c89eba5820f232d33a650667c5cdb69cc5b0afb5a8e09507e110d0",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu-followup/clip-full-green/7-0-reload-02-green_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu-followup/clip-full-green/7-0-reload-02-green_00001_.png",
     "original_sha256": "bc0c2229d2a74db2c76a220c56bcf09ad91fa52d4ba2e6ffa697f42686214b59",
     "public_sha256": "bc0c2229d2a74db2c76a220c56bcf09ad91fa52d4ba2e6ffa697f42686214b59",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu-followup/clip-no-vae-blue/7-0-reload-01-blue_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu-followup/clip-no-vae-blue/7-0-reload-01-blue_00001_.png",
     "original_sha256": "a51ae9bc52ba20a6b936fde69e1afb2a5ce119d1352f8037a76df35dd7fee0fe",
     "public_sha256": "a51ae9bc52ba20a6b936fde69e1afb2a5ce119d1352f8037a76df35dd7fee0fe",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu-followup/clip-no-vae-green/7-0-reload-02-green_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu-followup/clip-no-vae-green/7-0-reload-02-green_00001_.png",
     "original_sha256": "45845c5b0b9159b40fe98b5d32299fd6fb9f3b4c14d3664affa505c842437c99",
     "public_sha256": "45845c5b0b9159b40fe98b5d32299fd6fb9f3b4c14d3664affa505c842437c99",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu-followup/direct-blue/7-0-reload-01-blue_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu-followup/direct-blue/7-0-reload-01-blue_00001_.png",
     "original_sha256": "1e2952ddb731941d66eb431b770980c4a1bd8f369234ab225600016b5cf88f42",
     "public_sha256": "1e2952ddb731941d66eb431b770980c4a1bd8f369234ab225600016b5cf88f42",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-24-ubuntu-followup/direct-green/7-0-reload-02-green_00001_.png",
+    "file": "evidence/2026-10-24-ubuntu-followup/direct-green/7-0-reload-02-green_00001_.png",
     "original_sha256": "1f002cf0c458acb128c72958b56368f611982b0153777fcc6fdb40fb74ce0d1f",
     "public_sha256": "1f002cf0c458acb128c72958b56368f611982b0153777fcc6fdb40fb74ce0d1f",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-26-report-edit/color-comparison.png",
+    "file": "evidence/2026-10-26-report-edit/color-comparison.png",
     "original_sha256": "2960ac6d714dde9874734a3278bbc3bfd3673758bb5486cf1f8c27541feeeaa1",
     "public_sha256": "2960ac6d714dde9874734a3278bbc3bfd3673758bb5486cf1f8c27541feeeaa1",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-26-report-edit/color-test-history.png",
+    "file": "evidence/2026-10-26-report-edit/color-test-history.png",
     "original_sha256": "98e09eae4d72cb322bc56c960ef6a7f3bc3923a2a9e2776468fad0f045af16e1",
     "public_sha256": "98e09eae4d72cb322bc56c960ef6a7f3bc3923a2a9e2776468fad0f045af16e1",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-26-report-polish/report-desktop.png",
+    "file": "evidence/2026-10-26-report-polish/report-desktop.png",
     "original_sha256": "58ec99a8d4854c812b3b77003d67b46095195eacbcad28465182e5046b30ec84",
     "public_sha256": "58ec99a8d4854c812b3b77003d67b46095195eacbcad28465182e5046b30ec84",
     "change": "metadata removed, visual bitstream unchanged"
   },
   {
-    "file": "trials/2026-10-26-report-polish/report-mobile.png",
+    "file": "evidence/2026-10-26-report-polish/report-mobile.png",
     "original_sha256": "3763df0e40f9426a026c76b04d493402592b184f74baf4364ad16c00958d3007",
     "public_sha256": "3763df0e40f9426a026c76b04d493402592b184f74baf4364ad16c00958d3007",
     "change": "metadata removed, visual bitstream unchanged"

@@ -12,7 +12,7 @@ from urllib.request import urlopen
 from platform_catalog import ROOT, MODELS, FEATURES, catalog_records, sha, standalone_graph
 
 LIBRARY = ROOT / 'workflows'
-TRIAL = ROOT / 'trials/2026-10-24-platform-report'
+TRIAL = ROOT / 'evidence/2026-10-24-platform-report'
 MODEL_FIELDS = {'unet_name', 'clip_name', 'clip_name1', 'clip_name2', 'vae_name', 'ckpt_name', 'lora_name', 'clip_proj_name'}
 ARCHIVE_LOADERS = ('LoadRepairConditioning', 'LoadRepairLatent', 'LoadRepairText')
 PHASE_LABELS = {'caption': '反推', 'encode': '编码', 'sample': '采样'}

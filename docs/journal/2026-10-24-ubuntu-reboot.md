@@ -8,9 +8,9 @@
 
 当前 Qwen 配置服务：http://127.0.0.1:8188/。启动命令为仓库根的 `bash scripts/start_ubuntu_qwen.sh`；通用 `start_ubuntu.sh` 保留原默认参数。Qwen 入口明确使用 FP16、upcast/split attention、CPU VAE、fast disk、1GiB VRAM 预留，并禁用 async/dynamic offload；默认 pinned memory 仍开启。
 
-载入 [蓝色提示工作流](../../trials/2026-10-24-ubuntu-followup/qwen-ubuntu-blue.api.json) 或 [绿色提示工作流](../../trials/2026-10-24-ubuntu-followup/qwen-ubuntu-green.api.json)。两个文件就是最终实际执行的 API 图，当前前端支持通过工作流打开入口载入。图中显式启用实验节点，未连接节点的图不改变行为。
+载入 [蓝色提示工作流](../../evidence/2026-10-24-ubuntu-followup/qwen-ubuntu-blue.api.json) 或 [绿色提示工作流](../../evidence/2026-10-24-ubuntu-followup/qwen-ubuntu-green.api.json)。两个文件就是最终实际执行的 API 图，当前前端支持通过工作流打开入口载入。图中显式启用实验节点，未连接节点的图不改变行为。
 
-报告服务仍为 http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html 。本轮没有修改原报告的 101 张卡片及 Windows reviews/cases。最新 PID、时刻、GPU、7 个所需节点及空队列检查见 [当前服务记录](../../trials/2026-10-24-ubuntu-followup/service-liveness.json)。本轮没有新浏览器截图，不把 API 就绪说成浏览器目视验收。
+报告服务仍为 http://127.0.0.1:8767/evidence/2026-10-19-features/feature-report.html 。本轮没有修改原报告的 101 张卡片及 Windows reviews/cases。最新 PID、时刻、GPU、7 个所需节点及空队列检查见 [当前服务记录](../../evidence/2026-10-24-ubuntu-followup/service-liveness.json)。本轮没有新浏览器截图，不把 API 就绪说成浏览器目视验收。
 
 ## 改动及其原因
 
@@ -32,9 +32,9 @@ venv 位于 `/home/user/.local/share/barely-comfy/ubuntu-20261024/.venv`。Pytho
 | v4 + 延后 VAE 普通整图，观察钩子 | 两图、两次 active 释放检查通过 | 2822.5 |
 | 独立 Python，同配置普通整图，无钩子 | 两图、两次 active 释放检查通过 | 2320.5 |
 
-最后一组两轮分别 118.07/132.09 秒。保护线始终 1536MiB，没有禁用默认锁页内存、host trim 或新加 swap。所有组的完整参数、源码/执行图/history/原 PNG SHA 均保存在 [结果索引](../../trials/2026-10-24-ubuntu-followup/outcomes.json)。24 项本轮测试通过：18 项工作流、2 项无参考 VAE 契约、4 项实际 GGUF GPU 卸载探针；原实现及候选早期失败也保留。
+最后一组两轮分别 118.07/132.09 秒。保护线始终 1536MiB，没有禁用默认锁页内存、host trim 或新加 swap。所有组的完整参数、源码/执行图/history/原 PNG SHA 均保存在 [结果索引](../../evidence/2026-10-24-ubuntu-followup/outcomes.json)。24 项本轮测试通过：18 项工作流、2 项无参考 VAE 契约、4 项实际 GGUF GPU 卸载探针；原实现及候选早期失败也保留。
 
-最终两张图片已目视，无黑图或明显坏块，主体、剑、教堂、雾和红月可辨认。眼部发光和破碎彩窗等精确细节仍部分达到。[完整图片、评价与复跑命令](../../trials/2026-10-24-ubuntu-followup/README.md) 包含原图到去 metadata 副本的逐像素绑定。
+最终两张图片已目视，无黑图或明显坏块，主体、剑、教堂、雾和红月可辨认。眼部发光和破碎彩窗等精确细节仍部分达到。[完整图片、评价与复跑命令](../../evidence/2026-10-24-ubuntu-followup/README.md) 包含原图到去 metadata 副本的逐像素绑定。
 
 ## 结论边界及后续
 
