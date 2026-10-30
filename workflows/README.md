@@ -1,6 +1,6 @@
 # 模型功能工作流库
 
-本库覆盖7个模型系列、40项功能，提供268份WebUI工作流及对应API文件。本机已将184份推荐工作流安装到WebUI左侧的“模型功能库”。工作流能打开与模型效果通过分别记录，具体结果见[功能汇报](../trials/2026-10-19-features/feature-report.html)。
+本库覆盖7个模型系列、40项功能，提供268份WebUI工作流及对应API文件。本机已将184份推荐工作流安装到WebUI左侧的“模型功能库”。工作流能打开与模型效果通过分别记录，具体结果见[功能汇报](../evidence/2026-10-19-features/feature-report.html)。
 
 ## 在本机使用
 
@@ -12,7 +12,7 @@ Windows工作流保留当时的权重、提示词和参数。它们在当前前�
 
 ## 在其他机器使用
 
-[完整包](https://github.com/AiKiAi-stack/barely-comfy/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)包含UI、API、输入图片及经过SHA256校验的编码/描述文件，不含模型权重。[轻量包](https://github.com/AiKiAi-stack/barely-comfy/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip)不含这些编码文件，需要先运行编码步骤。
+[完整包](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)包含UI、API、输入图片及经过SHA256校验的编码/描述文件，不含模型权重。[轻量包](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip)不含这些编码文件，需要先运行编码步骤。
 
 解压后，将包内input的内容复制到目标ComfyUI/input，再打开ui目录中的工作流。模型文件和启动配置列在各项使用步骤中。输入文件采用ModelLibrary开头的统一名称；原路径映射、文件SHA和完整参数见[catalog.json](catalog.json)。
 

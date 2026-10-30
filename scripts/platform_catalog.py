@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-HERE = ROOT / 'trials/2026-10-19-features'
+HERE = ROOT / 'evidence/2026-10-19-features'
 spec = importlib.util.spec_from_file_location('historical_report', HERE / 'build_report.py')
 legacy = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(legacy)
@@ -40,6 +40,14 @@ def read(path, fallback=None):
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def repo_path(value):
+    """Resolve a repository path recorded before the trials/ -> evidence/ rename."""
+    value = str(value).replace('\\', '/')
+    if value.startswith('trials/'):
+        value = 'evidence/' + value[len('trials/'):]
+    return ROOT / value
 
 
 def linked(value, graph):
@@ -117,7 +125,7 @@ def graph_source(case):
     if path:
         return path
     if case.get('workflow_api'):
-        path = ROOT / 'trials/2026-10-20-zimage' / case['workflow_api']
+        path = ROOT / 'evidence/2026-10-20-zimage' / case['workflow_api']
         if path.is_file():
             return path
     return None
@@ -199,7 +207,7 @@ def evidence_record(case, record, platform, source, graph, blocked=False):
             'prompt': case.get('prompt', ''), 'claim_level': case.get('claim_level', ''),
             'source': source.relative_to(ROOT).as_posix() if source else None,
             'source_sha256': sha(source) if source else None,
-            'source_case_file': 'trials/2026-10-19-features/cases.json',
+            'source_case_file': 'evidence/2026-10-19-features/cases.json',
             'original_case': case}
 
 
@@ -214,9 +222,9 @@ def catalog_records():
                 result = {'images': case.get('images', []), 'review': case.get('review'),
                           'status': case.get('status', 'success'), 'elapsed_seconds': case.get('elapsed_seconds')}
             item = evidence_record(case, result, 'Windows', source, graph, filename == 'blocked.json')
-            item['source_case_file'] = 'trials/2026-10-19-features/' + filename
+            item['source_case_file'] = 'evidence/2026-10-19-features/' + filename
             records.append((item, graph))
-    zroot = ROOT / 'trials/2026-10-24-ubuntu'
+    zroot = ROOT / 'evidence/2026-10-24-ubuntu'
     zsummary = read(zroot / 'zimage-repeat/summary.json')
     zreviews = read(zroot / 'zimage-reviews.json')['cases']
     for index, row in enumerate(zsummary['cases']):
@@ -230,9 +238,9 @@ def catalog_records():
             'elapsed_seconds': row['seconds'], 'profile': '通用 Linux 入口 start_ubuntu.sh；CPU VAE；默认 pinned；已应用 Linux split attention 与 GGUF CPU-detach 补丁。两次提示 / 采样重跑；本记录未证明所有 reserved 显存释放。',
             'expected': '红/蓝茶壶与两颗柠檬，连续生成健康图片。', 'prompt': graph['8']['inputs']['text'],
             'claim_level': 'Linux 实际两轮输出 / history / 目视', 'source': source.relative_to(ROOT).as_posix(),
-            'source_sha256': sha(source), 'source_case_file': 'trials/2026-10-24-ubuntu/zimage-reviews.json',
+            'source_sha256': sha(source), 'source_case_file': 'evidence/2026-10-24-ubuntu/zimage-reviews.json',
             'original_case': {}}, graph))
-    qroot = ROOT / 'trials/2026-10-24-ubuntu-followup'
+    qroot = ROOT / 'evidence/2026-10-24-ubuntu-followup'
     accepted = read(qroot / 'acceptance.json')
     for color in ('blue', 'green'):
         source = qroot / f'qwen-ubuntu-{color}.api.json'
@@ -247,7 +255,7 @@ def catalog_records():
             'expected': '完成 512×512、15步普通整图及同进程真实卸载。', 'prompt': graph['4']['inputs']['prompt'],
             'claim_level': 'Linux 独立 Python、无观察钩子、两轮完整出图；不是 Windows / Linux 同配方 A/B',
             'source': source.relative_to(ROOT).as_posix(), 'source_sha256': sha(source),
-            'source_case_file': 'trials/2026-10-24-ubuntu-followup/acceptance.json',
+            'source_case_file': 'evidence/2026-10-24-ubuntu-followup/acceptance.json',
             'minimum_available_ram_mib': accepted['minimum_observed_available_ram_mib'], 'original_case': {}}, graph))
     records.extend(coverage_records())
     from report_evidence import annotate
@@ -256,14 +264,14 @@ def catalog_records():
 
 def coverage_records():
     """Only append actual Ubuntu attempts; never infer execution from an import."""
-    trial = ROOT / 'trials/2026-10-24-linux-coverage'
+    trial = ROOT / 'evidence/2026-10-24-linux-coverage'
     records = []
     for case in read(trial / 'plan.json', []):
         folder = trial / 'cases' / case['case_id']
         result = read(folder / 'execution.json')
         if not result:
             continue
-        source = ROOT / case['workflow']
+        source = repo_path(case['workflow'])
         graph = read(source)
         if result.get('workflow_sha256') != sha(source):
             raise ValueError('Executed Linux workflow changed: ' + case['case_id'])

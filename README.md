@@ -1,40 +1,99 @@
-# Barely Comfy
+<div align="center">
 
-在RX 6650 XT（8GB显存、16GB内存）上部署ComfyUI，记录Windows和Ubuntu的实际运行结果。
+<img src="assets/banner.webp" alt="AMD ComfyUI Guide — ComfyUI on AMD, tested end to end" width="100%">
 
-[打开功能报告](trials/2026-10-19-features/feature-report.html) · [使用工作流](workflows/README.md) · [Ubuntu安装与启动](docs/09-ubuntu-setup-2026-10-23.md)
+# AMD ComfyUI Guide
 
-当前保留7个模型系列、40项功能。Linux有21项通过、18项部分达到、1项未达到；40项均有输出图片。Windows的95条原评价与案例保留在报告中。
+**ComfyUI on AMD — tested end to end.**
 
-报告默认显示当前结果和图片。展开“测试过程”可查看每个方案为什么测、改了什么、结果如何。搜索和结果筛选随网址保存，刷新后可恢复。
+Step-by-step setup for Windows and Ubuntu, 40 tested features across 7 model families,
+268 ready-to-use workflows, and every result documented on an RX 6650 XT (8 GB).
 
-## 查看报告
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-浏览报告不需要显卡或模型。克隆仓库后运行：
+[![Check tutorial snapshot](https://github.com/AiKiAi-stack/amd-comfyui-guide/actions/workflows/check-publication.yml/badge.svg)](https://github.com/AiKiAi-stack/amd-comfyui-guide/actions/workflows/check-publication.yml)
+[![Latest release](https://img.shields.io/github/v/release/AiKiAi-stack/amd-comfyui-guide?label=release)](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-```bash
-git clone https://github.com/AiKiAi-stack/barely-comfy.git
-cd barely-comfy
-python -m http.server 8767 --bind 127.0.0.1
+</div>
+
+---
+
+## What this is
+
+A deployment guide for running ComfyUI image generation on AMD Radeon GPUs, backed by a reproducible evidence set. It starts with a verified step-by-step setup on one machine — RX 6650 XT, 8 GB VRAM, Windows 10 and Ubuntu 22.04.5 + ROCm 7.14 — then documents 40 features across 7 model families: what worked, what partially worked, what failed, and why.
+
+- **Verified hardware:** AMD Radeon RX 6650 XT (gfx1032) · 16 GB RAM
+- **Verified stack:** Ubuntu 22.04.5 · ROCm 7.14 · PyTorch 2.12.0 · ComfyUI `ce1e922`
+- **Audience:** anyone with an AMD GPU who wants to know whether a ComfyUI feature runs — and how
+
+This is a single-machine field report, not an AMD compatibility list. For other cards, see the [AMD GPU support matrix](docs/tutorial/08-amd-matrix.md).
+
+## Results
+
+| | |
+|---:|---|
+| 7 model families | Qwen Image 2.1, FLUX.2 Klein, Kroma, MOSS SFT, Z-Image, … |
+| 40 features tested | text-to-image, edits, multi-reference, faces, 1024 px, … |
+| Linux verdicts | **21 pass · 18 partial · 1 fail** — all 40 have output images |
+| Platform records | **162** (95 Windows + 67 Linux) |
+| Workflows | **268 UI + 268 API**, 184 installed |
+
+<img src="assets/features.webp" alt="Four real outputs generated on an RX 6650 XT: Qwen Image 2.1 Turbo, FLUX.2 Klein, Kroma Q2, MOSS SFT" width="100%">
+
+Open the **[full report](https://aikiai-stack.github.io/amd-comfyui-guide/)** — 40 cards, each with input, prompt, real output, timing and verdict per platform.
+
+## Quick start
+
+1. **Check your hardware** — [hardware & versions](docs/tutorial/01-hardware.md). Not an RX 6650 XT? Read the [support matrix](docs/tutorial/08-amd-matrix.md) first.
+2. **Install** — [Windows](docs/tutorial/02-windows-setup.md) or [Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md). Ubuntu is the only path verified from a fresh, independent environment.
+3. **Generate your first image** — [first image](docs/tutorial/04-first-image.md), then pick a workflow from the [workflow library](docs/tutorial/06-workflows.md).
+
+No GPU? Open the [report](https://aikiai-stack.github.io/amd-comfyui-guide/) — it needs no model weights.
+
+## Download the workflow library
+
+268 WebUI workflows plus matching API files, checked by real frontend import/export:
+
+- **[Full bundle (~360 MiB)](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)** — includes input images and encoded conditioning
+- **[Light bundle (~12 MiB)](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip)** — workflows only; run the encoding step first
+
+Install steps, naming rules and SHA gotchas: [workflow library](docs/tutorial/06-workflows.md).
+
+## Tutorial
+
+| Chapter | When to read it |
+|---|---|
+| [01 Hardware & versions](docs/tutorial/01-hardware.md) | confirm your GPU / OS / version combination |
+| [02 Windows setup](docs/tutorial/02-windows-setup.md) | native AMD environment on Windows |
+| [03 Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md) | the verified path, from a fresh environment |
+| [04 First image](docs/tutorial/04-first-image.md) | prove the GPU actually renders |
+| [05 Models](docs/tutorial/05-models.md) | download and place model weights |
+| [06 Workflow library](docs/tutorial/06-workflows.md) | download, import and reproduce results |
+| [07 Troubleshooting](docs/tutorial/07-troubleshooting.md) | init crashes, OOM, black or noisy images |
+| [08 AMD support matrix](docs/tutorial/08-amd-matrix.md) | adapt the guide to another AMD card |
+
+Full docs index: [docs/](docs/README.md).
+
+## Evidence and how to read it
+
+Every feature has its own case: prompt, workflow, output image, timing and verdict. "Workflow opens", "image renders", "target met" and "stable across runs" are recorded separately — they are not interchangeable, and failed or partial results are kept on purpose. See [evidence & privacy](docs/reference/evidence-and-privacy.md) and the [failure tracker](docs/reference/failure-tracker.md).
+
+## Project layout
+
+```
+docs/         tutorial, reference, journal
+evidence/     per-feature report, cases and platform records
+workflows/    268 UI + API workflows, catalog and bundles
+scripts/      install, replay, verification
+environment/  pinned versions and hardware records
+assets/       README and site visuals, built from real outputs
 ```
 
-打开 <http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html>。
+## Contributing
 
-## 使用ComfyUI工作流
+Reproductions on other AMD cards are the most useful contribution — bring input, prompt, workflow, output, timing and failure evidence. Read [CONTRIBUTING.md](CONTRIBUTING.md).
 
-本库提供268份经过前端导入检查的UI工作流及对应API，本机已安装184份推荐工作流。完整包包含输入图片和编码结果，不含模型权重；在其他机器上使用或修改输入前，请看[工作流说明](workflows/README.md)。
+## License
 
-需要分步运行的方案，必须按该项说明切换启动配置。工作流能打开、实际出图、达到目标和长期稳定分别记录，不互相替代。两平台配置没有完全统一，耗时不能用于系统速度排名。
-
-## 文档与原始记录
-
-- [Windows安装记录](docs/01-setup.md)、[第一张图](docs/02-first-image.md)
-- [故障与修复](docs/06-failure-tracker.md)、[当前报告说明](docs/16-report-polish-2026-10-26.md)
-- [Windows原始图文报告](trials/2026-10-19-features/feature-report.md)、[早期进展](docs/17-readme-history-2026-10-26.md)
-- [公开副本与数据处理](docs/05-evidence-and-privacy.md)、[上游授权](THIRD_PARTY_NOTICES.md)、[贡献说明](CONTRIBUTING.md)
-
-仓库不包含模型权重、虚拟环境、账号配置或文章全文。原始模型测试图和结论按各次记录保留。
-
-## 独立语音 WebUI
-
-[Ming-3.0-TTS-0.5B 本地语音工作台](standalone/ming-tts-webui/README.md)：Docker Compose部署的Gradio页面，提供内置音色、声音克隆、长文分段和本机API。
+[MIT](LICENSE). Third-party sources and upstream licensing: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

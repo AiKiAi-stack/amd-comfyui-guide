@@ -10,6 +10,6 @@ the same VAE. Do not create this dependency when the encoder needs a VAE for
 reference images: that would introduce a graph cycle. The trial runner refuses
 known reference/unknown input forms before inserting this node.
 
-See `trials/2026-10-24-ubuntu-followup/` for whole-graph controls and bounded
+See `evidence/2026-10-24-ubuntu-followup/` for whole-graph controls and bounded
 memory measurements. Loading order alone did not fix the recorded partial CPU
 offload stall; it is tested alongside the explicit CLIP CPU backing policy.

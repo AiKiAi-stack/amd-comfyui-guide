@@ -8,7 +8,7 @@ policy; the stock GGUF class and the older MODEL experiment remain unchanged.
 Connect `CLIPLoaderGGUF → RetainGgufClipCpuBacking → TextEncodeQwenImage21`.
 It is inactive when absent from the workflow. Enable it before the first load.
 Use the recorded Linux source versions and the separate bounded phase runner in
-`trials/2026-10-24-ubuntu-followup/`; its default is also off.
+`evidence/2026-10-24-ubuntu-followup/`; its default is also off.
 
 LoRA, weight wrappers, hooks and object patches are refused at enable/load/unload.
 The one exception is the pinned core CLIP's standard

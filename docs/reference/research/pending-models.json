@@ -1,0 +1,381 @@
+[
+  {
+    "id": "wechat-XNsQ6n0-flux2-klein-20261020",
+    "source_url": "https://mp.weixin.qq.com/s/XNsQ6n0wxZmbgpZl747CMQ",
+    "title": "Flux.2 Klein 本地安装攻略和一键包!",
+    "account": "托尼不是塔克",
+    "publication_date": "2026-01-21T23:57:00+08:00",
+    "model": "FLUX.2 Klein 4B distilled",
+    "features": [
+      "文生图",
+      "单图编辑",
+      "双图配色与Logo迁移",
+      "双人合成",
+      "对象替换或删除",
+      "迭代编辑"
+    ],
+    "status": "seven_planned_edit_features_tested_with_partial_results",
+    "source_access": "First article body successfully read through normal browser access before the same-domain safety block on a later URL.",
+    "source_audit": "research/new-articles-2026-10-20.md",
+    "trial_folder": "evidence/2026-10-20-flux2-klein",
+    "output_images": [
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png"
+    ],
+    "next_step": "Seven planned edit features have real reviewed outputs. Inspect three partial results and preserve the two noise diagnostics; 1024 remains unverified after historical native failure.",
+    "latest_gpu_probe": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T143223Z\\result.json",
+    "feature_results": [
+      {
+        "case_id": "flux2-klein-single-color-pinned",
+        "feature": "单图编辑／改色（恢复锁页内存重试）",
+        "visual_verdict": "通过",
+        "review": "目视对照白包输入与实际输出：包身和提手均变为蓝色，保留居中手提包、皮革纹理和灰色摄影背景，包型及细节有小幅重绘，非像素保留。提交后30.52秒；恢复默认锁页内存后使用相同编辑图、权重和种子重试成功。旧禁用锁页配置的噪声图作为独立case保留；迭代编辑仅可使用本次已通过输出，derived_input哈希已与PNG一致。",
+        "output_image": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+        "image_metadata": [
+          {
+            "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-single-color-pinned_00001_.png",
+            "dimensions": [
+              368,
+              672
+            ],
+            "bytes": 323984,
+            "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8",
+            "png_prompt_graph_matches_api": true,
+            "history_graph_matches_api": true,
+            "prompt_matches_case": true,
+            "references_match_case": true
+          }
+        ],
+        "input_metadata": [
+          {
+            "declared_path": "flux2-klein-bench/handbag_white.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+            "bytes": 5992775,
+            "dimensions": [
+              1536,
+              2752
+            ],
+            "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+          }
+        ],
+        "elapsed_seconds_after_submission": 30.52,
+        "result": "cases/flux2-klein-single-color-pinned/result.json",
+        "resource_summary": "cases/flux2-klein-single-color-pinned/resource-summary.json"
+      },
+      {
+        "case_id": "flux2-klein-dual-logo",
+        "feature": "双图编辑／配色与Logo迁移",
+        "visual_verdict": "通过",
+        "review": "对照白色手提包和蓝底黄色Comfy图案两份输入，输出为蓝色皮革包，正面出现清楚黄色Comfy图案，包型、提手和灰背景保持。迁移图案有生成式细微变化，不宣称像素或矢量精确复制。 提交后30.53秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+        "output_image": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
+        "image_metadata": [
+          {
+            "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-logo_00001_.png",
+            "dimensions": [
+              368,
+              672
+            ],
+            "bytes": 314813,
+            "sha256": "29ec7c6b954f1493c1880803773b5b3972e7566f0efa9811610d5347e6941d0f",
+            "png_prompt_graph_matches_api": true,
+            "history_graph_matches_api": true,
+            "prompt_matches_case": true,
+            "references_match_case": true
+          }
+        ],
+        "input_metadata": [
+          {
+            "declared_path": "flux2-klein-bench/handbag_white.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+            "bytes": 5992775,
+            "dimensions": [
+              1536,
+              2752
+            ],
+            "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+          },
+          {
+            "declared_path": "flux2-klein-bench/comfy_logo_blue.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\flux2-klein-bench\\comfy_logo_blue.png",
+            "bytes": 13382,
+            "dimensions": [
+              1024,
+              1024
+            ],
+            "sha256": "392b4f8b16d3aa197781f91597681905c1320e377b0d81af530c87640b044bf6"
+          }
+        ],
+        "elapsed_seconds_after_submission": 30.53,
+        "result": "cases/flux2-klein-dual-logo/result.json",
+        "resource_summary": "cases/flux2-klein-dual-logo/resource-summary.json"
+      },
+      {
+        "case_id": "flux2-klein-dual-people",
+        "feature": "双人合成／人物一致性",
+        "visual_verdict": "通过本例主要特征",
+        "review": "恰好两名成年女性在阳光公园同框；左侧铜红卷发、雀斑和黄毛衣，右侧黑直发、蓝外套红围巾，人物属性未串换。与两张虚构参考图相比，脸型和表情有变化；本结论是目视特征保留，不是身份相似度量化。 提交后36.74秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+        "output_image": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
+        "image_metadata": [
+          {
+            "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-dual-people_00001_.png",
+            "dimensions": [
+              512,
+              512
+            ],
+            "bytes": 451310,
+            "sha256": "a5d4950c46cd79b419bb6ebf1108ff360cad4feebbb4340152e0f58633aed445",
+            "png_prompt_graph_matches_api": true,
+            "history_graph_matches_api": true,
+            "prompt_matches_case": true,
+            "references_match_case": true
+          }
+        ],
+        "input_metadata": [
+          {
+            "declared_path": "featurebench/kroma-portrait-a.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\kroma-portrait-a.png",
+            "bytes": 358250,
+            "dimensions": [
+              512,
+              512
+            ],
+            "sha256": "73c0d9db77b614ecdd9c1ef0a7887e3f6c66fc1611b95e00217b740452744c10"
+          },
+          {
+            "declared_path": "featurebench/kroma-portrait-b.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\kroma-portrait-b.png",
+            "bytes": 350008,
+            "dimensions": [
+              512,
+              512
+            ],
+            "sha256": "aaf9c47499f870bc44373db7a95c4f72ce751229877025b53c128c65171f07ed"
+          }
+        ],
+        "elapsed_seconds_after_submission": 36.74,
+        "result": "cases/flux2-klein-dual-people/result.json",
+        "resource_summary": "cases/flux2-klein-dual-people/resource-summary.json"
+      },
+      {
+        "case_id": "flux2-klein-style",
+        "feature": "风格转换",
+        "visual_verdict": "部分达到／水彩清楚，光照改变",
+        "review": "出现明确水彩晕染与冷压纸纹，猫背影、窗门、植物和街道构图大致保留；但原图深色雨夜与霓虹明显变浅，近似白昼光照，不能称严格保留原图环境。 提交后30.76秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+        "output_image": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
+        "image_metadata": [
+          {
+            "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-style_00001_.png",
+            "dimensions": [
+              512,
+              512
+            ],
+            "bytes": 550797,
+            "sha256": "59fc18d9300e583da52ce1ae2fe8f6861385b09186d0db4bc20546a3811a9e9c",
+            "png_prompt_graph_matches_api": true,
+            "history_graph_matches_api": true,
+            "prompt_matches_case": true,
+            "references_match_case": true
+          }
+        ],
+        "input_metadata": [
+          {
+            "declared_path": "featurebench/cat.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\cat.png",
+            "bytes": 1011101,
+            "dimensions": [
+              768,
+              768
+            ],
+            "sha256": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+          }
+        ],
+        "elapsed_seconds_after_submission": 30.76,
+        "result": "cases/flux2-klein-style/result.json",
+        "resource_summary": "cases/flux2-klein-style/resource-summary.json"
+      },
+      {
+        "case_id": "flux2-klein-replace-zh",
+        "feature": "对象替换／中文指令",
+        "visual_verdict": "部分达到／替换生效，壶结构错误",
+        "review": "中文指令已使白包消失，并在原灰色摄影背景中生成红色陶瓷壶状主体；但左右都像壶嘴，没有正常把手，茶壶结构明显错误。不能把对象替换API成功等同完整画质验收。 提交后25.66秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+        "output_image": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
+        "image_metadata": [
+          {
+            "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-replace-zh_00001_.png",
+            "dimensions": [
+              368,
+              672
+            ],
+            "bytes": 272674,
+            "sha256": "e4d8e3ef011dea5c633cd8bb2a7206e00505104fa5ec5251640f9901b662d287",
+            "png_prompt_graph_matches_api": true,
+            "history_graph_matches_api": true,
+            "prompt_matches_case": true,
+            "references_match_case": true
+          }
+        ],
+        "input_metadata": [
+          {
+            "declared_path": "flux2-klein-bench/handbag_white.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\flux2-klein-bench\\handbag_white.png",
+            "bytes": 5992775,
+            "dimensions": [
+              1536,
+              2752
+            ],
+            "sha256": "d37ec31eeaf06832ef59b0948cdd7ac09a5bc96a951614c5207fc12e646e4ad4"
+          }
+        ],
+        "elapsed_seconds_after_submission": 25.66,
+        "result": "cases/flux2-klein-replace-zh/result.json",
+        "resource_summary": "cases/flux2-klein-replace-zh/resource-summary.json"
+      },
+      {
+        "case_id": "flux2-klein-remove",
+        "feature": "对象删除",
+        "visual_verdict": "通过",
+        "review": "猫被完整删除，没有可辨动物残留；原位置自然补成木质门廊/门板和植物，雨夜街道、咖啡窗和主要视角保留。细节发生重绘，没有遮罩节点或像素级背景保留保证。 提交后25.9秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。",
+        "output_image": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
+        "image_metadata": [
+          {
+            "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-remove_00001_.png",
+            "dimensions": [
+              512,
+              512
+            ],
+            "bytes": 444241,
+            "sha256": "2c36d14dff05ae11d056d66e5a6c9e562073bc26d2ba01c61470c32c80f7c9fa",
+            "png_prompt_graph_matches_api": true,
+            "history_graph_matches_api": true,
+            "prompt_matches_case": true,
+            "references_match_case": true
+          }
+        ],
+        "input_metadata": [
+          {
+            "declared_path": "featurebench/cat.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\featurebench\\cat.png",
+            "bytes": 1011101,
+            "dimensions": [
+              768,
+              768
+            ],
+            "sha256": "914a71e3ce675408a5c7457beb85a779c00c38ea16701f08a19fb4cfd0b10457"
+          }
+        ],
+        "elapsed_seconds_after_submission": 25.9,
+        "result": "cases/flux2-klein-remove/result.json",
+        "resource_summary": "cases/flux2-klein-remove/resource-summary.json"
+      },
+      {
+        "case_id": "flux2-klein-iterative",
+        "feature": "迭代编辑／第二轮修改",
+        "visual_verdict": "部分达到／添加生效，蝴蝶结偏大",
+        "review": "已对照真正输入的上一轮蓝包输出：蓝色、包型、灰背景大致保持，左侧提手根部新增红色丝质蝴蝶结，确认第二轮图像编辑生效。蝴蝶结覆盖较大包面，不满足提示词small的小尺寸要求，因此只记部分达到。输入SHA与已目视通过的single-color-pinned输出一致，未使用首轮失败噪声图。提交后25.32秒，未含服务启动。",
+        "output_image": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png",
+        "image_metadata": [
+          {
+            "path": "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\flux2-klein-iterative_00001_.png",
+            "dimensions": [
+              368,
+              688
+            ],
+            "bytes": 314042,
+            "sha256": "61973f6d4f088b0dce332188187f8c1726f03551368441929a9601e79bea2c70",
+            "png_prompt_graph_matches_api": true,
+            "history_graph_matches_api": true,
+            "prompt_matches_case": true,
+            "references_match_case": true
+          }
+        ],
+        "input_metadata": [
+          {
+            "declared_path": "flux2-klein-bench/flux2-klein-single-color-pinned.png",
+            "path": "D:/AI/barely-comfy\\ComfyUI\\input\\flux2-klein-bench\\flux2-klein-single-color-pinned.png",
+            "bytes": 323984,
+            "dimensions": [
+              368,
+              672
+            ],
+            "sha256": "f544d8f3706cd063207f3937110538b99c7569a11ea16cb03a3c662f304829f8"
+          }
+        ],
+        "elapsed_seconds_after_submission": 25.32,
+        "result": "cases/flux2-klein-iterative/result.json",
+        "resource_summary": "cases/flux2-klein-iterative/resource-summary.json"
+      }
+    ],
+    "runtime_state": "evidence/2026-10-20-flux2-klein/runtime-state.json",
+    "runtime_block_history": "evidence/2026-10-20-flux2-klein/gpu-runtime-block.json"
+  },
+  {
+    "id": "wechat-b-JAe4AbZCc5SDCcutRU_Q-20261020",
+    "source_url": "https://mp.weixin.qq.com/s/b-JAe4AbZCc5SDCcutRU_Q",
+    "title": "Z-Image 老少皆宜新知识，AIO模型和工作流！",
+    "model": "Z-Image-Turbo-AIO FP8",
+    "publication_date": "2025-12-11T23:59:00+08:00",
+    "features": [
+      "文生图",
+      "中英文文字渲染",
+      "写实图像",
+      "8步与4步效果比较"
+    ],
+    "status": "planned_features_tested_512_optional_claims_unverified",
+    "source_access": "User supplied offline body and screenshots; no new WeChat network access.",
+    "source_audit": "evidence/2026-10-20-zimage/source-aio.md",
+    "output_images": [
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-9step_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-8step_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-photo-4step_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-english_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-chinese_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-aio-figure-art_00001_.png"
+    ],
+    "account": "托尼不是塔克",
+    "local_article": "[private-article-snapshot]",
+    "local_original": "[private-article-snapshot]",
+    "original_sha256": "9946edf0d6aab4455debea11a3a38245a3b6084968527b7e4d4d57d5c5318179",
+    "evidence": "User supplied offline body and screenshots; no new WeChat network access.",
+    "trial_folder": "evidence/2026-10-20-zimage",
+    "next_step": "Ten Z-Image outputs reviewed. 1024/6GB/quantization comparisons and optional branches remain unverified.",
+    "download_manifest": "evidence/2026-10-20-zimage/download-manifest.json",
+    "preparation_status": "evidence/2026-10-20-zimage/preparation-status.json",
+    "latest_gpu_probe": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T140128Z\\result.json"
+  },
+  {
+    "id": "wechat-ads74_hTHki3Kft18je04Q-20261020",
+    "source_url": "https://mp.weixin.qq.com/s/ads74_hTHki3Kft18je04Q",
+    "title": "Z-Image很稳，低显存GGUF模型和工作流！",
+    "model": "jayn7/Z-Image-Turbo-GGUF Q4_K_M + unsloth/Qwen3-4B-GGUF Q4_K_M",
+    "publication_date": "2025-12-01T23:58:00+08:00",
+    "features": [
+      "文生图",
+      "低显存量化运行",
+      "修改提示词后输出变化"
+    ],
+    "status": "planned_features_tested_512_optional_claims_unverified",
+    "source_access": "User supplied offline body and screenshots; no new WeChat network access.",
+    "source_audit": "evidence/2026-10-20-zimage/source-gguf.md",
+    "output_images": [
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-prompt-change_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-english_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-chinese_00001_.png",
+      "D:/AI/barely-comfy\\ComfyUI\\output\\FeatureBench\\zimage-gguf-photo-gpu-text_00001_.png"
+    ],
+    "account": "托尼不是塔克",
+    "local_article": "[private-article-snapshot]",
+    "local_original": "[private-article-snapshot]",
+    "original_sha256": "f496872caa051f7afdc9f41772a38f1f436a66eecb3a928221143b6d3c91a403",
+    "evidence": "User supplied offline body and screenshots; no new WeChat network access.",
+    "trial_folder": "evidence/2026-10-20-zimage",
+    "next_step": "Ten Z-Image outputs reviewed. 1024/6GB/quantization comparisons and optional branches remain unverified.",
+    "download_manifest": "evidence/2026-10-20-zimage/download-manifest.json",
+    "preparation_status": "evidence/2026-10-20-zimage/preparation-status.json",
+    "latest_gpu_probe": "D:/AI/barely-comfy\\trials\\2026-10-20-flux2-klein\\gpu-probes\\20261020T140128Z\\result.json"
+  }
+]

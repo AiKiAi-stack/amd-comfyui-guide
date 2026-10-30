@@ -31,7 +31,7 @@ def install():
     catalog_bytes = (library / 'catalog.json').read_bytes()
     catalog = json.loads(catalog_bytes)
     destination = ROOT / 'runtime/ubuntu/ComfyUI/user/default/workflows' / catalog['runtime_prefix']
-    receipt_path = ROOT / 'trials/2026-10-24-platform-report/installation.json'
+    receipt_path = ROOT / 'evidence/2026-10-24-platform-report/installation.json'
     previous = json.loads(receipt_path.read_text()) if receipt_path.exists() else {}
     owned = {r['installed']: r['sha256'] for r in previous.get('installed', [])}
     receipt = []

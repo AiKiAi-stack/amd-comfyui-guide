@@ -42,14 +42,14 @@ class PlatformReportTests(unittest.TestCase):
         cls.catalog = json.loads((ROOT / 'workflows/catalog.json').read_text())
 
     def test_windows_sources_and_complete_archive_are_preserved(self):
-        before = json.loads((ROOT / 'trials/2026-10-25-report-audit/scope-preservation.json').read_text())
+        before = json.loads((ROOT / 'evidence/2026-10-25-report-audit/scope-preservation.json').read_text())
         articles = {m[1].decode(): hashlib.sha256(m[0]).hexdigest() for m in re.finditer(
             rb'<article\b[^>]*\bid="([^"]+)"[^>]*>.*?</article>',
             (HERE / 'feature-report.windows-20261024.html').read_bytes(), re.S)}
         self.assertEqual(articles, before['archived_articles_sha256'])
 
     def test_every_original_windows_case_and_review_remains(self):
-        expected = {r['id']: r for r in json.loads((ROOT / 'trials/2026-10-25-report-audit/preserved-windows.json').read_text())}
+        expected = {r['id']: r for r in json.loads((ROOT / 'evidence/2026-10-25-report-audit/preserved-windows.json').read_text())}
         actual = {r['id']: r for r in self.catalog['records'] if r['id'] in expected}
         self.assertEqual(len(actual), 95)
         for key, record in expected.items():
@@ -108,7 +108,7 @@ class PlatformReportTests(unittest.TestCase):
                 self.assertEqual(sha(packaged), sha(ROOT / 'runtime/ubuntu/ComfyUI/input' / asset['file']))
 
     def test_only_checked_graphs_are_installed(self):
-        receipt = json.loads((ROOT / 'trials/2026-10-24-platform-report/installation.json').read_text())
+        receipt = json.loads((ROOT / 'evidence/2026-10-24-platform-report/installation.json').read_text())
         approved = {j['id'] for j in self.catalog['workflows'] if j.get('frontend_import', {}).get('pass') and j.get('install_recommended', True)}
         self.assertEqual({r['id'] for r in receipt['installed']}, approved)
         self.assertGreaterEqual(len(approved), 99)
