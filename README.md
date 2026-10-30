@@ -35,8 +35,7 @@ This is a single-machine field report, not an AMD compatibility list. For other 
 | Metric | Value |
 |---|---:|
 | Model families | 7 |
-| Features tested | 40 |
-| Linux verdicts | 21 pass · 18 partial · 1 fail |
+| Features documented | 40 |
 | Platform records | 162 (95 Windows + 67 Linux) |
 | Workflows | 268 UI + 268 API · 184 installed |
 | Documented cases | 88 |

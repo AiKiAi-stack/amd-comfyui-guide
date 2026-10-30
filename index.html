@@ -3,176 +3,1008 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AMD ComfyUI Guide — 在 AMD 显卡上跑 ComfyUI，每一步实测</title>
-<meta name="description" content="AMD 显卡 ComfyUI 部署指南：Windows 与 Ubuntu 分步教程、7 个模型系列 40 项功能实测、268 份工作流，全部在 RX 6650 XT（8GB）上逐项记录。">
-<meta property="og:title" content="AMD ComfyUI Guide">
-<meta property="og:description" content="在 AMD 显卡上跑 ComfyUI：每一步实测，每个结果可查。">
-<meta property="og:image" content="https://aikiai-stack.github.io/amd-comfyui-guide/assets/banner.webp">
+<title>Barely Comfy · AMD ComfyUI Guide — 在 AMD 显卡上跑 ComfyUI</title>
+<meta name="description" content="在 AMD 显卡上跑 ComfyUI 的可复现部署笔记：Windows 与 Ubuntu 分步教程、7 个模型系列的真实出图、268 份工作流，全部在 RX 6650 XT（8 GB）上记录。">
+<meta property="og:title" content="Barely Comfy · AMD ComfyUI Guide">
+<meta property="og:description" content="在 AMD 显卡上跑 ComfyUI 的可复现部署笔记：分步教程、真实出图、可直接导入的工作流。">
+<meta property="og:image" content="https://aikiai-stack.github.io/amd-comfyui-guide/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0907">
+<meta name="color-scheme" content="dark">
+<link rel="preload" href="assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/noto-serif-sc-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/gallery/qwen-multiref.webp">
+<script>document.documentElement.classList.add('js');</script>
 <style>
-  :root {
-    --bg: #050505;
-    --bg-soft: #0d0d0d;
-    --line: #262626;
-    --text: #f2efe8;
-    --muted: #9b968b;
-    --gold: #c9a227;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--text); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+/* ============================================================
+   Barely Comfy — Darkroom Archive
+   Self-hosted fonts, hand-written CSS, no framework, no CDN.
+   ============================================================ */
+@font-face{font-family:"Instrument Serif";src:url("assets/fonts/instrument-serif-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("assets/fonts/instrument-serif-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Noto Serif SC";src:url("assets/fonts/noto-serif-sc-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Serif SC";src:url("assets/fonts/noto-serif-sc-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url("assets/fonts/ibm-plex-sans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url("assets/fonts/ibm-plex-sans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("assets/fonts/ibm-plex-mono-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url("assets/fonts/ibm-plex-mono-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans SC";src:url("assets/fonts/noto-sans-sc-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans SC";src:url("assets/fonts/noto-sans-sc-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"UI Symbols";src:url("assets/fonts/ui-symbols-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
 
-  header.hero { padding: 88px 0 64px; text-align: center; }
-  .eyebrow {
-    color: var(--gold);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    margin-bottom: 22px;
-  }
-  h1 {
-    font-size: clamp(40px, 7vw, 72px);
-    line-height: 1.08;
-    letter-spacing: -1.5px;
-    font-weight: 700;
-  }
-  .tagline { margin-top: 18px; font-size: clamp(18px, 2.6vw, 24px); color: #e8e4da; }
-  .lead { margin-top: 16px; color: var(--muted); font-size: 15px; }
-  .lead a { color: var(--muted); }
+:root{
+  --bg:#0a0907;
+  --bg-2:#12100c;
+  --ink:#f3eee2;
+  --muted:#a79d8c;
+  --faint:#8a8071;
+  --gold:#c9a227;
+  --gold-2:#e2bd4b;
+  --line:rgba(243,238,226,.14);
+  --line-2:rgba(243,238,226,.08);
+  --serif:"Instrument Serif","Noto Serif SC","UI Symbols",Georgia,"Songti SC","Noto Serif CJK SC",serif;
+  --sans:"IBM Plex Sans","Noto Sans SC","UI Symbols","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  --mono:"IBM Plex Mono","UI Symbols",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-2:cubic-bezier(.7,0,.2,1);
+  --pad:clamp(20px,4.5vw,56px);
+  --wrap:1260px;
+  --section:clamp(76px,10vw,132px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+html.is-locked,html.is-locked body{overflow:hidden}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:400 16px/1.8 var(--sans);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+::selection{background:rgba(201,162,39,.28);color:var(--ink)}
+img{max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+h1,h2,h3,p,ol,ul,dl,figure{margin:0}
+button{font:inherit;color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
+.skip-link{
+  position:fixed;left:16px;top:-80px;z-index:200;background:var(--gold);color:#120f06;
+  padding:10px 16px;font:500 12px var(--mono);letter-spacing:.08em;text-decoration:none;transition:top .2s;
+}
+.skip-link:focus{top:12px}
+.eyebrow{
+  display:flex;align-items:center;gap:12px;color:var(--gold);
+  font:500 10.5px/1.2 var(--mono);letter-spacing:.26em;text-transform:uppercase;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.7;flex:0 0 auto}
+.eyebrow--plain::before{display:none}
 
-  .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 34px; }
-  .btn {
-    display: inline-block;
-    padding: 13px 26px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 15px;
-    color: var(--text);
-    transition: border-color .15s ease, background .15s ease;
-  }
-  .btn:hover { border-color: var(--gold); }
-  .btn.primary { background: var(--gold); border-color: var(--gold); color: #120f06; font-weight: 700; }
-  .btn.primary:hover { background: #d8b23a; }
+/* ---------- masthead ---------- */
+.masthead{position:fixed;inset:0 0 auto;z-index:60;border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease)}
+.masthead.is-scrolled{background:rgba(10,9,7,.82);border-bottom-color:var(--line-2);-webkit-backdrop-filter:blur(16px) saturate(1.15);backdrop-filter:blur(16px) saturate(1.15)}
+.masthead__inner{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);height:68px;display:flex;align-items:center;gap:clamp(14px,3vw,32px)}
+.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1;flex:0 0 auto}
+.brand__name{font:400 21px/1 var(--serif);letter-spacing:-.015em;color:var(--ink)}
+.brand__sub{margin-top:6px;font:500 8px/1 var(--mono);letter-spacing:.32em;text-transform:uppercase;color:var(--faint)}
+.nav{display:flex;align-items:center;gap:clamp(12px,2vw,26px);margin-left:auto}
+.nav a{
+  position:relative;color:var(--muted);text-decoration:none;
+  font:500 11px/1 var(--sans);letter-spacing:.06em;padding:7px 0;transition:color .25s;
+}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .35s var(--ease)}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{right:0}
+.nav-github{
+  border:1px solid var(--line);padding:9px 13px !important;color:var(--ink) !important;
+  font-family:var(--mono) !important;font-size:10px !important;letter-spacing:.14em !important;text-transform:uppercase;
+  transition:border-color .25s,background .25s;
+}
+.nav-github:hover{border-color:var(--gold);background:rgba(201,162,39,.06)}
+.nav-github::after{display:none}
+@media (max-width:900px){
+  .nav a:not(.nav-report):not(.nav-github){display:none}
+  .masthead__inner{height:60px}
+}
+@media (max-width:560px){
+  .brand__sub{display:none}
+  .nav{gap:12px}
+}
 
-  .banner { margin: 0 auto 56px; }
-  .banner img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+/* ---------- hero ---------- */
+.hero{position:relative;padding:calc(68px + clamp(48px,8vw,96px)) 0 clamp(56px,7vw,96px);overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-20% -10% auto;height:120%;pointer-events:none;
+  background:
+    radial-gradient(52% 46% at 74% 30%,rgba(201,162,39,.17),transparent 70%),
+    radial-gradient(40% 40% at 18% 8%,rgba(198,90,46,.07),transparent 72%);
+}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero__latin{
+  display:block;font:400 clamp(4rem,10.6vw,8.8rem)/.9 var(--serif);
+  letter-spacing:-.035em;color:var(--ink);
+}
+.hero__latin em{font-style:italic;color:var(--gold-2)}
+.hero__zh{
+  display:block;margin-top:clamp(18px,2.4vw,28px);max-width:19em;
+  font:500 clamp(1.5rem,3.2vw,2.55rem)/1.38 var(--serif);
+  letter-spacing:.005em;color:var(--ink);
+}
+.hero__lead{margin-top:clamp(18px,2.4vw,26px);max-width:44ch;color:var(--muted);font-size:clamp(14.5px,1.35vw,16.5px);line-height:1.8}
+.hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:clamp(24px,3.2vw,36px)}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;
+  padding:14px 22px;border:1px solid var(--line);background:transparent;color:var(--ink);
+  font:500 12px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;
+  transition:background .25s,border-color .25s,color .25s;
+}
+.btn .a{transition:transform .3s var(--ease);display:inline-block}
+.btn:hover .a{transform:translate(2px,-2px)}
+.btn--primary{background:var(--gold);border-color:var(--gold);color:#120f06}
+.btn--primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
+.btn--quiet{border-color:transparent;padding-left:6px;padding-right:6px;color:var(--muted)}
+.btn--quiet:hover{color:var(--ink)}
+.hero__spec{
+  margin-top:clamp(26px,3.6vw,40px);padding-top:16px;border-top:1px solid var(--line-2);
+  font:400 10px/1.9 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
+  max-width:40ch;
+}
+/* projector */
+.projector{position:relative;margin:0;min-width:0}
+.projector__frame{
+  position:relative;padding:10px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(243,238,226,.03),transparent 45%),var(--bg-2);
+}
+.projector__stage{position:relative;aspect-ratio:4/5;overflow:hidden;background:#050403}
+.projector__img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity 1.15s var(--ease);will-change:opacity,transform;
+}
+.projector__img.is-active{opacity:1;animation:kenburns 8s var(--ease-2) both}
+@keyframes kenburns{from{transform:scale(1.07)}to{transform:scale(1)}}
+.projector__badge{
+  position:absolute;z-index:2;top:14px;left:14px;padding:7px 10px;border:1px solid rgba(243,238,226,.2);
+  background:rgba(10,9,7,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  font:500 9.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+}
+.projector__badge--right{left:auto;right:14px;color:var(--gold);border-color:rgba(201,162,39,.4)}
+.projector__cap{margin-top:14px}
+.projector__model{font:400 clamp(1.05rem,1.7vw,1.3rem)/1.25 var(--serif);color:var(--ink);letter-spacing:.005em}
+.projector__feature{margin-top:5px;font:400 12px/1.4 var(--sans);color:var(--muted);letter-spacing:.02em}
+.projector__controls{display:flex;align-items:center;justify-content:space-between;gap:12px 18px;margin-top:12px;flex-wrap:wrap}
+.projector__buttons{display:flex;align-items:center;gap:6px}
+.pj-btn{
+  display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;
+  border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;
+  font:400 13px/1 var(--mono);transition:border-color .25s,color .25s;
+}
+.pj-btn:hover{border-color:var(--gold);color:var(--gold)}
+.pj-btn[aria-pressed="true"]{color:var(--gold);border-color:rgba(201,162,39,.5)}
+.projector__dots{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.pj-dot{width:18px;height:2px;padding:0;border:0;background:var(--line);cursor:pointer;transition:background .25s,width .25s}
+.pj-dot[aria-current="true"]{background:var(--gold);width:26px}
+.projector__note{margin-top:14px;font:400 10.5px/1.6 var(--sans);color:var(--faint);letter-spacing:.04em}
+@media (max-width:900px){
+  .hero__grid{grid-template-columns:1fr;gap:clamp(36px,7vw,56px)}
+  .projector{max-width:430px;margin:0 auto;width:100%}
+}
 
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    margin: 48px 0 64px;
-  }
-  .stat { background: var(--bg); padding: 26px 20px; text-align: center; }
-  .stat strong { display: block; font-size: 30px; font-weight: 700; line-height: 1.2; }
-  .stat span { display: block; margin-top: 8px; font-size: 13px; color: var(--muted); letter-spacing: .5px; }
+/* ---------- sections ---------- */
+.section{position:relative;padding:var(--section) 0;border-top:1px solid var(--line-2)}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:clamp(20px,4vw,48px);margin-bottom:clamp(28px,4.6vw,52px)}
+.section-head__title{margin-top:14px;font:500 clamp(1.62rem,4.4vw,3.3rem)/1.16 var(--serif);letter-spacing:-.005em;color:var(--ink)}
+.section-head__note{margin-top:14px;max-width:58ch;color:var(--muted);font-size:14px;line-height:1.8}
+.section-head__index{
+  font:400 clamp(3.4rem,7.5vw,6.4rem)/.8 var(--serif);letter-spacing:-.04em;
+  color:transparent;-webkit-text-stroke:1px rgba(243,238,226,.16);
+}
+@media (max-width:700px){.section-head{grid-template-columns:1fr}.section-head__index{display:none}}
+@media (max-width:430px){.section-head__title{font-size:1.5rem;line-height:1.22}}
 
-  section { padding: 56px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 28px; letter-spacing: -.5px; margin-bottom: 10px; }
-  .section-note { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+/* ---------- plates ---------- */
+.plates__bar{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:clamp(24px,3.4vw,36px)}
+.chip{
+  appearance:none;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:transparent;
+  padding:9px 14px;color:var(--muted);font:500 11.5px/1 var(--sans);letter-spacing:.03em;
+  transition:color .25s,border-color .25s,background .25s;
+}
+.chip:hover{border-color:var(--gold);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#0a0907}
+.chip small{font:400 9px/1 var(--mono);letter-spacing:.04em;opacity:.65;margin-left:7px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.plate-grid{columns:4;column-gap:clamp(14px,1.7vw,24px)}
+@media (max-width:1100px){.plate-grid{columns:3}}
+@media (max-width:620px){
+  .plates__bar{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    -webkit-mask-image:linear-gradient(90deg,#000 0,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 92%,transparent 100%)}
+  .plates__bar::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto}
+}
+@media (max-width:780px){.plate-grid{columns:2}}
+@media (max-width:460px){.plate-grid{columns:2;column-gap:12px}.plate{margin-bottom:16px}.plate__cap{margin-top:8px}.plate__feature{font-size:11px}}
+.plate{break-inside:avoid;margin:0 0 clamp(16px,2vw,26px)}
+.plate__btn{display:block;width:100%;padding:0;border:0;background:transparent;text-align:left;cursor:pointer;color:inherit}
+.plate__media{position:relative;display:block;overflow:hidden;background:var(--bg-2);border:1px solid var(--line-2)}
+.plate__media img{display:block;width:100%;height:auto;transition:transform 1s var(--ease),filter .5s var(--ease)}
+.plate__btn:hover .plate__media img{transform:scale(1.035)}
+.plate__media::after{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .4s var(--ease);pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,9,7,0) 50%,rgba(10,9,7,.78) 100%);
+}
+.plate__btn:hover .plate__media::after,.plate__btn:focus-visible .plate__media::after{opacity:1}
+.plate__no{
+  position:absolute;z-index:2;top:11px;left:11px;padding:6px 8px;border:1px solid rgba(243,238,226,.2);
+  background:rgba(10,9,7,.58);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+  font:500 9px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+}
+.plate__hover{
+  position:absolute;z-index:2;left:13px;right:13px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  opacity:0;transform:translateY(6px);transition:opacity .35s var(--ease),transform .35s var(--ease);
+  font:500 9.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+}
+.plate__hover em{font-style:normal;color:var(--gold-2)}
+.plate__btn:hover .plate__hover,.plate__btn:focus-visible .plate__hover{opacity:1;transform:none}
+.plate__hover-prompt{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  max-width:74%;font:400 11px/1.5 var(--sans);letter-spacing:.01em;text-transform:none;color:var(--ink);opacity:.86;
+}
+.plate__hover em{white-space:nowrap}
+.plate__cap{display:flex;align-items:baseline;gap:12px;margin-top:10px}
+.plate__feature{font:400 11.5px/1.4 var(--sans);color:var(--faint)}
+.plate-grid__empty{padding:40px 0;color:var(--muted);font-size:14px}
+@supports (view-transition-name: none){::view-transition-old(root),::view-transition-new(root){animation-duration:.28s;animation-timing-function:var(--ease)}}
 
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-  .card {
-    display: block;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    text-decoration: none;
-    background: var(--bg-soft);
-  }
-  .card:hover { border-color: var(--gold); }
-  .card h3 { font-size: 17px; margin-bottom: 6px; }
-  .card p { color: var(--muted); font-size: 14px; }
+/* ---------- manual ---------- */
+.manual__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-2)}
+.manual__item{border-bottom:1px solid var(--line-2)}
+.manual__link{
+  display:grid;grid-template-columns:clamp(56px,7vw,96px) minmax(0,1fr) 40px;gap:clamp(10px,2vw,28px);
+  align-items:baseline;padding:clamp(20px,2.7vw,32px) 0;text-decoration:none;color:var(--ink);
+  transition:padding-left .4s var(--ease),background .3s;
+}
+.manual__link:hover{padding-left:10px}
+.manual__num{font:400 clamp(1.5rem,2.8vw,2.2rem)/1 var(--serif);color:var(--faint);letter-spacing:-.02em;transition:color .3s}
+.manual__link:hover .manual__num{color:var(--gold)}
+.manual__title{font:500 clamp(1.05rem,1.7vw,1.28rem)/1.4 var(--sans)}
+.manual__desc{display:block;margin-top:7px;max-width:64ch;color:var(--muted);font-size:13.5px;line-height:1.75}
+.manual__arrow{justify-self:end;color:var(--faint);font:400 15px/1 var(--mono);transition:color .3s,transform .3s var(--ease)}
+.manual__link:hover .manual__arrow{color:var(--gold);transform:translate(3px,-3px)}
+.manual__foot{margin-top:clamp(20px,3vw,30px)}
 
-  .shot { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+/* ---------- library ---------- */
+.library__grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:880px){.library__grid{grid-template-columns:1fr}}
+.library__lead{color:var(--muted);font-size:14.5px;line-height:1.85;max-width:48ch}
+.library__downloads{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
+.dl{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 2px;
+  border-bottom:1px solid var(--line-2);text-decoration:none;color:var(--ink);transition:padding-left .35s var(--ease),background .3s;
+}
+.dl:hover{padding-left:8px}
+.dl__name{display:block;font:500 13.5px/1.4 var(--sans)}
+.dl__meta{display:block;margin-top:3px;font:400 10px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.dl__arrow{color:var(--gold);font:400 14px/1 var(--mono);transition:transform .3s var(--ease)}
+.dl:hover .dl__arrow{transform:translate(3px,-3px)}
+.ticker{margin-top:clamp(34px,5vw,58px);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);overflow:hidden;padding:16px 0;background:rgba(18,16,12,.45)}
+.ticker__track{display:flex;width:max-content;animation:ticker 52s linear infinite}
+.ticker:hover .ticker__track,.ticker:focus-within .ticker__track{animation-play-state:paused}
+.ticker__group{display:flex;align-items:center;flex:0 0 auto}
+.ticker__item{display:flex;align-items:center;gap:26px;padding:0 26px;white-space:nowrap;font:400 10.5px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
+.ticker__item::after{content:"";width:3px;height:3px;background:var(--gold);opacity:.7;border-radius:50%}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  footer {
-    padding: 44px 0 64px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 14px;
-    text-align: center;
-  }
-  footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+/* ---------- record ---------- */
+.record__body{max-width:62ch;color:var(--muted);font-size:14.5px;line-height:1.85}
+.record__ledger{margin:clamp(28px,4vw,44px) 0 0}
+.ledger{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0;padding:0;list-style:none;background:var(--line-2);border:1px solid var(--line-2)}
+.ledger li{background:var(--bg);padding:clamp(20px,2.6vw,30px)}
+.ledger b{display:block;font:400 clamp(2.1rem,3.8vw,3.2rem)/1 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+.ledger span{display:block;margin-top:10px;font:400 11px/1.5 var(--sans);letter-spacing:.05em;color:var(--muted)}
+@media (max-width:760px){.ledger{grid-template-columns:repeat(2,1fr)}}
+.report-card{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:clamp(28px,4vw,44px);
+  padding:clamp(22px,3vw,34px);border:1px solid var(--line);text-decoration:none;color:var(--ink);
+  background:linear-gradient(115deg,rgba(201,162,39,.07),transparent 55%);
+  transition:border-color .3s,background .35s;
+}
+.report-card:hover{border-color:var(--gold);background:linear-gradient(115deg,rgba(201,162,39,.12),transparent 60%)}
+.report-card__label{font:500 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.report-card h3{margin-top:12px;font:400 clamp(1.35rem,2.5vw,1.95rem)/1.2 var(--serif)}
+.report-card p{margin-top:8px;color:var(--muted);font-size:12.5px;line-height:1.6;letter-spacing:.02em}
+.report-card__arrow{flex:0 0 auto;font:400 26px/1 var(--mono);color:var(--gold);transition:transform .3s var(--ease)}
+.report-card:hover .report-card__arrow{transform:translate(4px,-4px)}
+.record__links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font:500 11px/1.6 var(--sans);letter-spacing:.04em}
+.record__links a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .25s,border-color .25s}
+.record__links a:hover{color:var(--ink);border-color:var(--gold)}
+@media (max-width:640px){.report-card{align-items:flex-start}.report-card__arrow{display:none}}
+
+/* ---------- footer ---------- */
+.site-footer{border-top:1px solid var(--line);padding:clamp(48px,6vw,72px) 0 clamp(56px,7vw,84px);position:relative;z-index:1}
+.footer__top{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.footer__brand{font:400 clamp(1.6rem,3.2vw,2.5rem)/1.1 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+.footer__brand em{font-style:italic;color:var(--gold)}
+.footer__tag{margin-top:10px;font:400 11.5px/1.6 var(--sans);letter-spacing:.05em;color:var(--faint);text-transform:uppercase}
+.footer__links{display:flex;flex-wrap:wrap;gap:10px 22px;font:500 10.5px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.footer__links a{color:var(--muted);text-decoration:none;transition:color .25s}
+.footer__links a:hover{color:var(--gold)}
+.footer__bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:clamp(32px,4vw,48px);padding-top:20px;border-top:1px solid var(--line-2);color:var(--faint);font-size:11.5px;line-height:1.7}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  width:min(1180px,94vw);max-width:none;max-height:92vh;padding:0;border:1px solid var(--line);
+  background:var(--bg-2);color:var(--ink);overflow:hidden;
+}
+.lightbox::backdrop{background:rgba(5,4,3,.84);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.lightbox[open]::backdrop{animation:fadeIn .35s var(--ease) both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.lightbox__panel{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,1fr);max-height:92vh;animation:panelIn .45s var(--ease) both}
+@keyframes panelIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lightbox__media{position:relative;display:flex;align-items:center;justify-content:center;min-height:300px;background:#050403;border-right:1px solid var(--line-2)}
+.lightbox__media img{display:block;width:100%;height:100%;max-height:92vh;object-fit:contain}
+.lightbox__close{
+  position:absolute;top:14px;right:14px;z-index:3;padding:8px 12px;border:1px solid var(--line);
+  background:rgba(10,9,7,.7);color:var(--ink);cursor:pointer;font:500 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:border-color .25s,color .25s;
+}
+.lightbox__close:hover{border-color:var(--gold);color:var(--gold)}
+.lightbox__nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;padding:0;
+  display:flex;align-items:center;justify-content:center;border:1px solid var(--line);
+  background:rgba(10,9,7,.66);color:var(--ink);cursor:pointer;font:400 15px/1 var(--mono);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:border-color .25s,color .25s;
+}
+.lightbox__nav:hover{border-color:var(--gold);color:var(--gold)}
+.lightbox__nav--prev{left:14px}
+.lightbox__nav--next{right:14px}
+.lightbox__info{padding:clamp(22px,3vw,36px);overflow:auto;max-height:92vh;display:flex;flex-direction:column}
+.lightbox__no{font:500 10px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.lightbox__title{margin-top:14px;font:400 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--serif);letter-spacing:-.005em}
+.lightbox__feature{margin-top:8px;color:var(--muted);font-size:12.5px;letter-spacing:.03em}
+.lightbox__section{margin-top:22px;padding-top:16px;border-top:1px solid var(--line-2)}
+.lightbox__label{font:500 9.5px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.lightbox__prompt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.lightbox__prompt-head .lightbox__label{margin-bottom:0}
+.lightbox__copy{
+  padding:6px 10px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;
+  font:500 9.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;transition:color .25s,border-color .25s;
+}
+.lightbox__copy:hover{border-color:var(--gold);color:var(--gold)}
+.lightbox__prompt{font-size:12.5px;line-height:1.8;color:var(--ink);max-height:28vh;overflow:auto;padding-right:6px}
+.lightbox__params{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);margin:0}
+.lightbox__params div{background:var(--bg);padding:10px 12px}
+.lightbox__params dt{font:400 9px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.lightbox__params dd{margin:5px 0 0;font:400 12.5px/1.4 var(--sans);color:var(--ink)}
+.lightbox__report{
+  margin-top:22px;display:inline-flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:13px 16px;border:1px solid var(--line);text-decoration:none;color:var(--ink);
+  font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;transition:border-color .25s,background .25s;
+}
+.lightbox__report:hover{border-color:var(--gold);background:rgba(201,162,39,.07)}
+.lightbox__hint{margin-top:14px;font:400 10px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.lightbox__params div:last-child:nth-child(odd){grid-column:1 / -1}
+@media (max-width:860px){
+  .lightbox{max-height:94vh}
+  .lightbox__panel{grid-template-columns:1fr;max-height:94vh;overflow:auto}
+  .lightbox__media{border-right:0;border-bottom:1px solid var(--line-2)}
+  .lightbox__media img{max-height:48vh}
+  .lightbox__info{max-height:none}
+  .lightbox__prompt{max-height:none}
+}
+
+/* ---------- reveal / motion ---------- */
+.js [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+.js [data-reveal][data-delay="1"]{transition-delay:.08s}
+.js [data-reveal][data-delay="2"]{transition-delay:.16s}
+.js [data-reveal][data-delay="3"]{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js [data-reveal],.js [data-reveal].is-in{opacity:1;transform:none;transition:none}
+  .projector__img{transition:none;animation:none !important}
+  .ticker__track{animation:none}
+  .lightbox__panel,.lightbox[open]::backdrop{animation:none}
+  .plate__media img,.manual__link,.dl{transition:none}
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">跳到主要内容</a>
 
-<div class="wrap">
-  <header class="hero">
-    <div class="eyebrow">AMD Radeon · ComfyUI Guide</div>
-    <h1>AMD ComfyUI Guide</h1>
-    <p class="tagline">在 AMD 显卡上跑 ComfyUI：每一步实测，每个结果可查。</p>
-    <p class="lead">Windows 与 Ubuntu 分步教程 · 逐项实测的功能清单 · 可直接使用的工作流库 · 全部在 RX 6650 XT（8GB）上记录</p>
-    <div class="cta">
-      <a class="btn primary" href="evidence/2026-10-19-features/feature-report.html">打开完整功能报告</a>
-      <a class="btn" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/tree/main/docs/tutorial">开始读教程</a>
-      <a class="btn" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/releases">下载工作流库</a>
-    </div>
-  </header>
-
-  <div class="banner">
-    <img src="assets/banner.webp" alt="AMD ComfyUI Guide — ComfyUI on AMD, tested end to end">
+<header class="masthead" id="masthead">
+  <div class="masthead__inner">
+    <a class="brand" href="#top" aria-label="Barely Comfy · AMD ComfyUI Guide 首页">
+      <span class="brand__name">Barely Comfy</span>
+      <span class="brand__sub">AMD ComfyUI Guide</span>
+    </a>
+    <nav class="nav" aria-label="主要导航">
+      <a href="#models">模型出图</a>
+      <a href="#tutorial">教程</a>
+      <a href="#workflows">工作流</a>
+      <a href="#record">记录</a>
+      <a class="nav-report" href="evidence/2026-10-19-features/feature-report.html">完整报告 ↗</a>
+      <a class="nav-github" href="https://github.com/AiKiAi-stack/amd-comfyui-guide">GitHub ↗</a>
+    </nav>
   </div>
+</header>
 
-  <div class="stats">
-    <!-- STATS:START -->
-<div class="stat"><strong>7</strong><span>模型系列</span></div>
-<div class="stat"><strong>40</strong><span>实测功能</span></div>
-<div class="stat"><strong>21 / 18 / 1</strong><span>Linux 通过 / 部分 / 未达到</span></div>
-<div class="stat"><strong>162</strong><span>平台记录（95 Win + 67 Linux）</span></div>
-<div class="stat"><strong>268</strong><span>UI 工作流 · 已安装 184</span></div>
+<main id="main">
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow" data-reveal>AMD Radeon RX 6650 XT · 8 GB · Windows + Ubuntu</p>
+        <h1 class="hero__latin" id="hero-title" data-reveal data-delay="1">Barely <em>Comfy.</em></h1>
+        <p class="hero__zh" data-reveal data-delay="2">在 8 GB 显存上，<br>把 ComfyUI 跑明白。</p>
+        <p class="hero__lead" data-reveal data-delay="2">一份可复现的单机部署笔记：从 ROCm 环境、模型放置到第一张真实出图，每一步都有记录可查。</p>
+        <div class="hero__actions" data-reveal data-delay="3">
+          <a class="btn btn--primary" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/01-hardware.md">开始读教程 <span class="a" aria-hidden="true">↗</span></a>
+          <a class="btn" href="#models">浏览模型出图 <span class="a" aria-hidden="true">↓</span></a>
+          <a class="btn btn--quiet" href="evidence/2026-10-19-features/feature-report.html">完整功能报告 <span class="a" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="hero__spec" data-reveal data-delay="3">ROCm 7.14 · PyTorch 2.12.0 · ComfyUI ce1e922 · 16 GB RAM</p>
+      </div>
+
+      <figure class="projector" data-reveal data-delay="2" id="projector" aria-label="模型出图投影">
+        <div class="projector__frame">
+          <div class="projector__stage" id="projector-stage">
+            <span class="projector__badge" id="projector-no">Plate 001 / 07</span>
+            <span class="projector__badge projector__badge--right">RX 6650 XT</span>
+          </div>
+        </div>
+        <figcaption>
+          <div class="projector__cap">
+            <p class="projector__model" id="projector-model" aria-live="polite">本机投影</p>
+            <p class="projector__feature" id="projector-feature">全部图片由本机 GPU 真实生成</p>
+          </div>
+          <div class="projector__controls" role="group" aria-label="投影控制">
+            <div class="projector__dots" id="projector-dots"></div>
+            <div class="projector__buttons">
+              <button class="pj-btn" type="button" id="pj-prev" aria-label="上一张">←</button>
+              <button class="pj-btn" type="button" id="pj-next" aria-label="下一张">→</button>
+              <button class="pj-btn" type="button" id="pj-toggle" aria-label="暂停自动播放" aria-pressed="false">❚❚</button>
+            </div>
+          </div>
+          <p class="projector__note">所有图片均由本机 GPU 真实生成，未做后期。点开下方图版可查看提示词与参数。</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= 01 PLATES ================= -->
+  <section class="section" id="models" aria-labelledby="models-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div data-reveal>
+          <p class="eyebrow">01 / The Plates</p>
+          <h2 class="section-head__title" id="models-title">模型跑过的图，都在这里。</h2>
+          <p class="section-head__note">按模型筛选，点开任意一张查看提示词、参数与原始记录。全部为本机真实输出，未做后期。</p>
+        </div>
+        <span class="section-head__index" aria-hidden="true">01</span>
+      </div>
+
+      <div class="plates__bar" id="plate-filters" role="group" aria-label="按模型筛选"></div>
+      <p class="sr-only" id="plate-count" aria-live="polite"></p>
+
+      <div class="plate-grid" id="plate-grid">
+        <p class="plate-grid__empty" id="plate-loading">正在加载图版…</p>
+      </div>
+      <noscript>
+        <p class="plate-grid__empty">图版需要 JavaScript 才能筛选与放大；全部记录可在 <a href="evidence/2026-10-19-features/feature-report.html">完整功能报告</a> 中查看。</p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ================= 02 FIELD MANUAL ================= -->
+  <section class="section" id="tutorial" aria-labelledby="tutorial-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div data-reveal>
+          <p class="eyebrow">02 / Field Manual</p>
+          <h2 class="section-head__title" id="tutorial-title">按你的起点，选一条路。</h2>
+          <p class="section-head__note">第一次在 AMD 显卡上装 ComfyUI？先确认硬件，再从 Ubuntu + ROCm 走一遍完整链路。</p>
+        </div>
+        <span class="section-head__index" aria-hidden="true">02</span>
+      </div>
+
+      <ol class="manual__list">
+        <li class="manual__item" data-reveal>
+          <a class="manual__link" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/01-hardware.md">
+            <span class="manual__num">01</span>
+            <span>
+              <span class="manual__title">先确认硬件</span>
+              <span class="manual__desc">你的显卡、系统与版本组合是否适用；8 GB 显存在这里的真实含义。</span>
+            </span>
+            <span class="manual__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="manual__item" data-reveal data-delay="1">
+          <a class="manual__link" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/03-ubuntu-rocm.md">
+            <span class="manual__num">03</span>
+            <span>
+              <span class="manual__title">Ubuntu + ROCm</span>
+              <span class="manual__desc">唯一从全新独立环境完成全链路验证的安装路径。</span>
+            </span>
+            <span class="manual__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="manual__item" data-reveal data-delay="2">
+          <a class="manual__link" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/04-first-image.md">
+            <span class="manual__num">04</span>
+            <span>
+              <span class="manual__title">第一张图</span>
+              <span class="manual__desc">装完先验证 GPU 真的能出图，再谈其他功能。</span>
+            </span>
+            <span class="manual__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="manual__item" data-reveal data-delay="3">
+          <a class="manual__link" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/08-amd-matrix.md">
+            <span class="manual__num">08</span>
+            <span>
+              <span class="manual__title">AMD 卡适配矩阵</span>
+              <span class="manual__desc">不是 RX 6650 XT？先看三档结论，避免把单卡结论当通用兼容性。</span>
+            </span>
+            <span class="manual__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ol>
+      <p class="manual__foot" data-reveal><a class="btn" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/README.md">查看全部 8 章教程 <span class="a" aria-hidden="true">↗</span></a></p>
+    </div>
+  </section>
+
+  <!-- ================= 03 WORKFLOW LIBRARY ================= -->
+  <section class="section" id="workflows" aria-labelledby="workflows-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div data-reveal>
+          <p class="eyebrow">03 / Workflow Library</p>
+          <h2 class="section-head__title" id="workflows-title">268 份工作流，导入就能跑。</h2>
+        </div>
+        <span class="section-head__index" aria-hidden="true">03</span>
+      </div>
+
+      <div class="library__grid">
+        <div data-reveal>
+          <p class="library__lead">UI 工作流与对应 API 文件已通过真实前端导入/导出检查，其中 184 份已在本机安装验证。每条工作流都对应到功能报告里的真实案例与提示词。</p>
+          <p class="manual__foot"><a class="btn" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/06-workflows.md">安装与命名规则 <span class="a" aria-hidden="true">↗</span></a></p>
+        </div>
+        <div class="library__downloads" data-reveal data-delay="1">
+          <a class="dl" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip">
+            <span>
+              <span class="dl__name">下载完整包</span>
+              <span class="dl__meta">约 360 MiB · 含输入图与条件编码</span>
+            </span>
+            <span class="dl__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="dl" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip">
+            <span>
+              <span class="dl__name">下载轻量包</span>
+              <span class="dl__meta">约 12 MiB · 仅工作流</span>
+            </span>
+            <span class="dl__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="dl" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/releases">
+            <span>
+              <span class="dl__name">全部发布版本</span>
+              <span class="dl__meta">GitHub Releases</span>
+            </span>
+            <span class="dl__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <div class="ticker__group">
+            <span class="ticker__item">提示词</span><span class="ticker__item">工作流</span><span class="ticker__item">输入图</span><span class="ticker__item">条件编码</span><span class="ticker__item">种子</span><span class="ticker__item">采样器</span><span class="ticker__item">步数</span><span class="ticker__item">耗时</span><span class="ticker__item">输出图</span><span class="ticker__item">原始记录</span><span class="ticker__item">平台对照</span><span class="ticker__item">复现步骤</span>
+          </div>
+          <div class="ticker__group">
+            <span class="ticker__item">提示词</span><span class="ticker__item">工作流</span><span class="ticker__item">输入图</span><span class="ticker__item">条件编码</span><span class="ticker__item">种子</span><span class="ticker__item">采样器</span><span class="ticker__item">步数</span><span class="ticker__item">耗时</span><span class="ticker__item">输出图</span><span class="ticker__item">原始记录</span><span class="ticker__item">平台对照</span><span class="ticker__item">复现步骤</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 THE RECORD ================= -->
+  <section class="section" id="record" aria-labelledby="record-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div data-reveal>
+          <p class="eyebrow">04 / The Record</p>
+          <h2 class="section-head__title" id="record-title">每个结果，都能回到原始记录。</h2>
+        </div>
+        <span class="section-head__index" aria-hidden="true">04</span>
+      </div>
+
+      <p class="record__body" data-reveal>一个案例 = 提示词 + 工作流 + 真实出图 + 耗时 + 结论。记录按平台分开，所有尝试——包括没有出图的那些——都保留原样。</p>
+
+      <div class="record__ledger" data-reveal>
+        <div class="ledger-wrap">
+<!-- STATS:START -->
+<ul class="ledger">
+<li><b>7</b><span>模型系列</span></li>
+<li><b>40</b><span>功能记录</span></li>
+<li><b>162</b><span>平台记录（95 Win + 67 Linux）</span></li>
+<li><b>88</b><span>记录案例</span></li>
+</ul>
 <!-- STATS:END -->
-  </div>
+        </div>
+      </div>
 
-  <section>
-    <h2>从这一步开始</h2>
-    <p class="section-note">不知道从哪读？按你的目标选一条路。</p>
-    <div class="cards">
-      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/01-hardware.md">
-        <h3>01 · 先确认硬件</h3>
-        <p>你的显卡、系统与版本组合是否适用；8GB 显存在这里的真实含义。</p>
+      <a class="report-card" href="evidence/2026-10-19-features/feature-report.html" data-reveal>
+        <div>
+          <p class="report-card__label">Complete Feature Report</p>
+          <h3>打开完整功能报告</h3>
+          <p>逐项提示词、工作流、真实出图、耗时与结论 · 按平台分别记录</p>
+        </div>
+        <span class="report-card__arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/03-ubuntu-rocm.md">
-        <h3>03 · Ubuntu + ROCm</h3>
-        <p>唯一从全新独立环境完成全链路验证的安装路径。</p>
-      </a>
-      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/04-first-image.md">
-        <h3>04 · 第一张图</h3>
-        <p>装完先验证 GPU 真的能出图，再谈其他功能。</p>
-      </a>
-      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/08-amd-matrix.md">
-        <h3>08 · AMD 卡适配矩阵</h3>
-        <p>不是 RX 6650 XT？先看三档结论，避免把单卡结论当通用兼容性。</p>
-      </a>
+
+      <div class="record__links" data-reveal>
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/reference/evidence-and-privacy.md">证据与隐私</a>
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/reference/failure-tracker.md">故障追踪</a>
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/08-amd-matrix.md">不是 RX 6650 XT？看适配矩阵</a>
+      </div>
     </div>
   </section>
+</main>
 
-  <section>
-    <h2>真实输出，逐项记录</h2>
-    <p class="section-note">每项功能都有独立的提示词、工作流、输出图片、耗时与结论；失败与部分达到保留原样。</p>
-    <img class="shot" src="assets/features.webp" alt="RX 6650 XT 上的四张真实出图：Qwen Image 2.1 Turbo、FLUX.2 Klein、Kroma Q2、MOSS SFT">
-  </section>
-</div>
-
-<footer>
+<footer class="site-footer">
   <div class="wrap">
-    <p>MIT License · <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide">GitHub 仓库</a> · <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/README.md">文档索引</a> · <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/CONTRIBUTING.md">参与贡献</a></p>
-    <p style="margin-top:10px">单机实测记录，不是 AMD 显卡兼容性列表。</p>
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand">Barely Comfy <em>— 8GB. Almost comfortable.</em></p>
+        <p class="footer__tag">AMD ComfyUI Guide · RX 6650 XT 实测记录</p>
+      </div>
+      <nav class="footer__links" aria-label="页脚链接">
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide">GitHub 仓库</a>
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/README.md">文档索引</a>
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/releases">工作流发布</a>
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/LICENSE">MIT License</a>
+        <a href="#top">回到顶部 ↑</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>单机实测记录，不是 AMD 显卡兼容性列表。</p>
+      <p>© 2026 AiKiAi-stack · 所有出图均由本机 GPU 生成</p>
+    </div>
   </div>
 </footer>
 
+<!-- ================= LIGHTBOX ================= -->
+<dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+  <div class="lightbox__panel">
+    <div class="lightbox__media">
+      <img id="lb-img" alt="" width="512" height="512">
+      <button class="lightbox__close" type="button" id="lb-close">关闭 ✕</button>
+      <button class="lightbox__nav lightbox__nav--prev" type="button" id="lb-prev" aria-label="上一张">←</button>
+      <button class="lightbox__nav lightbox__nav--next" type="button" id="lb-next" aria-label="下一张">→</button>
+    </div>
+    <div class="lightbox__info">
+      <p class="lightbox__no" id="lb-no">Plate 001</p>
+      <h2 class="lightbox__title" id="lb-title">—</h2>
+      <p class="lightbox__feature" id="lb-feature">—</p>
+      <div class="lightbox__section">
+        <div class="lightbox__prompt-head">
+          <p class="lightbox__label">提示词</p>
+          <button class="lightbox__copy" type="button" id="lb-copy">复制</button>
+        </div>
+        <p class="lightbox__prompt" id="lb-prompt">—</p>
+      </div>
+      <div class="lightbox__section">
+        <p class="lightbox__label">参数</p>
+        <dl class="lightbox__params" id="lb-params"></dl>
+      </div>
+      <a class="lightbox__report" id="lb-report" href="evidence/2026-10-19-features/feature-report.html">原始记录 <span aria-hidden="true">↗</span></a>
+      <p class="lightbox__hint" aria-hidden="true">← → 切换图版 · Esc 关闭 · 点击背景关闭</p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pad = (n) => String(n).padStart(3, '0');
+  const state = { plates: [], models: [], hero: [], visible: [], filter: 'all', index: 0, timer: null, paused: false, hover: false, filtered: false };
+
+  /* ---------- reveal on scroll ---------- */
+  if ('IntersectionObserver' in window && !reduced) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    $$('[data-reveal]').forEach((el) => io.observe(el));
+  } else {
+    $$('[data-reveal]').forEach((el) => el.classList.add('is-in'));
+  }
+
+  /* ---------- masthead ---------- */
+  const masthead = $('#masthead');
+  const onScroll = () => masthead.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- projector ---------- */
+  const stage = $('#projector-stage');
+  const modelEl = $('#projector-model');
+  const featureEl = $('#projector-feature');
+  const noEl = $('#projector-no');
+  const dotsEl = $('#projector-dots');
+  const toggleBtn = $('#pj-toggle');
+
+  function heroImages() {
+    state.hero = state.models
+      .map((m) => state.plates.find((p) => p.model_id === m.id && p.hero))
+      .filter(Boolean);
+    if (state.hero.length < 2) state.hero = state.plates.filter((p) => p.hero).slice(0, 7);
+  }
+
+  function showHero(i) {
+    if (!state.hero.length) return;
+    const p = state.hero[i];
+    state.index = i;
+    $$('.projector__img', stage).forEach((img) => img.classList.toggle('is-active', Number(img.dataset.i) === i));
+    const model = state.models.find((m) => m.id === p.model_id);
+    modelEl.textContent = model ? model.label : (p.model_id || '本机投影');
+    featureEl.textContent = p.feature || '';
+    noEl.textContent = 'Plate ' + pad(i + 1) + ' / ' + pad(state.hero.length).slice(-2);
+    $$('.pj-dot', dotsEl).forEach((d) => d.setAttribute('aria-current', String(Number(d.dataset.i) === i)));
+    if (!reduced) {
+      const img = $('.projector__img.is-active', stage);
+      if (img) { img.style.animation = 'none'; void img.offsetWidth; img.style.animation = ''; }
+    }
+  }
+
+  function buildProjector() {
+    if (!state.hero.length) return;
+    if (!stage.querySelector('.projector__img')) {
+      state.hero.forEach((p, i) => {
+        const img = document.createElement('img');
+        img.className = 'projector__img' + (i === 0 ? ' is-active' : '');
+        img.dataset.i = String(i);
+        img.src = p.image;
+        img.alt = (p.model_label || p.model_id) + ' · ' + (p.feature || '');
+        img.width = p.width || 512; img.height = p.height || 512;
+        img.loading = 'eager';
+        img.decoding = 'async';
+        stage.appendChild(img);
+      });
+      dotsEl.innerHTML = '';
+      state.hero.forEach((p, i) => {
+        const b = document.createElement('button');
+        b.className = 'pj-dot'; b.type = 'button'; b.dataset.i = String(i);
+        b.setAttribute('aria-label', '第 ' + (i + 1) + ' 张：' + ((state.models.find((m) => m.id === p.model_id) || {}).label || ''));
+        b.addEventListener('click', () => showHero(i));
+        dotsEl.appendChild(b);
+      });
+    }
+    showHero(0);
+    if (!reduced) {
+      clearInterval(state.timer);
+      state.timer = setInterval(() => {
+        if (state.paused || state.hover || document.hidden) return;
+        showHero((state.index + 1) % state.hero.length);
+      }, 5200);
+    }
+  }
+
+  function pauseUI() {
+    toggleBtn.setAttribute('aria-pressed', String(state.paused));
+    toggleBtn.setAttribute('aria-label', state.paused ? '继续自动播放' : '暂停自动播放');
+    toggleBtn.textContent = state.paused ? '▶' : '❚❚';
+  }
+  $('#pj-prev').addEventListener('click', () => { showHero((state.index - 1 + state.hero.length) % state.hero.length); });
+  $('#pj-next').addEventListener('click', () => { showHero((state.index + 1) % state.hero.length); });
+  toggleBtn.addEventListener('click', () => { state.paused = !state.paused; pauseUI(); });
+  const projector = $('#projector');
+  projector.addEventListener('mouseenter', () => { state.hover = true; });
+  projector.addEventListener('mouseleave', () => { state.hover = false; });
+  projector.addEventListener('focusin', () => { state.hover = true; });
+  projector.addEventListener('focusout', () => { state.hover = false; });
+
+  /* ---------- plates grid ---------- */
+  const grid = $('#plate-grid');
+  const filters = $('#plate-filters');
+  const countEl = $('#plate-count');
+
+  function buildCards() {
+    grid.innerHTML = '';
+    state.plates.forEach((p, i) => {
+      const model = state.models.find((m) => m.id === p.model_id);
+      const fig = document.createElement('figure');
+      fig.className = 'plate';
+      fig.dataset.model = p.model_id;
+      fig.dataset.plate = String(i);
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'plate__btn';
+      btn.setAttribute('aria-label', '查看图版 ' + pad(i + 1) + '：' + (model ? model.label : '') + ' · ' + (p.feature || ''));
+      const media = document.createElement('span');
+      media.className = 'plate__media';
+      const img = document.createElement('img');
+      img.src = p.image;
+      img.alt = (model ? model.label : '') + ' · ' + (p.feature || '') + ' · 本机真实输出';
+      img.width = p.width || 512; img.height = p.height || 512;
+      img.loading = 'lazy'; img.decoding = 'async';
+      const no = document.createElement('span');
+      no.className = 'plate__no'; no.textContent = model ? (model.short || '本机出图') : '本机出图';
+      const hover = document.createElement('span');
+      hover.className = 'plate__hover';
+      const hp = document.createElement('span');
+      hp.className = 'plate__hover-prompt';
+      const promptText = String(p.prompt || '').replace(/\s+/g, ' ').trim();
+      hp.textContent = promptText.length > 76 ? promptText.slice(0, 76).trim() + '…' : promptText;
+      const cta = document.createElement('em');
+      cta.textContent = '查看记录 →';
+      hover.append(hp, cta);
+      media.append(img, no, hover);
+      const cap = document.createElement('span');
+      cap.className = 'plate__cap';
+      const featureSpan = document.createElement('span');
+      featureSpan.className = 'plate__feature'; featureSpan.textContent = p.feature || '';
+      cap.append(featureSpan);
+      btn.append(media, cap);
+      btn.addEventListener('click', () => openLightbox(i));
+      fig.appendChild(btn);
+      grid.appendChild(fig);
+    });
+  }
+
+  function renderFilters() {
+    filters.innerHTML = '';
+    const models = state.models.filter((m) => state.plates.some((p) => p.model_id === m.id));
+    const all = document.createElement('button');
+    all.className = 'chip'; all.type = 'button'; all.dataset.model = 'all';
+    all.setAttribute('aria-pressed', 'true');
+    all.innerHTML = '全部 <small>' + state.plates.length + '</small>';
+    all.addEventListener('click', () => applyFilter('all'));
+    filters.appendChild(all);
+    models.forEach((m) => {
+      const n = state.plates.filter((p) => p.model_id === m.id).length;
+      const b = document.createElement('button');
+      b.className = 'chip'; b.type = 'button'; b.dataset.model = m.id;
+      b.setAttribute('aria-pressed', 'false');
+      b.innerHTML = (m.short || m.label) + ' <small>' + n + '</small>';
+      b.addEventListener('click', () => applyFilter(m.id));
+      filters.appendChild(b);
+    });
+
+  }
+
+  function applyFilter(id) {
+    state.filter = id;
+    state.visible = state.plates.filter((p) => id === 'all' || p.model_id === id);
+    const run = () => {
+      $$('.plate', grid).forEach((el) => { el.hidden = !(id === 'all' || el.dataset.model === id); });
+      $$('.chip', filters).forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.model === id)));
+      const count = $('#plate-count');
+      if (count) count.textContent = (id === 'all' ? '全部图版' : '已筛选') + '：' + state.visible.length + ' 张';
+    };
+    if (document.startViewTransition && !reduced) document.startViewTransition(run);
+    else run();
+  }
+
+  /* ---------- lightbox ---------- */
+  const dlg = $('#lightbox');
+  const lbImg = $('#lb-img');
+  const lbNo = $('#lb-no');
+  const lbTitle = $('#lb-title');
+  const lbFeature = $('#lb-feature');
+  const lbPrompt = $('#lb-prompt');
+  const lbParams = $('#lb-params');
+  const lbReport = $('#lb-report');
+  let lbIndex = 0;
+
+  function plateByIndex(i) { return state.plates[i]; }
+
+  function fillLightbox(i) {
+    const p = plateByIndex(i);
+    if (!p) return;
+    lbIndex = i;
+    const model = state.models.find((m) => m.id === p.model_id);
+    lbImg.src = p.image;
+    lbImg.alt = (model ? model.label : '') + ' · ' + (p.feature || '') + ' · 本机真实输出';
+    lbImg.width = p.width || 512; lbImg.height = p.height || 512;
+    lbNo.textContent = 'Plate ' + pad(i + 1);
+    lbTitle.textContent = model ? model.label : '本机出图';
+    lbFeature.textContent = (p.feature || '') + (p.prompt_lang === 'en' ? ' · English prompt' : '');
+    lbPrompt.textContent = p.prompt || '—';
+    lbParams.innerHTML = '';
+    const rows = [];
+    if (p.width && p.height) rows.push(['尺寸', p.width + ' × ' + p.height]);
+    if (p.steps) rows.push(['步数', String(p.steps)]);
+    if (p.sampler) rows.push(['采样器', p.sampler]);
+    if (model) rows.push(['模型', model.label]);
+    rows.forEach(([k, v]) => {
+      const wrapEl = document.createElement('div');
+      const dt = document.createElement('dt'); dt.textContent = k;
+      const dd = document.createElement('dd'); dd.textContent = v;
+      wrapEl.append(dt, dd); lbParams.appendChild(wrapEl);
+    });
+    lbReport.href = p.report || 'evidence/2026-10-19-features/feature-report.html';
+  }
+
+  function openLightbox(i) {
+    state.visible = state.plates.filter((p) => state.filter === 'all' || p.model_id === state.filter);
+    const visIdx = state.visible.findIndex((p) => p.id === plateByIndex(i).id);
+    fillLightbox(state.plates.indexOf(state.visible[visIdx >= 0 ? visIdx : 0]));
+    document.documentElement.classList.add('is-locked');
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    $('#lb-close').focus();
+  }
+
+  function stepLightbox(dir) {
+    const cur = state.plates[lbIndex];
+    state.visible = state.plates.filter((p) => state.filter === 'all' || p.model_id === state.filter);
+    let idx = state.visible.findIndex((p) => p.id === cur.id);
+    if (idx < 0) idx = 0;
+    idx = (idx + dir + state.visible.length) % state.visible.length;
+    fillLightbox(state.plates.indexOf(state.visible[idx]));
+  }
+
+  function closeLightbox() {
+    if (typeof dlg.close === 'function' && dlg.open) dlg.close(); else dlg.removeAttribute('open');
+    document.documentElement.classList.remove('is-locked');
+  }
+
+  $('#lb-close').addEventListener('click', closeLightbox);
+  const copyBtn = $('#lb-copy');
+  copyBtn.addEventListener('click', async () => {
+    const text = $('#lb-prompt').textContent || '';
+    try {
+      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+      else {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+      }
+      copyBtn.textContent = '已复制';
+    } catch (_) { copyBtn.textContent = '复制失败'; }
+    setTimeout(() => { copyBtn.textContent = '复制'; }, 1600);
+  });
+  $('#lb-prev').addEventListener('click', () => stepLightbox(-1));
+  $('#lb-next').addEventListener('click', () => stepLightbox(1));
+  dlg.addEventListener('cancel', (e) => { e.preventDefault(); closeLightbox(); });
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) closeLightbox(); });
+  dlg.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); stepLightbox(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); stepLightbox(1); }
+  });
+
+  /* ---------- data ---------- */
+  fetch('assets/gallery/manifest.json')
+    .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then((data) => {
+      state.models = data.models || [];
+      state.plates = (data.plates || []).map((p) => {
+        const m = state.models.find((x) => x.id === p.model_id);
+        return Object.assign({ model_label: m && m.label }, p);
+      });
+      if (!state.plates.length) throw new Error('empty manifest');
+      heroImages();
+      buildProjector();
+      buildCards();
+      renderFilters();
+      applyFilter('all');
+    })
+    .catch((err) => {
+      const loading = $('#plate-loading');
+      if (loading) {
+        loading.innerHTML = '图版数据未能加载（' + err.message + '）。全部记录可在 <a href="evidence/2026-10-19-features/feature-report.html">完整功能报告</a> 中查看。';
+      }
+      const loadingPj = $('#projector-model');
+      if (loadingPj) loadingPj.textContent = '项目报告';
+    });
+})();
+</script>
 </body>
 </html>
