@@ -80,7 +80,7 @@ Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直�
 
 ## 证据怎么读
 
-每项功能都有独立 case：提示词、工作流、输出图片、耗时与结论。"工作流能打开""实际出图""达到目标""连续稳定"是四件事，分开记录、互不替代；失败与部分达到的结果也刻意保留。见[证据结构与公开副本](docs/reference/evidence-and-privacy.md)与[故障追踪](docs/reference/failure-tracker.md)。
+每项功能都有独立 case：提示词、工作流、输出图片、耗时与结论。"工作流能打开""实际出图""达到目标""连续稳定"是四件事，分开记录、互不替代；失败与部分达到的结果也刻意保留。见[证据结构与公开副本](docs/reference/evidence-and-privacy.md)与[故障追踪](docs/reference/failure-tracker.md)。报告未引用的原始实验归档在 [barely-comfy-evidence](https://github.com/AiKiAi-stack/barely-comfy-evidence)（附 SHA256 清单）。
 
 ## 仓库结构
 

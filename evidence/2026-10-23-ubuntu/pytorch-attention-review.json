@@ -1,7 +1,0 @@
-{
-  "verdict": "pass",
-  "review": "Normal red ceramic teapot with two lemons; no black/noise output; same complete workflow and seed as the first default-attention image.",
-  "pixels_identical_to_default_attention_red": false,
-  "sampling_seconds_approx": 38,
-  "speed_conclusion": "No isolated performance claim: model/file/kernel caches differ between processes."
-}

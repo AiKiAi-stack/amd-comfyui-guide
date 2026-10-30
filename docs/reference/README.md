@@ -5,5 +5,6 @@
 - [证据结构与公开副本](./evidence-and-privacy.md)：公开图片如何去除元数据、SHA 校验和如何记录。
 - [故障追踪与根因边界](./failure-tracker.md)：运行错误的编号、已确认原因与未确认根因。
 - [模型来源与配方审计](./research/)：模型来源、第三方整合包、量化与 LoRA 兼容性调研。
+- [证据归档仓库](https://github.com/AiKiAi-stack/barely-comfy-evidence)：报告未引用的原始实验记录（含 SHA256 清单）。
 
 阅读约定见[教程第 01 章](../tutorial/01-hardware.md)；实验过程见[日志索引](../journal/README.md)。

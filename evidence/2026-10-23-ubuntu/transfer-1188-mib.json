@@ -1,7 +1,0 @@
-{
-  "transfer_mib": 1188,
-  "resident_gpu_mib": 3072,
-  "upload_seconds": 0.1414067759997124,
-  "download_seconds": 0.25887798799976736,
-  "finite_endpoints": true
-}
