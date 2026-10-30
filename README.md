@@ -2,7 +2,7 @@
 
 在RX 6650 XT（8GB显存、16GB内存）上部署ComfyUI，记录Windows和Ubuntu的实际运行结果。
 
-[打开功能报告](trials/2026-10-19-features/feature-report.html) · [使用工作流](workflows/README.md) · [Ubuntu安装与启动](docs/09-ubuntu-setup-2026-10-23.md)
+[打开功能报告](trials/2026-10-19-features/feature-report.html) · [使用工作流](workflows/README.md) · [Ubuntu安装与启动](docs/journal/2026-10-23-ubuntu-setup.md)
 
 当前保留7个模型系列、40项功能。Linux有21项通过、18项部分达到、1项未达到；40项均有输出图片。Windows的95条原评价与案例保留在报告中。
 
@@ -28,10 +28,10 @@ python -m http.server 8767 --bind 127.0.0.1
 
 ## 文档与原始记录
 
-- [Windows安装记录](docs/01-setup.md)、[第一张图](docs/02-first-image.md)
-- [故障与修复](docs/06-failure-tracker.md)、[当前报告说明](docs/16-report-polish-2026-10-26.md)
-- [Windows原始图文报告](trials/2026-10-19-features/feature-report.md)、[早期进展](docs/17-readme-history-2026-10-26.md)
-- [公开副本与数据处理](docs/05-evidence-and-privacy.md)、[上游授权](THIRD_PARTY_NOTICES.md)、[贡献说明](CONTRIBUTING.md)
+- [Windows安装记录](docs/tutorial/02-windows-setup.md)、[第一张图](docs/tutorial/04-first-image.md)
+- [故障与修复](docs/reference/failure-tracker.md)、[当前报告说明](docs/journal/2026-10-26-report-polish.md)
+- [Windows原始图文报告](trials/2026-10-19-features/feature-report.md)、[早期进展](docs/journal/2026-10-26-readme-history.md)
+- [公开副本与数据处理](docs/reference/evidence-and-privacy.md)、[上游授权](THIRD_PARTY_NOTICES.md)、[贡献说明](CONTRIBUTING.md)
 
 仓库不包含模型权重、虚拟环境、账号配置或文章全文。原始模型测试图和结论按各次记录保留。
 

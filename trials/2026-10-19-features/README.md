@@ -1,13 +1,13 @@
 # 功能与输出图逐项试验
 
-用户目标：公众号介绍的模型除了普通编辑之外，各项功能都提供独立的输入、真实输出与判断。报告入口为 [feature-report.html](./feature-report.html) 和 [feature-report.md](./feature-report.md)。运行中的卡片不能当成最终结果。
+用户目标：公众号介绍的模型除了普通编辑之外，各项功能都提供独立的输入、真实输出与判断。报告入口为 [feature-report.html](feature-report.html) 和 [feature-report.md](feature-report.md)。运行中的卡片不能当成最终结果。
 
 2026-10-20 核验：BFS 换头 LoRA 对照和 Turbo-UN 六项均有真实输出；UN 的文生图、多图合成、全身角色替换及主要姿态目标达到本例目标，换头和遮罩物种替换仍有限制。
 
 ## 试验边界
 
 - RX 6650 XT 8GB、16GB RAM、Windows，现有 ROCm 7.14 / PyTorch 2.12 环境；本轮输出 512×512。旧基线尺寸见其原记录。
-- 没有读取微信公众号原文。声明依据见 [来源核对](../../research/feature-claims-2026-10-19.md)，标题截断字不补写。
+- 没有读取微信公众号原文。声明依据见 [来源核对](../../docs/reference/research/feature-claims-2026-10-19.md)，标题截断字不补写。
 - 采用本机已下载且校验的权重组合，未取得作者整合包，不能声称完整复现作者工作流。
 - `success` 是 ComfyUI 工作流返回状态，功能是否达到目标另记在 `reviews.json`。失败结果保留，不用其他模型的图补位。
 - 多图参考、遮罩重绘、latent 图生图、风格参考分别记录，不把它们混为同一项。

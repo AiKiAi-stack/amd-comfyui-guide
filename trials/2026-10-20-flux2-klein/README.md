@@ -24,6 +24,6 @@ Editing references use about 0.25 MP and preserve aspect ratio; output is not ne
 
 三份权重保留D盘原件，G盘副本SHA校验一致；各 `.ssd-verified.json` 及 `download-manifest.json` 记录确切版本。没有下载新版本权重或替代模型。
 
-來源：[文章核对](../../research/new-articles-2026-10-20.md) · [固定工作流说明](workflows/recipe.md) · [逐项覆盖与资源记录](coverage.json)。工作流说明是准备阶段快照，实际执行/输入路径以case证据为准。
+來源：[文章核对](../../docs/reference/research/new-articles-2026-10-20.md) · [固定工作流说明](workflows/recipe.md) · [逐项覆盖与资源记录](coverage.json)。工作流说明是准备阶段快照，实际执行/输入路径以case证据为准。
 
 总图文报告：[feature-report.html](../2026-10-19-features/feature-report.html)。

@@ -58,7 +58,7 @@ Krea2EditGroundedEncode -> KSampler conditioning -> VAE decode
 
 截至核验日，在 [BFS 仓库文件树](https://huggingface.co/Alissonerdx/BFS-Best-Face-Swap/tree/main)和 Krea 2 指南中没有找到 Kroma 专用头部 LoRA、Kroma 工作流或明确兼容说明。BFS 公开的 Krea 2 头部方案针对 Krea 2，不等于 Kroma 兼容。
 
-本机旧试验的 [`kroma-api.json`](../trials/2026-10-18/kroma-api.json)实际载入 `kroma-v0.3.1-turbo-opd-Q2_K.gguf`，配 `qwen3vl_4b_fp8_scaled.safetensors`（CLIP 类型 `krea2`）和 `qwen_image_vae.safetensors`。CLIP 类型相同只是编码器配置相同，不能由此推导 LoRA 与 OPD Q2_K 扩散权重兼容。当前可把 Krea 2 BFS 文件视作**未验证的实验候选**，不能写成官方支持；也可先试普通双图编辑路径，但需要独立记为非 BFS 验证。
+本机旧试验的 [`kroma-api.json`](../../../trials/2026-10-18/kroma-api.json)实际载入 `kroma-v0.3.1-turbo-opd-Q2_K.gguf`，配 `qwen3vl_4b_fp8_scaled.safetensors`（CLIP 类型 `krea2`）和 `qwen_image_vae.safetensors`。CLIP 类型相同只是编码器配置相同，不能由此推导 LoRA 与 OPD Q2_K 扩散权重兼容。当前可把 Krea 2 BFS 文件视作**未验证的实验候选**，不能写成官方支持；也可先试普通双图编辑路径，但需要独立记为非 BFS 验证。
 
 ## 来源
 

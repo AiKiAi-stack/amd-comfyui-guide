@@ -2,7 +2,7 @@
 
 ## 已确认的实测环境
 
-Windows、RX 6650 XT 8GB（gfx1032）、16GB RAM，Python 3.12.6。当前本机包元数据为 `torch 2.12.0+rocm7.14.0`、`torchvision 0.27.0+rocm7.14.0`、`torchaudio 2.11.0+rocm7.14.0`。精确包快照见 [environment](../environment/)。ComfyUI 固定提交 `ce1e922d8623bb507180e32a0c01a7d0e29edef7`，GGUF 插件固定提交 `373048b8403a7820620065210a691263d4da0a61`。
+Windows、RX 6650 XT 8GB（gfx1032）、16GB RAM，Python 3.12.6。当前本机包元数据为 `torch 2.12.0+rocm7.14.0`、`torchvision 0.27.0+rocm7.14.0`、`torchaudio 2.11.0+rocm7.14.0`。精确包快照见 [environment](../../environment/)。ComfyUI 固定提交 `ce1e922d8623bb507180e32a0c01a7d0e29edef7`，GGUF 插件固定提交 `373048b8403a7820620065210a691263d4da0a61`。
 
 本仓库的图片来自已有环境。本轮没有重新安装整套 GPU 环境；以下从零步骤是依据当前版本快照整理的复现路径，完整全新安装验收仍待补齐。不要把“能安装包”当成 GPU 已可用。
 
@@ -33,7 +33,7 @@ git -C runtime/ComfyUI/custom_nodes/ComfyUI-GGUF checkout 373048b8403a7820620065
 
 根据 [TheRock 上游历史 multi-arch 安装说明](https://github.com/ROCm/TheRock/blob/main/docs/packaging/legacy_multi_arch_releases.md)，使用与版本匹配的 AMD 索引及 `device-gfx1032`。当前索引会变化，不能直接安装最新包并称为复现本实验。
 
-本地实际安装包版本与可用索引检查见 [安装来源记录](../environment/install-provenance.md)。先按该记录确认版本仍可取得，再安装同一组 torch / torchvision / torchaudio / rocm 包。若旧版本已下架，应记录新版本并建立新实验，不静默换成 CUDA 包或其他 ROCm 版本。
+本地实际安装包版本与可用索引检查见 [安装来源记录](../../environment/install-provenance.md)。先按该记录确认版本仍可取得，再安装同一组 torch / torchvision / torchaudio / rocm 包。若旧版本已下架，应记录新版本并建立新实验，不静默换成 CUDA 包或其他 ROCm 版本。
 
 安装 ComfyUI Python 依赖时使用已验证 AMD 包的版本约束，防止依赖解析替换 GPU 栈：
 
@@ -62,4 +62,4 @@ Copy-Item code_source/feature_bench_ordering runtime/ComfyUI/custom_nodes -Recur
 
 第一个节点默认关闭，仅在 HIP + gfx1032 + `COMFY_GFX1032_INT8_FALLBACK=1` 时绕开原生 INT8 GEMM，采用 ComfyUI 已有反量化路径。第二个节点只安排批次编码依赖，不混合提示词。它们不是所有模型通用的加速插件。
 
-继续 [首次出图](02-first-image.md)。
+继续 [首次出图](04-first-image.md)。

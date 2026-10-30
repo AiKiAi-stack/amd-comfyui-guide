@@ -9,7 +9,7 @@
 - PyTorch `2.12.0+rocm7.14.0`、torchvision `0.27.0+rocm7.14.0`、ROCm `7.14.0`，使用原生 `device-gfx1032`。没有设置 `HSA_OVERRIDE_GFX_VERSION`。本轮未安装非必需的 torchaudio/devel。
 - 本地辅助节点单独复制到新运行目录；只在该副本应用已有的 attention 奇数查询切片补丁，并保留原文件和 SHA。INT8/GGUF 候选规避插件默认不开启。
 
-[包快照](../environment/ubuntu-2026-10-23/packages.json)、[依赖锁](../environment/ubuntu-2026-10-23/requirements-lock.txt)、[GPU 计算](../environment/ubuntu-2026-10-23/gpu-compute.json)、[模型 SHA](../environment/ubuntu-2026-10-23/model-hashes.json) 和 [回归测试](../environment/ubuntu-2026-10-23/regression-tests.json) 分别记录。
+[包快照](../../environment/ubuntu-2026-10-23/packages.json)、[依赖锁](../../environment/ubuntu-2026-10-23/requirements-lock.txt)、[GPU 计算](../../environment/ubuntu-2026-10-23/gpu-compute.json)、[模型 SHA](../../environment/ubuntu-2026-10-23/model-hashes.json) 和 [回归测试](../../environment/ubuntu-2026-10-23/regression-tests.json) 分别记录。
 
 ## GPU 权限
 
@@ -39,7 +39,7 @@ bash scripts/start_ubuntu.sh
 
 GPU 最小检查通过，FP32/FP16/BF16 GEMM 与 SDPA 均通过。系统已有 `libnuma.so.1`，但 torch 导入时 rocSHMEM 仍提示找不到 `libnuma`；它没有阻止本轮计算，保留原日志，不改系统库链接来隐藏提示。
 
-连续出图、卸载诊断及目视结果见 [Ubuntu 独立试验记录](../trials/2026-10-23-ubuntu/README.md)。原始日志和完整 history 留在被忽略的 `runs/ubuntu-*`，精选输出与摘要另存到新的 trial 目录。
+连续出图、卸载诊断及目视结果见 [Ubuntu 独立试验记录](../../trials/2026-10-23-ubuntu/README.md)。原始日志和完整 history 留在被忽略的 `runs/ubuntu-*`，精选输出与摘要另存到新的 trial 目录。
 
 当前主机 16GB RAM、无 swap；连续测试显式设置 768MiB 物理可用内存保护。触发保护属于主动停止，不记录成 native crash。该保护不是 Linux OOM 的完整保证。
 

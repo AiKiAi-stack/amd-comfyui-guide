@@ -46,7 +46,7 @@ Windows 侧还使用了 G 盘 NVMe 的现有副本：`G:/AIModels/amd_comfy/{rep
 - 分阶段隔离、CPU VAE、降参考分辨率、最终遮罩合成都是明确的配方或规避，不能写成通用模型能力或 native 修复。遮罩外零变化通常来自最终合成。
 - 固定来源和版本；作者整合包、公开量化组合、普通版与 UN、不同编码器要分开。没有同条件对照时，不宣称 UN 更强；没有参考消融时，不宣称参考身份已生效。
 - 不为测试而停止其他项目的服务。只管理本次启动并能确认归属的进程；不按旧 PID 文件盲目恢复或结束进程。
-- 模型、缓存和大日志留在数据盘。公开仓库不上传账户、凭据、私人素材、原始文章全文或未经筛选的实验内容。参考 [证据与隐私](docs/05-evidence-and-privacy.md)、[第三方说明](THIRD_PARTY_NOTICES.md)。
+- 模型、缓存和大日志留在数据盘。公开仓库不上传账户、凭据、私人素材、原始文章全文或未经筛选的实验内容。参考 [证据与隐私](docs/reference/evidence-and-privacy.md)、[第三方说明](THIRD_PARTY_NOTICES.md)。
 - 用户要求新会话按 `[YY-MM-DD] 会话主题` 命名；能自主推进的工作直接推进，只有实质影响结果的选择才询问。
 
 ## 3. 已检查的会话及各自贡献
@@ -56,7 +56,7 @@ Windows 侧还使用了 G 盘 NVMe 的现有副本：`G:/AIModels/amd_comfy/{rep
 1. **[26-10-18] 复现 AMD RX6600XT ComfyUI ROCm**，`01a14ae7-0407-7150-98c1-754a424a2237`。标题写 RX6600XT，实际硬件为 RX6650XT。复现 Linux.do 文章中的 Windows ROCm 7.2 初始化崩溃；另建 7.14 环境成功运行 GPU 检查、SD1.5、Qwen Image 2.1。Qwen 最初遇到 GGUF 架构不识别，曾改用 leejet 分支；后续实验应以固定提交记录为准。还从 PromptHero/OpenArt/Lexica 各取原文提示词，得到三张经目视的 768²、16 步图；原始来源、API 和运行索引在 `../amd_comfy/prompt-gallery/`。
 6. **[26-10-20] 下载微信公众号文章**，`01a13a1b-01a1-75e3-ba33-9e5dc7e43fe3`。两篇 Z-Image 正文离线保存，分别是“托尼不是塔克”的 AIO（2025-12-11）和 GGUF（2025-12-01）文章，共 26 张图片；来源包历史 Windows 位置 `[private-article-snapshot]`，有 `index.html`、Markdown、原网页、验证文件、下载脚本和 ZIP。原正文是本地研究资料，不是公开仓库内容。
 
-来源导航见 [模型来源](research/liuyue-five-model-trial-sources.md)、[功能声明](research/feature-claims-2026-10-19.md)、[新文章](research/new-articles-2026-10-20.md)。旧会话的耗时、服务“已恢复”等是当时状态，不能代替现在检查。
+来源导航见 [模型来源](docs/reference/research/liuyue-five-model-trial-sources.md)、[功能声明](docs/reference/research/feature-claims-2026-10-19.md)、[新文章](docs/reference/research/new-articles-2026-10-20.md)。旧会话的耗时、服务“已恢复”等是当时状态，不能代替现在检查。
 
 ## 4. Git 状态：Ubuntu 接手时先保留工作区
 
@@ -75,10 +75,10 @@ Windows 侧还使用了 G 盘 NVMe 的现有副本：`G:/AIModels/amd_comfy/{rep
 建议先读本文件，再读 07、08、09，然后看具体案例。
 
 - [README](README.md)：定位、公开入口和总导航；[贡献方式](CONTRIBUTING.md)；[许可证](LICENSE)。公开站点是 https://aikiai-stack.github.io/barely-comfy/ ，不应假定它已经包含本地 WIP。
-- [01 搭建](docs/01-setup.md)：Windows 版本、隔离安装和 GPU 检查。它不是 Ubuntu 安装教程，也不是全新陌生机器已验收的保证。
-- [02 首图](docs/02-first-image.md)、[03 模型导航](docs/03-models.md)、[04 排障](docs/04-troubleshooting.md)、[05 证据隐私](docs/05-evidence-and-privacy.md)。03 是较早概览，一些“部分达到”后来已有独立重试，应结合 07/08 和最新 case。
-- [06 故障追踪](docs/06-failure-tracker.md)：BC-001—014，运行错误与根因边界；[07 未闭环功能](docs/07-unfinished-features.md)：19 条历史基线与配方缺口；[08 解决过程日记](docs/08-repair-journal-2026-10-22.md)：E01—E09，含假设、对照、成功、失败和后续。
-- [09 Ubuntu 本机部署](docs/09-ubuntu-setup-2026-10-23.md)：Linux 独立环境、GPU 权限、固定版本、启动及测试限制。
+- [01 搭建](docs/tutorial/02-windows-setup.md)：Windows 版本、隔离安装和 GPU 检查。它不是 Ubuntu 安装教程，也不是全新陌生机器已验收的保证。
+- [02 首图](docs/tutorial/04-first-image.md)、[03 模型导航](docs/tutorial/05-models.md)、[04 排障](docs/tutorial/07-troubleshooting.md)、[05 证据隐私](docs/reference/evidence-and-privacy.md)。03 是较早概览，一些“部分达到”后来已有独立重试，应结合 07/08 和最新 case。
+- [06 故障追踪](docs/reference/failure-tracker.md)：BC-001—014，运行错误与根因边界；[07 未闭环功能](docs/journal/2026-10-21-unfinished-features.md)：19 条历史基线与配方缺口；[08 解决过程日记](docs/journal/2026-10-22-repair-journal.md)：E01—E09，含假设、对照、成功、失败和后续。
+- [09 Ubuntu 本机部署](docs/journal/2026-10-23-ubuntu-setup.md)：Linux 独立环境、GPU 权限、固定版本、启动及测试限制。
 - [总图文报告](trials/2026-10-19-features/feature-report.html) / [Markdown](trials/2026-10-19-features/feature-report.md)：主功能索引；同目录 `cases.json`、`baseline.json`、`blocked.json`、`reviews.json` 和每项 `cases/<id>/result.json` 是核对材料。
 - [首轮步骤](trials/2026-10-18/STEP_BY_STEP.md) / [首轮实测](trials/2026-10-18/README.md)；[FLUX.2](trials/2026-10-20-flux2-klein/README.md)；[Z-Image](trials/2026-10-20-zimage/README.md)；[Windows 11 张连续测试](trials/2026-10-21-gguf-repeat/README.md)。
 - [实际修复重试](trials/2026-10-21-repairs/README.md)：图片、conditions/latent/phase-link、失败 attempts；[修复过程证据](trials/2026-10-22-unload/README.md)；[扩大覆盖清单](trials/2026-10-22-coverage/coverage.json)；[Ubuntu 实验](trials/2026-10-23-ubuntu/README.md)。
@@ -235,7 +235,7 @@ python3 -m http.server 8767 --bind 127.0.0.1
 
 已补齐 qwen-multiref-full-tail 卡片，101条卡片齐全，旧100张article内容逐字节保留；未将部分达到改成通过。Linux环境等版本迁到SSD，95个依赖版本一致；7份模型核对SHA后复用只读挂载GIAO的NVMe副本，旧环境和HDD配置保留。CPU-detach fixture已修正，未改GGUF实际pin回调测试明确失败，CPU-only副本通过，并已仅应用Linux runtime，备份和hash均保存。
 
-SSD/NVMe未改代码基线仍在编码器加载时HTTP60秒超时；补丁后编码器可完成，但原默认FP32 casting整图触发1536MiB RAM保护。后续FP16、分阶段条件/latent归档、真实/free验证的实际结果见 [10月24日续接](docs/10-ubuntu-continuation-2026-10-24.md) 和 [本轮实验](trials/2026-10-24-ubuntu/README.md)。已有raw summary遗留running用结果补记澄清，勿当服务活着。
+SSD/NVMe未改代码基线仍在编码器加载时HTTP60秒超时；补丁后编码器可完成，但原默认FP32 casting整图触发1536MiB RAM保护。后续FP16、分阶段条件/latent归档、真实/free验证的实际结果见 [10月24日续接](docs/journal/2026-10-24-ubuntu-continuation.md) 和 [本轮实验](trials/2026-10-24-ubuntu/README.md)。已有raw summary遗留running用结果补记澄清，勿当服务活着。
 
 运行前确认NVMe仍挂载、GPU临时ACL有效；两个旧Windows卸载问题及CPU-backing候选未由这些Linux实测结案。源码固定commit仍是导出基线，运行副本另有明确patch hash，不能仅凭commit误认完全未改。
 
@@ -247,7 +247,7 @@ SSD/NVMe未改代码基线仍在编码器加载时HTTP60秒超时；补丁后编
 
 34项回归通过；CPU detach有效fixture的原实现失败和候选通过均保留；默认/active释放指标分开。报告补齐漏卡后101张卡片，另追加50案例的历史Windows输出图库，原101张article字节保留、review文件未改。95个依赖版本与10月23日一致，SSD/NVMe及补丁源码SHA见新环境快照。
 
-完整结果、每组失败边界、图片/history/源码绑定及复跑命令见 [10月24日实验](trials/2026-10-24-ubuntu/README.md)、[结果索引](trials/2026-10-24-ubuntu/outcomes.json)、[续接日记](docs/10-ubuntu-continuation-2026-10-24.md)。本轮没有改写Windows结论，没有把身份、LoRA、CPU8B、FLUX细节及Windows native故障关闭；原49条重复尝试审计仍保留。后续优先研究Qwen主机内存峰值，而不是无限重复同一大图或降低保护阈值。
+完整结果、每组失败边界、图片/history/源码绑定及复跑命令见 [10月24日实验](trials/2026-10-24-ubuntu/README.md)、[结果索引](trials/2026-10-24-ubuntu/outcomes.json)、[续接日记](docs/journal/2026-10-24-ubuntu-continuation.md)。本轮没有改写Windows结论，没有把身份、LoRA、CPU8B、FLUX细节及Windows native故障关闭；原49条重复尝试审计仍保留。后续优先研究Qwen主机内存峰值，而不是无限重复同一大图或降低保护阈值。
 
 ## 15. Ubuntu 重启后续接追加（2026-10-24）
 
@@ -261,7 +261,7 @@ Python 3.12.14 基础运行库复制到 `/home/user/.local/share/barely-comfy/py
 
 当前服务已恢复为 Qwen 专用参数的 8188，报告仍为 8767。实时 PID/时刻、GPU、7 个节点与空队列见 `trials/2026-10-24-ubuntu-followup/service-liveness.json`，勿沿用正文历史 PID。Qwen 启动入口 `scripts/start_ubuntu_qwen.sh`；普通启动脚本默认不变。蓝/绿 API 图位于新试验目录，可通过当前前端工作流打开入口载入。
 
-本轮 24 项测试通过（18 工作流+2 无参考 VAE 契约+4 GGUF GPU 探针）；完整与部分卸载原路径先红后绿证据均保留。最终两图健康，精确提示仍部分达到；纯文本无 LoRA 验证不能关闭 LoRA/身份/参考消融、异常、Windows native、CPU8B、FLUX 或视频待办。旧报告卡片、reviews/cases 与 10 月 24 日首轮文档未改。详见 [重启后日记](docs/11-ubuntu-reboot-continuation-2026-10-24.md)、[本轮全部证据](trials/2026-10-24-ubuntu-followup/README.md) 与 [结果索引](trials/2026-10-24-ubuntu-followup/outcomes.json)。
+本轮 24 项测试通过（18 工作流+2 无参考 VAE 契约+4 GGUF GPU 探针）；完整与部分卸载原路径先红后绿证据均保留。最终两图健康，精确提示仍部分达到；纯文本无 LoRA 验证不能关闭 LoRA/身份/参考消融、异常、Windows native、CPU8B、FLUX 或视频待办。旧报告卡片、reviews/cases 与 10 月 24 日首轮文档未改。详见 [重启后日记](docs/journal/2026-10-24-ubuntu-reboot.md)、[本轮全部证据](trials/2026-10-24-ubuntu-followup/README.md) 与 [结果索引](trials/2026-10-24-ubuntu-followup/outcomes.json)。
 
 ## 16. 模型 / 功能 / 平台汇报及 WebUI 库（2026-10-24 追加）
 
@@ -287,7 +287,7 @@ Kroma主体外参考裁图得到猫头鹰；FLUX中文结构指令得到单嘴�
 
 44项回归通过，42张新图逐张目视并校验绑定；WebUI实际排队Turbo采样图约54.6秒成功，最低RAM7079.8MiB。默认8188为Qwen FP16/upcast/split/关闭pinned配置，报告8767；实时状态见新trial/service-liveness.json，不跨重启复用PID。模型主路径为KEKE的comfyui-models-20261024，旧SSD副本未删；临时GPU ACL和只读挂载仍需在重启后核对，无fstab/开机自启改动。
 
-详见[本轮说明](docs/13-linux-coverage-2026-10-25.md)、[工作流指南](workflows/README.md)、[证据与恢复入口](trials/2026-10-24-linux-coverage/README.md)、acceptance.json与generated-images.audit.json。恢复可用run_linux_coverage.py --staged --pending-only --timeout 600；真实失败和操作性停止不会盲目重复，源图改变需用新案例ID。旧原始日志和队列脚本中的PID只属当时，不按历史PID恢复。没有远程发布、commit/PR或更新publication manifest。
+详见[本轮说明](docs/journal/2026-10-25-linux-coverage.md)、[工作流指南](workflows/README.md)、[证据与恢复入口](trials/2026-10-24-linux-coverage/README.md)、acceptance.json与generated-images.audit.json。恢复可用run_linux_coverage.py --staged --pending-only --timeout 600；真实失败和操作性停止不会盲目重复，源图改变需用新案例ID。旧原始日志和队列脚本中的PID只属当时，不按历史PID恢复。没有远程发布、commit/PR或更新publication manifest。
 
 ## 2026-10-25 平台证据修订追加
 

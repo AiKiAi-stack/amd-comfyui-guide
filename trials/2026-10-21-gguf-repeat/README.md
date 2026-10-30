@@ -47,4 +47,4 @@ D:\MyProject\amd_comfy\.venv\Scripts\python.exe scripts/repro_gguf_repeat.py `
 
 故意传入无效启动参数的负向检查得到退出码 1，报告 `Server died during startup: 2`，`server_stopped=true`，没有被记为出图成功。这只证明工具能识别启动失败，不能当作重现了 GGUF 原生崩溃。
 
-MOSS 防回归改动及其 5 项测试见 [故障追踪](../../docs/06-failure-tracker.md)。
+MOSS 防回归改动及其 5 项测试见 [故障追踪](../../docs/reference/failure-tracker.md)。

@@ -6,7 +6,7 @@
 
 例如橘猫改白猫先遇到GPU编码NaN，再改CPU/BF16出图；Turbo文生图先因内存保护停止，再减少额外CPU副本后出图；多图合成分别尝试GPU/FP16、GPU/BF16和CPU编码。不同配置的结果不能合成“同配置第几次稳定性测试”。
 
-页面状态统一为“通过、部分达到、未达到、未出图、未测试”。Windows原评价、图片和参数继续保留在原始记录中。当前摘要用短句说明实现了什么、还缺什么；详细配置、错误和长评价放在折叠区域。默认可见文字减少约63%，见[浏览器检查](../trials/2026-10-26-report-edit/browser-checks.json)。
+页面状态统一为“通过、部分达到、未达到、未出图、未测试”。Windows原评价、图片和参数继续保留在原始记录中。当前摘要用短句说明实现了什么、还缺什么；详细配置、错误和长评价放在折叠区域。默认可见文字减少约63%，见[浏览器检查](../../trials/2026-10-26-report-edit/browser-checks.json)。
 
 采用了GitHub上的[Humanizer](https://github.com/blader/humanizer)精简冗余措辞，以及[Vercel Web Design Guidelines](https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines)检查标签、层级、键盘焦点和窄屏布局。两项技能已安装，本轮直接阅读其规则后应用。
 

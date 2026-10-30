@@ -51,6 +51,6 @@ runtime/ubuntu/.venv/bin/python scripts/run_linux_coverage.py --staged --pending
 - [实际WebUI排队与安装文件绑定](webui-acceptance.json)
 - [实时服务、空队列与184份可见文件](service-liveness.json)
 - [报告链接检查](report-links.json)
-- [完整说明](../../docs/13-linux-coverage-2026-10-25.md)
+- [完整说明](../../docs/journal/2026-10-25-linux-coverage.md)
 
 4B辅助反推三阶段已完整执行：模型生成原文→SHA文本归档→8B CPU编码→条件归档→Base GPU出图。CPU原8B反推的延迟停止、GPU8B保护停止、参考编码NaN与所有历史部分达到均保留，未借辅助方案结案。归档不包含模型权重；修改输入或提示词须按案例的两阶段/三阶段步骤重新生成归档。

@@ -1,6 +1,6 @@
 # 刘悦博客索引中五组 ComfyUI 模型：RX 6650 XT 本机试验
 
-试验日期：2026-10-19（Asia/Shanghai）。公众号原文不可访问；五组名称来自公开搜索索引，不能确认文内实际下载链接与这里所选权重相同。来源核验见 [`research/liuyue-comfyui-models-2026-10-18.md`](../../research/liuyue-comfyui-models-2026-10-18.md) 和 [`research/liuyue-five-model-trial-sources.md`](../../research/liuyue-five-model-trial-sources.md)。
+试验日期：2026-10-19（Asia/Shanghai）。公众号原文不可访问；五组名称来自公开搜索索引，不能确认文内实际下载链接与这里所选权重相同。来源核验见 [`research/liuyue-comfyui-models-2026-10-18.md`](../../docs/reference/research/liuyue-comfyui-models-2026-10-18.md) 和 [`research/liuyue-five-model-trial-sources.md`](../../docs/reference/research/liuyue-five-model-trial-sources.md)。
 
 本机：Windows、AMD Radeon RX 6650 XT（ComfyUI 报告 8,176 MB VRAM）、16,197 MB RAM；ComfyUI 0.41.0，PyTorch 2.12.0+rocm7.14.0，原有环境未替换。模型及试验文件均位于 D:。既有 Qwen-Image-2.1 基础版 768 像素文生图曾在本机完成，输出为 `ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png`。
 

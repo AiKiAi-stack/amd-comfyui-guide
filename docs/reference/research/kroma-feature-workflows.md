@@ -52,7 +52,7 @@
 - `ComfyUI/comfy/model_base.py:2770-2796`：本机 `Krea2` 接收 `reference_latents`，转为 `ref_latents` 并传递 method。
 - `ComfyUI/comfy/ldm/krea2/model.py:312-337`：DiT 只有在 ref method 不为 None 时才附加 ref token；`index_timestep_zero` 对 ref token 设特殊 timestep，并只解码目标图对应 token。
 - `ComfyUI/blueprints/Image Style Reference (Krea-2 Turbo).json:1353-1496`：本机官方蓝图正好连接 Edit Plus encoder → `index_timestep_zero` → zero-out negative；蓝图还要求 `krea2_style_reference.safetensors`。
-- 已成功的基础 Kroma T2I API 图：[kroma-api.json](../trials/2026-10-18/kroma-api.json)。
+- 已成功的基础 Kroma T2I API 图：[kroma-api.json](../../../trials/2026-10-18/kroma-api.json)。
 
 ## 上游主要来源
 

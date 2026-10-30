@@ -1,6 +1,6 @@
 # 功能修复实验 · 2026-10-21
 
-这是修复尝试记录，不是全部通过清单。[原始 19 条欠项](../../docs/07-unfinished-features.md) 与失败图片继续保留。`workflows/` 中尚未执行和未目视验收的候选不能算新成果。
+这是修复尝试记录，不是全部通过清单。[原始 19 条欠项](../../docs/journal/2026-10-21-unfinished-features.md) 与失败图片继续保留。`workflows/` 中尚未执行和未目视验收的候选不能算新成果。
 
 ## 已完成的实际重试
 
@@ -104,7 +104,7 @@ python scripts/run_conditioned_repair.py --runtime D:\MyProject\amd_comfy `
 
 ## 2026-10-22 持续修复与过程记录
 
-完整记录见 [解决过程日记](../../docs/08-repair-journal-2026-10-22.md)，包含实际假设、失败、改动和独立结果；[卸载探针](../2026-10-22-unload/bounded-probes.json)只证明小参数循环未复现，不能称作底层崩溃已修复。
+完整记录见 [解决过程日记](../../docs/journal/2026-10-22-repair-journal.md)，包含实际假设、失败、改动和独立结果；[卸载探针](../2026-10-22-unload/bounded-probes.json)只证明小参数循环未复现，不能称作底层崩溃已修复。
 
 - [Kroma 自然裁切](cases/kroma-multiref-natural-crop/result.json)：灰板、苔石和猫重影消失，但尾部被旧遮罩截断，部分达到。
 - [Kroma 完整尾部](cases/kroma-multiref-full-tail/result.json)：不重采样，只扩大最终遮罩，完成原案例的雨街+狐狸主体目标；精确动物身份和参考消融未测试。

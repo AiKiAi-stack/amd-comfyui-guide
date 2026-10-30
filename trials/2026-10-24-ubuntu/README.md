@@ -1,6 +1,6 @@
 # Ubuntu 续接实验 · 2026-10-24
 
-环境、固定版本、存储布局和复跑命令见 [续接日记](../../docs/10-ubuntu-continuation-2026-10-24.md)。本目录追加 Linux 证据，不改 Windows 历史结论。
+环境、固定版本、存储布局和复跑命令见 [续接日记](../../docs/journal/2026-10-24-ubuntu-continuation.md)。本目录追加 Linux 证据，不改 Windows 历史结论。
 
 - [SSD 环境版本核对](ssd-environment.json)、[GPU 检查](ssd-gpu-check.json)：95 个依赖版本一致；Torch 导入约 2.123 秒，小 GPU 运算通过。
 - [7 个已有模型 SHA](nvme-model-hashes.json)：复用只读挂载的 NVMe 权重，无重新下载。

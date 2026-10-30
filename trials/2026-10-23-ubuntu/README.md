@@ -6,7 +6,7 @@
 
 **3/3 执行成功，3/3 目视通过。** 同一个 PID，依次改变颜色和 seed，正向文本编码节点 8 与采样节点 10 每次都重新执行，未命中相应缓存。两次后续请求都记录了扩散模型部分卸载和文本模型重新加载。结束后测试服务自行退出。
 
-使用与历史试验 SHA 完全相同的双 Q4_K_M GGUF、AE VAE，512×512、9步、CFG1、Euler/simple、shift3；GPU 文本编码、CPU VAE、关闭动态显存/异步卸载、默认锁页内存。源码提交与 GPU 栈见 [环境记录](../../docs/09-ubuntu-setup-2026-10-23.md)。只在新副本应用已归档的奇数查询切片修复；没有启用 GGUF CPU backing 候选补丁。
+使用与历史试验 SHA 完全相同的双 Q4_K_M GGUF、AE VAE，512×512、9步、CFG1、Euler/simple、shift3；GPU 文本编码、CPU VAE、关闭动态显存/异步卸载、默认锁页内存。源码提交与 GPU 栈见 [环境记录](../../docs/journal/2026-10-23-ubuntu-setup.md)。只在新副本应用已归档的奇数查询切片修复；没有启用 GGUF CPU backing 候选补丁。
 
 | 次序 | 颜色 | 提交到 history | 目视结果 |
 | --- | --- | --- | --- |
