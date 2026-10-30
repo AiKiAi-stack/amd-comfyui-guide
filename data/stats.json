@@ -1,0 +1,21 @@
+{
+  "models": 7,
+  "features": 40,
+  "linux_verdicts": {
+    "pass": 21,
+    "partial": 18,
+    "fail": 1
+  },
+  "records": {
+    "total": 162,
+    "windows": 95,
+    "linux": 67
+  },
+  "workflows": {
+    "ui": 268,
+    "api": 268,
+    "installed": 184
+  },
+  "cases": 88,
+  "report": "evidence/2026-10-19-features/feature-report.html"
+}

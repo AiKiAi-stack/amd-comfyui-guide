@@ -6,8 +6,8 @@
 
 **在 AMD 显卡上跑 ComfyUI：每一步实测，每个结果可查。**
 
-Windows 与 Ubuntu 的分步部署教程、7 个模型系列 40 项功能实测、268 份可直接使用的工作流，
-全部在一张 RX 6650 XT（8GB）上逐项记录。
+Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直接使用的工作流库，
+全部在一张 RX 6650 XT（8GB）上记录。
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -31,13 +31,16 @@ Windows 与 Ubuntu 的分步部署教程、7 个模型系列 40 项功能实测�
 
 ## 实测结果
 
-| | |
-|---:|---|
-| 7 个模型系列 | Qwen Image 2.1、FLUX.2 Klein、Kroma、MOSS SFT、Z-Image 等 |
-| 40 项功能 | 文生图、编辑、多图参考、换脸、1024 分辨率等 |
-| Linux 结论 | **21 通过 · 18 部分达到 · 1 未达到**，40 项均有输出图片 |
-| 平台记录 | **162 条**（95 Windows + 67 Linux） |
-| 工作流 | **268 份 UI + 268 份 API**，本机已安装 184 份 |
+<!-- STATS:START -->
+| 指标 | 数值 |
+|---|---:|
+| 模型系列 | 7 |
+| 实测功能 | 40 |
+| Linux 结论 | 21 通过 · 18 部分达到 · 1 未达到 |
+| 平台记录 | 162（95 Windows + 67 Linux） |
+| 工作流 | 268 UI + 268 API · 已安装 184 |
+| 记录案例 | 88 |
+<!-- STATS:END -->
 
 <img src="assets/features.webp" alt="RX 6650 XT 上的四张真实出图：Qwen Image 2.1 Turbo、FLUX.2 Klein、Kroma Q2、MOSS SFT" width="100%">
 

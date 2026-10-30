@@ -6,8 +6,8 @@
 
 **ComfyUI on AMD — tested end to end.**
 
-Step-by-step setup for Windows and Ubuntu, 40 tested features across 7 model families,
-268 ready-to-use workflows, and every result documented on an RX 6650 XT (8 GB).
+Step-by-step setup for Windows and Ubuntu, a tested feature catalog, ready-to-use
+workflows, and every result documented on an RX 6650 XT (8 GB).
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -31,13 +31,16 @@ This is a single-machine field report, not an AMD compatibility list. For other 
 
 ## Results
 
-| | |
-|---:|---|
-| 7 model families | Qwen Image 2.1, FLUX.2 Klein, Kroma, MOSS SFT, Z-Image, … |
-| 40 features tested | text-to-image, edits, multi-reference, faces, 1024 px, … |
-| Linux verdicts | **21 pass · 18 partial · 1 fail** — all 40 have output images |
-| Platform records | **162** (95 Windows + 67 Linux) |
-| Workflows | **268 UI + 268 API**, 184 installed |
+<!-- STATS:START -->
+| Metric | Value |
+|---|---:|
+| Model families | 7 |
+| Features tested | 40 |
+| Linux verdicts | 21 pass · 18 partial · 1 fail |
+| Platform records | 162 (95 Windows + 67 Linux) |
+| Workflows | 268 UI + 268 API · 184 installed |
+| Documented cases | 88 |
+<!-- STATS:END -->
 
 <img src="assets/features.webp" alt="Four real outputs generated on an RX 6650 XT: Qwen Image 2.1 Turbo, FLUX.2 Klein, Kroma Q2, MOSS SFT" width="100%">
 
