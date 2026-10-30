@@ -1,2 +1,176 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RX 6650 XT ComfyUI 实测</title><meta http-equiv="refresh" content="0;url=evidence/2026-10-19-features/feature-report.html"></head><body><a href="./evidence/2026-10-19-features/feature-report.html">打开 RX 6650 XT ComfyUI 完整实测报告</a><p><a href="https://github.com/AiKiAi-stack/amd-comfyui-guide">环境搭建与教程仓库</a></p></body></html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AMD ComfyUI Guide — 在 AMD 显卡上跑 ComfyUI，每一步实测</title>
+<meta name="description" content="AMD 显卡 ComfyUI 部署指南：Windows 与 Ubuntu 分步教程、7 个模型系列 40 项功能实测、268 份工作流，全部在 RX 6650 XT（8GB）上逐项记录。">
+<meta property="og:title" content="AMD ComfyUI Guide">
+<meta property="og:description" content="在 AMD 显卡上跑 ComfyUI：每一步实测，每个结果可查。">
+<meta property="og:image" content="https://aikiai-stack.github.io/amd-comfyui-guide/assets/banner.webp">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #050505;
+    --bg-soft: #0d0d0d;
+    --line: #262626;
+    --text: #f2efe8;
+    --muted: #9b968b;
+    --gold: #c9a227;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--text); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { padding: 88px 0 64px; text-align: center; }
+  .eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+  }
+  .tagline { margin-top: 18px; font-size: clamp(18px, 2.6vw, 24px); color: #e8e4da; }
+  .lead { margin-top: 16px; color: var(--muted); font-size: 15px; }
+  .lead a { color: var(--muted); }
+
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 34px; }
+  .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--text);
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .btn:hover { border-color: var(--gold); }
+  .btn.primary { background: var(--gold); border-color: var(--gold); color: #120f06; font-weight: 700; }
+  .btn.primary:hover { background: #d8b23a; }
+
+  .banner { margin: 0 auto 56px; }
+  .banner img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 48px 0 64px;
+  }
+  .stat { background: var(--bg); padding: 26px 20px; text-align: center; }
+  .stat strong { display: block; font-size: 30px; font-weight: 700; line-height: 1.2; }
+  .stat span { display: block; margin-top: 8px; font-size: 13px; color: var(--muted); letter-spacing: .5px; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 28px; letter-spacing: -.5px; margin-bottom: 10px; }
+  .section-note { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card {
+    display: block;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    text-decoration: none;
+    background: var(--bg-soft);
+  }
+  .card:hover { border-color: var(--gold); }
+  .card h3 { font-size: 17px; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: 14px; }
+
+  .shot { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+
+  footer {
+    padding: 44px 0 64px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+  footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">AMD Radeon · ComfyUI Guide</div>
+    <h1>AMD ComfyUI Guide</h1>
+    <p class="tagline">在 AMD 显卡上跑 ComfyUI：每一步实测，每个结果可查。</p>
+    <p class="lead">Windows 与 Ubuntu 分步教程 · 7 个模型系列 40 项功能 · 268 份工作流 · 全部在 RX 6650 XT（8GB）上逐项记录</p>
+    <div class="cta">
+      <a class="btn primary" href="evidence/2026-10-19-features/feature-report.html">打开完整功能报告</a>
+      <a class="btn" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/tree/main/docs/tutorial">开始读教程</a>
+      <a class="btn" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/releases">下载工作流库</a>
+    </div>
+  </header>
+
+  <div class="banner">
+    <img src="assets/banner.webp" alt="AMD ComfyUI Guide — ComfyUI on AMD, tested end to end">
+  </div>
+
+  <div class="stats">
+    <div class="stat"><strong>7</strong><span>模型系列</span></div>
+    <div class="stat"><strong>40</strong><span>实测功能</span></div>
+    <div class="stat"><strong>21 / 18 / 1</strong><span>Linux 通过 / 部分 / 未达到</span></div>
+    <div class="stat"><strong>162</strong><span>平台记录</span></div>
+    <div class="stat"><strong>268</strong><span>UI 工作流 · 184 已安装</span></div>
+  </div>
+
+  <section>
+    <h2>从这一步开始</h2>
+    <p class="section-note">不知道从哪读？按你的目标选一条路。</p>
+    <div class="cards">
+      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/01-hardware.md">
+        <h3>01 · 先确认硬件</h3>
+        <p>你的显卡、系统与版本组合是否适用；8GB 显存在这里的真实含义。</p>
+      </a>
+      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/03-ubuntu-rocm.md">
+        <h3>03 · Ubuntu + ROCm</h3>
+        <p>唯一从全新独立环境完成全链路验证的安装路径。</p>
+      </a>
+      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/04-first-image.md">
+        <h3>04 · 第一张图</h3>
+        <p>装完先验证 GPU 真的能出图，再谈其他功能。</p>
+      </a>
+      <a class="card" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/08-amd-matrix.md">
+        <h3>08 · AMD 卡适配矩阵</h3>
+        <p>不是 RX 6650 XT？先看三档结论，避免把单卡结论当通用兼容性。</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>真实输出，逐项记录</h2>
+    <p class="section-note">每项功能都有独立的提示词、工作流、输出图片、耗时与结论；失败与部分达到保留原样。</p>
+    <img class="shot" src="assets/features.webp" alt="RX 6650 XT 上的四张真实出图：Qwen Image 2.1 Turbo、FLUX.2 Klein、Kroma Q2、MOSS SFT">
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>MIT License · <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide">GitHub 仓库</a> · <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/README.md">文档索引</a> · <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/CONTRIBUTING.md">参与贡献</a></p>
+    <p style="margin-top:10px">单机实测记录，不是 AMD 显卡兼容性列表。</p>
+  </div>
+</footer>
+
+</body>
+</html>
