@@ -1,7 +1,0 @@
-{
-  "samples": 5,
-  "observed_max_host_ram_used_bytes": 10068877312,
-  "observed_min_host_ram_available_bytes": 6915354624,
-  "observed_max_vram_used_bytes": 6031604736,
-  "note": "Periodic observed maxima, not precise peaks. Host RAM includes the OS and other processes."
-}

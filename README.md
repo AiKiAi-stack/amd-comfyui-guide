@@ -80,7 +80,7 @@ Full docs index: [docs/](docs/README.md).
 
 ## Evidence and how to read it
 
-Every feature has its own case: prompt, workflow, output image, timing and verdict. "Workflow opens", "image renders", "target met" and "stable across runs" are recorded separately — they are not interchangeable, and failed or partial results are kept on purpose. See [evidence & privacy](docs/reference/evidence-and-privacy.md) and the [failure tracker](docs/reference/failure-tracker.md).
+Every feature has its own case: prompt, workflow, output image, timing and verdict. "Workflow opens", "image renders", "target met" and "stable across runs" are recorded separately — they are not interchangeable, and failed or partial results are kept on purpose. See [evidence & privacy](docs/reference/evidence-and-privacy.md) and the [failure tracker](docs/reference/failure-tracker.md). The raw experimental trail not referenced by the report is archived in [barely-comfy-evidence](https://github.com/AiKiAi-stack/barely-comfy-evidence) with a SHA-256 manifest.
 
 ## Project layout
 

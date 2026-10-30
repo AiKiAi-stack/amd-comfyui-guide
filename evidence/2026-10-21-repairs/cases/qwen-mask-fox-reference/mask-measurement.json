@@ -1,7 +1,0 @@
-{
-  "outside_pixels": 193144,
-  "outside_changed_pixels": 0,
-  "outside_max_channel_difference": 0,
-  "inside_pixels": 69000,
-  "meaning": "Outside preservation is provided by final compositing, not attributed solely to the model."
-}

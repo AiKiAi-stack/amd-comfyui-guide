@@ -1,9 +1,0 @@
-{
-  "status": "pass",
-  "reference_count": 1,
-  "positive_negative_reference_tensors_checked": 2,
-  "reference_latents_exact": true,
-  "initial_samples_and_mask_exact": true,
-  "reference_archive_sha256": "980a297bdc5bc42d6883e93ef0ee7e3abb942fb6984147d5ef492505ad2002ff",
-  "conditioning_archive_sha256": "1fc7f13743025bf0ff9e299e4a498f7390ee7408bd8fd0eedecf109b8d4c3e87"
-}
