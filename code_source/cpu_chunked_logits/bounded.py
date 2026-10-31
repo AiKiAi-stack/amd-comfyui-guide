@@ -43,7 +43,7 @@ def chunked_logits(head, x, devices=("cpu",)):
         del dense
     shape = tuple(qdata.shape)
     if shape not in _reported:
-        logging.info("Barely Comfy: %s INT8 Qwen logits %s use at most %d vocabulary rows per dequantization", input.device, shape, CHUNK_ROWS)
+        logging.info("AMD ComfyUI Guide: %s INT8 Qwen logits %s use at most %d vocabulary rows per dequantization", input.device, shape, CHUNK_ROWS)
         _reported.add(shape)
     return output
 
@@ -63,4 +63,4 @@ def install(include_cuda=False):
 
     logits._barely_chunked_cpu = True
     BaseQwen3.logits = logits
-    logging.info("Barely Comfy: opt-in bounded Qwen INT8 vocabulary projection enabled; HIP/CUDA=%s", include_cuda)
+    logging.info("AMD ComfyUI Guide: opt-in bounded Qwen INT8 vocabulary projection enabled; HIP/CUDA=%s", include_cuda)

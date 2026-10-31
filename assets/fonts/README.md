@@ -1,4 +1,4 @@
-# Self-hosted fonts — Barely Comfy
+# Self-hosted fonts — AMD ComfyUI Guide
 
 Subset `woff2` files for the landing page. No font CDN, no runtime
 downloads: `index.html` references these files with `@font-face`

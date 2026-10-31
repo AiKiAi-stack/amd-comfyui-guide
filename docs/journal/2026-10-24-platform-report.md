@@ -10,7 +10,7 @@
 
 ## 在 ComfyUI 使用
 
-WebUI 左侧 **工作流 → 模型功能库 → 模型 → 功能**，刷新列表后选择案例。99 份真正的 WebUI JSON 已安装，后端工作流列表也能返回这 99 个路径。报告可下载单份 UI JSON，或 [完整工作流与输入包](https://github.com/AiKiAi-stack/barely-comfy/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)。输入图片已补齐本机；跨环境的复制方法见 [库说明](../../workflows/README.md)。
+WebUI 左侧 **工作流 → 模型功能库 → 模型 → 功能**，刷新列表后选择案例。99 份真正的 WebUI JSON 已安装，后端工作流列表也能返回这 99 个路径。报告可下载单份 UI JSON，或 [完整工作流与输入包](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)。输入图片已补齐本机；跨环境的复制方法见 [库说明](../../workflows/README.md)。
 
 4 份 Linux 已出图预设分别为 Qwen 蓝眼/绿眼提示和 Z-Image 红壶/蓝壶。Qwen 使用专用启动脚本 `scripts/start_ubuntu_qwen.sh`，Z-Image 历史验证使用通用 `scripts/start_ubuntu.sh`，报告明确区分。当前 8188 保持 Qwen 专用配置。
 

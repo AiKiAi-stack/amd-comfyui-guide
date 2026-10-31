@@ -2,7 +2,7 @@
 
 以下保留各阶段的说明与计数，当前范围和入口以仓库首页为准。
 
-# Barely Comfy
+# AMD ComfyUI Guide
 
 > 8GB. Almost comfortable.
 
@@ -21,11 +21,11 @@ Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图�
 6. [出图失败追踪与修复验证](../reference/failure-tracker.md)：本地失败证据、上游问题及连续出图回归。
 8. [实际修复重试与图片](../../evidence/2026-10-21-repairs/README.md)：自动反推分阶段出图、FLUX 茶壶/夜景/1024 重试及仍未达标的小蝴蝶结。
 
-[在线图文报告](https://aikiai-stack.github.io/barely-comfy/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
+[在线图文报告](https://aikiai-stack.github.io/amd-comfyui-guide/) 保留筛选与输入/输出对照。也可克隆后在本地浏览：
 
 ```powershell
-git clone https://github.com/AiKiAi-stack/barely-comfy.git
-cd barely-comfy
+git clone https://github.com/AiKiAi-stack/amd-comfyui-guide.git
+cd amd-comfyui-guide
 python -m http.server 8767 --bind 127.0.0.1
 ```
 

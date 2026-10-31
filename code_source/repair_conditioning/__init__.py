@@ -108,7 +108,7 @@ class SaveRepairConditioning:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "save"
     OUTPUT_NODE = True
-    CATEGORY = "Barely Comfy/repair"
+    CATEGORY = "AMD ComfyUI Guide/repair"
 
     def save(self, positive, negative, latent, prefix, workflow_sha256):
         return save_payload({"positive": positive, "negative": negative, "latent": latent}, prefix, workflow_sha256)
@@ -122,7 +122,7 @@ class LoadRepairConditioning:
 
     RETURN_TYPES = ("CONDITIONING", "CONDITIONING", "LATENT")
     FUNCTION = "load"
-    CATEGORY = "Barely Comfy/repair"
+    CATEGORY = "AMD ComfyUI Guide/repair"
 
     def load(self, file, expected_sha256=""):
         data = load_payload(file, expected_sha256)
@@ -139,7 +139,7 @@ class SaveRepairText:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "save"
     OUTPUT_NODE = True
-    CATEGORY = "Barely Comfy/repair"
+    CATEGORY = "AMD ComfyUI Guide/repair"
 
     def save(self, text, prefix, workflow_sha256):
         result = save_payload({"kind": "repair_text_v1", "text": text}, prefix, workflow_sha256)
@@ -152,7 +152,7 @@ class LoadRepairText:
     INPUT_TYPES = LoadRepairConditioning.INPUT_TYPES
     RETURN_TYPES = ("STRING",)
     FUNCTION = "load"
-    CATEGORY = "Barely Comfy/repair"
+    CATEGORY = "AMD ComfyUI Guide/repair"
 
     def load(self, file, expected_sha256=""):
         if not expected_sha256:
@@ -172,7 +172,7 @@ class SaveRepairLatent:
     RETURN_TYPES = ("STRING",)
     FUNCTION = "save"
     OUTPUT_NODE = True
-    CATEGORY = "Barely Comfy/repair"
+    CATEGORY = "AMD ComfyUI Guide/repair"
 
     def save(self, latent, prefix, workflow_sha256):
         return save_payload({"latent": latent}, prefix, workflow_sha256)
@@ -182,7 +182,7 @@ class LoadRepairLatent:
     INPUT_TYPES = LoadRepairConditioning.INPUT_TYPES
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "load"
-    CATEGORY = "Barely Comfy/repair"
+    CATEGORY = "AMD ComfyUI Guide/repair"
 
     def load(self, file, expected_sha256=""):
         return (load_payload(file, expected_sha256)["latent"],)
@@ -256,7 +256,7 @@ class SaveRepairQwenReferences:
     RETURN_TYPES = ('STRING',)
     FUNCTION = 'save'
     OUTPUT_NODE = True
-    CATEGORY = 'Barely Comfy/repair'
+    CATEGORY = 'AMD ComfyUI Guide/repair'
 
     def save(self, vae, image1, resolution, prefix, workflow_sha256, image2=None, initial_latent=None):
         images = {'image_1': image1}
@@ -276,7 +276,7 @@ class TextEncodeRepairQwenReferences:
 
     RETURN_TYPES = ('CONDITIONING', 'CONDITIONING', 'LATENT')
     FUNCTION = 'encode'
-    CATEGORY = 'Barely Comfy/repair'
+    CATEGORY = 'AMD ComfyUI Guide/repair'
 
     def encode(self, clip, prompt, negative_prompt, file, expected_sha256):
         if not expected_sha256:
