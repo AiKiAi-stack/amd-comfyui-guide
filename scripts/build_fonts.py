@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the self-hosted subset woff2 fonts for the Barely Comfy landing page.
+"""Build the self-hosted subset woff2 fonts for the AMD ComfyUI Guide landing page.
 
 This is a LOCAL-ONLY build tool: ``--build`` and ``--coverage`` need fontTools
 (+ brotli), which lives outside the repo in ``runs/fonttools`` (gitignored).
@@ -688,7 +688,7 @@ def _write_readme(stats: list[dict]) -> Path:
     total = sum(st["bytes"] for st in stats)
 
     lines = [
-        "# Self-hosted fonts — Barely Comfy",
+        "# Self-hosted fonts — AMD ComfyUI Guide",
         "",
         "Subset `woff2` files for the landing page. No font CDN, no runtime",
         "downloads: `index.html` references these files with `@font-face`",
@@ -1062,7 +1062,7 @@ def _download(url: str, dest: Path, attempts: int = 4) -> None:
     last_error: Exception | None = None
     for attempt in range(1, attempts + 1):
         try:
-            request = urllib.request.Request(url, headers={"User-Agent": "barely-comfy-font-build/1.0"})
+            request = urllib.request.Request(url, headers={"User-Agent": "amd-comfyui-guide-font-build/1.0"})
             with urllib.request.urlopen(request, timeout=180) as response:  # noqa: S310 - fixed OFL URLs
                 data = response.read()
             if not data:

@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "elapsed_seconds": 127.495,
+  "model_id": "flux2",
+  "feature_id": "t2i",
+  "images": [
+    {
+      "file": "flux2-isometric-robotics-workshop_00001_.png",
+      "sha256": "3165571c4c69c40d7ff8c6c6ad3fb280d6a3e19bc8040ad3ea269e9b5c2b755d",
+      "width": 512,
+      "height": 512,
+      "bytes": 262124
+    }
+  ],
+  "server_log": "/tmp/gallery-server-06-flux2-isometric-robotics-workshop.log"
+}

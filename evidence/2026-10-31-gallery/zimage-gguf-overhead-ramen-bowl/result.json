@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "elapsed_seconds": 80.061,
+  "model_id": "zimage-gguf",
+  "feature_id": "t2i",
+  "images": [
+    {
+      "file": "zimage-gguf-overhead-ramen-bowl_00001_.png",
+      "sha256": "d290d48a7c94b998f8ce073812a433c69da6f1a4dfcda0d3be06fd7679c407be",
+      "width": 512,
+      "height": 512,
+      "bytes": 410205
+    }
+  ],
+  "server_log": "/tmp/gallery-server-05-zimage-gguf-overhead-ramen-bowl.log"
+}

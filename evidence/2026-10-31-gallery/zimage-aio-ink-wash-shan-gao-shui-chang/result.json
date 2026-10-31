@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "elapsed_seconds": 110.706,
+  "model_id": "zimage-aio",
+  "feature_id": "chinese-text",
+  "images": [
+    {
+      "file": "zimage-aio-ink-wash-shan-gao-shui-chang_00001_.png",
+      "sha256": "709894aa2db1f75704f75546c8145d5004be9d3b241d4e7b2becda7fd58b6f8e",
+      "width": 512,
+      "height": 512,
+      "bytes": 368938
+    }
+  ],
+  "server_log": "/tmp/gallery-server-01-zimage-aio-ink-wash-shan-gao-shui-chang.log"
+}

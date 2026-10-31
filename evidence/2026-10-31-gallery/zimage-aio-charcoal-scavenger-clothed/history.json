@@ -1,0 +1,159 @@
+{
+  "prompt": [
+    0,
+    "600ccc3a-8335-4458-a30c-0dbddd56fbad",
+    {
+      "34": {
+        "inputs": {
+          "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple"
+      },
+      "2": {
+        "inputs": {
+          "model": [
+            "34",
+            0
+          ],
+          "shift": 3.0
+        },
+        "class_type": "ModelSamplingAuraFlow"
+      },
+      "20": {
+        "inputs": {
+          "clip": [
+            "34",
+            1
+          ],
+          "text": "A charcoal and white-gouache figure study on warm toned sketchbook paper: a desert scavenger standing in three-quarter view, fully clothed, wearing a patched hooded cloak over a layered linen tunic, cloth-wrapped forearms and legs, worn leather boots, calm neutral expression, clearly adult, visible light pencil construction lines, muted earth palette, generous paper margin, no text, no watermark."
+        },
+        "class_type": "CLIPTextEncode"
+      },
+      "40": {
+        "inputs": {
+          "conditioning": [
+            "20",
+            0
+          ]
+        },
+        "class_type": "ConditioningZeroOut"
+      },
+      "6": {
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage"
+      },
+      "17": {
+        "inputs": {
+          "model": [
+            "2",
+            0
+          ],
+          "positive": [
+            "20",
+            0
+          ],
+          "negative": [
+            "40",
+            0
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 2026103111,
+          "steps": 8,
+          "cfg": 1.0,
+          "sampler_name": "res_multistep",
+          "scheduler": "simple",
+          "denoise": 1.0
+        },
+        "class_type": "KSampler"
+      },
+      "11": {
+        "inputs": {
+          "samples": [
+            "17",
+            0
+          ],
+          "vae": [
+            "34",
+            2
+          ]
+        },
+        "class_type": "VAEDecode"
+      },
+      "26": {
+        "inputs": {
+          "images": [
+            "11",
+            0
+          ],
+          "filename_prefix": "gallery-20261031/zimage-aio-charcoal-scavenger-clothed"
+        },
+        "class_type": "SaveImage"
+      }
+    },
+    {
+      "create_time": 1793460595827
+    },
+    [
+      "26"
+    ]
+  ],
+  "outputs": {
+    "26": {
+      "images": [
+        {
+          "filename": "zimage-aio-charcoal-scavenger-clothed_00001_.png",
+          "subfolder": "gallery-20261031",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "600ccc3a-8335-4458-a30c-0dbddd56fbad",
+          "timestamp": 1793460595828
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "600ccc3a-8335-4458-a30c-0dbddd56fbad",
+          "timestamp": 1793460595829
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "600ccc3a-8335-4458-a30c-0dbddd56fbad",
+          "timestamp": 1793460700706
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "26": {
+      "node_id": "26",
+      "display_node": "26",
+      "parent_node": null,
+      "real_node_id": "26"
+    }
+  }
+}

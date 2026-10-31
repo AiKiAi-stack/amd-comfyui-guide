@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "elapsed_seconds": 76.185,
+  "model_id": "zimage-gguf",
+  "feature_id": "t2i",
+  "images": [
+    {
+      "file": "zimage-gguf-elderly-fisherman-portrait_00001_.png",
+      "sha256": "725e3c022dc9012ee5f36f81d62c78fcf4e122e98b34e32848ecb5aecbbc75bf",
+      "width": 512,
+      "height": 512,
+      "bytes": 423204
+    }
+  ],
+  "server_log": "/tmp/gallery-server-03-zimage-gguf-elderly-fisherman-portrait.log"
+}

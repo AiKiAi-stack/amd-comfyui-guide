@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "elapsed_seconds": 80.09,
+  "model_id": "zimage-gguf",
+  "feature_id": "t2i",
+  "images": [
+    {
+      "file": "zimage-gguf-brutalist-stairwell_00001_.png",
+      "sha256": "7b2c774bcbbd1f0987d74c9c74080980434097ff9e443294ac2be971999a662f",
+      "width": 512,
+      "height": 512,
+      "bytes": 338502
+    }
+  ],
+  "server_log": "/tmp/gallery-server-04-zimage-gguf-brutalist-stairwell.log"
+}
