@@ -49,7 +49,7 @@
       "height": 512,
       "image": "assets/gallery/qwen-style-edit.webp",
       "source": "ComfyUI/output/FeatureBench/qwen-style-edit_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-base--style",
+      "report": "report/index.html#qwen-base--style",
       "steps": 15,
       "sampler": "euler",
       "hero": false
@@ -64,7 +64,7 @@
       "height": 512,
       "image": "assets/gallery/qwen-multiref.webp",
       "source": "ComfyUI/output/FeatureBench/qwen-multiref_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-base--multiref",
+      "report": "report/index.html#qwen-base--multiref",
       "steps": 15,
       "sampler": "euler",
       "hero": true
@@ -79,7 +79,7 @@
       "height": 512,
       "image": "assets/gallery/qwen-inpaint.webp",
       "source": "ComfyUI/output/FeatureBench/qwen-inpaint_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-base--inpaint",
+      "report": "report/index.html#qwen-base--inpaint",
       "steps": 15,
       "sampler": "euler",
       "hero": false
@@ -94,7 +94,7 @@
       "height": 512,
       "image": "assets/gallery/liuyue-qwen21-base-edit-rx6650xt.webp",
       "source": "ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-base--color",
+      "report": "report/index.html#qwen-base--color",
       "steps": 15,
       "sampler": "euler",
       "hero": false
@@ -109,7 +109,7 @@
       "height": 768,
       "image": "assets/gallery/qwenimage21-rx6650xt-768.webp",
       "source": "ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-base--t2i",
+      "report": "report/index.html#qwen-base--t2i",
       "steps": 25,
       "sampler": "euler",
       "hero": false
@@ -124,7 +124,7 @@
       "height": 512,
       "image": "assets/gallery/turbo-un-t2i.webp",
       "source": "ComfyUI/output/FeatureBench/turbo-un-t2i_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-turbo--t2i",
+      "report": "report/index.html#qwen-turbo--t2i",
       "steps": 8,
       "sampler": "euler",
       "hero": true
@@ -139,7 +139,7 @@
       "height": 512,
       "image": "assets/gallery/turbo-un-multiref.webp",
       "source": "ComfyUI/output/FeatureBench/turbo-un-multiref_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-turbo--multiref",
+      "report": "report/index.html#qwen-turbo--multiref",
       "steps": 8,
       "sampler": "euler",
       "hero": false
@@ -154,7 +154,7 @@
       "height": 512,
       "image": "assets/gallery/turbo-un-role-replacement-test.webp",
       "source": "ComfyUI/output/FeatureBench/turbo-un-role-replacement-test_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-turbo--role",
+      "report": "report/index.html#qwen-turbo--role",
       "steps": 8,
       "sampler": "euler",
       "hero": false
@@ -169,7 +169,7 @@
       "height": 512,
       "image": "assets/gallery/liuyue-qwen21-turbo-rx6650xt.webp",
       "source": "ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#qwen-turbo--t2i",
+      "report": "report/index.html#qwen-turbo--t2i",
       "steps": 8,
       "sampler": "euler",
       "hero": false
@@ -184,7 +184,7 @@
       "height": 512,
       "image": "assets/gallery/kroma-img2img.webp",
       "source": "ComfyUI/output/FeatureBench/kroma-img2img_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#kroma--style",
+      "report": "report/index.html#kroma--style",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -199,7 +199,7 @@
       "height": 512,
       "image": "assets/gallery/kroma-style-ref.webp",
       "source": "ComfyUI/output/FeatureBench/kroma-style-ref_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#kroma--style-reference",
+      "report": "report/index.html#kroma--style-reference",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -214,7 +214,7 @@
       "height": 512,
       "image": "assets/gallery/kroma-multiref.webp",
       "source": "ComfyUI/output/FeatureBench/kroma-multiref_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#kroma--multiref",
+      "report": "report/index.html#kroma--multiref",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -229,7 +229,7 @@
       "height": 512,
       "image": "assets/gallery/kroma-head-swap.webp",
       "source": "ComfyUI/output/FeatureBench/kroma-head-swap_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#kroma--head",
+      "report": "report/index.html#kroma--head",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -244,7 +244,7 @@
       "height": 512,
       "image": "assets/gallery/liuyue-kroma031-q2-4step-rx6650xt.webp",
       "source": "ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#kroma--t2i",
+      "report": "report/index.html#kroma--t2i",
       "steps": 4,
       "sampler": "euler",
       "hero": true
@@ -259,7 +259,7 @@
       "height": 512,
       "image": "assets/gallery/moss-img2img.webp",
       "source": "ComfyUI/output/FeatureBench/moss-img2img_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#moss--style",
+      "report": "report/index.html#moss--style",
       "steps": 8,
       "sampler": "euler",
       "hero": true
@@ -274,7 +274,7 @@
       "height": 512,
       "image": "assets/gallery/moss-text.webp",
       "source": "ComfyUI/output/FeatureBench/moss-text_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#moss--english-text",
+      "report": "report/index.html#moss--english-text",
       "steps": 8,
       "sampler": "euler",
       "hero": false
@@ -289,7 +289,7 @@
       "height": 512,
       "image": "assets/gallery/moss-layout.webp",
       "source": "ComfyUI/output/FeatureBench/moss-layout_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#moss--layout",
+      "report": "report/index.html#moss--layout",
       "steps": 8,
       "sampler": "euler",
       "hero": false
@@ -304,7 +304,7 @@
       "height": 512,
       "image": "assets/gallery/liuyue-moss-sft-dmd-int8-8step-rx6650xt.webp",
       "source": "ComfyUI/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#moss--t2i",
+      "report": "report/index.html#moss--t2i",
       "steps": 8,
       "sampler": "euler",
       "hero": false
@@ -319,7 +319,7 @@
       "height": 512,
       "image": "assets/gallery/flux2-klein-style.webp",
       "source": "ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#flux2--style",
+      "report": "report/index.html#flux2--style",
       "steps": 4,
       "sampler": "euler",
       "hero": true
@@ -334,7 +334,7 @@
       "height": 672,
       "image": "assets/gallery/flux2-klein-dual-logo.webp",
       "source": "ComfyUI/output/FeatureBench/flux2-klein-dual-logo_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#flux2--logo",
+      "report": "report/index.html#flux2--logo",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -349,7 +349,7 @@
       "height": 672,
       "image": "assets/gallery/flux2-klein-replace-zh.webp",
       "source": "ComfyUI/output/FeatureBench/flux2-klein-replace-zh_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#flux2--replace",
+      "report": "report/index.html#flux2--replace",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -364,7 +364,7 @@
       "height": 512,
       "image": "assets/gallery/flux2-klein-remove.webp",
       "source": "ComfyUI/output/FeatureBench/flux2-klein-remove_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#flux2--remove",
+      "report": "report/index.html#flux2--remove",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -379,7 +379,7 @@
       "height": 688,
       "image": "assets/gallery/flux2-klein-iterative.webp",
       "source": "ComfyUI/output/FeatureBench/flux2-klein-iterative_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#flux2--iterative",
+      "report": "report/index.html#flux2--iterative",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -394,7 +394,7 @@
       "height": 512,
       "image": "assets/gallery/flux2-klein-dual-people.webp",
       "source": "ComfyUI/output/FeatureBench/flux2-klein-dual-people_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#flux2--people",
+      "report": "report/index.html#flux2--people",
       "steps": 4,
       "sampler": "euler",
       "hero": false
@@ -409,7 +409,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-gguf-chinese.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-gguf--chinese-text",
+      "report": "report/index.html#zimage-gguf--chinese-text",
       "steps": 9,
       "sampler": "euler",
       "hero": false
@@ -424,7 +424,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-gguf-photo-gpu-text.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-gguf--t2i",
+      "report": "report/index.html#zimage-gguf--t2i",
       "steps": 9,
       "sampler": "euler",
       "hero": true
@@ -439,7 +439,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-gguf-prompt-change.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-gguf--t2i",
+      "report": "report/index.html#zimage-gguf--t2i",
       "steps": 9,
       "sampler": "euler",
       "hero": false
@@ -454,7 +454,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-gguf-english.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-gguf--english-text",
+      "report": "report/index.html#zimage-gguf--english-text",
       "steps": 9,
       "sampler": "euler",
       "hero": false
@@ -469,7 +469,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-aio-photo-4step.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-aio--t2i",
+      "report": "report/index.html#zimage-aio--t2i",
       "steps": 4,
       "sampler": "res_multistep",
       "hero": true
@@ -484,7 +484,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-aio-photo-8step.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-aio--t2i",
+      "report": "report/index.html#zimage-aio--t2i",
       "steps": 8,
       "sampler": "res_multistep",
       "hero": false
@@ -499,7 +499,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-aio-chinese.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-aio--chinese-text",
+      "report": "report/index.html#zimage-aio--chinese-text",
       "steps": 8,
       "sampler": "res_multistep",
       "hero": false
@@ -514,7 +514,7 @@
       "height": 512,
       "image": "assets/gallery/zimage-aio-english.webp",
       "source": "ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png",
-      "report": "evidence/2026-10-19-features/feature-report.html#zimage-aio--english-text",
+      "report": "report/index.html#zimage-aio--english-text",
       "steps": 8,
       "sampler": "res_multistep",
       "hero": false

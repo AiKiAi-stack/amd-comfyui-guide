@@ -1,6 +1,6 @@
 # 模型、功能与平台对照 / WebUI 工作流库（2026-10-24）
 
-[打开新版 HTML](../../evidence/2026-10-19-features/feature-report.html)；本地入口仍为 `http://127.0.0.1:8767/evidence/2026-10-19-features/feature-report.html`。
+[打开新版 HTML](../../report/index.html)；本地入口仍为 `http://127.0.0.1:8767/report/index.html`。
 
 页面按 **模型 → 功能 → Windows / Linux** 展示 9 个模型/权重系列、46 个功能分组、106 条执行或待办证据。左右平台各自展示输出、原评价、全部重试与失败记录，展开可看复现步骤、精确权重名、输入图片/顺序、提示词、seed、分辨率、步数及采样器。搜索和筛选可以只看两平台已有记录、Linux 待验证或有工作流的功能。
 

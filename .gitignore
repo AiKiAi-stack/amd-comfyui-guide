@@ -1,4 +1,7 @@
 .venv/
+# Root runtime/ and runs/ may be local symlinks into a sibling scratch checkout.
+/runtime
+/runs
 runtime/
 runs/
 __pycache__/

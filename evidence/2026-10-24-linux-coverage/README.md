@@ -2,7 +2,7 @@
 
 这轮从 2026-10-24 开始，继续完成跨平台报告与工作流库。Windows 原评价和原图不改；Linux 每个实际尝试单独保留 API、提交回执、history、停止边界、输出图片与目视评价。
 
-[实时汇报](../2026-10-19-features/feature-report.html) 按模型 / 功能并列两个平台。Linux 进度分为“已有输出图片”“已尝试无图”“尚未执行”；有图仍须分别判断功能是否达到。没有图片的实际停止会保留，不用 Windows 输出填充 Linux。
+[实时汇报](../../report/index.html) 按模型 / 功能并列两个平台。Linux 进度分为“已有输出图片”“已尝试无图”“尚未执行”；有图仍须分别判断功能是否达到。没有图片的实际停止会保留，不用 Windows 输出填充 Linux。
 
 模型盘 KEKE 重新以只读挂载，运行配置引用 `AIModels/amd_comfy/comfyui-models-20261024`，必要资源从既有 repair、zimage、flux2 子目录补充。四份原根分区 Qwen 副本没有删除；本轮运行优先使用 KEKE，不重新下载或复制模型权重。[当前路径](model-paths.yaml)、[只读 SHA256 清单](migrated-models.json)。
 

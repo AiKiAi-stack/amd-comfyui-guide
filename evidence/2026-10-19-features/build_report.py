@@ -1,8 +1,10 @@
 """Build a small offline HTML and Markdown report for the feature trials.
 
 Run with:
-    python trials/2026-10-19-features/build_report.py
+    python3 scripts/build_platform_report.py
 
+Inputs are read from this evidence directory; the published report is written
+to the top-level ``report/`` site path so GitHub Pages serves it at ``/report/``.
 Only Python's standard library is used. Missing result and asset files are
 handled without creating broken image links.
 """
@@ -20,6 +22,9 @@ from urllib.parse import quote
 
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parents[1]
+# Inputs stay in this evidence directory; rendered links and output files are
+# relative to the published report location (served as /report/).
+OUT = PROJECT_ROOT / "report"
 COMFY = PROJECT_ROOT / "evidence/report-assets"
 COMFY_INPUT = COMFY / "input"
 COMFY_OUTPUT = COMFY / "output"
@@ -159,7 +164,7 @@ def image_items(value) -> list:
 
 
 def image_url(path: Path) -> str:
-    relative = os.path.relpath(path, HERE).replace(os.sep, "/")
+    relative = os.path.relpath(path, OUT).replace(os.sep, "/")
     return quote(relative, safe="/:@._~-()")
 
 
@@ -845,8 +850,9 @@ def build_report() -> tuple[Path, Path]:
         models.setdefault(model_key(case), display_model(case))
 
     total = sum(1 for item in cases + baseline if isinstance(item, dict))
-    html_path = HERE / "feature-report.html"
-    markdown_path = HERE / "feature-report.md"
+    OUT.mkdir(parents=True, exist_ok=True)
+    html_path = OUT / "index.html"
+    markdown_path = OUT / "feature-report.md"
     html_path.write_text(
         render_html(html_cards, directory, models, total,
                     len([x for x in blocked if isinstance(x, dict)])),

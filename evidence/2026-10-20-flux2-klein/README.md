@@ -26,4 +26,4 @@ Editing references use about 0.25 MP and preserve aspect ratio; output is not ne
 
 來源：[文章核对](../../docs/reference/research/new-articles-2026-10-20.md) · [固定工作流说明](workflows/recipe.md) · [逐项覆盖与资源记录](coverage.json)。工作流说明是准备阶段快照，实际执行/输入路径以case证据为准。
 
-总图文报告：[feature-report.html](../2026-10-19-features/feature-report.html)。
+总图文报告：[feature-report.html](../../report/index.html)。

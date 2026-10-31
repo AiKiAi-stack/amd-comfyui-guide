@@ -72,10 +72,10 @@ class AssetParser(HTMLParser):
             self.assets.append(attrs["src"])
 
 parser = AssetParser()
-report = HERE / "feature-report.html"
+report = HERE.parents[1] / "report/index.html"
 if report.exists():
     parser.feed(report.read_text(encoding="utf-8"))
-missing = [src for src in parser.assets if not (HERE / unquote(src)).resolve().is_file()]
+missing = [src for src in parser.assets if not (report.parent / unquote(src)).resolve().is_file()]
 audit = {"records": records, "report_image_count": len(parser.assets), "missing_report_images": missing}
 (HERE / "output-audit.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2), encoding="utf-8")
 bad = [image for record in records for image in record["images"] if not image.get("exists") or not image.get("belongs_to_case") or not image.get("png_prompt_matches_api")]

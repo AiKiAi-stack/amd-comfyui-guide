@@ -35,4 +35,4 @@ CPU文本编码基线因长时间加载、整机可用RAM低于0.5GB而停止：
 
 本轮只验证512×512、AIO FP8和双GGUF Q4_K_M。未比较Q3/Q4、BF16/FP8，未验证1024分辨率速度、6GB显卡、可选LoRA或1.5倍高分辨率分支。非色情成年人体艺术输出不证明特殊UN训练。
 
-完整图文报告：[feature-report.html](../2026-10-19-features/feature-report.html)。逐项图、提示词、工作流、校验、耗时和目视判定见 [cases.json](cases.json)、[reviews.json](reviews.json) 与各case目录。
+完整图文报告：[feature-report.html](../../report/index.html)。逐项图、提示词、工作流、校验、耗时和目视判定见 [cases.json](cases.json)、[reviews.json](reviews.json) 与各case目录。

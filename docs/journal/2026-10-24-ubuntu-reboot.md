@@ -10,7 +10,7 @@
 
 载入 [蓝色提示工作流](../../evidence/2026-10-24-ubuntu-followup/qwen-ubuntu-blue.api.json) 或 [绿色提示工作流](../../evidence/2026-10-24-ubuntu-followup/qwen-ubuntu-green.api.json)。两个文件就是最终实际执行的 API 图，当前前端支持通过工作流打开入口载入。图中显式启用实验节点，未连接节点的图不改变行为。
 
-报告服务仍为 http://127.0.0.1:8767/evidence/2026-10-19-features/feature-report.html 。本轮没有修改原报告的 101 张卡片及 Windows reviews/cases。最新 PID、时刻、GPU、7 个所需节点及空队列检查见 [当前服务记录](../../evidence/2026-10-24-ubuntu-followup/service-liveness.json)。本轮没有新浏览器截图，不把 API 就绪说成浏览器目视验收。
+报告服务仍为 http://127.0.0.1:8767/report/index.html 。本轮没有修改原报告的 101 张卡片及 Windows reviews/cases。最新 PID、时刻、GPU、7 个所需节点及空队列检查见 [当前服务记录](../../evidence/2026-10-24-ubuntu-followup/service-liveness.json)。本轮没有新浏览器截图，不把 API 就绪说成浏览器目视验收。
 
 ## 改动及其原因
 

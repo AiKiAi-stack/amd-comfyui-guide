@@ -60,6 +60,6 @@ lines+=['','AIO 9/8/4步使用同一提示词与seed；8步与4步复用服务�
         '', '## 存储与验证边界','',
         '实际磁盘布局为 D盘 SATA HDD、G盘 NVMe SSD。四份Z-Image权重均保留D盘原件，在G盘复制后重新核对SHA-256一致；见 [权重清单](download-manifest.json) 和 [覆盖记录](coverage.json)。G盘AIO实际加载路径已在日志确认。GGUF成功配置也改变了文本编码设备与存储条件，不能归因单一SSD速度倍率；程序与Python依赖仍在D盘，启动读取也受其影响。',
         '', '本轮只验证512×512、AIO FP8和双GGUF Q4_K_M。未比较Q3/Q4、BF16/FP8，未验证1024分辨率速度、6GB显卡、可选LoRA或1.5倍高分辨率分支。非色情成年人体艺术输出不证明特殊UN训练。',
-        '', '完整图文报告：[feature-report.html](../2026-10-19-features/feature-report.html)。逐项图、提示词、工作流、校验、耗时和目视判定见 [cases.json](cases.json)、[reviews.json](reviews.json) 与各case目录。','']
+        '', '完整图文报告：[feature-report.html](../../report/index.html)。逐项图、提示词、工作流、校验、耗时和目视判定见 [cases.json](cases.json)、[reviews.json](reviews.json) 与各case目录。','']
 (HERE/'README.md').write_text('\n'.join(lines),encoding='utf-8')
 print('Published ten visually checked feature outputs; optional claims remain unverified.')

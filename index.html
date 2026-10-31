@@ -427,7 +427,7 @@ button{font:inherit;color:inherit}
       <a href="#tutorial">教程</a>
       <a href="#workflows">工作流</a>
       <a href="#record">记录</a>
-      <a class="nav-report" href="evidence/2026-10-19-features/feature-report.html">完整报告 ↗</a>
+      <a class="nav-report" href="report/">完整报告 ↗</a>
       <a class="nav-github" href="https://github.com/AiKiAi-stack/amd-comfyui-guide">GitHub ↗</a>
     </nav>
   </div>
@@ -445,7 +445,7 @@ button{font:inherit;color:inherit}
         <div class="hero__actions" data-reveal data-delay="3">
           <a class="btn btn--primary" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/01-hardware.md">开始读教程 <span class="a" aria-hidden="true">↗</span></a>
           <a class="btn" href="#models">浏览模型出图 <span class="a" aria-hidden="true">↓</span></a>
-          <a class="btn btn--quiet" href="evidence/2026-10-19-features/feature-report.html">完整功能报告 <span class="a" aria-hidden="true">↗</span></a>
+          <a class="btn btn--quiet" href="report/">完整功能报告 <span class="a" aria-hidden="true">↗</span></a>
         </div>
         <p class="hero__spec" data-reveal data-delay="3">ROCm 7.14 · PyTorch 2.12.0 · ComfyUI ce1e922 · 16 GB RAM</p>
       </div>
@@ -495,7 +495,7 @@ button{font:inherit;color:inherit}
         <p class="plate-grid__empty" id="plate-loading">正在加载图版…</p>
       </div>
       <noscript>
-        <p class="plate-grid__empty">图版需要 JavaScript 才能筛选与放大；全部记录可在 <a href="evidence/2026-10-19-features/feature-report.html">完整功能报告</a> 中查看。</p>
+        <p class="plate-grid__empty">图版需要 JavaScript 才能筛选与放大；全部记录可在 <a href="report/">完整功能报告</a> 中查看。</p>
       </noscript>
     </div>
   </section>
@@ -638,7 +638,7 @@ button{font:inherit;color:inherit}
         </div>
       </div>
 
-      <a class="report-card" href="evidence/2026-10-19-features/feature-report.html" data-reveal>
+      <a class="report-card" href="report/" data-reveal>
         <div>
           <p class="report-card__label">Complete Feature Report</p>
           <h3>打开完整功能报告</h3>
@@ -702,7 +702,7 @@ button{font:inherit;color:inherit}
         <p class="lightbox__label">参数</p>
         <dl class="lightbox__params" id="lb-params"></dl>
       </div>
-      <a class="lightbox__report" id="lb-report" href="evidence/2026-10-19-features/feature-report.html">原始记录 <span aria-hidden="true">↗</span></a>
+      <a class="lightbox__report" id="lb-report" href="report/">原始记录 <span aria-hidden="true">↗</span></a>
       <p class="lightbox__hint" aria-hidden="true">← → 切换图版 · Esc 关闭 · 点击背景关闭</p>
     </div>
   </div>
@@ -930,7 +930,7 @@ button{font:inherit;color:inherit}
       const dd = document.createElement('dd'); dd.textContent = v;
       wrapEl.append(dt, dd); lbParams.appendChild(wrapEl);
     });
-    lbReport.href = p.report || 'evidence/2026-10-19-features/feature-report.html';
+    lbReport.href = p.report || 'report/';
   }
 
   function openLightbox(i) {
@@ -999,7 +999,7 @@ button{font:inherit;color:inherit}
     .catch((err) => {
       const loading = $('#plate-loading');
       if (loading) {
-        loading.innerHTML = '图版数据未能加载（' + err.message + '）。全部记录可在 <a href="evidence/2026-10-19-features/feature-report.html">完整功能报告</a> 中查看。';
+        loading.innerHTML = '图版数据未能加载（' + err.message + '）。全部记录可在 <a href="report/">完整功能报告</a> 中查看。';
       }
       const loadingPj = $('#projector-model');
       if (loadingPj) loadingPj.textContent = '项目报告';

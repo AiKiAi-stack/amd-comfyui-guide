@@ -61,6 +61,6 @@ runtime/ubuntu/.venv/bin/python evidence/2026-10-24-ubuntu/run_qwen_phases.py \
 
 CPU detach副本下Z-Image同进程连续红/蓝壶2/2执行成功、2/2目视通过，每轮文本和采样均重跑，[绑定](../../evidence/2026-10-24-ubuntu/zimage-repeat/summary.json)、[目视](../../evidence/2026-10-24-ubuntu/zimage-reviews.json)。原30项加CPU detach两项、无参考VAE两项，本轮34项回归通过。原100张报告卡片与review文件保留证明见 [校验](../../evidence/2026-10-24-ubuntu/preservation-check.json)，新增图库后仍101张卡片、没有漏卡。
 
-实验服务均已停止，默认服务已在 <http://127.0.0.1:8188/> 启动；HTML、GPU状态和所需节点均验证，浏览器主画布已显示，[服务检查](../../evidence/2026-10-24-ubuntu/service-liveness.json)。报告在 <http://127.0.0.1:8767/evidence/2026-10-19-features/feature-report.html>。二者只监听本机，无开机自启；重启后重新确认GPU ACL和NVMe只读挂载。[最终结果索引](../../evidence/2026-10-24-ubuntu/outcomes.json)。
+实验服务均已停止，默认服务已在 <http://127.0.0.1:8188/> 启动；HTML、GPU状态和所需节点均验证，浏览器主画布已显示，[服务检查](../../evidence/2026-10-24-ubuntu/service-liveness.json)。报告在 <http://127.0.0.1:8767/report/index.html>。二者只监听本机，无开机自启；重启后重新确认GPU ACL和NVMe只读挂载。[最终结果索引](../../evidence/2026-10-24-ubuntu/outcomes.json)。
 
 剩余优先项仍是Qwen同进程卸载/重载的主机内存峰值、Windows Kroma候选的完整验收、精确身份/LoRA消融及CPU反推、FLUX细节；本轮没有把它们修改为通过，也没有对外发布。
