@@ -8,6 +8,8 @@
 
 共享的“系统”盘实际是机械硬盘。Linux venv 位于该 NTFS 盘时，Torch 导入曾在文件页读取等待中停留数分钟。将**相同的 95 个依赖版本**重建到系统 SSD 的 `/home/user/.local/share/barely-comfy/ubuntu-20261024/.venv`，`pip check` 通过，GPU 小运算通过，Torch 导入约 2.123 秒。当前项目 `runtime/ubuntu/.venv` 为指向它的软链接；原 Linux 环境保存在 `.venv.ntfs-20261023`，Windows 环境未动。未完成的复制目录 `.venv.copy-incomplete` 不是可用环境。
 
+> **2026-10-31 后记（清理）**：为回收磁盘，`.venv.ntfs-20261023` 和 Windows 侧 `amd_comfy/.venv` 已删除，`.venv.copy-incomplete` 一并不再保留。活动环境始终是上面那个指向 SSD 的 `runtime/ubuntu/.venv` 软链接，本轮实测未变；需要重建旧 Linux 环境时按 [依赖锁](../../environment/ubuntu-2026-10-23/requirements-lock.txt) 的 95 个版本恢复，不要重新使用 NTFS 上的 venv。
+
 安装器的 AMD 下载源缺少 lock 所需的 `typing-extensions==4.16.0`，首次新建失败。给 AMD 安装阶段补充 PyPI 作为依赖源后成功；Torch/ROCm/gfx1032 固定版本未变。版本及 GPU 证据见 [SSD 环境](../../evidence/2026-10-24-ubuntu/ssd-environment.json)、[GPU 检查](../../evidence/2026-10-24-ubuntu/ssd-gpu-check.json)。
 
 安装器现支持 `--venv /绝对/SSD路径` 建立独立环境并链接到 runtime，以及显式 `--gguf-cpu-detach` 应用本轮补丁。默认不自动启用该补丁；已有环境若指向其他位置会拒绝覆盖。重复安装保留已有 `model-paths.yaml`，避免覆盖人工核验的 NVMe 配置；本次 `--skip-install` 续接检查退出0，配置 SHA 前后相同，见 [续接检查](../../evidence/2026-10-24-ubuntu/setup-resume-check.json)。
