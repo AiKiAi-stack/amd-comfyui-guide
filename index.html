@@ -68,6 +68,12 @@ body::before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
 }
 ::selection{background:rgba(201,162,39,.28);color:var(--ink)}
+html{scrollbar-color:rgba(243,238,226,.18) transparent;scrollbar-width:thin}
+body{caret-color:var(--gold)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(243,238,226,.18);border:3px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:rgba(201,162,39,.55);background-clip:content-box}
 img{max-width:100%;height:auto}
 a{color:inherit}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
@@ -79,20 +85,13 @@ button{font:inherit;color:inherit}
   padding:10px 16px;font:500 12px var(--mono);letter-spacing:.08em;text-decoration:none;transition:top .2s;
 }
 .skip-link:focus{top:12px}
-.eyebrow{
-  display:flex;align-items:center;gap:12px;color:var(--gold);
-  font:500 10.5px/1.2 var(--mono);letter-spacing:.26em;text-transform:uppercase;
-}
-.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.7;flex:0 0 auto}
-.eyebrow--plain::before{display:none}
-
 /* ---------- masthead ---------- */
 .masthead{position:fixed;inset:0 0 auto;z-index:60;border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease)}
 .masthead.is-scrolled{background:rgba(10,9,7,.82);border-bottom-color:var(--line-2);-webkit-backdrop-filter:blur(16px) saturate(1.15);backdrop-filter:blur(16px) saturate(1.15)}
 .masthead__inner{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);height:68px;display:flex;align-items:center;gap:clamp(14px,3vw,32px)}
 .brand{display:flex;flex-direction:column;text-decoration:none;line-height:1;flex:0 0 auto}
 .brand__name{font:400 21px/1 var(--serif);letter-spacing:-.015em;color:var(--ink)}
-.brand__sub{margin-top:6px;font:500 8px/1 var(--mono);letter-spacing:.32em;text-transform:uppercase;color:var(--faint)}
+.brand__sub{margin-top:6px;font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 .nav{display:flex;align-items:center;gap:clamp(12px,2vw,26px);margin-left:auto}
 .nav a{
   position:relative;color:var(--muted);text-decoration:none;
@@ -103,7 +102,7 @@ button{font:inherit;color:inherit}
 .nav a:hover::after{right:0}
 .nav-github{
   border:1px solid var(--line);padding:9px 13px !important;color:var(--ink) !important;
-  font-family:var(--mono) !important;font-size:10px !important;letter-spacing:.14em !important;text-transform:uppercase;
+  font-family:var(--mono) !important;font-size:11px !important;letter-spacing:.14em !important;text-transform:uppercase;
   transition:border-color .25s,background .25s;
 }
 .nav-github:hover{border-color:var(--gold);background:rgba(201,162,39,.06)}
@@ -152,11 +151,6 @@ button{font:inherit;color:inherit}
 .btn--primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
 .btn--quiet{border-color:transparent;padding-left:6px;padding-right:6px;color:var(--muted)}
 .btn--quiet:hover{color:var(--ink)}
-.hero__spec{
-  margin-top:clamp(26px,3.6vw,40px);padding-top:16px;border-top:1px solid var(--line-2);
-  font:400 10px/1.9 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
-  max-width:40ch;
-}
 /* projector */
 .projector{position:relative;margin:0;min-width:0}
 .projector__frame{
@@ -172,7 +166,7 @@ button{font:inherit;color:inherit}
 .projector__badge{
   position:absolute;z-index:2;top:14px;left:14px;padding:7px 10px;border:1px solid rgba(243,238,226,.2);
   background:rgba(10,9,7,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-  font:500 9.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+  font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
 }
 .projector__badge--right{left:auto;right:14px;color:var(--gold);border-color:rgba(201,162,39,.4)}
 .projector__cap{margin-top:14px}
@@ -190,7 +184,7 @@ button{font:inherit;color:inherit}
 .projector__dots{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
 .pj-dot{width:18px;height:2px;padding:0;border:0;background:var(--line);cursor:pointer;transition:background .25s,width .25s}
 .pj-dot[aria-current="true"]{background:var(--gold);width:26px}
-.projector__note{margin-top:14px;font:400 10.5px/1.6 var(--sans);color:var(--faint);letter-spacing:.04em}
+.projector__note{margin-top:14px;font:400 11.5px/1.6 var(--sans);color:var(--faint);letter-spacing:.04em}
 @media (max-width:900px){
   .hero__grid{grid-template-columns:1fr;gap:clamp(36px,7vw,56px)}
   .projector{max-width:430px;margin:0 auto;width:100%}
@@ -199,7 +193,7 @@ button{font:inherit;color:inherit}
 /* ---------- sections ---------- */
 .section{position:relative;padding:var(--section) 0;border-top:1px solid var(--line-2)}
 .section-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:clamp(20px,4vw,48px);margin-bottom:clamp(28px,4.6vw,52px)}
-.section-head__title{margin-top:14px;font:500 clamp(1.62rem,4.4vw,3.3rem)/1.16 var(--serif);letter-spacing:-.005em;color:var(--ink)}
+.section-head__title{margin-top:0;font:500 clamp(1.62rem,4.4vw,3.3rem)/1.16 var(--serif);letter-spacing:-.005em;color:var(--ink)}
 .section-head__note{margin-top:14px;max-width:58ch;color:var(--muted);font-size:14px;line-height:1.8}
 .section-head__index{
   font:400 clamp(3.4rem,7.5vw,6.4rem)/.8 var(--serif);letter-spacing:-.04em;
@@ -228,7 +222,7 @@ button{font:inherit;color:inherit}
   .chip{flex:0 0 auto}
 }
 @media (max-width:780px){.plate-grid{columns:2}}
-@media (max-width:460px){.plate-grid{columns:2;column-gap:12px}.plate{margin-bottom:16px}.plate__cap{margin-top:8px}.plate__feature{font-size:11px}}
+@media (max-width:460px){.plate-grid{columns:2;column-gap:12px}.plate{margin-bottom:16px}.plate__cap{margin-top:8px}.plate__feature{font-size:11.5px}}
 .plate{break-inside:avoid;margin:0 0 clamp(16px,2vw,26px)}
 .plate__btn{display:block;width:100%;padding:0;border:0;background:transparent;text-align:left;cursor:pointer;color:inherit}
 .plate__media{position:relative;display:block;overflow:hidden;background:var(--bg-2);border:1px solid var(--line-2)}
@@ -247,13 +241,13 @@ button{font:inherit;color:inherit}
 .plate__hover{
   position:absolute;z-index:2;left:13px;right:13px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;
   opacity:0;transform:translateY(6px);transition:opacity .35s var(--ease),transform .35s var(--ease);
-  font:500 9.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+  font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
 }
 .plate__hover em{font-style:normal;color:var(--gold-2)}
 .plate__btn:hover .plate__hover,.plate__btn:focus-visible .plate__hover{opacity:1;transform:none}
 .plate__hover-prompt{
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  max-width:74%;font:400 11px/1.5 var(--sans);letter-spacing:.01em;text-transform:none;color:var(--ink);opacity:.86;
+  max-width:74%;font:400 12px/1.5 var(--sans);letter-spacing:.01em;text-transform:none;color:var(--ink);opacity:.86;
 }
 .plate__hover em{white-space:nowrap}
 .plate__cap{display:flex;align-items:baseline;gap:12px;margin-top:10px}
@@ -289,16 +283,9 @@ button{font:inherit;color:inherit}
 }
 .dl:hover{padding-left:8px}
 .dl__name{display:block;font:500 13.5px/1.4 var(--sans)}
-.dl__meta{display:block;margin-top:3px;font:400 10px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.dl__meta{display:block;margin-top:4px;font:400 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .dl__arrow{color:var(--gold);font:400 14px/1 var(--mono);transition:transform .3s var(--ease)}
 .dl:hover .dl__arrow{transform:translate(3px,-3px)}
-.ticker{margin-top:clamp(34px,5vw,58px);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);overflow:hidden;padding:16px 0;background:rgba(18,16,12,.45)}
-.ticker__track{display:flex;width:max-content;animation:ticker 52s linear infinite}
-.ticker:hover .ticker__track,.ticker:focus-within .ticker__track{animation-play-state:paused}
-.ticker__group{display:flex;align-items:center;flex:0 0 auto}
-.ticker__item{display:flex;align-items:center;gap:26px;padding:0 26px;white-space:nowrap;font:400 10.5px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
-.ticker__item::after{content:"";width:3px;height:3px;background:var(--gold);opacity:.7;border-radius:50%}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- record ---------- */
 .record__body{max-width:62ch;color:var(--muted);font-size:14.5px;line-height:1.85}
@@ -306,7 +293,7 @@ button{font:inherit;color:inherit}
 .ledger{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0;padding:0;list-style:none;background:var(--line-2);border:1px solid var(--line-2)}
 .ledger li{background:var(--bg);padding:clamp(20px,2.6vw,30px)}
 .ledger b{display:block;font:400 clamp(2.1rem,3.8vw,3.2rem)/1 var(--serif);letter-spacing:-.02em;color:var(--ink)}
-.ledger span{display:block;margin-top:10px;font:400 11px/1.5 var(--sans);letter-spacing:.05em;color:var(--muted)}
+.ledger span{display:block;margin-top:10px;font:400 12px/1.5 var(--sans);letter-spacing:0;color:var(--muted)}
 @media (max-width:760px){.ledger{grid-template-columns:repeat(2,1fr)}}
 .report-card{
   display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:clamp(28px,4vw,44px);
@@ -315,7 +302,7 @@ button{font:inherit;color:inherit}
   transition:border-color .3s,background .35s;
 }
 .report-card:hover{border-color:var(--gold);background:linear-gradient(115deg,rgba(201,162,39,.12),transparent 60%)}
-.report-card__label{font:500 10px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.report-card__label{font:500 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
 .report-card h3{margin-top:12px;font:400 clamp(1.35rem,2.5vw,1.95rem)/1.2 var(--serif)}
 .report-card p{margin-top:8px;color:var(--muted);font-size:12.5px;line-height:1.6;letter-spacing:.02em}
 .report-card__arrow{flex:0 0 auto;font:400 26px/1 var(--mono);color:var(--gold);transition:transform .3s var(--ease)}
@@ -330,11 +317,11 @@ button{font:inherit;color:inherit}
 .footer__top{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
 .footer__brand{font:400 clamp(1.6rem,3.2vw,2.5rem)/1.1 var(--serif);letter-spacing:-.02em;color:var(--ink)}
 .footer__brand em{font-style:italic;color:var(--gold)}
-.footer__tag{margin-top:10px;font:400 11.5px/1.6 var(--sans);letter-spacing:.05em;color:var(--faint);text-transform:uppercase}
-.footer__links{display:flex;flex-wrap:wrap;gap:10px 22px;font:500 10.5px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.footer__tag{margin-top:10px;font:400 12px/1.6 var(--sans);letter-spacing:0;color:var(--faint)}
+.footer__links{display:flex;flex-wrap:wrap;gap:10px 22px;font:500 11.5px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .footer__links a{color:var(--muted);text-decoration:none;transition:color .25s}
 .footer__links a:hover{color:var(--gold)}
-.footer__bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:clamp(32px,4vw,48px);padding-top:20px;border-top:1px solid var(--line-2);color:var(--faint);font-size:11.5px;line-height:1.7}
+.footer__bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:clamp(32px,4vw,48px);padding-top:20px;border-top:1px solid var(--line-2);color:var(--faint);font-size:12px;line-height:1.7}
 
 /* ---------- lightbox ---------- */
 .lightbox{
@@ -350,7 +337,7 @@ button{font:inherit;color:inherit}
 .lightbox__media img{display:block;width:100%;height:100%;max-height:92vh;object-fit:contain}
 .lightbox__close{
   position:absolute;top:14px;right:14px;z-index:3;padding:8px 12px;border:1px solid var(--line);
-  background:rgba(10,9,7,.7);color:var(--ink);cursor:pointer;font:500 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+  background:rgba(10,9,7,.7);color:var(--ink);cursor:pointer;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:border-color .25s,color .25s;
 }
 .lightbox__close:hover{border-color:var(--gold);color:var(--gold)}
@@ -364,30 +351,30 @@ button{font:inherit;color:inherit}
 .lightbox__nav--prev{left:14px}
 .lightbox__nav--next{right:14px}
 .lightbox__info{padding:clamp(22px,3vw,36px);overflow:auto;max-height:92vh;display:flex;flex-direction:column}
-.lightbox__no{font:500 10px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.lightbox__no{font:500 11px/1 var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
 .lightbox__title{margin-top:14px;font:400 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--serif);letter-spacing:-.005em}
 .lightbox__feature{margin-top:8px;color:var(--muted);font-size:12.5px;letter-spacing:.03em}
 .lightbox__section{margin-top:22px;padding-top:16px;border-top:1px solid var(--line-2)}
-.lightbox__label{font:500 9.5px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.lightbox__label{font:500 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
 .lightbox__prompt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
 .lightbox__prompt-head .lightbox__label{margin-bottom:0}
 .lightbox__copy{
   padding:6px 10px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;
-  font:500 9.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;transition:color .25s,border-color .25s;
+  font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;transition:color .25s,border-color .25s;
 }
 .lightbox__copy:hover{border-color:var(--gold);color:var(--gold)}
 .lightbox__prompt{font-size:12.5px;line-height:1.8;color:var(--ink);max-height:28vh;overflow:auto;padding-right:6px}
 .lightbox__params{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);margin:0}
 .lightbox__params div{background:var(--bg);padding:10px 12px}
-.lightbox__params dt{font:400 9px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.lightbox__params dt{font:400 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
 .lightbox__params dd{margin:5px 0 0;font:400 12.5px/1.4 var(--sans);color:var(--ink)}
 .lightbox__report{
   margin-top:22px;display:inline-flex;align-items:center;justify-content:space-between;gap:14px;
   padding:13px 16px;border:1px solid var(--line);text-decoration:none;color:var(--ink);
-  font:500 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;transition:border-color .25s,background .25s;
+  font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;transition:border-color .25s,background .25s;
 }
 .lightbox__report:hover{border-color:var(--gold);background:rgba(201,162,39,.07)}
-.lightbox__hint{margin-top:14px;font:400 10px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.lightbox__hint{margin-top:14px;font:400 11px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
 .lightbox__params div:last-child:nth-child(odd){grid-column:1 / -1}
 @media (max-width:860px){
   .lightbox{max-height:94vh}
@@ -408,7 +395,6 @@ button{font:inherit;color:inherit}
   html{scroll-behavior:auto}
   .js [data-reveal],.js [data-reveal].is-in{opacity:1;transform:none;transition:none}
   .projector__img{transition:none;animation:none !important}
-  .ticker__track{animation:none}
   .lightbox__panel,.lightbox[open]::backdrop{animation:none}
   .plate__media img,.manual__link,.dl{transition:none}
 }
@@ -421,11 +407,11 @@ button{font:inherit;color:inherit}
   <div class="masthead__inner">
     <a class="brand" href="#top" aria-label="AMD ComfyUI Guide 首页">
       <span class="brand__name">AMD ComfyUI Guide</span>
-      <span class="brand__sub">教程 · 图版 · 工作流</span>
+      <span class="brand__sub">Windows + Ubuntu · ROCm</span>
     </a>
     <nav class="nav" aria-label="主要导航">
-      <a href="#models">模型出图</a>
-      <a href="#tutorial">教程</a>
+      <a href="#models">图版</a>
+      <a href="#tutorial">手册</a>
       <a href="#workflows">工作流</a>
       <a href="#record">记录</a>
       <a class="nav-report" href="report/">完整报告 ↗</a>
@@ -439,9 +425,8 @@ button{font:inherit;color:inherit}
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow" data-reveal>Windows + Ubuntu · ROCm</p>
         <h1 class="hero__latin hero__latin--name" id="hero-title" data-reveal data-delay="1">ComfyUI <em>on AMD.</em></h1>
-        <p class="hero__zh" data-reveal data-delay="2">装环境、放模型，<br>跑出第一张图。</p>
+        <p class="hero__zh" data-reveal data-delay="2">从驱动到第一张图。</p>
         <div class="hero__actions" data-reveal data-delay="3">
           <a class="btn btn--primary" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/01-hardware.md">开始读教程 <span class="a" aria-hidden="true">↗</span></a>
           <a class="btn" href="#models">浏览模型出图 <span class="a" aria-hidden="true">↓</span></a>
@@ -480,9 +465,8 @@ button{font:inherit;color:inherit}
     <div class="wrap">
       <div class="section-head">
         <div data-reveal>
-          <p class="eyebrow">01 / The Plates</p>
-          <h2 class="section-head__title" id="models-title">模型跑过的图，都在这里。</h2>
-          <p class="section-head__note">按模型筛选；点开看提示词、参数和原始记录。</p>
+          <h2 class="section-head__title" id="models-title">图版</h2>
+          <p class="section-head__note">七个系列 · 四十张 · 按模型筛选</p>
         </div>
         <span class="section-head__index" aria-hidden="true">01</span>
       </div>
@@ -504,9 +488,8 @@ button{font:inherit;color:inherit}
     <div class="wrap">
       <div class="section-head">
         <div data-reveal>
-          <p class="eyebrow">02 / Field Manual</p>
-          <h2 class="section-head__title" id="tutorial-title">按你的起点，选一条路。</h2>
-          <p class="section-head__note">第一次装？先确认硬件，再按 Ubuntu + ROCm 走一遍。</p>
+          <h2 class="section-head__title" id="tutorial-title">手册</h2>
+          <p class="section-head__note">八章 · 从驱动到出图</p>
         </div>
         <span class="section-head__index" aria-hidden="true">02</span>
       </div>
@@ -562,8 +545,9 @@ button{font:inherit;color:inherit}
     <div class="wrap">
       <div class="section-head">
         <div data-reveal>
-          <p class="eyebrow">03 / Workflow Library</p>
-          <h2 class="section-head__title" id="workflows-title">268 份工作流，导入就能跑。</h2>
+
+          <h2 class="section-head__title" id="workflows-title">工作流</h2>
+          <p class="section-head__note">268 份 · UI 与 API 成对</p>
         </div>
         <span class="section-head__index" aria-hidden="true">03</span>
       </div>
@@ -597,17 +581,6 @@ button{font:inherit;color:inherit}
           </a>
         </div>
       </div>
-
-      <div class="ticker" aria-hidden="true">
-        <div class="ticker__track">
-          <div class="ticker__group">
-            <span class="ticker__item">提示词</span><span class="ticker__item">工作流</span><span class="ticker__item">输入图</span><span class="ticker__item">条件编码</span><span class="ticker__item">种子</span><span class="ticker__item">采样器</span><span class="ticker__item">步数</span><span class="ticker__item">耗时</span><span class="ticker__item">输出图</span><span class="ticker__item">原始记录</span><span class="ticker__item">平台对照</span><span class="ticker__item">复现步骤</span>
-          </div>
-          <div class="ticker__group">
-            <span class="ticker__item">提示词</span><span class="ticker__item">工作流</span><span class="ticker__item">输入图</span><span class="ticker__item">条件编码</span><span class="ticker__item">种子</span><span class="ticker__item">采样器</span><span class="ticker__item">步数</span><span class="ticker__item">耗时</span><span class="ticker__item">输出图</span><span class="ticker__item">原始记录</span><span class="ticker__item">平台对照</span><span class="ticker__item">复现步骤</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -616,8 +589,8 @@ button{font:inherit;color:inherit}
     <div class="wrap">
       <div class="section-head">
         <div data-reveal>
-          <p class="eyebrow">04 / The Record</p>
-          <h2 class="section-head__title" id="record-title">每个结果，都能回到原始记录。</h2>
+          <h2 class="section-head__title" id="record-title">记录</h2>
+          <p class="section-head__note">用例 · 平台 · 耗时</p>
         </div>
         <span class="section-head__index" aria-hidden="true">04</span>
       </div>
@@ -681,7 +654,7 @@ button{font:inherit;color:inherit}
 <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
   <div class="lightbox__panel">
     <div class="lightbox__media">
-      <img id="lb-img" alt="" width="512" height="512">
+      <img id="lb-img" src="assets/gallery/qwen-multiref.webp" alt="" width="512" height="512">
       <button class="lightbox__close" type="button" id="lb-close">关闭 ✕</button>
       <button class="lightbox__nav lightbox__nav--prev" type="button" id="lb-prev" aria-label="上一张">←</button>
       <button class="lightbox__nav lightbox__nav--next" type="button" id="lb-next" aria-label="下一张">→</button>

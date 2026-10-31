@@ -7,7 +7,7 @@
 **在 AMD 显卡上跑 ComfyUI：每一步实测，每个结果可查。**
 
 Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直接使用的工作流库，
-全部在一张 RX 6650 XT（8GB）上记录。
+每个结果都带一条可回查的记录。
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -21,9 +21,9 @@ Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直�
 
 ## 这是什么
 
-一份面向 AMD 显卡的 ComfyUI 部署指南，附带可复核的实测证据。它从一台已验证的机器开始——RX 6650 XT、8GB 显存、Windows 10 与 Ubuntu 22.04.5 + ROCm 7.14——逐步记录 7 个模型系列、40 项功能：哪些通过、哪些部分达到、哪些失败以及原因。
+一份面向 AMD 显卡的 ComfyUI 部署指南，附带可复核的实测证据。它从一台已验证的机器开始（Windows 10 与 Ubuntu 22.04.5 + ROCm 7.14），逐步记录 7 个模型系列、40 项功能：哪些通过、哪些部分达到、哪些失败以及原因。
 
-- **已验证硬件：** AMD Radeon RX 6650 XT（gfx1032）· 16GB 内存
+- **验证机型：** AMD Radeon RX 6650 XT（gfx1032）· 8GB 显存 · 16GB 内存
 - **已验证环境：** Ubuntu 22.04.5 · ROCm 7.14 · PyTorch 2.12.0 · ComfyUI `ce1e922`
 - **适合读者：** 想知道某个 ComfyUI 功能在自己的 AMD 卡上能不能跑、怎么跑的人
 
@@ -47,7 +47,7 @@ Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直�
 
 ## 快速开始
 
-1. **确认硬件** —— [硬件、系统与版本](docs/tutorial/01-hardware.md)。不是 RX 6650 XT？先读 [适配矩阵](docs/tutorial/08-amd-matrix.md)。
+1. **确认硬件** —— [硬件、系统与版本](docs/tutorial/01-hardware.md)。换一张卡？先读 [适配矩阵](docs/tutorial/08-amd-matrix.md)。
 2. **安装环境** —— [Windows](docs/tutorial/02-windows-setup.md) 或 [Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md)。Ubuntu 是唯一从全新独立环境完成全链路验证的路径。
 3. **生成第一张图** —— [第一张图](docs/tutorial/04-first-image.md)，然后从[工作流库](docs/tutorial/06-workflows.md)挑一份工作流开始。
 
