@@ -1,0 +1,161 @@
+{
+  "05e0d734-230d-48dc-98e7-526178dd0186": {
+    "prompt": [
+      0,
+      "05e0d734-230d-48dc-98e7-526178dd0186",
+      {
+        "34": {
+          "inputs": {
+            "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+          },
+          "class_type": "CheckpointLoaderSimple"
+        },
+        "2": {
+          "inputs": {
+            "model": [
+              "34",
+              0
+            ],
+            "shift": 3.0
+          },
+          "class_type": "ModelSamplingAuraFlow"
+        },
+        "20": {
+          "inputs": {
+            "clip": [
+              "34",
+              1
+            ],
+            "text": "A macro photograph of a dew-covered jumping spider perched on a mossy stone, 100mm macro lens, very shallow depth of field, soft morning light, ultra-fine setae and individual dew droplets visible, muted greens, natural color, no text, no watermark."
+          },
+          "class_type": "CLIPTextEncode"
+        },
+        "40": {
+          "inputs": {
+            "conditioning": [
+              "20",
+              0
+            ]
+          },
+          "class_type": "ConditioningZeroOut"
+        },
+        "6": {
+          "inputs": {
+            "width": 768,
+            "height": 768,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage"
+        },
+        "17": {
+          "inputs": {
+            "model": [
+              "2",
+              0
+            ],
+            "positive": [
+              "20",
+              0
+            ],
+            "negative": [
+              "40",
+              0
+            ],
+            "latent_image": [
+              "6",
+              0
+            ],
+            "seed": 2026103101,
+            "steps": 8,
+            "cfg": 1.0,
+            "sampler_name": "res_multistep",
+            "scheduler": "simple",
+            "denoise": 1.0
+          },
+          "class_type": "KSampler"
+        },
+        "11": {
+          "inputs": {
+            "samples": [
+              "17",
+              0
+            ],
+            "vae": [
+              "34",
+              2
+            ]
+          },
+          "class_type": "VAEDecode"
+        },
+        "26": {
+          "inputs": {
+            "images": [
+              "11",
+              0
+            ],
+            "filename_prefix": "gallery-20261031/zimage-aio-macro-jumping-spider"
+          },
+          "class_type": "SaveImage"
+        }
+      },
+      {
+        "create_time": 1793458152341
+      },
+      [
+        "26"
+      ]
+    ],
+    "outputs": {
+      "26": {
+        "images": [
+          {
+            "filename": "zimage-aio-macro-jumping-spider_00001_.png",
+            "subfolder": "gallery-20261031",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 768,
+              "height": 768
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "05e0d734-230d-48dc-98e7-526178dd0186",
+            "timestamp": 1793458152342
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "05e0d734-230d-48dc-98e7-526178dd0186",
+            "timestamp": 1793458152343
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "05e0d734-230d-48dc-98e7-526178dd0186",
+            "timestamp": 1793458408895
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "26": {
+        "node_id": "26",
+        "display_node": "26",
+        "parent_node": null,
+        "real_node_id": "26"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "elapsed_seconds": 110.166,
+  "model_id": "zimage-aio",
+  "feature_id": "figure",
+  "images": [
+    {
+      "file": "zimage-aio-charcoal-scavenger-clothed_00001_.png",
+      "sha256": "190941e075602361f29134a00fe3d35411e0b5127adce5ad5be5e1c1b09ef523",
+      "width": 512,
+      "height": 512,
+      "bytes": 388588
+    }
+  ],
+  "server_log": "/tmp/gallery-server-08-zimage-aio-charcoal-scavenger-clothed.log"
+}

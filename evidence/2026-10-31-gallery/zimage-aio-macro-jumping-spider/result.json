@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "execution_status": "success",
+  "validation_errors": {},
+  "elapsed_seconds": 262.963,
+  "images": [
+    {
+      "file": "26-0-zimage-aio-macro-jumping-spider_00001_.png",
+      "sha256": "d0015b7a151a0e06ce42c05f3881b0ce7e16cd654099812236274f3e1207db90"
+    }
+  ],
+  "visual_verdict": "pending manual inspection"
+}

@@ -8,21 +8,34 @@ Usage (from the repository root)::
 
 ``--build`` exports every curated source PNG to ``assets/gallery/<slug>.webp``
 (native pixel dimensions, no EXIF/XMP/ICC metadata) and writes
-``assets/gallery/manifest.json`` from the real evidence records.
+``assets/gallery/manifest.json`` from the real evidence records. A WebP that is
+already committed is left byte-identical (it is measured, not re-encoded), so
+re-running ``--build`` only adds plates and never churns existing files.
+
+There are two curated sources, merged in this order:
+
+1. ``CURATION`` below: the 32 historical plates, resolved through the platform
+   evidence records (``evidence/2026-10-19-features/platform-comparison.json``).
+2. ``evidence/2026-10-31-gallery/generation-log.json``: the 2026-10-31 freshly
+   generated batch, whose PNGs live under the local gitignored runtime tree
+   (``runtime/ubuntu/ComfyUI/output/gallery-20261031/``). Every plate from this
+   source is a hero and carries its own prompt/seed/steps/sampler record.
 
 ``--check`` verifies the committed gallery without Pillow: the manifest parses,
 all seven model families are present, every plate image exists with matching
-WebP dimensions, every report anchor exists, exactly one hero per model, and no
-pass/fail verdict data leaks into the gallery payload.
+WebP dimensions, every report anchor exists, every model family has at least one
+hero (heroes may exceed seven), and no pass/fail verdict data leaks into the
+gallery payload.
 
-Each plate records ``source`` as its historical runtime capture path
-(``ComfyUI/output/...``) for provenance. The PNG files themselves may live under
-the historical tree or under the archived ``evidence/report-assets/output/...``
-tree (see ``SOURCE_ALIASES``); ``--build`` resolves either, ``--check`` only
-validates the exported WebP files and never requires a source PNG to exist.
+Each plate records ``source`` as the runtime capture path it came from for
+provenance. The PNG files themselves may live under the historical tree or
+under the archived ``evidence/report-assets/output/...`` tree (see
+``SOURCE_ALIASES``); ``--build`` resolves either, ``--check`` only validates the
+exported WebP files and never requires a source PNG to exist.
 """
 
 import argparse
+import hashlib
 import json
 import re
 import struct
@@ -34,6 +47,10 @@ ROOT = Path(__file__).resolve().parents[1]
 GALLERY_DIR = ROOT / "assets" / "gallery"
 MANIFEST_PATH = GALLERY_DIR / "manifest.json"
 DATA_PATH = ROOT / "evidence" / "2026-10-19-features" / "platform-comparison.json"
+# Second curated source: the 2026-10-31 locally generated batch. Its PNGs live
+# under the gitignored runtime tree, so this log is their provenance record.
+GENERATION_LOG_PATH = ROOT / "evidence" / "2026-10-31-gallery" / "generation-log.json"
+GENERATION_LOG_SCHEMA = 1
 REPORT_PATH = ROOT / "report" / "index.html"
 
 SCHEMA = 1
@@ -94,9 +111,17 @@ CURATION = [
 # ``ComfyUI/`` component and prepend each archived root.
 SOURCE_ALIASES = ["evidence/report-assets"]
 
-# Accepted manifest ``source`` provenance prefixes (historical capture tree and
-# its committed archive). --check validates the shape, not file existence.
-SOURCE_PREFIXES = ("ComfyUI/output/", "evidence/report-assets/output/")
+# Accepted manifest ``source`` provenance prefixes: the historical capture tree
+# and its committed archive, plus the local runtime output tree used by the
+# 2026-10-31 generation batch (``runtime`` is a gitignored symlink, so the file
+# only exists on a machine that actually ran the GPU job). --check validates the
+# provenance shape, not file existence.
+LOG_SOURCE_PREFIX = "runtime/ubuntu/"
+SOURCE_PREFIXES = ("ComfyUI/output/", "evidence/report-assets/output/", LOG_SOURCE_PREFIX)
+
+# Shape checks for generation-log records.
+SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+SHA256_RE = re.compile(r"[0-9a-f]{64}")
 
 # Scrub list for --check: these substrings must not appear in manifest keys, and
 # these exact strings must not appear as manifest values.
@@ -210,7 +235,11 @@ def sampling_info(record):
 
 
 def build_plate(model_id, evidence_path, hero, features, by_basename):
-    """Collect one manifest plate from the matching evidence record."""
+    """Collect one manifest plate from the matching evidence record.
+
+    The source PNG is resolved lazily by :func:`export_webp`, so a plate whose
+    WebP is already committed never needs the historical PNG on disk.
+    """
     basename = Path(evidence_path).name
     records = by_basename.get(basename) or []
     if len(records) != 1:
@@ -234,7 +263,6 @@ def build_plate(model_id, evidence_path, hero, features, by_basename):
     if not isinstance(prompt, str) or not prompt.strip():
         raise SystemExit("missing prompt in evidence record for " + evidence_path)
 
-    source_path = resolve_source(evidence_path)
     steps, sampler = sampling_info(record)
     plate = {
         "id": slug_for(evidence_path),
@@ -256,7 +284,91 @@ def build_plate(model_id, evidence_path, hero, features, by_basename):
         plate["steps"] = int(steps)
     if sampler:
         plate["sampler"] = sampler
-    return plate, source_path
+    return plate
+
+
+def load_generation_log():
+    """Load the second curated source, or [] when this checkout has no batch."""
+    if not GENERATION_LOG_PATH.is_file():
+        print(
+            "note: no second curated source at {}; building from CURATION only".format(
+                rel(GENERATION_LOG_PATH)
+            )
+        )
+        return []
+    try:
+        data = json.loads(GENERATION_LOG_PATH.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        raise SystemExit("cannot parse {}: {}".format(rel(GENERATION_LOG_PATH), exc))
+    if not isinstance(data, dict):
+        raise SystemExit(rel(GENERATION_LOG_PATH) + " must be a JSON object")
+    if data.get("schema") != GENERATION_LOG_SCHEMA:
+        raise SystemExit(
+            "{}.schema must be {}".format(rel(GENERATION_LOG_PATH), GENERATION_LOG_SCHEMA)
+        )
+    entries = data.get("plates")
+    if not isinstance(entries, list) or not entries:
+        raise SystemExit(rel(GENERATION_LOG_PATH) + ".plates must be a non-empty list")
+    return entries
+
+
+def build_plate_from_log(index, entry, features):
+    """Collect one manifest plate from a generation-log record (all heroes)."""
+    where = "{} plates[{}]".format(rel(GENERATION_LOG_PATH), index)
+    if not isinstance(entry, dict):
+        raise SystemExit(where + " is not an object")
+    for field in ("id", "model_id", "feature_id", "prompt", "sampler", "source", "png_sha256"):
+        value = entry.get(field)
+        if not isinstance(value, str) or not value.strip():
+            raise SystemExit("{}.{} must be a non-empty string".format(where, field))
+    plate_id = entry["id"]
+    if not SLUG_RE.fullmatch(plate_id):
+        raise SystemExit("{}.id must be a lower-kebab slug, got {!r}".format(where, plate_id))
+    model_id = entry["model_id"]
+    if model_id not in MODEL_IDS:
+        raise SystemExit(
+            "{}.model_id must be one of the 7 model families, got {!r}".format(where, model_id)
+        )
+    feature_id = entry["feature_id"]
+    if feature_id not in features:
+        raise SystemExit("{}.feature_id is not a known feature: {!r}".format(where, feature_id))
+    for field in ("seed", "steps", "width", "height"):
+        value = entry.get(field)
+        if not isinstance(value, int) or isinstance(value, bool) or value <= 0:
+            raise SystemExit("{}.{} must be a positive integer".format(where, field))
+    source = entry["source"]
+    if not source.startswith(LOG_SOURCE_PREFIX):
+        raise SystemExit(
+            "{}.source must start with {} (got {!r})".format(where, LOG_SOURCE_PREFIX, source)
+        )
+    png_sha256 = entry["png_sha256"].strip().lower()
+    if not SHA256_RE.fullmatch(png_sha256):
+        raise SystemExit(where + ".png_sha256 must be 64 lowercase hex characters")
+    source_path = ROOT / source
+    if not source_path.is_file():
+        raise SystemExit("missing generated PNG for {}: {}".format(where, source))
+    actual_sha256 = hashlib.sha256(source_path.read_bytes()).hexdigest()
+    if actual_sha256 != png_sha256:
+        raise SystemExit(
+            "{}.png_sha256 mismatch for {}: log says {}, file is {}".format(
+                where, source, png_sha256, actual_sha256
+            )
+        )
+
+    plate = {
+        "id": plate_id,
+        "model_id": model_id,
+        "feature_id": feature_id,
+        "feature": features[feature_id],
+        "prompt": entry["prompt"],
+        "image": None,  # filled after the source is measured
+        "source": source,
+        "report": "report/index.html#{}--{}".format(model_id, feature_id),
+        "steps": int(entry["steps"]),
+        "sampler": entry["sampler"],
+        "hero": True,
+    }
+    return plate, source_path, (entry["width"], entry["height"])
 
 
 def webp_metadata_chunks(path):
@@ -275,13 +387,52 @@ def webp_metadata_chunks(path):
     return bad
 
 
+def export_webp(plate, source_resolver, claimed_dims=None):
+    """Write the plate's committed WebP, leaving an existing file byte-identical.
+
+    Only a plate whose WebP is missing gets encoded from the source PNG -- that
+    is when ``source_resolver()`` is called, so it stays lazy. A plate that is
+    already committed is measured in place, so re-running --build never rewrites
+    (or re-encodes) assets that are already in the repository.
+    """
+    target = GALLERY_DIR / (plate["id"] + ".webp")
+    if target.is_file():
+        width, height = webp_dimensions(target)
+        action = "kept"
+    else:
+        try:
+            from PIL import Image
+        except ImportError:
+            raise SystemExit("--build needs Pillow (local only); install Pillow or use --check")
+        with Image.open(source_resolver()) as source:
+            width, height = source.size
+            image = source.convert("RGB")
+            image.save(target, "WEBP", quality=WEBP_QUALITY, method=WEBP_METHOD)
+        action = "wrote"
+    metadata = webp_metadata_chunks(target)
+    if metadata:
+        raise SystemExit("exported WebP still carries metadata chunks: {}".format(metadata))
+    if claimed_dims is not None and tuple(claimed_dims) != (width, height):
+        print(
+            "warning: {} declares {}x{} but the image is {}x{}; recording the measured size".format(
+                plate["id"], claimed_dims[0], claimed_dims[1], width, height
+            )
+        )
+    plate["width"] = width
+    plate["height"] = height
+    plate["image"] = "assets/gallery/" + target.name
+    ordered = {key: plate[key] for key in PLATE_FIELD_ORDER if key in plate}
+    return ordered, action, rel(target), target.stat().st_size
+
+
 def build():
     try:
-        from PIL import Image
+        from PIL import Image  # noqa: F401  (checked early for a clear error)
     except ImportError:
         raise SystemExit("--build needs Pillow (local only); install Pillow or use --check")
 
     features, by_basename = load_evidence()
+    generation_log = load_generation_log()
     if len(MODELS) != 7:
         raise SystemExit("MODELS must contain exactly 7 model families")
     if len(CURATION) != 32:
@@ -296,32 +447,55 @@ def build():
         if evidence_path in seen_sources:
             raise SystemExit("duplicate curated source: " + evidence_path)
         seen_sources.add(evidence_path)
-        plate, source_path = build_plate(model_id, evidence_path, hero, features, by_basename)
+        plate = build_plate(model_id, evidence_path, hero, features, by_basename)
         if plate["id"] in seen_slugs:
             raise SystemExit("duplicate slug: " + plate["id"])
         seen_slugs.add(plate["id"])
-
-        with Image.open(source_path) as source:
-            width, height = source.size
-            image = source.convert("RGB")
-            target = GALLERY_DIR / (plate["id"] + ".webp")
-            image.save(target, "WEBP", quality=WEBP_QUALITY, method=WEBP_METHOD)
-        metadata = webp_metadata_chunks(target)
-        if metadata:
-            raise SystemExit("exported WebP still carries metadata chunks: {}".format(metadata))
-        plate["width"] = width
-        plate["height"] = height
-        plate["image"] = "assets/gallery/" + target.name
-        plate = {key: plate[key] for key in PLATE_FIELD_ORDER if key in plate}
+        plate, action, target_rel, target_size = export_webp(
+            plate, lambda path=evidence_path: resolve_source(path)
+        )
         heroes += 1 if hero else 0
         plates.append(plate)
-        print("wrote {} ({}x{}, {} bytes)".format(rel(target), width, height, target.stat().st_size))
+        print(
+            "{} {} ({}x{}, {} bytes)".format(
+                action, target_rel, plate["width"], plate["height"], target_size
+            )
+        )
 
-    if heroes != 7:
-        raise SystemExit("expected exactly one hero per model family (7), got " + str(heroes))
-    hero_models = {plate["model_id"] for plate in plates if plate["hero"]}
-    if hero_models != set(MODEL_IDS):
-        raise SystemExit("hero plates must cover every model family")
+    # Second curated source: the 2026-10-31 freshly generated batch.
+    for index, entry in enumerate(generation_log):
+        plate, source_path, claimed_dims = build_plate_from_log(index, entry, features)
+        if plate["id"] in seen_slugs:
+            raise SystemExit("duplicate slug: " + plate["id"])
+        seen_slugs.add(plate["id"])
+        if plate["source"] in seen_sources:
+            raise SystemExit("duplicate curated source: " + plate["source"])
+        seen_sources.add(plate["source"])
+        plate, action, target_rel, target_size = export_webp(
+            plate, lambda path=source_path: path, claimed_dims
+        )
+        heroes += 1
+        plates.append(plate)
+        print(
+            "{} {} ({}x{}, {} bytes, {} steps {})".format(
+                action, target_rel, plate["width"], plate["height"], target_size,
+                plate["steps"], plate["sampler"],
+            )
+        )
+
+    # Hero rule: at least one hero per model family; a family may have several
+    # (the generated batch is entirely heroes), so the total may exceed 7.
+    hero_models = sorted({plate["model_id"] for plate in plates if plate["hero"]})
+    if hero_models != sorted(MODEL_IDS):
+        raise SystemExit(
+            "hero plates must cover every model family; hero families: {!r}".format(hero_models)
+        )
+    if heroes < len(MODEL_IDS):
+        raise SystemExit(
+            "expected at least one hero per model family ({}), got {}".format(
+                len(MODEL_IDS), heroes
+            )
+        )
 
     models = [{"id": mid, "label": label, "short": short} for mid, label, short in MODELS]
     data = {
@@ -531,10 +705,14 @@ def check():
         if isinstance(source, str) and source:
             if source.startswith("/") or re.match(r"^[A-Za-z]:", source):
                 errors.append("{}.source must be repository-relative: {!r}".format(where, source))
+            elif "\\" in source or ".." in Path(source).parts:
+                errors.append("{}.source must be a plain relative path: {!r}".format(where, source))
+            elif not source.endswith(".png"):
+                errors.append("{}.source must point at a .png capture: {!r}".format(where, source))
             elif not source.startswith(SOURCE_PREFIXES):
                 errors.append(
-                    "{}.source must be a historical output path ({}), got {!r}".format(
-                        where, " or ".join(SOURCE_PREFIXES), source
+                    "{}.source must be a runtime output path ({}), got {!r}".format(
+                        where, ", ".join(SOURCE_PREFIXES), source
                     )
                 )
 
@@ -543,10 +721,21 @@ def check():
             if isinstance(plate.get("model_id"), str):
                 hero_models.append(plate["model_id"])
 
-    if heroes != 7:
-        errors.append("expected exactly 7 hero plates, found {}".format(heroes))
-    if sorted(hero_models) != sorted(MODEL_IDS):
-        errors.append("hero plates must cover every model family exactly once")
+    # Hero rule: every model family needs at least one hero; duplicates are fine
+    # and the total may exceed 7 (the generated batch is entirely heroes).
+    missing_hero_families = sorted(set(MODEL_IDS) - set(hero_models))
+    if missing_hero_families:
+        errors.append(
+            "hero plates must cover every model family; missing: {}".format(
+                ", ".join(missing_hero_families)
+            )
+        )
+    if heroes < len(MODEL_IDS):
+        errors.append(
+            "expected at least one hero per model family ({}), found {}".format(
+                len(MODEL_IDS), heroes
+            )
+        )
 
     if errors:
         print("FAIL: {} problem(s) in {}".format(len(errors), rel(MANIFEST_PATH)))
@@ -555,8 +744,8 @@ def check():
         return 1
     total = sum((ROOT / plate["image"]).stat().st_size for plate in plates)
     print(
-        "OK: {} models, {} plates, 7 heroes, all images present, no verdict data".format(
-            len(models), len(plates)
+        "OK: {} models, {} plates, {} heroes, all images present, no verdict data".format(
+            len(models), len(plates), heroes
         )
     )
     print("  manifest: {} ({} bytes)".format(rel(MANIFEST_PATH), MANIFEST_PATH.stat().st_size))

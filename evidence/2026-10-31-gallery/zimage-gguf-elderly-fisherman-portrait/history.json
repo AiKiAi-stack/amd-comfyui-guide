@@ -1,0 +1,173 @@
+{
+  "prompt": [
+    0,
+    "a2c8c373-545a-47c3-86f7-08a313e3dca9",
+    {
+      "9": {
+        "class_type": "UnetLoaderGGUF",
+        "inputs": {
+          "unet_name": "z_image_turbo-Q4_K_M.gguf"
+        }
+      },
+      "7": {
+        "class_type": "CLIPLoaderGGUF",
+        "inputs": {
+          "clip_name": "Qwen3-4B-Q4_K_M.gguf",
+          "type": "lumina2"
+        }
+      },
+      "11": {
+        "class_type": "ModelSamplingAuraFlow",
+        "inputs": {
+          "model": [
+            "9",
+            0
+          ],
+          "shift": 3.0
+        }
+      },
+      "8": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "7",
+            0
+          ],
+          "text": "An environmental portrait of an elderly fisherman, deeply weathered skin, thick knit wool sweater, overcast North Sea light, 85mm lens at f/1.8, natural color, subtle film grain, shallow depth of field, no text, no watermark."
+        }
+      },
+      "3": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "7",
+            0
+          ],
+          "text": "blurry ugly bad"
+        }
+      },
+      "5": {
+        "class_type": "EmptySD3LatentImage",
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        }
+      },
+      "10": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "11",
+            0
+          ],
+          "positive": [
+            "8",
+            0
+          ],
+          "negative": [
+            "3",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ],
+          "seed": 2026103104,
+          "steps": 9,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "4": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        }
+      },
+      "6": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "10",
+            0
+          ],
+          "vae": [
+            "4",
+            0
+          ]
+        }
+      },
+      "18": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "6",
+            0
+          ],
+          "filename_prefix": "gallery-20261031/zimage-gguf-elderly-fisherman-portrait"
+        }
+      }
+    },
+    {
+      "create_time": 1793459577718
+    },
+    [
+      "18"
+    ]
+  ],
+  "outputs": {
+    "18": {
+      "images": [
+        {
+          "filename": "zimage-gguf-elderly-fisherman-portrait_00001_.png",
+          "subfolder": "gallery-20261031",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "a2c8c373-545a-47c3-86f7-08a313e3dca9",
+          "timestamp": 1793459577718
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "a2c8c373-545a-47c3-86f7-08a313e3dca9",
+          "timestamp": 1793459577720
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "a2c8c373-545a-47c3-86f7-08a313e3dca9",
+          "timestamp": 1793459653636
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "18": {
+      "node_id": "18",
+      "display_node": "18",
+      "parent_node": null,
+      "real_node_id": "18"
+    }
+  }
+}

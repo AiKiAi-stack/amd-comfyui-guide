@@ -1,0 +1,159 @@
+{
+  "prompt": [
+    0,
+    "05696633-52dc-4384-b1a9-b8dd9201ae0c",
+    {
+      "34": {
+        "inputs": {
+          "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple"
+      },
+      "2": {
+        "inputs": {
+          "model": [
+            "34",
+            0
+          ],
+          "shift": 3.0
+        },
+        "class_type": "ModelSamplingAuraFlow"
+      },
+      "20": {
+        "inputs": {
+          "clip": [
+            "34",
+            1
+          ],
+          "text": "一幅中国水墨海报。画面右上方是四个大字毛笔书法“山高水长”，笔势苍劲；远处云雾缭绕的喀斯特群山，层层叠叠，宣纸纹理清晰，一角盖着红色印章，整体为靛蓝与骨白色调，没有其他文字，没有水印。"
+        },
+        "class_type": "CLIPTextEncode"
+      },
+      "40": {
+        "inputs": {
+          "conditioning": [
+            "20",
+            0
+          ]
+        },
+        "class_type": "ConditioningZeroOut"
+      },
+      "6": {
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage"
+      },
+      "17": {
+        "inputs": {
+          "model": [
+            "2",
+            0
+          ],
+          "positive": [
+            "20",
+            0
+          ],
+          "negative": [
+            "40",
+            0
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 2026103102,
+          "steps": 8,
+          "cfg": 1.0,
+          "sampler_name": "res_multistep",
+          "scheduler": "simple",
+          "denoise": 1.0
+        },
+        "class_type": "KSampler"
+      },
+      "11": {
+        "inputs": {
+          "samples": [
+            "17",
+            0
+          ],
+          "vae": [
+            "34",
+            2
+          ]
+        },
+        "class_type": "VAEDecode"
+      },
+      "26": {
+        "inputs": {
+          "images": [
+            "11",
+            0
+          ],
+          "filename_prefix": "gallery-20261031/zimage-aio-ink-wash-shan-gao-shui-chang"
+        },
+        "class_type": "SaveImage"
+      }
+    },
+    {
+      "create_time": 1793459288379
+    },
+    [
+      "26"
+    ]
+  ],
+  "outputs": {
+    "26": {
+      "images": [
+        {
+          "filename": "zimage-aio-ink-wash-shan-gao-shui-chang_00001_.png",
+          "subfolder": "gallery-20261031",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 512,
+            "height": 512
+          }
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "05696633-52dc-4384-b1a9-b8dd9201ae0c",
+          "timestamp": 1793459288379
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "05696633-52dc-4384-b1a9-b8dd9201ae0c",
+          "timestamp": 1793459288380
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "05696633-52dc-4384-b1a9-b8dd9201ae0c",
+          "timestamp": 1793459394517
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "26": {
+      "node_id": "26",
+      "display_node": "26",
+      "parent_node": null,
+      "real_node_id": "26"
+    }
+  }
+}

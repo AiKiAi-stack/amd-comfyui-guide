@@ -1,0 +1,95 @@
+{
+  "34": {
+    "inputs": {
+      "ckpt_name": "z-image-turbo-fp8-aio.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "2": {
+    "inputs": {
+      "model": [
+        "34",
+        0
+      ],
+      "shift": 3
+    },
+    "class_type": "ModelSamplingAuraFlow"
+  },
+  "20": {
+    "inputs": {
+      "clip": [
+        "34",
+        1
+      ],
+      "text": "A macro photograph of a dew-covered jumping spider perched on a mossy stone, 100mm macro lens, very shallow depth of field, soft morning light, ultra-fine setae and individual dew droplets visible, muted greens, natural color, no text, no watermark."
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "40": {
+    "inputs": {
+      "conditioning": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut"
+  },
+  "6": {
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage"
+  },
+  "17": {
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "20",
+        0
+      ],
+      "negative": [
+        "40",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ],
+      "seed": 2026103101,
+      "steps": 8,
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "denoise": 1
+    },
+    "class_type": "KSampler"
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "17",
+        0
+      ],
+      "vae": [
+        "34",
+        2
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "26": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ],
+      "filename_prefix": "gallery-20261031/zimage-aio-macro-jumping-spider"
+    },
+    "class_type": "SaveImage"
+  }
+}

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Barely Comfy · AMD ComfyUI Guide — 在 AMD 显卡上跑 ComfyUI</title>
+<title>AMD ComfyUI Guide — 在 AMD 显卡上跑 ComfyUI</title>
 <meta name="description" content="在 AMD 显卡上跑 ComfyUI 的可复现部署笔记：Windows 与 Ubuntu 分步教程、7 个模型系列的真实出图、268 份工作流，全部在 RX 6650 XT（8 GB）上记录。">
-<meta property="og:title" content="Barely Comfy · AMD ComfyUI Guide">
+<meta property="og:title" content="AMD ComfyUI Guide">
 <meta property="og:description" content="在 AMD 显卡上跑 ComfyUI 的可复现部署笔记：分步教程、真实出图、可直接导入的工作流。">
 <meta property="og:image" content="https://aikiai-stack.github.io/amd-comfyui-guide/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <script>document.documentElement.classList.add('js');</script>
 <style>
 /* ============================================================
-   Barely Comfy — Darkroom Archive
+   AMD ComfyUI Guide — Darkroom Archive
    Self-hosted fonts, hand-written CSS, no framework, no CDN.
    ============================================================ */
 @font-face{font-family:"Instrument Serif";src:url("assets/fonts/instrument-serif-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
@@ -132,6 +132,7 @@ button{font:inherit;color:inherit}
   letter-spacing:-.035em;color:var(--ink);
 }
 .hero__latin em{font-style:italic;color:var(--gold-2)}
+.hero__latin--name{font-size:clamp(2.55rem,5.7vw,4.85rem);line-height:1.03;letter-spacing:-.032em}
 .hero__zh{
   display:block;margin-top:clamp(18px,2.4vw,28px);max-width:19em;
   font:500 clamp(1.5rem,3.2vw,2.55rem)/1.38 var(--serif);
@@ -418,9 +419,9 @@ button{font:inherit;color:inherit}
 
 <header class="masthead" id="masthead">
   <div class="masthead__inner">
-    <a class="brand" href="#top" aria-label="Barely Comfy · AMD ComfyUI Guide 首页">
-      <span class="brand__name">Barely Comfy</span>
-      <span class="brand__sub">AMD ComfyUI Guide</span>
+    <a class="brand" href="#top" aria-label="AMD ComfyUI Guide 首页">
+      <span class="brand__name">AMD ComfyUI Guide</span>
+      <span class="brand__sub">RX 6650 XT · 8 GB</span>
     </a>
     <nav class="nav" aria-label="主要导航">
       <a href="#models">模型出图</a>
@@ -439,7 +440,7 @@ button{font:inherit;color:inherit}
     <div class="wrap hero__grid">
       <div class="hero__copy">
         <p class="eyebrow" data-reveal>AMD Radeon RX 6650 XT · 8 GB · Windows + Ubuntu</p>
-        <h1 class="hero__latin" id="hero-title" data-reveal data-delay="1">Barely <em>Comfy.</em></h1>
+        <h1 class="hero__latin hero__latin--name" id="hero-title" data-reveal data-delay="1">AMD <em>ComfyUI</em> Guide</h1>
         <p class="hero__zh" data-reveal data-delay="2">在 8 GB 显存上，<br>把 ComfyUI 跑明白。</p>
         <p class="hero__lead" data-reveal data-delay="2">一份可复现的单机部署笔记：从 ROCm 环境、模型放置到第一张真实出图，每一步都有记录可查。</p>
         <div class="hero__actions" data-reveal data-delay="3">
@@ -453,7 +454,7 @@ button{font:inherit;color:inherit}
       <figure class="projector" data-reveal data-delay="2" id="projector" aria-label="模型出图投影">
         <div class="projector__frame">
           <div class="projector__stage" id="projector-stage">
-            <span class="projector__badge" id="projector-no">Plate 001 / 07</span>
+            <span class="projector__badge" id="projector-no">Plate 001</span>
             <span class="projector__badge projector__badge--right">RX 6650 XT</span>
           </div>
         </div>
@@ -660,8 +661,8 @@ button{font:inherit;color:inherit}
   <div class="wrap">
     <div class="footer__top">
       <div>
-        <p class="footer__brand">Barely Comfy <em>— 8GB. Almost comfortable.</em></p>
-        <p class="footer__tag">AMD ComfyUI Guide · RX 6650 XT 实测记录</p>
+        <p class="footer__brand">AMD ComfyUI Guide <em>— tested end to end on 8 GB.</em></p>
+        <p class="footer__tag">RX 6650 XT 实测记录 · 7 个模型系列 · 268 份工作流</p>
       </div>
       <nav class="footer__links" aria-label="页脚链接">
         <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide">GitHub 仓库</a>
@@ -742,10 +743,14 @@ button{font:inherit;color:inherit}
   const toggleBtn = $('#pj-toggle');
 
   function heroImages() {
-    state.hero = state.models
-      .map((m) => state.plates.find((p) => p.model_id === m.id && p.hero))
-      .filter(Boolean);
-    if (state.hero.length < 2) state.hero = state.plates.filter((p) => p.hero).slice(0, 7);
+    // 每个模型系列至少一张主投影；同一系列的额外 hero 图版按 manifest 顺序排在它后面。
+    const heroes = state.plates.filter((p) => p.hero);
+    const byModel = new Map(state.models.map((m) => [m.id, []]));
+    heroes.forEach((p) => {
+      if (byModel.has(p.model_id)) byModel.get(p.model_id).push(p);
+    });
+    state.hero = state.models.flatMap((m) => byModel.get(m.id)).filter(Boolean);
+    if (state.hero.length < 2) state.hero = heroes.slice(0, 12);
   }
 
   function showHero(i) {

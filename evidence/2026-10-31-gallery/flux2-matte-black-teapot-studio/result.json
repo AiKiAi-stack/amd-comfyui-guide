@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "elapsed_seconds": 148.924,
+  "model_id": "flux2",
+  "feature_id": "t2i",
+  "images": [
+    {
+      "file": "flux2-matte-black-teapot-studio_00001_.png",
+      "sha256": "18acce1699bf5b97e95efe0ff488e3dfaf056d0477a5e0ef66bec065e4199c76",
+      "width": 512,
+      "height": 512,
+      "bytes": 260997
+    }
+  ],
+  "server_log": "/tmp/gallery-server-07-flux2-matte-black-teapot-studio.log"
+}
