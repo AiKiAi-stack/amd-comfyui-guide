@@ -23,3 +23,6 @@ __pycache__/
 node_modules/
 
 notes/
+
+# Per-developer Impeccable hook consent/overrides
+.impeccable/config.local.json

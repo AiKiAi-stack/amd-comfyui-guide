@@ -11,7 +11,7 @@ from urllib.parse import unquote, urlsplit
 from html import unescape
 
 ROOT = Path(__file__).resolve().parents[1]
-IGNORED = {'.git', '.venv', 'runtime', 'runs', '__pycache__', 'notes'}
+IGNORED = {'.git', '.venv', 'runtime', 'runs', '__pycache__', 'notes', '.impeccable'}
 
 
 def files():

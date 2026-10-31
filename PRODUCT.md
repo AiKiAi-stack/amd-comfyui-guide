@@ -51,9 +51,10 @@ evidence library exists to back the instructions, not to be the destination.
   snapshot is hashed in `publication-manifest.json` and verified in CI.
 - Self-hosted OFL font subsets, no runtime CDN, MIT license, static single-file
   pages with hand-written CSS/JS.
-- Undecided: how far the on-page evidence block should shrink (the reader chose a
-  tutorial-first site with a deliberately de-emphasised evidence library); whether
-  more model families get their own tutorial chapters.
+- The evidence block on the landing page is deliberately reduced to a one-line link band;
+  the numbers stay on the report page and in the READMEs (the reader chose a
+  tutorial-first site with a deliberately de-emphasised evidence library).
+- Undecided: whether more model families get their own tutorial chapters.
 
 ## Brand Commitments
 

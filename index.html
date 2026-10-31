@@ -68,6 +68,9 @@ body::before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
 }
 ::selection{background:rgba(201,162,39,.28);color:var(--ink)}
+html{scroll-snap-type:y proximity;scroll-behavior:smooth;scroll-padding-top:68px}
+.hero,.section,.site-footer{scroll-snap-align:start}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 html{scrollbar-color:rgba(243,238,226,.18) transparent;scrollbar-width:thin}
 body{caret-color:var(--gold)}
 ::-webkit-scrollbar{width:11px;height:11px}
@@ -288,29 +291,16 @@ button{font:inherit;color:inherit}
 .dl:hover .dl__arrow{transform:translate(3px,-3px)}
 
 /* ---------- record ---------- */
-.record__body{max-width:62ch;color:var(--muted);font-size:14.5px;line-height:1.85}
-.record__ledger{margin:clamp(28px,4vw,44px) 0 0}
-.ledger{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:0;padding:0;list-style:none;background:var(--line-2);border:1px solid var(--line-2)}
-.ledger li{background:var(--bg);padding:clamp(20px,2.6vw,30px)}
-.ledger b{display:block;font:400 clamp(2.1rem,3.8vw,3.2rem)/1 var(--serif);letter-spacing:-.02em;color:var(--ink)}
-.ledger span{display:block;margin-top:10px;font:400 12px/1.5 var(--sans);letter-spacing:0;color:var(--muted)}
-@media (max-width:760px){.ledger{grid-template-columns:repeat(2,1fr)}}
-.report-card{
-  display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:clamp(28px,4vw,44px);
-  padding:clamp(22px,3vw,34px);border:1px solid var(--line);text-decoration:none;color:var(--ink);
-  background:linear-gradient(115deg,rgba(201,162,39,.07),transparent 55%);
-  transition:border-color .3s,background .35s;
-}
-.report-card:hover{border-color:var(--gold);background:linear-gradient(115deg,rgba(201,162,39,.12),transparent 60%)}
-.report-card__label{font:500 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
-.report-card h3{margin-top:12px;font:400 clamp(1.35rem,2.5vw,1.95rem)/1.2 var(--serif)}
-.report-card p{margin-top:8px;color:var(--muted);font-size:12.5px;line-height:1.6;letter-spacing:.02em}
-.report-card__arrow{flex:0 0 auto;font:400 26px/1 var(--mono);color:var(--gold);transition:transform .3s var(--ease)}
-.report-card:hover .report-card__arrow{transform:translate(4px,-4px)}
-.record__links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font:500 11px/1.6 var(--sans);letter-spacing:.04em}
+.section--band{padding:clamp(44px,6vw,72px) 0}
+.record-band{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:14px clamp(20px,4vw,40px)}
+.record-band__title{font:500 clamp(1.35rem,2.4vw,1.9rem)/1.15 var(--serif);letter-spacing:-.005em;color:var(--ink)}
+.record-band__note{margin-top:8px;color:var(--muted);font-size:13.5px;line-height:1.7}
+.record-band__report{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:9px;transition:color .25s}
+.record-band__report:hover{color:var(--gold-2)}
+.record__links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:clamp(16px,2.2vw,24px);padding-top:14px;border-top:1px solid var(--line-2);font:500 11px/1.6 var(--sans);letter-spacing:.04em}
 .record__links a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .25s,border-color .25s}
 .record__links a:hover{color:var(--ink);border-color:var(--gold)}
-@media (max-width:640px){.report-card{align-items:flex-start}.report-card__arrow{display:none}}
+@media (max-width:640px){.record-band{grid-template-columns:1fr}}
 
 /* ---------- footer ---------- */
 .site-footer{border-top:1px solid var(--line);padding:clamp(48px,6vw,72px) 0 clamp(56px,7vw,84px);position:relative;z-index:1}
@@ -585,41 +575,14 @@ button{font:inherit;color:inherit}
   </section>
 
   <!-- ================= 04 THE RECORD ================= -->
-  <section class="section" id="record" aria-labelledby="record-title">
-    <div class="wrap">
-      <div class="section-head">
-        <div data-reveal>
-          <h2 class="section-head__title" id="record-title">记录</h2>
-          <p class="section-head__note">用例 · 平台 · 耗时</p>
-        </div>
-        <span class="section-head__index" aria-hidden="true">04</span>
+  <section class="section section--band" id="record" aria-labelledby="record-title">
+    <div class="wrap record-band">
+      <div>
+        <h2 class="record-band__title" id="record-title">记录</h2>
+        <p class="record-band__note">一个案例 = 提示词 + 工作流 + 出图 + 耗时 + 结论</p>
       </div>
-
-      <p class="record__body" data-reveal>一个案例 = 提示词 + 工作流 + 出图 + 耗时 + 结论。</p>
-
-      <div class="record__ledger" data-reveal>
-        <div class="ledger-wrap">
-<!-- STATS:START -->
-<ul class="ledger">
-<li><b>7</b><span>模型系列</span></li>
-<li><b>40</b><span>功能记录</span></li>
-<li><b>162</b><span>平台记录（95 Win + 67 Linux）</span></li>
-<li><b>88</b><span>记录案例</span></li>
-</ul>
-<!-- STATS:END -->
-        </div>
-      </div>
-
-      <a class="report-card" href="report/" data-reveal>
-        <div>
-          <p class="report-card__label">Complete Feature Report</p>
-          <h3>打开完整功能报告</h3>
-          <p>逐项提示词、工作流、出图、耗时与结论</p>
-        </div>
-        <span class="report-card__arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <div class="record__links" data-reveal>
+      <a class="record-band__report" href="report/">完整功能报告 <span aria-hidden="true">↗</span></a>
+      <div class="record__links">
         <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/reference/evidence-and-privacy.md">证据与隐私</a>
         <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/reference/failure-tracker.md">故障追踪</a>
         <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/08-amd-matrix.md">看适配矩阵</a>
