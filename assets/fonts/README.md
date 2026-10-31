@@ -5,26 +5,26 @@ downloads: `index.html` references these files with `@font-face`
 (relative `assets/fonts/...` URLs) and `font-display: swap`.
 
 **Direction:** *Darkroom Archive* — editorial serif display (Latin
-*Instrument Serif*, CJK *Noto Serif SC*), refined body sans (Latin
+*Alegreya*, CJK *Noto Serif SC*), refined body sans (Latin
 *IBM Plex Sans*, CJK *Noto Sans SC*), and *IBM Plex Mono* for metadata,
 eyebrows and plate numbers.
 
-**Total:** 11 files, 348816 bytes (340.6 KB).
+**Total:** 11 files, 344520 bytes (336.4 KB).
 
 ## Inventory
 
 | File | Family | Weight | Style | Glyphs | Bytes |
 |---|---|---:|---|---:|---:|
-| `instrument-serif-400.woff2` | Instrument Serif | 400 | normal | 193 | 20508 (20.0 KB) |
-| `instrument-serif-400-italic.woff2` | Instrument Serif | 400 | italic | 193 | 21232 (20.7 KB) |
+| `alegreya-400.woff2` | Alegreya | 400 | normal | 221 | 28032 (27.4 KB) |
+| `alegreya-400-italic.woff2` | Alegreya | 400 | italic | 221 | 28328 (27.7 KB) |
 | `ibm-plex-sans-400.woff2` | IBM Plex Sans | 400 | normal | 220 | 21252 (20.8 KB) |
 | `ibm-plex-sans-500.woff2` | IBM Plex Sans | 500 | normal | 220 | 23220 (22.7 KB) |
 | `ibm-plex-mono-400.woff2` | IBM Plex Mono | 400 | normal | 219 | 14544 (14.2 KB) |
 | `ibm-plex-mono-500.woff2` | IBM Plex Mono | 500 | normal | 219 | 14984 (14.6 KB) |
-| `noto-serif-sc-500.woff2` | Noto Serif SC | 500 | normal | 329 | 55768 (54.5 KB) |
-| `noto-serif-sc-600.woff2` | Noto Serif SC | 600 | normal | 329 | 56040 (54.7 KB) |
-| `noto-sans-sc-400.woff2` | Noto Sans SC | 400 | normal | 428 | 58632 (57.3 KB) |
-| `noto-sans-sc-500.woff2` | Noto Sans SC | 500 | normal | 428 | 59112 (57.7 KB) |
+| `noto-serif-sc-500.woff2` | Noto Serif SC | 500 | normal | 281 | 46292 (45.2 KB) |
+| `noto-serif-sc-600.woff2` | Noto Serif SC | 600 | normal | 281 | 46580 (45.5 KB) |
+| `noto-sans-sc-400.woff2` | Noto Sans SC | 400 | normal | 435 | 58628 (57.3 KB) |
+| `noto-sans-sc-500.woff2` | Noto Sans SC | 500 | normal | 435 | 59136 (57.8 KB) |
 | `ui-symbols-400.woff2` | UI Symbols | 400 | normal | 22 | 3524 (3.4 KB) |
 
 ## Provenance
@@ -35,8 +35,8 @@ are committed next to the fonts as `OFL-*.txt`.
 
 | Family | Upstream file | Source URL |
 |---|---|---|
-| Instrument Serif | `instrumentserif/InstrumentSerif-Regular.ttf` | <https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/instrumentserif/InstrumentSerif-Regular.ttf> |
-| Instrument Serif | `instrumentserif/InstrumentSerif-Italic.ttf` | <https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/instrumentserif/InstrumentSerif-Italic.ttf> |
+| Alegreya | `alegreya/Alegreya[wght].ttf` | <https://raw.githubusercontent.com/google/fonts/main/ofl/alegreya/Alegreya%5Bwght%5D.ttf> |
+| Alegreya | `alegreya/Alegreya-Italic[wght].ttf` | <https://raw.githubusercontent.com/google/fonts/main/ofl/alegreya/Alegreya-Italic%5Bwght%5D.ttf> |
 | IBM Plex Sans | `ibmplexsans/IBMPlexSans[wdth,wght].ttf` | <https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/ibmplexsans/IBMPlexSans%5Bwdth,wght%5D.ttf> |
 | IBM Plex Mono | `ibmplexmono/IBMPlexMono-Regular.ttf` | <https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf> |
 | IBM Plex Mono | `ibmplexmono/IBMPlexMono-Medium.ttf` | <https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/ibmplexmono/IBMPlexMono-Medium.ttf> |
@@ -48,7 +48,7 @@ are committed next to the fonts as `OFL-*.txt`.
 
 ```css
 :root {
-  --font-display: "Instrument Serif", "Noto Serif SC", "UI Symbols", "Songti SC", Georgia, serif;
+  --font-display: "Alegreya", "Noto Serif SC", "UI Symbols", "Songti SC", Georgia, serif;
   --font-body: "IBM Plex Sans", "Noto Sans SC", "UI Symbols", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", "UI Symbols", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -101,14 +101,14 @@ sorted Unicode sets), so repeated builds produce identical bytes.
 
 | File | Bytes | SHA-256 | Upstream source SHA-256 |
 |---|---:|---|---|
-| `instrument-serif-400.woff2` | 20508 | `d6fcb9a4df011b8e…` | `498efd461f6ddfcb…` |
-| `instrument-serif-400-italic.woff2` | 21232 | `bc831fbf31271e62…` | `08939b8bdf534afe…` |
+| `alegreya-400.woff2` | 28032 | `be5fda0b82172218…` | `ba5564634b93a8f8…` |
+| `alegreya-400-italic.woff2` | 28328 | `c3e7d39b7d63a74c…` | `fa915eec76227935…` |
 | `ibm-plex-sans-400.woff2` | 21252 | `3e817545f681e0a8…` | `3b031aa421617420…` |
 | `ibm-plex-sans-500.woff2` | 23220 | `681dc07598a60ecc…` | `3b031aa421617420…` |
 | `ibm-plex-mono-400.woff2` | 14544 | `96d7bcd6c50c7e14…` | `6a3412f058c7d8df…` |
 | `ibm-plex-mono-500.woff2` | 14984 | `c60e5b65c5b86085…` | `a9b4c49bb299e05b…` |
-| `noto-serif-sc-500.woff2` | 55768 | `2ab115da436bdd65…` | `050080d9255a8680…` |
-| `noto-serif-sc-600.woff2` | 56040 | `64e48e6ae973ca48…` | `050080d9255a8680…` |
-| `noto-sans-sc-400.woff2` | 58632 | `0e67c035a5ab6bbc…` | `a3041811a78c361b…` |
-| `noto-sans-sc-500.woff2` | 59112 | `25ace1cb2f64b36b…` | `a3041811a78c361b…` |
+| `noto-serif-sc-500.woff2` | 46292 | `306f9a4fd9c66db8…` | `050080d9255a8680…` |
+| `noto-serif-sc-600.woff2` | 46580 | `c743ef7fadac562f…` | `050080d9255a8680…` |
+| `noto-sans-sc-400.woff2` | 58628 | `367f10d29d12fc98…` | `a3041811a78c361b…` |
+| `noto-sans-sc-500.woff2` | 59136 | `3143cbd3f731dc18…` | `a3041811a78c361b…` |
 | `ui-symbols-400.woff2` | 3524 | `63a70737a671c308…` | `7d5fb73b7ca67a67…` |
