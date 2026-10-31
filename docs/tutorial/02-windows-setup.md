@@ -1,26 +1,31 @@
-# 02 · Windows 环境与从零搭建
+# 02 · 在 Windows 上搭一套 AMD 环境
 
-## 已确认的实测环境
+下面从头装一套能出图的 ComfyUI：AMD 显卡、Python 3.12、ROCm 版 PyTorch。装完就能进 [第一张图](./04-first-image.md)。
 
-Windows、RX 6650 XT 8GB（gfx1032）、16GB RAM，Python 3.12.6。当前本机包元数据为 `torch 2.12.0+rocm7.14.0`、`torchvision 0.27.0+rocm7.14.0`、`torchaudio 2.11.0+rocm7.14.0`。精确包快照见 [environment](../../environment/)。ComfyUI 固定提交 `ce1e922d8623bb507180e32a0c01a7d0e29edef7`，GGUF 插件固定提交 `373048b8403a7820620065210a691263d4da0a61`。
+我现有的 Windows 环境是早就装好的，这一轮没有推倒重装，所以下面这些从零步骤是根据当前版本快照整理出来的复现路径，整套全新安装的验收还等着补齐。另外，包能装上不等于 GPU 能用，第 3 步的检查别跳过。
 
-本仓库的图片来自已有环境。本轮没有重新安装整套 GPU 环境；以下从零步骤是依据当前版本快照整理的复现路径，完整全新安装验收仍待补齐。不要把“能安装包”当成 GPU 已可用。
+## 开始之前
 
-## 1. 准备独立目录
+- 硬件按这台机器的配置来：RX 6650 XT 8GB（gfx1032）、16GB 内存、Python 3.12.6。
+- 装好 Git、Python 3.12 x64，以及 AMD 官网给你的那张卡对应的驱动。
+- 模型、虚拟环境、缓存都建议放在 D: 这类空间充足的盘。
+- 下面拿 `D:\AI` 当项目父目录，克隆出来的目录叫 `amd-comfyui-guide`。换成你自己的路径就行；我当时的记录用的是 `D:\AI\barely-comfy`。
 
-安装 Git、Python 3.12 x64 与适用于自己系统的 AMD 显卡驱动。模型、虚拟环境和缓存建议放 D: 或其他空间充足的磁盘。本文假定仓库在 `D:\AI\barely-comfy`。
+## 1. 建独立目录
+
+先建目录、拉仓库、建虚拟环境：
 
 ```powershell
 New-Item -ItemType Directory -Force D:\AI | Out-Null
 Set-Location D:\AI
 git clone https://github.com/AiKiAi-stack/amd-comfyui-guide.git
-Set-Location barely-comfy
+Set-Location amd-comfyui-guide
 py -3.12 -m venv .venv
 $env:PIP_CACHE_DIR = 'D:\AI\cache\pip'
 $env:HF_HOME = 'D:\AI\cache\huggingface'
 ```
 
-本仓库的 `ComfyUI/input` 与 `ComfyUI/output` 只是公开证据素材，所以不要直接向该非空目录 git clone。先建立单独源码目录，再复制证据输入：
+仓库里的 `ComfyUI/input` 和 `ComfyUI/output` 是公开的证据素材，所以别直接往这个非空目录 clone。源码单独放一份，证据输入之后复制过去：
 
 ```powershell
 git clone https://github.com/Comfy-Org/ComfyUI.git runtime/ComfyUI
@@ -29,13 +34,13 @@ git clone https://github.com/city96/ComfyUI-GGUF.git runtime/ComfyUI/custom_node
 git -C runtime/ComfyUI/custom_nodes/ComfyUI-GGUF checkout 373048b8403a7820620065210a691263d4da0a61
 ```
 
-## 2. AMD PyTorch
+## 2. 装 AMD 版 PyTorch
 
-根据 [TheRock 上游历史 multi-arch 安装说明](https://github.com/ROCm/TheRock/blob/main/docs/packaging/legacy_multi_arch_releases.md)，使用与版本匹配的 AMD 索引及 `device-gfx1032`。当前索引会变化，不能直接安装最新包并称为复现本实验。
+按 [TheRock 上游的 multi-arch 安装说明](https://github.com/ROCm/TheRock/blob/main/docs/packaging/legacy_multi_arch_releases.md)，用与版本匹配的 AMD 索引，并且选 `device-gfx1032`。索引内容会变，装到最新的包不等于复现了我这套。
 
-本地实际安装包版本与可用索引检查见 [安装来源记录](../../environment/install-provenance.md)。先按该记录确认版本仍可取得，再安装同一组 torch / torchvision / torchaudio / rocm 包。若旧版本已下架，应记录新版本并建立新实验，不静默换成 CUDA 包或其他 ROCm 版本。
+装之前先对照 [安装来源记录](../../environment/install-provenance.md)，确认那几个版本还能拿到，再把这一组 torch、torchvision、torchaudio、rocm 装上。旧版本下架了，就记录新版本、重新开一次实验，不要不声不响换成 CUDA 包或别的 ROCm 版本。
 
-安装 ComfyUI Python 依赖时使用已验证 AMD 包的版本约束，防止依赖解析替换 GPU 栈：
+装 ComfyUI 的 Python 依赖时带上版本约束，免得解析器把 GPU 栈换掉：
 
 ```powershell
 .venv\Scripts\python.exe -m pip install -r runtime/ComfyUI/requirements.txt -c environment/amd-constraints.txt
@@ -45,21 +50,42 @@ git -C runtime/ComfyUI/custom_nodes/ComfyUI-GGUF checkout 373048b8403a7820620065
 
 ## 3. 先检查 GPU，再启动 ComfyUI
 
+跑这一个脚本：
+
 ```powershell
 .venv\Scripts\python.exe scripts/check_gpu.py
 ```
 
-检查会在子进程中导入 torch，查询显卡并执行小型 GPU 张量运算。必须看到设备名称、HIP 版本和计算通过。原生 `0xC0000005` / access violation 无法用普通 Python try/except 修复，失败时先停在这里。
+它会在子进程里导入 torch，查显卡信息，再做一次小的 GPU 张量运算。你必须看到设备名、HIP 版本和计算通过。原生 `0xC0000005` 或 access violation 这种崩溃，普通的 Python try/except 是救不回来的，失败就停在这一步。
 
-之前独立 ROCm 7.2 / torch 2.9.1 环境在 GPU 初始化就崩溃；它不是当前成功图片所用环境。不要把两个版本混用。
+早先那套独立的 ROCm 7.2 / torch 2.9.1 环境在 GPU 初始化就崩，它不是现在这些成功图所用的环境。两个版本别混着配。
 
-## 4. 安装本地辅助节点
+## 4. 装上两个本地辅助节点
 
 ```powershell
 Copy-Item code_source/gfx1032_quant_fallback runtime/ComfyUI/custom_nodes -Recurse
 Copy-Item code_source/feature_bench_ordering runtime/ComfyUI/custom_nodes -Recurse
 ```
 
-第一个节点默认关闭，仅在 HIP + gfx1032 + `COMFY_GFX1032_INT8_FALLBACK=1` 时绕开原生 INT8 GEMM，采用 ComfyUI 已有反量化路径。第二个节点只安排批次编码依赖，不混合提示词。它们不是所有模型通用的加速插件。
+第一个节点默认关闭，只有同时满足 HIP、gfx1032 和 `COMFY_GFX1032_INT8_FALLBACK=1` 时，才绕开原生 INT8 GEMM，改走 ComfyUI 自带的浮点反量化路径。第二个只负责安排批次编码的依赖顺序，不混提示词。两个都不是所有模型通用的加速插件。
 
-继续 [首次出图](04-first-image.md)。
+## 证据与出处
+
+版本、包快照和索引可用性都在 [environment](../../environment/) 目录：先看 [安装来源记录](../../environment/install-provenance.md)，再看 [包快照](../../environment/packages.json)。
+
+## 怎么确认这一步成功了
+
+三件事同时成立才算装好：
+
+1. `python scripts/check_gpu.py` 打印出设备名和 HIP 版本，并且计算通过。
+2. `pip freeze` 里 torch 是 `2.12.0+rocm7.14.0`，`torchvision` 是 `0.27.0+rocm7.14.0`，`torchaudio` 是 `2.11.0+rocm7.14.0`。
+3. ComfyUI 和 ComfyUI-GGUF 的提交分别等于 `ce1e922d8623bb507180e32a0c01a7d0e29edef7` 和 `373048b8403a7820620065210a691263d4da0a61`。
+
+三条都对上，接着去 [第一张图](./04-first-image.md)。
+
+## 卡住了看哪里
+
+- `check_gpu.py` 崩在初始化：别往下装模型，这是 GPU 栈的问题。先回 [安装来源记录](../../environment/install-provenance.md) 对版本。
+- 装依赖时 torch 被换掉了：漏了 `-c environment/amd-constraints.txt`，重装一遍。
+- 想省硬盘换了路径：命令里的 `D:\AI` 全部改成你的实际路径，`PIP_CACHE_DIR` 和 `HF_HOME` 也一样。
+- 环境搭好了还是不出图：去 [排障](./07-troubleshooting.md)，先对照 `torch.cuda.is_available()` 那一段。
