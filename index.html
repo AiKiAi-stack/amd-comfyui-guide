@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AMD ComfyUI Guide — 在 AMD 显卡上跑 ComfyUI</title>
-<meta name="description" content="在 AMD 显卡上跑 ComfyUI 的可复现部署笔记：Windows 与 Ubuntu 分步教程、7 个模型系列的真实出图、268 份工作流，全部在 RX 6650 XT（8 GB）上记录。">
-<meta property="og:title" content="AMD ComfyUI Guide">
-<meta property="og:description" content="在 AMD 显卡上跑 ComfyUI 的可复现部署笔记：分步教程、真实出图、可直接导入的工作流。">
+<title>ComfyUI on AMD — Windows + Ubuntu 部署教程与图版</title>
+<meta name="description" content="ComfyUI 在 AMD 显卡上的部署教程与实测记录：Windows 与 Ubuntu 分步安装、7 个模型系列的出图、268 份可直接导入的工作流。">
+<meta property="og:title" content="ComfyUI on AMD — AMD ComfyUI Guide">
+<meta property="og:description" content="ComfyUI 在 AMD 显卡上的部署教程与实测记录：分步安装、模型出图、可直接导入的工作流。">
 <meta property="og:image" content="https://aikiai-stack.github.io/amd-comfyui-guide/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -421,7 +421,7 @@ button{font:inherit;color:inherit}
   <div class="masthead__inner">
     <a class="brand" href="#top" aria-label="AMD ComfyUI Guide 首页">
       <span class="brand__name">AMD ComfyUI Guide</span>
-      <span class="brand__sub">RX 6650 XT · 8 GB</span>
+      <span class="brand__sub">教程 · 图版 · 工作流</span>
     </a>
     <nav class="nav" aria-label="主要导航">
       <a href="#models">模型出图</a>
@@ -439,16 +439,14 @@ button{font:inherit;color:inherit}
   <section class="hero" id="top" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow" data-reveal>AMD Radeon RX 6650 XT · 8 GB · Windows + Ubuntu</p>
-        <h1 class="hero__latin hero__latin--name" id="hero-title" data-reveal data-delay="1">AMD <em>ComfyUI</em> Guide</h1>
-        <p class="hero__zh" data-reveal data-delay="2">在 8 GB 显存上，<br>把 ComfyUI 跑明白。</p>
-        <p class="hero__lead" data-reveal data-delay="2">一份可复现的单机部署笔记：从 ROCm 环境、模型放置到第一张真实出图，每一步都有记录可查。</p>
+        <p class="eyebrow" data-reveal>Windows + Ubuntu · ROCm</p>
+        <h1 class="hero__latin hero__latin--name" id="hero-title" data-reveal data-delay="1">ComfyUI <em>on AMD.</em></h1>
+        <p class="hero__zh" data-reveal data-delay="2">装环境、放模型，<br>跑出第一张图。</p>
         <div class="hero__actions" data-reveal data-delay="3">
           <a class="btn btn--primary" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/01-hardware.md">开始读教程 <span class="a" aria-hidden="true">↗</span></a>
           <a class="btn" href="#models">浏览模型出图 <span class="a" aria-hidden="true">↓</span></a>
           <a class="btn btn--quiet" href="report/">完整功能报告 <span class="a" aria-hidden="true">↗</span></a>
         </div>
-        <p class="hero__spec" data-reveal data-delay="3">ROCm 7.14 · PyTorch 2.12.0 · ComfyUI ce1e922 · 16 GB RAM</p>
       </div>
 
       <figure class="projector" data-reveal data-delay="2" id="projector" aria-label="模型出图投影">
@@ -460,8 +458,8 @@ button{font:inherit;color:inherit}
         </div>
         <figcaption>
           <div class="projector__cap">
-            <p class="projector__model" id="projector-model" aria-live="polite">本机投影</p>
-            <p class="projector__feature" id="projector-feature">全部图片由本机 GPU 真实生成</p>
+            <p class="projector__model" id="projector-model" aria-live="polite">模型出图</p>
+            <p class="projector__feature" id="projector-feature">本机出图</p>
           </div>
           <div class="projector__controls" role="group" aria-label="投影控制">
             <div class="projector__dots" id="projector-dots"></div>
@@ -471,7 +469,7 @@ button{font:inherit;color:inherit}
               <button class="pj-btn" type="button" id="pj-toggle" aria-label="暂停自动播放" aria-pressed="false">❚❚</button>
             </div>
           </div>
-          <p class="projector__note">所有图片均由本机 GPU 真实生成，未做后期。点开下方图版可查看提示词与参数。</p>
+          <p class="projector__note">点开图版可看提示词、参数和原始记录。</p>
         </figcaption>
       </figure>
     </div>
@@ -484,7 +482,7 @@ button{font:inherit;color:inherit}
         <div data-reveal>
           <p class="eyebrow">01 / The Plates</p>
           <h2 class="section-head__title" id="models-title">模型跑过的图，都在这里。</h2>
-          <p class="section-head__note">按模型筛选，点开任意一张查看提示词、参数与原始记录。全部为本机真实输出，未做后期。</p>
+          <p class="section-head__note">按模型筛选；点开看提示词、参数和原始记录。</p>
         </div>
         <span class="section-head__index" aria-hidden="true">01</span>
       </div>
@@ -508,7 +506,7 @@ button{font:inherit;color:inherit}
         <div data-reveal>
           <p class="eyebrow">02 / Field Manual</p>
           <h2 class="section-head__title" id="tutorial-title">按你的起点，选一条路。</h2>
-          <p class="section-head__note">第一次在 AMD 显卡上装 ComfyUI？先确认硬件，再从 Ubuntu + ROCm 走一遍完整链路。</p>
+          <p class="section-head__note">第一次装？先确认硬件，再按 Ubuntu + ROCm 走一遍。</p>
         </div>
         <span class="section-head__index" aria-hidden="true">02</span>
       </div>
@@ -519,7 +517,7 @@ button{font:inherit;color:inherit}
             <span class="manual__num">01</span>
             <span>
               <span class="manual__title">先确认硬件</span>
-              <span class="manual__desc">你的显卡、系统与版本组合是否适用；8 GB 显存在这里的真实含义。</span>
+              <span class="manual__desc">你的卡、系统和版本。</span>
             </span>
             <span class="manual__arrow" aria-hidden="true">↗</span>
           </a>
@@ -529,7 +527,7 @@ button{font:inherit;color:inherit}
             <span class="manual__num">03</span>
             <span>
               <span class="manual__title">Ubuntu + ROCm</span>
-              <span class="manual__desc">唯一从全新独立环境完成全链路验证的安装路径。</span>
+              <span class="manual__desc">从零安装 ROCm 环境。</span>
             </span>
             <span class="manual__arrow" aria-hidden="true">↗</span>
           </a>
@@ -539,7 +537,7 @@ button{font:inherit;color:inherit}
             <span class="manual__num">04</span>
             <span>
               <span class="manual__title">第一张图</span>
-              <span class="manual__desc">装完先验证 GPU 真的能出图，再谈其他功能。</span>
+              <span class="manual__desc">用一张图确认能跑。</span>
             </span>
             <span class="manual__arrow" aria-hidden="true">↗</span>
           </a>
@@ -549,7 +547,7 @@ button{font:inherit;color:inherit}
             <span class="manual__num">08</span>
             <span>
               <span class="manual__title">AMD 卡适配矩阵</span>
-              <span class="manual__desc">不是 RX 6650 XT？先看三档结论，避免把单卡结论当通用兼容性。</span>
+              <span class="manual__desc">换一张卡时先看这里。</span>
             </span>
             <span class="manual__arrow" aria-hidden="true">↗</span>
           </a>
@@ -572,7 +570,7 @@ button{font:inherit;color:inherit}
 
       <div class="library__grid">
         <div data-reveal>
-          <p class="library__lead">UI 工作流与对应 API 文件已通过真实前端导入/导出检查，其中 184 份已在本机安装验证。每条工作流都对应到功能报告里的真实案例与提示词。</p>
+          <p class="library__lead">UI 与 API 文件成对提供，导入即可运行。</p>
           <p class="manual__foot"><a class="btn" href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/06-workflows.md">安装与命名规则 <span class="a" aria-hidden="true">↗</span></a></p>
         </div>
         <div class="library__downloads" data-reveal data-delay="1">
@@ -624,7 +622,7 @@ button{font:inherit;color:inherit}
         <span class="section-head__index" aria-hidden="true">04</span>
       </div>
 
-      <p class="record__body" data-reveal>一个案例 = 提示词 + 工作流 + 真实出图 + 耗时 + 结论。记录按平台分开，所有尝试——包括没有出图的那些——都保留原样。</p>
+      <p class="record__body" data-reveal>一个案例 = 提示词 + 工作流 + 出图 + 耗时 + 结论。</p>
 
       <div class="record__ledger" data-reveal>
         <div class="ledger-wrap">
@@ -643,7 +641,7 @@ button{font:inherit;color:inherit}
         <div>
           <p class="report-card__label">Complete Feature Report</p>
           <h3>打开完整功能报告</h3>
-          <p>逐项提示词、工作流、真实出图、耗时与结论 · 按平台分别记录</p>
+          <p>逐项提示词、工作流、出图、耗时与结论</p>
         </div>
         <span class="report-card__arrow" aria-hidden="true">↗</span>
       </a>
@@ -651,7 +649,7 @@ button{font:inherit;color:inherit}
       <div class="record__links" data-reveal>
         <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/reference/evidence-and-privacy.md">证据与隐私</a>
         <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/reference/failure-tracker.md">故障追踪</a>
-        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/08-amd-matrix.md">不是 RX 6650 XT？看适配矩阵</a>
+        <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide/blob/main/docs/tutorial/08-amd-matrix.md">看适配矩阵</a>
       </div>
     </div>
   </section>
@@ -661,8 +659,8 @@ button{font:inherit;color:inherit}
   <div class="wrap">
     <div class="footer__top">
       <div>
-        <p class="footer__brand">AMD ComfyUI Guide <em>— tested end to end on 8 GB.</em></p>
-        <p class="footer__tag">RX 6650 XT 实测记录 · 7 个模型系列 · 268 份工作流</p>
+        <p class="footer__brand">在 AMD 显卡上跑 ComfyUI 的实测笔记。</p>
+        <p class="footer__tag">7 个模型系列 · 268 份工作流 · MIT License</p>
       </div>
       <nav class="footer__links" aria-label="页脚链接">
         <a href="https://github.com/AiKiAi-stack/amd-comfyui-guide">GitHub 仓库</a>
@@ -673,8 +671,8 @@ button{font:inherit;color:inherit}
       </nav>
     </div>
     <div class="footer__bottom">
-      <p>单机实测记录，不是 AMD 显卡兼容性列表。</p>
-      <p>© 2026 AiKiAi-stack · 所有出图均由本机 GPU 生成</p>
+      <p>单机实测记录，不是显卡兼容性列表。</p>
+      <p>© 2026 AiKiAi-stack</p>
     </div>
   </div>
 </footer>
@@ -837,7 +835,7 @@ button{font:inherit;color:inherit}
       media.className = 'plate__media';
       const img = document.createElement('img');
       img.src = p.image;
-      img.alt = (model ? model.label : '') + ' · ' + (p.feature || '') + ' · 本机真实输出';
+      img.alt = (model ? model.label : '') + ' · ' + (p.feature || '') + ' · 本机出图';
       img.width = p.width || 512; img.height = p.height || 512;
       img.loading = 'lazy'; img.decoding = 'async';
       const no = document.createElement('span');
@@ -917,7 +915,7 @@ button{font:inherit;color:inherit}
     lbIndex = i;
     const model = state.models.find((m) => m.id === p.model_id);
     lbImg.src = p.image;
-    lbImg.alt = (model ? model.label : '') + ' · ' + (p.feature || '') + ' · 本机真实输出';
+    lbImg.alt = (model ? model.label : '') + ' · ' + (p.feature || '') + ' · 本机出图';
     lbImg.width = p.width || 512; lbImg.height = p.height || 512;
     lbNo.textContent = 'Plate ' + pad(i + 1);
     lbTitle.textContent = model ? model.label : '本机出图';
