@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="assets/banner.webp" alt="AMD ComfyUI Guide — ComfyUI on AMD, tested end to end" width="100%">
+<img src="assets/banner.webp" alt="AMD ComfyUI Guide — ComfyUI on AMD Radeon GPUs" width="100%">
 
 # AMD ComfyUI Guide
 
-**ComfyUI on AMD — tested end to end.**
+**ComfyUI on AMD Radeon GPUs.**
 
 Step-by-step setup for Windows and Ubuntu, a tested feature catalog, ready-to-use
-workflows, and every result documented on an RX 6650 XT (8 GB).
+workflows, and a record behind every result.
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -21,9 +21,9 @@ workflows, and every result documented on an RX 6650 XT (8 GB).
 
 ## What this is
 
-A deployment guide for running ComfyUI image generation on AMD Radeon GPUs, backed by a reproducible evidence set. It starts with a verified step-by-step setup on one machine — RX 6650 XT, 8 GB VRAM, Windows 10 and Ubuntu 22.04.5 + ROCm 7.14 — then documents 40 features across 7 model families: what worked, what partially worked, what failed, and why.
+A deployment guide for running ComfyUI image generation on AMD Radeon GPUs, backed by a reproducible evidence set. It starts with a verified step-by-step setup on one machine (Windows 10 and Ubuntu 22.04.5 + ROCm 7.14), then documents 40 features across 7 model families: what worked, what partially worked, what failed, and why.
 
-- **Verified hardware:** AMD Radeon RX 6650 XT (gfx1032) · 16 GB RAM
+- **Verified on:** AMD Radeon RX 6650 XT (gfx1032) · 8 GB VRAM · 16 GB RAM
 - **Verified stack:** Ubuntu 22.04.5 · ROCm 7.14 · PyTorch 2.12.0 · ComfyUI `ce1e922`
 - **Audience:** anyone with an AMD GPU who wants to know whether a ComfyUI feature runs — and how
 
@@ -47,7 +47,7 @@ Open the **[full report](https://aikiai-stack.github.io/amd-comfyui-guide/)** �
 
 ## Quick start
 
-1. **Check your hardware** — [hardware & versions](docs/tutorial/01-hardware.md). Not an RX 6650 XT? Read the [support matrix](docs/tutorial/08-amd-matrix.md) first.
+1. **Check your hardware** — [hardware & versions](docs/tutorial/01-hardware.md). On another card? Read the [support matrix](docs/tutorial/08-amd-matrix.md) first.
 2. **Install** — [Windows](docs/tutorial/02-windows-setup.md) or [Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md). Ubuntu is the only path verified from a fresh, independent environment.
 3. **Generate your first image** — [first image](docs/tutorial/04-first-image.md), then pick a workflow from the [workflow library](docs/tutorial/06-workflows.md).
 
