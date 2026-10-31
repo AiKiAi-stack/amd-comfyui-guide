@@ -34,7 +34,7 @@ Glyph coverage policy
   ``--coverage`` as ``system fallback`` warnings, not hard failures.
 
 Font families / files (keep stable: index.html references them):
-    Instrument Serif  -> instrument-serif-400.woff2, instrument-serif-400-italic.woff2
+    Alegreya          -> alegreya-400.woff2, alegreya-400-italic.woff2
     Noto Serif SC     -> noto-serif-sc-500.woff2, noto-serif-sc-600.woff2
     IBM Plex Sans     -> ibm-plex-sans-400.woff2, ibm-plex-sans-500.woff2
     IBM Plex Mono     -> ibm-plex-mono-400.woff2, ibm-plex-mono-500.woff2
@@ -74,27 +74,29 @@ FIXED_TS = 3156192000
 
 FONTS = [
     dict(
-        key="instrument-serif-400",
-        file="instrument-serif-400.woff2",
-        family="Instrument Serif",
+        key="alegreya-400",
+        file="alegreya-400.woff2",
+        family="Alegreya",
         subfamily="Regular",
-        ps_name="InstrumentSerif-Regular",
+        ps_name="Alegreya-Regular",
         weight=400,
         style="normal",
         kind="latin",
-        src="instrumentserif/InstrumentSerif-Regular.ttf",
+        src="alegreya/Alegreya[wght].ttf",
+        axes={"wght": 400},
         size_target_kb=60,
     ),
     dict(
-        key="instrument-serif-400-italic",
-        file="instrument-serif-400-italic.woff2",
-        family="Instrument Serif",
+        key="alegreya-400-italic",
+        file="alegreya-400-italic.woff2",
+        family="Alegreya",
         subfamily="Italic",
-        ps_name="InstrumentSerif-Italic",
+        ps_name="Alegreya-Italic",
         weight=400,
         style="italic",
         kind="latin",
-        src="instrumentserif/InstrumentSerif-Italic.ttf",
+        src="alegreya/Alegreya-Italic[wght].ttf",
+        axes={"wght": 400},
         size_target_kb=60,
     ),
     dict(
@@ -221,11 +223,11 @@ _JD = "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl"
 _RAW = "https://raw.githubusercontent.com/google/fonts/main/ofl"
 
 FONT_SOURCES = {
-    "instrumentserif": {
+    "alegreya": {
         "urls": {
-            "InstrumentSerif-Regular.ttf": f"{_JD}/instrumentserif/InstrumentSerif-Regular.ttf",
-            "InstrumentSerif-Italic.ttf": f"{_JD}/instrumentserif/InstrumentSerif-Italic.ttf",
-            "OFL.txt": f"{_JD}/instrumentserif/OFL.txt",
+            "Alegreya[wght].ttf": f"{_RAW}/alegreya/Alegreya%5Bwght%5D.ttf",
+            "Alegreya-Italic[wght].ttf": f"{_RAW}/alegreya/Alegreya-Italic%5Bwght%5D.ttf",
+            "OFL.txt": f"{_RAW}/alegreya/OFL.txt",
         },
     },
     "ibmplexsans": {
@@ -265,7 +267,7 @@ FONT_SOURCES = {
 
 # License copies committed next to the fonts: output name -> (source dir, OFL file)
 OFL_COPIES = {
-    "OFL-InstrumentSerif.txt": ("instrumentserif", "OFL.txt"),
+    "OFL-Alegreya.txt": ("alegreya", "OFL.txt"),
     "OFL-IBMPlexSans.txt": ("ibmplexsans", "OFL.txt"),
     "OFL-IBMPlexMono.txt": ("ibmplexmono", "OFL.txt"),
     "OFL-NotoSerifSC.txt": ("notoserifsc", "OFL.txt"),
@@ -314,7 +316,7 @@ UI_SYMBOLS_CODEPOINTS = frozenset(ord(c) for c in UI_SYMBOLS)
 
 # CSS stacks the coverage check simulates (Latin face first, CJK face second,
 # UI symbol fallback last).
-DISPLAY_STACK = ["instrument-serif-400", "instrument-serif-400-italic",
+DISPLAY_STACK = ["alegreya-400", "alegreya-400-italic",
                  "noto-serif-sc-500", "noto-serif-sc-600", "ui-symbols-400"]
 BODY_STACK = ["ibm-plex-sans-400", "ibm-plex-sans-500",
               "noto-sans-sc-400", "noto-sans-sc-500", "ui-symbols-400"]
@@ -695,7 +697,7 @@ def _write_readme(stats: list[dict]) -> Path:
         "(relative `assets/fonts/...` URLs) and `font-display: swap`.",
         "",
         "**Direction:** *Darkroom Archive* — editorial serif display (Latin",
-        "*Instrument Serif*, CJK *Noto Serif SC*), refined body sans (Latin",
+        "*Alegreya*, CJK *Noto Serif SC*), refined body sans (Latin",
         "*IBM Plex Sans*, CJK *Noto Sans SC*), and *IBM Plex Mono* for metadata,",
         "eyebrows and plate numbers.",
         "",
@@ -739,7 +741,7 @@ def _write_readme(stats: list[dict]) -> Path:
         "",
         "```css",
         ':root {',
-        "  --font-display: \"Instrument Serif\", \"Noto Serif SC\", \"UI Symbols\", \"Songti SC\", Georgia, serif;",
+        "  --font-display: \"Alegreya\", \"Noto Serif SC\", \"UI Symbols\", \"Songti SC\", Georgia, serif;",
         '  --font-body: "IBM Plex Sans", "Noto Sans SC", "UI Symbols", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;',
         '  --font-mono: "IBM Plex Mono", "UI Symbols", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;',
         "}",
