@@ -18,7 +18,7 @@
 API 完成并保持了宇航员与丛林构图，细节有变化；但去噪 0.6 下未出现明显水彩纸张和笔触，不能记为风格转换成功。
 
 输入图片：
-- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
+- 输入 1 · astronaut：![输入 1 · astronaut](../report-assets/input/featurebench/astronaut.png)
 
 输出图片：
 - 无输出
@@ -178,7 +178,7 @@ workflow / api.json：[kroma-portrait-b/api.json](cases/kroma-portrait-b/api.jso
 输出出现明确水彩晕染与纸张笔触，雨街、左侧霓虹和右侧橘猫关系保留；猫由背对转成朝向镜头，街景细节也被重绘，不算严格保持原图。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -248,7 +248,7 @@ workflow / api.json：[kroma-style-source/api.json](cases/kroma-style-source/api
 遮罩内主体变成偏红橙色，耳尖较尖，尾部出现明显浅色尾尖，带有狐狸特征；但主体仍是背影，体形和坐姿也仍像猫，无法仅凭此图确认已稳定完成猫到狐的替换。雨夜街景在最终合成图中保持一致。output-audit 显示遮罩外 193,144 像素中 0 像素变化、最大通道差为 0；这是最终合成节点的像素保留结果，不归因于模型。遮罩内 69,000 像素中 66,431 像素发生变化。该图从崩溃批次恢复，API 状态为 partial_output，不能记为整批 success。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -281,8 +281,8 @@ workflow / api.json：[qwen-inpaint/api.json](cases/qwen-inpaint/api.json)
 提示词没有点名狐狸；输出清楚呈现红橙毛色、浅色胸口、黑色腿部和狐狸面部特征，并将背向镜头的猫换成同一位置附近、朝向镜头的狐狸。雨街霓虹、咖啡窗与湿地倒影仍可辨，但场景细节被重新绘制，不是像素级背景保留。该单例说明本次结果同时贴合第一图场景与第二图狐狸外观；没有消融对照，不能证明两张参考图均为必要条件，也不能据此声称精确保留了第二图身份。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../report-assets/input/featurebench/fox.png)
 
 输出图片：
 - 无输出
@@ -315,8 +315,8 @@ workflow / api.json：[qwen-multiref/api.json](cases/qwen-multiref/api.json)
 输出呈现 A 的铜红卷发、浅肤色与绿眼，脸部外观向 A 靠近；B 的藏蓝大衣、红围巾、公园背景和单人构图保留。相比 B 原有的三分之四侧脸，输出更接近正面，头部角度发生变化；雀斑较淡。外观特征转移清楚，但不据此认定精确身份复现。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
@@ -349,7 +349,7 @@ workflow / api.json：[qwen-face-swap/api.json](cases/qwen-face-swap/api.json)
 纸面纹理、柔和晕染和水彩边缘非常明显。橘猫背影、咖啡窗、雨街霓虹与湿地倒影的主体关系基本保留；窗格、植物和光色细节有重绘，不是像素级保留。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -382,7 +382,7 @@ workflow / api.json：[qwen-style-edit/api.json](cases/qwen-style-edit/api.json)
 首轮 TextGenerate 在 RX 6650 XT 上触发 HIPBLAS INT8 错误；开启 gfx1032 浮点反量化 fallback 后仍在 TextGenerate 报显存不足。此次恢复已核对 result.json 与日志；无 token、无图片，不计功能成功。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -417,7 +417,7 @@ workflow / api.json：[qwen-caption/api.json](cases/qwen-caption/api.json)
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。
 
 输入图片：
-- 输入 1 · kroma-style-source：![输入 1 · kroma-style-source](../../ComfyUI/input/featurebench/kroma-style-source.png)
+- 输入 1 · kroma-style-source：![输入 1 · kroma-style-source](../report-assets/input/featurebench/kroma-style-source.png)
 
 输出图片：
 - 无输出
@@ -451,8 +451,8 @@ workflow / api.json：[kroma-style-ref/api.json](cases/kroma-style-ref/api.json)
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../report-assets/input/featurebench/fox.png)
 
 输出图片：
 - 无输出
@@ -486,8 +486,8 @@ A 的红卷发、浅肤色、雀斑和浅绿眼特征转移，B 的蓝外套、�
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 原始 1024 参考批次反复 softmax 显存不足，随后 Fatal Python error: Aborted，无图片。保留该次证据后，使用核心 ReferenceLatent 节点改为 512 参考重试。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
@@ -520,8 +520,8 @@ workflow / api.json：[kroma-head-swap/api.json](cases/kroma-head-swap/api.json)
 输出保留 B 的黑色长发外形、藏蓝大衣、红围巾、三分之四角度和公园背景；面部明显变浅、眼睛呈绿色，五官外观靠近 A。雀斑很淡或不明显，因此只能确认部分面部特征转移，不能认定精确身份复制。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
@@ -593,7 +593,7 @@ workflow / api.json：[turbo-un-t2i/api.json](cases/turbo-un-t2i/api.json)
 工作流成功；遮罩内毛发色调、纹理和浅色尾尖有改变，但主体的背影轮廓、体形与坐姿仍贴近原猫，不能确认已稳定变成狐狸。遮罩内69,000像素中66,848像素改变；遮罩外193,144像素中0改变，最大通道差0。遮罩外像素保留由最终ImageCompositeMasked节点实现，不归因于模型本身。用时710.95秒。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -626,8 +626,8 @@ workflow / api.json：[turbo-un-inpaint/api.json](cases/turbo-un-inpaint/api.jso
 提示词没有点名狐狸；实际输出在第一图雨街咖啡窗前放入了清楚的红橙狐狸，浅色胸口、黑色腿部、浅色尾尖等特征可辨。第一图的霓虹、雨街倒影和咖啡窗大体布局保留；狐狸由原猫的背向位置转成面向镜头，背景细节有重画，不是像素级保留。没有消融对照，不据此认定精确复现第二图身份。用时1041.30秒。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../report-assets/input/featurebench/fox.png)
 
 输出图片：
 - 无输出
@@ -660,8 +660,8 @@ workflow / api.json：[turbo-un-multiref/api.json](cases/turbo-un-multiref/api.j
 实际输出呈现铜红卷发、浅肤色与绿眼，外观向A靠近；B的藏蓝大衣、红围巾和公园背景保留。原有三分之四侧转被改成接近正面，雀斑很淡，不能认定精确身份复现。与BFS LoRA对照相比，本图的侧转角度保留较差。用时990.75秒。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
@@ -694,8 +694,8 @@ workflow / api.json：[turbo-un-face-swap/api.json](cases/turbo-un-face-swap/api
 实际输出为单人侧转人像，铜红卷发、浅肤色、雀斑和绿眼特征清晰；蓝大衣、红围巾、公园背景保留。普通双图换头输出偏正面，本次 BFS LoRA 图保留了更明显的三分之四侧转角度。五官外观仍有差异，不能据单例认定精确身份复现。该对照同时增加 head_swap 前缀和 LoRA，未单独消融两者；15步、未加载 Pruna LoRA，不是官方8步配方复现。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
@@ -728,8 +728,8 @@ workflow / api.json：[qwen-bfs-head-swap/api.json](cases/qwen-bfs-head-swap/api
 原宇航员的头盔、宇航服与手套被完整替换；输出为红色短卷发、浅肤色的成年女性，穿黄褐色户外上衣、长裤和靴子。单人、全身向前行走、丛林路径、阳光束和大体构图保留，手臂位置及细节有变化。脸部在512像素全身图中较小，不能认定精确身份复现。此为普通双图图像指令编辑探索，不是H3视频换人或作者专用工作流复现。用时1055.88秒。
 
 输入图片：
-- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · astronaut：![输入 1 · astronaut](../report-assets/input/featurebench/astronaut.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
@@ -762,8 +762,8 @@ workflow / api.json：[turbo-un-role-replacement-test/api.json](cases/turbo-un-r
 输出为白底、单人、全身、短红卷发的成年女性，深青运动装与鞋；双臂近水平伸展，两脚分开，画面右侧即人物解剖学左膝弯曲，符合示意图主要目标。左侧腿比示意图更直，局部关节和手指未量化核验；脸部较小，不能认定精确身份复现。普通双图图像指令编辑，没有使用专用姿态控制网络或硬约束。用时1045.90秒。
 
 输入图片：
-- 输入 1 · pose-guide：![输入 1 · pose-guide](../../ComfyUI/input/featurebench/pose-guide.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · pose-guide：![输入 1 · pose-guide](../report-assets/input/featurebench/pose-guide.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
@@ -1225,7 +1225,7 @@ workflow / api.json：[zimage-aio-photo-8step/api.json](cases/zimage-aio-photo-8
 API终态success、PNG/history/API绑定一致，但目视检查全幅重复噪声纹理，没有可辨手提包，白包改蓝包目标失败。提交后51.18秒；保留原图、参考输入SHA与dynamic-nvme运行证据。后续迭代不能用此图作为已通过的输入。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
+- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../report-assets/input/flux2-klein-bench/handbag_white.png)
 
 输出图片：
 - 无输出
@@ -1291,8 +1291,8 @@ workflow / api.json：[flux2-klein-t2i-nvme-control/api.json](cases/flux2-klein-
 对照白色手提包和蓝底黄色Comfy图案两份输入，输出为蓝色皮革包，正面出现清楚黄色Comfy图案，包型、提手和灰背景保持。迁移图案有生成式细微变化，不宣称像素或矢量精确复制。 提交后30.53秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
-- 输入 2 · flux2-klein-bench/comfy_logo_blue.png：![输入 2 · flux2-klein-bench/comfy_logo_blue.png](../../ComfyUI/input/flux2-klein-bench/comfy_logo_blue.png)
+- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../report-assets/input/flux2-klein-bench/handbag_white.png)
+- 输入 2 · flux2-klein-bench/comfy_logo_blue.png：![输入 2 · flux2-klein-bench/comfy_logo_blue.png](../report-assets/input/flux2-klein-bench/comfy_logo_blue.png)
 
 输出图片：
 - 无输出
@@ -1325,8 +1325,8 @@ workflow / api.json：[flux2-klein-dual-logo/api.json](cases/flux2-klein-dual-lo
 恰好两名成年女性在阳光公园同框；左侧铜红卷发、雀斑和黄毛衣，右侧黑直发、蓝外套红围巾，人物属性未串换。与两张虚构参考图相比，脸型和表情有变化；本结论是目视特征保留，不是身份相似度量化。 提交后36.74秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。
 
 输入图片：
-- 输入 1 · featurebench/kroma-portrait-a.png：![输入 1 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
-- 输入 2 · featurebench/kroma-portrait-b.png：![输入 2 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
+- 输入 1 · featurebench/kroma-portrait-a.png：![输入 1 · featurebench/kroma-portrait-a.png](../report-assets/input/featurebench/kroma-portrait-a.png)
+- 输入 2 · featurebench/kroma-portrait-b.png：![输入 2 · featurebench/kroma-portrait-b.png](../report-assets/input/featurebench/kroma-portrait-b.png)
 
 输出图片：
 - 无输出
@@ -1359,7 +1359,7 @@ workflow / api.json：[flux2-klein-dual-people/api.json](cases/flux2-klein-dual-
 出现明确水彩晕染与冷压纸纹，猫背影、窗门、植物和街道构图大致保留；但原图深色雨夜与霓虹明显变浅，近似白昼光照，不能称严格保留原图环境。 提交后30.76秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -1392,7 +1392,7 @@ workflow / api.json：[flux2-klein-style/api.json](cases/flux2-klein-style/api.j
 中文指令已使白包消失，并在原灰色摄影背景中生成红色陶瓷壶状主体；但左右都像壶嘴，没有正常把手，茶壶结构明显错误。不能把对象替换API成功等同完整画质验收。 提交后25.66秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
+- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../report-assets/input/flux2-klein-bench/handbag_white.png)
 
 输出图片：
 - 无输出
@@ -1425,7 +1425,7 @@ workflow / api.json：[flux2-klein-replace-zh/api.json](cases/flux2-klein-replac
 猫被完整删除，没有可辨动物残留；原位置自然补成木质门廊/门板和植物，雨夜街道、咖啡窗和主要视角保留。细节发生重绘，没有遮罩节点或像素级背景保留保证。 提交后25.9秒，未含服务冷启动；dynamic-nvme-pinned，参考约0.25MP。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -1458,7 +1458,7 @@ workflow / api.json：[flux2-klein-remove/api.json](cases/flux2-klein-remove/api
 已对照真正输入的上一轮蓝包输出：蓝色、包型、灰背景大致保持，左侧提手根部新增红色丝质蝴蝶结，确认第二轮图像编辑生效。蝴蝶结覆盖较大包面，不满足提示词small的小尺寸要求，因此只记部分达到。输入SHA与已目视通过的single-color-pinned输出一致，未使用首轮失败噪声图。提交后25.32秒，未含服务启动。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
+- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../report-assets/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
 
 输出图片：
 - 无输出
@@ -1524,7 +1524,7 @@ workflow / api.json：[flux2-klein-t2i-pinned-control/api.json](cases/flux2-klei
 目视对照白包输入与实际输出：包身和提手均变为蓝色，保留居中手提包、皮革纹理和灰色摄影背景，包型及细节有小幅重绘，非像素保留。提交后30.52秒；恢复默认锁页内存后使用相同编辑图、权重和种子重试成功。旧禁用锁页配置的噪声图作为独立case保留；迭代编辑仅可使用本次已通过输出，derived_input哈希已与PNG一致。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
+- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../report-assets/input/flux2-klein-bench/handbag_white.png)
 
 输出图片：
 - 无输出
@@ -1557,7 +1557,7 @@ workflow / api.json：[flux2-klein-single-color-pinned/api.json](cases/flux2-kle
 CPU文本/视觉编码重试在 TextGenerate 失败，DefaultCPUAllocator 申请 2,489,319,424 字节失败。提交后 540.84 秒，无 text_outputs、无 images。此前 GPU INT8 错误与浮点回退后的 OOM 仍保留；本次 CPU 重试也未完成自动反推后再生成。依据 result.json 的错误终态补记，不冒充视觉验收。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
@@ -1593,10 +1593,10 @@ workflow / api.json：[qwen-caption-cpu/api.json](cases/qwen-caption-cpu/api.jso
 修复原 qwen-caption 失败：限制 INT8 输出层临时矩阵，并隔离编码与采样进程。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/qwen-caption-gpu-chunked_00001_.png)
+![输出 1](../report-assets/output/RepairBench/qwen-caption-gpu-chunked_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1629,10 +1629,10 @@ workflow / api.json：[qwen-caption-gpu-chunked/api.json](cases/qwen-caption-gpu
 实际查看：白包替换成红色陶瓷茶壶，左侧单壶嘴、右侧正常环形把手和壶盖完整，无重复壶嘴；浅灰背景与产品摄影保持。通过明确中文结构描述改善本案例，未证明模型所有茶壶结构稳定。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../../ComfyUI/input/flux2-klein-bench/handbag_white.png)
+- 输入 1 · flux2-klein-bench/handbag_white.png：![输入 1 · flux2-klein-bench/handbag_white.png](../report-assets/input/flux2-klein-bench/handbag_white.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/flux2-teapot-structure_00001_.png)
+![输出 1](../report-assets/output/RepairBench/flux2-teapot-structure_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1664,10 +1664,10 @@ workflow / api.json：[flux2-teapot-structure/api.json](cases/flux2-teapot-struc
 蓝包与左侧提手红蝴蝶结清楚，但带飘带的整个红饰物仍约占包宽三成，明显超过新提示词的 8% 尺寸要求。尺寸未修复，保留失败效果。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
+- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../report-assets/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/flux2-tiny-bow_00001_.png)
+![输出 1](../report-assets/output/RepairBench/flux2-tiny-bow_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1699,10 +1699,10 @@ workflow / api.json：[flux2-tiny-bow/api.json](cases/flux2-tiny-bow/api.json)
 实际查看：纸纹、透明水彩与雨线明显，猫背向和橱窗构图保留；深蓝街道、霓虹与暖灯仍为夜间人工照明，没有再变成日景。猫毛与窗内细节有风格重画，不是像素或精确身份保持。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/flux2-watercolor-night_00001_.png)
+![输出 1](../report-assets/output/RepairBench/flux2-watercolor-night_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1737,7 +1737,7 @@ workflow / api.json：[flux2-watercolor-night/api.json](cases/flux2-watercolor-n
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/flux2-1024-attention_00001_.png)
+![输出 1](../report-assets/output/RepairBench/flux2-1024-attention_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1775,16 +1775,16 @@ workflow / api.json：[flux2-1024-attention/api.json](cases/flux2-1024-attention
 完整执行成功。实际查看：主体有长尖嘴、黑耳背、黑腿与大面积白尾尖，明确为狐狸；身体仍背向，头略向右转露出吻部。最终合成保证遮罩外像素保持，不能归功于模型本身的局部精度。灰化原猫参考区域并增加狐狸参考，属于条件和提示词调整，不证明精确身份复刻。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../report-assets/input/featurebench/fox.png)
 
 输出图片：
 - 无输出
 
 附件：
-- qwen-mask-fox-reference-input_00001_.png：![qwen-mask-fox-reference-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-mask-fox-reference-input_00001_.png)
-- qwen-mask-fox-reference-mask_00001_.png：![qwen-mask-fox-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-mask-fox-reference-mask_00001_.png)
-- qwen-mask-fox-reference_00001_.png：![qwen-mask-fox-reference_00001_.png](../../ComfyUI/output/RepairBench/qwen-mask-fox-reference_00001_.png)
+- qwen-mask-fox-reference-input_00001_.png：![qwen-mask-fox-reference-input_00001_.png](../report-assets/output/RepairBench/qwen-mask-fox-reference-input_00001_.png)
+- qwen-mask-fox-reference-mask_00001_.png：![qwen-mask-fox-reference-mask_00001_.png](../report-assets/output/RepairBench/qwen-mask-fox-reference-mask_00001_.png)
+- qwen-mask-fox-reference_00001_.png：![qwen-mask-fox-reference_00001_.png](../report-assets/output/RepairBench/qwen-mask-fox-reference_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1822,15 +1822,15 @@ workflow / api.json：[qwen-mask-fox-reference/api.json](cases/qwen-mask-fox-ref
 狐狸物种、黑腿和白胸清楚，正面姿态与参考接近，背景通过局部合成保留。仍不能确认精确身份：眼色有差异，右侧尾巴被边缘裁切，白尾尖没有完整出现。主体融合改善但未完全验收；遮罩外保持由合成提供。自动缓存配置将每步约38秒的重算降至后续约4秒，本轮完成约104秒，不代表长期稳定。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/qwen-multiref-local-composite_00001_.png)
+![输出 1](../report-assets/output/RepairBench/qwen-multiref-local-composite_00001_.png)
 
 附件：
-- qwen-multiref-local-composite-input_00001_.png：![qwen-multiref-local-composite-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-local-composite-input_00001_.png)
-- qwen-multiref-local-composite-mask_00001_.png：![qwen-multiref-local-composite-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-local-composite-mask_00001_.png)
+- qwen-multiref-local-composite-input_00001_.png：![qwen-multiref-local-composite-input_00001_.png](../report-assets/output/RepairBench/qwen-multiref-local-composite-input_00001_.png)
+- qwen-multiref-local-composite-mask_00001_.png：![qwen-multiref-local-composite-mask_00001_.png](../report-assets/output/RepairBench/qwen-multiref-local-composite-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1868,16 +1868,16 @@ workflow / api.json：[qwen-multiref-local-composite/api.json](cases/qwen-multir
 左向三分之四侧脸保持，铜红卷发、绿色眼睛和雀斑已转移，海军蓝大衣、红围巾及背景保留。右侧仍有一缕原黑长发残留，精确五官身份也未证明；因此仅部分达到。遮罩外像素保留来自最终合成。
 
 输入图片：
-- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
 
 附件：
-- qwen-head-direction-mask-input_00001_.png：![qwen-head-direction-mask-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-head-direction-mask-input_00001_.png)
-- qwen-head-direction-mask-mask_00001_.png：![qwen-head-direction-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-head-direction-mask-mask_00001_.png)
-- qwen-head-direction-mask_00001_.png：![qwen-head-direction-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-head-direction-mask_00001_.png)
+- qwen-head-direction-mask-input_00001_.png：![qwen-head-direction-mask-input_00001_.png](../report-assets/output/RepairBench/qwen-head-direction-mask-input_00001_.png)
+- qwen-head-direction-mask-mask_00001_.png：![qwen-head-direction-mask-mask_00001_.png](../report-assets/output/RepairBench/qwen-head-direction-mask-mask_00001_.png)
+- qwen-head-direction-mask_00001_.png：![qwen-head-direction-mask_00001_.png](../report-assets/output/RepairBench/qwen-head-direction-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1915,16 +1915,16 @@ workflow / api.json：[qwen-head-direction-mask/api.json](cases/qwen-head-direct
 单独进程完成。黑发、左向三分之四侧脸、蓝大衣和红围巾保留；面部有浅雀斑与绿眼。与参考 A 对照，眼形、鼻形和雀斑分布仍有差异，不能认定精确身份迁移，仍部分达到。
 
 输入图片：
-- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
 
 附件：
-- qwen-face-only-mask-input_00001_.png：![qwen-face-only-mask-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-mask-input_00001_.png)
-- qwen-face-only-mask-mask_00001_.png：![qwen-face-only-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-mask-mask_00001_.png)
-- qwen-face-only-mask_00001_.png：![qwen-face-only-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-mask_00001_.png)
+- qwen-face-only-mask-input_00001_.png：![qwen-face-only-mask-input_00001_.png](../report-assets/output/RepairBench/qwen-face-only-mask-input_00001_.png)
+- qwen-face-only-mask-mask_00001_.png：![qwen-face-only-mask-mask_00001_.png](../report-assets/output/RepairBench/qwen-face-only-mask-mask_00001_.png)
+- qwen-face-only-mask_00001_.png：![qwen-face-only-mask_00001_.png](../report-assets/output/RepairBench/qwen-face-only-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -1962,16 +1962,16 @@ workflow / api.json：[qwen-face-only-mask/api.json](cases/qwen-face-only-mask/a
 15 步采样保存 latent 后退出，再由独立 CPU 进程完成 VAE 解码和 PNG。左向三分之四头向、铜红卷发、雀斑、绿眼和蓝大衣红围巾保留；右侧仍有细束黑发残留，五官与参考 A 仍有差异，精确身份未通过。遮罩外保持由最终合成实现。
 
 输入图片：
-- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
 
 附件：
-- qwen-bfs-direction-mask-input_00001_.png：![qwen-bfs-direction-mask-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-direction-mask-input_00001_.png)
-- qwen-bfs-direction-mask-mask_00001_.png：![qwen-bfs-direction-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-direction-mask-mask_00001_.png)
-- qwen-bfs-direction-mask_00001_.png：![qwen-bfs-direction-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-direction-mask_00001_.png)
+- qwen-bfs-direction-mask-input_00001_.png：![qwen-bfs-direction-mask-input_00001_.png](../report-assets/output/RepairBench/qwen-bfs-direction-mask-input_00001_.png)
+- qwen-bfs-direction-mask-mask_00001_.png：![qwen-bfs-direction-mask-mask_00001_.png](../report-assets/output/RepairBench/qwen-bfs-direction-mask-mask_00001_.png)
+- qwen-bfs-direction-mask_00001_.png：![qwen-bfs-direction-mask_00001_.png](../report-assets/output/RepairBench/qwen-bfs-direction-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2003,10 +2003,10 @@ workflow / api.json：[qwen-bfs-direction-mask/api.json](cases/qwen-bfs-directio
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 黑图问题已避开，蓝橙森林纸纹正常，出现猫头鹰；但原狐狸仍完整留在画面中，未满足仅新主体、不要狐狸。保留此未达完整目标的对照。
 
 输入图片：
-- 输入 1 · featurebench/kroma-style-source.png：![输入 1 · featurebench/kroma-style-source.png](../../ComfyUI/input/featurebench/kroma-style-source.png)
+- 输入 1 · featurebench/kroma-style-source.png：![输入 1 · featurebench/kroma-style-source.png](../report-assets/input/featurebench/kroma-style-source.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-style-owl-explicit_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-style-owl-explicit_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2038,10 +2038,10 @@ workflow / api.json：[kroma-style-owl-explicit/api.json](cases/kroma-style-owl-
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 将同一参考图裁取左上森林/配色区域（x40、y25、400×125）再编码，排除原狐狸主体。输出为枝上的清楚猫头鹰，蓝橙双色与纸纹/版画风格保留，画面未复制狐狸。属于本案例的参考内容控制改进，不宣称通用风格分离。
 
 输入图片：
-- 输入 1 · featurebench/kroma-style-source.png：![输入 1 · featurebench/kroma-style-source.png](../../ComfyUI/input/featurebench/kroma-style-source.png)
+- 输入 1 · featurebench/kroma-style-source.png：![输入 1 · featurebench/kroma-style-source.png](../report-assets/input/featurebench/kroma-style-source.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-style-no-subject-reference_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-style-no-subject-reference_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2073,10 +2073,10 @@ workflow / api.json：[kroma-style-no-subject-reference/api.json](cases/kroma-st
 正常水彩笔触与纸面感、雨夜红色倒影及窗边猫保留；denoise 从 0.6 降为 0.4 仍把原严格背向猫改为可见眼鼻的侧脸，姿态目标未通过。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-watercolor-denoise040_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-watercolor-denoise040_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2108,11 +2108,11 @@ workflow / api.json：[kroma-watercolor-denoise040/api.json](cases/kroma-waterco
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 修正奇数查询切片并升精度后完成四步与解码。侧脸方向、红卷发、雀斑和绿眼转移；但头部偏大、黑发明显残留，颈部/围巾有叠影与接缝，身份不精确，不能作为可用换头成品验收。
 
 输入图片：
-- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-head-direction-mask_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-head-direction-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2147,7 +2147,7 @@ workflow / api.json：[kroma-head-direction-mask/api.json](cases/kroma-head-dire
 - 此功能没有输入图片。
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/zimage-cpu-text-fp16_00001_.png)
+![输出 1](../report-assets/output/RepairBench/zimage-cpu-text-fp16_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2185,16 +2185,16 @@ workflow / api.json：[zimage-cpu-text-fp16/api.json](cases/zimage-cpu-text-fp16
 左三分之四侧转、短红卷发及原深蓝外套红围巾保留，扩大遮罩后没有旧黑发长条；雀斑偏弱、五官身份仍与 A 有差异，身份复现部分达到。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
 - 无输出
 
 附件：
-- turbo-head-direction-mask-input_00001_.png：![turbo-head-direction-mask-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-head-direction-mask-input_00001_.png)
-- turbo-head-direction-mask-mask_00001_.png：![turbo-head-direction-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-head-direction-mask-mask_00001_.png)
-- turbo-head-direction-mask_00001_.png：![turbo-head-direction-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-head-direction-mask_00001_.png)
+- turbo-head-direction-mask-input_00001_.png：![turbo-head-direction-mask-input_00001_.png](../report-assets/output/RepairBench/turbo-head-direction-mask-input_00001_.png)
+- turbo-head-direction-mask-mask_00001_.png：![turbo-head-direction-mask-mask_00001_.png](../report-assets/output/RepairBench/turbo-head-direction-mask-mask_00001_.png)
+- turbo-head-direction-mask_00001_.png：![turbo-head-direction-mask_00001_.png](../report-assets/output/RepairBench/turbo-head-direction-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2226,10 +2226,10 @@ workflow / api.json：[turbo-head-direction-mask/api.json](cases/turbo-head-dire
 蓝包与灰色摄影背景保留，蝴蝶结比首轮小，但红色包围框宽 48px，占包体宽 259px 的 18.5%，仍明显超过指甲/背带宽度要求；直接提示词尺寸控制未通过。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
+- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../report-assets/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/flux2-tiny-bow-fingertip_00001_.png)
+![输出 1](../report-assets/output/RepairBench/flux2-tiny-bow-fingertip_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2261,10 +2261,10 @@ workflow / api.json：[flux2-tiny-bow-fingertip/api.json](cases/flux2-tiny-bow-f
 明确背面提示后，水彩纸面、松散笔触、深色雨夜与暖红反射清楚；猫严格背向，没有眼鼻侧脸，原窗边构图保留。本固定输入配方目视通过。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-watercolor-back-view_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-watercolor-back-view_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2302,15 +2302,15 @@ workflow / api.json：[kroma-watercolor-back-view/api.json](cases/kroma-watercol
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 只将两路 VAE 参考降至 384 后完成 512 输出。正面狐狸清楚，但苔石仍污染咖啡馆前景、右边残留原主体重影，身份也有差异；执行成功，合成质量部分达到。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-ref384_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-multiref-ref384_00001_.png)
 
 附件：
-- kroma-multiref-ref384-input_00001_.png：![kroma-multiref-ref384-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-ref384-input_00001_.png)
-- kroma-multiref-ref384-mask_00001_.png：![kroma-multiref-ref384-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-ref384-mask_00001_.png)
+- kroma-multiref-ref384-input_00001_.png：![kroma-multiref-ref384-input_00001_.png](../report-assets/output/RepairBench/kroma-multiref-ref384-input_00001_.png)
+- kroma-multiref-ref384-mask_00001_.png：![kroma-multiref-ref384-mask_00001_.png](../report-assets/output/RepairBench/kroma-multiref-ref384-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2342,10 +2342,10 @@ workflow / api.json：[kroma-multiref-ref384/api.json](cases/kroma-multiref-ref3
 显式 FP16 UNet 后八步采样完整完成，保留丛林中的全身宇航员；画面仍接近摄影，粗纸与水彩笔触没有明确达到，风格转换部分达到。
 
 输入图片：
-- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
+- 输入 1 · astronaut：![输入 1 · astronaut](../report-assets/input/featurebench/astronaut.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/moss-watercolor-denoise085_00001_.png)
+![输出 1](../report-assets/output/RepairBench/moss-watercolor-denoise085_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2383,15 +2383,15 @@ workflow / api.json：[moss-watercolor-denoise085/api.json](cases/moss-watercolo
 复用已校验的原 15 步 BFS latent，仅将最终合成遮罩扩大至覆盖长黑发并改用 CPU tiled VAE。红卷发、侧转、衣服保留且旧黑发条消除；五官仍与参考不同，身份目标部分达到；不冒充重新采样。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled_00001_.png)
+![输出 1](../report-assets/output/RepairBench/qwen-bfs-full-hair-tiled_00001_.png)
 
 附件：
-- qwen-bfs-full-hair-tiled-input_00001_.png：![qwen-bfs-full-hair-tiled-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-input_00001_.png)
-- qwen-bfs-full-hair-tiled-mask_00001_.png：![qwen-bfs-full-hair-tiled-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-mask_00001_.png)
+- qwen-bfs-full-hair-tiled-input_00001_.png：![qwen-bfs-full-hair-tiled-input_00001_.png](../report-assets/output/RepairBench/qwen-bfs-full-hair-tiled-input_00001_.png)
+- qwen-bfs-full-hair-tiled-mask_00001_.png：![qwen-bfs-full-hair-tiled-mask_00001_.png](../report-assets/output/RepairBench/qwen-bfs-full-hair-tiled-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2429,15 +2429,15 @@ workflow / api.json：[qwen-bfs-full-hair-tiled/api.json](cases/qwen-bfs-full-ha
 修正本次新增附件的两个悬空节点引用，复用原成功编码/采样归档后完整解码。主体有黑耳、蓬松白尖尾，但背向圆头和身体仍偏猫、长吻不可见，不能确认完整狐狸替换，部分达到。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
 - 无输出
 
 附件：
-- turbo-mask-fox-reference-input_00001_.png：![turbo-mask-fox-reference-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-mask-fox-reference-input_00001_.png)
-- turbo-mask-fox-reference-mask_00001_.png：![turbo-mask-fox-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-mask-fox-reference-mask_00001_.png)
-- turbo-mask-fox-reference_00001_.png：![turbo-mask-fox-reference_00001_.png](../../ComfyUI/output/RepairBench/turbo-mask-fox-reference_00001_.png)
+- turbo-mask-fox-reference-input_00001_.png：![turbo-mask-fox-reference-input_00001_.png](../report-assets/output/RepairBench/turbo-mask-fox-reference-input_00001_.png)
+- turbo-mask-fox-reference-mask_00001_.png：![turbo-mask-fox-reference-mask_00001_.png](../report-assets/output/RepairBench/turbo-mask-fox-reference-mask_00001_.png)
+- turbo-mask-fox-reference_00001_.png：![turbo-mask-fox-reference_00001_.png](../report-assets/output/RepairBench/turbo-mask-fox-reference_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2475,15 +2475,15 @@ workflow / api.json：[turbo-mask-fox-reference/api.json](cases/turbo-mask-fox-r
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 裁掉苔石并清除原猫后，输出不再有苔石和猫重影，狐狸外形清楚；但中性参考的灰色矩形被迁入背景，前景融合仍失败。记录为部分达到，不作为干净合成验收。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-clean-reference_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-multiref-clean-reference_00001_.png)
 
 附件：
-- kroma-multiref-clean-reference-input_00001_.png：![kroma-multiref-clean-reference-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-clean-reference-input_00001_.png)
-- kroma-multiref-clean-reference-mask_00001_.png：![kroma-multiref-clean-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-clean-reference-mask_00001_.png)
+- kroma-multiref-clean-reference-input_00001_.png：![kroma-multiref-clean-reference-input_00001_.png](../report-assets/output/RepairBench/kroma-multiref-clean-reference-input_00001_.png)
+- kroma-multiref-clean-reference-mask_00001_.png：![kroma-multiref-clean-reference-mask_00001_.png](../report-assets/output/RepairBench/kroma-multiref-clean-reference-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2515,10 +2515,10 @@ workflow / api.json：[kroma-multiref-clean-reference/api.json](cases/kroma-mult
 使用同一已存在 SFT 基础权重，移除八步 DMD LoRA，28 步/CFG3/denoise0.85、FP16 UNet。输出有明确水彩大笔触、绿叶晕染与粗纸纹，保留丛林、白色全身宇航员和行走构图；本固定输入配方目视通过，八步风格不足对照保留。
 
 输入图片：
-- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
+- 输入 1 · astronaut：![输入 1 · astronaut](../report-assets/input/featurebench/astronaut.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/moss-watercolor-base-sft_00001_.png)
+![输出 1](../report-assets/output/RepairBench/moss-watercolor-base-sft_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2557,15 +2557,15 @@ workflow / api.json：[moss-watercolor-base-sft/api.json](cases/moss-watercolor-
 尺寸合成规避：复用上一轮 FLUX 生成的蝴蝶结，裁切56×49后缩至22×20，用红色阈值遮罩贴在原蓝包左背带底部。目视小红结尺寸合适、蓝包和灰背景保留；这是明确像素控制的后处理通过，不代表直接模型尺寸指令已修复。
 
 输入图片：
-- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../../ComfyUI/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
-- 输入 2 · repair_inputs/flux2-bow-large.png：![输入 2 · repair_inputs/flux2-bow-large.png](../../ComfyUI/input/repair_inputs/flux2-bow-large.png)
+- 输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png：![输入 1 · flux2-klein-bench/flux2-klein-single-color-pinned.png](../report-assets/input/flux2-klein-bench/flux2-klein-single-color-pinned.png)
+- 输入 2 · repair_inputs/flux2-bow-large.png：![输入 2 · repair_inputs/flux2-bow-large.png](../report-assets/input/repair_inputs/flux2-bow-large.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite_00001_.png)
+![输出 1](../report-assets/output/RepairBench/flux2-tiny-bow-sized-composite_00001_.png)
 
 附件：
-- flux2-tiny-bow-sized-composite-input_00001_.png：![flux2-tiny-bow-sized-composite-input_00001_.png](../../ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-input_00001_.png)
-- flux2-tiny-bow-sized-composite-mask_00001_.png：![flux2-tiny-bow-sized-composite-mask_00001_.png](../../ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-mask_00001_.png)
+- flux2-tiny-bow-sized-composite-input_00001_.png：![flux2-tiny-bow-sized-composite-input_00001_.png](../report-assets/output/RepairBench/flux2-tiny-bow-sized-composite-input_00001_.png)
+- flux2-tiny-bow-sized-composite-mask_00001_.png：![flux2-tiny-bow-sized-composite-mask_00001_.png](../report-assets/output/RepairBench/flux2-tiny-bow-sized-composite-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2603,15 +2603,15 @@ workflow / api.json：[flux2-tiny-bow-sized-composite/api.json](cases/flux2-tiny
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 去除人工灰底、使用自然狐狸头/躯干裁切后，灰板、苔石、原猫重影消失，狐狸明确且场景融合改善；但最终遮罩在y500截止，尾尖被边界截断，仍部分达到。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-natural-crop_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-multiref-natural-crop_00001_.png)
 
 附件：
-- kroma-multiref-natural-crop-input_00001_.png：![kroma-multiref-natural-crop-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-natural-crop-input_00001_.png)
-- kroma-multiref-natural-crop-mask_00001_.png：![kroma-multiref-natural-crop-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-natural-crop-mask_00001_.png)
+- kroma-multiref-natural-crop-input_00001_.png：![kroma-multiref-natural-crop-input_00001_.png](../report-assets/output/RepairBench/kroma-multiref-natural-crop-input_00001_.png)
+- kroma-multiref-natural-crop-mask_00001_.png：![kroma-multiref-natural-crop-mask_00001_.png](../report-assets/output/RepairBench/kroma-multiref-natural-crop-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2649,15 +2649,15 @@ workflow / api.json：[kroma-multiref-natural-crop/api.json](cases/kroma-multire
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 复用完全相同的编码/采样归档，仅扩大最终合成遮罩到图像底边，恢复完整白尾尖。雨街、咖啡馆与明确狐狸主体共同保留，没有苔石、灰板或原猫重影。本例主体融合目标通过；未测量精确动物身份，也没有完成参考消融。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-full-tail_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-multiref-full-tail_00001_.png)
 
 附件：
-- kroma-multiref-full-tail-input_00001_.png：![kroma-multiref-full-tail-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-full-tail-input_00001_.png)
-- kroma-multiref-full-tail-mask_00001_.png：![kroma-multiref-full-tail-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-full-tail-mask_00001_.png)
+- kroma-multiref-full-tail-input_00001_.png：![kroma-multiref-full-tail-input_00001_.png](../report-assets/output/RepairBench/kroma-multiref-full-tail-input_00001_.png)
+- kroma-multiref-full-tail-mask_00001_.png：![kroma-multiref-full-tail-mask_00001_.png](../report-assets/output/RepairBench/kroma-multiref-full-tail-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2695,15 +2695,15 @@ workflow / api.json：[kroma-multiref-full-tail/api.json](cases/kroma-multiref-f
 只将采样初始VAE输入从原猫图改为抹猫图。复用经图依赖与SHA验证的旧正/负条件，刷新4.48秒、8步采样及解码完整完成；主体仍偏圆头猫形背影，并出现灰边框，物种替换未通过。新旧归档已验证正负条件逐张量完全一致、noise_mask一致，初始samples确实改变。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-fox-clean-latent_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-fox-clean-latent_00001_.png)
 
 附件：
-- turbo-fox-clean-latent-input_00001_.png：![turbo-fox-clean-latent-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-clean-latent-input_00001_.png)
-- turbo-fox-clean-latent-mask_00001_.png：![turbo-fox-clean-latent-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-clean-latent-mask_00001_.png)
+- turbo-fox-clean-latent-input_00001_.png：![turbo-fox-clean-latent-input_00001_.png](../report-assets/output/RepairBench/turbo-fox-clean-latent-input_00001_.png)
+- turbo-fox-clean-latent-mask_00001_.png：![turbo-fox-clean-latent-mask_00001_.png](../report-assets/output/RepairBench/turbo-fox-clean-latent-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2741,15 +2741,15 @@ workflow / api.json：[turbo-fox-clean-latent/api.json](cases/turbo-fox-clean-la
 相同FP16/attention升精度配置的CFG1控制。黑发、左向侧转、服装背景保留，脸有浅雀斑和绿眼；鼻形、眼形和雀斑分布仍与参考有差异，精确身份迁移仍部分达到。
 
 输入图片：
-- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16_00001_.png)
+![输出 1](../report-assets/output/RepairBench/qwen-face-only-cfg1-fp16_00001_.png)
 
 附件：
-- qwen-face-only-cfg1-fp16-input_00001_.png：![qwen-face-only-cfg1-fp16-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-input_00001_.png)
-- qwen-face-only-cfg1-fp16-mask_00001_.png：![qwen-face-only-cfg1-fp16-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-mask_00001_.png)
+- qwen-face-only-cfg1-fp16-input_00001_.png：![qwen-face-only-cfg1-fp16-input_00001_.png](../report-assets/output/RepairBench/qwen-face-only-cfg1-fp16-input_00001_.png)
+- qwen-face-only-cfg1-fp16-mask_00001_.png：![qwen-face-only-cfg1-fp16-mask_00001_.png](../report-assets/output/RepairBench/qwen-face-only-cfg1-fp16-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2787,15 +2787,15 @@ workflow / api.json：[qwen-face-only-cfg1-fp16/api.json](cases/qwen-face-only-c
 与相同FP16的CFG1控制只改变CFG为3。侧转黑发服装保留，绿眼与雀斑较清楚，但仍是相近生成脸，鼻/眼/脸部比例未能确认与A相同；不能据更高CFG认定精确身份修复。
 
 输入图片：
-- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · featurebench/kroma-portrait-b.png：![输入 1 · featurebench/kroma-portrait-b.png](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · featurebench/kroma-portrait-a.png：![输入 2 · featurebench/kroma-portrait-a.png](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/qwen-face-only-cfg3_00001_.png)
+![输出 1](../report-assets/output/RepairBench/qwen-face-only-cfg3_00001_.png)
 
 附件：
-- qwen-face-only-cfg3-input_00001_.png：![qwen-face-only-cfg3-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg3-input_00001_.png)
-- qwen-face-only-cfg3-mask_00001_.png：![qwen-face-only-cfg3-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-face-only-cfg3-mask_00001_.png)
+- qwen-face-only-cfg3-input_00001_.png：![qwen-face-only-cfg3-input_00001_.png](../report-assets/output/RepairBench/qwen-face-only-cfg3-input_00001_.png)
+- qwen-face-only-cfg3-mask_00001_.png：![qwen-face-only-cfg3-mask_00001_.png](../report-assets/output/RepairBench/qwen-face-only-cfg3-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2833,15 +2833,15 @@ workflow / api.json：[qwen-face-only-cfg3/api.json](cases/qwen-face-only-cfg3/a
 四阶段隔离后真实GPU文本编码通过，参考VAE预计算10.56秒、GPU编码35.89秒，随后8步和解码完整完成；图中背向身体与右侧转长吻已是明确狐狸。旧采样/合成遮罩仍漏掉右侧原主体边缘，尾部靠近边界，有残影，整图仍部分达到。两路参考latent及初始samples/遮罩在预计算与编码归档之间逐张量完全相等。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-fox-profile-precomputed_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-fox-profile-precomputed_00001_.png)
 
 附件：
-- turbo-fox-profile-precomputed-input_00001_.png：![turbo-fox-profile-precomputed-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-input_00001_.png)
-- turbo-fox-profile-precomputed-mask_00001_.png：![turbo-fox-profile-precomputed-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-mask_00001_.png)
+- turbo-fox-profile-precomputed-input_00001_.png：![turbo-fox-profile-precomputed-input_00001_.png](../report-assets/output/RepairBench/turbo-fox-profile-precomputed-input_00001_.png)
+- turbo-fox-profile-precomputed-mask_00001_.png：![turbo-fox-profile-precomputed-mask_00001_.png](../report-assets/output/RepairBench/turbo-fox-profile-precomputed-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2879,16 +2879,16 @@ workflow / api.json：[turbo-fox-profile-precomputed/api.json](cases/turbo-fox-p
 保留相同正/负条件及初始samples，仅扩大采样和最终合成遮罩到右下图像边界。背向身体、右转长吻、黑耳与白尾尖构成明确狐狸，旧猫边缘残影及灰框消失。达到本例遮罩内猫变狐目标；尾部靠近画幅边界、精确参考动物身份未量化。
 
 输入图片：
-- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · featurebench/cat.png：![输入 1 · featurebench/cat.png](../report-assets/input/featurebench/cat.png)
+- 输入 2 · featurebench/fox.png：![输入 2 · featurebench/fox.png](../report-assets/input/featurebench/fox.png)
 
 输出图片：
 - 无输出
 
 附件：
-- turbo-fox-profile-wide-mask-input_00001_.png：![turbo-fox-profile-wide-mask-input_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-input_00001_.png)
-- turbo-fox-profile-wide-mask-mask_00001_.png：![turbo-fox-profile-wide-mask-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-mask_00001_.png)
-- turbo-fox-profile-wide-mask_00001_.png：![turbo-fox-profile-wide-mask_00001_.png](../../ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask_00001_.png)
+- turbo-fox-profile-wide-mask-input_00001_.png：![turbo-fox-profile-wide-mask-input_00001_.png](../report-assets/output/RepairBench/turbo-fox-profile-wide-mask-input_00001_.png)
+- turbo-fox-profile-wide-mask-mask_00001_.png：![turbo-fox-profile-wide-mask-mask_00001_.png](../report-assets/output/RepairBench/turbo-fox-profile-wide-mask-mask_00001_.png)
+- turbo-fox-profile-wide-mask_00001_.png：![turbo-fox-profile-wide-mask_00001_.png](../report-assets/output/RepairBench/turbo-fox-profile-wide-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2920,11 +2920,11 @@ workflow / api.json：[turbo-fox-profile-wide-mask/api.json](cases/turbo-fox-pro
 四阶段完整执行8步并CPU解码。宇航服和头盔已完全去除，单名红卷发女性以黄褐色户外服在丛林前行；场景、站位和主要构图保留。脸部尺寸较小，雀斑、绿眼和精确身份未获证明，仍记部分达到；不是专用角色控制。
 
 输入图片：
-- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · astronaut：![输入 1 · astronaut](../report-assets/input/featurebench/astronaut.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-un-role-isolated_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-un-role-isolated_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2956,11 +2956,11 @@ workflow / api.json：[turbo-un-role-isolated/api.json](cases/turbo-un-role-isol
 参考隔离后完整8步和CPU解码。红卷发成年女性、青色运动服、白背景、水平展开双臂及画面右侧屈膝可见，未复制骨架线；与示意的大体姿态相符。人物面部细节及精确身份不足，不能作为专用姿态约束或精确身份验收。
 
 输入图片：
-- 输入 1 · pose-guide：![输入 1 · pose-guide](../../ComfyUI/input/featurebench/pose-guide.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · pose-guide：![输入 1 · pose-guide](../report-assets/input/featurebench/pose-guide.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-un-pose-isolated_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-un-pose-isolated_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -2992,11 +2992,11 @@ workflow / api.json：[turbo-un-pose-isolated/api.json](cases/turbo-un-pose-isol
 两张自然参考输入后完整输出清晰红狐、长吻、黑腿和白尾尖，雨夜咖啡馆基本保留；尾部贴出画框，精确参考身份未证明。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-un-multiref-natural_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-un-multiref-natural_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -3028,10 +3028,10 @@ workflow / api.json：[turbo-un-multiref-natural/api.json](cases/turbo-un-multir
 删除image2及其VAE参考，保持同一提示、seed、扩散权重后，依然生成清晰红狐和相似雨街。说明本提示本身足以生成狐狸，不能把两图结果外观相似作为参考身份保留证明。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-un-multiref-no-fox_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-un-multiref-no-fox_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -3063,11 +3063,11 @@ workflow / api.json：[turbo-un-multiref-no-fox/api.json](cases/turbo-un-multire
 同一Turbo扩散模型、seed、提示与参考，改用普通Qwen3VL8B W4A8编码器，仍完整替换宇航服为女性户外服并保留丛林构图；没有足够证据称UN更好，精确身份仍未验收。
 
 输入图片：
-- 输入 1 · astronaut：![输入 1 · astronaut](../../ComfyUI/input/featurebench/astronaut.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · astronaut：![输入 1 · astronaut](../report-assets/input/featurebench/astronaut.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-ordinary-role-control_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-ordinary-role-control_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -3099,11 +3099,11 @@ workflow / api.json：[turbo-ordinary-role-control/api.json](cases/turbo-ordinar
 同一Turbo扩散模型、seed、提示与参考，普通编码器也生成双臂展开和画面右侧屈膝的白背景运动服女性。粗姿态达到；精确身份与关节位置未验收，单个配对不能支持UN优势或泛化结论。
 
 输入图片：
-- 输入 1 · pose-guide：![输入 1 · pose-guide](../../ComfyUI/input/featurebench/pose-guide.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · pose-guide：![输入 1 · pose-guide](../report-assets/input/featurebench/pose-guide.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/turbo-ordinary-pose-control_00001_.png)
+![输出 1](../report-assets/output/RepairBench/turbo-ordinary-pose-control_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -3135,15 +3135,15 @@ workflow / api.json：[turbo-ordinary-pose-control/api.json](cases/turbo-ordinar
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 裁切参考排除黄毛衣，并扩大头发合成范围后完整4步及CPU解码。红卷发、雀斑、绿眼与左转头向出现，但黑色长发仍保留，颈部有重影且黄色仍混入领口。问题没有解决，保留独立失败视觉证据。
 
 输入图片：
-- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../../ComfyUI/input/featurebench/kroma-portrait-b.png)
-- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../../ComfyUI/input/featurebench/kroma-portrait-a.png)
+- 输入 1 · kroma-portrait-b：![输入 1 · kroma-portrait-b](../report-assets/input/featurebench/kroma-portrait-b.png)
+- 输入 2 · kroma-portrait-a：![输入 2 · kroma-portrait-a](../report-assets/input/featurebench/kroma-portrait-a.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-head-cropped-reference_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-head-cropped-reference_00001_.png)
 
 附件：
-- kroma-head-cropped-reference-input_00001_.png：![kroma-head-cropped-reference-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-head-cropped-reference-input_00001_.png)
-- kroma-head-cropped-reference-mask_00001_.png：![kroma-head-cropped-reference-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-head-cropped-reference-mask_00001_.png)
+- kroma-head-cropped-reference-input_00001_.png：![kroma-head-cropped-reference-input_00001_.png](../report-assets/output/RepairBench/kroma-head-cropped-reference-input_00001_.png)
+- kroma-head-cropped-reference-mask_00001_.png：![kroma-head-cropped-reference-mask_00001_.png](../report-assets/output/RepairBench/kroma-head-cropped-reference-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -3175,14 +3175,14 @@ workflow / api.json：[kroma-head-cropped-reference/api.json](cases/kroma-head-c
 输出 512×512；参考 VAE 编码 512×512，视觉编码约 384×384；当前 Q2 未加载专用风格或 BFS LoRA。 去掉第二狐狸参考（文本视觉输入及第二ReferenceLatent）后依然生成红狐。此轮采样为FP16，而历史双参考是默认精度，尚不能作为严格单变量对照；已另排匹配FP16的双参考控制，不能以此宣称参考无效。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/kroma-multiref-no-fox_00001_.png)
+![输出 1](../report-assets/output/RepairBench/kroma-multiref-no-fox_00001_.png)
 
 附件：
-- kroma-multiref-no-fox-input_00001_.png：![kroma-multiref-no-fox-input_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-no-fox-input_00001_.png)
-- kroma-multiref-no-fox-mask_00001_.png：![kroma-multiref-no-fox-mask_00001_.png](../../ComfyUI/output/RepairBench/kroma-multiref-no-fox-mask_00001_.png)
+- kroma-multiref-no-fox-input_00001_.png：![kroma-multiref-no-fox-input_00001_.png](../report-assets/output/RepairBench/kroma-multiref-no-fox-input_00001_.png)
+- kroma-multiref-no-fox-mask_00001_.png：![kroma-multiref-no-fox-mask_00001_.png](../report-assets/output/RepairBench/kroma-multiref-no-fox-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -3227,7 +3227,7 @@ Prompt:
 
 预期结果：生成雨后上海咖啡馆窗边的橘猫图像；此条记录旧版基础 Qwen-Image-2.1 文生图。
 
-workflow / api.json：[旧基线 api.json：qwen-image-2.1-768-api.json](../../qwen-image-2.1-768-api.json)
+workflow / api.json：[旧基线 api.json：qwen-image-2.1-768-api.json](../report-assets/recipes/qwen-image-2.1-768-api.json)
 
 </details>
 
@@ -3431,15 +3431,15 @@ CPU文本配置耗时过长且整机可用内存低于0.5GB；API中止后装载
 复用原成功编码并重新以FP16采样15步，最终合成范围扩至右下画幅。狐狸长吻和黑腿清楚，旧合成遮罩的截断范围已扩大，但尾部仍出画框，精确参考身份未获证明，继续部分达到。遮罩外保持由最终合成实现，不归因于模型本身。
 
 输入图片：
-- 输入 1 · cat：![输入 1 · cat](../../ComfyUI/input/featurebench/cat.png)
-- 输入 2 · fox：![输入 2 · fox](../../ComfyUI/input/featurebench/fox.png)
+- 输入 1 · cat：![输入 1 · cat](../report-assets/input/featurebench/cat.png)
+- 输入 2 · fox：![输入 2 · fox](../report-assets/input/featurebench/fox.png)
 
 输出图片：
-![输出 1](../../ComfyUI/output/RepairBench/qwen-multiref-full-tail_00001_.png)
+![输出 1](../report-assets/output/RepairBench/qwen-multiref-full-tail_00001_.png)
 
 附件：
-- qwen-multiref-full-tail-input_00001_.png：![qwen-multiref-full-tail-input_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-full-tail-input_00001_.png)
-- qwen-multiref-full-tail-mask_00001_.png：![qwen-multiref-full-tail-mask_00001_.png](../../ComfyUI/output/RepairBench/qwen-multiref-full-tail-mask_00001_.png)
+- qwen-multiref-full-tail-input_00001_.png：![qwen-multiref-full-tail-input_00001_.png](../report-assets/output/RepairBench/qwen-multiref-full-tail-input_00001_.png)
+- qwen-multiref-full-tail-mask_00001_.png：![qwen-multiref-full-tail-mask_00001_.png](../report-assets/output/RepairBench/qwen-multiref-full-tail-mask_00001_.png)
 
 <details>
 <summary>Prompt、预期结果与 workflow</summary>
@@ -3463,200 +3463,200 @@ workflow / api.json：[qwen-multiref-full-tail/api.json](cases/qwen-multiref-ful
 
 ### 图生图／洗图 · moss-img2img
 
-![历史输出](../../ComfyUI/output/FeatureBench/moss-img2img_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/moss-img2img_00001_.png)
 
 ### 布局描述（JSON 提示） · moss-layout
 
-![历史输出](../../ComfyUI/output/FeatureBench/moss-layout_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/moss-layout_00001_.png)
 
 ### 画面文字渲染 · moss-text
 
-![历史输出](../../ComfyUI/output/FeatureBench/moss-text_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/moss-text_00001_.png)
 
 ### 文生图素材：虚构人像 A · kroma-portrait-a
 
-![历史输出](../../ComfyUI/output/FeatureBench/kroma-portrait-a_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/kroma-portrait-a_00001_.png)
 
 ### 文生图素材：虚构人像 B · kroma-portrait-b
 
-![历史输出](../../ComfyUI/output/FeatureBench/kroma-portrait-b_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/kroma-portrait-b_00001_.png)
 
 ### 图生图／洗图 · kroma-img2img
 
-![历史输出](../../ComfyUI/output/FeatureBench/kroma-img2img_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/kroma-img2img_00001_.png)
 
 ### 文生图素材：风格参考 · kroma-style-source
 
-![历史输出](../../ComfyUI/output/FeatureBench/kroma-style-source_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/kroma-style-source_00001_.png)
 
 ### 遮罩局部重绘 · qwen-inpaint
 
-![历史输出](../../ComfyUI/output/FeatureBench/qwen-inpaint_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/qwen-inpaint_00001_.png)
 
 ### 多图参考／主体合成 · qwen-multiref
 
-![历史输出](../../ComfyUI/output/FeatureBench/qwen-multiref_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/qwen-multiref_00001_.png)
 
 ### 换头／人物身份参考 · qwen-face-swap
 
-![历史输出](../../ComfyUI/output/FeatureBench/qwen-face-swap_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/qwen-face-swap_00001_.png)
 
 ### 图生图／风格转换 · qwen-style-edit
 
-![历史输出](../../ComfyUI/output/FeatureBench/qwen-style-edit_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/qwen-style-edit_00001_.png)
 
 ### 风格参考 · kroma-style-ref
 
-![历史输出](../../ComfyUI/output/FeatureBench/kroma-style-ref_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/kroma-style-ref_00001_.png)
 
 ### 多图参考 · kroma-multiref
 
-![历史输出](../../ComfyUI/output/FeatureBench/kroma-multiref_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/kroma-multiref_00001_.png)
 
 ### 换头／人物身份参考 · kroma-head-swap
 
-![历史输出](../../ComfyUI/output/FeatureBench/kroma-head-swap_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/kroma-head-swap_00001_.png)
 
 ### 换脸／仅面部身份 · qwen-face-only
 
-![历史输出](../../ComfyUI/output/FeatureBench/qwen-face-only_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/qwen-face-only_00001_.png)
 
 ### 原生 8 步文生图 · turbo-un-t2i
 
-![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-t2i_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/turbo-un-t2i_00001_.png)
 
 ### 遮罩局部重绘 · turbo-un-inpaint
 
-![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-inpaint_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/turbo-un-inpaint_00001_.png)
 
 ### 多图参考／主体合成 · turbo-un-multiref
 
-![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-multiref_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/turbo-un-multiref_00001_.png)
 
 ### 换头／人物身份参考 · turbo-un-face-swap
 
-![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-face-swap_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/turbo-un-face-swap_00001_.png)
 
 ### 换头／BFS 专用 LoRA 对照 · qwen-bfs-head-swap
 
-![历史输出](../../ComfyUI/output/FeatureBench/qwen-bfs-head-swap_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/qwen-bfs-head-swap_00001_.png)
 
 ### 角色替换（全身含服装） · turbo-un-role-replacement-test
 
-![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-role-replacement-test_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/turbo-un-role-replacement-test_00001_.png)
 
 ### 姿态参考（图像指令） · turbo-un-pose-reference-test
 
-![历史输出](../../ComfyUI/output/FeatureBench/turbo-un-pose-reference-test_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/turbo-un-pose-reference-test_00001_.png)
 
 ### 文生图／短文字 · flux2-klein-t2i
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-t2i_00001_.png)
 
 ### 文生图／GPU FP8文本编码对照 · flux2-klein-t2i-gpu-text
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png)
 
 ### 文本编码GPU配置对照／写实文生图 · zimage-gguf-photo-gpu-text
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png)
 
 ### 平铺工作流修改提示词 · zimage-gguf-prompt-change
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-gguf-prompt-change_00001_.png)
 
 ### 量化版英文文字渲染 · zimage-gguf-english
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-gguf-english_00001_.png)
 
 ### 量化版中文文字渲染 · zimage-gguf-chinese
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-gguf-chinese_00001_.png)
 
 ### 写实文生图／源工作流9步 · zimage-aio-photo-9step
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-aio-photo-9step_00001_.png)
 
 ### 中文文字渲染 · zimage-aio-chinese
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-aio-chinese_00001_.png)
 
 ### 英文文字渲染 · zimage-aio-english
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-aio-english_00001_.png)
 
 ### 非色情成年人体艺术探索 · zimage-aio-figure-art
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-aio-figure-art_00001_.png)
 
 ### 文章4步效果比较 · zimage-aio-photo-4step
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-aio-photo-4step_00001_.png)
 
 ### 文章推荐8步生成 · zimage-aio-photo-8step
 
-![历史输出](../../ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/zimage-aio-photo-8step_00001_.png)
 
 ### 单图编辑／改色 · flux2-klein-single-color
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-single-color_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-single-color_00001_.png)
 
 ### NVMe动态配置诊断／文生图对照 · flux2-klein-t2i-nvme-control
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png)
 
 ### 双图编辑／配色与Logo迁移 · flux2-klein-dual-logo
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-dual-logo_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-dual-logo_00001_.png)
 
 ### 双人合成／人物一致性 · flux2-klein-dual-people
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-dual-people_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-dual-people_00001_.png)
 
 ### 风格转换 · flux2-klein-style
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-style_00001_.png)
 
 ### 对象替换／中文指令 · flux2-klein-replace-zh
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-replace-zh_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-replace-zh_00001_.png)
 
 ### 对象删除 · flux2-klein-remove
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-remove_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-remove_00001_.png)
 
 ### 迭代编辑／第二轮修改 · flux2-klein-iterative
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-iterative_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-iterative_00001_.png)
 
 ### 诊断对照／恢复默认锁页内存 · flux2-klein-t2i-pinned-control
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png)
 
 ### 单图编辑／改色（恢复锁页内存重试） · flux2-klein-single-color-pinned
 
-![历史输出](../../ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
+![历史输出](../report-assets/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
 
 ### 文生图：雨夜上海咖啡馆橘猫（768×768） · qwen-base-t2i-cat-768
 
-![历史输出](../../ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png)
+![历史输出](../report-assets/output/QwenImage21_RX6650XT_768_00001_.png)
 
 ### 语义图像编辑：橘猫变白猫（512×512；非遮罩局部重绘） · qwen-base-edit-orange-to-white-cat-512
 
-![历史输出](../../ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png)
+![历史输出](../report-assets/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png)
 
 ### 文生图：雾林苔石上的狐狸（512×512，4 步） · kroma-opd-q2-t2i-fox-512
 
-![历史输出](../../ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png)
+![历史输出](../report-assets/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png)
 
 ### 文生图：丛林宇航员（512×512，8 步 LoRA 候选） · moss-sft-dmd-8step-t2i-astronaut-512
 
-![历史输出](../../ComfyUI/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png)
+![历史输出](../report-assets/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png)
 
 ### 文生图对照：丛林宇航员（512×512，50 步） · moss-sft-50step-t2i-astronaut-512
 
-![历史输出](../../ComfyUI/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png)
+![历史输出](../report-assets/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png)
 
 ### 文生图：雨夜咖啡馆白猫（512×512，8 步；普通 Turbo 对照，非 UN） · qwen-turbo-plain-t2i-white-cat-512
 
-![历史输出](../../ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png)
+![历史输出](../report-assets/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png)

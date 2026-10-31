@@ -20,15 +20,27 @@ from urllib.parse import quote
 
 HERE = Path(__file__).resolve().parent
 PROJECT_ROOT = HERE.parents[1]
-COMFY = PROJECT_ROOT / "ComfyUI"
+COMFY = PROJECT_ROOT / "evidence/report-assets"
 COMFY_INPUT = COMFY / "input"
 COMFY_OUTPUT = COMFY / "output"
 ALLOWED_ASSET_ROOTS = (HERE, PROJECT_ROOT / "evidence", COMFY_INPUT, COMFY_OUTPUT)
 
 
 def normalize_legacy(value) -> str:
-    """Map historical `trials/` prefixes onto the renamed `evidence/` tree."""
+    """Map historical paths onto the current evidence tree.
+
+    Handles the trials/ -> evidence/ rename, ComfyUI/{input,output} paths that
+    moved to evidence/report-assets/, and the two root-level recipe API files.
+    """
     value = str(value).replace("\\", "/")
+    name = value.rsplit("/", 1)[-1]
+    if name in ("qwen-image-2.1-api.json", "qwen-image-2.1-768-api.json"):
+        return "evidence/report-assets/recipes/" + name
+    for prefix, target in (("ComfyUI/output/", "evidence/report-assets/output/"),
+                           ("ComfyUI/input/", "evidence/report-assets/input/")):
+        index = value.find(prefix)
+        if index >= 0:
+            return target + value[index + len(prefix):]
     if value.startswith("trials/"):
         return "evidence/" + value[len("trials/"):]
     return value

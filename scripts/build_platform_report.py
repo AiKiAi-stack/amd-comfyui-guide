@@ -61,6 +61,14 @@ def escape(value):
 
 def _repo_path(path):
     path = str(path).replace('\\', '/')
+    name = path.rsplit('/', 1)[-1]
+    if name in ('qwen-image-2.1-api.json', 'qwen-image-2.1-768-api.json'):
+        return ROOT / 'evidence/report-assets/recipes' / name
+    for prefix, target in (('ComfyUI/output/', 'evidence/report-assets/output/'),
+                           ('ComfyUI/input/', 'evidence/report-assets/input/')):
+        index = path.find(prefix)
+        if index >= 0:
+            return ROOT / (target + path[index + len(prefix):])
     if path.startswith('trials/'):
         path = 'evidence/' + path[len('trials/'):]
     return ROOT / path

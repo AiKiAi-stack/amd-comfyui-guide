@@ -59,7 +59,7 @@ def timing(record):
 def input_hash(value):
     value = value.replace('\\', '/')
     if 'ComfyUI/input/' in value: value = value.split('ComfyUI/input/', 1)[1]
-    for root in (ROOT / 'ComfyUI/input', ROOT / 'runtime/ubuntu/ComfyUI/input'):
+    for root in (ROOT / 'evidence/report-assets/input', ROOT / 'runtime/ubuntu/ComfyUI/input'):
         path = root / value
         if path.is_file(): return hashlib.sha256(path.read_bytes()).hexdigest()
     return None

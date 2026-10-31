@@ -35,7 +35,7 @@ python -m http.server 8767 --bind 127.0.0.1
 - Z-Image AIO 与 GGUF，9/8/4 步、中文与英文文字、连续运行的差异。
 - `code_source/` 的本地辅助节点，以及 `trials/` 的原始实验脚本和工作流。
 
-![FLUX.2 Klein 实测输出](../../ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
+![FLUX.2 Klein 实测输出](../report-assets/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png)
 
 这张蓝包来自独立改色案例；输入、提示词与验收限制请到完整报告查看，不能单凭单张图判断编辑质量。
 

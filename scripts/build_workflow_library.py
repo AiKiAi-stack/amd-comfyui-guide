@@ -48,7 +48,7 @@ def requirements(graph, definitions, runtime):
             value = node['inputs']['image']
             relative = normalize_input(value)
             node['inputs']['image'] = relative
-            source = ROOT / 'ComfyUI/input' / relative
+            source = ROOT / 'evidence/report-assets/input' / relative
             if not source.is_file():
                 source = runtime / 'ComfyUI/input' / relative
             assets.append({'node': key, 'file': relative, 'source': source, 'exists': source.is_file(),

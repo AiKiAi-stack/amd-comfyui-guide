@@ -46,14 +46,14 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/QwenImage21_RX6650XT_768_00001_.png"
+        "evidence/report-assets/output/QwenImage21_RX6650XT_768_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "",
       "expected": "生成雨后上海咖啡馆窗边的橘猫图像；此条记录旧版基础 Qwen-Image-2.1 文生图。",
       "prompt": "一只橘猫坐在雨后的上海街头咖啡馆窗边，望着霓虹灯倒影。电影摄影，细腻写实，暖色室内灯光，画面中没有文字。",
       "claim_level": "T｜旧本机试验有 API 与实际输出文件；耗时记录未知",
-      "source": "qwen-image-2.1-768-api.json",
+      "source": "evidence/report-assets/recipes/qwen-image-2.1-768-api.json",
       "source_sha256": "6a278f7456b0a888682cffcb03f4ceee7e40b0d20f0641d7eb34710575427a9c",
       "source_case_file": "evidence/2026-10-19-features/baseline.json",
       "original_case": {
@@ -139,7 +139,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png"
+        "evidence/report-assets/output/Liuyue_Qwen21_Base_Edit_RX6650XT_00001_.png"
       ],
       "elapsed_seconds": 423.46,
       "profile": "",
@@ -237,7 +237,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png"
+        "evidence/report-assets/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png"
       ],
       "elapsed_seconds": 285.03,
       "profile": "",
@@ -330,7 +330,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png"
+        "evidence/report-assets/output/Liuyue_MOSS_SFT_DMD_INT8_8step_RX6650XT_00001_.png"
       ],
       "elapsed_seconds": 187.575,
       "profile": "",
@@ -437,7 +437,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png"
+        "evidence/report-assets/output/Liuyue_MOSS_SFT_INT8_50step_RX6650XT_00002_.png"
       ],
       "elapsed_seconds": 198.197,
       "profile": "",
@@ -537,7 +537,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png"
+        "evidence/report-assets/output/Liuyue_Qwen21_Turbo_RX6650XT_00001_.png"
       ],
       "elapsed_seconds": 652.782,
       "profile": "",
@@ -644,7 +644,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/moss-img2img_00001_.png"
+        "evidence/report-assets/output/FeatureBench/moss-img2img_00001_.png"
       ],
       "elapsed_seconds": 245.85,
       "profile": "",
@@ -741,7 +741,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/moss-layout_00001_.png"
+        "evidence/report-assets/output/FeatureBench/moss-layout_00001_.png"
       ],
       "elapsed_seconds": 185.56,
       "profile": "",
@@ -834,7 +834,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/moss-text_00001_.png"
+        "evidence/report-assets/output/FeatureBench/moss-text_00001_.png"
       ],
       "elapsed_seconds": 221.37,
       "profile": "",
@@ -927,7 +927,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/kroma-portrait-a_00001_.png"
+        "evidence/report-assets/output/FeatureBench/kroma-portrait-a_00001_.png"
       ],
       "elapsed_seconds": 200.32,
       "profile": "",
@@ -1008,7 +1008,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/kroma-portrait-b_00001_.png"
+        "evidence/report-assets/output/FeatureBench/kroma-portrait-b_00001_.png"
       ],
       "elapsed_seconds": 175.33,
       "profile": "",
@@ -1089,7 +1089,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/kroma-img2img_00001_.png"
+        "evidence/report-assets/output/FeatureBench/kroma-img2img_00001_.png"
       ],
       "elapsed_seconds": 250.94,
       "profile": "",
@@ -1173,7 +1173,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/kroma-style-source_00001_.png"
+        "evidence/report-assets/output/FeatureBench/kroma-style-source_00001_.png"
       ],
       "elapsed_seconds": 210.23,
       "profile": "",
@@ -1254,9 +1254,9 @@
       "execution": "partial_output",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/qwen-inpaint_00001_.png",
-        "ComfyUI/output/FeatureBench/qwen-inpaint-mask_00001_.png",
-        "ComfyUI/output/FeatureBench/qwen-inpaint-input_00001_.png"
+        "evidence/report-assets/output/FeatureBench/qwen-inpaint_00001_.png",
+        "evidence/report-assets/output/FeatureBench/qwen-inpaint-mask_00001_.png",
+        "evidence/report-assets/output/FeatureBench/qwen-inpaint-input_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "",
@@ -1394,7 +1394,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/qwen-multiref_00001_.png"
+        "evidence/report-assets/output/FeatureBench/qwen-multiref_00001_.png"
       ],
       "elapsed_seconds": 325.4,
       "profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
@@ -1486,7 +1486,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/qwen-face-swap_00001_.png"
+        "evidence/report-assets/output/FeatureBench/qwen-face-swap_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
@@ -1603,7 +1603,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/qwen-style-edit_00001_.png"
+        "evidence/report-assets/output/FeatureBench/qwen-style-edit_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
@@ -1802,7 +1802,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/kroma-style-ref_00001_.png"
+        "evidence/report-assets/output/FeatureBench/kroma-style-ref_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "",
@@ -1918,7 +1918,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/kroma-multiref_00001_.png"
+        "evidence/report-assets/output/FeatureBench/kroma-multiref_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "",
@@ -2036,7 +2036,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/kroma-head-swap_00001_.png"
+        "evidence/report-assets/output/FeatureBench/kroma-head-swap_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "",
@@ -2154,7 +2154,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/qwen-face-only_00001_.png"
+        "evidence/report-assets/output/FeatureBench/qwen-face-only_00001_.png"
       ],
       "elapsed_seconds": null,
       "profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
@@ -2271,7 +2271,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/turbo-un-t2i_00001_.png"
+        "evidence/report-assets/output/FeatureBench/turbo-un-t2i_00001_.png"
       ],
       "elapsed_seconds": 526.25,
       "profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
@@ -2366,9 +2366,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/turbo-un-inpaint-input_00001_.png",
-        "ComfyUI/output/FeatureBench/turbo-un-inpaint-mask_00001_.png",
-        "ComfyUI/output/FeatureBench/turbo-un-inpaint_00001_.png"
+        "evidence/report-assets/output/FeatureBench/turbo-un-inpaint-input_00001_.png",
+        "evidence/report-assets/output/FeatureBench/turbo-un-inpaint-mask_00001_.png",
+        "evidence/report-assets/output/FeatureBench/turbo-un-inpaint_00001_.png"
       ],
       "elapsed_seconds": 710.95,
       "profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
@@ -2470,7 +2470,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/turbo-un-multiref_00001_.png"
+        "evidence/report-assets/output/FeatureBench/turbo-un-multiref_00001_.png"
       ],
       "elapsed_seconds": 1041.3,
       "profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
@@ -2575,7 +2575,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/turbo-un-face-swap_00001_.png"
+        "evidence/report-assets/output/FeatureBench/turbo-un-face-swap_00001_.png"
       ],
       "elapsed_seconds": 990.75,
       "profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
@@ -2680,7 +2680,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/qwen-bfs-head-swap_00001_.png"
+        "evidence/report-assets/output/FeatureBench/qwen-bfs-head-swap_00001_.png"
       ],
       "elapsed_seconds": 375.67,
       "profile": "512像素，GPU扩散、CPU VAE，15步。 本次重试通过核心 QwenImage21Cache(device=off) 关闭 prefix KV 缓存，绕开已观察的 GGUF cache.put 原生访问冲突；每步重算参考前缀。",
@@ -2783,7 +2783,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/turbo-un-role-replacement-test_00001_.png"
+        "evidence/report-assets/output/FeatureBench/turbo-un-role-replacement-test_00001_.png"
       ],
       "elapsed_seconds": 1055.88,
       "profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
@@ -2890,7 +2890,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/turbo-un-pose-reference-test_00001_.png"
+        "evidence/report-assets/output/FeatureBench/turbo-un-pose-reference-test_00001_.png"
       ],
       "elapsed_seconds": 1045.9,
       "profile": "本轮用 --disable-dynamic-vram --lowvram 将 UN GGUF 文字／视觉编码器留在 CPU，扩散采样在 RX 6650 XT，VAE 在 CPU；8步。用于规避前轮 GGUF 编码器卸载崩溃，不是纯 GPU 流程，未测试去限制效果。 同时关闭Qwen prefix KV缓存，绕开已观察的GGUF cache.put访问冲突。",
@@ -2997,7 +2997,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-t2i_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-t2i_00001_.png"
       ],
       "elapsed_seconds": 434.24,
       "profile": "官方 FP8 4B 蒸馏；CPU qwen_3_4b 编码器、CPU VAE，RX6650XT 扩散；4步 Euler / Flux2Scheduler / CFG1；参考约0.25MP，保持宽高比；未使用额外LoRA或自动提示词",
@@ -3093,7 +3093,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-t2i-gpu-text_00001_.png"
       ],
       "elapsed_seconds": 210.85,
       "profile": "官方 FP8 4B 蒸馏；qwen_3_4b 编码器运行时FP8存储/GPU计算，CPU VAE，RX6650XT扩散；--fp8_e4m3fn-text-enc；4步Euler/Flux2Scheduler/CFG1；参考约0.25MP；无额外LoRA或提示词改写",
@@ -3283,7 +3283,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-gguf-photo-gpu-text_00001_.png"
       ],
       "elapsed_seconds": 124.59,
       "profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -3384,7 +3384,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-gguf-prompt-change_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-gguf-prompt-change_00001_.png"
       ],
       "elapsed_seconds": 125.77,
       "profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -3485,7 +3485,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-gguf-english_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-gguf-english_00001_.png"
       ],
       "elapsed_seconds": 85.47,
       "profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -3585,7 +3585,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-gguf-chinese_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-gguf-chinese_00001_.png"
       ],
       "elapsed_seconds": 75.34,
       "profile": "memory_profile=legacy-normalvram；system_stats 已核验启动参数 --disable-dynamic-vram --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -3685,7 +3685,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-aio-photo-9step_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-aio-photo-9step_00001_.png"
       ],
       "elapsed_seconds": 50.23,
       "profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -3783,7 +3783,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-aio-chinese_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-aio-chinese_00001_.png"
       ],
       "elapsed_seconds": 30.17,
       "profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -3881,7 +3881,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-aio-english_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-aio-english_00001_.png"
       ],
       "elapsed_seconds": 30.97,
       "profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -3979,7 +3979,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-aio-figure-art_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-aio-figure-art_00001_.png"
       ],
       "elapsed_seconds": 30.16,
       "profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -4077,7 +4077,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-aio-photo-4step_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-aio-photo-4step_00001_.png"
       ],
       "elapsed_seconds": 20.08,
       "profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -4175,7 +4175,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/zimage-aio-photo-8step_00001_.png"
+        "evidence/report-assets/output/FeatureBench/zimage-aio-photo-8step_00001_.png"
       ],
       "elapsed_seconds": 30.09,
       "profile": "memory_profile=dynamic-nvme；system_stats 已核验启动参数 --enable-dynamic-vram --fast-disk --disable-pinned-memory --cpu-vae --disable-async-offload --reserve-vram 2.0；设备 cuda:0 AMD Radeon RX 6650 XT : native；comfyui_version=0.41.0, python_version=3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)], pytorch_version=2.12.0+rocm7.14.0。CPU VAE 与 VRAM 模式仅依据启动参数记录；CLIP 编码器实际设备未由 system_stats 证明，需从 ComfyUI 服务日志确认。",
@@ -4273,7 +4273,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-single-color_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-single-color_00001_.png"
       ],
       "elapsed_seconds": 51.18,
       "profile": "实际API参数已核验：dynamic-nvme，G盘配置、动态VRAM/fast-disk、禁用锁页内存、CPU VAE/同步卸载、预留2GiB、FP8文本编码；设备AMD RX6650XT。实际文本编码计算设备还需日志确认。",
@@ -4377,7 +4377,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-t2i-nvme-control_00001_.png"
       ],
       "elapsed_seconds": 21.44,
       "profile": "实际API参数已核验：dynamic-nvme，G盘配置、动态VRAM/fast-disk、禁用锁页内存、CPU VAE/同步卸载、预留2GiB、FP8文本编码；设备AMD RX6650XT。实际文本编码计算设备还需日志确认。",
@@ -4476,7 +4476,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-dual-logo_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-dual-logo_00001_.png"
       ],
       "elapsed_seconds": 30.53,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -4583,7 +4583,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-dual-people_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-dual-people_00001_.png"
       ],
       "elapsed_seconds": 36.74,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -4690,7 +4690,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-style_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-style_00001_.png"
       ],
       "elapsed_seconds": 30.76,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -4794,7 +4794,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-replace-zh_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-replace-zh_00001_.png"
       ],
       "elapsed_seconds": 25.66,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -4898,7 +4898,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-remove_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-remove_00001_.png"
       ],
       "elapsed_seconds": 25.9,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -5002,7 +5002,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-iterative_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-iterative_00001_.png"
       ],
       "elapsed_seconds": 25.32,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -5107,7 +5107,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-t2i-pinned-control_00001_.png"
       ],
       "elapsed_seconds": 40.64,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -5206,7 +5206,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png"
+        "evidence/report-assets/output/FeatureBench/flux2-klein-single-color-pinned_00001_.png"
       ],
       "elapsed_seconds": 30.52,
       "profile": "实际API参数已核验：dynamic-nvme-pinned，G盘配置、动态VRAM/fast-disk、CPU VAE/同步卸载、预留2GiB、FP8文本编码；锁页内存参数见runtime_verification.argv；设备AMD RX6650XT。实际文本计算设备还需日志确认。",
@@ -5397,7 +5397,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-caption-gpu-chunked_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-caption-gpu-chunked_00001_.png"
       ],
       "elapsed_seconds": 256.625,
       "profile": "512×512，15步，GPU 文本/扩散、CPU VAE。编码阶段禁用 pinned memory；采样保持默认 pinned。进程分离规避卸载崩溃，非底层修复。两个阶段提交后耗时之和，不含服务冷启动。",
@@ -5491,7 +5491,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/flux2-teapot-structure_00001_.png"
+        "evidence/report-assets/output/RepairBench/flux2-teapot-structure_00001_.png"
       ],
       "elapsed_seconds": 51.703,
       "profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
@@ -5599,7 +5599,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/flux2-tiny-bow_00001_.png"
+        "evidence/report-assets/output/RepairBench/flux2-tiny-bow_00001_.png"
       ],
       "elapsed_seconds": 27.062,
       "profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
@@ -5708,7 +5708,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/flux2-watercolor-night_00001_.png"
+        "evidence/report-assets/output/RepairBench/flux2-watercolor-night_00001_.png"
       ],
       "elapsed_seconds": 27.031,
       "profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
@@ -5816,7 +5816,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/flux2-1024-attention_00001_.png"
+        "evidence/report-assets/output/RepairBench/flux2-1024-attention_00001_.png"
       ],
       "elapsed_seconds": 81.093,
       "profile": "G盘既有权重，动态 VRAM/fast-disk，FP8文本/GPU计算、CPU VAE，默认 pinned，预留2GiB，split attention；4步Euler/Flux2Scheduler/CFG1。提交后耗时不含服务启动。",
@@ -5918,9 +5918,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-mask-fox-reference-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-mask-fox-reference-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-mask-fox-reference_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-mask-fox-reference-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-mask-fox-reference-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-mask-fox-reference_00001_.png"
       ],
       "elapsed_seconds": 139.39,
       "profile": "512×512、15步、GPU扩散/CPU VAE；原生量化文本编码阶段动态VRAM且禁用 pinned，采样另进程/默认 pinned。编码约28秒、采样112秒，均不含冷启动。灰化猫区域+狐狸参考，最终遮罩合成。",
@@ -6015,9 +6015,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-multiref-local-composite-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-multiref-local-composite-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-multiref-local-composite_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-multiref-local-composite-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-multiref-local-composite-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-multiref-local-composite_00001_.png"
       ],
       "elapsed_seconds": 117.312,
       "profile": "512×512、15步。复用已核对编码图与文件时间的归档条件；单独 GPU 采样进程，Qwen cache=auto、默认 pinned、CPU VAE。采样约101秒，不含服务冷启动；背景由遮罩合成。",
@@ -6114,9 +6114,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-head-direction-mask-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-head-direction-mask-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-head-direction-mask_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-head-direction-mask-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-head-direction-mask-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-head-direction-mask_00001_.png"
       ],
       "elapsed_seconds": 108.344,
       "profile": "512×512、15步，编码与采样进程分离，cache=auto；采样cache-none仍不能保证跨案例资源稳定。保留左向头向，增加头部遮罩合成；精确身份和全部黑发替换尚未验收。",
@@ -6213,9 +6213,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-face-only-mask-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-face-only-mask-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-face-only-mask_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-face-only-mask-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-face-only-mask-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-face-only-mask_00001_.png"
       ],
       "elapsed_seconds": 111.265,
       "profile": "独立采样进程、复用校验后的动态显存编码条件、Qwen cache auto；身份精确迁移仍未通过",
@@ -6312,9 +6312,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-bfs-direction-mask-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-bfs-direction-mask-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-bfs-direction-mask_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-bfs-direction-mask-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-bfs-direction-mask-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-bfs-direction-mask_00001_.png"
       ],
       "elapsed_seconds": 108.484,
       "profile": "编码、FP16 15 步采样、CPU 解码三个独立进程；Qwen cache auto；保留 BFS LoRA 原强度",
@@ -6422,7 +6422,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-style-owl-explicit_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-style-owl-explicit_00001_.png"
       ],
       "elapsed_seconds": 81.406,
       "profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码",
@@ -6516,7 +6516,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-style-no-subject-reference_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-style-no-subject-reference_00001_.png"
       ],
       "elapsed_seconds": 75.124,
       "profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码",
@@ -6610,7 +6610,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-watercolor-denoise040_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-watercolor-denoise040_00001_.png"
       ],
       "elapsed_seconds": 42.312,
       "profile": "动态显存编码；FP16 split attention + 分数升精度；复用校验后的采样 latent 再 CPU 解码",
@@ -6702,7 +6702,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-head-direction-mask_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-head-direction-mask_00001_.png"
       ],
       "elapsed_seconds": 219.687,
       "profile": "动态显存编码；FP16 split attention + 分数升精度 + 奇数切片补丁；独立 CPU 解码",
@@ -6799,7 +6799,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/zimage-cpu-text-fp16_00001_.png"
+        "evidence/report-assets/output/RepairBench/zimage-cpu-text-fp16_00001_.png"
       ],
       "elapsed_seconds": 192.531,
       "profile": "低显存模式 + CPU FP16 文本编码 + reserve 2GB + CPU VAE；相同权重的 SSD 缓存；RAM/commit 仍接近上限",
@@ -6891,9 +6891,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-head-direction-mask-input_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-head-direction-mask-mask_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-head-direction-mask_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-head-direction-mask-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-head-direction-mask-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-head-direction-mask_00001_.png"
       ],
       "elapsed_seconds": 936.891,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7003,7 +7003,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/flux2-tiny-bow-fingertip_00001_.png"
+        "evidence/report-assets/output/RepairBench/flux2-tiny-bow-fingertip_00001_.png"
       ],
       "elapsed_seconds": 33.172,
       "profile": "FLUX.2 pinned memory; stronger small-size prompt",
@@ -7112,7 +7112,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-watercolor-back-view_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-watercolor-back-view_00001_.png"
       ],
       "elapsed_seconds": 51.39,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7201,9 +7201,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-multiref-ref384-input_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-ref384-mask_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-ref384_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-multiref-ref384-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-ref384-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-ref384_00001_.png"
       ],
       "elapsed_seconds": 87.532,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7301,7 +7301,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/moss-watercolor-denoise085_00001_.png"
+        "evidence/report-assets/output/RepairBench/moss-watercolor-denoise085_00001_.png"
       ],
       "elapsed_seconds": 48.126,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7403,9 +7403,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-bfs-full-hair-tiled_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-bfs-full-hair-tiled-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-bfs-full-hair-tiled-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-bfs-full-hair-tiled_00001_.png"
       ],
       "elapsed_seconds": 366.65700000000004,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7513,9 +7513,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-mask-fox-reference-input_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-mask-fox-reference-mask_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-mask-fox-reference_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-mask-fox-reference-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-mask-fox-reference-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-mask-fox-reference_00001_.png"
       ],
       "elapsed_seconds": 940.688,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7623,9 +7623,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-multiref-clean-reference-input_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-clean-reference-mask_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-clean-reference_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-multiref-clean-reference-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-clean-reference-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-clean-reference_00001_.png"
       ],
       "elapsed_seconds": 117.25,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7723,7 +7723,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/moss-watercolor-base-sft_00001_.png"
+        "evidence/report-assets/output/RepairBench/moss-watercolor-base-sft_00001_.png"
       ],
       "elapsed_seconds": 141.312,
       "profile": "Encoding → isolated sampling → CPU decode; exact archived tensors, explicit workflow parameters",
@@ -7818,9 +7818,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-input_00001_.png",
-        "ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite_00001_.png",
-        "ComfyUI/output/RepairBench/flux2-tiny-bow-sized-composite-mask_00001_.png"
+        "evidence/report-assets/output/RepairBench/flux2-tiny-bow-sized-composite-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/flux2-tiny-bow-sized-composite_00001_.png",
+        "evidence/report-assets/output/RepairBench/flux2-tiny-bow-sized-composite-mask_00001_.png"
       ],
       "elapsed_seconds": 3.047,
       "profile": "CPU deterministic postprocess of retained FLUX sample",
@@ -7904,9 +7904,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-multiref-natural-crop-input_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-natural-crop-mask_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-natural-crop_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-multiref-natural-crop-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-natural-crop-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-natural-crop_00001_.png"
       ],
       "elapsed_seconds": 96.203,
       "profile": "Dynamic GPU text encoding; Kroma FP16 weights with split/upcast attention; isolated CPU decode; natural reference crops",
@@ -8004,9 +8004,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-multiref-full-tail-input_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-full-tail-mask_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-full-tail_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-multiref-full-tail-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-full-tail-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-full-tail_00001_.png"
       ],
       "elapsed_seconds": 99.172,
       "profile": "Same archived Kroma sample as natural-crop; final mask width260 height312, bottom feather0; CPU decode only",
@@ -8104,9 +8104,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-fox-clean-latent-input_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-fox-clean-latent-mask_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-fox-clean-latent_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-fox-clean-latent-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-fox-clean-latent-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-fox-clean-latent_00001_.png"
       ],
       "elapsed_seconds": 96.202,
       "profile": "Exact archived text/reference conditions; CPU recomputed initial latent; FP16 UNet/upcast sampling; isolated CPU decode",
@@ -8216,9 +8216,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-face-only-cfg1-fp16_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-face-only-cfg1-fp16-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-face-only-cfg1-fp16-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-face-only-cfg1-fp16_00001_.png"
       ],
       "elapsed_seconds": 96.155,
       "profile": "Exact reused encoding; FP16 UNet, split/upcast attention, CFG1,15steps, CPU decode",
@@ -8315,9 +8315,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-face-only-cfg3-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-face-only-cfg3-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-face-only-cfg3_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-face-only-cfg3-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-face-only-cfg3-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-face-only-cfg3_00001_.png"
       ],
       "elapsed_seconds": 147.297,
       "profile": "Exact reused encoding; FP16 UNet, split/upcast attention, CFG3,15steps, CPU decode",
@@ -8414,9 +8414,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-input_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-fox-profile-precomputed-mask_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-fox-profile-precomputed_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-fox-profile-precomputed-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-fox-profile-precomputed-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-fox-profile-precomputed_00001_.png"
       ],
       "elapsed_seconds": 142.468,
       "profile": "CPU reference VAE precompute → GPU text without VAE → FP16 isolated sampling → CPU decode; core reference preprocessing preserved exactly",
@@ -8526,9 +8526,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-input_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask-mask_00001_.png",
-        "ComfyUI/output/RepairBench/turbo-fox-profile-wide-mask_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-fox-profile-wide-mask-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-fox-profile-wide-mask-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/turbo-fox-profile-wide-mask_00001_.png"
       ],
       "elapsed_seconds": 87.328,
       "profile": "Exact prior text/reference conditions and initial samples; wider noise/composite mask only; FP16 sampling and isolated CPU decode",
@@ -8638,7 +8638,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-un-role-isolated_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-un-role-isolated_00001_.png"
       ],
       "elapsed_seconds": 136.734,
       "profile": "Existing Turbo GGUF + UN GGUF encoder; CPU reference precompute → GPU text → FP16 sampling → CPU VAE",
@@ -8750,7 +8750,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-un-pose-isolated_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-un-pose-isolated_00001_.png"
       ],
       "elapsed_seconds": 135.203,
       "profile": "Same Turbo UN weights and original prompt/seed; isolated reference/text/sampling/decode",
@@ -8862,7 +8862,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-un-multiref-natural_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-un-multiref-natural_00001_.png"
       ],
       "elapsed_seconds": 126.171,
       "profile": "Existing UN GGUF encoder;8 steps; same seed/prompt in reference-removal pair",
@@ -8972,7 +8972,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-un-multiref-no-fox_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-un-multiref-no-fox_00001_.png"
       ],
       "elapsed_seconds": 93.141,
       "profile": "Existing UN GGUF encoder;8 steps; same seed/prompt in reference-removal pair",
@@ -9080,7 +9080,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-ordinary-role-control_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-ordinary-role-control_00001_.png"
       ],
       "elapsed_seconds": 105.219,
       "profile": "Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference",
@@ -9192,7 +9192,7 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/turbo-ordinary-pose-control_00001_.png"
+        "evidence/report-assets/output/RepairBench/turbo-ordinary-pose-control_00001_.png"
       ],
       "elapsed_seconds": 102.249,
       "profile": "Same Turbo diffusion GGUF; ordinary Qwen3VL8B W4A8 encoder;8step same sigma/seed/prompt/reference",
@@ -9304,9 +9304,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-head-cropped-reference-input_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-head-cropped-reference-mask_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-head-cropped-reference_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-head-cropped-reference-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-head-cropped-reference-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-head-cropped-reference_00001_.png"
       ],
       "elapsed_seconds": 90.173,
       "profile": "Dynamic GPU encoding; Kroma Q2_K FP16 with upcast; isolated CPU decode",
@@ -9404,9 +9404,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/kroma-multiref-no-fox-input_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-no-fox-mask_00001_.png",
-        "ComfyUI/output/RepairBench/kroma-multiref-no-fox_00001_.png"
+        "evidence/report-assets/output/RepairBench/kroma-multiref-no-fox-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-no-fox-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/kroma-multiref-no-fox_00001_.png"
       ],
       "elapsed_seconds": 60.063,
       "profile": "Existing Kroma GGUF; source image1 only; FP16/upcast4step",
@@ -9502,9 +9502,9 @@
       "execution": "success",
       "blocked": false,
       "images": [
-        "ComfyUI/output/RepairBench/qwen-multiref-full-tail-input_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-multiref-full-tail-mask_00001_.png",
-        "ComfyUI/output/RepairBench/qwen-multiref-full-tail_00001_.png"
+        "evidence/report-assets/output/RepairBench/qwen-multiref-full-tail-input_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-multiref-full-tail-mask_00001_.png",
+        "evidence/report-assets/output/RepairBench/qwen-multiref-full-tail_00001_.png"
       ],
       "elapsed_seconds": 156.468,
       "profile": "Exact prior archived text/ref conditioning; fresh FP16/upcast15step; CPU decode/full-tail composite",
