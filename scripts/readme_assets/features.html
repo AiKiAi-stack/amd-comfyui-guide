@@ -5,25 +5,18 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html, body { width:1920px; height:1080px; background:#050505; overflow:hidden; }
-  body { padding:86px 90px 0 90px; }
-  .title { font:700 64px 'DejaVu Sans', sans-serif; color:#F2EFE8; letter-spacing:-1.5px; }
-  .sub { font:400 28px 'DejaVu Sans', sans-serif; color:#9B968B; margin-top:14px; }
-  .grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:26px; margin-top:52px; }
-  .card img { width:100%; height:378px; object-fit:cover; display:block; }
-  .card .lab { font:600 24px 'DejaVu Sans', sans-serif; color:#EDE9E1; margin-top:18px; }
-  .card .desc { font:400 20px 'DejaVu Sans', sans-serif; color:#8D887E; margin-top:5px; }
-  .footer {
-    position:absolute; left:90px; right:90px; bottom:70px;
-    display:flex; justify-content:space-between; align-items:center;
-    border-top:1px solid rgba(201,162,39,.35); padding-top:26px;
-  }
-  .footer .left { font:400 24px 'DejaVu Sans', sans-serif; color:#9B968B; }
-  .footer .right { font:600 24px 'DejaVu Sans', sans-serif; color:#C9A227; letter-spacing:.5px; }
+  body { padding:100px 96px 0 96px; display:flex; flex-direction:column; }
+  .title { font:700 86px 'DejaVu Sans', sans-serif; color:#F2EFE8; letter-spacing:-2.5px; line-height:1.05; }
+  .sub { font:400 30px 'DejaVu Sans', sans-serif; color:#9B968B; margin-top:18px; line-height:1.35; }
+  .grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:30px; margin-top:72px; }
+  .card img { width:100%; height:580px; object-fit:cover; display:block; }
+  .card .lab { font:600 27px 'DejaVu Sans', sans-serif; color:#EDE9E1; margin-top:24px; letter-spacing:.2px; }
+  .card .desc { font:400 22px 'DejaVu Sans', sans-serif; color:#8D887E; margin-top:8px; }
 </style>
 </head>
 <body>
   <div class="title">Real outputs. Real measurements.</div>
-  <div class="sub">Every feature ships with its prompt, workflow, output image, timing and verdict.</div>
+  <div class="sub">Every feature ships with its prompt, workflow, output image, timing and record.</div>
 
   <div class="grid">
     <div class="card">
@@ -46,11 +39,6 @@
       <div class="lab">MOSS SFT</div>
       <div class="desc">8-step LoRA</div>
     </div>
-  </div>
-
-  <div class="footer">
-    <div class="left">7 model families &middot; 40 tested features &middot; 162 platform records</div>
-    <div class="right">Linux: 21 pass &middot; 18 partial &middot; 1 fail</div>
   </div>
 </body>
 </html>

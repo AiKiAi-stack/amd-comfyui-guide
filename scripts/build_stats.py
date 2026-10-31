@@ -41,12 +41,9 @@ def collect() -> dict:
     cases = load(CASES)
     report = REPORT.read_text(encoding='utf-8')
 
-    cards = re.findall(r'<article class="feature"[^>]*data-linux-status="([^"]*)"', report)
+    cards = re.findall(r'<article class="feature"', report)
     if len(cards) != 40:
         raise SystemExit(f'expected 40 feature cards in the report, found {len(cards)}')
-    counts = {name: cards.count(name) for name in ('通过', '部分达到', '未达到', '未测试')}
-    if counts['未测试']:
-        raise SystemExit('report has untested feature cards; stats would be ambiguous')
 
     records = platform['records']
     windows = platform['legacy_record_count']
@@ -58,11 +55,6 @@ def collect() -> dict:
     return {
         'models': len(platform['models']),
         'features': len(cards),
-        'linux_verdicts': {
-            'pass': counts['通过'],
-            'partial': counts['部分达到'],
-            'fail': counts['未达到'],
-        },
         'records': {'total': len(records), 'windows': windows, 'linux': len(records) - windows},
         'workflows': {'ui': ui, 'api': api, 'installed': installed},
         'cases': len(cases),
@@ -75,8 +67,7 @@ def markdown_en(s: dict) -> str:
         '| Metric | Value |',
         '|---|---:|',
         '| Model families | {models} |'.format(**s),
-        '| Features tested | {features} |'.format(**s),
-        '| Linux verdicts | {v[pass]} pass · {v[partial]} partial · {v[fail]} fail |'.format(v=s['linux_verdicts']),
+        '| Features documented | {features} |'.format(**s),
         '| Platform records | {r[total]} ({r[windows]} Windows + {r[linux]} Linux) |'.format(r=s['records']),
         '| Workflows | {w[ui]} UI + {w[api]} API · {w[installed]} installed |'.format(w=s['workflows']),
         '| Documented cases | {cases} |'.format(**s),
@@ -86,10 +77,9 @@ def markdown_en(s: dict) -> str:
 def markdown_zh(s: dict) -> str:
     return '\n'.join([
         '| 指标 | 数值 |',
-        '|---|---:|'.format(),
+        '|---|---:|',
         '| 模型系列 | {models} |'.format(**s),
-        '| 实测功能 | {features} |'.format(**s),
-        '| Linux 结论 | {v[pass]} 通过 · {v[partial]} 部分达到 · {v[fail]} 未达到 |'.format(v=s['linux_verdicts']),
+        '| 功能记录 | {features} |'.format(**s),
         '| 平台记录 | {r[total]}（{r[windows]} Windows + {r[linux]} Linux） |'.format(r=s['records']),
         '| 工作流 | {w[ui]} UI + {w[api]} API · 已安装 {w[installed]} |'.format(w=s['workflows']),
         '| 记录案例 | {cases} |'.format(**s),
@@ -98,11 +88,12 @@ def markdown_zh(s: dict) -> str:
 
 def html_zh(s: dict) -> str:
     return '\n'.join([
-        '<div class="stat"><strong>{models}</strong><span>模型系列</span></div>'.format(**s),
-        '<div class="stat"><strong>{features}</strong><span>实测功能</span></div>'.format(**s),
-        '<div class="stat"><strong>{v[pass]} / {v[partial]} / {v[fail]}</strong><span>Linux 通过 / 部分 / 未达到</span></div>'.format(v=s['linux_verdicts']),
-        '<div class="stat"><strong>{r[total]}</strong><span>平台记录（{r[windows]} Win + {r[linux]} Linux）</span></div>'.format(r=s['records']),
-        '<div class="stat"><strong>{w[ui]}</strong><span>UI 工作流 · 已安装 {w[installed]}</span></div>'.format(w=s['workflows']),
+        '<ul class="ledger">',
+        '<li><b>{models}</b><span>模型系列</span></li>'.format(**s),
+        '<li><b>{features}</b><span>功能记录</span></li>'.format(**s),
+        '<li><b>{r[total]}</b><span>平台记录（{r[windows]} Win + {r[linux]} Linux）</span></li>'.format(r=s['records']),
+        '<li><b>{cases}</b><span>记录案例</span></li>'.format(**s),
+        '</ul>',
     ])
 
 
