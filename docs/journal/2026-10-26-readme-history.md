@@ -17,7 +17,7 @@ Windows 原生 AMD 环境的真实使用记录：从环境检查、第一张图�
 1. [环境与从零搭建](../tutorial/02-windows-setup.md)：固定版本、AMD Python 环境、GPU 最小检查。
 2. [第一张图与单项重跑](../tutorial/04-first-image.md)：下载所需模型、提交 API 图、保存新证据。
 4. [遇到的坑](../tutorial/07-troubleshooting.md)：INT8、时间尺度、GGUF 卸载、锁页内存与 OOM。
-5. [完整图文报告（GitHub 可直接阅读）](../../evidence/2026-10-19-features/feature-report.md)。
+5. [完整图文报告（GitHub 可直接阅读）](../../report/feature-report.md)。
 6. [出图失败追踪与修复验证](../reference/failure-tracker.md)：本地失败证据、上游问题及连续出图回归。
 8. [实际修复重试与图片](../../evidence/2026-10-21-repairs/README.md)：自动反推分阶段出图、FLUX 茶壶/夜景/1024 重试及仍未达标的小蝴蝶结。
 
@@ -29,7 +29,7 @@ cd barely-comfy
 python -m http.server 8767 --bind 127.0.0.1
 ```
 
-打开 <http://127.0.0.1:8767/evidence/2026-10-19-features/feature-report.html>。浏览报告不需要显卡、ComfyUI 或模型权重。
+打开 <http://127.0.0.1:8767/report/index.html>。浏览报告不需要显卡、ComfyUI 或模型权重。
 
 ## 能在这里找到什么
 
@@ -73,7 +73,7 @@ Qwen 入口为 `bash scripts/start_ubuntu_qwen.sh`，普通启动脚本保留原
 
 ## 模型 / 功能 / Windows 与 Linux 对照（2026-10-24 追加）
 
-[新版 HTML 汇报](../../evidence/2026-10-19-features/feature-report.html) 现在按模型、功能分组，并列展示 Windows / Linux 的结果、原评价和复现步骤。9 个模型/权重系列、46 个功能分组；未验证平台明确保留。原 Windows 报告和评价不改写。
+[新版 HTML 汇报](../../report/index.html) 现在按模型、功能分组，并列展示 Windows / Linux 的结果、原评价和复现步骤。9 个模型/权重系列、46 个功能分组；未验证平台明确保留。原 Windows 报告和评价不改写。
 
 [工作流库](../../workflows/README.md) 已整理 99 份经过前端回环核对的 WebUI JSON，按模型 / 功能安装到本机左侧“工作流 → 模型功能库”；报告可下载单份或完整输入包。Linux 已执行预设与 Windows 历史配方分开标明，导入通过不等于 Linux 执行通过。Qwen 蓝眼预设额外经过本轮实际 WebUI 出图复核。
 
@@ -81,7 +81,7 @@ Qwen 入口为 `bash scripts/start_ubuntu_qwen.sh`，普通启动脚本保留原
 
 ## Linux功能补图与工作流更新（2026-10-25追加）
 
-[模型/功能/平台汇报](../../evidence/2026-10-19-features/feature-report.html) 已补42张Linux实测图，40/47功能组有Linux输出；9系列、169条证据。Windows原101条评价和完整归档保留，Linux不足仍按实际标注。
+[模型/功能/平台汇报](../../report/index.html) 已补42张Linux实测图，40/47功能组有Linux输出；9系列、169条证据。Windows原101条评价和完整归档保留，Linux不足仍按实际标注。
 
 [模型功能库](../../workflows/README.md) 共268份真实前端回环通过的UI，184份已安装。新Linux优先使用编码/采样阶段图；4B辅助反推方案为反推/编码/采样三阶段，归档随完整包提供，修改输入后按说明重跑。完整包约360.1MiB，轻量包约11.7MiB。
 
@@ -97,4 +97,4 @@ Qwen 入口为 `bash scripts/start_ubuntu_qwen.sh`，普通启动脚本保留原
 
 ### 当前报告（2026-10-26）
 
-保留7个实测模型系列、40项功能。Linux为21项通过、18项部分达到、1项未达到；Windows原评价保留。页面可按结果筛选，搜索条件随网址保存；旧测试按方案展开。[打开报告](../../evidence/2026-10-19-features/feature-report.html) · [使用工作流](../../workflows/README.md)。
+保留7个实测模型系列、40项功能。Linux为21项通过、18项部分达到、1项未达到；Windows原评价保留。页面可按结果筛选，搜索条件随网址保存；旧测试按方案展开。[打开报告](../../report/index.html) · [使用工作流](../../workflows/README.md)。

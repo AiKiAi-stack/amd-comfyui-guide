@@ -1,6 +1,6 @@
 # 功能与输出图逐项试验
 
-用户目标：公众号介绍的模型除了普通编辑之外，各项功能都提供独立的输入、真实输出与判断。报告入口为 [feature-report.html](feature-report.html) 和 [feature-report.md](feature-report.md)。运行中的卡片不能当成最终结果。
+用户目标：公众号介绍的模型除了普通编辑之外，各项功能都提供独立的输入、真实输出与判断。报告已迁到 [report/index.html](../../report/index.html) 和 [report/feature-report.md](../../report/feature-report.md)；本目录旧的 `feature-report.html` / `feature-report.md` 只保留跳转。运行中的卡片不能当成最终结果。
 
 2026-10-20 核验：BFS 换头 LoRA 对照和 Turbo-UN 六项均有真实输出；UN 的文生图、多图合成、全身角色替换及主要姿态目标达到本例目标，换头和遮罩物种替换仍有限制。
 

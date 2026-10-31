@@ -5,7 +5,7 @@ import json
 from urllib.parse import unquote, urlsplit
 
 ROOT=Path(__file__).resolve().parents[2]
-REPORT=ROOT/'trials/2026-10-19-features/feature-report.html'
+REPORT=ROOT/'report/index.html'
 class Links(HTMLParser):
     def __init__(self):super().__init__();self.ids=set();self.links=[]
     def handle_starttag(self,tag,attrs):

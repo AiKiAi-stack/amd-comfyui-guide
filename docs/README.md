@@ -28,5 +28,5 @@
 ## 其他入口
 
 - [工作流库说明](../workflows/README.md)
-- [功能报告（本地）](../evidence/2026-10-19-features/feature-report.html) · [在线报告](https://aikiai-stack.github.io/amd-comfyui-guide/)
+- [功能报告（本地）](../report/index.html) · [在线报告](https://aikiai-stack.github.io/amd-comfyui-guide/)
 - [贡献指南](../CONTRIBUTING.md) · [第三方说明](../THIRD_PARTY_NOTICES.md)

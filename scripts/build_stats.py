@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORT = ROOT / 'evidence/2026-10-19-features/feature-report.html'
+REPORT = ROOT / 'report/index.html'
 PLATFORM = ROOT / 'evidence/2026-10-19-features/platform-comparison.json'
 CATALOG = ROOT / 'workflows/catalog.json'
 BUNDLE = ROOT / 'workflows/bundle-status.json'

@@ -22,7 +22,7 @@ README visual assets and the landing-page model gallery, built from real model o
 | Manifest | `{schema, generated, models[7], plates[32]}`; each plate has `id, model_id, feature_id, feature, prompt, width, height, image, source, report, steps, sampler, hero` |
 | Heroes | exactly one `hero: true` plate per model family, used by the page's projector |
 
-The manifest carries no pass/fail verdict data: per-feature verdicts stay inside `evidence/2026-10-19-features/feature-report.html`; guide surfaces do not present them.
+The manifest carries no pass/fail verdict data: per-feature verdicts stay inside `report/index.html`; guide surfaces do not present them.
 
 Sources are the recorded outputs from `evidence/2026-10-19-features/platform-comparison.json`. Each plate's `source` field keeps the historical runtime capture path (`ComfyUI/output/...`) for provenance; the committed copies of those image files live under `evidence/report-assets/output/...`. `--build` resolves either tree (historical path first, archive second), and `--check` validates the exported WebP files only — a missing historical PNG location does not fail the check.
 

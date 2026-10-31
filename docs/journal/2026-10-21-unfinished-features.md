@@ -73,4 +73,4 @@
 
 建议执行顺序：自动反推 GPU/CPU 内存链路 → FLUX.2 1024 崩溃 → Kroma 风格参考与遮罩物种替换 → 换脸/换头保持 → 其他风格/编辑细节。
 
-可重跑清单核对：`python scripts/audit_feature_backlog.py --source <实验根目录> --out runs/backlog-audit.json`。报告入口：[本机图文报告](http://127.0.0.1:8767/evidence/2026-10-19-features/feature-report.html)。
+可重跑清单核对：`python scripts/audit_feature_backlog.py --source <实验根目录> --out runs/backlog-audit.json`。报告入口：[本机图文报告](http://127.0.0.1:8767/report/index.html)。

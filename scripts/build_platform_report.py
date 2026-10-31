@@ -13,6 +13,9 @@ from platform_catalog import ROOT, HERE, MODELS, FEATURES, sha
 from report_evidence import comparison, ISSUE_FILE
 
 
+OUT = ROOT / 'report'
+
+
 PRESENTATION = ROOT / 'evidence/2026-10-26-report-edit'
 TRIAL_NOTES = json.loads((PRESENTATION / 'trial-notes.json').read_text()) if (PRESENTATION / 'trial-notes.json').is_file() else {}
 READING_SUMMARIES = json.loads((PRESENTATION / 'reading-summaries.json').read_text()) if (PRESENTATION / 'reading-summaries.json').is_file() else {}
@@ -75,7 +78,7 @@ def _repo_path(path):
 
 
 def url(path):
-    return quote(os.path.relpath(_repo_path(path), HERE).replace(os.sep, '/'), safe='/._-')
+    return quote(os.path.relpath(_repo_path(path), OUT).replace(os.sep, '/'), safe='/._-')
 
 
 @lru_cache(maxsize=None)
@@ -340,8 +343,9 @@ def build_report():
     if distribution_file.is_file():
         for name, remote_url in json.loads(distribution_file.read_text()).get('assets', {}).items():
             html_text = html_text.replace('../../workflows/' + name, escape(remote_url))
-    target = HERE / 'feature-report.html'
-    temporary = HERE / ('feature-report.html.' + str(os.getpid()) + '.tmp')
+    OUT.mkdir(parents=True, exist_ok=True)
+    target = OUT / 'index.html'
+    temporary = OUT / ('index.html.' + str(os.getpid()) + '.tmp')
     temporary.write_text(html_text, encoding='utf-8')
     temporary.replace(target)
     matrix = {'models': MODELS, 'features': FEATURES, 'records': records,

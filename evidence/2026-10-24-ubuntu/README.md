@@ -60,7 +60,7 @@
 
 ![本机 ComfyUI 主画布就绪](comfyui-ready.png)
 
-界面 <http://127.0.0.1:8188/>；报告 <http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html>，均仅监听本机。重启后GPU临时ACL和只读NVMe挂载需要重新核对，服务本身未配置开机自启。没有提交、推送或对外发布。
+界面 <http://127.0.0.1:8188/>；报告 <http://127.0.0.1:8767/report/index.html>，均仅监听本机。重启后GPU临时ACL和只读NVMe挂载需要重新核对，服务本身未配置开机自启。没有提交、推送或对外发布。
 
 ## Ubuntu 报告显示
 

@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 GALLERY_DIR = ROOT / "assets" / "gallery"
 MANIFEST_PATH = GALLERY_DIR / "manifest.json"
 DATA_PATH = ROOT / "evidence" / "2026-10-19-features" / "platform-comparison.json"
-REPORT_PATH = ROOT / "evidence" / "2026-10-19-features" / "feature-report.html"
+REPORT_PATH = ROOT / "report" / "index.html"
 
 SCHEMA = 1
 WEBP_QUALITY = 82
@@ -247,7 +247,7 @@ def build_plate(model_id, evidence_path, hero, features, by_basename):
         # files may live under SOURCE_ALIASES; --check never requires the
         # source PNG to exist there.
         "source": evidence_path,
-        "report": "evidence/2026-10-19-features/feature-report.html#{}--{}".format(
+        "report": "report/index.html#{}--{}".format(
             model_id, feature_id
         ),
         "hero": bool(hero),
@@ -456,7 +456,7 @@ def check():
         errors.append("cannot read report {}: {}".format(rel(REPORT_PATH), exc))
         anchors = set()
 
-    report_prefix = "evidence/2026-10-19-features/feature-report.html#"
+    report_prefix = "report/index.html#"
     plate_ids = set()
     model_family_ids = set(model_ids)
     heroes = 0

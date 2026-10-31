@@ -16,7 +16,7 @@ for port in range(8766, 8771):
             cwd=ROOT, stdout=log, stderr=log, creationflags=subprocess.CREATE_NO_WINDOW,
         )
     (HERE / "preview-server.pid").write_text(str(process.pid))
-    url = f"http://127.0.0.1:{port}/trials/2026-10-19-features/feature-report.html"
+    url = f"http://127.0.0.1:{port}/report/index.html"
     (HERE / "preview-url.txt").write_text(url)
     print(url, flush=True)
     break

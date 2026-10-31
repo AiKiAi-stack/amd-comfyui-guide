@@ -7,7 +7,7 @@ import requests
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
-url='http://127.0.0.1:8767/trials/2026-10-19-features/feature-report.html'
+url='http://127.0.0.1:8767/report/index.html'
 try:
     response=requests.get(url,timeout=3)
     response.raise_for_status()
