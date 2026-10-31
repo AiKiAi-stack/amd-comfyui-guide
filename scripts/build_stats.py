@@ -2,8 +2,10 @@
 """Generate the single source of truth for public statistics.
 
 Reads the platform report and workflow catalog, writes ``data/stats.json`` and
-renders the marked statistics blocks in README.md, README.zh-CN.md and
-index.html. ``--check`` fails when any block or the JSON file has drifted.
+renders the marked statistics blocks in README.md and README.zh-CN.md.
+``--check`` fails when any block or the JSON file has drifted. The landing page
+carries no statistics block on purpose: its record section is a link band, and the
+numbers live on the report page and in the READMEs.
 
 Run from the repository root:
 
@@ -86,16 +88,6 @@ def markdown_zh(s: dict) -> str:
     ])
 
 
-def html_zh(s: dict) -> str:
-    return '\n'.join([
-        '<ul class="ledger">',
-        '<li><b>{models}</b><span>模型系列</span></li>'.format(**s),
-        '<li><b>{features}</b><span>功能记录</span></li>'.format(**s),
-        '<li><b>{r[total]}</b><span>平台记录（{r[windows]} Win + {r[linux]} Linux）</span></li>'.format(r=s['records']),
-        '<li><b>{cases}</b><span>记录案例</span></li>'.format(**s),
-        '</ul>',
-    ])
-
 
 def replace_block(path: Path, body: str) -> None:
     text = path.read_text(encoding='utf-8')
@@ -110,7 +102,6 @@ def expected_files(s: dict) -> dict:
     return {
         ROOT / 'README.md': markdown_en(s),
         ROOT / 'README.zh-CN.md': markdown_zh(s),
-        ROOT / 'index.html': html_zh(s),
     }
 
 

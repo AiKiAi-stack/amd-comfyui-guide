@@ -118,10 +118,16 @@ components:
     backgroundColor: "{colors.paper-raised}"
     rounded: "{rounded.none}"
     size: "fluid (4-col masonry)"
-  ledger-cell:
+  record-band:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-    padding: "clamp(20px, 2.6vw, 30px)"
+    padding: "clamp(44px, 6vw, 72px) 0"
+  record-band-report:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "0 0 9px"
+    typography: "{typography.button}"
   lightbox-close:
     backgroundColor: "rgba(10,9,7,0.7)"
     textColor: "{colors.ink}"
@@ -185,6 +191,11 @@ visit, the rest is a catalogue of plates, chapters, downloads and records.
 - Section heads are a single noun plus a short note on the left and an oversized
   stroked numeral on the right (decorative, `aria-hidden`, hidden under 700 px).
 - Lists of downloads and chapters are hairline rows, not cards.
+- The page scrolls as a sequence of sections: `html` carries
+  `scroll-snap-type: y proximity` with `scroll-padding-top: 68px`, and the hero,
+  every section and the footer are `scroll-snap-align: start`. Proximity (not
+  mandatory) keeps the tall plate masonry freely scrollable while the short
+  sections still snap into place.
 
 ## Elevation & Depth
 
@@ -213,8 +224,9 @@ row; nothing floats.
   plate number. Opens the lightbox.
 - **Lightbox (`dialog`)** — 1.32fr media / 1fr information, mono section labels,
   prompt with copy button, parameter grid, report link.
-- **Ledger** — four hairline-separated cells carrying a serif number and a mono
-  label; the only place numbers are set large.
+- **Record band** — the closing section is one thin band, not a full section: a
+  small serif heading, one line of context, and a mono link to the feature report,
+  with the evidence links on a hairline row beneath.
 - **Footer** — display line, mono tagline, link row, and a bottom row for scope and
   copyright.
 
