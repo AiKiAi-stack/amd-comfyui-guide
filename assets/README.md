@@ -1,15 +1,18 @@
 # Visual assets
 
-README visuals and the landing-page model gallery. The posters are built from real model outputs captured on the RX 6650 XT; the covers are typographic and live in `brand/`.
+README visuals and the landing-page model gallery. The posters are built from real model outputs captured on the test machine; the README mark is plain SVG.
 
 | File | Purpose |
 |---|---|
-| `banner.webp` | English README cover: fused mark, project name, slogan, verified-hardware line |
-| `banner.zh.webp` | Chinese README cover: same lockup, Chinese name and slogan |
-| `brand/mark.svg` | The fused AMD × ComfyUI mark used by both covers; see `brand/README.md` |
+| `brand/mark.svg` | The fused AMD × ComfyUI mark for dark backgrounds; see `brand/README.md` |
+| `brand/mark-light.svg` | The same mark for light backgrounds |
 | `features.webp` | Core outputs poster: four model families, one real image each — no result counts, no pass/fail verdicts |
 | `gallery/manifest.json` | Landing-page gallery manifest: 7 model families, 32 curated real outputs with prompts, parameters and evidence anchors |
 | `gallery/*.webp` | 32 curated model outputs, one file per source PNG |
+
+## README mark
+
+Both READMEs show `brand/mark.svg` / `brand/mark-light.svg` directly through a theme-aware `<picture>`, at 220 px wide. There is no raster cover to rebuild: edit the SVG, keep the viewBox, and both READMEs pick the change up.
 
 ## Landing-page gallery
 
@@ -62,21 +65,4 @@ Image.open("assets/features.png").convert("RGB").save(
 )
 PY
 rm assets/features.png   # keep the repo free of intermediate PNGs/metadata
-```
-
-Both banners are 1920×720, rendered from `banner.html` and `banner.zh.html`. They load the self-hosted fonts and `brand/mark.svg` by relative path, so render them from the repository root:
-
-```bash
-for lang in banner banner.zh; do
-  google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
-    --window-size=1920,720 --virtual-time-budget=4000 \
-    --screenshot="$PWD/assets/$lang.png" "file://$PWD/scripts/readme_assets/$lang.html"
-done
-python3 - <<'PY'
-from PIL import Image
-for name in ("banner", "banner.zh"):
-    Image.open(f"assets/{name}.png").convert("RGB").save(
-        f"assets/{name}.webp", "WEBP", quality=86, method=6)
-PY
-rm assets/banner.png assets/banner.zh.png
 ```

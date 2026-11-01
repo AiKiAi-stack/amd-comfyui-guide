@@ -1,8 +1,8 @@
 # 03 · 在 Ubuntu 上从零搭一套 ROCm 环境
 
-这一章在一块 RX 6650 XT 上，从全新的 Ubuntu 装出一套能出图的 ComfyUI。做完你手上有一个通过 GPU 检查、版本钉死、能起服务的环境。
+这一章在 8 GB 一档的 AMD 卡上，从全新的 Ubuntu 装出一套能出图的 ComfyUI。做完你手上有一个通过 GPU 检查、版本钉死、能起服务的环境。
 
-所有命令都在仓库根目录执行。安装和验证都放在能直接访问 GPU 的本机终端里做。
+所有命令都在仓库根目录执行。安装和验证都放在能直接访问 GPU 的终端里做。
 
 Windows 那一套仍然有效。Ubuntu 跑通也不代表 Windows 的原生崩溃问题解决了，两条路分开算。
 
@@ -10,7 +10,7 @@ Windows 那一套仍然有效。Ubuntu 跑通也不代表 Windows 的原生崩�
 
 ### 硬件、系统、驱动
 
-这套配置在 RX 6650 XT 8GB（gfx1032）、16GB 内存、Ubuntu 22.04.5、内核 6.8.0-138 上走通。系统要已加载 amdgpu，用原生 gfx1032，不设 `HSA_OVERRIDE_GFX_VERSION`。
+这套步骤在 8 GB 一档的 AMD 卡、16 GB 内存、Ubuntu 22.04.5 上走通，完整配置见[附录](../reference/test-machine.md)。系统要已加载 amdgpu，用原生 gfx1032，不设 `HSA_OVERRIDE_GFX_VERSION`。
 
 ### 内存
 
@@ -151,7 +151,7 @@ ss -ltnp | grep ':8188' || true
 ## 和你看到的不一样时
 
 - 初始化崩溃、OOM、黑图或噪声、GGUF 卸载异常：去 [遇到的坑](./07-troubleshooting.md)。
-- 显卡不是 RX 6650 XT：看 [AMD 卡适配矩阵](./08-amd-matrix.md) 再决定要不要照做。
+- 显卡不在 8 GB 一档：看 [AMD 卡适配矩阵](./08-amd-matrix.md) 再决定要不要照做。
 - `setfacl` 报错或 `/dev/kfd` 权限不对：先确认用户组和内核模块，别用 root 硬跑服务。
 - 端口被占：`ss -ltnp | grep ':8188'` 找出进程，先停掉再启动。
 - 模型路径读不到：先 `lsblk -f` 确认分区还在、挂载点还在，再改 YAML。
