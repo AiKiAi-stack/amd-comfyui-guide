@@ -8,11 +8,17 @@
 - 模型与第三方工作流：各 trials 的来源文档、下载清单和 source_workflows 记录原始仓库与固定版本。引用/转换的上游工作流及原始来源元数据仍受原上游授权约束，根目录 MIT 不覆盖这些第三方材料。
 - 微信文章：仅作为实验线索和核验来源，未转载原始文章HTML或全文。索引标题不是已阅读全文的证据。
 
+## 品牌标识
+
+`assets/brand/mark.svg` 是本指南自制的组合标识：ComfyUI 的标记取自其官方 logo，AMD 文字标识的路径取自 simple-icons（CC0），两者组合后用来指代本指南讨论的对象。
+
+AMD、Radeon 是 Advanced Micro Devices, Inc. 的商标；ComfyUI 的名称与标识归其项目所有。本仓库与两家公司没有隶属关系，标识只作指代用途，不在 MIT 授权范围内，也不表示任何一方为本指南背书。
+
 ## 网页字体
 
 站点 `index.html` 使用自托管子集字体，全部以 SIL Open Font License 1.1 分发，源文件来自 Google Fonts 镜像：
 
-- Instrument Serif（Latin 标题）— <https://github.com/google/fonts/tree/main/ofl/instrumentserif>
+- Alegreya（Latin 标题）— <https://github.com/google/fonts/tree/main/ofl/alegreya>
 - IBM Plex Sans / IBM Plex Mono（Latin 正文与元数据）— <https://github.com/google/fonts/tree/main/ofl/ibmplexsans>、<https://github.com/google/fonts/tree/main/ofl/ibmplexmono>
 - Noto Serif SC / Noto Sans SC（中文标题与正文）— <https://github.com/google/fonts/tree/main/ofl/notoserifsc>、<https://github.com/google/fonts/tree/main/ofl/notosanssc>
 - Noto Sans Symbols 2（界面符号子集：▶ ❚ ✕）— <https://github.com/google/fonts/tree/main/ofl/notosanssymbols2>

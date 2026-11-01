@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="assets/banner.webp" alt="AMD ComfyUI Guide — ComfyUI on AMD Radeon GPUs" width="100%">
+<img src="assets/banner.webp" alt="AMD ComfyUI Guide. Small VRAM. Full graph." width="100%">
 
 # AMD ComfyUI Guide
 
-**ComfyUI on AMD Radeon GPUs.**
+**Small VRAM. Full graph.**
 
-Step-by-step setup for Windows and Ubuntu, a tested feature catalog, ready-to-use
-workflows, and a record behind every result.
+ComfyUI on AMD Radeon GPUs, from a bare driver to a first image, with a record
+behind every result.
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -21,13 +21,20 @@ workflows, and a record behind every result.
 
 ## What this is
 
-A deployment guide for running ComfyUI image generation on AMD Radeon GPUs, backed by a reproducible evidence set. It starts with a verified step-by-step setup on one machine (Windows 10 and Ubuntu 22.04.5 + ROCm 7.14), then documents 40 features across 7 model families: what worked, what partially worked, what failed, and why.
+You have an AMD Radeon card and you want ComfyUI running on it. This guide takes you
+through the install on Windows 10 or Ubuntu 22.04.5, gets a first image out of the
+card, and then tells you which of 40 ComfyUI features actually run on 8 GB of VRAM.
+Every feature has its own record: input, prompt, workflow, output image, timing and a
+verdict, failures included.
 
-- **Verified on:** AMD Radeon RX 6650 XT (gfx1032) · 8 GB VRAM · 16 GB RAM
-- **Verified stack:** Ubuntu 22.04.5 · ROCm 7.14 · PyTorch 2.12.0 · ComfyUI `ce1e922`
-- **Audience:** anyone with an AMD GPU who wants to know whether a ComfyUI feature runs — and how
+All of it comes from one machine: an AMD Radeon RX 6650 XT (gfx1032) with 8 GB of
+VRAM and 16 GB of RAM, on Windows 10 and on Ubuntu 22.04.5 with ROCm 7.14, PyTorch
+2.12.0 and ComfyUI `ce1e922`. Windows records and Linux records are filed separately,
+because they are not the same test.
 
-This is a single-machine field report, not an AMD compatibility list. For other cards, see the [AMD GPU support matrix](docs/tutorial/08-amd-matrix.md).
+That card is where the evidence comes from, not who the guide is for. If yours is a
+different AMD card, read the [support matrix](docs/tutorial/08-amd-matrix.md) first
+and find the tier it falls into.
 
 ## Results
 
@@ -43,43 +50,67 @@ This is a single-machine field report, not an AMD compatibility list. For other 
 
 <img src="assets/features.webp" alt="Four real outputs generated on an RX 6650 XT: Qwen Image 2.1 Turbo, FLUX.2 Klein, Kroma Q2, MOSS SFT" width="100%">
 
-Open the **[full report](https://aikiai-stack.github.io/amd-comfyui-guide/)** — 40 cards, each with input, prompt, real output, timing and verdict per platform.
+The [full report](https://aikiai-stack.github.io/amd-comfyui-guide/) has 40 cards,
+each with the input, prompt, real output, timing and per-platform verdict.
 
 ## Quick start
 
-1. **Check your hardware** — [hardware & versions](docs/tutorial/01-hardware.md). On another card? Read the [support matrix](docs/tutorial/08-amd-matrix.md) first.
-2. **Install** — [Windows](docs/tutorial/02-windows-setup.md) or [Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md). Ubuntu is the only path verified from a fresh, independent environment.
-3. **Generate your first image** — [first image](docs/tutorial/04-first-image.md), then pick a workflow from the [workflow library](docs/tutorial/06-workflows.md).
+1. **Compare your hardware.** The
+   [hardware chapter](docs/tutorial/01-hardware.md) opens with the table to check
+   against. On a card other than the RX 6650 XT, read the
+   [support matrix](docs/tutorial/08-amd-matrix.md) before installing anything.
+2. **Install.** [Windows](docs/tutorial/02-windows-setup.md) or
+   [Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md). Ubuntu is the only path that
+   was completed from a fresh, independent environment.
+3. **Get one image out.** Follow [first image](docs/tutorial/04-first-image.md), then
+   pick a workflow from the [workflow library](docs/tutorial/06-workflows.md).
 
-No GPU? Open the [report](https://aikiai-stack.github.io/amd-comfyui-guide/) — it needs no model weights.
+No AMD card at hand? The [report](https://aikiai-stack.github.io/amd-comfyui-guide/)
+needs no model weights.
 
-## Download the workflow library
+## Workflow library
 
-268 WebUI workflows plus matching API files, checked by real frontend import/export:
+268 WebUI workflows, each with a matching API file, checked by importing and
+exporting every one in the real ComfyUI frontend. Two bundles:
 
-- **[Full bundle (~360 MiB)](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)** — includes input images and encoded conditioning
-- **[Light bundle (~12 MiB)](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip)** — workflows only; run the encoding step first
+- [Full, about 360 MiB](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip):
+  workflows, input images and the checked encoding files.
+- [Light, about 12 MiB](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip):
+  workflows only; run the encoding step yourself.
 
-Install steps, naming rules and SHA gotchas: [workflow library](docs/tutorial/06-workflows.md).
+Install steps, file naming and the SHA caveats are in the
+[workflow library chapter](docs/tutorial/06-workflows.md).
 
 ## Tutorial
 
+Read the chapters in order. They assume the card is already in the machine and the
+driver is installed.
+
 | Chapter | When to read it |
 |---|---|
-| [01 Hardware & versions](docs/tutorial/01-hardware.md) | confirm your GPU / OS / version combination |
-| [02 Windows setup](docs/tutorial/02-windows-setup.md) | native AMD environment on Windows |
+| [01 Hardware and versions](docs/tutorial/01-hardware.md) | confirm the GPU, OS and version combination before installing |
+| [02 Windows setup](docs/tutorial/02-windows-setup.md) | a native AMD environment on Windows |
 | [03 Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md) | the verified path, from a fresh environment |
 | [04 First image](docs/tutorial/04-first-image.md) | prove the GPU actually renders |
-| [05 Models](docs/tutorial/05-models.md) | download and place model weights |
-| [06 Workflow library](docs/tutorial/06-workflows.md) | download, import and reproduce results |
+| [05 Models](docs/tutorial/05-models.md) | pick a model family and place the weights |
+| [06 Workflow library](docs/tutorial/06-workflows.md) | download, import and reproduce a result |
 | [07 Troubleshooting](docs/tutorial/07-troubleshooting.md) | init crashes, OOM, black or noisy images |
 | [08 AMD support matrix](docs/tutorial/08-amd-matrix.md) | adapt the guide to another AMD card |
 
-Full docs index: [docs/](docs/README.md).
+The full index is in [docs/](docs/README.md).
 
 ## Evidence and how to read it
 
-Every feature has its own case: prompt, workflow, output image, timing and verdict. "Workflow opens", "image renders", "target met" and "stable across runs" are recorded separately — they are not interchangeable, and failed or partial results are kept on purpose. See [evidence & privacy](docs/reference/evidence-and-privacy.md) and the [failure tracker](docs/reference/failure-tracker.md). The raw experimental trail not referenced by the report is archived in [barely-comfy-evidence](https://github.com/AiKiAi-stack/barely-comfy-evidence) with a SHA-256 manifest.
+Four things get recorded separately: the workflow opens, an image comes out, the
+target is met, and the run is stable across repeats. They are not interchangeable.
+Failed and partial results stay on the record on purpose, because they are usually
+the part you need when your own card behaves the same way.
+
+Start with [evidence and privacy](docs/reference/evidence-and-privacy.md) and the
+[failure tracker](docs/reference/failure-tracker.md). The raw experimental trail that
+the report does not reference is archived in
+[barely-comfy-evidence](https://github.com/AiKiAi-stack/barely-comfy-evidence) with a
+SHA-256 manifest.
 
 ## Project layout
 
@@ -94,12 +125,17 @@ assets/       README and site visuals, built from real outputs
 
 ## Related
 
-- **[ming-tts-webui](https://github.com/AiKiAi-stack/ming-tts-webui)** — local Ming-3.0-TTS speech workbench (Gradio + FastAPI on AMD ROCm), split into its own repository.
+- **[ming-tts-webui](https://github.com/AiKiAi-stack/ming-tts-webui)**: a local
+  Ming-3.0-TTS speech workbench (Gradio + FastAPI on AMD ROCm), kept in its own
+  repository.
 
 ## Contributing
 
-Reproductions on other AMD cards are the most useful contribution — bring input, prompt, workflow, output, timing and failure evidence. Read [CONTRIBUTING.md](CONTRIBUTING.md).
+The most useful contribution is a reproduction on another AMD card. Bring the input,
+prompt, workflow, output, timing and the failure evidence. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) first.
 
 ## License
 
-[MIT](LICENSE). Third-party sources and upstream licensing: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[MIT](LICENSE). Third-party sources and upstream licensing are listed in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

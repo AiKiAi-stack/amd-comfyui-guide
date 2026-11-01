@@ -1,10 +1,12 @@
 # Visual assets
 
-README visual assets and the landing-page model gallery, built from real model outputs captured on the RX 6650 XT.
+README visuals and the landing-page model gallery. The posters are built from real model outputs captured on the RX 6650 XT; the covers are typographic and live in `brand/`.
 
 | File | Purpose |
 |---|---|
-| `banner.webp` | README cover: project name, tagline, verified-hardware line |
+| `banner.webp` | English README cover: fused mark, project name, slogan, verified-hardware line |
+| `banner.zh.webp` | Chinese README cover: same lockup, Chinese name and slogan |
+| `brand/mark.svg` | The fused AMD × ComfyUI mark used by both covers; see `brand/README.md` |
 | `features.webp` | Core outputs poster: four model families, one real image each — no result counts, no pass/fail verdicts |
 | `gallery/manifest.json` | Landing-page gallery manifest: 7 model families, 32 curated real outputs with prompts, parameters and evidence anchors |
 | `gallery/*.webp` | 32 curated model outputs, one file per source PNG |
@@ -41,13 +43,13 @@ All poster images are untouched official test outputs (512×512) from public evi
 | `flux2-klein-watercolor-cat.png` | `evidence/report-assets/output/FeatureBench/flux2-klein-style_00001_.png` | FLUX.2 Klein, style edit |
 | `kroma-q2-forest-fox.png` | `evidence/report-assets/output/Liuyue_Kroma031_Q2_4step_RX6650XT_00001_.png` | Kroma Q2, 4-step sampling |
 | `moss-sft-astronaut.png` | `evidence/2026-10-21-repairs/cases/moss-watercolor-base-sft/10-0-moss-watercolor-base-sft_00001_.png` | MOSS SFT, 8-step LoRA |
-| `qwen-multiref-fox.png` | `evidence/report-assets/output/FeatureBench/qwen-multiref_00001_.png` | Qwen Image 2.1, multi-reference (banner background) |
+| `qwen-multiref-fox.png` | `evidence/report-assets/output/FeatureBench/qwen-multiref_00001_.png` | Qwen Image 2.1, multi-reference |
 
 ## Rebuild
 
-The posters are plain HTML/CSS rendered at 1920×1080 with headless Chrome, then converted to WebP. The poster sources live in `scripts/readme_assets/`; edit those, not the WebP files.
+The posters are plain HTML/CSS rendered with headless Chrome, then converted to WebP. The sources live in `scripts/readme_assets/`; edit those, not the WebP files.
 
-`features.webp` has no footer strip: its bottom stats/verdict line was removed, so the four images carry the composition. Rebuild it with Pillow (no metadata):
+`features.webp` is 1920×1080. It has no footer strip: the bottom stats/verdict line was removed, so the four images carry the composition. Rebuild it with Pillow (no metadata):
 
 ```bash
 google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
@@ -62,12 +64,19 @@ PY
 rm assets/features.png   # keep the repo free of intermediate PNGs/metadata
 ```
 
-`banner.webp` is unchanged and still rebuilt from `banner.html` with ImageMagick:
+Both banners are 1920×720, rendered from `banner.html` and `banner.zh.html`. They load the self-hosted fonts and `brand/mark.svg` by relative path, so render them from the repository root:
 
 ```bash
-google-chrome --headless=new --disable-gpu --hide-scrollbars \
-  --window-size=1920,1080 --virtual-time-budget=6000 \
-  --screenshot="$PWD/assets/banner.png" "file://$PWD/scripts/readme_assets/banner.html"
-magick assets/banner.png -strip -quality 86 assets/banner.webp
-rm assets/banner.png
+for lang in banner banner.zh; do
+  google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+    --window-size=1920,720 --virtual-time-budget=4000 \
+    --screenshot="$PWD/assets/$lang.png" "file://$PWD/scripts/readme_assets/$lang.html"
+done
+python3 - <<'PY'
+from PIL import Image
+for name in ("banner", "banner.zh"):
+    Image.open(f"assets/{name}.png").convert("RGB").save(
+        f"assets/{name}.webp", "WEBP", quality=86, method=6)
+PY
+rm assets/banner.png assets/banner.zh.png
 ```
