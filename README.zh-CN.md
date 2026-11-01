@@ -1,13 +1,12 @@
 <div align="center">
 
-<img src="assets/banner.webp" alt="AMD 显卡 ComfyUI 指南 — 在 AMD 显卡上跑 ComfyUI，每一步实测" width="100%">
+<img src="assets/banner.zh.webp" alt="AMD 显卡 ComfyUI 指南。小卡，整张图。" width="100%">
 
 # AMD 显卡 ComfyUI 指南
 
-**在 AMD 显卡上跑 ComfyUI：每一步实测，每个结果可查。**
+**小卡，整张图。**
 
-Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直接使用的工作流库，
-每个结果都带一条可回查的记录。
+在 AMD 显卡上从驱动装到第一张图，每个结果都留了记录。
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -21,13 +20,11 @@ Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直�
 
 ## 这是什么
 
-一份面向 AMD 显卡的 ComfyUI 部署指南，附带可复核的实测证据。它从一台已验证的机器开始（Windows 10 与 Ubuntu 22.04.5 + ROCm 7.14），逐步记录 7 个模型系列、40 项功能：哪些通过、哪些部分达到、哪些失败以及原因。
+你手上有一张 AMD 显卡，想让 ComfyUI 在它上面跑起来。这份指南带你装完 Windows 10 或 Ubuntu 22.04.5，出第一张图，再告诉你 40 项 ComfyUI 功能里哪些能在 8 GB 显存上真的跑通。每项功能都有独立记录：输入、提示词、工作流、输出图、耗时和结论，失败的也留着。
 
-- **验证机型：** AMD Radeon RX 6650 XT（gfx1032）· 8GB 显存 · 16GB 内存
-- **已验证环境：** Ubuntu 22.04.5 · ROCm 7.14 · PyTorch 2.12.0 · ComfyUI `ce1e922`
-- **适合读者：** 想知道某个 ComfyUI 功能在自己的 AMD 卡上能不能跑、怎么跑的人
+所有结论来自一台机器：AMD Radeon RX 6650 XT（gfx1032），8 GB 显存，16 GB 内存，Windows 10 与 Ubuntu 22.04.5，ROCm 7.14、PyTorch 2.12.0、ComfyUI `ce1e922`。Windows 和 Linux 的记录分开存，两组结果不是同一个测试。
 
-这是**单机实测报告，不是 AMD 兼容性列表**。其他显卡请看 [AMD 显卡适配矩阵](docs/tutorial/08-amd-matrix.md)。
+这张卡是证据来源，不是读者范围。你的卡不是它，先读 [AMD 显卡适配矩阵](docs/tutorial/08-amd-matrix.md)，看自己落在哪一档。
 
 ## 实测结果
 
@@ -43,43 +40,47 @@ Windows 与 Ubuntu 的分步部署教程、逐项实测的功能清单、可直�
 
 <img src="assets/features.webp" alt="RX 6650 XT 上的四张真实出图：Qwen Image 2.1 Turbo、FLUX.2 Klein、Kroma Q2、MOSS SFT" width="100%">
 
-打开 **[完整功能报告](https://aikiai-stack.github.io/amd-comfyui-guide/)**：40 张卡片，每项都带输入、提示词、真实出图、耗时与各平台结论。
+[完整功能报告](https://aikiai-stack.github.io/amd-comfyui-guide/)有 40 张卡片，每张都带输入、提示词、真实输出、耗时和各平台结论。
 
 ## 快速开始
 
-1. **确认硬件** —— [硬件、系统与版本](docs/tutorial/01-hardware.md)。换一张卡？先读 [适配矩阵](docs/tutorial/08-amd-matrix.md)。
-2. **安装环境** —— [Windows](docs/tutorial/02-windows-setup.md) 或 [Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md)。Ubuntu 是唯一从全新独立环境完成全链路验证的路径。
-3. **生成第一张图** —— [第一张图](docs/tutorial/04-first-image.md)，然后从[工作流库](docs/tutorial/06-workflows.md)挑一份工作流开始。
+1. **先对配置。** [硬件、系统与版本](docs/tutorial/01-hardware.md)开头就是对照表。卡不是 RX 6650 XT，先读[适配矩阵](docs/tutorial/08-amd-matrix.md)再动手装。
+2. **装环境。** [Windows](docs/tutorial/02-windows-setup.md) 或 [Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md)。Ubuntu 是唯一从全新独立环境走完整套流程的路径。
+3. **出一张图。** 跟着[第一张图](docs/tutorial/04-first-image.md)走一遍，然后从[工作流库](docs/tutorial/06-workflows.md)挑一份工作流。
 
-没有显卡也能看：[功能报告](https://aikiai-stack.github.io/amd-comfyui-guide/)不需要模型权重。
+手上没有 AMD 卡也能看：[功能报告](https://aikiai-stack.github.io/amd-comfyui-guide/)不需要模型权重。
 
-## 下载工作流库
+## 工作流库
 
-268 份 WebUI 工作流及对应 API，全部经过真实前端导入/导出回环核对：
+268 份 WebUI 工作流，每份配一个 API 文件，全部在真实的 ComfyUI 前端里导入导出核对过。两个包：
 
-- **[完整包（约 360 MiB）](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)**：含输入图片与经过校验的编码结果
-- **[轻量包（约 12 MiB）](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip)**：只有工作流，需先运行编码步骤
+- [完整包，约 360 MiB](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows.zip)：工作流、输入图片，以及核对过的编码文件。
+- [轻量包，约 12 MiB](https://github.com/AiKiAi-stack/amd-comfyui-guide/releases/download/model-feature-workflows-2026-10-26/model-feature-workflows-light.zip)：只有工作流，编码步骤自己跑。
 
-安装步骤、命名规则与 SHA 注意事项见 [工作流库](docs/tutorial/06-workflows.md)。
+安装步骤、文件命名和 SHA 注意事项在[工作流库](docs/tutorial/06-workflows.md)那一章。
 
 ## 教程
 
+按顺序读。前提是卡已经装进机器、驱动已经就位。
+
 | 章节 | 什么时候读 |
 |---|---|
-| [01 硬件、系统与版本](docs/tutorial/01-hardware.md) | 先确认你的显卡 / 系统 / 版本组合 |
-| [02 Windows 环境搭建](docs/tutorial/02-windows-setup.md) | 在 Windows 上使用原生 AMD 环境 |
-| [03 Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md) | 已验证路径，从全新环境开始 |
-| [04 第一张图](docs/tutorial/04-first-image.md) | 验证 GPU 是否真的能出图 |
-| [05 模型选择](docs/tutorial/05-models.md) | 下载与放置模型权重 |
-| [06 工作流库](docs/tutorial/06-workflows.md) | 下载、导入并复现结果 |
-| [07 排障](docs/tutorial/07-troubleshooting.md) | 初始化崩溃、OOM、黑图与噪声图 |
-| [08 AMD 卡适配矩阵](docs/tutorial/08-amd-matrix.md) | 把本指南套用到其他 AMD 卡 |
+| [01 硬件、系统与版本](docs/tutorial/01-hardware.md) | 装之前先确认显卡、系统、版本的组合 |
+| [02 Windows 环境搭建](docs/tutorial/02-windows-setup.md) | 在 Windows 上用原生 AMD 环境 |
+| [03 Ubuntu + ROCm](docs/tutorial/03-ubuntu-rocm.md) | 已验证的路径，从全新环境开始 |
+| [04 第一张图](docs/tutorial/04-first-image.md) | 验证 GPU 真的能出图 |
+| [05 模型](docs/tutorial/05-models.md) | 挑一个模型系列，把权重放到位 |
+| [06 工作流库](docs/tutorial/06-workflows.md) | 下载、导入、复现一项结果 |
+| [07 排障](docs/tutorial/07-troubleshooting.md) | 初始化崩溃、OOM、黑图、噪声图 |
+| [08 AMD 卡适配矩阵](docs/tutorial/08-amd-matrix.md) | 把指南套用到别的 AMD 卡 |
 
-完整文档索引：[docs/](docs/README.md)。
+完整文档索引在 [docs/](docs/README.md)。
 
 ## 证据怎么读
 
-每项功能都有独立 case：提示词、工作流、输出图片、耗时与结论。"工作流能打开""实际出图""达到目标""连续稳定"是四件事，分开记录、互不替代；失败与部分达到的结果也刻意保留。见[证据结构与公开副本](docs/reference/evidence-and-privacy.md)与[故障追踪](docs/reference/failure-tracker.md)。报告未引用的原始实验归档在 [barely-comfy-evidence](https://github.com/AiKiAi-stack/barely-comfy-evidence)（附 SHA256 清单）。
+四件事分开记录：工作流能打开、实际出图、达到目标、连续重复还稳定。四者不能互相顶替。失败和部分达到的结果刻意留在记录里，你的卡出现同样现象时，多半要回来翻这些。
+
+先看[证据结构与公开副本](docs/reference/evidence-and-privacy.md)和[故障追踪与根因边界](docs/reference/failure-tracker.md)。报告没有引用的原始实验归档在 [barely-comfy-evidence](https://github.com/AiKiAi-stack/barely-comfy-evidence)，附 SHA256 清单。
 
 ## 仓库结构
 
@@ -94,12 +95,12 @@ assets/       README 与站点视觉素材（由真实出图构建）
 
 ## 相关项目
 
-- **[ming-tts-webui](https://github.com/AiKiAi-stack/ming-tts-webui)**：同机另做的 Ming-3.0-TTS 本地语音工作台（Gradio + FastAPI，AMD ROCm），已拆为独立仓库。
+- **[ming-tts-webui](https://github.com/AiKiAi-stack/ming-tts-webui)**：Ming-3.0-TTS 本地语音工作台（Gradio + FastAPI，AMD ROCm），单独一个仓库。
 
 ## 参与贡献
 
-最有价值的贡献是在其他 AMD 卡上复现——请带上输入、提示词、工作流、输出、耗时与失败证据。见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+最有价值的贡献是在别的 AMD 卡上复现一遍。带上输入、提示词、工作流、输出、耗时和失败证据。动手之前先看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 许可证
 
-[MIT](LICENSE)。第三方来源与上游授权见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+[MIT](LICENSE)。第三方来源和上游授权见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
