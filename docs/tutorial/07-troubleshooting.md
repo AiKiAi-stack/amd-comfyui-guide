@@ -4,7 +4,7 @@
 
 ## torch 一初始化就原生崩溃
 
-独立装 ROCm 7.2 + torch 2.9.1 时，`torch.cuda.is_available()` 直接 Windows access violation。先跑 `scripts/check_gpu.py`；最小的张量运算都过不了，就别继续加载模型。现在这些成功图来自另一套 ROCm 7.14 环境，别当成 7.2 已经修好了。先把版本换回 [01 章](./01-hardware.md) 表里那套，再重新跑一遍检查。
+独立装 ROCm 7.2 + torch 2.9.1 时，`torch.cuda.is_available()` 直接 Windows access violation。先跑 `scripts/check_gpu.py`；最小的张量运算都过不了，就别继续加载模型。现在这些成功图来自另一套 ROCm 7.14 环境，别当成 7.2 已经修好了。先把版本换回 [实测环境](../reference/test-machine.md) 里那套，再重新跑一遍检查。
 
 ## MOSS：HIPBLAS_STATUS_INVALID_VALUE
 
@@ -24,7 +24,7 @@ Qwen 和 Z-Image 的 `GGMLTensor.to`、`partially_unload` 路径上都出现过�
 
 ## FLUX.2：`--disable-pinned-memory` 会导致噪声
 
-带 `--disable-pinned-memory` 启动时，两个「API 成功」的结果都是噪声图。先去掉这个参数：新服务恢复默认锁页内存之后，文生图和七项编辑都成功。这是这一套本机组合的对照，底层的 HIP/WDDM 根因还没定；Z-Image 某个配置能工作，也不能外推成 FLUX 正常。
+带 `--disable-pinned-memory` 启动时，两个「API 成功」的结果都是噪声图。先去掉这个参数：新服务恢复默认锁页内存之后，文生图和七项编辑都成功。这是实测环境这一套组合的对照，底层的 HIP/WDDM 根因还没定；Z-Image 某个配置能工作，也不能外推成 FLUX 正常。
 
 ## SSD、CPU 编码和「8GB 能跑」
 
